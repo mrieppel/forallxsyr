@@ -1,0 +1,579 @@
+%!TEX root = forallxsyr.tex
+\part{Truth Functional Logic}
+\chapter{Symbolization in TFL}
+
+
+
+\section{Atomic sentences}
+
+In this chapter, we'll look at how to symbolize English arguments in the language of \emph{truth-functional logic} (or TFL), thereby revealing their truth-functional logical structure, or form.\footnote{What does ``truth-functional'' mean?  We'll get to that in the next chapter, on the semantics of TFL.}  Here is an example of a symbolization in TFL:
+
+
+	\begin{earg}
+		\item[\ex{exarg1}] It is raining outside.
+		\item[] If it is raining outside, then Jenny is miserable.
+		\item[] $\therefore$ Jenny is miserable.
+	\end{earg}
+
+
+\begin{multicols}{2}
+
+	\begin{earg}
+		\item[] $A$
+		\item[] If $A$, then $C$
+		\item[] $\therefore$ $C$
+	\end{earg}
+
+\columnbreak
+
+	\begin{earg}
+		\item[] $A$
+		\item[] $(A \rightarrow C)$
+		\item[] $\therefore$ $C$
+	\end{earg}
+	
+	
+\end{multicols}
+
+
+In symbolizing this argument, I began by replacing  \emph{subsentences} of larger sentences with uppercase letters. For example, `it is raining outside' is a subsentence of the complex sentence `If it is raining outside, then Jenny is miserable', and we replaced this subsentence with the letter `$A$'.  Similarly, we used `$C$' to symbolize the subsentence `Jenny is miserable'. 
+
+Our artificial language, TFL, uses uppercase letters as its \define{atomic sentences}. These will be the basic building blocks, or ``atoms,'' out of which more complex TFL sentences are built.  There are only twenty-six letters of the alphabet, but in principle there is no limit to the number of atomic sentences that we might want to consider. By adding numerical subscripts to letters, we obtain as many atomic sentences as we need.  So the following all count as atomic sentences of TFL:
+
+	$$A, P, P_1, P_2, A_{234}$$
+
+To indicate which atomic sentence of TFL is being used to represent which English sentence, we provide a \define{symbolization key}, such as the following:
+
+	\begin{ekey}
+		\item[A] It is raining outside
+		\item[C] Jenny is miserable
+	\end{ekey}
+	
+Doing this does \emph{not} fix this symbolization \emph{once and for all}. We are just saying that, for the time being, we will use the atomic TFL sentence `$A$' to symbolize the English sentence `It is raining outside', and `$C$' to symbolize `Jenny is miserable'. Later, when we are dealing with different sentences or different arguments, we can provide a new symbolization key that associates these atomic TFL sentences with different English sentences.
+
+	
+It is important to recognize that whatever internal structure an English sentence might have is lost if it is symbolized by an atomic sentence of TFL. From the point of view of TFL, an atomic sentence has no internal (or ``subatomic'') structure. It can be used to build more complex sentences, but it cannot be taken apart.
+
+For this reason, English sentences that have an internal logical structure to them, like the conditional `If it's raining outside, then Jenny is miserable', should not be symbolized using atomic sentences of TFL.  If we just symbolized this sentence as `$P$', for example, our symbolization would obscure the fact that it has the form of an `if \ldots then \ldots' statement, and that it contains subsentences that also occur on their own as premise and conclusion in our argument \eref{exarg1} above. We would thefore miss out on the logical form in virtue of which argument \eref{exarg1} is valid.  
+
+For this reason we have to symbolize logically complex sentences of English via complex (i.e. non-atomic) sentence of TFL, in this case `$(A \rightarrow C)$'.  Complex sentences of TFL are built up by combining atomic sentences with \emph{connectives}.
+
+
+%\section{Connectives}\label{s:TFLConnectives}
+
+TFL connectives will be used to symbolize English connectives like `if \ldots then', `or' and `not'.  Just as these English connectives can be applied to sentences to form new, bigger sentences, so TFL connectives can be applied to atomic sentences to build larger, complex sentences of TFL.  in total, there are five connectives in TFL. This table summarizes them, and gives you a rough indication of their meaning:
+
+
+	\begin{table}[h]
+	\center
+	\begin{tabular}{l l l}
+	
+	\textbf{symbol}&\textbf{name}&\textbf{rough meaning}\\
+	\hline
+	\enot&negation&`It is not the case that$\ldots$'\\
+	\eand&conjunction&`Both$\ldots$\ and $\ldots$'\\
+	\eor&disjunction&`Either$\ldots$\ or $\ldots$'\\
+	\eif&conditional&`If $\ldots$\ then $\ldots$'\\
+	\eiff&biconditional&`$\ldots$ if and only if $\ldots$'\\
+	
+	\end{tabular}
+	\end{table}
+
+For the remainder of this chapter, we have two main objectives, a practical one and a technical one.  The first, practical objective is to learn how to symbolize logically complex English sentences using our TFL connectives.  The second, more technical objective will be to give a precise grammar, or syntax, for the language of TFL, which explains exactly how TFL connectives combine with atomic sentences to produce complex TFL sentences.  We'll turn to this technical task later, after we've gotten some practice using the language of TFL to symbolize English sentences.
+
+\section{Negation}
+
+Consider how we might symbolize these sentences:
+
+	\begin{earg}
+	\item[\ex{not1}] Mary is in Barcelona.
+	\item[\ex{not2}] It is not the case that Mary is in Barcelona.
+	\item[\ex{not3}] Mary is not in Barcelona.
+	\end{earg}
+	
+In order to symbolize \eref{not1}, we will need an atomic sentence. We might offer this symbolization key:
+
+	\begin{ekey}
+		\item[B] Mary is in Barcelona.
+	\end{ekey}
+	
+Since \eref{not2} is obviously related to \eref{not1}, we do not want to symbolize it with a completely different sentence, say `$A$'. Roughly, sentence \eref{not2} means something like `It is not the case that B'. In order to symbolize this, we need a symbol for negation. We will use `\enot'. Now we can symbolize \eref{not2} with `$\enot B$'.
+
+Sentence \eref{not3} also contains the word `not'. And it is obviously equivalent to \eref{not2}. As such, we can also symbolize it with `$\enot B$'.
+\factoidbox{
+A sentence can be symbolized as $\enot\meta{A}$ if it can be paraphrased in English as `It is not the case that\ldots'.
+}
+
+Here's another example:
+
+	\begin{earg}
+		\item[\ex{not4}] The widget can be replaced.
+		\item[\ex{not5}] The widget is irreplaceable.
+		\item[\ex{not5b}] The widget is not irreplaceable.
+	\end{earg}
+	
+Let's use the following symbolization key:
+
+	\begin{ekey}
+		\item[R] The widget is replaceable
+	\end{ekey}
+	
+Sentence \eref{not4} can then be symbolized by `$R$'. Next, \eref{not5} says the widget is irreplaceable, which means that it is not the case that the widget is replaceable. So even though \eref{not5} does not contain the word `not', we can still symbolize it as `$\enot R$'.  Sentence \eref{not5b} can be paraphrased as `It is not the case that the widget is irreplaceable.' Which can again be paraphrased as `It is not the case that it is not the case that the widget is replaceable'. So we can symbolize this with the TFL sentence `$\enot\enot R$'.
+
+At this point you might be wondering: don't double negatives cancel out, so that `$\enot\enot R$' is equivalent to plain `$R$'? We'll get into meaning, or semantics, of TFL sentences in the next chapter, but the quick answer is that, yes, these are equivalent, and \eref{not5b} \emph{could} also be symbolized as `$R$'.  Still, `$\enot \enot R$' is the \emph{preferred} symbolization, since it represents more of the logical structure implicit in the English sentence \eref{not5b}.
+
+Some care is needed when handling negations. Consider:
+	\begin{earg}
+		\item[\ex{not6}] Jane is happy.
+		\item[\ex{not7}] Jane is unhappy.
+	\end{earg}
+If we let `$H$' symbolize  `Jane is happy', we can symbolize \eref{not6} as `$H$'. However, it would be a mistake to symbolize \eref{not7} with `$\enot{H}$'. Sentence \eref{not7} does not mean the same thing as `It is not the case that Jane is happy'. Jane might be neither happy nor unhappy; she might be in a state of blank indifference. In order to symbolize \eref{not7}, then, we would need a new atomic sentence of TFL.
+
+\section{Conjunction}\label{s:ConnectiveConjunction}
+
+Consider the sentence:
+	
+	\begin{earg}
+		\item[\ex{and3}]Adam is athletic, and Barbara is athletic.
+	\end{earg}
+
+We will need separate atomic sentences to symbolize the two subsentences that occur in \eref{and3}.
+
+	\begin{ekey}
+		\item[A] Adam is athletic.
+		\item[B] Barbara is athletic.
+	\end{ekey}
+
+We will use `\eand' to symbolize `and', and thus symbolize \eref{and3} as `$(A\eand B)$'. This connective is called \define{conjunction}. We also say that `$A$' and `$B$' are the two \define{conjuncts} of the conjunction `$(A \eand B)$'.
+
+There are few things to notice about conjunction.  First, in English the word `and' doesn't always conjoin two sentences:
+	
+	\begin{earg}
+		\item[\ex{and4}]Barbara is athletic and energetic.
+		\item[\ex{and5}]Barbara and Adam are both athletic.
+	\end{earg}
+
+In \eref{and4} the word `and' conjoins two adjectives, rather than two sentences.  But it can be paraphrased as `Barbara is athletic and Barbara is energetic' where `and' now does conjoin two complete sentences.  So if we use `$E$' symbolize `Barbara is energetic', we can symbolize the entire sentence as `$(B\eand E)$'.  In sentence \eref{and5}, `and' conjoins two names.  Again, though, this can be paraphrased in terms of a conjunction of two sentences, as `Barbara is athletic and Adam is athletic', and can therefore be symbolized as `$(B \land A)$'.\footnote{Some care is needed with this.  Not \emph{all} sentences where `and' conjoins two names can be paraphrased in a way where `and' conjoins two sentences.  For example, `Barbara and Adam carried the piano upstairs' may not mean the same as `Barbara carried the piano upstairs and Adam carried the piano upstairs', since the latter (but not the former) is compatible with them each carrying it individually rather than together. }
+
+Second, conjunction can be expressed in English using words other than `and':
+
+	\begin{earg}
+	\item[\ex{and6}]Although Barbara is energetic, she is not athletic.
+	\item[\ex{and7}]Adam is athletic, but Barbara is not.
+	\end{earg}
+
+In \eref{and6}, the word `although' sets up a contrast between the first part of the sentence and the second part. Nevertheless, the sentence tells us both that Barbara is energetic and that she is not athletic.  So we can symbolize it as a conjunction:
+
+\begin{ekey}
+		\item[B] Barbara is athletic.
+		\item[E] Barbara is energetic.
+\end{ekey}
+
+\begin{itemize}
+\item[] Symbolization of \eref{and6}: $(E \eand \enot B)$
+\end{itemize}
+	
+Of course we have lost all sorts of nuance in this symbolization. There is a distinct difference in tone between the English sentence \eref{and6} and `Both Barbara is energetic and it is not the case that Barbara is athletic'. TFL does not (and cannot) preserve these nuances, however, and so we do not attend to them when symbolizing English into TFL.  Notice also that in the symbolization key we replaced the pronoun `she' with `Barbara', since it might otherwise be unclear who `she' is meant to refer to.  In general: always use names in place of pronouns in your symbolization key!
+
+
+Sentence \eref{and7} raises similar issues. The word `but' sets up a contrast between the two parts of the sentence, but this is not something that TFL can deal with. We can paraphrase the sentence as `\emph{Both} Adam is athletic, \emph{and} Barbara is not athletic'.  Notice that the second conjunct involves a negation as well.  Using the sentence letters already introduced, we can symbolize \eref{and7} as `$(A \eand \enot B)$'. 
+
+
+There are other words besides `although' and `but' that can be used to express conjunction.  For example, `Barbara is energetic, however she is not athletic' and `Barbara is energetic despite not being athletic' expresses the same conjunctive claim as sentence \eref{and6} from above, and get symbolized using the same TFL sentence. In general, the symbolization guideline for conjunction is:
+
+	\factoidbox{
+		A sentence can be symbolized as $(\meta{A}\eand\meta{B})$ if (nuance aside) it can be paraphrased in English as `Both\ldots, and\ldots'.	
+}
+
+You might be wondering why we always put \emph{brackets} around the conjunctions. The reason can be brought out by thinking about negation interacts with conjunction. Consider:
+
+	\begin{earg}
+		\item[\ex{negcon1}] You will not get both soup and salad.
+		\item[\ex{negcon2}] You will not get soup but you will get salad.
+	\end{earg}
+	
+Sentence \eref{negcon1} can be paraphrased as `It is not the case that: both you will get soup and you will get salad'. Using the following symbolization key:
+	\begin{ekey}
+		\item[S_1] You get soup.
+		\item[S_2] You get salad.
+	\end{ekey}
+we would symbolize `both you will get soup and you will get salad' as `$(S_1 \eand S_2)$'. To symbolize the whole of sentence \eref{negcon1}, then, we negate this, giving us `$\enot (S_1 \eand S_2)$'. Sentence \eref{negcon2}, on the other hand, gets symbolized as a conjunction whose first conjunct is negated `$(\enot S_1 \eand S_2)$'.  
+
+These English sentences are very different, and their symbolizations differ accordingly. In one of them, the entire conjunction is negated. In the other, just one conjunct is negated. Brackets help us to keep track of things like the \emph{scope} of the negation: whether it applies to the whole conjunction, or just to the first conjunct. 
+
+\section{Disjunction}\label{s:Disjunction}
+Consider these sentences:
+	\begin{earg}
+		\item[\ex{or1}]Either Denison will play golf with me, or he will watch movies.
+		\item[\ex{or2}]Either Denison or Ellery will play golf with me. 
+	\end{earg}
+We can use the following symbolization key for these sentences (notice that we, as always, replace pronouns with names):
+	\begin{ekey}
+		\item[D] Denison will play golf with me.
+		\item[E] Ellery will play golf with me.
+		\item[M] Denison will watch movies.
+	\end{ekey}
+Sentence \eref{or1} is and `either \ldots or' statement, and gets symbolized as `$(D \eor M)$'. The connective is called \define{disjunction}. We also say that `$D$' and `$M$' are the \define{disjuncts} of the disjunction `$(D \eor M)$'.
+
+Sentence \eref{or2} is only slightly more complicated.  Here `or' occurs between two names rather than two complete sentences. However, we can paraphrase sentence \eref{or2} as `Either Denison will play golf with me, or Ellery will play golf with me' where `or' now connects two complete sentences. So we can symbolize it as `$(D \eor E)$'.
+	\factoidbox{
+		A sentence can be symbolized as $(\meta{A}\eor\meta{B})$ if it can be paraphrased in English as `Either\ldots, or\ldots.'
+	}
+	
+	
+Sometimes in English, the word `or' excludes the possibility that both disjuncts are true. This is called an \define{exclusive or}.  An \emph{exclusive or} is  intended when it says, on a restaurant menu, `Entrees come with either soup or salad': you may have soup; you may have salad; but, if you want \emph{both} soup \emph{and} salad, then you have to pay extra.  At other times, the word `or' allows for the possibility that both disjuncts might be true. This is probably the case with sentence \eref{or2}, above: I might play golf with Denison, with Ellery, or with both Denison and Ellery. Sentence \eref{or2} merely says that I will play with \emph{at least} one of them. This is an \define{inclusive or}. 
+
+Importantly, the TFL symbol `\eor' expresses \emph{inclusive or}.  Whenever you see the English words `either \ldots or' in this book, you can assume that the inclusive sense is intended, and symbolize such sentences using `$\eor$'.  When an exclusive sense is  intended, we will always add an explicit `but not both', as in:
+	\begin{earg}
+		\item[\ex{or.xor}] The entree will come with either soup or salad, but not both.
+	\end{earg}
+Using `$S_1$' for `the entree will come with soup' and `$S_2$' for `the entree will come with salad', we can symbolize \eref{or.xor} as `$((S_1 \eor S_2) \eand \enot (S_1 \eand S_2))$'.  So although the TFL symbol `\eor' always symbolizes \emph{inclusive or}, we can symbolize an \emph{exclusive or} in {TFL}. We just have to use a few other TFL symbols in addition to `$\eor$'!
+
+
+There are some futher interesting interactions between disjunction and negation that we should attend to. Consider the following:
+
+	\begin{earg}
+		\item[\ex{or3}] Either Barbara will not get soup, or she will not get salad.
+		\item[\ex{or4}] Barbara will get neither soup nor salad.
+	\end{earg}
+Sentence \eref{or3} can be paraphrased as: `\emph{Either} it is not the case that Barbara will get soup, \emph{or} it is not the case that Barbara will get salad'.  Using the following symbolization key:
+
+	\begin{ekey}
+		\item[P] Barbara will get soup. 
+		\item[D] Barbara will get salad.
+	\end{ekey}
+we can symbolize \eref{or3} as $(\enot P \eor \enot D)$.  This has the form of a disjunction both disjuncts of which are negated.  Sentence \eref{or4} has a different structure. It can be paraphrased as, `\emph{It is not the case that}: either Barbara will get soup or Barbara will get salad'. Since this negates the entire disjunction, we symbolize sentence \eref{or4} as `$\enot (P \eor D)$'.  This differs from our symbolization of \eref{or3}, as it should given that the two English sentences mean different things.
+
+You may have noticed that \eref{or3} means the same thing as `Barbara will not get both soup and salad.'  The latter can be symbolized as a negated conjunction, `$\enot(P \eand D)$'.  Since `$\enot(P \eand D)$' symbolizes an English sentence that's equivalent to \eref{or3}, and \eref{or3} is symbolized as `$(\enot P \eor \enot D)$', we can conclude that the TFL sentences `$\enot(P \eand D)$'  and `$(\enot P \eor \enot D)$' are themselves equivalent.
+
+Similarly, \eref{or4} means the same as `Barbara will not get soup and Barbara will not get salad', which can be symbolized as a conjunction of two negations `$(\enot P \eand \enot D)$'.  So again, since `$(\enot P \eand \enot D)$' symbolizes an English sentence that's equivalent to \eref{or4}, and \eref{or4} is symbolized as `$\enot (P \eor D)$', we can conclude that these two TFL sentences are themselves equivalent.  What we've discovered are:
+
+\factoidbox{\define{DeMorgan's Laws}:
+\begin{itemize}
+\item[] $\enot(\meta{A} \eor \meta{B})$ is equivalent to $(\enot \meta{A} \eand \enot \meta{B})$
+\item[] $\enot(\meta{A} \eand \meta{B})$ is equivalent to $(\enot \meta{A} \eor \enot \meta{B})$
+\end{itemize}}
+
+\noindent These  laws are named after Augustus DeMorgan who first explicitly formulated them in the nineteenth century.  These laws will stay with us throughout our study of logic, and we will see how to prove that these equivalences hold in the next chapter.\footnote{It is noteworthy that these equivalences only hold in TFL given that `$\eor$' expresses inclusive disjunction.  The fact that the corresponding English sentences are also intuitively equivalent again shows that English `or' often expresses inclusive disjunction.}
+
+
+\section{Conditional}
+Consider these sentences:
+	\begin{earg}
+		\item[\ex{if0}] If Jean is in Paris, then Jean is in France.
+		\item[\ex{if1}] Jean is in France if Jean is in Paris.
+		\item[\ex{if2}] Jean is in France only if Jean is in Paris.
+	\end{earg}
+Let's use the following symbolization key:
+	\begin{ekey}
+		\item[P] Jean is in Paris.
+		\item[F] Jean is in France
+	\end{ekey}
+Sentence \eref{if0} is roughly of this form: `if P, then F'. We will use the symbol `\eif' to symbolize the English `if\ldots, then\ldots' structure. So we symbolize sentence \ref{if1} by `$(P\eif F)$'. The connective is called \define{the conditional}. Here, `$P$' is called the \define{antecedent} of the conditional `$(P \eif F)$', and `$F$' is called the \define{consequent}.
+
+Sentence \eref{if1} looks different from \eref{if0} since the word `if' occurs in the middle of the sentence rather than at the beginning.  But clearly \eref{if1} it is equivalent to \eref{if0}, so we can also symbolize it as `$(P \eif F)$'.  In general, the `if'-clause of an English conditional always introduces the \emph{antecedent}, whether or not it occurs first in the English sentence, with the rest of the sentence functioning as the \emph{consequent}.  
+
+
+Sentence \eref{if2} is also a conditional. Since the word `if' appears in the second half of the sentence, it might be tempting to symbolize this in the same way as sentence \eref{if1}, as `$(P \eif F)$'. But that would be a mistake. My knowledge of geography tells me that sentence \eref{if1} is unproblematically true: there is no way for Jean to be in Paris that doesn't involve Jean being in France. But sentence \eref{if2} is not so straightforward: were  Jean in Marseilles, Lyons, or Toulouse, Jean would be in France without being in Paris, thereby rendering sentence \eref{if2} false. Since geography alone dictates the truth of sentence \eref{if1}, whereas travel plans (say) are needed to know the truth of sentence \eref{if2}, they must mean different things, and \eref{if2} can't be symbolized as `$(P \eif F)$.
+
+The moral is that `only if' means something very different from plain `if'.  The `if'-clause of a conditional introduces a \define{Sufficient Condition}: \eref{if0} and \eref{if1} say that Jean's being in Paris is \emph{sufficient for} his being in France (which is unproblematically true).  `Only if', by contrast, introduces a \define{Necessary Condition}: sentence \eref{if2} claims that Jean's being in Paris \emph{is necessary for} his being in France (likely false, since there are other ways to be in France). In TFL, the antecedent \meta{A} of a conditional $(\meta{A} \eif \meta{B})$ always indicates the sufficient condition, whereas the consequent \meta{B} indicates the the necessary condition.  Since Jean's being in Paris is claimed as a necessary condition in \eref{if2}, this sentence is symbolized as `$(F \eif P)$'.  In general, whereas `if' introduces the antecedent of a conditional, `only if' introduces the consequent.  So our symbolization guidelines for conditionals are:
+
+	\factoidbox{
+		A sentence can be symbolized as $(\meta{A} \eif \meta{B})$ if it can be paraphrased in English as `If A, then B', or as `B if A', or as `A only if B'.
+	}
+
+The fact that \eref{if0} is symbolized as `$(P \eif F)$' means that this `if\ldots then' statement can also be paraphrased as an `only if' statement, `Jean is in Paris only if Jean is in France'.  That's intuitively correct: since his being in Paris is sufficient for his being in France, it's also true that his being in France is necessary for his being in Paris. This connection between conditionals and necessary and sufficient conditions shows that the conditional can represent many English constructions that don't involve the word `if' at all.  Consider:
+
+	\begin{earg}
+		\item[\ex{ifnc1}] It is necessary condition on Bugs' being a rabbit that he be a mammal. 
+		\item[\ex{ifnc2}] For Bugs to be a rabbit, it is required that Bugs be a mammal.
+		\item[\ex{ifnc3}] For Bugs to be a mammal, it is enough that Bugs be a rabbit.
+		\item[\ex{ifnc4}] It is a sufficient for Bugs' being a mammal that he be a rabbit.
+	\end{earg}
+If we think about it, all four of these sentences mean the same as  `If Bugs is a rabbit, then Bugs is a mammal'. So using `$R$' for `Bugs is a rabbit' and `$M$' for `Bugs is a mammal, all four can all be symbolized as `$(R \eif M)$'. 
+
+It is important to bear in mind that the connective `\eif' tells us only that, if the antecedent is true, then the consequent is true. It says nothing about a \emph{causal} connection between two events (for example). In fact, we lose a huge amount when we use `$\eif$' to symbolize English conditionals. We will look more closely at the discrepancies between English `if\ldots then' and the TFL connective `\eif' in \S\ref{s:TFLConditional}.
+
+\section{Biconditional}
+Consider the following sentence:
+
+	\begin{earg}
+		%\item[\ex{iff1}] Shergar is a horse only if it he is a mammal
+		%\item[\ex{iff2}] Shergar is a horse if he is a mammal
+		\item[\ex{iff3}] Shergar is a horse if and only if he is a mammal
+	\end{earg}
+Let's use the following symbolization key:
+	\begin{ekey}
+		\item[H] Shergar is a horse
+		\item[M] Shergar is a mammal
+	\end{ekey}
+Sentence \ref{iff3} can be paraphrased as `Shergar is a horse if he is a mammal, and Shergar is a horse only if Shergar is a mammal'. This is just the conjunction of two conditionals we already know how to symbolize.   So we can symbolize it as `$((H \eif M) \eand (M \eif H))$'. We call this a \define{biconditional}, because it amounts to stating both directions of the conditional.  That is, \eref{iff3} says (falsely, as it happens) that Shergar's being a mammal is both necessary and sufficient for his being a horse.
+
+We could treat every biconditional this way, as a conjunction of two conditionals. So, just as we do not need a new TFL symbol to deal with \emph{exclusive or}, we do not really need a new TFL symbol to deal with biconditionals. However, since biconditionals occur a lot in logic an philosophy, we'll use the dedicated connective `\eiff' to symbolize them. We can then can symbolize sentence \ref{iff3} with the TFL sentence `$(H \eiff M)$'. 
+
+Since `if and only if' gets used so much in logic and philosophy, it is often abbreviated with a single, snappy word, `iff'. I shall follow this practice. So `if' with only \emph{one} `f' is the English conditional. But `iff' with \emph{two} `f's is the English biconditional. Armed with this we can say:
+	\factoidbox{
+		A sentence can be symbolized as $(\meta{A} \eiff \meta{B})$ if it can be paraphrased in English as `A iff B', that is to say, as `A if and only if B'.
+	}
+A word of caution. Ordinary speakers of English often use `if \ldots, then\ldots' when they really mean to use something more like `\ldots if and only if \ldots'. Perhaps your parents told you, when you were a child: `if you don't eat your greens, you won't get any dessert'. Suppose you ate your greens, but that your parents then refused to give you any dessert, on the grounds that they were only committed to the \emph{conditional} (roughly `if you get dessert, then you will have eaten your greens'), rather than the biconditional (roughly, `you get dessert iff you eat your greens'). Well, a tantrum would rightly ensue. So, be aware of this when interpreting people; but in your own writing, make sure to use the biconditional iff you mean to.
+
+
+\section{`Unless'}
+We have now seen all of the connectives of TFL. We can use them together to symbolize many kinds of sentences. But some cases are harder than others. And a typically nasty case is the English-language connective `unless':
+\begin{earg}
+\item[\ex{unless1}] Unless you wear a jacket, you will catch a cold. 
+\item[\ex{unless2}] You will catch a cold unless you wear a jacket. 
+\end{earg}
+These two sentences are clearly equivalent. To symbolize them, we shall use the symbolization key:
+	\begin{ekey}
+		\item[J] You will wear a jacket.
+		\item[D] You will catch a cold.
+	\end{ekey}
+Both sentences mean that if you do not wear a jacket, then you will catch a cold. With this in mind, we might symbolize them as `$(\enot J \eif D)$'. 
+
+Equally, both sentences mean that if you do not catch a cold, then you must have worn a jacket. With this in mind, we might symbolize them as `$(\enot D \eif J)$'.
+
+Equally, both sentences mean that either you will wear a jacket or you will catch a cold. With this in mind, we might symbolize them as `$(J \eor D)$'.
+
+All three are correct symbolizations. Indeed, in the next chapter we shall see that all three symbolizations are equivalent in TFL. For simplicity we'll use the guideline:
+	\factoidbox{
+		If a sentence can be paraphrased as `Unless A, B' or `B unless A', then it can be symbolized as $(\meta{A}\eor\meta{B})$.
+	}
+Again, though, there is a little complication. `Unless' can be symbolized as a conditional.  But as noted above, people often use the conditional (on its own) when they mean to use the biconditional. Equally, `unless' can be symbolized as a disjunction; but there are two kinds of disjunction (exclusive and inclusive). So it will not surprise you to discover that ordinary speakers of English often use `unless' to mean something more like the biconditional, or like exclusive disjunction. Suppose I say: `I will go running unless it rains'. I probably mean something like `I will go running if and only if it does not rain' (i.e.\ the biconditional), or  `either I will go running or it will rain, but not both' (i.e.\ exclusive disjunction). However, in this book we'll always use `unless' in the strict sense in which it can be symbolized using a (inclusive) disjunction or a conditional.
+
+
+\practiceproblems
+\problempart Using the symbolization key given, symbolize each English sentence in TFL.\label{pr.monkeysuits}
+	\begin{ekey}
+		\item[M] Those creatures are men in suits. 
+		\item[C] Those creatures are chimpanzees. 
+		\item[G] Those creatures are gorillas.
+	\end{ekey}
+\begin{earg}
+\item Those creatures are not men in suits.
+\item Those creatures are men in suits, or they are not.
+\item Those creatures are either gorillas or chimpanzees.
+\item Those creatures are neither gorillas nor chimpanzees.
+\item If those creatures are chimpanzees, then they are neither gorillas nor men in suits.
+\item Unless those creatures are men in suits, they are either chimpanzees or they are gorillas.
+\end{earg}
+
+\problempart Using the symbolization key given, symbolize each English sentence in TFL.
+\begin{ekey}
+\item[A] Mister Ace was murdered.
+\item[B] The butler did it.
+\item[C] The cook did it.
+\item[D] The Duchess is lying.
+\item[E] Mister Edge was murdered.
+\item[F] The murder weapon was a frying pan.
+\end{ekey}
+\begin{earg}
+\item Either Mister Ace or Mister Edge was murdered.
+\item If Mister Ace was murdered, then the cook did it.
+\item If Mister Edge was murdered, then the cook did not do it.
+\item Either the butler did it, or the Duchess is lying.
+\item The cook did it only if the Duchess is lying.
+\item If the murder weapon was a frying pan, then the culprit must have been the cook.
+\item If the murder weapon was not a frying pan, then the culprit was either the cook or the butler.
+\item Mister Ace was murdered if and only if Mister Edge was not murdered.
+\item The Duchess is lying, unless it was Mister Edge who was murdered.
+\item If Mister Ace was murdered, he was done in with a frying pan.
+\item Since the cook did it, the butler did not.
+\item Of course the Duchess is lying!
+\end{earg}
+\problempart Using the symbolization key given, symbolize each English sentence in TFL.\label{pr.avacareer}
+	\begin{ekey}
+		\item[E_1] Ava is an electrician.
+		\item[E_2] Harrison is an electrician.
+		\item[F_1] Ava is a firefighter.
+		\item[F_2] Harrison is a firefighter.
+		\item[S_1] Ava is satisfied with her career.
+		\item[S_2] Harrison is satisfied with his career.
+	\end{ekey}
+\begin{earg}
+\item Ava and Harrison are both electricians.
+\item If Ava is a firefighter, then she is satisfied with her career.
+\item Ava is a firefighter, unless she is an electrician.
+\item Harrison is an unsatisfied electrician.
+\item Neither Ava nor Harrison is an electrician.
+\item Both Ava and Harrison are electricians, but neither of them find it satisfying.
+\item Harrison is satisfied only if he is a firefighter.
+\item If Ava is not an electrician, then neither is Harrison, but if she is, then he is too.
+\item Ava is satisfied with her career if and only if Harrison is not satisfied with his.
+\item If Harrison is both an electrician and a firefighter, then he must be satisfied with his work.
+\item It cannot be that Harrison is both an electrician and a firefighter.
+\item Harrison and Ava are both firefighters if and only if neither of them is an electrician.
+\end{earg}
+
+\problempart
+\label{pr.spies}
+Give a symbolization key and symbolize the following English sentences in TFL.
+\begin{earg}
+\item Alice and Bob are both spies.
+\item If either Alice or Bob is a spy, then the code has been broken.
+\item If neither Alice nor Bob is a spy, then the code remains unbroken.
+\item The German embassy will be in an uproar, unless someone has broken the code.
+\item Either the code has been broken or it has not, but the German embassy will be in an uproar regardless.
+\item Either Alice or Bob is a spy, but not both.
+\end{earg}
+
+\problempart Give a symbolization key and symbolize the following English sentences in TFL.
+\begin{earg}
+\item If there is food to be found in the pridelands, then Rafiki will talk about squashed bananas.
+\item Rafiki will talk about squashed bananas unless Simba is alive.
+\item Rafiki will either talk about squashed bananas or he won't, but there is food to be found in the pridelands regardless.
+\item Scar will remain as king if and only if there is food to be found in the pridelands.
+\item If Simba is alive, then Scar will not remain as king.
+\end{earg}
+
+\problempart
+For each argument, write a symbolization key and symbolize all of the sentences of the argument in TFL.
+\begin{earg}
+\item If Dorothy plays the piano in the morning, then Roger wakes up cranky. Dorothy plays piano in the morning unless she is distracted. So if Roger does not wake up cranky, then Dorothy must be distracted.
+\item It will either rain or snow on Tuesday. If it rains, Neville will be sad. If it snows, Neville will be cold. Therefore, Neville will either be sad or cold on Tuesday.
+\item If Zoog remembered to do his chores, then things are clean but not neat. If he forgot, then things are neat but not clean. Therefore, things are either neat or clean; but not both.
+\end{earg}
+
+\problempart
+We symbolized \emph{exclusive or}, or \emph{xor}, using `$\eor$', `$\eand$', and `$\enot$'. How could you symbolize an \emph{xor} using only two connectives? Hint: think about how you might use DeMorgan's Laws to eliminate one of the connectives in your symbolization.
+
+
+
+\section{The Syntax of TFL}\label{s:TFLSyntax}
+
+In the course of learning to symbolize English sentences in TFL, we've gotten a pretty good intuitive sense of how to build up complex TFL sentences from atomic ones using our five connectives.  But as we move ahead, it will be necessary for us to be a bit more precise about the structure of our logical language.  Because just as not every string of English words counts as a grammatical English sentence (e.g. `shelf on book red lies' is just gibberish), so not every string of symbols counts as grammatical, or well-formed sentence of TFL. 
+
+We have seen that there are three kinds of symbols in TFL:
+\begin{center}
+\begin{tabular}{l l}
+Atomic sentences: & $A,B,C,\ldots,Z, \ldots, A_1, B_1,Z_1,A_2,A_{25},J_{375},\ldots$\\
+\\
+Connectives: & $\enot,\eand,\eor,\eif,\eiff$\\
+\\
+Brackets: &( , )\\
+\end{tabular}
+\end{center}
+
+This constitutes the \define{Lexicon} of TFL.  Now define an \define{expression of TFL} to be any string of symbols of TFL.  That is: write down any sequence of symbols from the lexicon of TFL, in any order, and you have an expression of TFL.   
+
+Strings like `$(A \leftarrow B)$' or `$(p \eor C)$' or `$\enot (\phi \eand A)$' are not expressions of TFL because they contain symbols like `$\leftarrow$' (leftward arrows) `$p$' (lowercase letters) and `$\phi$' (Greek letters) that are not even in the Lexicon of TFL.  On the other hand, `$(A \eand B)$' is an expression of TFL, and so are `$(\enot)A\rightarrow)$' and `$\lnot)(\eor()\eand(\enot\enot())((B$'. However, whereas the first of these expressions also counts as a \emph{sentence} of TFL, the rest are just \emph{gibberish}. What we want are some rules to tell us precisely which TFL expressions count as sentences.  
+
+
+Obviously, individual atomic sentences like `$A$' and `$G_{13}$' should count as sentences. We can form further sentences out of these by using the various connectives. Using negation, we can get `$\enot A$' and `$\enot G_{13}$'. Using conjunction, we can get `$(A \eand G_{13})$', `$(G_{13} \eand A)$', `$(A \eand A)$', and `$(G_{13} \eand G_{13})$'. We could also apply negation repeatedly to get sentences like `$\enot \enot A$' and `$\enot \enot \enot A$', or apply negation to one of our conjunctions to get sentences like `$\enot(A \eand G_{13})$' and `$\enot(G_{13} \eand \enot G_{13})$'. There are infinitely many possible combinations, even starting with just these two sentence letters.  And of course there are infinitely many sentence letters. So there is no point in trying to list all of the sentences of TFL one by one.
+
+Instead, we will describe the process by which sentences can be \emph{constructed}. Consider negation: given any sentence \meta{A} of TFL, putting a negation in front of it gives us a sentence $\enot\meta{A}$ .  
+We can say similar things for each of the other connectives. For instance, if \meta{A} and \meta{B} are sentences of TFL, then $(\meta{A}\eand\meta{B})$ is a sentence of TFL.  (What's up with the funny cursive letters, which are \emph{not} in the lexicon of TFL?  We'll get to that in \S\ref{s:TFLMetavariables} below.)
+
+
+Providing clauses like this for all of the connectives, we arrive at the following \define{Syntax}, or formal definition of what counts as a  \define{sentence of TFL}:
+	\factoidbox{
+	\define{The Syntax of TFL:}
+	\begin{enumerate}
+		\item Every atomic sentence is a sentence.
+		\item If \meta{A} is a sentence, then $\enot\meta{A}$ is a sentence.
+		\item If \meta{A} and \meta{B} are sentences, then $(\meta{A}\eand\meta{B})$ is a sentence.
+		\item If \meta{A} and \meta{B} are sentences, then $(\meta{A}\eor\meta{B})$ is a sentence.
+		\item If \meta{A} and \meta{B} are sentences, then $(\meta{A}\eif\meta{B})$ is a sentence.
+		\item If \meta{A} and \meta{B} are sentences, then $(\meta{A}\eiff\meta{B})$ is a sentence.
+		\item Nothing else is a sentence.
+	\end{enumerate}
+	}
+Definitions like this are called \emph{recursive}. Recursive definitions begin with some list of base elements (in this case, atomic sentences), and then present ways to generate indefinitely many more elements by compounding together previously generated elements.  We can then determine if any given TFL expression counts as a sentence by checking whether it can be generated by applying these recursive rules of syntax.
+
+
+
+For example, suppose we want to know whether or not `$\enot \enot D$' is a sentence of TFL. Looking at clause 2 of the definition, we know that `$\enot \enot D$' is a sentence \emph{if} `$\enot D$' is a sentence. So now we need to ask whether or not `$\enot D$' is a sentence. Again looking at  clause 2 of the definition, `$\enot D$' is a sentence \emph{if} `$D$' is. And `$D$' is an atomic sentence of TFL, so we know that `$D$' is a sentence by the clause 1 of the definition. So by applying the clauses of our definition repeatedly, we see that our original sentence `$\enot \enot D$' can be generated by applying the rules of our syntax to atomic sentences, and thus counts as a TFL sentence.
+
+
+Next, consider a more complex example: `$\enot (P \eand \enot (\enot Q \eor R))$'. Looking at clause 2 of the definition, this is a sentence if `$(P \eand \enot (\enot Q \eor R))$' is. And by clause 3 the latter is a sentence if \emph{both} `$P$' \emph{and} `$\enot (\enot Q \eor R)$' are sentences. The former is an atomic sentence, and the latter is a sentence if `$(\enot Q \eor R)$' is a sentence. Looking at clause 4, we see this is a sentence if both `$\enot Q$' and `$R$' are sentences. And both are!  So we've shown that the expression we started with is indeed a sentence.
+
+Notice that negation differs from our other operators.  It attaches to a \emph{single} sentence to form a new sentence, and is therefore called a \define{Unary Operator}.  By contrast, the other operators all operate on \emph{pairs} of sentences to form new sentences, and are therefore called \define{Binary Operators}.  
+
+Our syntactic rules tell us that any sentence formed by applying a binary operator to a pair of sentences must be enclosed by parentheses.  For example, when putting `$S$' and `$R$' together using a conjunction, the resulting sentence `$(S \eand R)$' must have brackets around it.  So `$S \eand R$' is not technically a sentence of TFL, but a mere expression.  This is \emph{not} the case for negation, however!  Putting a negation in front of a sentence never requires adding parentheses.  So `$\enot \enot D$' and `$\enot (S \eand R)$' are well-formed sentences, but `$(\enot (\enot (D)))$' or `$(\enot (S \eand R))$' are not sentences.  (We'll return to the rationale behind these bracketing rules in \S \ref{s:TFLBracketing} below.)
+
+\subsection{Some Syntactic Notions}\label{s:TFLSyntacticNotions}
+
+
+
+Ultimately, every TFL sentence is constructed nicely out of atomic sentences on the basis of our syntactic rules. When we are dealing with any complex (i.e. non-atomic) sentence, we can see that there must be some sentential connective that was introduced \emph{most recently} when constructing that sentence. We call that the \define{main operator} of the sentence: 
+
+\factoidbox{The \define{Main Operator} of a complex TFL sentence is the one that was introduced \emph{most recently} in the process of constructing that sentence.
+}
+
+In the case of `$\enot\enot D$', the main operator is the very first `$\enot$' sign. In the case of `$((\enot E \eor F) \eif \enot G)$', the main operator is `$\eif$' because the last step in constructing this sentence is to connect `$(\enot E \eor F)$' and `$\enot G$' using `$\eif$' (and putting brackets around the result).  One can visually represent the process in which a sentence is constructed from its parts via  a \define{syntactic tree} for the sentence.  For example, the syntactic tree for `$((\enot E \eor F) \eif \enot G)$' looks like this:\\
+
+\Tree [.{$((\enot E \eor F) \eif \enot G)$} [.{$(\enot E \eor F)$}  [.{$\enot E$} {$\enot$} {$E$} ] {$\eor$} {$F$} ] {$\eif$} [.{$\enot G$} {$\enot$} {$G$} ] ]  \\
+
+\noindent This shows that `$((\enot E \eor F) \eif \enot G)$' was constructed by connecting `$(\enot E \eor F)$' and `$\enot G$' using `$\eif$', and `$(\enot E \eor F)$' was in turn constructed by connecting `$\enot E$' and `$F$' using `$\eor$', and `$\enot E$' was constructed by putting `$\enot$' in front of `$E$', and so on. If we represent the construction process in terms of a tree structure like this, then the main operator of a sentence is whichever operator occurs on a branch of its own at the \emph{first level} below the sentence as a whole (which again, in this case, is `$\eif$').
+
+
+The syntactic structure of sentences in TFL also allows us to give a formal definition of the \emph{scope} of a negation (mentioned in \S\ref{s:ConnectiveConjunction}). The scope of a `$\enot$' in a given sentence is whatever subsentence of that sentence has `$\enot$' as its main logical operator. For example, consider the complex TFL sentence:
+$$(\enot (R \eand B) \eiff Q)$$
+This was constructed by putting a biconditional between `$\enot (R \eand B)$' and `$Q$' . So `$\enot (R \eand B)$' is a \emph{subsentence} of the sentence as a whole.  And the main logical operator for this subsentence is `$\enot$'. So the scope of the negation in `$(\enot (R \eand B) \eiff Q)$' is just `$\enot(R \eand B)$'. More generally:
+	\factoidbox{The \define{scope} of any connective in a sentence is the subsentence for which that connective is the main logical operator.}
+So again in the case of `$(\enot (R \eand B) \eiff Q)$', the scope of `$\eiff$' is the sentence as a whole (since it is the main operator of the whole sentence), and the scope of `$\eand$' is `$(R \eand B)$', since $(R \eand B)$ is the subsentence of which `$\eand$' is the main  operator.
+
+\subsection{Bracketing}\label{s:TFLBracketing}
+
+As mentioned in \S\ref{s:ConnectiveConjunction} and \S\ref{s:TFLSyntax} above, brackets are an important part of the syntax of TFL.  This is because they demarcate the scope of connectives.  For example, there is an important difference between `$\enot (P \eand Q)$' and `$(\enot P \eand Q)$'.  In the case of  `$\enot (P \eand Q)$' the scope of the negation operator is the whole sentence, that is, it is the main operator of the sentence and it serves to negate the entire conjunction it is attached to. In the case of `$(\enot P \eand Q)$', the scope of the negation is just the subsentence `$\enot P$', and the main operator of the sentence as a whole is `$\eand$'.
+
+Strictly speaking, therefore, a string like `$\enot P \eand Q$' is \emph{not} a sentence of TFL, but a mere expression, because it is missing brackets.  As things stand, it is not clear where in `$\enot P \eand Q$' the brackets are supposed to go, that is, whether it is supposed to be a negated conjunction, i.e. `$\enot (P \eand Q)$', or rather a conjunction with a negated left conjunct, i.e.  `$(\enot P \eand Q)$'.  When working with TFL, however, it will make our lives easier if we are sometimes a little less strict. So, here are some convenient conventions.
+
+First,  we'll allow ourselves to omit the \emph{outermost} brackets on a sentence. Thus we allow ourselves to write `$Q \eand R$' instead of `$(Q \eand R)$'. However, we have to put the brackets back in when we want to embed this sentence into another, larger sentence!  So we cannot write `$P \rightarrow Q \eand R$', but must write $P \rightarrow (Q \eand R)$' instead.  With this convention in place, something like `$\enot P \eand Q$' can now be interpreted as missing its outermost parentheses, and thus being a shorthand for `$(\enot P \eand Q)$' rather than `$\enot (P \eand Q)$'.
+
+Second, it can be a bit painful to stare at long sentences with many nested pairs of brackets. To make things a bit easier on the eyes, we will allow ourselves to use square brackets, `[' and `]', instead of rounded ones. So there is no logical difference between `$(P\eor Q)$' and `$[P\eor Q]$', for example. Combining this convention with the first one, we can rewrite the unwieldy sentence:
+$$(((H \eif I) \eor (I \eif H)) \eand (J \eor K))$$
+more simply as follows:
+$$\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$$
+The scope of each connective is now much more visually apparent.
+
+\subsection{Metalanguage and Metavariables}\label{s:TFLMetavariables}
+
+Our recursive definition of TFL sentences included clauses like the following:
+\begin{enumerate}
+\item[3.] If \meta{A} and \meta{B} are sentences, then $(\meta{A}\eand\meta{B})$ is a sentence.
+\end{enumerate}
+But notice that `$(\meta{A} \eand \meta{B})$' is \emph{not} a sentence of TFL.  In fact, it isn't even an expression of TFL!  After all, it includes cursive letters, and these are not among the symbols that constitute the the lexicon of TFL.  Atomic TFL sentences are just ordinary uppercase roman letters (possibly subscripted) like `$A$' or `$B$' or `$S_{21}$', not cursive letters.  So what's going on in our recursive clauses?
+
+The answer is that in these clauses, we are using cursive letters as \emph{variables} that ``range over'' arbitrary expressions of TFL.  Consider how, in a math class, you might explain to someone that if $m$ and $n$ are any two positive integers, it holds that $m + n \geq m$.  In this case we are using `$m$' and `$n$' as variables that range over arbitrary positive integers,  and saying that $m + n \geq m$ holds no matter what positive integers $m$  and $n$ are.  On the other hand, if the variables were allowed to range over \emph{all} integers, positive and negative,  the claim $m + n \geq m$ would not longer hold --- now $m$ might be $2$ and $n$ might be ${-3}$, in which case $m+n \ngeq m$.
+
+In the same way, we are here using cursive letters as variables, except that we are using them as variables that range over arbitrary expressions in the language of TFL (rather than over integers, say).  The language of TFL has been the object of our study for the past several sections, and we therefore call it the \define{Object Language}.  But we have been conducting our discussion of TFL in English, so English is our \define{Metalanguage}: it is the language in which we talk about the object language.  Of course these notions aren't fixed.  If we had been discussing the syntax of Korean, say, rather than TFL, then our metalanguage would still have been English, but our object language would have been Korean.
+
+For this reason, variables like `$\meta{A}$' and `$\meta{B}$' are called \define{Metavariables}: they form part of our metalanguage, English, and they range over arbitrary expressions in our object language, TFL.  But again, these metavariables are \emph{only} part of our metalanguage, and not themselves included in the object language TFL.
+
+
+	\factoidbox{
+		`$\meta{A}$' is a metavariable in our metalanguage that we use to talk about arbitrary expressions of TFL. `$A$', by contrast, is a particular atomic sentence of our object language TFL .}
+		
+So what clause 3 in our definition says is that if $\meta{A}$ and $\meta{B}$ are any arbitrary sentences of TFL, then the result of writing whatever $\meta{A}$ is, followed by `$\eand$', followed by whatever \meta{B} is, and enclosing the result in parentheses, produces a sentence of TFL.  For example, if \meta{A} is the TFL sentence `$\enot D$' and \meta{B} is the TFL sentence `$(S \rightarrow T)$', then clause 3 tells us that `$(\enot D \eand (S \rightarrow T))$' is a sentence of TFL.  But again, the string of symbols `$(\meta{A} \eand \meta{B})$' is not itself a sentence (nor even an expression) of TFL.
+
+\practiceproblems
+\problempart
+\label{pr.wiffTFL}
+For each of the following: (a) Is it a sentence of TFL, strictly speaking? (b) Is it a sentence of TFL, allowing for our relaxed bracketing conventions?
+\begin{earg}
+\item $(A)$
+\item $J_{374} \eor \enot J_{374}$
+\item $\enot \enot \enot \enot F$
+\item $\enot \enot \enot (\enot F)$
+\item $\enot \eand S$
+\item $(G \eand \enot G)$
+\item $(A \eif (A \eand \enot F)) \eor (D \eiff E)$
+\item $(A \eand (B \eand ((C \eand D) \eand E)))$
+\item $[(Z \eiff S) \eif W] \eand [J \eor X]$
+\item $(F \eiff \enot D \eif J) \eor (C \eand D)$
+\end{earg}
+
+\problempart
+What is the main operator in each of the following?  And what are the scopes of the other operators in these sentences?
+
+\begin{earg}
+\item $\enot(A \eif \enot (\enot C \eiff B))$
+\item $\enot A \eif \enot (\enot C \eiff B)$
+\item $(A \eand (B \eor ((C \eor D) \eand E)))$
+\item $\bigl[(H \eif I) \eor (I \eif H)\bigr] \eand (J \eor K)$
+\end{earg}
+
+\problempart
+Are there any sentences of TFL that contain no atomic sentences? Does any TFL sentence contain a greater number of binary connectives than atomic sentences?  Explain your answers.\\
+

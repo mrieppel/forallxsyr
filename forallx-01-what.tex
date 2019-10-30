@@ -1,0 +1,426 @@
+%!TEX root = forallxsyr.tex
+\chapter{What is Logic?}
+
+\section{Arguments}\label{s:Arguments}
+
+
+This book provides an introduction to logic.  But what is logic? This is a surprisingly difficult question, still debated by philosophers. But generally speaking, logic is about distinguishing \emph{valid} from \emph{invalid} arguments.
+
+In everyday language, the word `argument' is often used to describe an activity that people engage in.   On twitter, or youtube, or the evening news, people often have heated disagreements, and you've probably had arguments like this with your family or friends.  Logicians tend to be a pretty sedate crowd, and they mean something very different by `argument'.  In logic, an argument is just a collection of statements.  More specifically:
+
+\factoidbox{An \define{argument} is a collection of one or more \emph{statements}, exactly one of which is the argument's \emph{conclusion} and the rest of which are its \emph{premises}.}
+
+\noindent Here is an example of an argument:
+
+\begin{earg}
+\item[\ex{exarg1}]All rabbits are mammals.
+\item[] Bugs Bunny is a rabbit.
+\item[] $\therefore$ Bugs Bunny is a mammal.
+\end{earg}
+
+This argument consists of three statements.  One of them is argument's conclusion, which we indicated by the three dots $\therefore$ read as ``therefore.'' The rest are its premises.  This argument has two premises, but arguments can have any number of premises (though, again, only one conclusion).
+
+Notice that our logician's definition of an argument is very permissive. Consider the following:
+	\begin{earg}
+		\item[] There is a bassoon-playing dragon in the \emph{Cathedra Romana}.
+		\item[] $\therefore$ Salvador Dali was a poker player.
+	\end{earg}
+We have a premise and a conclusion, and so we have an argument. Admittedly, it is a \emph{terrible} argument. But it is still an argument.  
+
+Here's another argument, one that's not as obviously terrible:
+
+
+\begin{earg}
+\item[\ex{exarg2}]All rabbits are mammals.
+\item[] Winnie the Pooh is a mammal.
+\item[] $\therefore$ Winnie the Pooh is a rabbit.
+\end{earg}
+
+In this case the premises at least involve the same concepts as the conclusion.  But this argument still isn't as good as \eref{exarg1} from earlier: unlike the earlier example, this argument isn't valid --- its conclusion doesn't follow from its premises.  But what exactly does validity, or ``following from,'' consist in?  What's wrong with argument \eref{exarg2} as compared to \eref{exarg1}?
+
+One thing that's bad about the second argument is that its conclusion is false: Pooh isn't a rabbit, he's a bear!  But that isn't what distinguishes valid from invalid arguments, because there are valid arguments with false conclusions, and invalid arguments with true conclusions:
+
+
+\begin{earg}
+\item[\ex{exarg3}]All rabbits are birds.
+\item[] Winnie the Pooh is a rabbit.
+\item[] $\therefore$ Winnie the Pooh is a bird.
+\end{earg}
+
+\begin{earg}
+\item[\ex{exarg4}]All rabbits are mammals
+\item[] Bugs Bunny is a mammal.
+\item[] $\therefore$ Bugs Bunny is a rabbit.
+\end{earg}
+
+
+
+The first of these is valid, but has a false conclusion.  And the second has a true conclusion, as well as true premises, but it still isn't valid because its conclusion doesn't follow from its premises.  
+
+Validity isn't about whether the premises or conclusion are in fact true.  It rather has to do with the \emph{relationship} between the premises and the conclusion.  When we ask about validity we want to know whether, if all the premises were true, the conclusion would also \emph{have to be true}.  Put another way:
+
+
+\factoidbox{
+An argument is \define{valid} if and only if it is \emph{impossible} for all of its premises to be true but its conclusion to be false.}
+
+ 
+ \noindent Let's unpack some of the concepts involved in the two definitions we've encountered a little bit more.
+
+
+\practiceproblems
+
+As you've seen, we always put the conclusion at the end of an argument and indicate it using the three ``therefore dots'' $\therefore$.  Informally presented arguments don't always have the conclusion at the end, however --- it can appear at the beginning, or even in the middle.  In each of the following arguments, highlight the phrase which expresses the conclusion:
+
+\begin{earg}
+	\item It is sunny. So I should take my sunglasses.
+	\item It must have been sunny. I did wear my sunglasses, after all.
+	\item No one but you has had their hands in the cookie-jar. And the scene of the crime is littered with cookie-crumbs. You're the culprit!
+	\item Miss Scarlett and Professor Plum were in the study at the time of the murder. And Reverend Green had the candlestick in the ballroom, and we know that there is no blood on his hands. Hence Colonel Mustard did it in the kitchen with the lead-piping. Recall, after all, that the gun had not been fired.
+\end{earg}
+
+
+ 
+ \section{Background Concepts}\label{s:Background}
+ 
+ First, we said that an argument is a collection of \define{statements}.  Statements are sentences that are either true or false.  Truth and falsity are called \define{truth-values}.  The truth-value of a statement is determined by what the world is like: a statement like `Syracuse is in New York State' describes the world as being a certain way, and is true or false depending on whether the world is that way.   As the ancient philosopher (and logician!) Aristotle put it in his book \emph{Metaphysics}:
+
+\begin{quote}
+``To say of what is that it is not, or of what is not that it is, is false, while to say of what is that it is, and of what is not that it is not, is true.'' (1011b25)
+\end{quote}
+
+It's important to notice that not all English sentences count as statements in this sense.  For example, none of the following sentences can be assessed as true or false:
+
+\begin{ebullet}
+\item Welcome to the Syracuse Airport! 
+\item Please have your ID ready.
+\item Are there any liquids in your bag?
+\end{ebullet}
+
+A sentence like `please have your ID ready' isn't meant to describe the world, but to ask someone to do something.  Similarly, `Welcome to Syracuse Airport' is just a greeting, and isn't meant to offer an accurate or inaccurate description of the world.  And although the answer to the last question on this list has a truth-value, the question itself doesn't.  In general, things like greetings, requests, orders, and questions don't have truth-values, and therefore don't count as statements and cannot be premises or conclusions of arguments.  Though it's important to keep this point in mind, moving forward we'll generally use the words ``statement'' and ``sentence'' interchangeably.
+
+
+Next, notice that because a statement's truth value depends on what the world is like, its truth-value could have been different if the world had been different.  For example, the sentence`Rieppel is a philosopher' is in fact true, but if I had taken up a different career it would have been false.  Conversely, `Rieppel is a professional juggler' is false, but if I had gone to juggling school instead of continuing with philosophy, it would have been true.   
+
+Philosophers often invoke the notion of a \define{possible world} in this connection.  The idea is that besides the actual world, there are various other possible worlds, other ways things could have been --- alternative histories, or alternative universes, if you like.  `Rieppel is a professional juggler' is false at the actual world, but it is true at various other possible worlds.  Sentences like this, which are true in some possible worlds but not others, are said to be contingent.
+
+Other sentences are not contingent.  For example, `Syracuse either is or is not in New York State' isn't just true at the actual world, it's true at \emph{every} possible world, that is, it's a necessary truth.  Mathematical truths are another example: $2+2 = 4$ is again true in every possible world, and therefore a necessary truth. At the other extreme, a sentence like `Syracuse both is and is not in New York State' is false in every possible world, or necessarily false.  
+
+Returning to arguments, you can think of the notion of validity in terms of possible worlds too.  We said that an argument is valid just in case it's \emph{impossible} for all of its premises to be true but it's conclusion false.  Put in terms of possible worlds, we can say that an argument is valid if and only if there is \emph{no possible world} where all  its premises are true but its conclusion is false.  Equivalently put: its conclusion is true at every possible world at which all its premises are true. So again, whether an argument is valid or not doesn't depend on whether its premises and conclusion are in fact true or false.  It's about the connection between them --- whether it is \emph{possible} for the conclusion to be false while all the premises are true.
+
+
+There are various logical concepts that we'll encounter in this class that involve the notions of necessity and possibility, besides validity.  Here are some of them:
+
+
+\factoidbox{
+\begin{itemize}
+
+\item A sentence is \define{contingent} if and only if it is possible for it to be true, and also possible for it to be false.
+
+\item A sentence is a \define{necessary truth} if and only if it is not possible for it to be false.
+
+\item A sentence is a \define{necessary falsehood} if and only if it is not possible for it to be true.
+
+\item Two sentences are \define{contradictory} if and only if they necessarily have opposite truth values.
+
+\item Two sentence are \define{equivalent} if and only if they necessarily have the same truth value.
+
+\item A collection of sentences is \define{jointly consistent} if and only if it is possible for all of them to be true together, and \define{jointly inconsistent} otherwise.
+
+
+\end{itemize}
+} 
+Notice that these concepts apply to different things. Whereas the first three concern properties of single sentences, the next two concern relations between two sentences, and the last ones properties of collections of sentences.  Validity is again slightly different, because it is a property had (or lacked) by only those collections of sentences that also have a designated conclusion.    
+
+\practiceproblems
+\problempart
+\label{pr.EnglishTautology}
+For each of the following: is it necessarily true, necessarily false, or contingent?
+\begin{earg}
+\item Caesar crossed the Rubicon.
+\item Someone once crossed the Rubicon.
+\item No one has ever crossed the Rubicon.
+\item If Caesar crossed the Rubicon, then someone has.
+\item Even though Caesar crossed the Rubicon, no one has ever crossed the Rubicon.
+\item If anyone has ever crossed the Rubicon, it was Caesar.
+\end{earg}
+
+\problempart
+\label{pr.MartianGiraffes}
+Consider the following sentences:
+
+	\begin{ebullet}
+		\item[G1.] There are at least four giraffes at the wild animal park.
+		\item[G2.] There are exactly seven gorillas at the wild animal park.
+		\item[G3.] There are not more than two martians at the wild animal park.
+		\item[G4.] Every giraffe at the wild animal park is a martian.
+	\end{ebullet}
+	
+Now, for each of the following, determine if the sentences in question are jointly consistent or jointly inconsistent:
+
+\begin{earg}
+\item G2, G3, and G4
+\item G1, G3, and G4
+\item G1, G2, and G4
+\item G1, G2, and G3
+\end{earg}
+
+
+\problempart
+Could there be:
+	\begin{earg}
+		\item Jointly consistent sentences, one of which is necessarily false?
+		\item Jointly consistent sentences, one of which is a necessary truth?
+		\item Jointly inconsistent sentences, one of which is a necessary truth?
+	\end{earg}
+In each case: if so, give an example; if not, explain why not.
+
+
+
+
+\section{Good and Bad Arguments}\label{s:GoodBadArg}
+
+Being valid is certainly one thing that makes for a good argument, intuitively speaking.  But there's more to being a good argument than that.
+
+First off, if an argument has an obviously false premise, then even if it is valid, it remains of limited interest because it doesn't establish its conclusion.  By contrast, if an argument is valid and all of its premises are true, then we know that its conclusion must be true too.  Arguments of this latter sort are said to be \emph{sound}:
+
+\factoidbox{
+An argument is \define{sound} if and only it (i) is valid, and (ii) has premises that are in fact true.
+}
+
+Arguments are generally intended to be not just valid, but sound.  So if you're faced with an argument, in a philosophy class or elsewhere, whose conclusion you want to resist, you have two options: you can either try to show that the argument is not valid, or you can try to show that one of its premises is false.  What you can't do is accept it as valid, and concede that its premises are true, but still reject the conclusion as false.
+
+Although its very important in practice to determine whether or not the premises of an argument are true, it is (for the most part) not the job of logic to do this.  The job of logic is just to determine whether or not an argument is valid.  The task of determining whether the argument's premises are in fact true (and the argument sound) is usually best left to experts in the relevant field: biologists, philosophers, historians, physicists, economists, or whomever.
+
+A second way in which validity is not all there is to good argumentation comes out if you consider the following:
+	\begin{earg}
+		\item[] In January 2015, it snowed in Syracuse.
+		\item[] In January 2016, it snowed in Syracuse.
+		\item[] In January 2017, it snowed in Syracuse.
+		\item[] In January 2018, it snowed in Syracuse.
+		\item[] In January 2019, it snowed in Syracuse.
+	\item[So:] It snows every January in Syracuse.
+\end{earg}
+
+This argument generalizes from observations about several past cases to a conclusion about all cases. The argument isn't valid, because even if it snowed in many recent years, that doesn't mean it's impossible for it not to snow in some future year.  The argument could be made stronger by adding additional premises, about other snowy Syracuse Januaries in the past. But however many premises of this sort we add, the argument will remain invalid.
+
+That doesn't mean that it's a bad argument.  Arguments like this one are called \emph{inductive} arguments, and they are often used legitimately and with great success in science and everyday life.  In this book, we shall set aside (entirely) the difficult question of what makes for a good inductive argument.  What logic studies is the different notion of \emph{deductive} validity --- where truth of the premises has to \emph{guarantee} truth of the conclusion --- and this will be the focus of our concern.
+
+\practiceproblems
+
+Here are some exercises to test your understanding of deductive validity and related concepts we've discussed.  For these questions, you don't need to worry about the distinction between validity and ``validity in virtue of logical form.'' That is, you can just assume the definition of validity we gave in \S\ref{s:Arguments} above.\\
+
+
+\problempart  Which of the following arguments are valid? Which are invalid?
+
+\begin{enumerate}
+\item \begin{earg}
+\item[] Socrates is a man.
+\item []All men are carrots.
+\item[$\therefore$]Socrates is a carrot.
+\end{earg}
+
+\item \begin{earg}
+\item[] Abe Lincoln was either born in Illinois or he was once president.
+\item[] Abe Lincoln was never president.
+\item[$\therefore$] Abe Lincoln was born in Illinois.
+\end{earg}
+
+\item \begin{earg}
+\item[] If I pull the trigger, Abe Lincoln will die.
+\item[] I do not pull the trigger.
+\item[$\therefore$] Abe Lincoln will not die.
+\end{earg}
+
+\item \begin{earg}
+\item[] Abe Lincoln was either from France or from Luxemborg.
+\item[] Abe Lincoln was not from Luxemborg.
+\item[$\therefore$] Abe Lincoln was from France.
+\end{earg}
+
+\item \begin{earg}
+\item[] If the world were to end today, then I would not need to get up tomorrow morning.
+\item[] I will need to get up tomorrow morning.
+\item[$\therefore$] The world will not end today.
+\end{earg}
+
+\item \begin{earg}
+\item[] Joe is now 19 years old.
+\item[] Joe is now 87 years old.
+\item[$\therefore$] Bob is now 20 years old.
+\end{earg}
+
+\end{enumerate}
+
+\problempart
+Could there be:
+	\begin{earg}
+		\item A valid argument that has one false premise and one true premise?
+		\item A valid argument that has only false premises but a true conclusion?
+		\item A valid argument with only false premises and a false conclusion?
+		\item A valid argument with only true premise but a false conclusion?
+		\item An invalid argument with only true premises and a true conclusion?
+		\item An invalid argument with only false premises but a true conclusion?
+		\item A sound argument with a false conclusion?
+		\item A sound argument with at least one false premise?
+		\item An invalid argument that can be made valid by the addition of a new premise?
+		\item A valid argument that can be made invalid by the addition of a new premise?
+		\item A valid argument, the conclusion of which is necessarily false?
+		\item An invalid argument, the conclusion of which is necessarily true?
+		\item A valid argument whose premises are jointly inconsistent?
+		\item A valid argument with only one premise?
+	\end{earg}
+In each case: if so, give an example; if not, explain why not. 
+
+
+
+
+\section{Formal Validity}\label{s:FormalValidity}
+
+There's one last complication we have to address before setting out on our investigation of logic.  Consider the following arguments:
+
+	\begin{earg}
+		\item[\ex{exarg5}] The sculpture is green all over.
+		\item[] $\therefore$ The sculpture is not red all over. 
+	\end{earg}
+	
+	\begin{earg}
+		\item[\ex{exarg6}]  Reihan is a bachelor.
+		\item[] $\therefore$ Reihan is not married.
+	\end{earg}
+	
+In both cases it is impossible for the premise to be true and the conclusion false: if something's green all over it can't be any other color, and being unmarried is part of what it is to be a bachelor.  Both arguments are therefore valid. 
+
+But there's an important difference between valid arguments like these and one like the following:
+
+	\begin{earg}
+		\item[\ex{exarg8}] Jenny is either happy or sad.
+		\item[] Jenny is not happy.
+		\item[] $\therefore$ Jenny is sad.
+	\end{earg}
+
+\noindent This argument is also valid, but there's more.  It has a special structure, or logical form, that we might represent as follows:
+
+
+	\begin{earg}
+		\item[] $A$ or $B$
+		\item[] not-$A$
+		\item[] $\therefore$ $B$
+	\end{earg}
+
+\noindent This is an excellent form for an argument to have, because any argument of this form will be valid, no matter what sentences occur in place of $A$ and $B$! Or consider our Bugs Bunny argument, which has the structure represented to the right:
+
+
+
+\begin{multicols}{2}
+	
+\begin{earg}
+\item[\eref{exarg1}]All rabbits are mammals.
+\item[] Bugs Bunny is a rabbit.
+\item[] $\therefore$ Bugs Bunny is a mammal.
+\end{earg}
+	
+\columnbreak
+
+\begin{earg}
+	\item[] All $F$ are $G$
+	\item[] $a$ is $F$
+	\item[] $\therefore$ $a$ is $G$
+\end{earg}
+
+\end{multicols}
+
+
+\noindent Again, any argument of this form will be valid, no matter what predicates we put in for $F$ and $G$ or what name we put in for $a$.
+
+
+We can put the general point by saying that arguments like \eref{exarg8} and  \eref{exarg1} are valid simply \emph{in virtue of their logical form}.  They each exhibit a structure which renders any argument with that structure valid.  By contrast, arguments \eref{exarg5}  and \eref{exarg6}, though valid, are not valid in virtue of their logical form.  For example, here's another argument that has the same form as \eref{exarg6} but that isn't valid:
+
+
+\begin{multicols}{2}
+
+\begin{earg}
+\item[] Reihan is a runner.
+\item[] $\therefore$ Reihan is not married.
+\end{earg}
+
+\columnbreak
+
+\begin{earg}
+\item[] $a$ is $F$
+\item[] $\therefore$ $a$ is not-$G$.
+\end{earg}
+
+\end{multicols}
+
+\noindent What made argument \eref{exarg6} valid wasn't its logical form, but the connection between the  meanings of the specific words `bachelor' and `married' that occur in its premise and conclusion.  Logic is all about patterns, and only cares about \emph{formally} valid arguments like \eref{exarg1} and \eref{exarg8}, not arguments like \eref{exarg5} and \eref{exarg6} that are valid for reasons other than their logical form. 
+
+\section{A Look Ahead}
+
+Due to logic's concern with form, we will approach the task of distinguishing valid from invalid arguments in an indirect way. We will first introduce a formal language in which we can symbolize English arguments, thereby letting us represent their logical forms.  We will then give a precise definition of validity for arguments cast in this formal notation, which will in turn give us our indirect means of distinguishing valid from invalid arguments in English: an English argument is formally valid if it can be symbolized as a valid argument in our formal notation.
+
+In fact, we will study two systems of logic, involving two different formal languages. These systems will differ in what words they treat as \emph{logical constants}, i.e. what words they treat as indicative of logically significant structure.  The first system we will study is \emph{Truth-Functional Logic} (or TFL).  It will let us represent the structure of arguments like \eref{exarg8} via the symbolization to the right:
+
+\begin{multicols}{2}
+
+	\begin{earg}
+		\item[\eref{exarg8}] Jenny is either happy or sad.
+		\item[] Jenny is not happy.
+		\item[] $\therefore$ Jenny is sad.
+	\end{earg}
+
+\columnbreak
+
+	\begin{earg}
+		\item[] $(A \eor B)$
+		\item[] $\enot A$
+		\item[] $\therefore$ $B$
+	\end{earg}
+
+\end{multicols}
+
+\noindent This language will treats words like `either \ldots or' and `not' as logical constants, and will use upper-case letters to represent complete sentences.
+
+The second system of logic we will study is \emph{first-order logic} (or FOL).  It will let us represent the structure of things like the Bugs Bunny argument via the symbolization to the right:
+
+
+\begin{multicols}{2}
+
+\begin{earg}
+\item[\eref{exarg1}]All rabbits are mammals.
+\item[] Bugs Bunny is a rabbit.
+\item[] $\therefore$ Bugs Bunny is a mammal.
+\end{earg}
+
+\columnbreak
+
+	\begin{earg}
+		\item[] $\forall x(Fx \eif Gx)$
+		\item[] $Fa$
+		\item[] $\therefore$ $Ga$
+	\end{earg}
+
+\end{multicols}
+
+\noindent This system extends truth-functional logic by additionally treating words like `all' as logical constants, and using upper- and lower-case letters to represent English predicates and names, respectively.\footnote{At this point you might be wondering why logicians treat some words (like `either \ldots or', `not', and `all') as logical constants, but not other words (like `happy' or `bachelor').  This is a difficult philosophical question about logic that we won't get into here.  If you're interested, check out the \emph{Stanford Encyclopedia of Philosophy's} entries on \href{http://plato.stanford.edu/entries/logical-constants/}{Logical Constants} and  \href{http://plato.stanford.edu/entries/logical-consequence/}{Logical Consequence}.} With this short preview out of the way, let's get started with logic! 
+
+
+
+
+%\problempart We've seen that arguments can be valid despite having false premises or false conclusions, and invalid despite having true premises or true conclusions.  Give your own examples of these:
+%
+%\begin{enumerate}
+%\item A valid argument with: 
+%\begin{itemize}
+%\item true conclusion and only true premises
+%\item true conclusion and at least one false premise
+%\item false conclusion and at least one false premise
+%\end{itemize}
+%
+%\item An invalid argument with: 
+%\begin{itemize}
+%\item true conclusion and only true premises
+%\item true conclusion and at least one false premise
+%\item false conclusion and at least one false premise
+%\item false conclusion and only true premises\footnote{Notice: there are invalid arguments like this, but there can't be valid arguments of this sort!}
+%\end{itemize}
+%\end{enumerate}
