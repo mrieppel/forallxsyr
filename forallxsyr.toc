@@ -1,0 +1,108 @@
+\contentsline {chapter}{\chapternumberline {1}What is Logic?}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Arguments}{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Background Concepts}{3}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Good and Bad Arguments}{5}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Formal Validity}{7}{section.1.4}% 
+\contentsline {part}{\partnumberline {I}Truth Functional Logic}{10}{part.1}% 
+\contentsline {chapter}{\chapternumberline {2}Symbolization in TFL}{11}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Atomic sentences}{11}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Negation}{12}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Conjunction}{14}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Disjunction}{15}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Conditional}{17}{section.2.5}% 
+\contentsline {section}{\numberline {2.6}Biconditional}{19}{section.2.6}% 
+\contentsline {section}{\numberline {2.7}`Unless'}{20}{section.2.7}% 
+\contentsline {section}{\numberline {2.8}The Syntax of TFL}{22}{section.2.8}% 
+\contentsline {subsection}{Some Syntactic Notions}{24}{Item.126}% 
+\contentsline {subsection}{Bracketing}{25}{Item.126}% 
+\contentsline {subsection}{Metalanguage and Metavariables}{26}{Item.126}% 
+\contentsline {chapter}{\chapternumberline {3}The Semantics of TFL}{28}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Meanings for TFL Connectives}{28}{section.3.1}% 
+\contentsline {paragraph}{Negation}{28}{section.3.1}% 
+\contentsline {paragraph}{Conjunction}{28}{section.3.1}% 
+\contentsline {paragraph}{Disjunction}{29}{section.3.1}% 
+\contentsline {paragraph}{Conditional}{29}{section.3.1}% 
+\contentsline {paragraph}{Biconditional}{30}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Truth-Functionality}{30}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Conditionals in TFL and English}{31}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}Complete Truth Tables}{33}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}Semantic Concepts}{36}{section.3.5}% 
+\contentsline {subsection}{The Limits of Our Tests}{39}{section.3.5}% 
+\contentsline {section}{\numberline {3.6}The Double-Turnstile Notation}{40}{section.3.6}% 
+\contentsline {section}{\numberline {3.7}Truth Table Shortcuts}{43}{section.3.7}% 
+\contentsline {subsection}{Joint Truth Table Shortcuts}{44}{Item.205}% 
+\contentsline {section}{\numberline {3.8}Partial Truth Tables}{46}{section.3.8}% 
+\contentsline {paragraph}{Example 1}{46}{section.3.8}% 
+\contentsline {paragraph}{Example 2}{47}{section.3.8}% 
+\contentsline {subsection}{Testing for Other Semantic Notions}{49}{Item.217}% 
+\contentsline {paragraph}{Tautology}{49}{Item.217}% 
+\contentsline {paragraph}{Contradiction.}{50}{Item.217}% 
+\contentsline {paragraph}{Consistency.}{50}{Item.217}% 
+\contentsline {paragraph}{Equivalence}{50}{Item.217}% 
+\contentsline {chapter}{\chapternumberline {4}Natural deduction for TFL}{52}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}The Very Idea of Natural Deduction}{52}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Setting up Natural Deduction Proofs}{53}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Conjunction Rules}{55}{section.4.3}% 
+\contentsline {section}{\numberline {4.4}Conditional Rules}{57}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Additional assumptions and subproofs}{60}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}Proving Theorems and Reiterating}{62}{section.4.6}% 
+\contentsline {section}{\numberline {4.7}Biconditional Rules}{65}{section.4.7}% 
+\contentsline {section}{\numberline {4.8}Disjunction Rules}{65}{section.4.8}% 
+\contentsline {section}{\numberline {4.9}Negation Rules}{69}{section.4.9}% 
+\contentsline {section}{\numberline {4.10}Proof strategies}{71}{section.4.10}% 
+\contentsline {paragraph}{Work backwards from your goal.}{71}{section.4.10}% 
+\contentsline {paragraph}{Work forwards from what you have.}{72}{section.4.10}% 
+\contentsline {paragraph}{Try an indirect proof.}{72}{section.4.10}% 
+\contentsline {paragraph}{Persist.}{72}{section.4.10}% 
+\contentsline {section}{\numberline {4.11}Derived Rules}{74}{section.4.11}% 
+\contentsline {part}{\partnumberline {II}First-order logic}{80}{part.2}% 
+\contentsline {chapter}{\chapternumberline {5}Symbolization in FOL}{81}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Names and Predicates}{82}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Quantifiers}{84}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Common Quantifier Phrases}{86}{section.5.3}% 
+\contentsline {section}{\numberline {5.4}Picking a domain}{88}{section.5.4}% 
+\contentsline {section}{\numberline {5.5}Quantifier Scope}{90}{section.5.5}% 
+\contentsline {section}{\numberline {5.6}The Utility of Paraphrase}{92}{section.5.6}% 
+\contentsline {section}{\numberline {5.7}Quantifiers and Many-Place Predicates}{95}{section.5.7}% 
+\contentsline {subsection}{Multiple Generality}{97}{Item.345}% 
+\contentsline {subsection}{Intermediate Steps to Symbolization}{98}{Item.349}% 
+\contentsline {section}{\numberline {5.8}Adding Identity}{103}{section.5.8}% 
+\contentsline {subsection}{There are at least\ldots }{104}{Item.405}% 
+\contentsline {subsection}{There are at most\ldots }{105}{Item.408}% 
+\contentsline {subsection}{There are exactly\ldots }{105}{Item.410}% 
+\contentsline {subsection}{Logical Truths Involving Identity}{106}{Item.415}% 
+\contentsline {section}{\numberline {5.9}The Syntax of FOL}{109}{section.5.9}% 
+\contentsline {subsection}{Formulas of FOL}{109}{section.5.9}% 
+\contentsline {subsection}{Sentences of FOL}{111}{Item.448}% 
+\contentsline {chapter}{\chapternumberline {6}Natural deduction for FOL}{114}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Universal elimination}{115}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Existential introduction}{117}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Universal introduction}{119}{section.6.3}% 
+\contentsline {section}{\numberline {6.4}Existential elimination}{122}{section.6.4}% 
+\contentsline {section}{\numberline {6.5}Rules for identity}{128}{section.6.5}% 
+\contentsline {section}{\numberline {6.6}Derived Rules for FOL}{131}{section.6.6}% 
+\contentsline {chapter}{\chapternumberline {7}The Semantics of FOL}{134}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}Predicates and their Extensions}{134}{section.7.1}% 
+\contentsline {paragraph}{Many-Place Predicates}{135}{section.7.1}% 
+\contentsline {paragraph}{The Identity Predicate}{136}{section.7.1}% 
+\contentsline {section}{\numberline {7.2}FOL Interpretations}{137}{section.7.2}% 
+\contentsline {section}{\numberline {7.3}Truth in FOL}{139}{section.7.3}% 
+\contentsline {paragraph}{Atomic Sentences}{139}{section.7.3}% 
+\contentsline {paragraph}{Adding Truth Functional Connectives}{140}{section.7.3}% 
+\contentsline {section}{\numberline {7.4}Truth for Quantified Sentences}{140}{section.7.4}% 
+\contentsline {section}{\numberline {7.5}Truth in an Interpretation: Examples}{143}{section.7.5}% 
+\contentsline {paragraph}{Example 1}{143}{section.7.5}% 
+\contentsline {paragraph}{Example 2}{143}{section.7.5}% 
+\contentsline {paragraph}{Example 3}{144}{section.7.5}% 
+\contentsline {paragraph}{Example 4}{144}{section.7.5}% 
+\contentsline {section}{\numberline {7.6}Semantic Concepts}{146}{section.7.6}% 
+\contentsline {section}{\numberline {7.7}Countermodels with One-Place Predicates}{147}{section.7.7}% 
+\contentsline {paragraph}{Example 1}{147}{section.7.7}% 
+\contentsline {paragraph}{Example 2}{149}{Item.560}% 
+\contentsline {section}{\numberline {7.8}Countermodels with Many-Place Predicates}{150}{section.7.8}% 
+\contentsline {paragraph}{Example 1}{151}{section.7.8}% 
+\contentsline {paragraph}{Example 2}{152}{section.7.8}% 
+\contentsline {section}{\numberline {7.9}Validity and Decidability}{153}{section.7.9}% 
+\contentsline {section}{\numberline {7.10}Working with Other Semantic Concepts}{156}{section.7.10}% 
+\contentsline {section}{\numberline {7.11}Appendix: Semantics with Variable Assignments}{158}{section.7.11}% 
+\contentsline {chapter}{\chapternumberline {8}Quick Reference}{160}{chapter.8}% 
