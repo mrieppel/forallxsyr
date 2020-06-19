@@ -49,7 +49,7 @@ One thing that's worse about the second argument is that its conclusion is false
 \end{earg}
 Argument \eref{exarg3} is valid, but has a false conclusion.  And argument \eref{exarg4} has a true conclusion, as well as true premises, but it still isn't valid, because its conclusion doesn't follow from its premises.  
 
-Validity isn't about whether the premises or conclusion are in fact true.  It rather has to do with the \emph{relationship} between the premises and the conclusion.  When we ask about validity we want to know whether, if all the premises \emph{were} true, the conclusion would also \emph{have to be true}.  Put another way:
+Validity isn't determined by whether the premises or the conclusion are as a matter of fact true.  It rather has to do with the \emph{relationship} between the premises and the conclusion.  When we ask about validity we want to know whether, if all the premises \emph{were true}, the conclusion would also \emph{have to be true}.  Put another way:
 
 
 \factoidbox{
@@ -74,7 +74,7 @@ As you've seen, we always put the conclusion at the end of an argument and indic
  
  \section{Background Concepts}\label{s:Background}
  
- First, we said that an argument is a collection of \define{statements}.  Statements are sentences that are either true or false.  Truth and falsity are called \define{truth-values}.  The truth-value of a statement is determined by what the world is like: a statement like `Syracuse is in New York State' describes the world as being a certain way, and is true or false depending on whether the world is that way.   As the ancient philosopher (and logician!) Aristotle put it in his book \emph{Metaphysics}:
+ First, we said that an argument is a collection of \define{statements}.  Statements are sentences that are either true or false.  Truth and falsity are called \define{truth-values}.  The truth-value of a statement is determined by what the world is like.  A statement like `Syracuse is in New York State' describes the world as being a certain way, and is true or false depending on whether the world is that way (in this case, it's true).   As the ancient philosopher (and logician!) Aristotle put it in his book \emph{Metaphysics}:
 
 \begin{quote}
 ``To say of what is that it is not, or of what is not that it is, is false, while to say of what is that it is, and of what is not that it is not, is true.'' (1011b25)
@@ -93,16 +93,16 @@ A sentence like `please have your ID ready' isn't meant to describe the world, b
 
 Next, notice that because a statement's truth value depends on what the world is like, its truth-value could have been different if the world had been different.  For example, the sentence `Rieppel is a philosopher' is in fact true, but if I had taken up a different career it would have been false.  Conversely, `Rieppel is a professional juggler' is false, but if I had gone to juggling school instead of continuing with philosophy, it would have been true.   
 
-Philosophers often invoke the notion of a \define{possible world} in this connection.  The idea is that besides the actual world, there are various other possible worlds, other ways things could have been --- alternative histories, or alternative universes, if you like.  `Rieppel is a professional juggler' is false at the actual world, but it is true at various other possible worlds, ones where I went to juggling school or joined the circus.  Sentences like this, which are true in some possible worlds but not others, are said to be \define{contingent}.
+Philosophers often invoke the notion of a \define{possible world} in this connection.  The idea is that besides the actual world, there are various other possible worlds, other ways things could have been --- alternative histories, or alternative universes, if you like.  `Rieppel is a professional juggler' is false at the actual world, but it is true at other possible worlds, ones where I went to juggling school or joined the circus.  Similarly, `Rieppel is a philosopher' is as a matter of fact true, but it is false at other possible worlds where I didn't pursue philosophy.  Sentences like this, which are true at some possible worlds and false at others, are said to be \define{contingent}.
 
 Other sentences are not contingent.  For example, `Syracuse either is or is not in New York State' isn't just true at the actual world, it's true at \emph{every} possible world, that is, it's a \define{necessary truth}.  Mathematical truths are another example: `$2+2 = 4$' is again true in every possible world, and therefore a necessary truth. At the other extreme, sentences like `Syracuse both is and is not in New York State'  and `$2+2 = 5$' are false in every possible world, or \define{necessarily false}.  
 
 Returning to arguments, you can think of the notion of validity in terms of possible worlds too.  We said that an argument is valid just in case it's \emph{impossible} for all of its premises to be true but it's conclusion false.  Phrased in terms of possible worlds, this becomes:
 \factoidbox{
 An argument is \define{valid} if and only if \emph{there is no possible world} where all of its premises are true but its conclusion is false.}
-Equivalently put: an argument is valid if its conclusion is true at every possible world at which all its premises are true. 
+Equivalently put: an argument is valid if its conclusion is true at \emph{every possible world} at which all of its premises are true. 
 
-This gives us an informal way to test whether an argument is valid: we imagine a world where all the premises are true, and then ask ourselves whether the conclusion would have to be true as well at that world.  If so, the argument is valid.  On the other hand, if you can imagine a world where all the premises are true but the conclusion is still false, the argument isn't valid.  So again, whether an argument is valid or not doesn't depend on whether its premises and conclusion are \emph{actually} true or false.  It's about the \emph{connection} between them --- whether there's any way for the premises to be true but the conclusion false.
+This gives us an informal way to test whether an argument is valid: we imagine a world where all the premises are true, and then ask ourselves whether the conclusion would have to be true as well at that world.  If so, the argument is valid.  On the other hand, if you can imagine a world where all the premises are true but the conclusion is still false, the argument isn't valid.  So again, whether an argument is valid or not isn't determined by whether its premises and conclusion are \emph{actually} true or false.  It's about the \emph{connection} between them --- whether there's \emph{any way} for the premises to be true but the conclusion false.
 
 There are other logical concepts that we'll encounter in this class that involve the notions of necessity and possibility, besides validity.  Some we've already mentioned:
 
@@ -125,7 +125,7 @@ There are other logical concepts that we'll encounter in this class that involve
 
 \end{itemize}
 } 
-Notice that these concepts apply to different things. Whereas the first three concern properties of single sentences, the next two concern relations between two sentences, and the last ones concern properties of whole collections of sentences.  Validity is again slightly different, because it is a property had (or lacked) by only those collections of sentences that also have a \emph{designated conclusion}, i.e. by those collections that are arguments.    
+Notice that these concepts apply to different things. Whereas the first three concern properties of single sentences, the next two concern relations between two sentences, and the last ones concern properties of whole collections of sentences.  Validity is again slightly different, because it is a property had (or lacked) by only those collections of sentences that also have a \emph{designated conclusion}, i.e. by those collections that are \emph{arguments}.    
 
 \practiceproblems
 \problempart
@@ -183,9 +183,9 @@ First off, if an argument has an obviously false premise, then even if it is val
 An argument is \define{sound} if and only it (i) is valid, and (ii) has premises that are in fact true.
 }
 
-Arguments are generally intended to be not just valid, but sound.  So if you're faced with an argument, in a philosophy class or elsewhere, whose conclusion you want to resist, you have two options: you can either try to show that the argument is not valid, or you can try to show that one of its premises is false (and the argument therefore isn't sound).  What you can't do is accept it as valid, and concede that its premises are true, but still reject the conclusion as false.
+Arguments are generally intended to be not just valid, but sound.  So if you're faced with an argument, in a philosophy class or elsewhere, whose conclusion you want to resist, you have two options: you can either try to show that the argument is not valid, or you can try to show that one of its premises is false (and the argument therefore isn't sound).  What you can't do is accept it as valid, and concede that its premises are true, but still reject the conclusion as false: if it's valid, and has true premises, it's conclusion has to be true too.
 
-Although its very important in practice to determine whether or not the premises of an argument are true, it is (for the most part) not the job of logic to do this.  The job of logic is just to determine whether or not an argument is valid.  The task of determining whether the argument's premises are in fact true (and the argument sound) is usually best left to experts in the relevant field: biologists, philosophers, historians, physicists, economists, or whomever.
+Although its important in practice to determine whether or not the premises of an argument are in fact true, it is (for the most part) not the job of logic to do this.  The job of logic is just to determine whether or not an argument is valid.  The task of determining whether the argument's premises are in fact true (and the argument sound) is usually best left to experts in the relevant field: biologists,  historians, philosophers, physicists, economists, or whomever.
 
 A second way in which validity is not all there is to good argumentation comes out if you consider the following:
 	\begin{earg}
@@ -197,7 +197,7 @@ A second way in which validity is not all there is to good argumentation comes o
 	\item[So:] It snows every January in Syracuse.
 \end{earg}
 
-This argument generalizes from observations about several past cases to a conclusion about all cases. The argument isn't valid, because even if it snowed in many recent years, that doesn't mean it's \emph{impossible} for it not to snow in some future year.  The argument could be made stronger by adding additional premises, about other snowy Syracuse Januaries in the past. But however many premises of this sort we add, the argument will remain invalid.
+This argument generalizes from observations about several past cases to a conclusion about all cases. The argument isn't valid, though, because even if it snowed in January in many recent years, that doesn't mean it's \emph{impossible} for it not to snow in some future year.  The argument could be made stronger by adding additional premises, about other snowy Syracuse Januaries in the past. But however many premises of this sort we add, the argument will remain invalid.
 
 That doesn't mean that it's a bad argument.  Arguments like this one are called \define{inductive} arguments, and they are often used legitimately and with great success in science and everyday life.  In this book, we shall set aside (entirely) the difficult question of what makes for a good inductive argument.  What logic studies is the different notion of \define{deductive} validity --- where truth of the premises \emph{guarantees} the truth of the conclusion --- and this will be the focus of our concern.
 
@@ -353,6 +353,7 @@ This isn't valid because it's trivial to imagine a world where Reihan is a runne
 
 
 
+
 Due to logic's concern with form, we will approach the task of distinguishing valid from invalid arguments in an indirect way. We will first introduce a formal language in which we can symbolize English arguments.  Doing this lets us represent the logical forms of those arguments.  We will then give a precise definition of validity for arguments cast in this formal notation.  And this will in turn give us our indirect means of distinguishing valid from invalid arguments in English: if an English argument can be symbolized as a valid argument in our formal notation, then that English argument is formally valid.
 
 In fact, we will study two systems of logic, involving two different formal languages. These systems will differ in what words they treat as \emph{logical constants}, that is,  which words they treat as indicative of logically significant structure.  The first system we will study is \emph{Truth-Functional Logic} (or TFL).  It will let us represent the structure of arguments like \eref{exarg8} via the symbolization to the right:
@@ -422,3 +423,4 @@ In Part 2 of the book, we will turn to \emph{First-Order Logic} (or FOL).  It wi
 %\end{itemize}
 %\end{enumerate}
  
+

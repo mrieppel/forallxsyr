@@ -1,55 +1,53 @@
 %!TEX root = forallxsyr.tex
 \chapter{Natural deduction for FOL}\label{ch:NDFOL}
 
-The language of FOL contains all TFL connectives. So proofs in FOL will take over all the natural deduction rules governing from TFL that we studied in chapter \ref{ch:NDTFL}, as well as the all derived  TFL rules introduced in \S \ref{s:TFLDerivedRules}.  We will also continue to use the same proof theoretic notions, in particular, the symbol `$\proves$'.  So:
-$$\meta{A}_1, \ldots, \meta{A}_n \proves \meta{C}$$
-will continue to mean that $\meta{C}$ is \emph{provable} from $\meta{A}_1, \ldots, \meta{A}_n$, i.e. that there exists a natural deduction proof which ends with $\meta{C}$ and whose premises, or more generally, whose undischarged assumptions, include at most $\meta{A}_1, \ldots, \meta{A}_n$.
+The language of FOL contains all TFL connectives. So proofs in FOL will take over all the natural deduction rules from TFL that we studied in chapter \ref{ch:NDTFL}, as well as the all derived  TFL rules introduced in \S \ref{s:TFLDerivedRules}.  We will also continue to use the same proof theoretic notions, in particular, the symbol `$\proves$'.  So:
+$$\meta{\phi}_1, \ldots, \meta{\phi}_n \proves \meta{\psi}$$
+will continue to mean that $\meta{\psi}$ is \emph{provable} from $\meta{\phi}_1, \ldots, \meta{\phi}_n$, i.e. that there exists a natural deduction proof which ends with $\meta{\psi}$ and whose premises, or more generally, whose undischarged assumptions, include at most $\meta{\phi}_1, \ldots, \meta{\phi}_n$.
 
 
-What we will need to add to our natural deduction system are rules to govern the new logical symbols that are specific to FOL: the quantifiers `$\forall$' and `$\exists$', and the identity predicate `$=$'.  As in the case of TFL, there will be an \emph{introduction} and an \emph{elimination} rule associated with each of these logical symbols.
+What we will need to add to our natural deduction system are rules to govern the new logical symbols that are specific to FOL: the quantifiers `$\forall$' and `$\exists$', and the identity predicate `$=$'.  As in the case of TFL, there will be an \emph{introduction} and an \emph{elimination} rule associated with each of these logical symbols.  Again, we will of course want to make sure that the rules we add end up producing a proof system that is both sound and complete:
+\factoidbox{\define{Soundness:} $\text{If\ } \meta{\phi}_1, \ldots, \meta{\phi}_n \proves \meta{\psi} \text{ then } \meta{\phi}_1, \ldots, \meta{\phi}_n \entails \meta{\psi} $}
+\factoidbox{\define{Completeness:} $\text{If\ } \meta{\phi}_1, \ldots, \meta{\phi}_n \entails \meta{\psi} \text{ then } \meta{\phi}_1, \ldots, \meta{\phi}_n \proves \meta{\psi} $}
+Soundness ensures that if $\meta{\psi}$ is provable from $\meta{\phi}_1, \ldots, \meta{\phi}_n$, then $\meta{\phi}_1, \ldots, \meta{\phi}_n$ logically entail the conclusion \meta{\psi}.  And completeness ensures us that if $\meta{\phi}_1, \ldots, \meta{\phi}_n$ logically entail the conclusion \meta{\psi}, then \meta{\psi} is also provable from premises $\meta{\phi}_1, \ldots, \meta{\phi}_n$.  We will formally define the concept of logical entailment in Chapter \ref{ch:FOLSemantics}.
 
-Again, we will of course want to make sure that the rules we add end up producing a proof system that is both sound and complete: 
-\factoidbox{\define{Soundness:} $\text{If\ } \meta{A}_1, \ldots, \meta{A}_n \proves \meta{C} \text{ then } \meta{A}_1, \ldots, \meta{A}_n \entails \meta{C} $}
-\factoidbox{\define{Completeness:} $\text{If\ } \meta{A}_1, \ldots, \meta{A}_n \entails \meta{C} \text{ then } \meta{A}_1, \ldots, \meta{A}_n \proves \meta{C} $}
-Soundness ensures that if $\meta{C}$ is provable from $\meta{A}_1, \ldots, \meta{A}_n$, then $\meta{A}_1, \ldots, \meta{A}_n$ logically entail the conclusion \meta{C}.  And completeness ensures us that if $\meta{A}_1, \ldots, \meta{A}_n$ logically entail the conclusion \meta{C}, then \meta{C} is also provable from premises $\meta{A}_1, \ldots, \meta{A}_n$.  We will formally define the concept of logical entailment in Chapter \ref{ch:FOLSemantics}.
-
-As in the case of TFL, we won't demonstrate that our proof system is in fact sound and complete --- this would require a \emph{meta-logical} proof, a proof \emph{about} our proof system.  You'll just have to take my word for it that soundness and completeness hold for our system. The important point for our purposes is that, due to the soundness of our proof system, we can use proofs to show that arguments are valid: if we can deduce a conclusion \meta{C} from some premises $\meta{A}_1, \ldots, \meta{A}_n$, then we can be sure that the corresponding argument is valid.  
+As in the case of TFL, we won't demonstrate that our proof system is in fact sound and complete --- this would require a \emph{meta-logical} proof, a proof \emph{about} our proof system.  You'll just have to take my word for it that soundness and completeness hold for our system. The important point for our purposes is that, due to the soundness of our proof system, we can use proofs to show that arguments are valid: if we can deduce a conclusion \meta{\psi} from some premises $\meta{\phi}_1, \ldots, \meta{\phi}_n$, then we can be sure that the premises entail the conclusion, and that the argument $\meta{\phi}_1, \ldots, \meta{\phi}_n \therefore \meta{\psi}$ is therefore valid.
 
 Similarly, we will continue to write:
-$${} \proves \meta{A}$$
-to mean that \meta{A} is a \define{theorem} of our proof system, i.e. a sentence that is provable using no premises, or undischarged assumptions.  Again, given soundess, theorems of our proof system are guaranteed to be \emph{logical truths}, so we can use natural deduction proofs to show that things are logical truths.
+$${} \proves \meta{\phi}$$
+to mean that \meta{\phi} is a \define{theorem} of our proof system, i.e. a sentence that is provable using no premises, or undischarged assumptions.  Given soundess, theorems of our proof system are guaranteed to be \emph{logical truths}, so we can also use natural deduction proofs to show that things are logical truths.
 
 
 
 \section{Universal elimination}\label{s:UniversalElim}
 
 
-The elimination rule for the universal quantifier has a very simple idea behind it: from the claim that everything is F, you can infer that any particular thing is F. You name it; it's F. So the following should be fine:
+The elimination rule for the universal quantifier has a very simple idea behind it: from the claim that everything is F, you can infer that any particular thing is F. You name it; it's F.  So from $\forall xFx$ we can infer $Fa$ and $Fb$ and $Fc$, and so on.  Similarly with two-place predicates:
 \begin{proof}
 	\hypo{a}{\forall xRxd}
 	\have{c}{Rad} \Ae{a}
 \end{proof}
-We obtained line 2 by dropping the universal quantifier `$\forall x$' and replacing every occurrence of the variable `$x$' that this quantifier bound with `$a$'. Equally, the following is fine:
+We obtained line 2 by dropping the universal quantifier `$\forall x$' and replacing every occurrence of the variable `$x$' that this quantifier bound with `$a$. Equally, the following is fine:
 \begin{proof}
 	\hypo{a}{\forall xRxd}
 	\have{c}{Rdd} \Ae{a}
 \end{proof}
-Here we obtained line 2 by dropping the universal quantifier and replacing every occurrence of `$x$' with `$d$'. We could have done the same with any other name we wanted: `$b$', `$c$', `$e$', you name it.
+Here we obtained line 2 by dropping the universal quantifier and replacing every occurrence of `$x$' with `$d$'. We could have done the same with any other name we wanted: `$b$', `$c$', `$e$', you name it.  The idea is simple: if, as per line 1, \emph{everything} bears relation $R$ to $d$, then $a$ does, and so does $d$ itself, and so does $b$ or $c$, or any other thing.
 
 Both `$Rad$' and `$Rdd$' are said to be \emph{instances} of the quantified sentence `$\forall xRxd$', as are `$Rbd$', `$Rcd$', `$Red$' and so on.  In general, this notion is defined as follows:
 
-\factoidbox{Given a universally quantified FOL sentence $\forall \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ its \define{instances} are all those FOL sentences $\meta{A}(\ldots \meta{c} \ldots)$ that are obtained by dropping the quantifier $\forall \meta{v}$  and replacing \emph{every} occurrence of the variable \meta{v} bound by that quantifier with some name \meta{c}.
+\factoidbox{Given a universally quantified FOL sentence $\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ its \define{instances} are all those FOL sentences $\meta{\phi}(\ldots \meta{c} \ldots)$ that are obtained by dropping the quantifier $\forall \meta{v}$  and replacing \emph{every} occurrence of the variable \meta{v} bound by that quantifier with some name \meta{c}.
 }
 The universal elimination rule $\forall$E then just says that from a universal sentence you may infer any of its instances:
 
 \factoidbox{
 \begin{proof}
-	\have[m]{a}{\forall \meta{v}\meta{A}(\ldots \meta{v} \ldots)}
-	\have[\ ]{c}{\meta{A}(\ldots \meta{c} \ldots)} \Ae{a}
+	\have[m]{a}{\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)}
+	\have[\ ]{c}{\meta{\phi}(\ldots \meta{c} \ldots)} \Ae{a}
 \end{proof}}
-Here, as well as in the definition of the notion of an instance, we are using the notation $\meta{A}(\ldots \meta{v} \ldots)$ to represent any FOL formula \meta{A} that contains at least one occurrence of the variable \meta{v}, and $\meta{A}(\ldots \meta{c} \ldots)$ to represent the result of replacing every occurrence of the variable \meta{v} in that formula with some name \meta{c}.  
+Here, as well as in the definition of the notion of an instance, we are using the notation $\meta{\phi}(\ldots \meta{v} \ldots)$ to represent any FOL formula \meta{\phi} that contains at least one occurrence of the variable \meta{v}, and $\meta{\phi}(\ldots \meta{c} \ldots)$ to represent the result of replacing every occurrence of the variable \meta{v} in that formula with some name \meta{c}.
 
-Notice that $\meta{A}(\ldots \meta{v} \ldots)$ may of course itself contain connectives and even other quantifiers.  So if we begin with the complex universally quantified sentence:
+Notice that $\meta{\phi}(\ldots \meta{v} \ldots)$ may of course itself contain connectives and even other quantifiers.  So if we begin with the complex universally quantified sentence:
 $$\forall x(Rax \eand \exists yRxy)$$
 the following would be instance of it, and could be inferred via $\forall$E:
 \begin{center}
@@ -70,29 +68,29 @@ It's also important to emphasize that (as with every elimination rule) you can o
 	\hypo{a}{\forall x Bx \eif Bc}
 	\have{c}{Bb \eif Bc}\by{illegitimate use of $\forall$E}{a}
 \end{proof}
-This is illegitimate because `$\forall x$' is not the main logical operator on line 1. (If you need a reminder as to why this sort of inference is bad, look back at \S\ref{s:QuantifierScope}.)  If line 1 had instead been `$\forall x(Bx \eif Bc)$', then the quantifier would have been the main operator, and it would have been legitimate to infer `$Bb \eif Bc$'.
+This is illegitimate because `$\forall x$' is not the main logical operator on line 1. If line 1 had instead been `$\forall x(Bx \eif Bc)$', then the quantifier would have been the main operator, and it would have been legitimate to infer `$Bb \eif Bc$'.
 
 Another way to put it is that this use of $\forall$E is illegitimate because `$Bb \eif Bc$' is not an \emph{instance} of `$\forall x Bx \eif Bc$'.  This is because the notion of an instance only applies to sentences that have a quantifier as their main operator.  It just doesn't make sense to talk about the ``instances'' of `$\forall x Bx \eif Bc$', because this sentence has a conditional as its main operator, and conditionals do not have instances.  By contrast, `$\forall x(Bx \eif Bc)$' does have a quantifier as its main operator, and `$Bb \eif Bc$' is one of its instances, so we can infer it via $\forall$E.
 
 Using this rule, we can, for example, show that the following argument that we looked at way back in \S\ref{s:Arguments} is valid:
 \begin{earg}
-\item[]All rabbits are birds.
-\item[] Winnie the Pooh is a rabbit.
-\item[] $\therefore$ Winnie the Pooh is a bird.
+\item[]All rabbits are mammals.
+\item[] Bugs Bunny is a rabbit.
+\item[] $\therefore$ Bugs Bunny is a mammal.
 \end{earg}
 First, we provide the following FOL symbolization (using the obvious symbolization key):
 \begin{earg}
-\item[]$\forall x(Rx \eif Bx)$
-\item[] $Rp$
-\item[] $\therefore Bp$
+\item[]$\forall x(Rx \eif Mx)$
+\item[] $Rb$
+\item[] $\therefore Mb$
 \end{earg}
 And then we can give a simple natural deduction to show that the conclusion follows:
 
 \begin{proof}
-	\hypo{a}{\forall (x Rx \eif Bx)}
-	\hypo{b}{Rb}
-	\have{c}{Rp \eif Bp} \Ae{a}
-	\have{d}{Bp} \ce{c,b}
+	\hypo{a}{\forall x (Rx \eif Mx)}  \by{Premise}{}
+	\hypo{b}{Rb}\by{Premise}{}
+	\have{c}{Rb \eif Mb} \Ae{a}
+	\have{d}{Mb} \ce{c,b}
 \end{proof}
 
 
@@ -103,24 +101,24 @@ The idea behind the existential introduction rules is again very simple: from th
 	\hypo{a}{Raa}
 	\have{b}{\exists x Rax} \Ei{a}
 \end{proof}
-Here, we have replaced just one occurrence of the name `$a$' with a variable `$x$', and then existentially quantified over it. Equally, we would have allowed:
+Here, we have replaced just one occurrence of the name `$a$' with a variable `$x$', and then existentially quantified over it. Equally, we would have done this:
 \begin{proof}
 	\hypo{a}{Raa}
 	\have{c}{\exists x Rxx} \Ei{a}
 \end{proof}
-Here we have replaced both occurrences of the name `$a$' with the variable `$x$', and then existentially generalized. Both kinds of inferences are fine: if Narcissus loves himself, `$Lnn$', then we can infer that there exists someone who loves themselves, `$\exists xLxx$', but we can also infer that there exists someone who Narcissus loves, `$\exists xLnx$', and that there is someone who loves Narcisuss, `$\exists xLxn$'.  
+Here we have replaced both occurrences of the name `$a$' with the variable `$x$', and then existentially generalized. Both kinds of inferences are fine: if Narcissus loves himself, `$Lnn$', then we can infer that there exists someone who loves themselves, `$\exists xLxx$', but we can also infer that there exists someone who Narcissus loves, `$\exists xLnx$', and that there is someone who loves Narcisuss, `$\exists xLxn$'.  All can be inferred from `$Lnn$' by $\exists$I.
 
 Another way to put this is to note that `$Lnn$' is an \emph{instance} of each of the quantified sentences `$\exists xLxx$',  `$\exists xLnx$', `$\exists xLxn$'.  The notion of an instances as applied to existential sentences is the same as it is for universal ones:
 
-\factoidbox{Given any existentially quantified FOL sentence $\exists \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ its \define{instances} are all those FOL sentences $\meta{A}(\ldots \meta{c} \ldots)$ that are obtained by dropping the quantifier $\exists \meta{v}$  and replacing \emph{every} occurrence of the variable \meta{v} bound by that quantifier with some name \meta{c}.
+\factoidbox{Given any existentially quantified FOL sentence $\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ its \define{instances} are all those FOL sentences $\meta{\phi}(\ldots \meta{c} \ldots)$ that are obtained by dropping the quantifier $\exists \meta{v}$  and replacing \emph{every} occurrence of the variable \meta{v} bound by that quantifier with some name \meta{c}.
 }
 
 The existential introduction rule $\exists$I then just says that from a sentence  containing one or more occurrences of a name \meta{c}, we may infer \emph{any} existential sentence of which that original sentence is an instance:
 
 \factoidbox{
 \begin{proof}
-	\have[m]{a}{\meta{A}(\ldots \meta{c} \ldots)}
-	\have[\ ]{c}{\exists \meta{x}\meta{A}(\ldots \meta{x} \ldots)} \Ei{a}
+	\have[m]{a}{\meta{\phi}(\ldots \meta{c} \ldots)}
+	\have[\ ]{c}{\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)} \Ei{a}
 \end{proof}
 }
 
@@ -132,34 +130,34 @@ $\exists x(Fx \eand \forall yRay)$\\
 $\exists x(Fa \eand \forall yRxy)$\\
 $\exists x(Fx \eand \forall yRxy)$\\
 \end{center}
-because `$Fa \eand \forall yRay$' is an instance of any of these.  Again, we can existentially generalize on just one occurrence of `$a$', or on both.
+because `$Fa \eand \forall yRay$' is an instance of any of these. So again, we can existentially generalize on just one occurrence of `$a$', or on both.
 
-On the other hand, the last of these, `$\exists x(Fx \eand \forall yRxy)$', could \emph{not} be inferred from:
+On the other hand `$\exists x(Fx \eand \forall yRxy)$' could \emph{not}, for example, be inferred from:
 $$Fa \eand \forall yRby$$
-because this is not one of its instances.  What's gone wrong here is that we tried to generalize on two different names, `$a$' and `$b$', at once, which isn't allowed.  
+because this is not one of its instances.  What's gone wrong here is that we tried to generalize on two different names, `$a$' and `$b$', at once, which isn't allowed.
 
 What we could have done  instead is to generalize on each of the two names separately, via successive uses of $\exists$I:
 
 \begin{proof}
-	\hypo{a}{Fa \eand \forall yRby}
+	\hypo{a}{Fa \eand \forall yRby} \by{Premise}{}
 	\have{d}{\exists x(Fx \eand \forall y Rby)} \Ei{a}
 	\have{e}{\exists z\exists x(Fx \eand \forall y Rzy)}\by{$\exists$I}{d}
 \end{proof}
-This is fine because line 1 is an instance of line 2, and line 2 is in turn an instance of line 3.  
+This is fine because line 1 is an instance of line 2, and line 2 is in turn an instance of line 3.
 
 It's important to notice that in moving from line 2 to line 3 here, it was essential that we introduced an existential quantifier involving a \emph{new} variable `$z$', which did not yet appear in line 2.  The following would \emph{not} have been legitimate:
 
 \begin{proof}
-	\hypo{a}{Fa \eand \forall yRby}
+	\hypo{a}{Fa \eand \forall yRby} \by{Premise}{}
 	\have{d}{\exists x(Fx \eand \forall y Rby)} \Ei{a}
 	\have{e}{\exists y\exists x(Fx \eand \forall y Ryy)}\by{illegitimate use of $\exists$I}{d}
 \end{proof}
 The expression on line 3 involves a \emph{variable clash} (see \S\ref{s:FOLSymSteps}) between the newly introduced quantifier `$\exists y$' and the quantifier `$\forall y$' that occurs in its scope.  It therefore does not even count as a \emph{formula}, let alone a \emph{sentence} of FOL by the definition we gave in \S\ref{s:FOLSyntax}.  For the same reason, we could not have inferred `$\exists x\exists x(Fx \eand \forall y Rxy)$' --- this again involves a variable clash, and therefore isn't an FOL formula.
 
-Here's a simple proof that combines our two new quantifier rules:
+Here's a simple proof that combines our two new quantifier rules to show that $\forall xFx \therefore \forall y(Fy \eif Gy)$ is valid:
 \begin{proof}
-	\hypo{1}{\forall x Fx}
-	\hypo{2}{\forall y(Fy \eif Gy)}
+	\hypo{1}{\forall x Fx} \by{Premise}{}
+	\hypo{2}{\forall y(Fy \eif Gy)} \by{Premise}{}
 	\have{3}{Fa}\Ae{1}
 	\have{4}{Fa \eif Ga}\Ae{2}
 	\have{5}{Ga}\ce{4 , 3}
@@ -169,16 +167,41 @@ Here's a simple proof that combines our two new quantifier rules:
 \noindent Notice that from line 1 I could have inferred some other instance by $\forall$E instead, like `$Fb$, and similarly, from line 2 I could have inferred any other instance, like `$Fc \eif Gc$'. But if I had used different names in the two instances like this, I could then not have applied $\eif$E to them.  So although $\forall E$ lets you infer any instance, in the context of a proof you'll usually have to infer some specific instance.
 
 \practiceproblems
+
+\problempart For each of the following FOL sentences, determine what it's $a$-instance and its $b$-instance are:
+
+
+\begin{earg}
+
+\item $\forall x(Fx \eand Gx)$
+
+\item $\exists x(Fx \eand Gx)$
+
+\item $\forall x(Fx \eif \exists yRyx)$
+
+\item $\exists x \forall y Lxy$
+
+\item $\forall x(Rxa \eif \exists y(Rxy \eand Ryx))$
+
+\item $\exists x(Lbx \eiff Lxa)$
+
+\item $\forall xRxa \eif \exists yRby$
+
+
+
+\end{earg}
+
 \problempart Given natural deduction proofs for the following (for these you'll only have to use $\forall$E and $\exists$I, in addition to TFL rules of course):
 
 
 \begin{earg}
+\item $\forall x(Fx \eand Gx), \forall yHy \proves \exists z(Hz \eand Gz)$
 \item $\forall xFx, \forall y (Fy \eif Gy) \proves \exists x(Gx \eand \exists yFy)$
 \item $\forall x(Fx \eif \forall yGy), Fc \proves \exists x(Fx \eand Gx)$
 \item $\forall x \forall y Rxy \proves \exists x Rxx$
 \item $\forall x(Fx \eif Gx) \proves \forall xFx \eif \exists yGy$
 \item $\exists xFx \eif \forall y Gy \proves \forall z Fz \eif \exists zGz$
-\item $\forall x(Fx \eif Gx), \enot Gc \proves \exists x\exists y(\enot Fx \eand Gy)$
+\item $\forall x(Fx \eif Gx), \enot Gc \proves \exists x\exists y(\enot Fx \eor Gy)$
 \item $\proves \exists x(Fx \eor \enot Fx)$
 \end{earg}
 
@@ -196,7 +219,7 @@ Here's a simple proof that combines our two new quantifier rules:
 %
 %Actually, we are already committed to this oddity. In \S\ref{s:FOLBuildingBlocks}, we stipulated that domains in FOL must have at least one member. We then defined a logical truth (of FOL) as a sentence which is true in every interpretation. Since `$\exists x\ x=x$' will be true in every interpretation, this \emph{also} had the effect of stipulating that it is a matter of logic that there is something rather than nothing.
 %
-%Since it is far from clear that logic should tell us that there must be something rather than nothing, we might well be cheating a bit here. 
+%Since it is far from clear that logic should tell us that there must be something rather than nothing, we might well be cheating a bit here.
 %
 %If we refuse to cheat, though, then we pay a high cost. Here are three things that we want to hold on to:
 %	\begin{ebullet}
@@ -210,20 +233,19 @@ Here's a simple proof that combines our two new quantifier rules:
 
 
 \section{Universal introduction}
-Suppose you had shown of each particular thing that it is F (and that there are no other things to consider). Then you would be justified in claiming that \emph{everything} is F. This could be used to motivate the following proof rule: if you had established each and every single substitution instance of `$\forall x Fx$', then you can infer `$\forall x Fx$'. 
+Suppose you had shown of each particular thing that it is F (and that there are no other things to consider). Then you would be justified in claiming that \emph{everything} is F. This could be used to motivate the following proof rule: if you had established each and every instance of `$\forall x Fx$' holds, then you can infer `$\forall x Fx$'.
 
-Unfortunately, that rule would be utterly unusable. To establish every single substitution instance of `$\forall x Fx$' would require proving `$Fa$', `$Fb$', $\ldots$, `$Fj_2$', $\ldots$, `$Fr_{791}$', $\ldots$ and so on. Since there are infinitely many names in FOL, this process would never end! So we need to be more cunning in coming up with our rule for introducing universal quantifiers. 
+Unfortunately, that rule would be utterly unusable. To establish every single instance of `$\forall x Fx$' would require proving `$Fa$', `$Fb$', $\ldots$, `$Fj_2$', $\ldots$, `$Fr_{791}$', $\ldots$ and so on. Since there are infinitely many names in FOL, this process would never end! So we need to be more cunning in coming up with our rule for introducing universal quantifiers.
 
 We can motivate our rule by considering the following:
 $$\forall x (Fx \eand Gx) \therefore \forall x Fx$$
 This argument is obviously valid: if everything is both $F$ \emph{and} $G$, then everything is $F$.  But how could we prove this?  Suppose we begin a proof like this:
 \begin{proof}
-	\hypo{x}{\forall x (Fx \eand Gx)} 
+	\hypo{x}{\forall x (Fx \eand Gx)} \by{Premise}{}
 	\have{a}{Fa \eand Ga} \Ae{x}
 	\have{c}{Fa} \ae{a}
 \end{proof}
-We have proven `$Fa$'.  But of course, nothing stops us from using $\forall$E in combination with $\eand$E in to likewise prove `$Fb$', `$Fc$', $\ldots$, `$Fj_2$', $\ldots$, `$Fr_{791}, \ldots$, and so on until we run out of space, time, or patience.   So it's clear that from our premise, we could in principle prove 
-prove $F\meta{c}$ for \emph{any} name \meta{c}.  Which is just to say that we could in principle prove \emph{every} instance of our goal `$\forall x Fx$'.  So we should be entitled to infer `$\forall x Fx$' by $\forall$I.  It's just that we can't \emph{actually} prove every instance, since our proof would never end.
+We have proven `$Fa$', an instance of the conclusion `$\forall xFx$' that we're aiming for.  But of course, nothing stops us from using $\forall$E in combination with $\eand$E in the very same way to prove `$Fb$', `$Fc$', $\ldots$, `$Fj_2$', $\ldots$, `$Fr_{791}, \ldots$, and so on until we run out of space, time, or patience.   So it's clear that from our premise, we could in principle prove $F\meta{c}$ for \emph{any} name \meta{c}, that is, we could in principle prove \emph{every} instance of our goal `$\forall x Fx$'.  So we should be entitled to infer `$\forall x Fx$' by $\forall$I.  It's just that we can't \emph{actually} prove every instance, since our proof would never end.
 
 This leads to the following idea: we should be allowed to infer the universal sentence `$\forall x Fx$' by the rule of $\forall$I if we are able prove an \emph{arbitrary} instance $F\meta{c}$, one that involves some arbitrary name \meta{c}.  For if the name \meta{c} is truly arbitrary, then it doesn't matter that we specifically proved this particular instance $F\meta{c}$  --- we could have picked any other name instead, and thereby proven any other instance of the universal sentence we're aiming for.
 
@@ -234,15 +256,15 @@ Our universal introduction rule $\forall$I implements this idea via a ``flagged 
 	\open
 	\hypo[m]{1}{\meta{c}} \fl{}
 	\have[\ ]{2}{\vdots}
-	\have[n]{3}{\meta{A}(\ldots \meta{c} \ldots)}
+	\have[n]{3}{\meta{\phi}(\ldots \meta{c} \ldots)}
 	\close
-	\have[\ ]{4}{\forall \meta{v}\meta{A}(\ldots \meta{v} \ldots)} \Ai{1-3}
+	\have[\ ]{4}{\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)} \Ai{1-3}
 \end{proof}
-	\vspace{1em} The Flag-ed name \meta{c} may not occur outside the subproof (including \\ in the inferred sentence $\forall \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ itself!)}
-The Flag step on line $m$ is just a way of officially signaling that the name \meta{c} is being introduced as an arbitrary name in the proof, one that we'll use to prove an arbitrary instance of the universal sentence $\forall \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ that we are aiming for.  Our proof that $\forall x (Fx \eand Gx) \proves \forall x Fx$ can now be presented as follows:
+	\vspace{1em} The Flag-ed name \meta{c} may not occur outside the subproof (including \\ in the inferred sentence $\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ itself!)}
+The Flag step on line $m$ is just a way of officially signaling that the name \meta{c} is being introduced as an arbitrary name in the proof, one that we'll use to prove an arbitrary instance of the universal sentence $\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ that we are aiming for.  Our proof that $\forall x (Fx \eand Gx) \proves \forall x Fx$ can now be presented as follows:
 
 \begin{proof}
-	\hypo{0}{\forall x(Fx \eand Gx)}
+	\hypo{0}{\forall x(Fx \eand Gx)} \by{Premise}{}
 	\open
 	\hypo{1}{a} \fl{}
 	\have{2}{Fa \eand Ga} \Ae{0}
@@ -253,38 +275,38 @@ The Flag step on line $m$ is just a way of officially signaling that the name \m
 Again, the idea is that although we only proved the one instance, `$Fa$', we are allowed to infer the universal sentence `$\forall xFx$' because that instance was arbitrary --- we could have just as easily proven any other instance we pleased.
 
 
-The Flag-ing constraint listed at the bottom of the rule --- that the Flag-ed name may not occur outside the subproof --- is crucial, because it is what insures that the name we've picked is truly arbitrary.\footnote{This constraint is actually a little more restrictive than necessary.  It would e.g. be alright if the Flag-ed constant occurred earlier in the proof, as long as it doesn't occur in an earlier \emph{undischarged assumption}.  But the constraint as we've here formulated it has the advantage of being concise and easy to remember.}  To see the constraint in action, consider this terrible argument:
+The Flag-ing constraint listed at the bottom of the rule --- that the Flag-ed name may not occur outside the subproof --- is crucial, because it is what insures that the name we've picked is truly arbitrary.\footnote{This constraint is actually a little more restrictive than strictly necessary.  It would be alright if the Flag-ed constant occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption}. But the constraint as we've here formulated it has the advantage of being concise and easier to remember.}  To see the constraint in action, consider this terrible argument:
 	\begin{quote}
-		Everyone loves Kylie Minogue.  Therefore everyone loves themselves.
+		Everyone loves Beyonce.  Therefore everyone loves themselves.
 	\end{quote}
 This argument is obviously not valid.  We might symbolize it as:
-$$\forall x Lxk \therefore \forall x Lxx$$
+$$\forall x Lxb \therefore \forall x Lxx$$
 Now, suppose we tried to offer the following ``proof'' to vindicate this argument:
 \begin{proof}
-	\hypo{0}{\forall x Lxk}
+	\hypo{0}{\forall x Lxb} \by{Premise}{}
 	\open
-	\hypo{1}{k} \fl{}
-	\have{2}{Lkk} \Ae{0}
+	\hypo{1}{b} \fl{}
+	\have{2}{Lbb} \Ae{0}
 	\close
-	\have{3}{\forall x Lxx} \by{illegitimate use of $\forall$I}{}
+	\have{3}{\forall x Lxx} \by{Illegitimate use of $\forall$I!}{}
 \end{proof}\noindent
-It would be bad if this proof were legitimate, since the conclusion doesn't follow.  What makes it illegitimate is that the Flag-ed name `$k$' occurs outside the subproof, namely in our premise on line 1. Since `$k$' occurs in the premise, it doesn't have the status of an arbitrary name, and the sentence `$Lkk$' we proved on line 3 doesn't qualify as an arbitrary instance of our goal `$\forall xLxx$': we could \emph{not} have proven \emph{other} instance of `$\forall xLxx$', like e.g. `$Laa$' or `$Ljj$', from our premise.
+It would be bad if this proof were legitimate, since the conclusion doesn't follow.  What makes it illegitimate is that the Flag-ed name `$b$' occurs outside the subproof, namely in our premise on line 1. Since `$b$' occurs in the premise, it doesn't have the status of an arbitrary name, and the sentence `$Lbb$' we proved on line 3 doesn't qualify as an arbitrary instance of our goal `$\forall xLxx$': we could \emph{not} have proven any \emph{other} instance of `$\forall xLxx$', like e.g. `$Laa$' or `$Ljj$', from our premise.
 
-Notice that the flagged constant also cannot occur in the universal sentence that's being inferred via $\forall$I either.  Consider the following, equally terrible argument:
+Notice that the flagged constant also cannot occur in the universal sentence that's being inferred via $\forall$I, since it occurs outside the subproof.  Consider the following, equally terrible argument:
 
 	\begin{quote}
-		Everyone loves themselves.  Therefore everyone loves Kylie Minogue.
+		Everyone loves themselves.  Therefore everyone loves Beyonce.
 \end{quote}
-which we could symbolize as: $\forall xLxx \therefore \forall xLxk$.  Now suppose we tried to prove it as follows:
+which we could symbolize as: $\forall xLxx \therefore \forall xLxb$.  Now suppose we tried to prove it as follows:
 \begin{proof}
-	\hypo{0}{\forall x Lxx}
+	\hypo{0}{\forall x Lxx} \by{Premise}{}
 	\open
-	\hypo{1}{k} \fl{}
-	\have{2}{Lkk} \Ae{0}
+	\hypo{1}{b} \fl{}
+	\have{2}{Lbb} \Ae{0}
 	\close
-	\have{3}{\forall x Lxk} \by{illegitimate use of $\forall$I}{}
+	\have{3}{\forall x Lxb} \by{illegitimate use of $\forall$I}{}
 \end{proof}\noindent
-Again, this prove had better not be legitimate, since the conclusion does not follow.  And it isn't legitimate: the Flag-ed name `$k$' occurs outside of the subproof, in the inferred universal sentence `$\forall x Lxk$'.  Again, although `$Lkk$' is an \emph{instance} of $\forall xLxk$, it doesn't qualify as an \emph{arbitrary} instance because we could not have proven any other instance of `$\forall xLxk$' --- like e.g. `$Lak$' or `$Ljk$' --- from our premise.  
+Again, this proof had better not be legitimate, since the conclusion does not follow.  And it isn't legitimate: the Flag-ed name `$b$' occurs outside of the subproof, in the inferred universal sentence `$\forall x Lxb$'.  Again, although `$Lbb$' is an \emph{instance} of $\forall xLxb$, it doesn't qualify as an \emph{arbitrary} instance because we could not have proven any other instance of `$\forall xLxb$' --- like e.g. `$Lab$' or `$Ljb$' --- from our premise.
 
 For an example of a correct use of $\forall$I, consider how we might prove that $\forall z(Gz \eif Gz)$ is a theorem.  To prove this, we have to open up a flagged subproof inside of which we prove some arbitrary instance of this sentence, such as `$Gd \eif Gd$', as follows:
 
@@ -292,7 +314,7 @@ For an example of a correct use of $\forall$I, consider how we might prove that 
 	\open
 	\hypo{0}{d} \fl{}
 	\open
-		\hypo{f1}{Gd}
+		\hypo{f1}{Gd} \by{Assumption (for $\eif$I)}{}
 		\have{f2}{Gd}\by{Reit}{f1}
 	\close
 	\have{ff}{Gd \eif Gd}\ci{f1-f2}
@@ -302,74 +324,107 @@ For an example of a correct use of $\forall$I, consider how we might prove that 
 The constraints on the legitimate application of $\forall$I are met, since the name `$d$' does not occur outside the subproof.  Here `$Gd \eif Gd$' qualifies as an arbitrary instance of `$\forall z(Gz \eif Gz)$': we could just as well have flagged some other name, say `$a$', and instead proved the instance `$Ga \eif Ga$' using that name. There was nothing special about `$d$'.
 
 
+\practiceproblems
+\problempart Give proofs for the following:
+
+
+\begin{earg}
+
+\item $\forall x\forall y(Gy\rightarrow Fx) \vdash \forall x(\forall yGy\rightarrow Fx)$
+
+\item $\forall x (Fx \eand Gx) \proves \forall x(Fx \eand Ga)$
+
+\item $\forall xFx\lor \forall xGx \vdash \forall x(Fx\lor Gx)$
+
+\item $\forall xLxx \proves \forall x \exists y Lxy$
+
+\item $\forall x \forall y Lxy \proves \forall xLxx$
+
+\item $\forall x\forall y(Rxy \eif \enot Ryx) \proves \forall x \enot Rxx$
+
+\item $\forall x \forall y(Rxy \eif Ryx), \forall x \forall y \forall z((Rxy \eand Ryz) \eif Rxz) \proves \forall x \forall y\forall z((Rxy \eand Rxz) \eif Ryz)$
+
+\item $\enot \exists x(Fx \eand Gx) \vdash \forall x(Fx \eif \enot Gx)$
+
+\item $\forall x(Fx\rightarrow \forall yGy) \vdash \forall x\forall y(Fx\rightarrow Gy)$
+
+\item  $\enot \forall xFx \vdash \exists x\enot Fx$
+
+
+\end{earg}
+
+
+
+
 
 \section{Existential elimination}
-Suppose we know that \emph{something} is F. The problem is that simply knowing this does not tell us which thing is F. So from `$\exists x Fx$' we cannot immediately infer `$Fa$', `$Fe_{23}$', or any other instance of the sentence. What can we do?  How can we deduce anything from existential premises?
+Suppose we know that \emph{something} is F. The problem is that simply knowing this does not tell us which particular thing is F. So from `$\exists x Fx$' we cannot immediately infer `$Fa$', or `$Fd$', or any other instance of the sentence. What can we do?  How can we deduce anything from existential premises?
 
 Well, suppose we know that something is F, and that everything which is F is G. In English, we might pursue the following line of reasoning:
 	\begin{quote}
-		Since something is F, there is some particular thing which is an F. We do not know anything about it, other than that it's an F, but for convenience, let's call it `Obbie'. So: Obbie is F. Since everything which is F is G, it follows that Obbie is G. But since Obbie is G, it follows that something is G. And nothing depended on which object, exactly, Obbie was. Therefore, something is G.
+		Since something is F, there is some particular thing which is F. We do not know anything about it, other than that it's F, but for convenience, let's call it `Obbie'. So: Obbie is F. Since everything which is F is G, it follows that Obbie is G. But since Obbie is G, it follows that \emph{something} is G. And nothing depended on which object, exactly, Obbie was. Therefore, something is G.
 	\end{quote}
 We can capture this reasoning pattern in a proof as follows:
 \begin{proof}
-	\hypo{es}{\exists x Fx}
-	\hypo{ast}{\forall x(Fx \eif Gx)}
+	\hypo{es}{\exists x Fx} \by{Premise}{}
+	\hypo{ast}{\forall x(Fx \eif Gx)} \by{Premise}{}
 	\open
-		\hypo{s}{Fo} \by{Flag o}{}
+		\hypo{s}{Fo} \by{Assumption (flag $o$)}{}
 		\have{st}{Fo \eif Go}\Ae{ast}
 		\have{t}{Go} \ce{st, s}
 		\have{et1}{\exists x Gx}\Ei{t}
 	\close
 	\have{et2}{\exists x Gx}\Ee{es,s-et1}
 \end{proof}\noindent
-Breaking this down: we started by writing down our premises. At line 3, we then made an additional assumption: `$Fo$'. The idea here is that premise 1 tell us that \emph{something} is an $F$.  So on line 3 we introduce some arbitrary name `$o$' for that thing, Flag it as arbitrary to the right, and write down the corresponding instance of the existential premise 1.    The name we picked is arbitrary, since we've assumed nothing about the object named by `$o$' other than that the predicate `$F$' is true of it.  On the basis of the assumption $Fo$, we can then establish `$\exists xGx$'.  Since nothing depended on which specific object `$o$' names, our reasoning patter is perfectly general. We can therefore discharge the assumption `$Fo$', and simply infer `$\exists x Gx$' on its own.
+Breaking this down: we started by writing down our premises. At line 3, we then made an additional assumption: `$Fo$'. The idea here is that premise 1 tell us that \emph{something} is an $F$.  So on line 3 we introduce some arbitrary name `$o$' for that thing, Flag it as arbitrary to the right, and write down the corresponding instance of the existential premise 1.    The name we picked is arbitrary, since we've assumed nothing about the object named by `$o$' other than that the predicate `$F$' is true of it.  On the basis of the assumption $Fo$, we can then establish `$\exists xGx$'.  Since nothing depended on which specific object `$o$' names, our reasoning pattern is perfectly general: we could equally well have proven `$\exists xGx$'  by using any other name on line 3. We can therefore discharge the assumption `$Fo$' on line 3, and simply infer `$\exists x Gx$' on its own.
 
-Putting this together, we obtain the existential elimination rule ($\exists$E):
+Putting this together, we obtain the existential elimination rule ($\exists$E):\footnote{As in the case of $\forall$I, our formulation of the flagging constraint at the bottom is more restrictive than strictly necessary.  It would be alright if the flag-ed constant $\meta{c}$ occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption}.}
 \factoidbox{
 \begin{proof}
-	\have[m]{a}{\exists \meta{x}\meta{A}(\ldots \meta{x} \ldots)}
-	\open	
-		\hypo[i]{b}{\meta{A}(\ldots \meta{c} \ldots)} \by{Flag \meta{c}}{}
-		\have[j]{c}{\meta{B}}
+	\have[m]{a}{\exists \meta{x}\meta{\phi}(\ldots \meta{x} \ldots)}
+	\open
+		\hypo[i]{b}{\meta{\phi}(\ldots \meta{c} \ldots)} \by{Assumption (flag \meta{c})}{}
+		\have[ \ ]{es}{\vdots}
+		\have[j]{c}{\meta{\psi}}
 	\close
-	\have[\ ]{d}{\meta{B}} \Ee{a,b-c}
+	\have[\ ]{d}{\meta{\psi}} \Ee{a,b-c}
 \end{proof}
-The Flag-ed name \meta{c} may not occur outside the subproof (including in the original existential $\exists \meta{x}\meta{A}(\ldots \meta{x} \ldots)$ and the inferred sentence \meta{B}!)}
-So in general, to prove some sentence \meta{B} from an existential sentence $\exists \meta{x}\meta{A}(\ldots \meta{x} \ldots)$, what we do is Flag some arbitrary name \meta{c}, assume an instance of the existential sentence using this name \meta{c}, and then prove our goal \meta{B} from that instance.  Finally, we discharge our assumption and infer \meta{B} on its own via $\exists$E.
+The Flag-ed name \meta{c} may not occur outside the subproof (including in the original existential $\exists \meta{x}\meta{\phi}(\ldots \meta{x} \ldots)$ and the inferred sentence \meta{\psi}!)}
+So in general, to prove some sentence \meta{\psi} from an existential sentence $\exists \meta{x}\meta{\phi}(\ldots \meta{x} \ldots)$, what we do is flag some arbitrary name \meta{c}, assume an instance of the existential sentence using this name \meta{c}, and then prove our goal \meta{\psi} from that instance.  Finally, we discharge our assumption and infer \meta{\psi} on its own via $\exists$E.
 
-As with universal introduction, the Flag-ing constraint on the name \meta{c} that's listed at the bottom is very important. To see why, consider the following terrible argument:
+As with universal introduction, the Flag-ing constraint on the name \meta{c} that's listed at the bottom is very important. To see why, consider the obviously bad argument:
 	\begin{quote}
 		Borges is a librarian. Someone is not a librarian. So Borges is both a librarian and not a librarian. 	\end{quote}
-We might symbolize this obviously invalid argument as follows:
+We might symbolize this as follows:
 $$Lb, \exists x \enot Lx \therefore Lb \eand \enot Lb$$
-This is clearly a terrible argument: it presumes that the ``someone'' who is not a librarian according to the second premise is the individual Borges mentioned in the first premise (which can't be, since Borges is a librarian and the ``someone'' from premise 2 isn't).  Now, suppose we tried to offer the following proof to vindicate this argument:
+This is clearly a terrible argument: it presumes that the ``someone'' who is not a librarian according to the second premise is the individual Borges mentioned in the first premise (which can't be, since Borges is a librarian and the ``someone'' from premise 2 isn't).  Now, suppose we tried to offer the following ``proof'' to vindicate this argument:
 \begin{proof}
-	\hypo{f}{Lb}
-	\hypo{nf}{\exists x \enot Lx}	
-	\open	
-		\hypo{na}{\enot Lb} \by{Flag $b$}{}
+	\hypo{f}{Lb} \by{Premise}{}
+	\hypo{nf}{\exists x \enot Lx} \by{Premise}{}
+	\open
+		\hypo{na}{\enot Lb} \by{Assumption (flag $b$)}{}
 		\have{con}{Lb \eand \enot Lb}\ae{f, na}
 	\close
-	\have{econ1}{Lb \eand \enot Lb}\by{illegitimate attempt to use $\exists$E }{nf, na-con}
+	\have{econ1}{Lb \eand \enot Lb}\by{Iillegitimate attempt to use $\exists$E }{nf, na-con}
 \end{proof}
-It would a bad thing if we could prove the conclusion like this, since it doesn't follow from the premises!  And the Flag-ing constraint is what prevents us from doing so:  the use of $\exists$E on the last line is not legitimate, because the Flag-ed name on line 3, namely `$b$', continues to appear on line 5, outside the subproof. 
+It would a bad thing if we could prove the conclusion like this, since it doesn't follow from the premises!  And the Flag-ing constraint is what prevents us from doing so:  the use of $\exists$E on the last line is not legitimate, because the Flag-ed name on line 3, namely `$b$', appears outside the subproof, on lines 1 and 5.
 
 
 We could avoid part of the problem by existentially generalizing line 4 in the subproof to obtain $\exists x(Lx \eand \lnot Lx)$, before discharging our assumption:
 \begin{proof}
-	\hypo{f}{Lb}
-	\hypo{nf}{\exists x \enot Lx}	
-	\open	
+	\hypo{f}{Lb} \by{Premise}{}
+	\hypo{nf}{\exists x \enot Lx} \by{Premise}{}
+	\open
 		\hypo{na}{\enot Lb} \by{Flag $b$}{}
 		\have{con}{Lb \eand \enot Lb}\ae{f, na}
-		\have{con1}{\exists x (Lx \eand \enot Lx)}\Ei{con}		
+		\have{con1}{\exists x (Lx \eand \enot Lx)}\Ei{con}
 	\close
-	\have{econ1}{\exists x (Lx \eand \enot Lx)}\by{illegitimate attempt to use $\exists$E }{nf, na-con1}
+	\have{econ1}{\exists x (Lx \eand \enot Lx)}\by{Illegitimate attempt to use $\exists$E }{nf, na-con1}
 \end{proof}
-But this is no better.  If it were legitimate, this proof would vindicate an argument of the following sort:
+Now, the name `$b$' no longer occurs below the subproof.  But this is no better.  If it were legitimate, this proof would vindicate an argument of the following sort:
 \begin{quote}
 Borges is a librarian. Someone is not a librarian.  Therefore someone both is and is not a librarian.	\end{quote}
-This is clearly a bad argument: we can't assume that the ``someone'' who is not a librarian according to the second premise is, specifically, the individual Borges mentioned in the first premise.  And again, the Flag-ing constraint rules out our supposed ``proof'': the use of $\exists$E on the the last line is not legitimate because the Flag-ed name `$b$' occurs outside the subproof, namely in the premise on line 1. 
+This is clearly a bad argument: we can't assume that the ``someone'' who is not a librarian according to the second premise is, specifically, the individual Borges mentioned in the first premise.  And again, the Flag-ing constraint rules out our supposed ``proof'': the use of $\exists$E on the the last line is not legitimate because although the Flag-ed name `$b$' doesn't occur on line $6$ any longer, it does still occurs outside the subproof, namely in the premise on line 1.
 
 The overarching problem with both proofs is that because the name `$b$' already occurs in one of our premises, it does not have the status of an arbitrary name in our proof, and therefore can't be used as an arbitrary name for whatever object premise 2 tell us is not a librarian.  The moral is: \emph{if you want to squeeze information out of an existential quantifier, choose a new name for your substitution instance.} That way, you will meet the constraints on the rule for $\exists$E.
 
@@ -378,13 +433,13 @@ $$\forall x\exists yLxy, \forall x \forall y(Lxy \eif Lyx) \therefore \forall x\
 If we read `$L$' as `loves', this argument says that if everyone loves someone, and loves is always reciprocated --- in the sense that if $x$ loves $y$, then $y$ loves $x$ back --- it follows that everyone is loved by someone.  We can show that this is valid with the following proof:
 
 \begin{proof}
-\hypo{1}{\forall x \exists y Lxy}
-\hypo{2}{\forall x \forall y(Lxy \eif Lyx)} 
+\hypo{1}{\forall x \exists y Lxy} \by{Premise}{}
+\hypo{2}{\forall x \forall y(Lxy \eif Lyx)}  \by{Premise}{}
 \open
 	\hypo{3}{a} \by{Flag}{}
 	\have{4}{\exists yLay} \Ae{1}
 	\open
-		\hypo{5}{Lab}  \by{Flag $b$}{}
+		\hypo{5}{Lab}  \by{Assumption (flag $b$)}{}
 		\have{6}{\forall y(Lay \eif Lya)} \Ae{2}
 		\have{7}{Lab \eif Lba} \Ae{6}
 		\have{8}{Lba} \ce{7,5}
@@ -394,37 +449,38 @@ If we read `$L$' as `loves', this argument says that if everyone loves someone, 
 \close
 \have{11}{\forall x\exists yLyx} \Ai{3-10}
 \end{proof}
-This is a relatively complex proof, so let's think through it systematically.  As usual, we work backward from the conclusion we're aiming for: we are trying to prove `$\forall x\exists yLyx$', i.e. that everyone is loved by someone.  Since this is a universal sentence, we use $\forall$I as our overall strategy: we pick an arbitrary name, say `$a$', and open up a subproof where we Flag `$a$', and make it our goal to prove the `$a$'-instance of our conclusion, $\exists yLya$, which says that someone loves $a$ .  If we are able to complete the subproof, we're allowed to infer since $a$ is loved by someone, and $a$ was arbitrary, everyone is loved by someone. 
+This is a relatively complex proof, so let's think through it systematically.  As usual, we work backward from the conclusion we're aiming for: we are trying to prove `$\forall x\exists yLyx$', i.e. that everyone is loved by someone.  Since this is a universal sentence, we use $\forall$I as our overall strategy: we pick an arbitrary name, say `$a$', and open up a subproof where we Flag `$a$', and make it our goal to prove the `$a$'-instance of our conclusion, $\exists yLya$, which says that someone loves $a$ .  If we are able to complete the subproof, we're allowed to infer since $a$ is loved by someone, and $a$ was arbitrary, everyone is loved by someone.
 
 So what do our premises imply about our object $a$?  Well, premise 1 says that everyone loves someone, so we can infer by $\forall$E that $a$ in particular loves someone, as we did on line 4.  Since $a$ loves \emph{someone}, we can give that someone a name, say `$b$', in order to reason about them.  So we can say $a$ loves $b$.  The way this works in our proof is that given the existential sentence `$\exists yLay$' on line 4, we assume $Lab$ as an arbitrary instance of it on line 5.
 
-Next, premise 2 tells us that love is reciprocal.  So given that $a$ loves $b$, we can conclude that $b$ loves $a$.  In our proof, we did this by obtaining line 7 via two steps of $\forall$E on premise 2, and then doing $\eif$E on that.  Alright: so given that $b$ loves $a$, we an conclude that $a$ is loved by \emph{someone}, as on line 9. And at this point, having gotten rid of the name `$b$', we can pop out of our subproof by $\exists$E.  And finally, since $a$ was arbitrary, we can pop out of our Flag-ed subproof and conclude by $\forall$I that \emph{everyone} is loved by someone, as on line 11. 
+Next, premise 2 tells us that love is reciprocal.  So given that $a$ loves $b$, we can conclude that $b$ loves $a$.  In our proof, we did this by obtaining line 7 via two steps of $\forall$E on premise 2, and then doing $\eif$E on that.  Alright: so given that $b$ loves $a$, we an conclude that $a$ is loved by \emph{someone}, as on line 9. And at this point, having gotten rid of the name `$b$', we can pop out of our subproof by $\exists$E.  And finally, since $a$ was arbitrary, we can pop out of our Flag-ed subproof and conclude by $\forall$I that \emph{everyone} is loved by someone, as on line 11.
 
 
 \practiceproblems
 \problempart
 Explain why these two `proofs' are incorrect. %Also, provide interpretations invalidate the fallacious argument forms the `proofs' enshrine:
 \begin{multicols}{2}
+\begin{fitch}
+\fj \forall xRxx & Premise\\
+\fa \fh a & Flag\\
+\fa \fa Raa & $\forall$E  1\\
+\fa \forall yRay & $\forall$I 2-3 \\
+\end{fitch}
 	\begin{proof}
-		\hypo{Rxx}{\forall x Rxx}
-		\have{Raa}{Raa}\Ae{Rxx}
-		\have{Ray}{\forall y Ray}\Ai{Raa}
-		\have{Rxy}{\forall x \forall y Rxy}\Ai{Ray}
-	\end{proof}
-	\begin{proof}
-		\hypo{AE}{\forall x \exists y Rxy}
+		\hypo{AE}{\forall x \exists y Rxy} \by{Premise}{}
 		\have{E}{\exists y Ray}\Ae{AE}
 		\open
-			\hypo{ass}{Raa}
+			\hypo{ass}{Raa} \by{Assumption}{}
 			\have{Ex}{\exists x Rxx}\Ei{ass}
 		\close
 		\have{con}{\exists x Rxx}\Ee{E, ass-Ex}
 	\end{proof}
 \end{multicols}
 
-\problempart 
+\problempart
 \label{pr.justifyFOLproof}
-The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into full proofs. 
+The following three proofs are missing their citations (rule and line numbers). Add them, to turn them into full proofs.
+\begin{multicols}{2}
 \begin{proof}
 \hypo{p1}{\forall x\exists y(Rxy \eor Ryx)}
 \hypo{p2}{\forall x\enot Rmx}
@@ -437,20 +493,20 @@ The following three proofs are missing their citations (rule and line numbers). 
 	\close
 \have{n}{\exists x Rxm} {}
 \end{proof}
-\begin{multicols}{2}
-\begin{proof}
-\hypo{1}{\forall x(\exists yLxy \eif \forall zLzx)}
-\hypo{2}{Lab}
-\have{3}{\exists y Lay \eif \forall zLza}{}
-\have{4}{\exists y Lay} {}
-\have{5}{\forall z Lza} {}
-\have{6}{Lca}{}
-\have{7}{\exists y Lcy \eif \forall zLzc}{}
-\have{8}{\exists y Lcy}{}
-\have{9}{\forall z Lzc}{}
-\have{10}{Lcc}{}
-\have{11}{\forall x Lxx}{}
-\end{proof}
+\columnbreak
+%\begin{proof}
+%\hypo{1}{\forall x(\exists yLxy \eif \forall zLzx)}
+%\hypo{2}{Lab}
+%\have{3}{\exists y Lay \eif \forall zLza}{}
+%\have{4}{\exists y Lay} {}
+%\have{5}{\forall z Lza} {}
+%\have{6}{Lca}{}
+%\have{7}{\exists y Lcy \eif \forall zLzc}{}
+%\have{8}{\exists y Lcy}{}
+%\have{9}{\forall z Lzc}{}
+%\have{10}{Lcc}{}
+%\have{11}{\forall x Lxx}{}
+%\end{proof}
 \begin{proof}
 \hypo{a}{\forall x(Jx \eif Kx)}
 \hypo{b}{\exists x\forall y Lxy}
@@ -470,8 +526,38 @@ The following three proofs are missing their citations (rule and line numbers). 
 
 
 \problempart
+\label{pr.someFOLproofs}
+Provide a proof of each claim.
+\begin{earg}
+\item $\forall x(Ax\eif Bx), \exists x Ax \proves \exists x Bx$
+\item $\exists x(Fx \eand \exists y\enot Gy) \proves \exists x(\enot Gx \eand \exists yFy)$
+\item  $\exists x(Fx\eif Ga) \proves \forall xFx\eif Ga$
+\item  $\exists x \enot Fx \proves \enot \forall xFx$
+\item  $\forall x \forall y(Gy \eif Fx) \proves \forall x(\exists yGy \eif Fx)$
+\item $\exists x(Fx \eif \forall yRxy) \proves \exists x \forall y(Fx \eif Rxy)$
+\item $\forall x(Fx\eif \forall y\enot Fy) \proves \enot \exists xFx$
+\item $\exists x\exists yRxy \proves \exists y \exists xRxy$
+\item  $\exists y(\forall x(Gx\eif Gy)\eand \forall z(Gy\eif Gz)), \exists xGx \proves \forall xGx$
+\item $\forall x\forall yLxy \proves \forall x(\exists yLxy \eand \exists yLyx)$
+\item $\exists x\forall y (Fx \eiff Fy) \proves \enot \forall xFx \eif \forall x\enot Fx$
+\item $\forall x \exists y(Fx \eif Gy), \forall x\exists y(\enot Fx \eif Gy) \proves \exists zGz$
+\item $ \exists y\forall x(Fx \eand Gy) \proves \forall x \exists y(Fx \eand Gy)$
+\item $\forall x \exists y(Fx \eand Gy) \proves \exists y\forall x(Fx \eand Gy)$
+%\item $\proves \forall x Fx \eor \enot \forall x Fx$
+\item $\proves\forall z (Pz \eor \enot Pz)$
+\item $\forall x(Mx \eiff Nx), \exists y(My\eand\exists x Rxy)\proves \exists x Nx$
+%\item $\forall x \forall y Gxy\proves\exists x Gxx$
+\item $\proves\forall x \forall yRxy\eif \forall xRxx$
+\item $\proves\forall y \exists x (Qy \eif Qx)$
+\item $Na \eif \forall x(Mx \eiff Ma), Ma, \enot Mb\proves \enot Na$
+\item $\forall x \forall y (Gxy \eif Gyx) \proves \forall x\forall y (Gxy \eiff Gyx)$
+\item $\forall x(\enot Mx \eor Ljx), \forall x(Bx\eif Ljx), \forall x(Mx\eor Bx)\proves \forall xLjx$
+\end{earg}
+
+
+\problempart
 \label{pr.BarbaraEtc.proof1}
-In \S\ref{pr.BarbaraEtc} problem part A, we considered fifteen syllogistic figures of Aristotelian logic. Provide proofs for each of the argument forms. NB: You will find it \emph{much} easier if you symbolize (for example) `No F is G' as `$\forall x (Fx \eif \enot Gx)$'.
+In \S\ref{pr.BarbaraEtc} problem part A, we considered fifteen syllogistic figures of Aristotelian logic. Provide proofs for each of the argument forms. NB: You will find it \emph{much} easier if you symbolize (for example) `No F is G' as `$\forall x (Fx \eif \enot Gx)$' rather than `$\enot \exists x(Fx \eand Gx)$'.
 
 \
 
@@ -490,21 +576,27 @@ Aristotle and his successors identified other syllogistic forms which depended u
 	\item \textbf{Bamalip.} Something is F. All F are G. All G are H. So: Some H are F.
 \end{ebullet}
 
+
+
 \problempart
-\label{pr.someFOLproofs}
-Provide a proof of each claim.
+The following pairs of sentences are all equivalent, showing that we can move quantifiers ``across'' logical operators under certain circumstances.  Give proofs to that they are equivalent:
 \begin{earg}
-\item $\proves \forall x Fx \eor \enot \forall x Fx$
-\item $\proves\forall z (Pz \eor \enot Pz)$
-\item $\forall x(Ax\eif Bx), \exists x Ax \proves \exists x Bx$
-\item $\forall x(Mx \eiff Nx), Ma\eand\exists x Rxa\proves \exists x Nx$
-\item $\forall x \forall y Gxy\proves\exists x Gxx$
-\item $\proves\forall x Rxx\eif \exists x \exists y Rxy$
-\item $\proves\forall y \exists x (Qy \eif Qx)$
-\item $Na \eif \forall x(Mx \eiff Ma), Ma, \enot Mb\proves \enot Na$
-\item $\forall x \forall y (Gxy \eif Gyx) \proves \forall x\forall y (Gxy \eiff Gyx)$
-\item $\forall x(\enot Mx \eor Ljx), \forall x(Bx\eif Ljx), \forall x(Mx\eor Bx)\proves \forall xLjx$
+\item $\forall x (Fx \eand Ga) \pequiv  \forall x Fx \eand Ga$
+\item $\exists x (Fx \eor Ga) \pequiv \exists x Fx \eor Ga$
+\item $\forall x(Ga \eif Fx) \pequiv Ga \eif \forall x Fx$
+\item $\forall x(Fx \eif Ga) \pequiv \exists x Fx \eif Ga$
+\item $\exists x(Ga \eif Fx) \pequiv Ga \eif \exists x Fx$
+\item $\exists x(Fx \eif Ga) \pequiv \forall x Fx \eif Ga$
 \end{earg}
+When all the quantifiers occur at the beginning of a sentence, that sentence is said to be in \emph{prenex normal form}. These equivalences are sometimes called \emph{prenexing rules}, since they give us a means for putting any sentence into prenex normal form. For example, `$\exists x Fx \eand \forall yGy$' can be put into prenex normal form as `$\exists x\forall y(Fx \eand Gy)$, or also as `$\forall y \exists x(Fx \eand Gy)$'.
+
+\problempart Give proofs for the following quantifier equivalence laws involving negation:
+
+\begin{earg}
+\item $\forall x \enot Fx \pequiv \enot \exists xFx$
+\item $\exists x \enot Fx \pequiv \enot \forall x Fx$
+\end{earg}
+
 
 \problempart
 \label{pr.likes}
@@ -513,33 +605,8 @@ Write a symbolization key for the following argument, symbolize it, and prove it
 There is someone who likes everyone who likes everyone that she likes. Therefore, there is someone who likes herself.
 \end{quote}
 
-\problempart
-\label{pr.FOLequivornot}
-For each of the following pairs of sentences: If they are provably equivalent, give proofs to show this. If they are not, construct an interpretation to show that they are not logically equivalent.
-\begin{earg}
-\item $\forall x Px \eif Qc, \forall x (Px \eif Qc)$
-\item $\forall x\forall y \forall z Bxyz, \forall x Bxxx$
-\item $\forall x\forall y Dxy, \forall y\forall x Dxy$
-\item $\exists x\forall y Dxy, \forall y\exists x Dxy$
-\item $\forall x (Rca \eiff Rxa), Rca \eiff \forall x Rxa$
-\end{earg}
 
-\problempart
-\label{pr.FOLvalidornot}
-For each of the following arguments: If it is valid in FOL, give a proof. If it is invalid, construct an interpretation to show that it is invalid.
-\begin{earg}
-\item $\exists y\forall x Rxy \therefore \forall x\exists y Rxy$
-\item $\exists x(Px \eand \enot Qx) \therefore \forall x(Px \eif \enot Qx)$
-\item $\forall x(Sx \eif Ta), Sd \therefore Ta$
-\item $\forall x(Ax\eif Bx), \forall x(Bx \eif Cx) \therefore \forall x(Ax \eif Cx)$
-\item $\exists x(Dx \eor Ex), \forall x(Dx \eif Fx) \therefore \exists x(Dx \eand Fx)$
-\item $\forall x\forall y(Rxy \eor Ryx) \therefore Rjj$
-\item $\exists x\exists y(Rxy \eor Ryx) \therefore Rjj$
-\item $\forall x Px \eif \forall x Qx, \exists x \enot Px \therefore \exists x \enot Qx$
-\end{earg}
-
-
-\section{Rules for identity}
+\section{Rules for identity}\label{s:identityrules}
 
 In \S\ref{s:identity}, I mentioned that in saying of some objects $a$ and $b$ that they are \emph{identical}, we don't merely mean that they are very similar to each other, or indistinguishable in the way that e.g. two cans of soda or two pennies might be. Rather, they have to be one and the same object. It follows that no matter how much you tell me about what  $a$ and $b$ are like, qualitatively, this won't suffice to conclude that $a=b$.  Indeed, no sentences which do not \emph{already} involve an identity claim could justify an inference to `$a=b$'
 
@@ -549,42 +616,42 @@ However, we can be sure that every object is identical to \emph{itself}. No prem
 \begin{proof}
 	\have[\ \,\,\,]{x}{\meta{c}=\meta{c}} \by{=I}{}
 \end{proof}}
-Notice that this rule does not require referring to any prior lines of the proof. For any name \meta{c}, you can just write $\meta{c}=\meta{c}$ at any point, with only the {=}I rule as justification. 
+Notice that this rule does not require referring to any prior lines of the proof. For any name \meta{c}, you can just write $\meta{c}=\meta{c}$ at any point, with only the {=}I rule as justification.
 
 
 Our elimination rule is more fun. If you have established `$a=b$', then anything that is true of the object named by `$a$' must also be true of the object named by `$b$', since they are one and the same. This means that given any sentence with `$a$' in it, you can replace some or all of the occurrences of `$a$' with `$b$'. For example, from `$Raa$' and `$a = b$', you are justified in inferring `$Rab$', `$Rba$' or `$Rbb$'. More generally:
 \factoidbox{\begin{proof}
 	\have[m]{e}{\meta{a}=\meta{b}}
-	\have[n]{a}{\meta{A}(\ldots \meta{a} \ldots \meta{a}\ldots)}
-	\have[\ ]{ea1}{\meta{A}(\ldots \meta{b} \ldots \meta{a}\ldots)} \by{=E}{e,a}
+	\have[n]{a}{\meta{\phi}(\ldots \meta{a} \ldots \meta{a}\ldots)}
+	\have[\ ]{ea1}{\meta{\phi}(\ldots \meta{b} \ldots \meta{a}\ldots)} \by{=E}{e,a}
 \end{proof}}
-The notation here should be understood as follows: $\meta{A}(\ldots \meta{a} \ldots \meta{a}\ldots)$ is a sentence containing the name $\meta{a}$, and $\meta{A}(\ldots \meta{b} \ldots \meta{a}\ldots)$ is a sentence obtained by replacing one or more occurrences of the name $\meta{a}$ with the name $\meta{b}$. Lines $m$ and $n$ can occur in either order, and do not need to be adjacent, but we always cite the statement of identity first. 
+The notation here should be understood as follows: $\meta{\phi}(\ldots \meta{a} \ldots \meta{a}\ldots)$ is a sentence containing the name $\meta{a}$, and $\meta{\phi}(\ldots \meta{b} \ldots \meta{a}\ldots)$ is a sentence obtained by replacing one or more occurrences of the name $\meta{a}$ with the name $\meta{b}$. Lines $m$ and $n$ can occur in either order, and do not need to be adjacent, but we always cite the statement of identity first.
 
 Symmetrically, we allow:
 \factoidbox{\begin{proof}
 	\have[m]{e}{\meta{a}=\meta{b}}
-	\have[n]{a}{\meta{A}(\ldots \meta{b} \ldots \meta{b}\ldots)}
-	\have[\ ]{ea2}{\meta{A}(\ldots \meta{a} \ldots \meta{b}\ldots)} \by{=E}{e,a}
+	\have[n]{a}{\meta{\phi}(\ldots \meta{b} \ldots \meta{b}\ldots)}
+	\have[\ ]{ea2}{\meta{\phi}(\ldots \meta{a} \ldots \meta{b}\ldots)} \by{=E}{e,a}
 \end{proof}}
 That is, if we have established $\meta{a} = \meta{b}$, and we have a sentence that contains the name \meta{b}, then we are allowed to infer any sentence that results from the first by replacing one or more occurrence of \meta{b} with \meta{a}.
 
 This rule is closely related to \define{Leibniz's Law}, which we briefly discussed in \S\ref{s:LogicalTruthsID}. Leibniz's Law says that if $x$ and $y$ are identical, then $x$ has any given property  iff $y$ does too. The following, for example, is an instance of Leibniz's Law:
-$$\forall x \forall y\bigl[x = y \eif (Dx \eiff Dy)\bigr]$$
+$$\forall x \forall y (x = y \eif (Dx \eiff Dy))$$
 For example, if `$D$' represents the property of being a dog, Leibniz's Law tell us that if $x=y$, then $x$ is a dog iff $y$ is also a dog.  We can prove this using $=$E as follows:
 
 \begin{proof}
-\open 
+\open
 	\hypo{1}{a} \fl{}
-	\open 
+	\open
 		\hypo{2}{b} \fl{}
 		\open
-			\hypo{3}{a=b}
-			\open 
-				\hypo{4}{Da}
+			\hypo{3}{a=b} \by{Assumption (for $\eif$I)}{}
+			\open
+				\hypo{4}{Da} \by{Assumption (for $\eiff$I)}{}
 				\have{5}{Db}\by{=E}{3,4}
 			\close
 			\open
-				\hypo{6}{Db}
+				\hypo{6}{Db} \by{Assumption (for $\eiff$I)}{}
 				\have{7}{Da} \by{=E}{3,6}
 			\close
 		\have{8}{Da \eiff Db} \bi{4-5,6-7}
@@ -594,7 +661,7 @@ For example, if `$D$' represents the property of being a dog, Leibniz's Law tell
 	\have{10}{\forall y(a = y \eif (Da \eiff Dy))} \Ai{2-9}
 	\close
 	\have{11}{\forall x\forall y(x = y \eif (Dx \eiff Dy))} \Ai{1-10}
-				
+
 \end{proof}
 
 The =I rule is also related to a logical law discussed in \S\ref{s:LogicalTruthsID}, the \define{Law of Identity}, which says that everything is identical to itself, i.e. that $\forall x \ x = x$.  We can prove this as a theorem using our =I rule:
@@ -615,7 +682,7 @@ This shows that identity is \emph{reflexive}, i.e. it is a relation that everyth
 	\open
 		\hypo{2}{b} \fl{}
 		\open
-			\hypo{3}{a=b} 
+			\hypo{3}{a=b}  \by{Assumption (for $\eif$I)}{}
 			\have{4}{a=a} \by{=I}{}
 			\have{5}{b=a} \by{=E}{3,4}
 		\close
@@ -640,7 +707,7 @@ This shows that identity is \emph{reflexive}, i.e. it is a relation that everyth
 %	\have{xyyx}{\forall x \forall y (x = y \eif y = x)}\Ai{ayya}
 %\end{proof}
 
-\noindent Here we obtain line 5 by replacing one instance of `$a$' in line 4 with an instance of `$b$', which is justified given `$a= b$'. 
+\noindent Here we obtain line 5 by replacing one instance of `$a$' in line 4 with an instance of `$b$', which is justified given `$a= b$'.
 
 %Second, we shall prove that identity is \emph{transitive}:
 %\begin{proof}
@@ -655,11 +722,11 @@ This shows that identity is \emph{reflexive}, i.e. it is a relation that everyth
 %	\have{cony}{\forall y\forall z((a = y \eand y = z) \eif a = z)}\Ai{conz}
 %	\have{conx}{\forall x \forall y \forall z((x = y \eand y = z) \eif x = z)}\Ai{cony}
 %\end{proof}
-%We obtain line 4 by replacing `$b$' in line 3 with `$a$'; this is justified given `$a= b$'. 
+%We obtain line 4 by replacing `$b$' in line 3 with `$a$'; this is justified given `$a= b$'.
 
 \practiceproblems
 
-\problempart Here are various important properties that a binary relation $R$ could have:
+\problempart Here are some important logical properties that a two-place relation $R$ could have:
 
 \begin{itemize}
 \item[] R is \textbf{reflexive} iff $\forall x Rxx$
@@ -667,7 +734,7 @@ This shows that identity is \emph{reflexive}, i.e. it is a relation that everyth
 \item[] R is \textbf{symmetric} iff $\forall x \forall y(Rxy \rightarrow Ryx)$
 \item[] R is \textbf{transitive} iff $\forall x \forall y \forall z((Rxy \land Ryz) \rightarrow Rxz)$
 \item[] R is \textbf{euclidean} iff $\forall x \forall y \forall z((Rxy \land Rxz) \rightarrow Ryz)$
-\end{itemize} 
+\end{itemize}
 
 \noindent Above we showed that identity is both reflexive and symmetric.  Show that identity also has the other three properties: it is transitive, euclidean, and serial.  That is, prove each of the following theorems:
 
@@ -734,106 +801,96 @@ And offer a proof of it.
 
 
 
-\section{Derived Rules for FOL}\label{s:FOLDerivedRules}
-
-
- 
-In \S\ref{s:Quantifiers} we noted the \define{Quantifier Equivalence Laws}, which govern the interaction of quantifiers and negation.  For example, `$\forall x\enot Ax$' implies `$\enot \exists xAx$', as the following proof demonstrates:
-
-\begin{proof}
-	\hypo{An}{\forall x \enot A x}
-	\open
-		\hypo{E}{\exists x Ax}
-		\open
-			\hypo{c}{Ac} \by{Flag $c$}{}
-			\have{nc}{\enot Ac}\Ae{An}
-			\have{red}{\ered}\ri{c,nc}
-		\close
-		\have{red2}{\ered}\Ee{E,c-red}
-	\close
-	\have{dada}{\enot \exists x Ax}\ni{E-red2}
-\end{proof}
-
-The implication also holds in the other direction, though we'll leave that proof as an exercise.  Given this, we can introduce some additional derived rules into our proof system that will let us move negations across quantifiers in this manner.  We'll label these rules CQ, for ``Conversion of Quantifiers'':
-
-	\factoidbox{
-	\begin{proof}
-		\have[m]{a}{\forall \meta{v} \enot\meta{A}}
-		\have[\ ]{con}{\enot \exists \meta{v} \meta{A}}\cq{a}
-	\end{proof}}
-
-\factoidbox{
-	\begin{proof}
-		\have[m]{a}{ \enot \exists \meta{v} \meta{A}}
-		\have[\ ]{con}{\forall  \meta{v} \enot \meta{A}}\cq{a}
-	\end{proof}}
-
-\factoidbox{
-	\begin{proof}
-		\have[m]{a}{\exists \meta{v}\enot \meta{A}}
-		\have[\ ]{con}{\enot \forall \meta{v} \meta{A}}\cq{a}
-	\end{proof}}
-
-\factoidbox{
-	\begin{proof}
-		\have[m]{a}{\enot \forall \meta{v} \meta{A}}
-		\have[\ ]{con}{\exists \meta{v} \enot \meta{A}}\cq{a}
-	\end{proof}}
-
-Using these rules, we can give a pair of quick proofs showing that `$\exists x Fx$' is provably equivalent to `$\enot \forall x \enot Fx$':
-
-\begin{proof}
-\hypo{1}{\exists xFx}
-	\open
-	\hypo{2}{\forall x\enot Fx}
-	\have{3}{\enot \exists xFx} \by{CQ}{2}
-	\have{4}{\bot} \ne{1,3}
-	\close
-\have{5}{\enot \forall x\enot Fx} \ni{2-4}
-\end{proof}\noindent
-and:
-\begin{proof}
-\hypo{1}{\enot \forall x \enot Fx}
-\have{2}{\forall x \enot \enot Fx} \by{CQ}{1}
-\have{3}{\enot \enot Fa} \Ae{2}
-\have{4}{Fa} \by{DN}{3}
-\have{5}{\exists x Fx} \Ei{4}
-\end{proof}
-
-\noindent The fact, in general, $\exists \meta{v} \meta{A}$ is equivalent to $\enot \forall \meta{v} \enot \meta{A}$ means that we don't really need to have `$\exists$' as a primitive symbol in FOL.  We could instead treat $\exists \meta{v}\meta{A}$ as just a shorthand notation for $\enot \forall \meta{v} \enot\meta{A}$, much as we've been treating $\meta{t}_1 \neq \meta{t}_2$ as a shorthand for $\enot \meta{t}_1 = \meta{t}_2$.
-
-\practiceproblems
-
-\problempart
-Show that the following are jointly inconsistent, i.e. that they together imply a contradiction:
-\begin{earg}
-\item $Sa\eif Tm, Tm \eif Sa, Tm \eand \enot Sa$
-\item $\enot\exists x Rxa, \forall x \forall y Ryx$
-\item $\enot\exists x \exists y Lxy, Laa$
-\item $\forall x(Px \eif Qx), \forall z(Pz \eif Rz), \forall y Py, \enot Qa \eand \enot Rb$
-\end{earg}
-
-\problempart
-Show that each pair of sentences is provably equivalent:
-\begin{earg}
-\item $\forall x Fx, \enot \exists x \enot Fx$
-\item $\forall x (Ax\eif \enot Bx), \enot\exists x(Ax \eand Bx)$
-\item $\enot \forall x(Ax \eif Bx), \exists x(Ax \eand \enot Bx)$
-\item $\forall x (\enot Ax\eif Bd), \forall x Ax \eor Bd$
-\end{earg}
-
-\problempart
-The following pairs of sentences are all equivalent, showing that we can move quantifiers ``across'' logical operators.  Give proofs to that they are equivalent:
-\begin{earg}
-\item $\forall x (Fx \eand Ga), \forall x Fx \eand Ga$
-\item $\exists x (Fx \eor Ga), \exists x Fx \eor Ga$
-\item $\forall x(Ga \eif Fx), Ga \eif \forall x Fx$
-\item $\forall x(Fx \eif Ga), \exists x Fx \eif Ga$
-\item $\exists x(Ga \eif Fx), Ga \eif \exists x Fx$
-\item $\exists x(Fx \eif Ga), \forall x Fx \eif Ga$
-\end{earg}
-When all the quantifiers occur at the beginning of a sentence, that sentence is said to be in \emph{prenex normal form}. These equivalences are sometimes called \emph{prenexing rules}, since they give us a means for putting any sentence into prenex normal form. For example, `$\exists x Fx \eand \forall yGy$' can be put into prenex normal form as `$\exists x\forall y(Fx \eand Gy)$, or also as `$\forall y \exists x(Fx \eand Gy)$'.
-
+%\section{Derived Rules for FOL}\label{s:FOLDerivedRules}
+%
+%
+%
+%In \S\ref{s:Quantifiers} we noted the \define{Quantifier Equivalence Laws}, which govern the interaction of quantifiers and negation.  For example, `$\forall x\enot Ax$' implies `$\enot \exists xAx$', as the following proof demonstrates:
+%
+%\begin{proof}
+%	\hypo{An}{\forall x \enot A x}
+%	\open
+%		\hypo{E}{\exists x Ax}
+%		\open
+%			\hypo{c}{Ac} \by{Flag $c$}{}
+%			\have{nc}{\enot Ac}\Ae{An}
+%			\have{red}{\ered}\ri{c,nc}
+%		\close
+%		\have{red2}{\ered}\Ee{E,c-red}
+%	\close
+%	\have{dada}{\enot \exists x Ax}\ni{E-red2}
+%\end{proof}
+%
+%The implication also holds in the other direction, though we'll leave that proof as an exercise.  Given this, we can introduce some additional derived rules into our proof system that will let us move negations across quantifiers in this manner.  We'll label these rules CQ, for ``Conversion of Quantifiers'':
+%
+%	\factoidbox{
+%	\begin{proof}
+%		\have[m]{a}{\forall \meta{v} \enot\meta{\phi}}
+%		\have[\ ]{con}{\enot \exists \meta{v} \meta{\phi}}\cq{a}
+%	\end{proof}}
+%
+%\factoidbox{
+%	\begin{proof}
+%		\have[m]{a}{ \enot \exists \meta{v} \meta{\phi}}
+%		\have[\ ]{con}{\forall  \meta{v} \enot \meta{\phi}}\cq{a}
+%	\end{proof}}
+%
+%\factoidbox{
+%	\begin{proof}
+%		\have[m]{a}{\exists \meta{v}\enot \meta{\phi}}
+%		\have[\ ]{con}{\enot \forall \meta{v} \meta{\phi}}\cq{a}
+%	\end{proof}}
+%
+%\factoidbox{
+%	\begin{proof}
+%		\have[m]{a}{\enot \forall \meta{v} \meta{\phi}}
+%		\have[\ ]{con}{\exists \meta{v} \enot \meta{\phi}}\cq{a}
+%	\end{proof}}
+%
+%Using these rules, we can give a pair of quick proofs showing that `$\exists x Fx$' is provably equivalent to `$\enot \forall x \enot Fx$':
+%
+%\begin{proof}
+%\hypo{1}{\exists xFx}
+%	\open
+%	\hypo{2}{\forall x\enot Fx}
+%	\have{3}{\enot \exists xFx} \by{CQ}{2}
+%	\have{4}{\bot} \ne{1,3}
+%	\close
+%\have{5}{\enot \forall x\enot Fx} \ni{2-4}
+%\end{proof}\noindent
+%and:
+%\begin{proof}
+%\hypo{1}{\enot \forall x \enot Fx}
+%\have{2}{\forall x \enot \enot Fx} \by{CQ}{1}
+%\have{3}{\enot \enot Fa} \Ae{2}
+%\have{4}{Fa} \by{DN}{3}
+%\have{5}{\exists x Fx} \Ei{4}
+%\end{proof}
+%
+%\noindent The fact, in general, $\exists \meta{v} \meta{\phi}$ is equivalent to $\enot \forall \meta{v} \enot \meta{\phi}$ means that we don't really need to have `$\exists$' as a primitive symbol in FOL.  We could instead treat $\exists \meta{v}\meta{\phi}$ as just a shorthand notation for $\enot \forall \meta{v} \enot\meta{\phi}$, much as we've been treating $\meta{t}_1 \neq \meta{t}_2$ as a shorthand for $\enot \meta{t}_1 = \meta{t}_2$.
+%
+%\practiceproblems
+%
+%\problempart
+%Show that the following are jointly inconsistent, i.e. that they together imply a contradiction:
+%\begin{earg}
+%\item $Sa\eif Tm, Tm \eif Sa, Tm \eand \enot Sa$
+%\item $\enot\exists x Rxa, \forall x \forall y Ryx$
+%\item $\enot\exists x \exists y Lxy, Laa$
+%\item $\forall x(Px \eif Qx), \forall z(Pz \eif Rz), \forall y Py, \enot Qa \eand \enot Rb$
+%\end{earg}
+%
+%\problempart
+%Show that each pair of sentences is provably equivalent:
+%\begin{earg}
+%\item $\forall x Fx, \enot \exists x \enot Fx$
+%\item $\forall x (Ax\eif \enot Bx), \enot\exists x(Ax \eand Bx)$
+%\item $\enot \forall x(Ax \eif Bx), \exists x(Ax \eand \enot Bx)$
+%\item $\forall x (\enot Ax\eif Bd), \forall x Ax \eor Bd$
+%\end{earg}
+%
+%
+%
 
 %
 %
@@ -855,7 +912,7 @@ When all the quantifiers occur at the beginning of a sentence, that sentence is 
 %%You will note that on line 3 I have written `for $\exists$E'. This is not technically a part of the proof. It is just a reminder---to me and to you---of why I have bothered to introduce `$\enot Ac$' out of the blue. You might find it helpful to add similar annotations to assumptions when performing proofs. But do not add annotations on lines other than assumptions: the proof requires its own citation, and your annotations will clutter it.
 %Here is a justification of the second CQ rule:
 %\begin{proof}
-%	\hypo[m]{nEna}{\exists x  \enot Ax} 
+%	\hypo[m]{nEna}{\exists x  \enot Ax}
 %	\open
 %		\hypo[k]{Aa}{\forall x Ax}
 %		\open
@@ -867,7 +924,7 @@ When all the quantifiers occur at the beginning of a sentence, that sentence is 
 %	\close
 %	\have{dada}{\enot \forall x Ax}\ni{Aa-con1}
 %\end{proof}
-%This explains why the CQ rules can be treated as derived. Similar justifications can be offered for the other two CQ rules. 
+%This explains why the CQ rules can be treated as derived. Similar justifications can be offered for the other two CQ rules.
 %
 %\practiceproblems
 %
@@ -878,16 +935,16 @@ When all the quantifiers occur at the beginning of a sentence, that sentence is 
 %
 %\chapter{Proof-theoretic concepts and semantic concepts}
 %We have used two different turnstiles in this book.  This:
-%$$\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \proves \meta{C}$$
-%means that there is some proof which ends with $\meta{C}$ and whose only undischarged assumptions are among $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$. This is a \emph{proof-theoretic notion}. By contrast, this:
-%$$\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \entails \meta{C}$$
-%means that  no valuation (or interpretation) makes all of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ true and $\meta{C}$ false. This concerns assignments of truth and falsity to sentences. It is a \emph{semantic notion}.
+%$$\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n \proves \meta{C}$$
+%means that there is some proof which ends with $\meta{C}$ and whose only undischarged assumptions are among $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$. This is a \emph{proof-theoretic notion}. By contrast, this:
+%$$\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n \entails \meta{C}$$
+%means that  no valuation (or interpretation) makes all of $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$ true and $\meta{C}$ false. This concerns assignments of truth and falsity to sentences. It is a \emph{semantic notion}.
 %
 %I cannot emphasise enough that these are different notions. But I can emphasise it a bit more: \emph{They are different notions.}
 %
 %At the risk of repetition:  \emph{They are different notions.}
 %
-%Once you have fully internalised this point, continue reading. 
+%Once you have fully internalised this point, continue reading.
 %
 %Although our semantic and proof-theoretic notions are different, there is a deep connection between them. To explain this connection, I shall start by considering the relationship between logical truths and theorems.
 %
@@ -895,10 +952,10 @@ When all the quantifiers occur at the beginning of a sentence, that sentence is 
 %
 %Contrawise, to show that a sentence is \emph{not} a theorem is hard. We would need to reason about all (possible) proofs. That is very difficult. But to show that a sentence is not a logical truth, you need only construct an interpretation in which the sentence is false. Granted, it may be hard to come up with the interpretation; but once you have done so, it is relatively straightforward to check what truth value it assigns to a sentence. Given a choice between showing that a sentence is not a theorem and showing that it is not a logical truth, it would be easier to show that it is not a logical truth.
 %
-%Fortunately, \emph{a sentence is a theorem if and only if it is a logical truth}. As a result, if we provide a proof of $\meta{A}$ on no assumptions, and thus show that $\meta{A}$ is a theorem, i.e.\ ${}\proves \meta{A}$, we can legitimately infer that $\meta{A}$ is a logical truth, i.e., $\entails\meta{A}$. Similarly, if we construct a model in which \meta{A} is false and thus show that it is not a logical truth, i.e.\ $\nentails \meta{A}$, it follows that \meta{A} is not a theorem, i.e.\  $\nproves \meta{A}$.
+%Fortunately, \emph{a sentence is a theorem if and only if it is a logical truth}. As a result, if we provide a proof of $\meta{\phi}$ on no assumptions, and thus show that $\meta{\phi}$ is a theorem, i.e.\ ${}\proves \meta{\phi}$, we can legitimately infer that $\meta{\phi}$ is a logical truth, i.e., $\entails\meta{\phi}$. Similarly, if we construct a model in which \meta{\phi} is false and thus show that it is not a logical truth, i.e.\ $\nentails \meta{\phi}$, it follows that \meta{\phi} is not a theorem, i.e.\  $\nproves \meta{\phi}$.
 %
 %More generally, we have the following powerful result:
-%$$\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \proves\meta{B} \textbf{ iff }\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \entails\meta{B}$$
+%$$\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n \proves\meta{\psi} \textbf{ iff }\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n \entails\meta{\psi}$$
 %This shows that, whilst provability and entailment are \emph{different} notions, they are extensionally equivalent. As such:
 %	\begin{ebullet}
 %		\item An argument is \emph{valid} iff \emph{the conclusion can be proved from the premises}.
@@ -907,7 +964,7 @@ When all the quantifiers occur at the beginning of a sentence, that sentence is 
 %	\end{ebullet}
 %For this reason, you can pick and choose when to think in terms of proofs and when to think in terms of valuations/interpretations, doing whichever is easier for a given task. The table on the next page summarises which is (usually) easier.
 %
-%It is intuitive that provability and semantic entailment should agree. But---let me repeat this---do not be fooled by the similarity of the symbols `$\entails$' and `$\proves$'. These two symbols have very different meanings. And the fact that provability and semantic entailment agree is not an easy result to come by. 
+%It is intuitive that provability and semantic entailment should agree. But---let me repeat this---do not be fooled by the similarity of the symbols `$\entails$' and `$\proves$'. These two symbols have very different meanings. And the fact that provability and semantic entailment agree is not an easy result to come by.
 %
 %In fact, demonstrating that provability and semantic entailment agree is, very decisively, the point at which introductory logic becomes intermediary logic. Agreement, in the case of TFL, is covered in a little sequel to this book, \texttt{Metatheory}. Agreement, in the case of FOL, is one of the first big results in mathematical logic.
 %
@@ -916,32 +973,30 @@ When all the quantifiers occur at the beginning of a sentence, that sentence is 
 %\begin{tabular*}{\textwidth}{p{.25\textheight}p{.325\textheight}p{.325\textheight}}
 % & \textbf{Yes}  & \textbf{No}\\
 %\\
-%Is \meta{A} a \textbf{logical truth}? 
-%& give a proof which shows $\proves\meta{A}$ 
-%& give an interpretation in which \meta{A} is false\\
+%Is \meta{\phi} a \textbf{logical truth}?
+%& give a proof which shows $\proves\meta{\phi}$
+%& give an interpretation in which \meta{\phi} is false\\
 %\\
-%Is \meta{A} a \textbf{contradiction}? &
-%give a proof which shows $\proves\enot\meta{A}$ & 
-%give an interpretation in which \meta{A} is true\\
+%Is \meta{\phi} a \textbf{contradiction}? &
+%give a proof which shows $\proves\enot\meta{\phi}$ &
+%give an interpretation in which \meta{\phi} is true\\
 %\\
-%%Is \meta{A} contingent? & 
-%%give two interpretations, one in which \meta{A} is true and another in which \meta{A} is false & give a proof which either shows $\proves\meta{A}$ or $\proves\enot\meta{A}$\\
+%%Is \meta{\phi} contingent? &
+%%give two interpretations, one in which \meta{\phi} is true and another in which \meta{\phi} is false & give a proof which either shows $\proves\meta{\phi}$ or $\proves\enot\meta{\phi}$\\
 %%\\
-%Are \meta{A} and \meta{B} \textbf{equivalent}? &
-%give two proofs, one for $\meta{A}\proves\meta{B}$ and one for $\meta{B}\proves\meta{A}$  
-%& give an interpretation in which \meta{A} and \meta{B} have different truth values\\
+%Are \meta{\phi} and \meta{\psi} \textbf{equivalent}? &
+%give two proofs, one for $\meta{\phi}\proves\meta{\psi}$ and one for $\meta{\psi}\proves\meta{\phi}$
+%& give an interpretation in which \meta{\phi} and \meta{\psi} have different truth values\\
 %\\
-%Are $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ \textbf{jointly consistent}? 
-%& give an interpretation in which all of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ are true 
-%& prove a contradiction from assumptions $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$\\
+%Are $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$ \textbf{jointly consistent}?
+%& give an interpretation in which all of $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$ are true
+%& prove a contradiction from assumptions $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$\\
 %\\
-%Is $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n \therefore \meta{C}$ \textbf{valid}? 
-%& give a proof with assumptions $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ and concluding with \meta{C}
-%& give an interpretation in which each of $\meta{A}_1, \meta{A}_2, \ldots, \meta{A}_n$ is true and \meta{C} is false\\
+%Is $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n \therefore \meta{C}$ \textbf{valid}?
+%& give a proof with assumptions $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$ and concluding with \meta{C}
+%& give an interpretation in which each of $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$ is true and \meta{C} is false\\
 %\end{tabular*}
 %\end{center}
 %\end{sidewaystable}
 %
-
-
 

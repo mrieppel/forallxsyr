@@ -3,7 +3,7 @@
 
 Recall that in TFL, we had the notion of a \emph{valuation}: an assignment of truth values to atomic sentences.  We then gave a semantics that allowed us to compute the truth value of an arbitrarily complex TFL sentence on any given valuation.  Finally, we used this notion of truth-on-a-valuation to define various logical concepts, like equivalence and entailment.
 
-In this chapter we will do something very similar for FOL, except that the notion of a valuation now gets replaced by the more complex notion of an \emph{interpretation}.  We'll first have to see what an FOL interpretation is, and then learn how to compute the truth values of arbitrarily complex FOL sentences in a given interpretation.  With that in hand, we can then again define logical concepts --- like logical entailment, or validity --- for FOL.  
+In this chapter we will do something very similar for FOL, except that the notion of a valuation now gets replaced by the more complex notion of an \emph{interpretation}.  We'll first have to see what an FOL interpretation is, and then learn how to compute the truth values of arbitrarily complex FOL sentences in a given interpretation.  With that in hand, we can then again define logical concepts --- like logical entailment, or validity --- for FOL.
 
 Ultimately, we'll be able to use this machinery to show that a given FOL argument is not valid, by giving an interpretation that makes its premises true and its conclusion false.  For reasons that will emerge in this chapter, we won't use interpretations to show that arguments are valid.  We will use the natural deduction proofs we learned in the last chapter to do this.
 
@@ -20,22 +20,22 @@ This stipulates that the TFL sentence `$P$' is to have the same truth value as t
 FOL is similarly impoverished as regards meaning. It goes beyond mere truth values, because it  allows us to split atomic sentences into their parts, consisting of terms and predicates.  A term is a word that refers to a particular object, and a predicate is a word that is \emph{true of} objects.  But FOL doesn't care about any other aspect of predicate's meaning besides what objects it's true of, or any other aspect of a term's meaning besides what it refers to.  For example, when we provide a symbolization key for some FOL predicate, such as:
 	\begin{ekey}
 		\item[S] \blank\ is a US state.
-	\end{ekey} 
-this isn't intended to suggest that our FOL predicate `$S$' carries the same \emph{meaning} as the English predicate.  It simply tells us that the FOL predicate is to be \emph{true of} exactly those things that the English predicate `\blank \ is a US state' is true of.  
+	\end{ekey}
+this isn't intended to suggest that our FOL predicate `$S$' carries the same \emph{meaning} as the English predicate.  It simply tells us that the FOL predicate is to be \emph{true of} exactly those things that the English predicate `\blank \ is a US state' is true of.
 
-Alternatively, we can stipulate what objects a predicate is true of \emph{directly}, by just listing those objects.  So we might stipulate that `$S$' is to be true of: Alabama, Alaska, Arizona, \ldots and so on, listing all 50 states.  This is a perfectly legitimate interpretation of an FOL predicate, because, again, all we care about is what objects it's true of, and our stipulation settles this.  The things a predicate is true of comprise the \define{extension} of the predicate.  FOL is said to be an  \define{extensional language} because it doesn't care about any aspect of a predicate's meaning besides its extension. 
+Alternatively, we can stipulate what objects a predicate is true of \emph{directly}, by just listing those objects.  So we might stipulate that `$S$' is to be true of: Alabama, Alaska, Arizona, \ldots and so on, listing all 50 states.  This is a perfectly legitimate interpretation of an FOL predicate, because, again, all we care about is what objects it's true of, and our stipulation settles this.  The things a predicate is true of comprise the \define{extension} of the predicate.  FOL is said to be an  \define{extensional language} because it doesn't care about any aspect of a predicate's meaning besides its extension.
 
 Our stipulations about predicate extensions can be as arbitrary as we like. For example, we could stipulate that `$H$' should have an extension consisting of the following objects:
 	\begin{ekey}
-		\item[H] Barack Obama, the number $\pi$, the play \emph{Hamlet} 
-	\end{ekey} 
+		\item[H] Barack Obama, the number $\pi$, the play \emph{Hamlet}
+	\end{ekey}
 It doesn't matter that these objects have nothing in common, they still form a perfectly good predicate extension.  Suppose we add the following names to our symbolization key:
 	\begin{ekey}
 		\item[b] Usain Bolt
 		\item[o] Barack Obama
 		\item[p] the number $\pi$
 	\end{ekey}
-Together, these stipulations settle the truth value of any atomic FOL sentence formed from the predicate `$H$' and the names `$d$', `$o$', and `$p$': the sentences `$Ho$' and `$Hp$' will both be true on this interpretation, because Obama and $\pi$ are in the predicate's extension, and `$Hb$' will be false, because Usain Bolt is not one of the objects `$H$' is true of.
+Together, these stipulations settle the truth value of any atomic FOL sentence formed from the predicate `$H$' and the names `$d$', `$o$', and `$p$': the sentences `$Ho$' and `$Hp$' will both be true on this interpretation, because Obama and $\pi$ are in the predicate's extension, but `$Hb$' will be false, because Usain Bolt is not one of the objects `$H$' is true of.
 
 %\section{Many-place predicates}
 
@@ -46,7 +46,7 @@ Together, these stipulations settle the truth value of any atomic FOL sentence f
 This key should be read as saying something like:
 
 	\begin{earg}
-		\item[] `$L$' is true of $x$ and $y$ (in that order) iff x loves y. 
+		\item[] `$L$' is true of $x$ and $y$ (in that order) iff x loves y.
 	\end{earg}
 The qualifier ``in that order'' is very important here.  Since $x$ might love $y$ without $y$ also loving $x$, a two-place predicate like this can apply to a pair of objects in one order but not another.
 
@@ -71,22 +71,22 @@ The angle-brackets tell us in what order the predicate $R$ applies to the object
 	\end{ekey}
 Then `$Rlm$' will be true, since the pair \ntuple{Lenin, Marx} is the extension of `$R$'. But `$Rml$' will be false, since \ntuple{Marx, Lenin} is not in the extension of `$R$'. However, both `$Rhs$' and `$Rsh$' will be true, since both \ntuple{Heidegger, Sartre} and \ntuple{Sartre, Heidegger} are on our list of pairs, and $Rmm$ will also be true, since the pair \ntuple{Marx, Marx} is in $R$'s extension.
 
-If we were dealing with a three-place predicate, its extension would consist not of \emph{pairs} of objects, but of ordered \emph{triples} of objects, like \ntuple{Heiddegger, Marx, Sartre}.  And a four-place predicate would have ordered \emph{quadruples} of objects in its extension, a five-place predicate would have ordered \emph{quintuples}, and so on.  In general, we call ordered things like these \define{Tuples}.  So the extension of a many-place predicate can be specified by giving a list of tuples: either of pairs, or of triples, or of quadruples etc. depending on whether we're dealing with a two-, three-, or four-place predicate.  
+If we were dealing with a three-place predicate, its extension would consist not of \emph{pairs} of objects, but of ordered \emph{triples} of objects, like \ntuple{Heiddegger, Marx, Sartre}.  And a four-place predicate would have ordered \emph{quadruples} of objects in its extension, a five-place predicate would have ordered \emph{quintuples}, and so on.  In general, we call ordered things like these \define{Tuples}.  So the extension of a many-place predicate can be specified by giving a list of tuples: either of pairs, or of triples, or of quadruples etc. depending on whether we're dealing with a two-, three-, or four-place predicate.
 
-%To make these ideas more precise, we would need to develop some very elementary \emph{set theory}. Set theory has formal apparatus which allows us to deal with extensions, ordered pairs, and so forth. However, set theory is not covered in this book. So I shall leave these ideas at an imprecise level. I hope that the general idea is clear enough. 
+%To make these ideas more precise, we would need to develop some very elementary \emph{set theory}. Set theory has formal apparatus which allows us to deal with extensions, ordered pairs, and so forth. However, set theory is not covered in this book. So I shall leave these ideas at an imprecise level. I hope that the general idea is clear enough.
 
 
 % \section{Semantics for identity}
-
-\paragraph{The Identity Predicate} Lastly, we have identity, which receives special treatment in FOL.  As we've seen, we write it a bit differently from other two-place predicates: `$x=y$' instead of `$Ixy$' (for example). More important, though, is that its interpretation is fixed, once and for all.  The way to determine the truth value of an identity statement is very simple: $\meta{a} = \meta{b}$ is true if \meta{a} and \meta{b} refer to the same object, and false otherwise.
-
-So given our stipulations above, `$m = m$' and `$w=w$' are, for example, both true, whereas `$w=m$' or `$l=s$' are false.  It's important to notice, though, that identity statements involving two different names can be still be true if the two names refer to the same object.  For example, if we had the following symbolization key:
-	\begin{ekey}
-		\item[l] Lady Gaga
-		\item[c] Kurt Cobain
-		\item[g] Lady Gaga
-	\end{ekey}
-then `$l=g$' and `$g=l$' would both be true despite involving different names.  Having two names for the same object isn't that unusual, and in fact happens all the time when people have nicknames, pseudonyms, or stage names: `Stefani Germanotta' and `Lady Gaga' refer to the same person, and so do `Jay-Z' and `Shawn Carter', for example.
+%
+%\paragraph{The Identity Predicate} Lastly, we have identity, which receives special treatment in FOL.  As we've seen, we write it a bit differently from other two-place predicates: `$x=y$' instead of `$Ixy$' (for example). More important, though, is that its interpretation is fixed, once and for all.  The way to determine the truth value of an identity statement is very simple: $\meta{a} = \meta{b}$ is true if \meta{a} and \meta{b} refer to the same object, and false otherwise.
+%
+%So given our stipulations above, `$m = m$' and `$w=w$' are, for example, both true, whereas `$w=m$' or `$l=s$' are false.  It's important to notice, though, that identity statements involving two different names can be still be true if the two names refer to the same object.  For example, if we had the following symbolization key:
+%	\begin{ekey}
+%		\item[l] Lady Gaga
+%		\item[c] Kurt Cobain
+%		\item[g] Lady Gaga
+%	\end{ekey}
+%then `$l=g$' and `$g=l$' would both be true despite involving different names.  Having two names for the same object isn't that unusual, and in fact happens all the time when people have nicknames, pseudonyms, or stage names: `Stefani Germanotta' and `Lady Gaga' refer to the same person, and so do `Jay-Z' and `Shawn Carter', for example.
 
 
 
@@ -100,7 +100,7 @@ then `$l=g$' and `$g=l$' would both be true despite involving different names.  
 %		Rca &\eiff Rcb\\
 %		\forall x Rxa &\eiff \forall x Rxb
 %	\end{align*}
-%Some philosophers have believed the reverse of this claim. That is, they have believed that when exactly the same sentences (not containing `$=$') are true of $a$ and $b$, then $a$ and $b$ are the very same object. This is a highly controversial philosophical claim---sometimes called the \emph{identity of indiscernibles}---and our logic will not subscribe to it. So we allow that exactly the same things might be true of two \emph{distinct} objects.  
+%Some philosophers have believed the reverse of this claim. That is, they have believed that when exactly the same sentences (not containing `$=$') are true of $a$ and $b$, then $a$ and $b$ are the very same object. This is a highly controversial philosophical claim---sometimes called the \emph{identity of indiscernibles}---and our logic will not subscribe to it. So we allow that exactly the same things might be true of two \emph{distinct} objects.
 %
 %To bring this out, consider the following interpretation:
 %	\begin{ebullet}
@@ -114,13 +114,13 @@ then `$l=g$' and `$g=l$' would both be true despite involving different names.  
 \section{FOL Interpretations}\label{s:FOLInterpretations}
 
 
-We defined a \emph{valuation} of a sentence \meta{A} (or collection of sentences) of TFL to be an assignment of truth values to all the atomic sentences contained in \meta{A} (or the collection). In FOL, the role of a valuation will be played by an \define{Interpretation}.  FOL interpretations are more complex than TFL valuations, because they have  \emph{three} components:
+We defined a \emph{valuation} of a sentence \meta{\phi} (or collection of sentences) of TFL to be an assignment of truth values to all the atomic sentences contained in \meta{\phi} (or the collection). In FOL, the role of a valuation will be played by an \define{Interpretation}.  FOL interpretations are more complex than TFL valuations, because they have  \emph{three} components:
 \factoidbox{
-An \define{FOL Interpretation} of a sentence \meta{A}  (or of a collection of sentences \texttt{C}) consist of:	
+An \define{FOL Interpretation} of a sentence \meta{\phi}  (or of a collection of sentences \texttt{C}) consist of:
 	\begin{enumerate}
 		\item A specification of a \define{domain} containing at least one object
-		\item For each name in \meta{A} (or in $\texttt{C}$), an assignment of exactly one object in the domain.  This object is the name's \define{referent}.
-		\item For each predicate in \meta{A} (or in \texttt{C}), a specification of what objects in the domain (if any), and in what order, that predicate is  true of.  This constitutes the predicate's \define{Extension}.\footnote{So notice that a predicate can have an empty extension, in which case it it isn't true of any objects in the domain.  By contrast, we don't allow ``empty names'' that lack a referent.}
+		\item For each name in \meta{\phi} (or in $\texttt{C}$), an assignment of exactly one object in the domain.  This object is the name's \define{referent}.
+		\item For each predicate in \meta{\phi} (or in \texttt{C}), a specification of what objects in the domain (if any), and in what order, that predicate is  true of.  This constitutes the predicate's \define{Extension}.\footnote{So notice that a predicate can have an empty extension, in which case it it isn't true of any objects in the domain.  By contrast, we don't allow ``empty names'' that lack a referent.}
 	\end{enumerate}}
 
 Symbolization keys like those we used in chapter \ref{ch:FOLSymbolization} consequently give us one convenient way to present an interpretation.  For example, the following counts as an FOL interpretation of `$(Lw \land Tw)$':
@@ -132,14 +132,14 @@ Symbolization keys like those we used in chapter \ref{ch:FOLSymbolization} conse
 	\end{ekey}
 This has all three components: (i) a specification of a domain, (ii) a specification of a referent for every name in `$(Lw \land Tw)$', and (iii) a specification of an extension for every predicate in `$(Lw \land Tw)$'.  The interpretation then determines a truth value for the sentence.  In this case, since Wittgenstein was both a logician and a school teacher, both `$L$' and `$T$' are true of the referent of the name `$w$' on this interpretation, and so `$(Lw \land Tw)$' is true.
 
-Alternatively, we can specify interpretations by just directly listing the objects that predicates are true of,  as discussed in the previous section.  In fact, as we move on, it will often be convenient to consider fairly abstract interpretations where the domain consists of natural numbers, i.e. positive integers, rather than people, or plants, or other objects. One possible interpretation of `$\exists x(Fx \eand Gx)$', for example, would be the following:\footnote{Although this kind of domain officially consists of just numbers,  we could in principle regard it as consisting of any objects we like --- we're just calling these objects `object 1', `object 2', `object 3' etc. for simplicity.} 
+Alternatively, we can specify interpretations by just directly listing the objects that predicates are true of,  as discussed in the previous section.  In fact, as we move on, it will often be convenient to consider fairly abstract interpretations where the domain consists of natural numbers, i.e. positive integers, rather than people, or plants, or other objects. One possible interpretation of `$\exists x(Fx \eand Gx)$', for example, would be the following:\footnote{Although this kind of domain officially consists of just numbers,  we could in principle regard it as consisting of any objects we like --- we're just calling these objects `object 1', `object 2', `object 3' etc. for simplicity.}
 	\begin{ekey}
 		\item[\text{Domain}] 1, 2, 3
-		\item[F] 
+		\item[F]
 		\item[G] 1, 3
 	\end{ekey}
 Here the domain contains the numbers 1, 2, and 3, the predicate `$F$' is true of none of those objects, and `$G$' is true of 1 and 3.  As you can probably guess, `$\exists x(Fx \eand Gx)$' comes out false on this interpretation, since there's no object in the domain of which both `$F$' and `$G$' are true.  We'll look at how to determine truth values more closely in the next two sections.
-	
+
 It will  often be useful to represent directly-specified interpretations \emph{diagramatically}.  Interpretations like the one above that involve only one-place predicates can be represented using a \define{matrix diagram}:
 \begin{center}\begin{tabular}{|c|c|c|}
 \hline
@@ -153,7 +153,7 @@ Here we list the objects in the domain on the left, and then put $+$'s and $-$'s
 As we discussed in the last section, to directly specify the extension of a \emph{many-place} predicate, we have to give a list of \emph{tuples} of objects, rather than individual objects, to indicate in what order the predicate holds of the objects.  So for example, if we take the sentence `$\forall xRxx$' which contains the two-place predicate `$R$', one possible interpretation would be the following:
 	\begin{ekey}
 		\item[\text{Domain}] 1, 2, 3, 4
-		\item[R]\ntuple{1, 4}, \ntuple{4,4},  \ntuple{1, 2}, \ntuple{2, 1} \ntuple{1, 3}, 
+		\item[R]\ntuple{1, 4}, \ntuple{4,4},  \ntuple{1, 2}, \ntuple{2, 1} \ntuple{1, 3},
 	\end{ekey}
 To represent interpretations with two-place predicates diagramatically, we can use \define{arrow diagrams} like this:
 \begin{center}
@@ -178,19 +178,19 @@ The arrows represent the order in which `$R$' holds of the objects.  To indicate
 %\node (atom3) at (2,0) {3};
 %\node (atom4) at (0,0) {4};
 %\draw[->, thick] (atom3)--(atom4);
-%\draw[->, thick] (atom1) to[loop left, looseness=15] (atom1); 
-%\draw[->, thick] (atom3) to[loop right, looseness=15] (atom3); 
+%\draw[->, thick] (atom1) to[loop left, looseness=15] (atom1);
+%\draw[->, thick] (atom3) to[loop right, looseness=15] (atom3);
 %\draw[<->, thick] (atom1) -- (atom3);
 %\end{tikzpicture}
 %\end{center}
 %to represent the following interpretation:
 %	\begin{ekey}
 %		\item[\text{Domain}] 1, 2, 3, 4
-%		\item[R] \ntuple{1, 1}, \ntuple{1,3},  \ntuple{3, 1}, \ntuple{3, 3}, \ntuple{3,4} 
+%		\item[R] \ntuple{1, 1}, \ntuple{1,3},  \ntuple{3, 1}, \ntuple{3, 3}, \ntuple{3,4}
 %	\end{ekey}
 %As you can probably guess, `$\forall xRxx$' would be false on both of our arrow diagrams, since neither diagram is one on which \emph{every} object bears the relation $R$ to itself.
 
-	
+
 If we wanted, we could make such arrow diagrams more complex. For example, we could label objects in our diagram with FOL names to indicate which object each name refers to.  Equally, to represent the extension of a one-place predicate in an arrow diagram, we could draw a circle around some objects and label the circle with the predicate. And to represent the extensions of multiple two-place predicates in a single arrow diagram, we might use arrows with dashed as opposed to solid lines, or arrows of different colors.
 
 
@@ -199,7 +199,7 @@ If we wanted, we could make such arrow diagrams more complex. For example, we co
 
 We have introduced interpretations. Our next task is to give a precise account of what it is for an arbitrarily complex FOL sentence to be true or false in a given interpretation. There are three kinds of sentence in FOL: atomic sentences, sentences whose main logical operator is a sentential connective, and lastly, sentences whose main logical operator is a quantifier.  We'll go through each kind in turn.
 
-Our explanation will be completely general,  However, to make things comprehensible, it will be useful to have a particular interpretation to hand in order to give examples.  Let's use the following as our \emph{go-to interpretation}:	
+Our explanation will be completely general,  However, to make things comprehensible, it will be useful to have a particular interpretation to hand in order to give examples.  Let's use the following as our \emph{go-to interpretation}:
 \begin{ekey}
 		\item[\text{Domain}] all positive integers
 		\item[a] 2
@@ -213,50 +213,54 @@ I've here specified the extensions of `$E$' and `$R$' indirectly, using English 
 
 Similarly, `$Rab$' is true on our interpretation just in case the referent of `$a$' is less than the referent of `$b$'.  Since 2 is indeed less than 3, `$Rab$' is true.  By contrast, `$Rba$' is not true, because 3 is not less than 2, or to put it another way, the pair \ntuple{3,2} is not in the extension of `$R$' on our interpretation.  Similarly, neither `$Raa$' nor `$Rbb$' are true on our go-to interpretation, since neither 2 nor 3 is less than itself (i.e. the pairs \ntuple{2,2} and \ntuple{3,3} are not in the extension of `$R$').  In general we can say:
 	\factoidbox{
-		When \meta{R} is an $n$-place predicate and $\meta{a}_1, \ldots, \meta{a}_{n}$ are names, the sentence $\meta{R}\meta{a}_{1} \ldots\meta{a}_{n}$ is true in a given interpretation \textbf{iff} $\meta{R}$ is true of the objects referred to by $\meta{a}_{1}, \ldots, \meta{a}_{n}$ (in that order) in that interpretation	}
-	
-There is one additional kind of atomic sentence to consider: those formed by connecting two names with an identity sign.  As already mentioned, determining the truth values of identity statements is straightforward: 
-\factoidbox{
-		For any names $\meta{a}$ and $\meta{b}$, the sentence $\meta{a} = \meta{b}$ is true in a given interpretation \textbf{iff} 
-		 \meta{a} and \meta{b} refer to very same object in that interpretation
-	}
-So, in our go-to interpretation, `$a = b$' is false, since `$a$' refers to the number 2 and `$b$' to the number 3, and 2 is distinct from 3.  On the other hand, both `$a=a$' and `$b=b$' are true. 
+		When \meta{R} is an $n$-place predicate and $\meta{c}_1, \meta{c}_{2}, \ldots, \meta{c}_{n}$ are names, the sentence $\meta{R}\meta{c}_{1}\meta{c}_{2}\ldots\meta{c}_{n}$ is true in a given interpretation \textbf{iff} $\meta{R}$ is true of the objects referred to by $\meta{c}_{1}, \meta{c}_{2}, \ldots, \meta{c}_{n}$ (in that order) in that interpretation	}
+
+%There is one additional kind of atomic sentence to consider: those formed by connecting two names with an identity sign.  As already mentioned, determining the truth values of identity statements is straightforward:
+%\factoidbox{
+%		For any names $\meta{a}$ and $\meta{b}$, the sentence $\meta{a} = \meta{b}$ is true in a given interpretation \textbf{iff}
+%		 \meta{a} and \meta{b} refer to very same object in that interpretation
+%	}
+%So, in our go-to interpretation, `$a = b$' is false, since `$a$' refers to the number 2 and `$b$' to the number 3, and 2 is distinct from 3.  On the other hand, both `$a=a$' and `$b=b$' are true.
 
 \paragraph{Adding Truth Functional Connectives} Just like in TFL, sentences of FOL can be built up from simpler ones using the truth-functional operators. The semantic rules governing these operators are exactly the same as they were when we considered TFL. Here they are:
 
-	\factoidbox{
-$\meta{A} \eand \meta{B}$ is true in a given interpretation \textbf{iff} both $\meta{A}$ and $\meta{B}$ are true in that interpretation\\		
-		
-$\meta{A} \eor \meta{B}$ is true in a given interpretation \textbf{iff} either $\meta{A}$ or $\meta{B}$ is true in that interpretation\\
+\factoidbox{
+$\enot \meta{\phi}$ is true in a given interpretation \textbf{iff} $\meta{\phi}$ false in that interpretation\\
 
-$\enot \meta{A}$ is true in a given interpretation \textbf{iff} $\meta{A}$ false in that interpretation\\
+$\meta{\phi} \eand \meta{\psi}$ is true in a given interpretation \textbf{iff} both $\meta{\phi}$ and $\meta{\psi}$ are true in that interpretation\\
 
-$\meta{A} \eif \meta{B}$ is true in a given interpretation \textbf{iff} either $\meta{A}$ is false or $\meta{B}$ is true in that interpretation\\
+$\meta{\phi} \eor \meta{\psi}$ is true in a given interpretation \textbf{iff} either $\meta{\phi}$ or $\meta{\psi}$ is true in that interpretation\\
 
-$\meta{A} \eiff \meta{B}$ is true in a given interpretation \textbf{iff} $\meta{A}$ has the same truth value as $\meta{B}$ in that interpretation
+
+$\meta{\phi} \eif \meta{\psi}$ is true in a given interpretation \textbf{iff} either $\meta{\phi}$ is false or $\meta{\psi}$ is true in that interpretation\\
+
+$\meta{\phi} \eiff \meta{\psi}$ is true in a given interpretation \textbf{iff} $\meta{\phi}$ has the same truth value as $\meta{\psi}$ in that interpretation
 	}
 This  is equivalent to the information conveyed by the characteristic truth tables for the connectives; it's just presented in words here rather than truth tables.   Some examples will help to illustrate the idea (make sure you understand them!). On our go-to interpretation:
 	\begin{earg}
+		\item[\textbullet]  `$\enot Raa$' is true
 		\item[\textbullet] `$Rab \eand Ea$' is true because both conjuncts are true
 		\item[\textbullet] `$Rab \eand Eb$' is false because, although `$Rab$' is true, `$Eb$' is false
-		\item[\textbullet] `$a=b \eor Ea$' is true because although `$a=b$' is false, `$Ea$' is true
-		\item[\textbullet] `$a \neq b \rightarrow Rba$' is false because the antecedent is true and the consequent is false	
+		\item[\textbullet] `$Eb \eif \enot Rba$' is true because `$Eb$' is false.
+		%\item[\textbullet] `$a=b \eor Ea$' is true because although `$a=b$' is false, `$Ea$' is true
+		%\item[\textbullet] `$a \neq b \rightarrow Rba$' is false because the antecedent is true and the consequent is false
 		\end{earg}
 
 \section{Truth for Quantified Sentences}\label{s:TruthQuantifiedSentences}
 
-The big innovation in FOL is the use of \emph{quantifiers}. And specifying the truth conditions for quantified sentences turns out to be a little tricky.  If we only look at simple sentences, things are pretty straightforward.  We can say that `$\exists xEx$' is true iff `$E$' is true of at least one object in the domain, and  `$\forall xEx$' is true iff `$E$' is true of every object in the domain.  So on our go-to interpretation, `$\exists xEx$' comes out true, and `$\forall xEx$' comes out false.
+The big innovation in FOL is the use of \emph{quantifiers}. And specifying the truth conditions for quantified sentences turns out to be a little tricky.  If we only look at simple cases things are pretty straightforward.  We can say that `$\exists xEx$' is true iff `$E$' is true of at least one object in the domain, and  `$\forall xEx$' is true iff `$E$' is true of every object in the domain.  So on our go-to interpretation, `$\exists xEx$' comes out true, and `$\forall xEx$' comes out false.
 
 
 But what about a more complex sentence like `$\forall x(Ex \rightarrow Rxb)$'?  This has a universal quantifier as its main operator, so we might again try to say that it is true on an interpretation iff `$(Ex \rightarrow Rxb)$' is true of every object in the domain.  The trouble is that `$(Ex \rightarrow Rxb)$' is not a predicate, and our interpretation does not directly specify what objects this complex formula is true of.  So while our simple-minded approach worked for `$\forall xEx$', it breaks down when we consider more complex sentences.  What we need is some \emph{uniform} way of specifying the truth conditions of \emph{any} universally (or existentially) quantified sentence, irrespective of how complex it is.
 
 
-The way we will do this is by temporarily treating variables like `$x$' as if they referred to objects in the domain.  For example, we will say that the universal sentence `$\forall x(Ex \rightarrow Rxb)$' is true iff the formula `$(Ex \rightarrow Rxb)$' that the quantifier attaches to is true \emph{no matter what object in the domain the variable `$x$'  is treated as referring to}. Of course, a variable like `$x$' doesn't actually refer to any particular thing, since it's not a name, and `$(Ex \rightarrow Rxb)$' doesn't actually have a truth value.  But if we temporarily treated `$x$' as referring to 1, for example, then the conditional `$(Ex \rightarrow Rxb)$' would be true, since its antecedent `$Ex$' would be false (given that 1 is not in the extension of `$E$' in our go-to interpretation).
+The way we will do this is by temporarily treating variables like `$x$' as if they referred to objects in the domain.  For example, we will say that the universal sentence `$\forall x(Ex \rightarrow Rxb)$' is true iff the formula `$(Ex \rightarrow Rxb)$' that the quantifier operates on is true \emph{no matter what object in the domain the variable `$x$'  is treated as referring to}. Of course, a variable like `$x$' doesn't actually refer to any particular thing, since it's not a name, and `$(Ex \rightarrow Rxb)$' doesn't actually have a truth value.  But if we temporarily treated `$x$' as if it referred to 1, for example, then the conditional `$(Ex \rightarrow Rxb)$' would be true, since its antecedent `$Ex$' would be false (given that 1 is not even).
 
 
-We will use the notion of a \define{variable assignment} to implement this idea of temporarily treating variables as if they refer to objects.  We will, for example, write $[x:1]$ for an assignment that treats `$x$' as referring to 1, and $[x:3]$ for an assignment that treats `$x$' as referring to 3.  So although the variable `$x$' is not a name for any object in the domain, relative to an assignment like $[x:3]$, the variable works just like a name that refers to the number 3.  Such assignments can also cover multiple variables at once.  For example, $[x: 1, y:5, z:3]$ would be an assignment relative to which `$x$' refers 1, `$y$' refers to 5, and `$z$' refers to 3.
+We will use the notion of a \define{variable assignment} to implement this idea of temporarily treating variables as if they refer to objects.  We can, for example, write $[x:1]$ for an assignment that treats `$x$' as referring to 1, and $[x:3]$ for an assignment that treats `$x$' as referring to 3.  So although the variable `$x$' is not a name for any object in the domain, if we consider it \emph{relative to an assignment} like $[x:3]$, the variable works just like a name that refers to the number 3.  Such assignments can also cover multiple variables at once.  For example, $[x: 1, y:5, z:2]$ would be an assignment relative to which `$x$' refers 1, `$y$' refers to 5, and `$z$' refers to 3.  On our go-to interpretation, $(Ez \eand Rxy)$ would then be true relative to this assignment (since $2$ is even, and $1$ is less than $5$), but not relative to e.g. $[x:5, y: 2, z: 1]$.
 
-Returning to `$\forall x(Ex \rightarrow Rxb)$', our idea, then, is that to determine whether this is true, we go through each object in our domain, and ask whether `$(Ex \rightarrow Rxb)$' would come out true if `$x$' were treated as referring to that object.  All of the following would in other words have to hold:\footnote{Having brought assignments onto the scene, we should now technically go back and revise our explanation of the truth conditions for atomic sentences too.  That's because we now need to determine the truth value of things like `$(Ex \rightarrow Rxb)$' relative to an assignment of an object to `$x$'.  Since the latter contains a free variable, it is not a \emph{sentence}, but merely a \emph{formula} of FOL. Our earlier explanations only concerned sentences, however.  So we have to go back and extend them to cover formulas as well.  See the Appendix for details.}
+Returning to `$\forall x(Ex \rightarrow Rxb)$', our idea is that to determine whether this is true, we go through each object in our domain, and ask whether `$(Ex \rightarrow Rxb)$' would come out true if `$x$' were treated as referring to that object.\footnote{Having brought assignments onto the scene, we should now technically go back and re-do our explanation of the truth conditions for atomic sentences too.  That's because we now need to determine the truth values of \emph{formulas} like `$(Ex \rightarrow Rxb)$' relative to an assignment of an object to the free variable `$x$', but our earlier explanation only covered \emph{sentences} (closed formulas), and said nothing about variable assignments.  See the Appendix for the technical details.}
+All of the following would in other words have to hold:
 \begin{enumerate}
 \item[] `$(Ex \rightarrow Rxb)$' is true on $[x:1]$
 \item[] `$(Ex \rightarrow Rxb)$' is true on $[x:2]$
@@ -266,29 +270,30 @@ $\vdots$
 \end{enumerate}
 and so on for every positive integer we could assign to `$x$'.  Now `$(Ex \rightarrow Rxb)$' is true on $[x:1]$ as well as $[x:3]$, since in both cases the antecedent `$Ex$' comes out false (because neither 1 nor 3 are even). And `$(Ex \rightarrow Rxb)$' is also true on $[x:2]$, since both `$Ex$' and `$Rxb$' are true on $[x:2]$ (because 2 is even, and also less than 3, which is what `$b$' refers to on our go-to interpretation).  An object that makes a formula like `$(Ex \rightarrow Rxb)$' true is said to \define{satisfy} that formula.  So the numbers 1, 2, and 3 all satisfy `$(Ex \rightarrow Rxb)$'.
 
-But the number 4 does \emph{not} satisfy it: `$(Ex \rightarrow Rxb)$' is \emph{false} on the assignment $[x:4]$.  That's because `$Ex$' is true on $[x:4]$ (since 4 is even) but `$Rxb$' is false on $[x:4]$ (since 4 is \emph{not} less than 3).  So  since `$(Ex \rightarrow Rxb)$' is false for some object in the domain (namely 4), we can conclude that the universal sentence `$\forall x(Ex \rightarrow Rxb)$' we started with is itself false.  And that's of course the result we want: relative to our go-to interpretation, `$\forall x(Ex \rightarrow Rxb)$' says that every even number is less than three, which is clearly false, since there are lots of even numbers, including 4, that are not less than 3.
+But the number 4 does \emph{not} satisfy it: `$(Ex \rightarrow Rxb)$' is \emph{false} on the assignment $[x:4]$.  That's because although `$Ex$' is true on $[x:4]$ (since 4 is even), `$Rxb$' is not true on $[x:4]$ (since 4 is \emph{not} less than 3).  So  since `$(Ex \rightarrow Rxb)$' is false for some object in the domain (namely 4), we can conclude that the universal sentence `$\forall x(Ex \rightarrow Rxb)$' we started with is itself false.  And that's of course the result we want: relative to our go-to interpretation, `$\forall x(Ex \rightarrow Rxb)$' says that every even number is less than three, which is clearly false, since there are lots of even numbers, including 4, that are not less than 3.
 
-In general, then, we explain the truth conditions for quantified sentences as follows:
-\factoidbox{$\forall \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ is true on [] in a given interpretation  \textbf{iff} for \emph{every object} $o$ in the domain, $\meta{A}(\ldots \meta{v} \ldots)$ is true on [\meta{v}:o] in that interpretation.\\
-
-$\exists \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ is true on [] in a given interpretation  \textbf{iff} for \emph{at least one object} $o$ in the domain, $\meta{A}(\ldots \meta{v} \ldots)$ is true on [\meta{v}:o] in that interpretation.
-}
-Here [] is just an arbitrary assignment, and  [\meta{v}:o] is an assignment that treats the variable \meta{v} as referring to o, and treats all other variables just like [] does (whatever that might be).  The idea, in other words, is that we go through each object $o$ in the domain, and check whether $\meta{A}(\ldots \meta{v} \ldots)$ is true when \meta{v} is treated as referring to $o$; if so, the universal sentence $\forall \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ is true, if not, it is false.  Notice that it's much easier for an existential sentence to be true: for an existential $\exists \meta{v}\meta{A}(\ldots \meta{v} \ldots)$, we only have to find \emph{one} object in the domain that satisfies $\meta{A}(\ldots \meta{v} \ldots)$.
-
-
-This in turn means that that it's very easy for a universal sentence $\forall \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ to be \emph{false}: we just have to find a single object relative to which $\meta{A}(\ldots \meta{v} \ldots)$ is false.  For an existential sentence $\exists \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ to be false, on the other hand, we have to make sure that $\meta{A}(\ldots \meta{v} \ldots)$ is false for \emph{every} object in the domain. Let's state these ``falsity conditions'' for quantified sentences explicitly too:
-\factoidbox{$\forall \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ is false on [] in a given interpretation  \textbf{iff} for \emph{at least one object} $o$ in the domain, $\meta{A}(\ldots \meta{v} \ldots)$ is false on [\meta{v}:o] in that interpretation.\\
-
-$\exists \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ is false on [] in a given interpretation  \textbf{iff} for  \emph{every object} $o$ in the domain, $\meta{A}(\ldots \meta{v} \ldots)$ is false on [\meta{v}:o] in that interpretation.
-}
-
-It will help to go through a few examples to get a better feel for how to determine the truth values of quantified sentences.  Before we do that, however, we will introduce a useful notational shorthand that makes keeping track of variable assignments a bit easier.  Instead of always explicitly mentioning the variable assignment we're considering, we will instead use superscripts on the variables themselves to indicate what objects we are temporarily treating them as referring to.  So instead of saying something like:
+In practice, keeping track of variable assignments while calculating the truth value of a formula can get tricky, especially when we're dealing with more than one variable.  We'll therefore make use a notational shorthand that will make things a little easier.  Instead of explicitly mentioning the variable assignment, we will instead use superscripts on the variables themselves to indicate what objects we are temporarily treating them as referring to.  So instead of saying:
 $$`(Ex \rightarrow Rxb) \text{' is true on } [x:2]$$
-as we did above, we can just add a superscript to the variable `$x$' itself and say that:
+as we did above, we will just add a superscript of $2$ to the variable `$x$' itself and write:
 $$(Ex^2 \rightarrow Rx^2b) \text{ is true }$$
-Similarly, instead of saying, for example, that `$Rxy$' is true on the assignment $[x:1, y:3]$, we can just say that $Rx^1y^3$ is true.  
+to indicate that we're treating $x$ as referring to 2.  Similarly, instead of saying that `$(Ez \eand Rxy)$' is true on $[x: 1, y:5, z:2]$, we can just say that $(Ez^2 \eand Rx^1y^3)$ is true.
 
-It's important to remember, thought, that this really is just a notational shorthand.  Things like `$(Ex^2 \rightarrow Rx^2b)$' and `$Rx^1y^3$' are not sentences of FOL, since the language of FOL doesn't include superscripts on variables.  Talk of $Rx^1y^3$ is just a shorthand for talking about the FOL sentence `$Rxy$' relative to an assignment of 1 to `$x$' and 3 to `$y$'. With this notation in hand, let's now look at some examples.
+You can think of $(Ex^2 \rightarrow Rx^2b)$ as a \define{semantic instance} of $\forall x(Ex \rightarrow Rxb)$, much like $(Ea \rightarrow Rab)$ is a \emph{syntactic instance} of $\forall x(Ex \rightarrow Rxb)$, one we could infer by the rule of $\forall E$.  In both cases, we delete the quantifier, and then do something with the variable the quantifier was associated with: in the case of syntactic instances, we replace the variable with a name, whereas now, in the case of semantic instances, we add a superscript to the variable to indicate what object it is temporarily being treated as referring to.  It's important to remember, though, that this really is just a notational shorthand.  Whereas the syntactic instance $(Ea \rightarrow Rab)$ is a sentence of FOL, the semantic instance `$(Ex^2 \rightarrow Rx^2b)$' is not a sentence of FOL (nor even a formula), since the language of FOL doesn't include superscripts on variables.  Talk of $(Ex^2 \rightarrow Rx^2b)$ is, again, just a notational shorthand for talking about the FOL sentence `$(Ex \rightarrow Rxb)$' relative to an assignment of 2 to `$x$'.
+
+With this background in place, we can now explain the truth conditions of quantified sentences as follows:
+\factoidbox{$\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is true in a given interpretation \script{I} \textbf{iff}  $\meta{\phi}(\ldots \meta{v}^o \ldots)$ is true on \script{I} for \emph{every object} $o$ in \script{I}'s domain.\\
+
+$\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is true in a given interpretation \script{I} \textbf{iff}  $\meta{\phi}(\ldots \meta{v}^o \ldots)$ is true on \script{I} for \emph{at least one} object $o$ in \script{I}'s domain.
+}
+The idea, again, is that we go through each object $o$ in the domain, and check whether $\meta{\phi}(\ldots \meta{v} \ldots)$ is true when \meta{v} is treated as referring to $o$; if so, the universal sentence $\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is true, if not, it is false.  Notice that it's much easier for an existential sentence to be true: for an existential $\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$, we only have to find \emph{one} object in the domain that satisfies $\meta{\phi}(\ldots \meta{v} \ldots)$.
+
+
+This in turn means that that it's very easy for a universal sentence $\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ to be \emph{false}: we just have to find a single object relative to which $\meta{\phi}(\ldots \meta{v} \ldots)$ is false.  For an existential sentence $\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ to be false, on the other hand, we have to make sure that $\meta{\phi}(\ldots \meta{v} \ldots)$ is false for \emph{every} object in the domain. Let's state these ``falsity conditions'' for quantified sentences explicitly too:
+\factoidbox{$\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is false in a given interpretation \script{I} \textbf{iff}  $\meta{\phi}(\ldots \meta{v}^o \ldots)$ is false on \script{I} for \emph{at least one object} $o$ in \script{I}'s domain.\\
+
+$\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is false in a given interpretation \script{I} \textbf{iff}  $\meta{\phi}(\ldots \meta{v}^o \ldots)$ is false on \script{I} for \emph{every} object $o$ in \script{I}'s domain.
+}
+Again, we're here suppressing explicit mention of variable assignments via our notational shorthand, but you can look at the Appendix for the official version of the semantics, with variable assignments made explicit.  It will help to go through a few examples to get a better feel for how to determine the truth values of quantified sentences, so let's turn to that.
 
 
 
@@ -307,7 +312,7 @@ It's important to remember, thought, that this really is just a notational short
 		\item[\text{Domain}] 1, 2, 3
 		\item[F] 1
 		\item[G] 2, 3
-		\item[H] 
+		\item[H]
 	\end{ekey}
 \columnbreak
 
@@ -331,32 +336,32 @@ It's important to remember, thought, that this really is just a notational short
 \item $\exists x(Fx \eand Gx)$ is false because `$(Fx \eand Gx)$' is false on every assignment to `$x$':
 \begin{etriangle}
 \item $(Fx^1 \eand Gx^1)$ is false (since $Gx^1$ is false), and
-\item $(Fx^2 \eand Gx^2)$ is false (since $Fx^2$ is false), and
-\item $(Fx^3 \eand Gx^3)$ is false (since $Fx^3$ is false)
+\item $(Fx^2 \eand Gx^2)$ is also false (since $Fx^2$ is false), and
+\item $(Fx^3 \eand Gx^3)$ is also false (since $Fx^3$ is false)
 \end{etriangle}
 \end{etriangle}
 Again, when in the course of this explanation I say that $(Fx^3 \eand Gx^3)$ is false,  for example, this is just a shorthand for saying that `$(Fx \eand Gx)$' is false if `$x$' is temporarily treated as referring to the number 3.
 
 \paragraph{Example 2} $\exists x Fx \land \exists x Gx$
 
-\noindent Notice that the main operator in this is $\eand$, i.e. it's a conjunction.  So to determine its truth value, we have to evaluate its two conjuncts $\exists xFx$ and $\exists xGx$ \emph{separately}.  Both of them turn out to be true, and so the conjunction is true:
+\noindent Notice that the main operator in this is $\eand$, i.e. it's a conjunction.  So to determine its truth value, we have to reason truth-functionally at first, and evaluate its two conjuncts $\exists xFx$ and $\exists xGx$ \emph{separately}.  Only then do we start with quantificational reasoning, and consider what objects to assign to the variable `$x$'.    As it turns out, both $\exists xFx$ and $\exists xGx$ are true, and so our conjunction as a whole comes out true:
 \begin{etriangle}
 \item $\exists x Fx \land \exists x Gx$ is true, because
-\begin{etriangle} 
+\begin{etriangle}
 \item $\exists xFx$ is true
 \begin{etriangle}
-\item since $Fx^1$ is true
+\item that's because $Fx^1$ is true
 \end{etriangle}
-\item and $\exists xGx$ is also true 
+\item and $\exists xGx$ is also true
  \begin{etriangle}
- \item since $Gx^2$ is true
+ \item that's because $Gx^2$ is true
 \end{etriangle}
 \end{etriangle}
 \end{etriangle}
-Notice that `$Gx^3$' is of course also true, so I could instead have given this as my reason for why $\exists xGx$  is true.   It doesn't matter whether I pick 2 or 3 --- as long as I can point to one object that satisfies `$Gx$', that's enough for $\exists xGx$ to be true.  
+Notice that `$Gx^3$' is of course also true, so I could instead have given this as my reason for why $\exists xGx$  is true.   It doesn't matter whether I pick 2 or 3 --- as long as I can point to one object that satisfies `$Gx$', that's enough for $\exists xGx$ to be true.
 
-What these first two examples illustrate is that it's important to pay attention to the main operator.  In `$\exists x(Fx \eand Gx)$', the main operator is the existential quantifier, 
-so I have to find a single object to make the whole conjunction `$(Fx \eand Gx)$' true.  In `$\exists x Fx \land \exists x Gx$', by contrast, the main operator is $\land$, so here I do not have to find a single object to make both `$Fx$' and `$Gx$' true.  Rather I consider `$\exists x Fx$' and `$\exists x Gx$' \emph{separately}, and  check first whether any object satisfies `$Fx$', and second whether any object (perhaps a different one) satisfies `$Gx$'
+What these first two examples illustrate is that it's important to pay attention to the main operator.  In `$\exists x(Fx \eand Gx)$', the main operator is the existential quantifier,
+so I have to find an object to make the whole conjunction `$(Fx \eand Gx)$' that the quantifier operates on true.  In `$\exists x Fx \land \exists x Gx$', by contrast, the main operator is $\land$, so here I do not have to find a single object to make both `$Fx$' and `$Gx$' true.  Rather I consider `$\exists x Fx$' and `$\exists x Gx$' \emph{separately}, and  check first whether any object satisfies `$Fx$', and second whether any object (perhaps a different one) satisfies `$Gx$'.
 
 Things get  more complicated with sentences that contain nested quantifiers, like $\exists x\forall yLxy$.  Let's determine the truth value of this on the following interpretation:\\
 
@@ -366,7 +371,7 @@ Things get  more complicated with sentences that contain nested quantifiers, lik
 \begin{multicols}{2}
 	\begin{ekey}
 		\item[\text{Domain}] 1, 2, 3
-		\item[L] \ntuple{1,2}, \ntuple{1,2}, \ntuple{1,3}
+		\item[L] \ntuple{2,1}, \ntuple{2,2}, \ntuple{2, 3}
 	\end{ekey}
 \columnbreak
 
@@ -385,9 +390,9 @@ Things get  more complicated with sentences that contain nested quantifiers, lik
 
 \paragraph{Example 3} $\exists x\forall yLxy$
 
-\noindent If we paraphrase this in English, it says that there is some object $x$ which bears the relation $L$ to \emph{every} object y.  And indeed there is such an object in  Interpretation B, namely the number 2: this number bears $L$ to 1, and to itself, and also to 3, that is, to every object in the domain.  
+\noindent If we paraphrase this in English, it says that there is some object $x$ which bears the relation $L$ to \emph{every} object y.  And indeed there is such an object in  Interpretation B, namely the number 2: this number bears $L$ to 1, and to itself, and also to 3, that is, to every object in the domain.
 
-To put the same point formally: in   order for `$\exists x\forall yLxy$' to be true, there has to be some object such that `$\forall yLxy$' is true when `$x$' is treated as referring to that object.  And there is such an object, namely the number 2.  So `$\exists x\forall yLxy$' is true because `$\forall yLx^2y$'  is true.  And why is `$\forall yLx^2y$' true?  That's because no matter which object $o$ in our domain we pick, `$Lx^2y^o$' comes out true.  That is, all of the following are true: $Lx^2y^1$, $Lx^2y^2$, and $Lx^2y^3$. Our official explanation in other words looks like this:
+To put the same point formally: in   order for `$\exists x\forall yLxy$' to be true, there has to be some object $o$ such that $\forall yLx^oy$ is true.  And there is such an object, namely the number 2.  So `$\exists x\forall yLxy$' is true because `$\forall yLx^2y$'  is true.  Next we ask why `$\forall yLx^2y$' is true.  That's because no matter which object $o$ we pick for $y$ to refer to, `$Lx^2y^o$' comes out true.  That is, $Lx^2y^1$, and $Lx^2y^2$ and $Lx^2y^3$ are all true. Our official explanation in other words looks like this:
 
 \begin{etriangle}
 \item $\exists x\forall yLxy$ is true because:
@@ -405,9 +410,9 @@ Although sentences with nested quantifiers occur most commonly with many-place p
 
 \paragraph{Example 4} $\exists x(Fx \eif \forall y(Hy \eiff Gx))$
 
-\noindent The main operator is the existential quantifier, so we have to consider whether there is any object $o$ in the domain such that the conditional $(Fx^o \eif \forall y(Hy \eiff Gx^o))$ comes out true.  In fact, an assignment of 1 to `$x$' will do the trick.  That's because both  `$Fx^1$' and `$\forall y(Hy \eiff Gx^1)$' are true, thus making the conditional true. 
+\noindent The main operator is the existential quantifier, so we have to consider whether there is any object $o$ in the domain such that the conditional $(Fx^o \eif \forall y(Hy \eiff Gx^o))$ comes out true.  In fact, an assignment of 1 to `$x$' will do the trick.  That is, both $Fx^1$ and $\forall y(Hy \eiff Gx^1)$ are true, thus making the conditional $(Fx^1 \eif \forall y(Hy \eiff Gx^1))$ true.
 
-Why is `$\forall y(Hy \eiff Gx^1)$'  true?  Well, this  has a universal quantifier as its main operator, and it is true because  no matter what object $o$  in the domain we pick, $Hy^o \eiff Gx^1$ is true.  That is:  $Hy^1 \eiff Gx^1$ is true, and $Hy^2 \eiff Gx^1$ is true, and $Hy^3 \eiff Gx^1$ is true. The complete explanation for why Example 4 is true on Interpretation A then looks like this:
+Next we ask why `$\forall y(Hy \eiff Gx^1)$'  is true.  Well, this  has a universal quantifier as its main operator, and it is true because  no matter what object $o$  in the domain we pick, $Hy^o \eiff Gx^1$ is true.  That is:  $Hy^1 \eiff Gx^1$ is true, and $Hy^2 \eiff Gx^1$ is true, and $Hy^3 \eiff Gx^1$ is true. The complete explanation for why Example 4 is true on Interpretation A then looks like this:
 
 
 \begin{etriangle}
@@ -440,7 +445,7 @@ Consider the following interpretation:\footnote{See \S\ref{s:FOLInterpretations}
 \begin{multicols}{2}
 \begin{ekey}
 		\item[\text{Domain}] 1, 2
-		\item[c] 1
+		\item[a] 1
 		\item[A] 1, 2
 		\item[B] 2
 		\item[N]
@@ -455,12 +460,12 @@ c & 1 &   $+$   &   $-$  & $-$  \\ \hline
 \end{tabular}
 \end{multicols}
 
-	
+
 \noindent Determine whether each of the following sentences is true or false in this interpretation, and give a semantic demonstration to justify your answer.
 \begin{earg}
-\item $Bc$
-\item $Ac \eiff \enot Nc$
-\item $Nc \eif (Ac \eor Bc)$
+\item $Ba$
+\item $Aa \eiff \enot Na$
+\item $Na \eif (Aa \eor Ba)$
 \item $\forall x Ax$
 \item $\forall x \enot Bx$
 \item $\exists x(Ax \eand Bx)$
@@ -470,14 +475,14 @@ c & 1 &   $+$   &   $-$  & $-$  \\ \hline
 \end{earg}
 
 \problempart
-Consider the following interpretation:	
+Consider the following interpretation:
 
 
 \begin{multicols}{2}
 \begin{ekey}
 		\item[\text{Domain}] 1, 2, 3
-		\item[c] 2
-		\item[e] 3
+		\item[b] 2
+		\item[c] 3
 		\item[G] 1, 2, 3
 		\item[H] 2
 		\item[M] 1, 3
@@ -488,8 +493,8 @@ Consider the following interpretation:
 \hline
 &    &   G  &   H  & M  \\ \hline
  & 1 &   $+$   &   $-$  & $+$  \\ \hline
-c & 2   &   $+$   &   $+$ & $-$ \\ \hline
-e  & 3   &   $+$   &   $-$ & $+$ \\ \hline
+b & 2   &   $+$   &   $+$ & $-$ \\ \hline
+c  & 3   &   $+$   &   $-$ & $+$ \\ \hline
 \end{tabular}
 \end{multicols}
 
@@ -498,8 +503,8 @@ e  & 3   &   $+$   &   $-$ & $+$ \\ \hline
 \noindent Determine whether each of the following sentences is true or false in this interpretation, and give a semantic demonstration to justify your answer.
 \begin{earg}
 \item $Hc$
-\item $He$
-\item $Mc \eor Me$
+\item $Hb$
+\item $Mc \eor Mb$
 \item $Gc \eor \enot Gc$
 \item $Mc \eif Gc$
 \item $\exists x Hx$
@@ -515,7 +520,7 @@ e  & 3   &   $+$   &   $-$ & $+$ \\ \hline
 \end{earg}
 
 \problempart
-\label{pr.TorF3} Consider the following interpretation:	
+\label{pr.TorF3} Consider the following interpretation:
 %\begin{center}
 %\begin{tikzpicture}
 %\node (atom1) at (0,2) {1};
@@ -523,8 +528,8 @@ e  & 3   &   $+$   &   $-$ & $+$ \\ \hline
 %\node (atom4) at (0,0) {3};
 %\node (atom5) at (2,0) {4};
 %\node (atom6) at (4,0) {5};
-%\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3); 
-%\draw[->, thick] (atom6)+(0.15,-0.15) arc (-150:150:.3); 
+%\draw[->, thick] (atom1)+(-0.15,0.15) arc (-330:-30:.3);
+%\draw[->, thick] (atom6)+(0.15,-0.15) arc (-150:150:.3);
 %\draw[->, thick] (atom1) -- (atom2);
 %\draw[->, thick] (atom1) -- (atom4);
 %\draw[<->, thick] (atom1) -- (atom5);
@@ -537,7 +542,7 @@ e  & 3   &   $+$   &   $-$ & $+$ \\ \hline
 \begin{multicols}{2}
 	\begin{ekey}
 		\item[\text{Domain}] 1, 2, 3
-		\item[L] \ntuple{1,2}, \ntuple{2,2}, \ntuple{2,3}, \ntuple{3, 2} \ntuple{3,3}
+		\item[R] \ntuple{1,3}, \ntuple{2,2}, \ntuple{2,3}, \ntuple{3, 2} \ntuple{3,3}
 	\end{ekey}
 \columnbreak
 
@@ -569,8 +574,8 @@ e  & 3   &   $+$   &   $-$ & $+$ \\ \hline
 \item $\exists x\forall y(Rxy \rightarrow Ryx)$
 \item $\forall x(\exists y Rxy \eif \exists y Ryx)$
 %\item $\exists x \exists y (\enot x = y \eand Rxy \eand Ryx)$
-\item $\exists x \forall y(Rxy \eiff x = y)$
-\item $\exists x \forall y(Ryx \eiff x = y)$
+%\item $\exists x \forall y(Rxy \eiff x = y)$
+%\item $\exists x \forall y(Ryx \eiff x = y)$
 \item $\forall x \forall y \forall z ((Rxy \eand Ryz) \eif Rxz)$
 \item $\exists x \forall y \forall z ((Rxy \eand Ryz) \eif Rxz)$
 
@@ -580,32 +585,32 @@ e  & 3   &   $+$   &   $-$ & $+$ \\ \hline
 
 \section{Semantic Concepts}\label{s:FOLSemanticConcepts}
 
-Defining truth in FOL was a bit tricky, due to the presence of quantifiers. But now that we know what determines the truth value of an FOL sentence in an interpretation, we can use that to define various other central logical notions.   As you can see, these definitions are basically the same as those from TFL, except that we here use the notion of truth in an \emph{interpretation} rather than truth on a \emph{valuation}.  In all the definitions below, the metavariables $\meta{A}_1 \ldots \meta{A}_n$ and $\meta{C}$ range over arbitrary \emph{sentences} of FOL:\footnote{Our logical concepts are in other words only defined for FOL sentences.  By contrast, the official explanation of truth in FOL, given in the Appendix, covers formulas in general, not just sentences.}  
+Defining truth in FOL was a bit tricky, due to the presence of quantifiers. But now that we know what determines the truth value of an FOL sentence in an interpretation, we can use that to define various other central logical notions.   As you can see, these definitions are basically the same as those from TFL, except that we here use the notion of truth in an \emph{interpretation} rather than truth on a \emph{valuation}.  In all the definitions below, the metavariables $\meta{\phi}_1 \ldots \meta{\phi}_n$ and $\meta{\psi}$ range over arbitrary \emph{sentences} of FOL:\footnote{Our logical concepts are in other words only defined for FOL sentences.  By contrast, the official explanation of truth in FOL, given in the Appendix, covers formulas in general, not just sentences.}
 
 \factoidbox{
-	$\meta{A}_1, \ldots, \meta{A}_n$ \define{logically entail}  $\meta{C}$, written $\meta{A}_1, \ldots, \meta{A}_n \vDash \meta{C}$,   iff no interpretation makes all of $\meta{A}_1,  \ldots, \meta{A}_n$ true but $\meta{C}$ false.\\
+	$\meta{\phi}_1, \ldots, \meta{\phi}_n$ \define{logically entail}  $\meta{\psi}$, written $\meta{\phi}_1, \ldots, \meta{\phi}_n \vDash \meta{\psi}$,   iff no interpretation makes all of $\meta{\phi}_1,  \ldots, \meta{\phi}_n$ true but $\meta{\psi}$ false.\\
 
-\meta{A} is a \define{Logical Truth}, written $\vDash \meta{A}$, iff it is true in every interpretation.\\
+\meta{\phi} is a \define{Logical Truth}, written $\vDash \meta{\phi}$, iff it is true in every interpretation.\\
 
-\meta{A} is a \define{contradiction}  iff it is false in every interpretation.\\
+\meta{\phi} is a \define{contradiction}  iff it is false in every interpretation.\\
 
-\meta{A} and \meta{B} are \define{logically equivalent}, written $\meta{A} \lequiv \meta{B}$ iff they have the same truth value in every interpretation.\\
+\meta{\phi} and \meta{\psi} are \define{logically equivalent}, written $\meta{\phi} \lequiv \meta{\psi}$ iff they have the same truth value in every interpretation.\\
 
-$\meta{A}_1,\ldots, \meta{A}_n$ are \define{jointly consistent} iff there is at least one interpretation which makes them all true.  They are \define{jointly inconsistent} iff there is no such interpretation.
+$\meta{\phi}_1,\ldots, \meta{\phi}_n$ are \define{jointly consistent} iff there is at least one interpretation which makes them all true.  They are \define{jointly inconsistent} iff there is no such interpretation.
 }
 
 As in TFL, perhaps the most important of these concepts is that of logical entailment, since it is closely related to the notion of a valid argument.  We will say that an FOL argument:
-$$\meta{A}_1, \ldots, \meta{A}_n \therefore \meta{C}$$
-is \define{valid} just in case its premises $\meta{A}_1, \ldots, \meta{A}_n$ entail its conclusion \meta{C}.  Since entailment is defined in terms of the concept of truth-in-an-interpretation, we can use interpretations to investigate the validity of FOL arguments.
+$$\meta{\phi}_1, \ldots, \meta{\phi}_n \therefore \meta{\psi}$$
+is \define{valid} just in case its premises $\meta{\phi}_1, \ldots, \meta{\phi}_n$ entail its conclusion \meta{\psi}.  Since entailment is defined in terms of the concept of truth-in-an-interpretation, we can use interpretations to investigate the validity of FOL arguments.
 
-In particular, we can use interpretations to show that an argument is \emph{not} valid, or that the corresponding entailment \emph{fails}.  To show that a given argument is not valid, it suffices to construct a single interpretation that simultaneously makes all of the premises true but still makes the conclusion false.  Such an interpretation is again called a \emph{counterexample} to the validity of the argument, or a \define{countermodel}.  
+In particular, we can use interpretations to show that an argument is \emph{not} valid, or that the corresponding entailment \emph{fails}.  To show that a given argument is not valid, it suffices to construct a single interpretation that simultaneously makes all of the premises true but still makes the conclusion false.  Such an interpretation is again called a \emph{counterexample} to the validity of the argument, or a \define{countermodel}.
 
 
-In the next two sections, we'll look at how to construct countermodels.  We'll first look at arguments that involve only one-place predicates, and then at ones that involve many-place predicates.  Of course, we can use interpretations to investigate the other logical concepts we've defined above too.  We'll return to that once we've looked at our central concept of entailment, or validity.  
+In the next two sections, we'll look at how to construct countermodels.  We'll first look at arguments that involve only one-place predicates, and then at ones that involve many-place predicates.  Of course, we can use interpretations to investigate the other logical concepts we've defined above too.  We'll return to that once we've looked at our central concept of entailment, or validity.
 
 \section{Countermodels with One-Place Predicates}\label{s:CountermodelOnePl}
 
-\paragraph{Example 1} Let's begin with one of the examples we looked at way back in \S\ref{s:Arguments}.  
+\paragraph{Example 1} Let's begin with one of the examples we looked at way back in \S\ref{s:Arguments}.
 
 \begin{earg}
 \item[\ex{exarg4}]All rabbits are mammals
@@ -628,7 +633,7 @@ In the next two sections, we'll look at how to construct countermodels.  We'll f
 	\item[R] \blank \ is an opera singer
 	\item[M] \blank\ is a vocalist
 \end{ekey}
-In this interpretation, `$\forall x(Rx \eif Mx)$' is  true, since every opera singer is a vocalist, and `$Mb$' is also true, since Lady Gaga is a vocalist.  But `$Rb$' is false, since she is not an opera singer, but a pop singer.  So the argument isn't valid.  However, using this kind of countermodel  has the drawback that it requires us to appeal to real-world knowledge.   After all, who knows, maybe, Lady Gaga secretly moonlights as an opera singer, in which case `$Rb$' is true in this interpretation, and it doesn't constitute a countermodel after all. 
+In this interpretation, `$\forall x(Rx \eif Mx)$' is  true, since every opera singer is a vocalist, and `$Mb$' is also true, since Lady Gaga is a vocalist.  But `$Rb$' is false, since she is not an opera singer, but a pop singer.  So the argument isn't valid.  However, using this kind of countermodel  has the drawback that it requires us to appeal to real-world knowledge.   After all, who knows, maybe, Lady Gaga secretly moonlights as an opera singer, in which case `$Rb$' is true in this interpretation, and it doesn't constitute a countermodel after all.
 
 To avoid these kinds of issues, and to give some uniformity to our countermodels, we will again use interpretations with domains that contain just positive integers, and give \emph{direct} specifications of the extensions of predicates, by listing the objects they are true of.  Furthermore, since we may have to explain why universal sentences like `$\forall x(Rx \eif Mx)$' are true on our countermodels, and since the number of objects we have to consider to do this increases the larger the domain is, we will  try to construct countermodels  with the smallest possible domains.
 
@@ -640,7 +645,7 @@ Let's begin by seeing if we can construct a countermodel that has just one objec
 \begin{ekey}
 	\item[\text{Domain}] 1
 	\item[b] 1
-	\item[R] 
+	\item[R]
 	\item[M] 1
 \end{ekey}
 \columnbreak
@@ -650,7 +655,7 @@ Let's begin by seeing if we can construct a countermodel that has just one objec
 b& 1   &   $-$  & $+$  \\ \hline
 \end{tabular}
 \end{multicols}\end{minipage}\end{center}
-And luckily this also makes the first premise `$\forall x(Rx \eif Mx)$' true!  After all, $(Rx^1 \eif Mx^1)$ is true (since $Rx^1$ is false), and since 1 is the only object in our domain, that suffices for `$\forall x(Rx \eif Mx)$'  to be true.
+And luckily this also makes the first premise `$\forall x(Rx \eif Mx)$' true!  After all, $(Rx^1 \eif Mx^1)$ is true (since $Rx^1$ is false).  And since 1 is the only object in our domain, that suffices for `$\forall x(Rx \eif Mx)$'  to be true!  So our simple interpretation makes both premises true but the conclusion false, showing that the argument isn't valid.
 
 \paragraph{Example 2} Let's look at a slightly more complex example:
 $$\exists x(Fx \eif Gx) \therefore \exists xFx \eif \exists xGx$$
@@ -660,21 +665,21 @@ We will again begin with the smallest possible domain, containing just 1, and th
 &   F  & G  \\ \hline
 1   &   $+$  & $-$  \\ \hline
 \end{tabular}\end{center}
-The trouble is that this interpretation will also make our premise `$\exists x(Fx \eif Gx)$' false.  After all, $(Fx^1 \eif Gx^1)$ is false, and there's no other object in the domain we could assign to `$x$' to make `$(Fx \eif Gx)$' true. 
+`$\exists xFx$' is now true, since $Fx^1$ is true.  But `$\exists xGx$' is false, because $Gx^1$ is false. The trouble is that this interpretation will also make our premise `$\exists x(Fx \eif Gx)$' false.  After all, $(Fx^1 \eif Gx^1)$ is false, and there's no other object in the domain we could assign to `$x$' to make `$(Fx \eif Gx)$' true.
 
 So let's expand our domain by adding a second object:
 \begin{center}\begin{tabular}{|c|c|c|}
 \hline
 &   F  & G  \\ \hline
 1   &   $+$  & $-$  \\ \hline
-2 &         &      \\ \hline
+2 &     ?    &  ?    \\ \hline
 \end{tabular}\end{center}
 We don't yet know whether our two predicates should be true or false of this new object, so I've left the cells next to it blank.  Let's begin with our conclusion `$\exists xFx \eif \exists xGx$' again: we want it to be false, so `$\exists xFx$' has to be true and `$\exists xGx$' has to be false.  Of course, `$\exists xFx$' remains true because $Fx^1$ is still true, so no change is needed here.  But to keep `$\exists xGx$' false, we need to make sure that our new object 2 is not in the extension of `$G$' either:
 \begin{center}\begin{tabular}{|c|c|c|}
 \hline
 &   F  & G  \\ \hline
 1   &   $+$  & $-$  \\ \hline
-2 &         &   $-$   \\ \hline
+2 &     ?    &   $-$   \\ \hline
 \end{tabular}\end{center}
 Now, can we make the premise `$\exists x(Fx \eif Gx)$' true?  In fact we can, by making sure that `$F$' is not true of 2.  For in that case, $(Fx^2 \eif Gx^2)$ will be true, because the antecedent $Fx^2$ will be false.  And that suffices for the truth of `$\exists x(Fx \eif Gx)$'.  Our final countermodel, and the accompanying semantic demonstrations showing that our premise is true and our conclusion false, then look like this:
 
@@ -720,22 +725,24 @@ Now, can we make the premise `$\exists x(Fx \eif Gx)$' true?  In fact we can, by
 \end{ebullet}
 
 
-Whereas we only needed a single object in the domain of our first countermodel, our second countermodel ended up requiring two objects to simultaneously make the premises true and the conclusion false.  Other examples might require you to use three objects, or even four, or more.  Is there any upper bound on the number of objects that might be needed to produce a countermodel?  It turns out that for arguments that only involve one-place predicates, the answer is `yes'.  The logician Leopold L\"owenheim showed that if an FOL argument contains $n$ one-place predicates (and no other predicates), then if the argument is invalid, a countermodel with a domain of at most $2^n$ objects exists.  So for something like Example 2, which involves just two predicates, we can be sure that we won't need more than four objects (though we managed to do it with just two).  As we'll see, there is no such upper bound for arguments with many-place predicates.
+We only needed a single object in the domain of our first countermodel, but our second countermodel ended up requiring two objects to simultaneously make the premises true and the conclusion false.  Other examples might require you to use three objects, or even four, or more.  Is there any upper bound on the number of objects that might be needed to produce a countermodel?
+
+It turns out that for arguments that only involve one-place predicates, the answer is `yes'.  The logician Leopold L\"owenheim showed that if an FOL argument contains just $n$ one-place predicates, then if the argument is invalid, a countermodel with a domain of at most $2^n$ objects exists.  So for something like Example 2, which involves two one-place predicates, we can be sure that we won't need more than four objects.  As we'll see, there is no such upper bound for arguments with many-place predicates.
 
 
-Before we turn to many-place predicates, though, one more general observation is in order.  Consider the following English argument:  
+Before we turn to many-place predicates, though, one more general observation is in order.  Consider the following English argument:
 \begin{earg}
 	\item[] All foxes are mortal.
 	\item[$\therefore$] Every vixen is mortal.
 \end{earg}
-This argument is valid in the sense that it's impossible for its premise to be true but its conclusion to be false: a vixen is just a female fox, so any possible world where every fox is mortal has to be one where every vixen is mortal.  But if we symbolize this, the resulting FOL argument is \emph{not} valid:
+This argument is valid in the sense that it's impossible for its premise to be true but its conclusion to be false: a vixen is just a female fox, so any possible world where every fox is mortal has to be one where every vixen is mortal.  But if we symbolize it, the resulting FOL argument is \emph{not} valid:
 \begin{earg}
 	\item[] $\forall x(Fx \eif Mx)$
 	\item[$\therefore$] $\forall x(Vx \eif Mx)$
 \end{earg}
-It's easy to construct an interpretation that makes the premise true and the conclusion false.  So from the fact that the symbolization of an English argument in FOL is not valid, we can't invariably conclude that the original English argument is not valid.    
+It's easy to construct an interpretation that makes the premise true and the conclusion false (just put an object in the extension of $V$ but not $M$ or $F$).
 
-What we can conclude is just that the original English argument is not \emph{formally} valid, or more specifically, that it isn't valid in virtue of the kind of logical form captured in its FOL symbolization.  But it might still be valid for other reasons --- in this case, because of the connection between the meanings of `fox' and `vixen'.  As we discussed in \S\ref{s:FormalValidity}, logic doesn't aim to capture the validity of arguments like this; it only cares about formally valid arguments.\footnote{Of course we can make the above argument formally valid by adding a second premise: `Every vixen is a fox', which we'd symbolize as `$\forall x(Vx \eif Fx)$'.  But this is now a \emph{different} argument, one with two premises.}
+So from the fact that the symbolization of an English argument in FOL is not valid, we can't straightaway conclude that the original English argument is not valid.   What we can conclude is just that the original English argument is not \emph{formally} valid, or more specifically, that it isn't valid in virtue of the kind of logical form captured in its FOL symbolization.  But it might still be valid for other reasons --- in this case, because of the connection between the meanings of `fox' and `vixen'.  As we discussed in \S\ref{s:FormalValidity}, logic doesn't aim to capture the validity of arguments like this; it only cares about formally valid arguments.\footnote{Of course we can make the above argument formally valid by adding a second premise: `Every vixen is a fox', which we'd symbolize as `$\forall x(Vx \eif Fx)$'.  But this is now a \emph{different}  $FOL$ argument, one with two premises.}
 
 \section{Countermodels with Many-Place Predicates}
 
@@ -761,7 +768,7 @@ You can perpahs already think of a countermodel that would make `$\forall x \exi
 \draw[->, thick] (atom1) to[loop above] (atom1);
 \end{tikzpicture}
 \end{center}
-However, this now also makes `$\forall xRxx$' true, whereas our goal is to make this false.  
+However, this now also makes `$\forall xRxx$' true, whereas our goal is to make this false.
 
 So let's expand our domain to include two objects, 1 and 2.  In order for `$\forall xRxx$' to be false, at least one of these objects must not bear $R$ to itself, i.e. must not have an arrow looping back to itself.  And for `$\forall x\exists yRxy$' to be true, every object has to bear $R$ to something, i.e. must have at least one outgoing arrow.  One easy way to achieve both is to expand our earlier model to look like this:
 
@@ -770,7 +777,7 @@ So let's expand our domain to include two objects, 1 and 2.  In order for `$\for
 \begin{multicols}{2}
 \begin{ekey}
 	\item[\text{Domain}] 1, 2
-	\item[R] \ntuple{1,1}, \ntuple{1,2}
+	\item[R] \ntuple{1,1}, \ntuple{2,1}
 \end{ekey}
 \columnbreak
 \begin{tikzpicture}
@@ -813,7 +820,7 @@ That is: a relation $L$'s being both reflexive and symmetric does not imply that
 \node (atom1) {1};
 \draw[->, thick] (atom1) to[loop above] (atom1);
 \end{tikzpicture}\end{center}
-However, since we want to make `$\exists x\forall yLxy$' \emph{false}, we need to make sure that for every $x$, there is at least one object it \emph{doesn't} bear $L$ to, i.e. we want the following to hold: $\forall x \exists y \enot Lxy$.  And the trouble is that as things stand, every object \emph{does} bear $L$ to something.  
+However, since we want to make `$\exists x\forall yLxy$' \emph{false}, we need to make sure that for every $x$, there is at least one object it \emph{doesn't} bear $L$ to, i.e. we want the following to hold: $\forall x \exists y \enot Lxy$.  And the trouble is that as things stand, every object \emph{does} bear $L$ to something.
 
 So let's try it with two objects.  Again, to make `$\forall xLxx$' true, they both need to bear $L$ to themselves:
 \begin{center}\begin{tikzpicture}
@@ -926,7 +933,7 @@ Let's try three objects.  What we've just seen is that we can't have any double-
 
 \end{tikzpicture}
 \end{center}
-But again, transitivity causes a problem.  Let's assign 2 to `$x$', 3 to `$y$', and 1 to `$z$', giving us: $(Rx^2y^3 \eand Ry^3z^1) \eif Rx^2z^1$.  Since both $Rx^2y^3$ and $Ry^3z^1$ are true, for the conditional to be true, the consequent $Rx^2z^1$ has to be true.   That would mean adding an arrow going from 2 to 1.  But since we already have an arrow going from 1 to 2,  that would reintroduce a double-headed arrow!  
+But again, transitivity causes a problem.  Let's assign 2 to `$x$', 3 to `$y$', and 1 to `$z$', giving us: $(Rx^2y^3 \eand Ry^3z^1) \eif Rx^2z^1$.  Since both $Rx^2y^3$ and $Ry^3z^1$ are true, for the conditional to be true, the consequent $Rx^2z^1$ has to be true.   That would mean adding an arrow going from 2 to 1.  But since we already have an arrow going from 1 to 2,  that would reintroduce a double-headed arrow!
 
 What this shows is that we can't have any arrows that ``go backward'' in our interpretation, to an earlier number.  We could add a fourth object so that 3's arrow can move forward:
 \begin{center}
@@ -950,23 +957,23 @@ But 4 \emph{also} has to have an arrow going to some object (for seriality).  An
 No, it does not: the argument is invalid, and a countermodel exists, but it requires \emph{infinitely many objects} in its domain.  The following is a countermodel, for example:
 \begin{ekey}
 	\item[\text{Domain}] all positive integers
-	\item[R] \blank \ is less than \blank
+	\item[R] \blank \ is less than \blank \ (or: all pairs of integers \ntuple{m,n} where $m < n$)
 \end{ekey}
-We can't specify this interpreation ``directly'' by listing all the objects in the domain and all the pairs in the extension of `$R$', since there are too many of them.  But we can specify the extension of `$R$' indirectly, via an English predicate. This interpretation does what we want:
+We can't specify this interpreation ``directly'' by listing all the objects in the domain and all the pairs in the extension of `$R$', since there are too many of them.  But we can specify the extension of `$R$' indirectly, via the English predicate. This interpretation does what we want:
 \begin{ebullet}
-\item `$\forall x\exists yRxy$' is true, since for every positive integer $x$ we can find a $y$ that $x$ is less than..
-\item `$\forall x \forall y \forall z((Rxy \eand Ryz) \eif Rxz)$' is true, since if $x$ is less and $y$ and $y$ is less than $z$, it follows that $x$ must be less than $z$.
-\item `$\exists xRxx$' is false, since there exist no positive integer that is less than itself.
+\item `$\forall x\exists yRxy$' is true, since for every positive integer $x$ we can find a $y$ such that $x<y$
+\item `$\forall x \forall y \forall z((Rxy \eand Ryz) \eif Rxz)$' is true, since if $x < y$ and $y < z$, it follows that $x < z$.
+\item `$\exists xRxx$' is false, since there exist no integer $x$ such that $x < x$.
 \end{ebullet}
 
 What we've seen, then, is that showing an FOL argument to be invalid may require an interpretation with infinitely many objects.  As mentioned in \S\ref{s:CountermodelOnePl}, this is not the case for FOL arguments that contain only \emph{one-place} predicates.  If such an argument is invalid, then there exists a countermodel with a domain of at most $2^n$ objects (where $n$ is the number of one-place predicates the argument contains).  Since there are finitely many interpretations for $n$ predicates using at most $2^n$ objects, this means that a computer could in principle crunch through all of those interpretations and determine if the argument is valid: if it finds a countermodel among them, the argument is invalid, if it doesn't, the argument is valid.
 
-The same holds for TFL.  Any TFL argument can be tested for validity by constructing its joint truth table and checking wether any line (i.e. valuation) makes all the premises true and the conclusion false.  So a computer can be programmed to mechanically test any TFL argument for validity. 
+The same holds for TFL.  Any TFL argument can be tested for validity by constructing its joint truth table and checking wether any line (i.e. valuation) makes all the premises true and the conclusion false.  So a computer can be programmed to mechanically test any TFL argument for validity.
 
 What we've seen is that this does not hold for FOL arguments that contain two-place predicates.  Here there is no finite number of interpretations we could program a computer to check such that, if it fails to find a countermodel among them, the argument is guaranteed to be valid.  And in fact, as the logicians Alan Turing and Alonzo Church independently proved in 1936, there exists \emph{no} mechanical test for validity in FOL. Validity in FOL is therefore said to be \define{undecidable}, in contrast to TFL, where validity is \define{decidable} via truth-tables.
 
 
-Demonstrating FOL arguments to be valid therefore invariably requires some ingenuity and insight --- it's not the kind of thing a computer can do. This is why we use natural deduction proofs to demonstrate validity in FOL: if methods that require ingenuity are going to be required anyhow, we might as well use the method of natural deduction.\footnote{Of course, by using natural deductions to prove arguments valid, we are relying on the fact that our proof system is sound, as well as complete.  See the beginning of Chapter \ref{ch:NDFOL} if you need to review these concepts.}
+Demonstrating FOL arguments to be valid therefore invariably requires some ingenuity and insight --- it's not the kind of thing a computer can do. This is why we use natural deduction proofs to demonstrate validity in FOL: if methods that require ingenuity are going to be required anyhow, we might as well use the method of natural deduction.\footnote{Of course, by using natural deductions to prove arguments valid, we are relying on the fact that our proof system is sound, as well as complete.  See the beginning of Chapter \ref{ch:NDFOL} on these concepts.}
 To be sure, one \emph{can} also give semantic proofs to demonstrate the validity of FOL arguments.  For example to show that the following entailment holds:
 $$\exists x(Fx \eand Gx) \vDash \exists x Fx \eand \exists xGx$$
 we could give the following semantic proof in English:
@@ -977,9 +984,9 @@ we could give the following semantic proof in English:
 
 However, we can also just give a natural deduction proof, which in fact goes through a very similar line of reasoning:
 \begin{proof}
-	\hypo{1}{\exists x (Fx \eand Gx)}
+	\hypo{1}{\exists x (Fx \eand Gx)} \by{Premise}{}
 	\open
-		\hypo{2}{Fa \eand Ga} 
+		\hypo{2}{Fa \eand Ga} \by{Assumption (flag a)}{}
 		\have{3}{Fa}\ae{2}
 		\have{4}{\exists xFx} \Ei{3}
 		\have{5}{Ga}\ae{2}
@@ -997,16 +1004,16 @@ Natural deduction proofs do not, however, allow use to demonstrate that argument
 
 So far, we've just been focusing on validity, or entailment. But we can use interpretations, as well as natural deduction proofs, in connection with other semantic concepts too.
 
-Take the concept of logical truth first.  To show that some FOL sentence \meta{A} is \emph{not} a logical truth, it suffices to construct an interpretation that makes it false.  And to show that it \emph{is} a logical truth, we can give a natural deduction that proves \meta{A} as a theorem.  This gives us a way to approach contradictions as well: since \meta{A} is a contradiction iff $\enot\meta{A}$ is a logical truth, we can show that \meta{A} is a contradiction by proving $\enot\meta{A}$ as a theorem.  And to show that \meta{A} is \emph{not} a contradiction, it suffices to construct an interpretation in which it is true.
+Take the concept of logical truth first.  To show that some FOL sentence \meta{\phi} is \emph{not} a logical truth, it suffices to construct an interpretation that makes it false.  And to show that it \emph{is} a logical truth, we can give a natural deduction that proves \meta{\phi} as a theorem.  This gives us a way to approach contradictions as well: since \meta{\phi} is a contradiction iff $\enot\meta{\phi}$ is a logical truth, we can show that \meta{\phi} is a contradiction by proving $\enot\meta{\phi}$ as a theorem.  And to show that \meta{\phi} is \emph{not} a contradiction, it suffices to construct an interpretation in which it is true.
 
 
-Next consider logical equivalence.  To show that \meta{A} and \meta{B} are \emph{not} logically equivalent, all we need to do is construct an interpretation on which one of them is true and the other is false.  And to show that \meta{A} and \meta{B} \emph{are} equivalent, we can give a natural deduction that proves $\meta{A} \eiff \meta{B}$ as a theorem, since \meta{A} and \meta{B} are equivalent just in case $\meta{A} \eiff \meta{B}$ is a logical truth.
+Next consider logical equivalence.  To show that \meta{\phi} and \meta{\psi} are \emph{not} logically equivalent, all we need to do is construct an interpretation on which one of them is true and the other is false.  And to show that \meta{\phi} and \meta{\psi} \emph{are} equivalent, we can give a natural deduction that proves $\meta{\phi} \eiff \meta{\psi}$ as a theorem, since \meta{\phi} and \meta{\psi} are equivalent just in case $\meta{\phi} \eiff \meta{\psi}$ is a logical truth.
 
 
 Lastly, take the concept of consistency.  To show that some sentences are jointly consistent, it suffices to give an interpretation on which they are all true.  As for inconsistency, notice that it connects to entailment in the following way:
-\factoidbox{$$\text{If } \meta{A}_1, \ldots, \meta{A}_n \entails \bot \text{, then } \meta{A}_1, \ldots, \meta{A}_n \text{ are jointly inconsistent} $$
+\factoidbox{$$\text{If } \meta{\phi}_1, \ldots, \meta{\phi}_n \entails \bot \text{, then } \meta{\phi}_1, \ldots, \meta{\phi}_n \text{ are jointly inconsistent} $$
 }
-For suppose  $\meta{A}_1, \ldots, \meta{A}_n \entails \bot$.  This means there's no interpretation that makes all of $\meta{A}_1, \ldots, \meta{A}_n $ true but $\bot$ false.  However, since every interpretation makes $\bot$ false, this just means that there's no interpretation that makes all of $\meta{A}_1, \ldots, \meta{A}_n $ true.  That is, $\meta{A}_1, \ldots, \meta{A}_n $ are inconsistent.    So if we want to show that $\meta{A}_1, \ldots, \meta{A}_n $ are inconsistent, we can do that by giving a natural deduction proof showing that $\meta{A}_1, \ldots \meta{A}_n \proves \bot $.
+For suppose  $\meta{\phi}_1, \ldots, \meta{\phi}_n \entails \bot$.  This means there's no interpretation that makes all of $\meta{\phi}_1, \ldots, \meta{\phi}_n $ true but $\bot$ false.  However, since every interpretation makes $\bot$ false, this just means that there's no interpretation that makes all of $\meta{\phi}_1, \ldots, \meta{\phi}_n $ true.  That is, $\meta{\phi}_1, \ldots, \meta{\phi}_n $ are inconsistent.    So if we want to show that $\meta{\phi}_1, \ldots, \meta{\phi}_n $ are inconsistent, we can do that by giving a natural deduction proof showing that $\meta{\phi}_1, \ldots \meta{\phi}_n \proves \bot $.
 
 The following table summarizes what is needed to demonstrate that a given concept does or does not apply:
 
@@ -1035,17 +1042,17 @@ Give counermodels to show the following:
 \item $\forall x(Ax \eif Bx) \nvDash \exists x Bx$
 \item $\forall x(Rx \eif Dx), \forall x(Rx \eif Fx) \nvDash \exists x(Dx \eand Fx)$
 \item $\exists x(Px\eif Qx) \nvDash \exists x Px$
-\item $Na \eand Nb \eand Nc \nvDash \forall x Nx$
+\item $Na \eand Nb \eand Na \nvDash \forall x Nx$
 \item $\exists x(Ex \eand Fx), \exists x Fx \eif \exists x Gx \nvDash \exists x(Ex \eand Gx)$
-\item $Rde, \exists x Rxd \nvDash Red$
-\item $\forall x Oxc, \forall x Ocx \nvDash \forall x Oxx$
+\item $Rab, \exists x Rxa \nvDash Rba$
+\item $\forall x Oxa, \forall x Oax \nvDash \forall x Oxx$
 \item $\forall x \exists yLxy \nvDash \exists x \forall yLxy$
 \item $\exists x(Jx \eand Kx), \exists x \enot Kx, \exists x \enot Jx \nvDash \exists x(\enot Jx \eand \enot Kx)$
 \item $Lab \eif \forall x Lxb, \exists x Lxb \nvDash Lbb$
 \item $\forall x(Dx \eif \exists y Tyx) \nvDash \exists y \exists z\  y \neq z$
 \item $\forall x (Fx \eor \enot Gx) \nvDash (\forall x Fx \eor \enot \exists x Gx)$
 \item $\forall x\exists y(Rxy \eif Rxx) \nvDash \forall x(\exists yRxy \eif Rxx)$
-\item $\forall xFx \eiff \forall yGy \nvDash \forall x(Fx \eiff AyGy)$ 
+\item $\forall xFx \eiff \forall yGy \nvDash \forall x(Fx \eiff AyGy)$
 \item $\forall x \exists yRxy , \exists x\forall yRxy \nvDash \forall x \forall y Rxy$
 \item $\nvDash \exists x \forall y((Rxy \land \sim Ryx) \rightarrow (Rxx \leftrightarrow Ryy))$
 \end{earg}
@@ -1056,11 +1063,11 @@ Show that each of the following is neither a logical truth nor a contradiction:
 \begin{earg}
 \item  $Da \eand Db$
 \item  $\exists x Txh$
-\item  $Pm \eand \enot\forall x Px$
+\item  $Pa \eand \enot\forall x Px$
 \item $\forall z Jz \eiff \exists y Jy$
-\item $\forall x (Wxmn \eor \exists yLxy)$
+\item $\forall x (Rxa \eor \exists yLxy)$
 \item $\exists x (Gx \eif \forall y My)$
-\item $\exists x (x = h \eand x = i)$
+%\item $\exists x (x = h \eand x = i)$
 \item $\exists x \forall y((Rxy \eand \enot Ryx) \eif (Rxx \eiff Ryy))$
 \end{earg}
 
@@ -1069,7 +1076,7 @@ Show that each of the following is neither a logical truth nor a contradiction:
 Show that the following pairs of sentences are not logically equivalent.
 \begin{earg}
 \item $Ja$, $Ka$
-\item $\exists x Jx$, $Jm$
+\item $\exists x Jx$, $Ja$
 \item $\forall x Rxx$, $\exists x Rxx$
 \item $\exists x Px \eif Qc$, $\exists x (Px \eif Qc)$
 \item $\forall x(Px \eif \enot Qx)$, $\exists x(Px \eand \enot Qx)$
@@ -1082,10 +1089,10 @@ Show that the following pairs of sentences are not logically equivalent.
 
 
 \problempart
-Show that the following sentences are jointly consistent:
+Show that the following sentences are jointly consistent (i.e. there's an interpretation that makes them all true):
 \begin{earg}
 \item $Ma, \enot Na, Pa, \enot Qa$
-\item $Lee, Leg, \enot Lge, \enot Lgg$
+\item $La, Lab, \enot Lbe, \enot Lbb$
 \item $\enot (Ma \eand \exists x Ax), Ma \eor Fa, \forall x(Fx \eif Ax)$
 \item $Ma \eor Mb, Ma \eif \forall x \enot Mx$
 \item $\forall y Gy, \forall x (Gx \eif Hx), \exists y \enot Iy$
@@ -1094,6 +1101,121 @@ Show that the following sentences are jointly consistent:
 \item $\forall x(Px \eor Qx), \exists x\enot(Qx \eand Px)$
 \item $\exists z(Nz \eand Ozz), \forall x\forall y(Oxy \eif Oyx)$
 \item $\enot \exists x \forall y Rxy, \forall x \exists y Rxy$
+%\item $\enot Raa$, $\forall x (x=a \eor Rxa)$
+%\item $\forall x\forall y\forall z(x=y \eor y=z \eor x=z)$, $\exists x\exists y\ \enot x= y$
+%\item $\exists x\exists y(Zx \eand Zy \eand x=y)$, $\enot Zd$, $d=e$
+\end{earg}
+
+\problempart
+\label{pr.FOLequivornot}
+For each of the following pairs of sentences: If they are provably equivalent, give proofs to show this. If they are not, construct an interpretation to show that they are not logically equivalent.
+\begin{earg}
+\item $\forall x Px \eif Qc, \forall x (Px \eif Qc)$
+\item $\forall x\forall y \forall z Bxyz, \forall x Bxxx$
+\item $\forall x\forall y Dxy, \forall y\forall x Dxy$
+\item $\exists x\forall y Dxy, \forall y\exists x Dxy$
+\item $\forall x (Rba \eiff Rxa), Rba \eiff \forall x Rxa$
+\end{earg}
+
+\problempart
+\label{pr.FOLvalidornot}
+For each of the following arguments: if it is valid in FOL, give a proof. If it is invalid, construct an interpretation to show that it is invalid.
+\begin{earg}
+\item $\exists y\forall x Rxy \therefore \forall x\exists y Rxy$
+\item $\exists x(Px \eand \enot Qx) \therefore \forall x(Px \eif \enot Qx)$
+\item $\forall x(Sx \eif Ta), Sb \therefore Ta$
+\item $\forall x(Ax\eif Bx), \forall x(Bx \eif Cx) \therefore \forall x(Ax \eif Cx)$
+\item $\exists x(Dx \eor Ex), \forall x(Dx \eif Fx) \therefore \exists x(Dx \eand Fx)$
+\item $\forall x\forall y(Rxy \eor Ryx) \therefore Raa$
+\item $\exists x\exists y(Rxy \eor Ryx) \therefore Raa$
+\item $\forall x Px \eif \forall x Qx, \exists x \enot Px \therefore \exists x \enot Qx$
+\end{earg}
+
+
+\section{Semantics for Identity}
+
+As mentioned in  \S\ref{s:identity}, FOL is standardly supplemented with a primitive logical symbol $=$ for \emph{identity}. In \S\ref{s:identityrules} we looked at the natural deduction rules that govern identity, with which we were then able to prove various logical truths involving identity, like that everything is identical to itself, $\forall x  \ x=x$.
+
+Similarly, we now need to say something about the semantics of identity, specifically how to determine the truth values of identity statements in an interpretation.  In this case, the semantics is extremely simple:\footnote{This clause assumes that variables can refer to objects, but technically variables only refer \emph{relative to} an assignment of values.  Again, see the Appendix in \S\ref{s:semanticsappendix} below for the official semantics, that makes the role of variable assignments explicit.}
+\factoidbox{
+		For any names (or variables) $\meta{a}$ and $\meta{b}$, $\meta{a} = \meta{b}$ is true in a given interpretation \textbf{iff}  \meta{a} and \meta{b} refer to very same object in that interpretation.
+}
+So if, for example, our interpretation specifies that the name `$m$' refers to 1, that `$n$' refers to 2, and that `$o$' also refers to 2, then `$m = n$' would be false (since 1 and 2 aren't identical) whereas `$n = o$' would be true (since 2 is identical to 2).  And of course, things like `$m = m$' or `$n = n$' will always be true, on any interpretation, since \emph{whatever} `$n$' (or `$m$') refers to, it will be identical to itself.
+
+We can also consider quantified sentences that involve identity.  In \S\ref{s:identity} we saw how to symbolize numerical claims using identity and quantifiers.  The claim that exactly one object exists can, for example, be symbolized as `$\exists x \forall y \ x = y$', and the claim that exactly two objects exist can be symbolized as `$\exists x \exists y( x \neq y \eand \forall z(z = x \eor z = y))$'.\footnote{Again, $x \neq y$ is jus shorthand for $\enot (x = y)$}   Using our semantics, we can now show that `$\exists x \forall y \ x = y$' is indeed false if the domain contains more than one object:
+
+\begin{center}
+
+\begin{ekey}
+	\item[\text{Domain}] 1, 2
+\end{ekey}
+\end{center}
+
+\begin{ebullet}
+\item $\exists x \forall y \ x = y$ is false because:
+\begin{etriangle}
+\item $\forall y \ x^1 = y$ is false
+\begin{etriangle}
+\item since $x^1 = y^2$ is false.
+\end{etriangle}
+\item and $\forall y \ x^2 = y$ is also false
+\begin{etriangle}
+\item since $x^2 = y^1$ is false.
+\end{etriangle}
+\end{etriangle}
+\end{ebullet}
+Similarly, we could show that `$\exists x \exists y( x \neq y \eand \forall z(z = x \eor z = y))$', that is, the claim that exactly two objects exist, is false on a domain that contains 1, 2, and 3. (Though for this, the complete semantic demonstration would be quite long, since there are three possible values to consider for `$x$', and then three possible values for `$y$' in each case!)
+
+
+\practiceproblems
+
+\problempart Consider again the following interpretation:
+
+\begin{multicols}{2}
+	\begin{ekey}
+		\item[\text{Domain}] 1, 2, 3
+		\item[R] \ntuple{1,3}, \ntuple{2,2}, \ntuple{2,3}, \ntuple{3, 2} \ntuple{3,3}
+	\end{ekey}
+\columnbreak
+
+\begin{tikzpicture}
+\node (atom1) at (0,1) {1};
+\node (atom2) at (2,2) {2};
+\node (atom3) at (2,0) {3};
+\draw[->, thick] (atom1)--(atom3);
+\draw[<->, thick] (atom2)--(atom3);
+\draw[->, thick] (atom3) to[loop right, looseness=15] (atom3);
+\draw[->, thick] (atom2) to[loop right, looseness=15] (atom2);
+%\draw[->, thick] (atom4) to[loop right, looseness=15] (atom4);
+\end{tikzpicture}
+
+\end{multicols}
+
+
+\noindent Determine whether each of the following sentences is true or false in this interpretation, and give a semantic demonstration to justify your answer.
+\begin{earg}
+\item $\forall x (\exists y \ x \neq y \eand \exists y \ x = y)$
+\item $\forall x \exists y ( x \neq y \eand \ x = y)$
+\item $\exists x \forall y \ x = y$
+\item $\exists x \exists y (x \neq y \eand  (Rxy \eand Ryx))$
+\item $\exists x \forall y(Rxy \eiff x = y)$
+\item $\exists x \forall y(Ryx \eiff x = y)$
+\item $\exists x \exists y((x \neq y \eand Rxy) \eand \forall z(Rzx \eiff y = z))$
+\end{earg}
+
+
+\problempart
+\label{pr.Contingent}
+Show that each of the following is neither a logical truth nor a contradiction:
+\begin{earg}
+\item $\forall x \exists y \ x \neq y$
+\item $\exists x (x = a \eand x = b)$
+\item $\forall x \forall y \forall z((x = y \eor x = z) \eor y = z)$
+\item $\exists x \exists y \ x \neq y$
+\end{earg}
+Show that the following sentences are jointly consistent (i.e. there's an interpretation that makes them all true):
+\begin{earg}
+\setcounter{eargnum}{2}
 \item $\enot Raa$, $\forall x (x=a \eor Rxa)$
 \item $\forall x\forall y\forall z(x=y \eor y=z \eor x=z)$, $\exists x\exists y\ \enot x= y$
 \item $\exists x\exists y(Zx \eand Zy \eand x=y)$, $\enot Zd$, $d=e$
@@ -1102,23 +1224,26 @@ Show that the following sentences are jointly consistent:
 
 
 
-\section{Appendix: Semantics with Variable Assignments}
-
-In \S\ref{s:TruthQuantifiedSentences} we explained the semantics for quantifiers using the notion of an assignment of objects to variables.  However, once we introduce variable assignments to deal with quantifiers, we should really go back and re-do our semantics with variable assignments from the beginning, even when we're just looking at atomic sentences.
 
 
-To see why, consider a simple example like `$\forall xFx$', and suppose our domain contains just the numbers 1 and 2.  Then in order for `$\forall xFx$' to be true, the formula `$Fx$' needs to be true on the assignment $[x:1]$ and also on $[x:2]$.  But what is required for `$Fx$' to be true on $[x:1]$, say?  The answer, of course, is that `$F$' has to be true of 1, the object we're treating `$x$' as referring to.  But the semantics we gave for atomic sentences doesn't technically tell us this!  All we said in \S\ref{s:TruthFOL} was the following:
+
+\section{Appendix: Semantics with Variable Assignments}\label{s:semanticsappendix}
+
+In \S\ref{s:TruthQuantifiedSentences} we explained the semantics for quantifiers using the notion of a variable assignment: an assignment of an object to a variable that represents our decision to temporarily treat the variable as if it referred to that object.  However, once we introduce variable assignments to deal with quantifiers, we should really go back and re-do our semantics from the ground up with variable assignments in mind, even when we're just looking at atomic sentences.
+
+
+To see why, consider a simple example like `$\forall xFx$', and suppose our domain contains just the numbers 1 and 2.  Then in order for `$\forall xFx$' to be true, the formula `$Fx$' needs to be true on the assignment $[x:1]$ and also on $[x:2]$.  But what is required for `$Fx$' to be true on $[x:1]$, say?  The answer, of course, is that `$F$' has to be true of 1, the object we're treating `$x$' as referring to.  But the semantics we gave for atomic sentences doesn't technically tell us this!  What we said in \S\ref{s:TruthFOL} was the following:
 	\factoidbox{
-		When \meta{R} is an $n$-place predicate and $\meta{a}_1, \meta{a}_{2}, \ldots, \meta{a}_{n}$ are names, the sentence $\meta{R}\meta{a}_{1}\meta{a}_{2}\ldots\meta{a}_{n}$ is true in a given interpretation \textbf{iff} $\meta{R}$ is true of the objects referred to by $\meta{a}_{1}, \meta{a}_{2}, \ldots, \meta{a}_{n}$ (in that order) in that interpretation	}
-This doesn't mention variable assignments anywhere.  And furthermore, it only deals with \emph{sentences}, that is, expressions built by combining predicates with \emph{names}.  `$Fx$' isn't built like this, because it contains a variable instead of a name.  So the above explanation simply does not apply to it.
+		When \meta{R} is an $n$-place predicate and $\meta{c}_1, \meta{c}_{2}, \ldots, \meta{c}_{n}$ are names, the sentence $\meta{R}\meta{c}_{1}\meta{c}_{2}\ldots\meta{c}_{n}$ is true in a given interpretation \textbf{iff} $\meta{R}$ is true of the objects referred to by $\meta{c}_{1}, \meta{c}_{2}, \ldots, \meta{c}_{n}$ (in that order) in that interpretation	}
+This doesn't mention variable assignments anywhere.  And furthermore, it only deals with \emph{sentences}, that is, expressions built by combining predicates with \emph{names}.  `$Fx$' isn't built like this, since it contains a variable instead of a name.  It is merely a \emph{formula}, so the above explanation simply does not apply to it.
 
-To remedy this situation, we need to return to the official explanation of the syntax, or grammar, of FOL that we gave way back in \S\ref{s:FOLSyntax}.  Recall that we there defined a general class of \emph{formulas} of FOL, among which we then singled out the smaller class of FOL \emph{sentences}.  We did this in four steps.  First, we stipulated that a \define{term} is to be any name \emph{or any variable}.  Second, we said that an \define{atomic formula} is anything that results from combining any predicate (including the identity symbol) with an appropriate number of \emph{terms}. Third, we said that a \define{formula}, more generally, is anything that can be built up from atomic formulas using truth functional operators and quantifiers.  And lastly, we then said that a \define{sentence} is any formula that contains no free, or unbound, variables.
+To remedy this situation, we need to return to the official explanation of the syntax, or grammar, of FOL that we gave way back in \S\ref{s:FOLSyntax}.  Recall that we there defined the general class of \emph{formulas} of FOL, among which we then singled out the smaller class of FOL \emph{sentences}.  We did this in four steps.  First, we stipulated that a \define{term} is to be any name \emph{or any variable}.  Second, we said that an \define{atomic formula} is anything that results from combining any predicate (including the identity symbol) with an appropriate number of \emph{terms}. Third, we said that a \define{formula}, more generally, is anything that can be built up from atomic formulas using truth functional operators and quantifiers.  And lastly, we then said that a \define{sentence} is any formula that contains no free, or unbound, variables.
 
-We here have to do something similar.  We will first have to give a general explanation of truth that covers all \emph{formulas}, such as `$Fx$', and then extract from that a notion of truth for just \emph{sentences}.  In particular, what we'll do is to explain what is required for any formula whatsoever to be true in an interpretation \emph{relative to a variable assignment}.  In what follows, let's use \meta{I} for an arbitrary interpretation, and $[ ]$ for an arbitrary variable assignment.  So we will give a general explanation of what is required for any formula to be \emph{true on $[]$ in \meta{I}}.
+We here have to do something similar.  We will first have to give a general explanation of truth that covers all \emph{formulas}, such as `$Fx$', and then extract from that a notion of truth for just \emph{sentences}.  In particular, what we'll do is to explain what is required for any formula whatsoever to be true in an interpretation \emph{relative to a variable assignment}.  In what follows, let's use \meta{I} for an arbitrary interpretation, and $[ ]$ for an arbitrary variable assignment.  So we will give a general explanation of what is required for any \emph{formula} to be \emph{true on $[]$ in \meta{I}}.  Later we'll use that to say what's required for a \emph{sentence} to be true.
 
-To begin, we first give an expanded notion of reference that covers both names (like $a, b, c \ldots$) and variables (like $x, y, z \ldots$).  Of course, a variable doesn't actually have a referent, since it isn't a name.  But  \emph{relative to a variable assignment}, variables can be construed as referring to things.  So:  
+To begin, we first give an expanded notion of reference that covers both names (like $a, b, c \ldots$) and variables (like $x, y, z \ldots$).  Again: a variable doesn't actually have a referent, since it isn't a name.  But  \emph{relative to a variable assignment}, variables can be construed as referring to things.  So:
 \factoidbox{
-For any term \meta{t}, the \define{referent of \meta{t} on [] in}  \meta{I} is:
+For any term \meta{t} (name or variable), the \define{referent of \meta{t} on [] in}  \meta{I} is:
 \begin{etriangle}
 \item whatever object the interpretation \meta{I} assigns to \meta{t}, if \meta{t} is a name, and
 \item whatever object the assignment [] assigns to \meta{t}, if \meta{t} is a variable
@@ -1129,32 +1254,32 @@ We can now use this expanded notion of reference to explain truth for all atomic
 
 
 \factoidbox{
-		When \meta{R} is an $n$-place predicate and $\meta{t}_1, \ldots, \meta{t}_{n}$ are terms, the formula $\meta{R}\meta{t}_{1} \ldots\meta{t}_{n}$ is true on [] in \meta{I} \textbf{iff} $\meta{R}$ is true of the objects referred to by $\meta{t}_{1},  \ldots, \meta{t}_{n}$ (in that order) on [] in \meta{I}.	\\
+		When \meta{R} is an $n$-place predicate and $\meta{t}_1, \ldots, \meta{t}_{n}$ are any terms (names \emph{or} variables), the formula $\meta{R}\meta{t}_{1} \ldots\meta{t}_{n}$ is true on [] in \meta{I} \textbf{iff} $\meta{R}$ is true of the objects referred to by $\meta{t}_{1},  \ldots, \meta{t}_{n}$ (in that order) on [] in \meta{I}.	\\
 
-And for any terms $\meta{t}_1$ and $\meta{t}_2$, the formula $\meta{t}_1 = \meta{t}_2$ is true on [] in \meta{I} iff $\meta{t}_1$ and $\meta{t}_2$ have the same referent on [] in \meta{I}.		
+And for any terms $\meta{t}_1$ and $\meta{t}_2$, the formula $\meta{t}_1 = \meta{t}_2$ is true on [] in \meta{I} iff $\meta{t}_1$ and $\meta{t}_2$ have the same referent on [] in \meta{I}.
 		}
-		
+
 This now \emph{does} specify what's required for e.g. `$Fx$' to be true on $[x:1]$.  What's required is that `$F$' be true of the referent of `$x$' on $[x:1]$.  And the referent of `$x$' on this assignment is of course just 1, give our expanded notion of reference.  So `$F$' has to be true of 1.  With atomic formulas covered, we can go on to explain truth for all complex formulas:
 \factoidbox{
-$\enot \meta{A}$ is true on [] in \meta{I}  \textbf{iff} $\meta{A}$ false on [] in \meta{I} \\
+$\enot \meta{\phi}$ is true on [] in \meta{I}  \textbf{iff} $\meta{\phi}$ false on [] in \meta{I} \\
 
-$\meta{A} \eand \meta{B}$ is true on [] in \meta{I} \textbf{iff} both $\meta{A}$ and $\meta{B}$ are true on [] in \meta{I} \\		
-		
-$\meta{A} \eor \meta{B}$ is true on [] in \meta{I}  \textbf{iff} either $\meta{A}$ or $\meta{B}$ are true on [] in \meta{I} \\
+$\meta{\phi} \eand \meta{\psi}$ is true on [] in \meta{I} \textbf{iff} both $\meta{\phi}$ and $\meta{\psi}$ are true on [] in \meta{I} \\
 
-$\meta{A} \eif \meta{B}$ is true on [] in \meta{I} \textbf{iff} either $\meta{A}$ is false or $\meta{B}$ is true on [] in \meta{I}\\
+$\meta{\phi} \eor \meta{\psi}$ is true on [] in \meta{I}  \textbf{iff} either $\meta{\phi}$ or $\meta{\psi}$ are true on [] in \meta{I} \\
 
-$\meta{A} \eiff \meta{B}$ is true on [] in \meta{I} \textbf{iff} $\meta{A}$ and $\meta{B}$ have the same truth value on [] in \meta{I}\\
+$\meta{\phi} \eif \meta{\psi}$ is true on [] in \meta{I} \textbf{iff} either $\meta{\phi}$ is false or $\meta{\psi}$ is true on [] in \meta{I}\\
 
-$\forall \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ is true on [] in \meta{I}  \textbf{iff} for \emph{every object} $o$ in the domain, $\meta{A}(\ldots \meta{v} \ldots)$ is true on [\meta{v}:o] in \meta{I}\\
+$\meta{\phi} \eiff \meta{\psi}$ is true on [] in \meta{I} \textbf{iff} $\meta{\phi}$ and $\meta{\psi}$ have the same truth value on [] in \meta{I}\\
 
-$\exists \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ is true on [] in \meta{I}  \textbf{iff} for \emph{at least one object} $o$ in the domain, $\meta{A}(\ldots \meta{v} \ldots)$ is true on [\meta{v}:o] in \meta{I}.
+$\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is true on [] in \meta{I}  \textbf{iff} for \emph{every object} $o$ in the domain, $\meta{\phi}(\ldots \meta{v} \ldots)$ is true on [\meta{v}:o] in \meta{I}\\
+
+$\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is true on [] in \meta{I}  \textbf{iff} for \emph{at least one object} $o$ in the domain, $\meta{\phi}(\ldots \meta{v} \ldots)$ is true on [\meta{v}:o] in \meta{I}.
 }
-Again, in the quantifier clauses [\meta{v}:o] is the assignment that's just like our arbitrary assignment [] in every respect, except that it is stipulated to assign the object $o$ to the variable \meta{v}.  The idea, again, being that we go through each object $o$ in the domain, and check whether the formula $\meta{A}(\ldots \meta{v} \ldots)$ is true when $o$ is assigned to the free variable \meta{v}.  If so, $\forall \meta{v}\meta{A}(\ldots \meta{v} \ldots)$ is true, if not, it is false.
+In the claues governing the quantifiers, [\meta{v}:o] is the assignment that's just like our arbitrary assignment [] in every respect, except that it is stipulated to assign the object $o$ to the variable \meta{v}.  The idea, again, being that we go through each object $o$ in the domain, and check whether the formula $\meta{\phi}(\ldots \meta{v} \ldots)$ is true when $o$ is assigned to the variable \meta{v}.  If so, $\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is true, if not, it is false.  On the other hand, for an existential sentence $\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ to be true, it's enough if \emph{at least one} object makes $\meta{\phi}(\ldots \meta{v} \ldots)$ true.
 
-Given all of this, we can now say what is required for any \emph{sentence}, i.e. any formula with no free variables, to be true in an interpretation \meta{I}:
+Given all of this, we can now say what is required for any \emph{sentence}, i.e. any closed formula, or formula with no free variables, to be true in an interpretation \meta{I}:
 
-\factoidbox{For any FOL sentence \meta{A} and any interpretation \meta{I}, \meta{A} is true in \meta{I} iff \meta{A} is true in \meta{I} on any assignment whatsoever.
+\factoidbox{For any FOL sentence \meta{\phi} and any interpretation \meta{I}, \meta{\phi} is true in \meta{I} iff \meta{\phi} is true in \meta{I} on any assignment [] whatsoever.
 }
-With all these pieces in place, the definition of the various logical concepts (like entailment) now proceeds as it did in \S\ref{s:FOLSemanticConcepts}.
+With this explanation of truth for sentences in place, the definition of the various logical concepts (like entailment, logical truth, equivalence etc.) now proceeds as it did in \S\ref{s:FOLSemanticConcepts}.
 

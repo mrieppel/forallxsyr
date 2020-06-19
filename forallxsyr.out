@@ -22,36 +22,36 @@
 \BOOKMARK [1][-]{section.3.6}{The Double-Turnstile Notation}{chapter.3}% 22
 \BOOKMARK [1][-]{section.3.7}{Truth Table Shortcuts}{chapter.3}% 23
 \BOOKMARK [1][-]{section.3.8}{Partial Truth Tables}{chapter.3}% 24
-\BOOKMARK [0][-]{chapter.4}{Natural deduction for TFL}{part.1}% 25
-\BOOKMARK [1][-]{section.4.1}{The Very Idea of Natural Deduction}{chapter.4}% 26
+\BOOKMARK [0][-]{chapter.4}{Natural Deduction for TFL}{part.1}% 25
+\BOOKMARK [1][-]{section.4.1}{The Idea Behind Natural Deduction}{chapter.4}% 26
 \BOOKMARK [1][-]{section.4.2}{Setting up Natural Deduction Proofs}{chapter.4}% 27
 \BOOKMARK [1][-]{section.4.3}{Conjunction Rules}{chapter.4}% 28
 \BOOKMARK [1][-]{section.4.4}{Conditional Rules}{chapter.4}% 29
 \BOOKMARK [1][-]{section.4.5}{Additional assumptions and subproofs}{chapter.4}% 30
 \BOOKMARK [1][-]{section.4.6}{Proving Theorems and Reiterating}{chapter.4}% 31
 \BOOKMARK [1][-]{section.4.7}{Biconditional Rules}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.8}{Disjunction Rules}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.9}{Negation Rules}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.8}{Negation Rules}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.9}{Disjunction Rules}{chapter.4}% 34
 \BOOKMARK [1][-]{section.4.10}{Proof strategies}{chapter.4}% 35
 \BOOKMARK [1][-]{section.4.11}{Derived Rules}{chapter.4}% 36
 \BOOKMARK [-1][-]{part.2}{First-order logic}{}% 37
 \BOOKMARK [0][-]{chapter.5}{Symbolization in FOL}{part.2}% 38
 \BOOKMARK [1][-]{section.5.1}{Names and Predicates}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.2}{Quantifiers}{chapter.5}% 40
-\BOOKMARK [1][-]{section.5.3}{Common Quantifier Phrases}{chapter.5}% 41
-\BOOKMARK [1][-]{section.5.4}{Picking a domain}{chapter.5}% 42
-\BOOKMARK [1][-]{section.5.5}{Quantifier Scope}{chapter.5}% 43
-\BOOKMARK [1][-]{section.5.6}{The Utility of Paraphrase}{chapter.5}% 44
-\BOOKMARK [1][-]{section.5.7}{Quantifiers and Many-Place Predicates}{chapter.5}% 45
-\BOOKMARK [1][-]{section.5.8}{Adding Identity}{chapter.5}% 46
-\BOOKMARK [1][-]{section.5.9}{The Syntax of FOL}{chapter.5}% 47
-\BOOKMARK [0][-]{chapter.6}{Natural deduction for FOL}{part.2}% 48
-\BOOKMARK [1][-]{section.6.1}{Universal elimination}{chapter.6}% 49
-\BOOKMARK [1][-]{section.6.2}{Existential introduction}{chapter.6}% 50
-\BOOKMARK [1][-]{section.6.3}{Universal introduction}{chapter.6}% 51
-\BOOKMARK [1][-]{section.6.4}{Existential elimination}{chapter.6}% 52
-\BOOKMARK [1][-]{section.6.5}{Rules for identity}{chapter.6}% 53
-\BOOKMARK [1][-]{section.6.6}{Derived Rules for FOL}{chapter.6}% 54
+\BOOKMARK [1][-]{section.5.2}{Quantifiers and Quantifier Scope}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.3}{Common Quantifier Phrases and Domains}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.4}{Quantifiers and Negation}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.5}{The Utility of Paraphrase}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.6}{Many-Place Predicates}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.7}{Multiple Generality}{chapter.5}% 45
+\BOOKMARK [1][-]{section.5.8}{Intermediate Steps to Symbolization}{chapter.5}% 46
+\BOOKMARK [1][-]{section.5.9}{Adding Identity}{chapter.5}% 47
+\BOOKMARK [1][-]{section.5.10}{The Syntax of FOL}{chapter.5}% 48
+\BOOKMARK [0][-]{chapter.6}{Natural deduction for FOL}{part.2}% 49
+\BOOKMARK [1][-]{section.6.1}{Universal elimination}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.2}{Existential introduction}{chapter.6}% 51
+\BOOKMARK [1][-]{section.6.3}{Universal introduction}{chapter.6}% 52
+\BOOKMARK [1][-]{section.6.4}{Existential elimination}{chapter.6}% 53
+\BOOKMARK [1][-]{section.6.5}{Rules for identity}{chapter.6}% 54
 \BOOKMARK [0][-]{chapter.7}{The Semantics of FOL}{part.2}% 55
 \BOOKMARK [1][-]{section.7.1}{Predicates and their Extensions}{chapter.7}% 56
 \BOOKMARK [1][-]{section.7.2}{FOL Interpretations}{chapter.7}% 57
@@ -63,5 +63,6 @@
 \BOOKMARK [1][-]{section.7.8}{Countermodels with Many-Place Predicates}{chapter.7}% 63
 \BOOKMARK [1][-]{section.7.9}{Validity and Decidability}{chapter.7}% 64
 \BOOKMARK [1][-]{section.7.10}{Working with Other Semantic Concepts}{chapter.7}% 65
-\BOOKMARK [1][-]{section.7.11}{Appendix: Semantics with Variable Assignments}{chapter.7}% 66
-\BOOKMARK [0][-]{chapter.8}{Quick Reference}{part.2}% 67
+\BOOKMARK [1][-]{section.7.11}{Semantics for Identity}{chapter.7}% 66
+\BOOKMARK [1][-]{section.7.12}{Appendix: Semantics with Variable Assignments}{chapter.7}% 67
+\BOOKMARK [0][-]{chapter.8}{Quick Reference}{part.2}% 68
