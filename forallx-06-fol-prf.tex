@@ -1,21 +1,22 @@
 %!TEX root = forallxsyr.tex
 \chapter{Natural deduction for FOL}\label{ch:NDFOL}
 
-The language of FOL contains all TFL connectives. So proofs in FOL will take over all the natural deduction rules from TFL that we studied in chapter \ref{ch:NDTFL}, as well as the all derived  TFL rules introduced in \S \ref{s:TFLDerivedRules}.  We will also continue to use the same proof theoretic notions, in particular, the symbol `$\proves$'.  So:
-$$\meta{\phi}_1, \ldots, \meta{\phi}_n \proves \meta{\psi}$$
-will continue to mean that $\meta{\psi}$ is \emph{provable} from $\meta{\phi}_1, \ldots, \meta{\phi}_n$, i.e. that there exists a natural deduction proof which ends with $\meta{\psi}$ and whose premises, or more generally, whose undischarged assumptions, include at most $\meta{\phi}_1, \ldots, \meta{\phi}_n$.
+
+Sentences in FOL can contain any of the TFL connectives. So proofs in FOL will take over all the natural deduction rules from TFL that we studied in chapter \ref{ch:NDTFL}, as well as the all derived  TFL rules introduced in \S \ref{s:TFLDerivedRules}.  We will also continue to use the same proof theoretic notions, in particular, the symbol `$\proves$'.  So:
+$$\meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi}$$
+will continue to mean that $\meta{\psi}$ is \emph{provable} from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, i.e. that there exists a natural deduction proof which ends with $\meta{\psi}$ and whose premises, or more generally, whose undischarged assumptions, include at most $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.
 
 
 What we will need to add to our natural deduction system are rules to govern the new logical symbols that are specific to FOL: the quantifiers `$\forall$' and `$\exists$', and the identity predicate `$=$'.  As in the case of TFL, there will be an \emph{introduction} and an \emph{elimination} rule associated with each of these logical symbols.  Again, we will of course want to make sure that the rules we add end up producing a proof system that is both sound and complete:
-\factoidbox{\define{Soundness:} $\text{If\ } \meta{\phi}_1, \ldots, \meta{\phi}_n \proves \meta{\psi} \text{ then } \meta{\phi}_1, \ldots, \meta{\phi}_n \entails \meta{\psi} $}
-\factoidbox{\define{Completeness:} $\text{If\ } \meta{\phi}_1, \ldots, \meta{\phi}_n \entails \meta{\psi} \text{ then } \meta{\phi}_1, \ldots, \meta{\phi}_n \proves \meta{\psi} $}
-Soundness ensures that if $\meta{\psi}$ is provable from $\meta{\phi}_1, \ldots, \meta{\phi}_n$, then $\meta{\phi}_1, \ldots, \meta{\phi}_n$ logically entail the conclusion \meta{\psi}.  And completeness ensures us that if $\meta{\phi}_1, \ldots, \meta{\phi}_n$ logically entail the conclusion \meta{\psi}, then \meta{\psi} is also provable from premises $\meta{\phi}_1, \ldots, \meta{\phi}_n$.  We will formally define the concept of logical entailment in Chapter \ref{ch:FOLSemantics}.
+\factoidbox{\define{Soundness:} $\text{If\ } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi} \text{ then } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \meta{\psi} $}
+\factoidbox{\define{Completeness:} $\text{If\ } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \meta{\psi} \text{ then } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi} $}
+Soundness ensures that if $\meta{\psi}$ is provable from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, then $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ logically entail the conclusion \meta{\psi}.  And completeness ensures us that if $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ logically entail the conclusion \meta{\psi}, then \meta{\psi} is also provable from premises $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.  We will formally define the concept of logical entailment in Chapter \ref{ch:FOLSemantics}.
 
-As in the case of TFL, we won't demonstrate that our proof system is in fact sound and complete --- this would require a \emph{meta-logical} proof, a proof \emph{about} our proof system.  You'll just have to take my word for it that soundness and completeness hold for our system. The important point for our purposes is that, due to the soundness of our proof system, we can use proofs to show that arguments are valid: if we can deduce a conclusion \meta{\psi} from some premises $\meta{\phi}_1, \ldots, \meta{\phi}_n$, then we can be sure that the premises entail the conclusion, and that the argument $\meta{\phi}_1, \ldots, \meta{\phi}_n \therefore \meta{\psi}$ is therefore valid.
+As in the case of TFL, we won't demonstrate that our proof system is in fact sound and complete --- this would require a \emph{meta-logical} proof, a proof \emph{about} our proof system.  You'll just have to take my word for it that soundness and completeness hold for our system. The important point for our purposes is that, due to the soundness of our proof system, we can use proofs to show that arguments are valid: if we can deduce a conclusion \meta{\psi} from some premises $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, then we can be sure that the premises entail the conclusion, and that the argument $\meta{\varphi}_1, \ldots, \meta{\varphi}_n \therefore \meta{\psi}$ is therefore valid.
 
 Similarly, we will continue to write:
-$${} \proves \meta{\phi}$$
-to mean that \meta{\phi} is a \define{theorem} of our proof system, i.e. a sentence that is provable using no premises, or undischarged assumptions.  Given soundess, theorems of our proof system are guaranteed to be \emph{logical truths}, so we can also use natural deduction proofs to show that things are logical truths.
+$${} \proves \meta{\varphi}$$
+to mean that \meta{\varphi} is a \define{theorem} of our proof system, i.e. a sentence that is provable using no premises, or undischarged assumptions.  Given soundess, theorems of our proof system are guaranteed to be \emph{logical truths}, so we can also use natural deduction proofs to show that things are logical truths.
 
 
 
@@ -36,18 +37,18 @@ Here we obtained line 2 by dropping the universal quantifier and replacing every
 
 Both `$Rad$' and `$Rdd$' are said to be \emph{instances} of the quantified sentence `$\forall xRxd$', as are `$Rbd$', `$Rcd$', `$Red$' and so on.  In general, this notion is defined as follows:
 
-\factoidbox{Given a universally quantified FOL sentence $\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ its \define{instances} are all those FOL sentences $\meta{\phi}(\ldots \meta{c} \ldots)$ that are obtained by dropping the quantifier $\forall \meta{v}$  and replacing \emph{every} occurrence of the variable \meta{v} bound by that quantifier with some name \meta{c}.
+\factoidbox{Given a universally quantified FOL sentence $\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ its \define{instances} are all those FOL sentences $\meta{\varphi}(\ldots \meta{c} \ldots)$ that are obtained by dropping the quantifier $\forall \meta{v}$  and replacing \emph{every} occurrence of the variable \meta{v} bound by that quantifier with some name \meta{c}.
 }
 The universal elimination rule $\forall$E then just says that from a universal sentence you may infer any of its instances:
 
 \factoidbox{
 \begin{proof}
-	\have[m]{a}{\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)}
-	\have[\ ]{c}{\meta{\phi}(\ldots \meta{c} \ldots)} \Ae{a}
+	\have[m]{a}{\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)}
+	\have[\ ]{c}{\meta{\varphi}(\ldots \meta{c} \ldots)} \Ae{a}
 \end{proof}}
-Here, as well as in the definition of the notion of an instance, we are using the notation $\meta{\phi}(\ldots \meta{v} \ldots)$ to represent any FOL formula \meta{\phi} that contains at least one occurrence of the variable \meta{v}, and $\meta{\phi}(\ldots \meta{c} \ldots)$ to represent the result of replacing every occurrence of the variable \meta{v} in that formula with some name \meta{c}.
+Here, as well as in the definition of the notion of an instance, we are using the notation $\meta{\varphi}(\ldots \meta{v} \ldots)$ to represent any FOL formula \meta{\varphi} that contains at least one occurrence of the variable \meta{v}, and $\meta{\varphi}(\ldots \meta{c} \ldots)$ to represent the result of replacing every occurrence of the variable \meta{v} in that formula with some name \meta{c}.
 
-Notice that $\meta{\phi}(\ldots \meta{v} \ldots)$ may of course itself contain connectives and even other quantifiers.  So if we begin with the complex universally quantified sentence:
+Notice that $\meta{\varphi}(\ldots \meta{v} \ldots)$ may of course itself contain connectives and even other quantifiers.  So if we begin with the complex universally quantified sentence:
 $$\forall x(Rax \eand \exists yRxy)$$
 the following would be instance of it, and could be inferred via $\forall$E:
 \begin{center}
@@ -110,15 +111,15 @@ Here we have replaced both occurrences of the name `$a$' with the variable `$x$'
 
 Another way to put this is to note that `$Lnn$' is an \emph{instance} of each of the quantified sentences `$\exists xLxx$',  `$\exists xLnx$', `$\exists xLxn$'.  The notion of an instances as applied to existential sentences is the same as it is for universal ones:
 
-\factoidbox{Given any existentially quantified FOL sentence $\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ its \define{instances} are all those FOL sentences $\meta{\phi}(\ldots \meta{c} \ldots)$ that are obtained by dropping the quantifier $\exists \meta{v}$  and replacing \emph{every} occurrence of the variable \meta{v} bound by that quantifier with some name \meta{c}.
+\factoidbox{Given any existentially quantified FOL sentence $\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ its \define{instances} are all those FOL sentences $\meta{\varphi}(\ldots \meta{c} \ldots)$ that are obtained by dropping the quantifier $\exists \meta{v}$  and replacing \emph{every} occurrence of the variable \meta{v} bound by that quantifier with some name \meta{c}.
 }
 
 The existential introduction rule $\exists$I then just says that from a sentence  containing one or more occurrences of a name \meta{c}, we may infer \emph{any} existential sentence of which that original sentence is an instance:
 
 \factoidbox{
 \begin{proof}
-	\have[m]{a}{\meta{\phi}(\ldots \meta{c} \ldots)}
-	\have[\ ]{c}{\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)} \Ei{a}
+	\have[m]{a}{\meta{\varphi}(\ldots \meta{c} \ldots)}
+	\have[\ ]{c}{\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)} \Ei{a}
 \end{proof}
 }
 
@@ -256,12 +257,12 @@ Our universal introduction rule $\forall$I implements this idea via a ``flagged 
 	\open
 	\hypo[m]{1}{\meta{c}} \fl{}
 	\have[\ ]{2}{\vdots}
-	\have[n]{3}{\meta{\phi}(\ldots \meta{c} \ldots)}
+	\have[n]{3}{\meta{\varphi}(\ldots \meta{c} \ldots)}
 	\close
-	\have[\ ]{4}{\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)} \Ai{1-3}
+	\have[\ ]{4}{\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)} \Ai{1-3}
 \end{proof}
-	\vspace{1em} The Flag-ed name \meta{c} may not occur outside the subproof (including \\ in the inferred sentence $\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ itself!)}
-The Flag step on line $m$ is just a way of officially signaling that the name \meta{c} is being introduced as an arbitrary name in the proof, one that we'll use to prove an arbitrary instance of the universal sentence $\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ that we are aiming for.  Our proof that $\forall x (Fx \eand Gx) \proves \forall x Fx$ can now be presented as follows:
+	\vspace{1em} The Flag-ed name \meta{c} may not occur outside the subproof (including \\ in the inferred sentence $\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ itself!)}
+The Flag step on line $m$ is just a way of officially signaling that the name \meta{c} is being introduced as an arbitrary name in the proof, one that we'll use to prove an arbitrary instance of the universal sentence $\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ that we are aiming for.  Our proof that $\forall x (Fx \eand Gx) \proves \forall x Fx$ can now be presented as follows:
 
 \begin{proof}
 	\hypo{0}{\forall x(Fx \eand Gx)} \by{Premise}{}
@@ -381,16 +382,16 @@ Breaking this down: we started by writing down our premises. At line 3, we then 
 Putting this together, we obtain the existential elimination rule ($\exists$E):\footnote{As in the case of $\forall$I, our formulation of the flagging constraint at the bottom is more restrictive than strictly necessary.  It would be alright if the flag-ed constant $\meta{c}$ occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption}.}
 \factoidbox{
 \begin{proof}
-	\have[m]{a}{\exists \meta{x}\meta{\phi}(\ldots \meta{x} \ldots)}
+	\have[m]{a}{\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)}
 	\open
-		\hypo[i]{b}{\meta{\phi}(\ldots \meta{c} \ldots)} \by{Assumption (flag \meta{c})}{}
+		\hypo[i]{b}{\meta{\varphi}(\ldots \meta{c} \ldots)} \by{Assumption (flag \meta{c})}{}
 		\have[ \ ]{es}{\vdots}
 		\have[j]{c}{\meta{\psi}}
 	\close
 	\have[\ ]{d}{\meta{\psi}} \Ee{a,b-c}
 \end{proof}
-The Flag-ed name \meta{c} may not occur outside the subproof (including in the original existential $\exists \meta{x}\meta{\phi}(\ldots \meta{x} \ldots)$ and the inferred sentence \meta{\psi}!)}
-So in general, to prove some sentence \meta{\psi} from an existential sentence $\exists \meta{x}\meta{\phi}(\ldots \meta{x} \ldots)$, what we do is flag some arbitrary name \meta{c}, assume an instance of the existential sentence using this name \meta{c}, and then prove our goal \meta{\psi} from that instance.  Finally, we discharge our assumption and infer \meta{\psi} on its own via $\exists$E.
+The Flag-ed name \meta{c} may not occur outside the subproof (including in the original existential $\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)$ and the inferred sentence \meta{\psi}!)}
+So in general, to prove some sentence \meta{\psi} from an existential sentence $\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)$, what we do is flag some arbitrary name \meta{c}, assume an instance of the existential sentence using this name \meta{c}, and then prove our goal \meta{\psi} from that instance.  Finally, we discharge our assumption and infer \meta{\psi} on its own via $\exists$E.
 
 As with universal introduction, the Flag-ing constraint on the name \meta{c} that's listed at the bottom is very important. To see why, consider the obviously bad argument:
 	\begin{quote}
@@ -622,16 +623,16 @@ Notice that this rule does not require referring to any prior lines of the proof
 Our elimination rule is more fun. If you have established `$a=b$', then anything that is true of the object named by `$a$' must also be true of the object named by `$b$', since they are one and the same. This means that given any sentence with `$a$' in it, you can replace some or all of the occurrences of `$a$' with `$b$'. For example, from `$Raa$' and `$a = b$', you are justified in inferring `$Rab$', `$Rba$' or `$Rbb$'. More generally:
 \factoidbox{\begin{proof}
 	\have[m]{e}{\meta{a}=\meta{b}}
-	\have[n]{a}{\meta{\phi}(\ldots \meta{a} \ldots \meta{a}\ldots)}
-	\have[\ ]{ea1}{\meta{\phi}(\ldots \meta{b} \ldots \meta{a}\ldots)} \by{=E}{e,a}
+	\have[n]{a}{\meta{\varphi}(\ldots \meta{a} \ldots \meta{a}\ldots)}
+	\have[\ ]{ea1}{\meta{\varphi}(\ldots \meta{b} \ldots \meta{a}\ldots)} \by{=E}{e,a}
 \end{proof}}
-The notation here should be understood as follows: $\meta{\phi}(\ldots \meta{a} \ldots \meta{a}\ldots)$ is a sentence containing the name $\meta{a}$, and $\meta{\phi}(\ldots \meta{b} \ldots \meta{a}\ldots)$ is a sentence obtained by replacing one or more occurrences of the name $\meta{a}$ with the name $\meta{b}$. Lines $m$ and $n$ can occur in either order, and do not need to be adjacent, but we always cite the statement of identity first.
+The notation here should be understood as follows: $\meta{\varphi}(\ldots \meta{a} \ldots \meta{a}\ldots)$ is a sentence containing the name $\meta{a}$, and $\meta{\varphi}(\ldots \meta{b} \ldots \meta{a}\ldots)$ is a sentence obtained by replacing one or more occurrences of the name $\meta{a}$ with the name $\meta{b}$. Lines $m$ and $n$ can occur in either order, and do not need to be adjacent, but we always cite the statement of identity first.
 
 Symmetrically, we allow:
 \factoidbox{\begin{proof}
 	\have[m]{e}{\meta{a}=\meta{b}}
-	\have[n]{a}{\meta{\phi}(\ldots \meta{b} \ldots \meta{b}\ldots)}
-	\have[\ ]{ea2}{\meta{\phi}(\ldots \meta{a} \ldots \meta{b}\ldots)} \by{=E}{e,a}
+	\have[n]{a}{\meta{\varphi}(\ldots \meta{b} \ldots \meta{b}\ldots)}
+	\have[\ ]{ea2}{\meta{\varphi}(\ldots \meta{a} \ldots \meta{b}\ldots)} \by{=E}{e,a}
 \end{proof}}
 That is, if we have established $\meta{a} = \meta{b}$, and we have a sentence that contains the name \meta{b}, then we are allowed to infer any sentence that results from the first by replacing one or more occurrence of \meta{b} with \meta{a}.
 
@@ -825,26 +826,26 @@ And offer a proof of it.
 %
 %	\factoidbox{
 %	\begin{proof}
-%		\have[m]{a}{\forall \meta{v} \enot\meta{\phi}}
-%		\have[\ ]{con}{\enot \exists \meta{v} \meta{\phi}}\cq{a}
+%		\have[m]{a}{\forall \meta{v} \enot\meta{\varphi}}
+%		\have[\ ]{con}{\enot \exists \meta{v} \meta{\varphi}}\cq{a}
 %	\end{proof}}
 %
 %\factoidbox{
 %	\begin{proof}
-%		\have[m]{a}{ \enot \exists \meta{v} \meta{\phi}}
-%		\have[\ ]{con}{\forall  \meta{v} \enot \meta{\phi}}\cq{a}
+%		\have[m]{a}{ \enot \exists \meta{v} \meta{\varphi}}
+%		\have[\ ]{con}{\forall  \meta{v} \enot \meta{\varphi}}\cq{a}
 %	\end{proof}}
 %
 %\factoidbox{
 %	\begin{proof}
-%		\have[m]{a}{\exists \meta{v}\enot \meta{\phi}}
-%		\have[\ ]{con}{\enot \forall \meta{v} \meta{\phi}}\cq{a}
+%		\have[m]{a}{\exists \meta{v}\enot \meta{\varphi}}
+%		\have[\ ]{con}{\enot \forall \meta{v} \meta{\varphi}}\cq{a}
 %	\end{proof}}
 %
 %\factoidbox{
 %	\begin{proof}
-%		\have[m]{a}{\enot \forall \meta{v} \meta{\phi}}
-%		\have[\ ]{con}{\exists \meta{v} \enot \meta{\phi}}\cq{a}
+%		\have[m]{a}{\enot \forall \meta{v} \meta{\varphi}}
+%		\have[\ ]{con}{\exists \meta{v} \enot \meta{\varphi}}\cq{a}
 %	\end{proof}}
 %
 %Using these rules, we can give a pair of quick proofs showing that `$\exists x Fx$' is provably equivalent to `$\enot \forall x \enot Fx$':
@@ -867,7 +868,7 @@ And offer a proof of it.
 %\have{5}{\exists x Fx} \Ei{4}
 %\end{proof}
 %
-%\noindent The fact, in general, $\exists \meta{v} \meta{\phi}$ is equivalent to $\enot \forall \meta{v} \enot \meta{\phi}$ means that we don't really need to have `$\exists$' as a primitive symbol in FOL.  We could instead treat $\exists \meta{v}\meta{\phi}$ as just a shorthand notation for $\enot \forall \meta{v} \enot\meta{\phi}$, much as we've been treating $\meta{t}_1 \neq \meta{t}_2$ as a shorthand for $\enot \meta{t}_1 = \meta{t}_2$.
+%\noindent The fact, in general, $\exists \meta{v} \meta{\varphi}$ is equivalent to $\enot \forall \meta{v} \enot \meta{\varphi}$ means that we don't really need to have `$\exists$' as a primitive symbol in FOL.  We could instead treat $\exists \meta{v}\meta{\varphi}$ as just a shorthand notation for $\enot \forall \meta{v} \enot\meta{\varphi}$, much as we've been treating $\meta{t}_1 \neq \meta{t}_2$ as a shorthand for $\enot \meta{t}_1 = \meta{t}_2$.
 %
 %\practiceproblems
 %
@@ -935,10 +936,10 @@ And offer a proof of it.
 %
 %\chapter{Proof-theoretic concepts and semantic concepts}
 %We have used two different turnstiles in this book.  This:
-%$$\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n \proves \meta{C}$$
-%means that there is some proof which ends with $\meta{C}$ and whose only undischarged assumptions are among $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$. This is a \emph{proof-theoretic notion}. By contrast, this:
-%$$\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n \entails \meta{C}$$
-%means that  no valuation (or interpretation) makes all of $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$ true and $\meta{C}$ false. This concerns assignments of truth and falsity to sentences. It is a \emph{semantic notion}.
+%$$\meta{\varphi}_1, \meta{\varphi}_2, \ldots, \meta{\varphi}_n \proves \meta{C}$$
+%means that there is some proof which ends with $\meta{C}$ and whose only undischarged assumptions are among $\meta{\varphi}_1, \meta{\varphi}_2, \ldots, \meta{\varphi}_n$. This is a \emph{proof-theoretic notion}. By contrast, this:
+%$$\meta{\varphi}_1, \meta{\varphi}_2, \ldots, \meta{\varphi}_n \entails \meta{C}$$
+%means that  no valuation (or interpretation) makes all of $\meta{\varphi}_1, \meta{\varphi}_2, \ldots, \meta{\varphi}_n$ true and $\meta{C}$ false. This concerns assignments of truth and falsity to sentences. It is a \emph{semantic notion}.
 %
 %I cannot emphasise enough that these are different notions. But I can emphasise it a bit more: \emph{They are different notions.}
 %
@@ -952,10 +953,10 @@ And offer a proof of it.
 %
 %Contrawise, to show that a sentence is \emph{not} a theorem is hard. We would need to reason about all (possible) proofs. That is very difficult. But to show that a sentence is not a logical truth, you need only construct an interpretation in which the sentence is false. Granted, it may be hard to come up with the interpretation; but once you have done so, it is relatively straightforward to check what truth value it assigns to a sentence. Given a choice between showing that a sentence is not a theorem and showing that it is not a logical truth, it would be easier to show that it is not a logical truth.
 %
-%Fortunately, \emph{a sentence is a theorem if and only if it is a logical truth}. As a result, if we provide a proof of $\meta{\phi}$ on no assumptions, and thus show that $\meta{\phi}$ is a theorem, i.e.\ ${}\proves \meta{\phi}$, we can legitimately infer that $\meta{\phi}$ is a logical truth, i.e., $\entails\meta{\phi}$. Similarly, if we construct a model in which \meta{\phi} is false and thus show that it is not a logical truth, i.e.\ $\nentails \meta{\phi}$, it follows that \meta{\phi} is not a theorem, i.e.\  $\nproves \meta{\phi}$.
+%Fortunately, \emph{a sentence is a theorem if and only if it is a logical truth}. As a result, if we provide a proof of $\meta{\varphi}$ on no assumptions, and thus show that $\meta{\varphi}$ is a theorem, i.e.\ ${}\proves \meta{\varphi}$, we can legitimately infer that $\meta{\varphi}$ is a logical truth, i.e., $\entails\meta{\varphi}$. Similarly, if we construct a model in which \meta{\varphi} is false and thus show that it is not a logical truth, i.e.\ $\nentails \meta{\varphi}$, it follows that \meta{\varphi} is not a theorem, i.e.\  $\nproves \meta{\varphi}$.
 %
 %More generally, we have the following powerful result:
-%$$\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n \proves\meta{\psi} \textbf{ iff }\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n \entails\meta{\psi}$$
+%$$\meta{\varphi}_1, \meta{\varphi}_2, \ldots, \meta{\varphi}_n \proves\meta{\psi} \textbf{ iff }\meta{\varphi}_1, \meta{\varphi}_2, \ldots, \meta{\varphi}_n \entails\meta{\psi}$$
 %This shows that, whilst provability and entailment are \emph{different} notions, they are extensionally equivalent. As such:
 %	\begin{ebullet}
 %		\item An argument is \emph{valid} iff \emph{the conclusion can be proved from the premises}.
@@ -973,28 +974,28 @@ And offer a proof of it.
 %\begin{tabular*}{\textwidth}{p{.25\textheight}p{.325\textheight}p{.325\textheight}}
 % & \textbf{Yes}  & \textbf{No}\\
 %\\
-%Is \meta{\phi} a \textbf{logical truth}?
-%& give a proof which shows $\proves\meta{\phi}$
-%& give an interpretation in which \meta{\phi} is false\\
+%Is \meta{\varphi} a \textbf{logical truth}?
+%& give a proof which shows $\proves\meta{\varphi}$
+%& give an interpretation in which \meta{\varphi} is false\\
 %\\
-%Is \meta{\phi} a \textbf{contradiction}? &
-%give a proof which shows $\proves\enot\meta{\phi}$ &
-%give an interpretation in which \meta{\phi} is true\\
+%Is \meta{\varphi} a \textbf{contradiction}? &
+%give a proof which shows $\proves\enot\meta{\varphi}$ &
+%give an interpretation in which \meta{\varphi} is true\\
 %\\
-%%Is \meta{\phi} contingent? &
-%%give two interpretations, one in which \meta{\phi} is true and another in which \meta{\phi} is false & give a proof which either shows $\proves\meta{\phi}$ or $\proves\enot\meta{\phi}$\\
+%%Is \meta{\varphi} contingent? &
+%%give two interpretations, one in which \meta{\varphi} is true and another in which \meta{\varphi} is false & give a proof which either shows $\proves\meta{\varphi}$ or $\proves\enot\meta{\varphi}$\\
 %%\\
-%Are \meta{\phi} and \meta{\psi} \textbf{equivalent}? &
-%give two proofs, one for $\meta{\phi}\proves\meta{\psi}$ and one for $\meta{\psi}\proves\meta{\phi}$
-%& give an interpretation in which \meta{\phi} and \meta{\psi} have different truth values\\
+%Are \meta{\varphi} and \meta{\psi} \textbf{equivalent}? &
+%give two proofs, one for $\meta{\varphi}\proves\meta{\psi}$ and one for $\meta{\psi}\proves\meta{\varphi}$
+%& give an interpretation in which \meta{\varphi} and \meta{\psi} have different truth values\\
 %\\
-%Are $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$ \textbf{jointly consistent}?
-%& give an interpretation in which all of $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$ are true
-%& prove a contradiction from assumptions $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$\\
+%Are $\meta{\varphi}_1, \meta{\varphi}_2, \ldots, \meta{\varphi}_n$ \textbf{jointly consistent}?
+%& give an interpretation in which all of $\meta{\varphi}_1, \meta{\varphi}_2, \ldots, \meta{\varphi}_n$ are true
+%& prove a contradiction from assumptions $\meta{\varphi}_1, \meta{\varphi}_2, \ldots, \meta{\varphi}_n$\\
 %\\
-%Is $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n \therefore \meta{C}$ \textbf{valid}?
-%& give a proof with assumptions $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$ and concluding with \meta{C}
-%& give an interpretation in which each of $\meta{\phi}_1, \meta{\phi}_2, \ldots, \meta{\phi}_n$ is true and \meta{C} is false\\
+%Is $\meta{\varphi}_1, \meta{\varphi}_2, \ldots, \meta{\varphi}_n \therefore \meta{C}$ \textbf{valid}?
+%& give a proof with assumptions $\meta{\varphi}_1, \meta{\varphi}_2, \ldots, \meta{\varphi}_n$ and concluding with \meta{C}
+%& give an interpretation in which each of $\meta{\varphi}_1, \meta{\varphi}_2, \ldots, \meta{\varphi}_n$ is true and \meta{C} is false\\
 %\end{tabular*}
 %\end{center}
 %\end{sidewaystable}

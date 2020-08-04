@@ -6,7 +6,7 @@
 
 This book provides an introduction to logic.  But what is logic? This is a surprisingly difficult question, still debated by philosophers. But generally speaking, logic is about distinguishing \emph{valid} from \emph{invalid} arguments.
 
-In everyday language, the word `argument' is often used to describe an activity that people engage in.   On twitter, or youtube, or the news, people often have heated disagreements, and you've probably had arguments like this with your family or friends.  Logicians tend to be a pretty sedate crowd, and they mean something very different by `argument'.  In logic, an argument is just a collection of statements.  More specifically:
+In everyday language, the word `argument' is often used to describe an activity that people engage in.   On twitter, or youtube, or the news, people often have heated debates, and you've probably had arguments like this with your family or friends.  Logicians tend to be a pretty sedate crowd, and they mean something very different by `argument'.  In logic, an argument is just a collection of statements.  More specifically:
 
 \factoidbox{An \define{argument} is a collection of one or more \emph{statements}, exactly one of which is the argument's \emph{conclusion} and the rest of which are its \emph{premises}.}
 
@@ -17,8 +17,7 @@ In everyday language, the word `argument' is often used to describe an activity 
 \item[] Bugs Bunny is a rabbit.
 \item[] $\therefore$ Bugs Bunny is a mammal.
 \end{earg}
-
-This argument consists of three statements.  One of them is the argument's conclusion, which we indicate by the three dots $\therefore$  These dots are read as ``therefore.'' The rest are the premises.  This argument has two premises, but arguments can have any number of premises (though, again, only one conclusion).
+This argument consists of three statements.  One of them is the argument's conclusion, which we indicate by the three dots $\therefore\ $  These dots are read as ``therefore.'' The rest are the premises.  This argument has two premises, but arguments can have any number of premises (though, again, only one conclusion).
 
 Notice that our logician's definition of an argument is very permissive. Consider the following:
 	\begin{earg}
@@ -33,9 +32,9 @@ Here's another argument, one that's not as obviously terrible:
 \item[] Winnie the Pooh is a mammal.
 \item[] $\therefore$ Winnie the Pooh is a rabbit.
 \end{earg}
-In this case the premises at least involve the same concepts as the conclusion.  But this argument still isn't as good as \eref{exarg1} from earlier: unlike the earlier example, this argument isn't valid --- its conclusion doesn't follow from its premises.  But what exactly does validity, or ``following from,'' consist in?  What's wrong with argument \eref{exarg2} as compared to \eref{exarg1}?
+In this case the premises at least involve the same concepts as the conclusion.  But this argument still isn't as good as \eref{exarg1} from earlier: unlike the earlier example, this argument isn't \emph{valid} --- its conclusion doesn't \emph{follow from} its premises.  But what exactly does validity, or ``following from,'' consist in?  What's wrong with argument \eref{exarg2} as compared to \eref{exarg1}?
 
-One thing that's worse about the second argument is that its conclusion is false: Pooh isn't a rabbit, he's a bear!  But that isn't what distinguishes valid from invalid arguments, because there are valid arguments with false conclusions, and invalid arguments with true conclusions.  For example:
+One thing that's worse about the second argument is that its conclusion is false: Pooh isn't a rabbit, he's a bear!  But that isn't what distinguishes valid from invalid arguments in general, because there are valid arguments with false conclusions, and invalid arguments with true conclusions.  For example:
 \begin{earg}
 \item[\ex{exarg3}]All rabbits are birds.
 \item[] Winnie the Pooh is a rabbit.
@@ -349,14 +348,14 @@ The general point is that arguments like \eref{exarg8} and  \eref{exarg1} are va
 \item[] Reihan is a runner.
 \item[] $\therefore$ Reihan is not married.
 \end{earg}
-This isn't valid because it's trivial to imagine a world where Reihan is a runner but also married.  What made argument \eref{exarg6} valid wasn't its logical form, but the connection between the  \emph{specific meanings} of the words `bachelor' and `married' that occur in its premise and its conclusion. Other arguments of the same form that involve words with different meanings may no longer be valid. Logic is all about identifying patterns that make for valid arguments.  So it only cares about \define{formally valid} arguments like \eref{exarg1} and \eref{exarg8}, not arguments like \eref{exarg5} and \eref{exarg6} that are valid for reasons other than their logical form. 
+This isn't valid because it's trivial to imagine a world where Reihan is a runner but also married.  What made argument \eref{exarg6} valid wasn't its logical form, but the \emph{specific meanings} of the words `bachelor' and `married' that occur in its premise and its conclusion. Other arguments of the same form that involve words with different meanings may no longer be valid. Logic is all about identifying \emph{patterns} that make arguments valid.  So it only cares about \define{formally valid} arguments like \eref{exarg1} and \eref{exarg8}, not arguments like \eref{exarg5} and \eref{exarg6} that are valid for reasons other than their logical form. 
 
 
 
 
 Due to logic's concern with form, we will approach the task of distinguishing valid from invalid arguments in an indirect way. We will first introduce a formal language in which we can symbolize English arguments.  Doing this lets us represent the logical forms of those arguments.  We will then give a precise definition of validity for arguments cast in this formal notation.  And this will in turn give us our indirect means of distinguishing valid from invalid arguments in English: if an English argument can be symbolized as a valid argument in our formal notation, then that English argument is formally valid.
 
-In fact, we will study two systems of logic, involving two different formal languages. These systems will differ in what words they treat as \emph{logical constants}, that is,  which words they treat as indicative of logically significant structure.  The first system we will study is \emph{Truth-Functional Logic} (or TFL).  It will let us represent the structure of arguments like \eref{exarg8} via the symbolization to the right:
+In fact, we will study two systems of logic, involving two different formal languages. These systems will differ in what words they treat as \emph{logical constants}, that is,  which words they treat as indicative of logically significant structure, or form.  The first system we will study is \emph{Truth-Functional Logic} (or TFL).  It will let us represent the structure of arguments like \eref{exarg8} via the symbolization to the right:
 
 \begin{multicols}{2}
 
@@ -376,7 +375,7 @@ In fact, we will study two systems of logic, involving two different formal lang
 
 \end{multicols}
 
-\noindent This language treats words like `either \ldots or' and `not' as logical constants (represented by `$\eor$' and `$\enot$' respectively), and will use upper-case letters to represent complete statements (like `$A$' for `Jenny is happy').  TFL is the topic of Part 1 of this book.
+\noindent This language treats words like `either \ldots or' and `not' as logical constants (represented by `$\eor$' and `$\enot$' respectively), and will use upper-case letters to represent complete statements (like `$A$' for `Jenny is happy', and `B' for `Jenny is sad').  TFL is the topic of Part 1 of this book.
 
 In Part 2 of the book, we will turn to \emph{First-Order Logic} (or FOL).  It will let us represent the structure of things like the Bugs Bunny argument via the symbolization to the right:
 
@@ -399,7 +398,7 @@ In Part 2 of the book, we will turn to \emph{First-Order Logic} (or FOL).  It wi
 
 \end{multicols}
 
-\noindent This system extends Truth-Functional Logic by treating words like `all' as logical constants (represented by `$\forall$').  It also lets us represent some of the internal structure of a simple statement like `Bugs Bunny is a rabbit', showing that it is formed by combining the name `Bugs Bunny' (represented as `$a$') with the predicate `is a rabbit' (represented by `$F$').\footnote{At this point you might be wondering why logicians treat words like `either \ldots or', `not', and `all' as logical constants that get represented by special symbols, but not other words like `happy' or `bachelor'.  This is a difficult philosophical question about logic that we won't get into here.  If you're interested, check out the \emph{Stanford Encyclopedia of Philosophy's} entries on \href{http://plato.stanford.edu/entries/logical-constants/}{Logical Constants} and  \href{http://plato.stanford.edu/entries/logical-consequence/}{Logical Consequence}.} With this very short preview out of the way, let's get started with logic! 
+\noindent This system extends Truth-Functional Logic by treating words like `all' as logical constants (represented by `$\forall$').  It also lets us represent some of the \emph{internal} structure of a simple statement like `Bugs Bunny is a rabbit', showing that it is formed by combining the name `Bugs Bunny' (represented as `$a$') with the predicate `is a rabbit' (represented by `$F$').\footnote{At this point you might be wondering how logicians decide which English words are to be treated as logical constants, and represented by special logical symbols that indicate ``logical form.''  This is a difficult philosophical question about logic that we won't have a chance to delve into here.  If you're interested, though, check out the \emph{Stanford Encyclopedia of Philosophy's} entries on \href{http://plato.stanford.edu/entries/logical-constants/}{Logical Constants} and  \href{http://plato.stanford.edu/entries/logical-consequence/}{Logical Consequence}.} With this very short preview out of the way, let's get started with logic! 
 
 
 
@@ -423,4 +422,5 @@ In Part 2 of the book, we will turn to \emph{First-Order Logic} (or FOL).  It wi
 %\end{itemize}
 %\end{enumerate}
  
+
 

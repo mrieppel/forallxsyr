@@ -6,7 +6,7 @@
 
 \begin{center}
 \begin{tabular}{c c|c|c|c|c|c}
-\meta{\phi} & \meta{\psi} & $\enot \meta{\phi}$ & $\meta{\phi}\eand\meta{\psi}$ & $\meta{\phi}\eor\meta{\psi}$ & $\meta{\phi}\eif\meta{\psi}$ & $\meta{\phi}\eiff\meta{\psi}$\\
+\meta{\varphi} & \meta{\psi} & $\enot \meta{\varphi}$ & $\meta{\varphi}\eand\meta{\psi}$ & $\meta{\varphi}\eor\meta{\psi}$ & $\meta{\varphi}\eif\meta{\psi}$ & $\meta{\varphi}\eiff\meta{\psi}$\\
 \hline
 T & T & F & T & T & T & T\\
 T & F & F & F & T & F & F\\
@@ -114,19 +114,19 @@ F & F & T & F & F & T & T
 \noindent\textbf{Conjunction Introduction}
 
 \begin{proof}
-	\have[m]{a}{\meta{\phi}}
+	\have[m]{a}{\meta{\varphi}}
 	\have[n]{b}{\meta{\psi}}
-	\have[\ ]{c}{\meta{\phi}\eand\meta{\psi}} \ai{a, b}
+	\have[\ ]{c}{\meta{\varphi}\eand\meta{\psi}} \ai{a, b}
 \end{proof}
 
 
 \vspace{1em}\noindent\textbf{Conjunction Elimination}
 
 \begin{proof}
-	\have[m]{ab}{\meta{\phi}\eand\meta{\psi}}
-\\	\have[\ ]{a}{\meta{\phi}} \ae{ab}
+	\have[m]{ab}{\meta{\varphi}\eand\meta{\psi}}
+\\	\have[\ ]{a}{\meta{\varphi}} \ae{ab}
 
-	\have[m]{ab}{\meta{\phi}\eand\meta{\psi}}
+	\have[m]{ab}{\meta{\varphi}\eand\meta{\psi}}
 \\	\have[\ ]{b}{\meta{\psi}} \ae{ab}
 \end{proof}
 
@@ -134,18 +134,18 @@ F & F & T & F & F & T & T
 
 \begin{proof}
 	\open
-	\hypo[i]{a}{\meta{\phi}}
+	\hypo[i]{a}{\meta{\varphi}}
 	\have[j]{b}{\meta{\psi}}
 	\close
-	\have[\ ]{ab}{\meta{\phi}\eif\meta{\psi}}\ci{a-b}
+	\have[\ ]{ab}{\meta{\varphi}\eif\meta{\psi}}\ci{a-b}
 \end{proof}
 
 \columnbreak
 \vspace{1em}\noindent\textbf{Conditional Elimination}
 
 \begin{proof}
-	\have[m]{ab}{\meta{\phi}\eif\meta{\psi}}
-	\\	\have[n]{a}{\meta{\phi}}
+	\have[m]{ab}{\meta{\varphi}\eif\meta{\psi}}
+	\\	\have[n]{a}{\meta{\varphi}}
 	\have[\ ]{b}{\meta{\psi}} \ce{ab,a}
 \end{proof}
 
@@ -153,20 +153,20 @@ F & F & T & F & F & T & T
 
 \begin{proof}
 	\open
-		\hypo[i]{a1}{\meta{\phi}}
+		\hypo[i]{a1}{\meta{\varphi}}
 		\have[j]{b1}{\meta{\psi}}
 	\close
 	\open
 		\hypo[k]{b2}{\meta{\psi}}
-		\have[l]{a2}{\meta{\phi}}
+		\have[l]{a2}{\meta{\varphi}}
 	\close
-	\have[\ ]{ab}{\meta{\phi}\eiff\meta{\psi}}\bi{a1-b1,b2-a2}
+	\have[\ ]{ab}{\meta{\varphi}\eiff\meta{\psi}}\bi{a1-b1,b2-a2}
 \end{proof}
 
 \vspace{1em}\noindent\textbf{Biconditional Elimination}
 \begin{proof}
-	\have[m]{ab}{\meta{\phi}\eiff\meta{\psi}}
-\\	\have[n]{a}{\meta{\phi}}
+	\have[m]{ab}{\meta{\varphi}\eiff\meta{\psi}}
+\\	\have[n]{a}{\meta{\varphi}}
 	\have[\ ]{b}{\meta{\psi}} \be{ab,a}
 \end{proof}
 
@@ -175,28 +175,28 @@ F & F & T & F & F & T & T
 \newpage
 \begin{multicols}{2}
 \begin{proof}
-	\have[m]{ab}{\meta{\phi}\eiff\meta{\psi}}
+	\have[m]{ab}{\meta{\varphi}\eiff\meta{\psi}}
 \\	\have[n]{a}{\meta{\psi}}
-	\have[\ ]{b}{\meta{\phi}} \be{ab,a}
+	\have[\ ]{b}{\meta{\varphi}} \be{ab,a}
 \end{proof}
 
 
 \vspace{1em}\noindent\textbf{Disjunction Introduction}
 
 \begin{proof}
-	\have[m]{a}{\meta{\phi}}
-	\have[\ ]{ab}{\meta{\phi}\eor\meta{\psi}}\oi{a}
+	\have[m]{a}{\meta{\varphi}}
+	\have[\ ]{ab}{\meta{\varphi}\eor\meta{\psi}}\oi{a}
 
-	\have[m]{a}{\meta{\phi}}
-\\	\have[\ ]{ba}{\meta{\psi}\eor\meta{\phi}}\oi{a}
+	\have[m]{a}{\meta{\varphi}}
+\\	\have[\ ]{ba}{\meta{\psi}\eor\meta{\varphi}}\oi{a}
 \end{proof}
 
 \vspace{1em}\noindent\textbf{Disjunction Elimination}
 
 \begin{proof}
-	\have[m]{ab}{\meta{\phi}\eor\meta{\psi}}
+	\have[m]{ab}{\meta{\varphi}\eor\meta{\psi}}
 \\	\open
-		\hypo[i]{a}{\meta{\phi}}
+		\hypo[i]{a}{\meta{\varphi}}
 		\have[j]{c1}{\meta{\chi}}
 	\close
 	\open
@@ -210,18 +210,18 @@ F & F & T & F & F & T & T
 
 \begin{proof}
 	\open
-	\hypo[m]{a}{\meta{\phi}}
+	\hypo[m]{a}{\meta{\varphi}}
 	\have[n]{nb}{\ered}
 	\close
-	\have[\ ]{na}{\enot\meta{\phi}}\ni{a-nb}
+	\have[\ ]{na}{\enot\meta{\varphi}}\ni{a-nb}
 \end{proof}
 
 
 \vspace{1em}\noindent\textbf{Negation Elimination}
 
 \begin{proof}
-	\have[m]{a}{\meta{\phi}}
-	\have[n]{na}{\enot\meta{\phi}}
+	\have[m]{a}{\meta{\varphi}}
+	\have[n]{na}{\enot\meta{\varphi}}
 	\have[ ]{bot}{\ered}\ri{a, na}
 \end{proof}
 
@@ -229,10 +229,10 @@ F & F & T & F & F & T & T
 
 \begin{proof}
 	\open
-	\hypo[m]{a}{\enot \meta{\phi}}
+	\hypo[m]{a}{\enot \meta{\varphi}}
 	\have[n]{nb}{\ered}
 	\close
-	\have[\ ]{na}{\meta{\phi}}\ip{a-nb}
+	\have[\ ]{na}{\meta{\varphi}}\ip{a-nb}
 \end{proof}
 
 \end{multicols}
@@ -246,21 +246,21 @@ F & F & T & F & F & T & T
 \begin{center}
 \begin{tabular}{l  r}
 \textbf{Sequent:}                    &       \textbf{Derived Rule:} \\ \hline
-$\meta{\phi} \rightarrow \meta{\psi},  \enot\meta{\psi} \proves \enot \meta{\phi}$   &                       MT  \\
-$\meta{\phi} \eor \meta{\psi},  \enot\meta{\psi} \proves \meta{\phi}$ & DS\\
-$\meta{\phi} \eor \meta{\psi},  \enot\meta{\phi}\proves \meta{\psi}$    &      DS  \\
-$\meta{\phi} \proves\meta{\psi} \rightarrow \meta{\phi}$  &              PMI  \\
-$\enot\meta{\phi}\proves\meta{\phi}\rightarrow \meta{\psi}$  & PMI\\
-$\meta{\phi} \rightarrow\meta{\psi} \pequiv \enot\meta{\phi}\eor \meta{\psi}$  &                   Imp   \\
-$\enot (\meta{\phi} \rightarrow \meta{\psi}) \pequiv \meta{\phi} \eand \enot \meta{\psi}$  &               NegImp  \\
-$\enot (\meta{\phi} \eand \meta{\psi})  \pequiv \enot\meta{\phi}\eor \enot \meta{\psi}$  &                DeM  \\
-$\enot (\meta{\phi} \eor \meta{\psi}) \pequiv \enot\meta{\phi}\ \eand \ \enot \meta{\psi}$   &               DeM  \\
-$\meta{\phi} \pequiv \enot \enot \meta{\phi}$     &                              DN  \\
-$(\meta{\phi}  \ \#\  \meta{\psi}) \pequiv (\enot \enot \meta{\phi}  \ \#\   \enot \enot \meta{\psi}) \pequiv (\enot \enot \meta{\phi}  \ \#\  \meta{\psi}) \pequiv (\meta{\phi}  \ \#\  \enot \enot  \meta{\psi})$ & SDN\\
-$\enot (\meta{\phi}  \ \#\  \meta{\psi}) \pequiv \enot (\enot \enot \meta{\phi}  \ \#\   \enot \enot \meta{\psi}) \pequiv \enot (\enot \enot \meta{\phi}  \ \#\  \meta{\psi}) \pequiv \enot (\meta{\phi}  \ \#\  \enot \enot  \meta{\psi})$ & SDN\\
-$\meta{\phi} @ \meta{\psi}  \proves  \meta{\psi} @ \meta{\phi}$ &                          Com \\
-$\bot \proves \meta{\phi}$ & EX \\
- $\proves \meta{\phi}\eor \enot \meta{\phi}$ &                                                    LEM \\
+$\meta{\varphi} \rightarrow \meta{\psi},  \enot\meta{\psi} \proves \enot \meta{\varphi}$   &                       MT  \\
+$\meta{\varphi} \eor \meta{\psi},  \enot\meta{\psi} \proves \meta{\varphi}$ & DS\\
+$\meta{\varphi} \eor \meta{\psi},  \enot\meta{\varphi}\proves \meta{\psi}$    &      DS  \\
+$\meta{\varphi} \proves\meta{\psi} \rightarrow \meta{\varphi}$  &              PMI  \\
+$\enot\meta{\varphi}\proves\meta{\varphi}\rightarrow \meta{\psi}$  & PMI\\
+$\meta{\varphi} \rightarrow\meta{\psi} \pequiv \enot\meta{\varphi}\eor \meta{\psi}$  &                   Imp   \\
+$\enot (\meta{\varphi} \rightarrow \meta{\psi}) \pequiv \meta{\varphi} \eand \enot \meta{\psi}$  &               NegImp  \\
+$\enot (\meta{\varphi} \eand \meta{\psi})  \pequiv \enot\meta{\varphi}\eor \enot \meta{\psi}$  &                DeM  \\
+$\enot (\meta{\varphi} \eor \meta{\psi}) \pequiv \enot\meta{\varphi}\ \eand \ \enot \meta{\psi}$   &               DeM  \\
+$\meta{\varphi} \pequiv \enot \enot \meta{\varphi}$     &                              DN  \\
+$(\meta{\varphi}  \ \#\  \meta{\psi}) \pequiv (\enot \enot \meta{\varphi}  \ \#\   \enot \enot \meta{\psi}) \pequiv (\enot \enot \meta{\varphi}  \ \#\  \meta{\psi}) \pequiv (\meta{\varphi}  \ \#\  \enot \enot  \meta{\psi})$ & SDN\\
+$\enot (\meta{\varphi}  \ \#\  \meta{\psi}) \pequiv \enot (\enot \enot \meta{\varphi}  \ \#\   \enot \enot \meta{\psi}) \pequiv \enot (\enot \enot \meta{\varphi}  \ \#\  \meta{\psi}) \pequiv \enot (\meta{\varphi}  \ \#\  \enot \enot  \meta{\psi})$ & SDN\\
+$\meta{\varphi} @ \meta{\psi}  \proves  \meta{\psi} @ \meta{\varphi}$ &                          Com \\
+$\bot \proves \meta{\varphi}$ & EX \\
+ $\proves \meta{\varphi}\eor \enot \meta{\varphi}$ &                                                    LEM \\
 \end{tabular}
 \end{center}
 
@@ -274,8 +274,8 @@ $\bot \proves \meta{\phi}$ & EX \\
 \vspace{1em}\noindent\textbf{Universal Elimination}
 
 \begin{proof}
-	\have[m]{a}{\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)}
-	\have[\ ]{c}{\meta{\phi}(\ldots \meta{c} \ldots)} \Ae{a}
+	\have[m]{a}{\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)}
+	\have[\ ]{c}{\meta{\varphi}(\ldots \meta{c} \ldots)} \Ae{a}
 \end{proof}
 
 \vspace{1em}\noindent\textbf{Universal Introduction}
@@ -283,9 +283,9 @@ $\bot \proves \meta{\phi}$ & EX \\
 \begin{proof}
 	\open
 	\hypo[m]{1}{\meta{c}} \fl{}
-	\have[n]{3}{\meta{\phi}(\ldots \meta{c} \ldots)}
+	\have[n]{3}{\meta{\varphi}(\ldots \meta{c} \ldots)}
 	\close
-	\have[\ ]{4}{\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)} \Ai{1-3}
+	\have[\ ]{4}{\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)} \Ai{1-3}
 \end{proof}
 
 \noindent The Flag-ed name \meta{c} may not occur outside the subproof.
@@ -293,17 +293,17 @@ $\bot \proves \meta{\phi}$ & EX \\
 \vspace{1em}\noindent\textbf{Existential Introduction}
 
 \begin{proof}
-	\have[m]{a}{\meta{\phi}(\ldots \meta{c} \ldots)}
-	\have[\ ]{c}{\exists \meta{x}\meta{\phi}(\ldots \meta{x} \ldots)} \Ei{a}
+	\have[m]{a}{\meta{\varphi}(\ldots \meta{c} \ldots)}
+	\have[\ ]{c}{\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)} \Ei{a}
 \end{proof}
 
 \vspace{1em}\noindent\textbf{Existential Elimination}
 
 
 \begin{proof}
-	\have[m]{a}{\exists \meta{x}\meta{\phi}(\ldots \meta{x} \ldots)}
+	\have[m]{a}{\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)}
 	\open
-		\hypo[i]{b}{\meta{\phi}(\ldots \meta{c} \ldots)} \by{Flag \meta{c}}{}
+		\hypo[i]{b}{\meta{\varphi}(\ldots \meta{c} \ldots)} \by{Flag \meta{c}}{}
 		\have[j]{c}{\meta{\psi}}
 	\close
 	\have[\ ]{d}{\meta{\psi}} \Ee{a,b-c}
@@ -322,16 +322,16 @@ $\bot \proves \meta{\phi}$ & EX \\
 
 \begin{proof}
 	\have[m]{e}{\meta{a}=\meta{b}}
-	\have[n]{a}{\meta{\phi}(\ldots \meta{a} \ldots \meta{a}\ldots)}
-	\have[\ ]{ea1}{\meta{\phi}(\ldots \meta{b} \ldots \meta{a}\ldots)} \by{=E}{e,a}
+	\have[n]{a}{\meta{\varphi}(\ldots \meta{a} \ldots \meta{a}\ldots)}
+	\have[\ ]{ea1}{\meta{\varphi}(\ldots \meta{b} \ldots \meta{a}\ldots)} \by{=E}{e,a}
 \end{proof}
 
 
 
 \begin{proof}
 	\have[m]{e}{\meta{a}=\meta{b}}
-	\have[n]{a}{\meta{\phi}(\ldots \meta{b} \ldots \meta{b}\ldots)}
-	\have[\ ]{ea2}{\meta{\phi}(\ldots \meta{a} \ldots \meta{b}\ldots)} \by{=E}{e,a}
+	\have[n]{a}{\meta{\varphi}(\ldots \meta{b} \ldots \meta{b}\ldots)}
+	\have[\ ]{ea2}{\meta{\varphi}(\ldots \meta{a} \ldots \meta{b}\ldots)} \by{=E}{e,a}
 \end{proof}
 
 \columnbreak
@@ -348,18 +348,18 @@ $\bot \proves \meta{\phi}$ & EX \\
 %\section{Derived rules for FOL}
 %\begin{multicols}{2}
 %\begin{proof}
-%	\have[m]{ab}{\forall \meta{x}\enot \meta{\phi}}
-%	\have[\ ]{ac}{\enot \exists \meta{x} \meta{\phi}}\cq{ab}
+%	\have[m]{ab}{\forall \meta{x}\enot \meta{\varphi}}
+%	\have[\ ]{ac}{\enot \exists \meta{x} \meta{\varphi}}\cq{ab}
 %
-%	\have[m]{ab}{\enot \exists \meta{x}  \meta{\phi}}
-%\\	\have[\ ]{ac}{\forall \meta{x}\enot\meta{\phi}}\cq{ab}
+%	\have[m]{ab}{\enot \exists \meta{x}  \meta{\varphi}}
+%\\	\have[\ ]{ac}{\forall \meta{x}\enot\meta{\varphi}}\cq{ab}
 %\end{proof}
 %\begin{proof}
-%	\have[m]{ab}{\exists \meta{x}\enot\meta{\phi}}
-%	\have[\ ]{ac}{\enot \forall \meta{x} \meta{\phi}}\cq{ab}
+%	\have[m]{ab}{\exists \meta{x}\enot\meta{\varphi}}
+%	\have[\ ]{ac}{\enot \forall \meta{x} \meta{\varphi}}\cq{ab}
 %
-%	\have[m]{ab}{\enot \forall \meta{x}  \meta{\phi}}
-%\\	\have[\ ]{ac}{\exists \meta{x}\enot \meta{\phi}}\cq{ab}
+%	\have[m]{ab}{\enot \forall \meta{x}  \meta{\varphi}}
+%\\	\have[\ ]{ac}{\exists \meta{x}\enot \meta{\varphi}}\cq{ab}
 %\end{proof}
 %\end{multicols}
 %

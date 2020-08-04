@@ -221,7 +221,7 @@ To see the route towards the correct symbolization, notice that \eref{quan1} can
 	}
 
 
-%Notice that just as it was essential to use a conditional (rather than a conjunction) with the universal quantifier, so it's essential to use a conjunction (rather than a conditional) with the existential. Suppose we had instead symbolized \eref{quan2} as `$\exists x(Dx \eif Px)$'. That would mean that there is some object in the domain of which `$(Dx \eif Px)$' is true. Recall that, in TFL, $\meta{\phi} \eif \meta{\psi}$ is tautologically equivalent to $\enot\meta{\phi} \eor \meta{\psi}$. This equivalence will also hold in FOL. So `$\exists x(Dx \eif Px)$' is true if there is some object in the domain, such that `$(\enot Dx \eor Px)$' is true of that object, that is, if some animal is \emph{either} not a dog \emph{or} is a poodle. And of course there are lots of animals that are not dogs!  So it is \emph{far too easy} for `$\exists x(Tx \eif Dx)$' to be true, and it doesn't at all capture the meaning of \eref{quan2}.
+%Notice that just as it was essential to use a conditional (rather than a conjunction) with the universal quantifier, so it's essential to use a conjunction (rather than a conditional) with the existential. Suppose we had instead symbolized \eref{quan2} as `$\exists x(Dx \eif Px)$'. That would mean that there is some object in the domain of which `$(Dx \eif Px)$' is true. Recall that, in TFL, $\meta{\varphi} \eif \meta{\psi}$ is tautologically equivalent to $\enot\meta{\varphi} \eor \meta{\psi}$. This equivalence will also hold in FOL. So `$\exists x(Dx \eif Px)$' is true if there is some object in the domain, such that `$(\enot Dx \eor Px)$' is true of that object, that is, if some animal is \emph{either} not a dog \emph{or} is a poodle. And of course there are lots of animals that are not dogs!  So it is \emph{far too easy} for `$\exists x(Tx \eif Dx)$' to be true, and it doesn't at all capture the meaning of \eref{quan2}.
 
 The same patterns apply to quantified sentences that involve compound predicates:
 	\begin{earg}
@@ -282,17 +282,17 @@ So far we've only looked at English quantifier phrases involving `every' and `so
 	\begin{earg}
 		\item[\ex{q.neg1}] No one is angry.
 	\end{earg}
-This could be paraphrased as `It is not the case that someone is angry'.  We can therefore symbolize it using negation together with an existential quantifier: $\enot \exists x Ax$.  Interestingly, though, this is not the only option.  If you think about it, \eref{q.neg1} could also be paraphrased as `Everyone is not-angry'. So we can also symbolize our sentence  using negation and a universal quantifier: $\forall x \enot Ax$ (``every individual $x$ is such that $x$ is not angry''). Indeed, as we will see, it holds in general that $\forall \meta{v} \enot\meta{\phi}$ is logically equivalent to $\enot\exists \meta{v}\meta{\phi}$. (Notice that I have here returned to the practice of using `$\meta{\phi}$' as a metavariable, now over FOL sentences; and \meta{v} as a metavariable over FOL variables.)   So whenever you have a negation in front of an existential quantifier in FOL, you can move the negation over the quantifier, and flip the quantifier into a universal to obtain an equivalent sentence.
+This could be paraphrased as `It is not the case that someone is angry'.  We can therefore symbolize it using negation together with an existential quantifier: $\enot \exists x Ax$.  Interestingly, though, this is not the only option.  If you think about it, \eref{q.neg1} could also be paraphrased as `Everyone is not-angry'. So we can also symbolize our sentence  using negation and a universal quantifier: $\forall x \enot Ax$ (``every individual $x$ is such that $x$ is not angry''). Indeed, as we will see, it holds in general that $\forall \meta{v} \enot\meta{\varphi}$ is logically equivalent to $\enot\exists \meta{v}\meta{\varphi}$. (Notice that I have here returned to the practice of using `$\meta{\varphi}$' as a metavariable, now over FOL sentences; and \meta{v} as a metavariable over FOL variables.)   So whenever you have a negation in front of an existential quantifier in FOL, you can move the negation over the quantifier, and flip the quantifier into a universal to obtain an equivalent sentence.
 
 A similar pattern emerges if we consider the following.
 	\begin{earg}
 		\item[\ex{q.neg2}] Not everyone is happy.
 	\end{earg}
-This can be symbolized as $\enot \forall x Hx$.  But again, if you think about it, \eref{q.neg2} could be paraphrased as `Someone is not-happy.'  So another way to symbolize this sentence is as $\exists x\enot Hx$.  This illustrates that in general $\enot \forall \meta{v} \meta{\phi}$ is equivalent to $\exists \meta{v} \enot \meta{\phi}$, meaning that if a negation occurs in front of a universal quantifier, we can move it over the quantifier and flip the quantifier into an existential.  So we have the following logical laws:\footnote{Notice that this in turns means that $\forall \meta{v} \meta{\phi}$ is equivalent to $\enot \exists\meta{v}  \enot  \meta{\phi}$.  So we don't really need $\forall$ in our language in addition to $\exists$, we could just define one in terms of the other and always write $\enot \exists \meta{v} \enot  \meta{\phi}$ when we mean $\forall \meta{v} \meta{\phi}$.}
+This can be symbolized as $\enot \forall x Hx$.  But again, if you think about it, \eref{q.neg2} could be paraphrased as `Someone is not-happy.'  So another way to symbolize this sentence is as $\exists x\enot Hx$.  This illustrates that in general $\enot \forall \meta{v} \meta{\varphi}$ is equivalent to $\exists \meta{v} \enot \meta{\varphi}$, meaning that if a negation occurs in front of a universal quantifier, we can move it over the quantifier and flip the quantifier into an existential.  So we have the following logical laws:\footnote{Notice that this in turns means that $\forall \meta{v} \meta{\varphi}$ is equivalent to $\enot \exists\meta{v}  \enot  \meta{\varphi}$.  So we don't really need $\forall$ in our language in addition to $\exists$, we could just define one in terms of the other and always write $\enot \exists \meta{v} \enot  \meta{\varphi}$ when we mean $\forall \meta{v} \meta{\varphi}$.}
 
 \factoidbox{\define{Quantifier Equivalence Laws:}
-$$\forall \meta{v} \enot\meta{\phi} \text{ is equivalent to } \enot\exists \meta{v}\meta{\phi}$$
-$$\enot \forall \meta{v} \meta{\phi} \text{ is equivalent to } \exists \meta{v} \enot \meta{\phi}$$
+$$\forall \meta{v} \enot\meta{\varphi} \text{ is equivalent to } \enot\exists \meta{v}\meta{\varphi}$$
+$$\enot \forall \meta{v} \meta{\varphi} \text{ is equivalent to } \exists \meta{v} \enot \meta{\varphi}$$
 }
 
 
@@ -957,7 +957,7 @@ This says that there exists at least one thing. This is obviously a controversia
 %\section{Treating definite descriptions as terms}
 %One option would be to introduce new names whenever we come across a definite description. This is probably not a great idea. We know that \emph{the} traitor---whoever it is---is indeed \emph{a} traitor. We want to preserve that information in our symbolization.
 %
-%A second option would be to use a \emph{new} definite description operator, such as `$\maththe$'. The idea would be to symbolize `the F' as `$\maththe xFx$' (think `the $x$ such that $Fx$'); or to symbolize `the G' as `$\maththe xGx$', etc. Expressions of the form $\maththe \meta{x} \meta{\phi}\meta{x}$ would then behave like names. If we were to follow this path, then we could use the following symbolization key:
+%A second option would be to use a \emph{new} definite description operator, such as `$\maththe$'. The idea would be to symbolize `the F' as `$\maththe xFx$' (think `the $x$ such that $Fx$'); or to symbolize `the G' as `$\maththe xGx$', etc. Expressions of the form $\maththe \meta{x} \meta{\varphi}\meta{x}$ would then behave like names. If we were to follow this path, then we could use the following symbolization key:
 %	\begin{ekey}
 %		\item[\text{domain}] people
 %		\item[T] \gap{1} is a traitor
@@ -1171,7 +1171,7 @@ Using this, we can next define the notion of an \emph{atomic formula}:
 		\item If $\meta{t}_1$ and $\meta{t}_2$ are terms, then $\meta{t}_1 = \meta{t}_2$ is an atomic formula.
 		\item Nothing else is an atomic formula.
 		\end{enumerate}}
-Notice that we are again using \emph{metavariables} in this definition (see the discussion in \S\ref{s:TFLMetavariables}), albeit cursive ones rather than Greek ones. So here the cursive letter `$\meta{R}$' is not itself a predicate of FOL. Rather, it is a symbol of our metalanguage  which we are using to talk about arbitrary predicates of FOL. Similarly, the cursive `$\meta{t}_1$' is not a term of FOL, but a symbol of the metalanguage that we are using to talk about arbitrary terms (i.e. variables or constants) of FOL.
+Notice that we are again using \emph{metavariables} in this definition (see the discussion in \S\ref{s:TFLMetavariables}), albeit cursive ones rather than Greek ones. So here the cursive letter `$\meta{R}$' is not itself a predicate of FOL. Rather, it is a symbol of our metalanguage  which we are using to talk about arbitrary predicates of FOL. Similarly, the cursive `$\meta{t}_1$' is not a term of FOL, but a symbol of the metalanguage that we are using to talk about arbitrary terms (i.e. variables or names) of FOL.
 
 If we let `$F$' be a one-place predicate,`$G$' a three-place predicate, and `$S$' a six-place predicate, then the following all count as atomic formulas of FOL by our definition:
 	\begin{center}
@@ -1186,13 +1186,13 @@ Given the notion of an \emph{atomic formula}, we can now recursively define the 
 	\factoidbox{
 	\begin{enumerate}
 		\item Every atomic formula is a formula.
-		\item If \meta{\phi} is a formula, then $\enot\meta{\phi}$ is a formula.
-		\item If \meta{\phi} and \meta{\psi} are formulas, then $(\meta{\phi}\eand\meta{\psi})$ is a formula.
-		\item If \meta{\phi} and \meta{\psi} are formulas, then $(\meta{\phi}\eor\meta{\psi})$ is a formula.
-		\item If \meta{\phi} and \meta{\psi} are formulas, then $(\meta{\phi}\eif\meta{\psi})$ is a formula.
-		\item If \meta{\phi} and \meta{\psi} are formulas, then $(\meta{\phi}\eiff\meta{\psi})$ is a formula.
-		\item If \meta{\phi} is a formula, \meta{v} is a variable, \meta{\phi} contains at least one occurrence of \meta{v}, and \meta{\phi} contains neither $\forall \meta{v}$ nor $\exists \meta{v}$, then $\forall\meta{v}\meta{\phi}$ is a formula.
-		\item If \meta{\phi} is a formula, \meta{v} is a variable, \meta{\phi} contains at least one occurrence of \meta{v}, and \meta{\phi} contains neither $\forall \meta{v}$ nor $\exists \meta{v}$, then $\exists\meta{v}\meta{\phi}$ is a formula.
+		\item If \meta{\varphi} is a formula, then $\enot\meta{\varphi}$ is a formula.
+		\item If \meta{\varphi} and \meta{\psi} are formulas, then $(\meta{\varphi}\eand\meta{\psi})$ is a formula.
+		\item If \meta{\varphi} and \meta{\psi} are formulas, then $(\meta{\varphi}\eor\meta{\psi})$ is a formula.
+		\item If \meta{\varphi} and \meta{\psi} are formulas, then $(\meta{\varphi}\eif\meta{\psi})$ is a formula.
+		\item If \meta{\varphi} and \meta{\psi} are formulas, then $(\meta{\varphi}\eiff\meta{\psi})$ is a formula.
+		\item If \meta{\varphi} is a formula that contains at least one occurrence of the variable \meta{v} and does \emph{not} contain either $\forall \meta{v}$ or $\exists \meta{v}$, then $\forall\meta{v}\meta{\varphi}$ is a formula.
+		\item If \meta{\varphi} is a formula that contains at least one occurrence of the variable \meta{v} and does \emph{not} contain either $\forall \meta{v}$ or $\exists \meta{v}$, then $\exists\meta{v}\meta{\varphi}$ is a formula.
 		\item Nothing else is a formula.
 	\end {enumerate}
 	}
@@ -1229,9 +1229,9 @@ By contrast, the following are \emph{not} formulas:
 		$\forall x \exists x Rxx$\\
 
 	\end{center}
-Looking at the first of these, we can say that `$Rxx$' is a formula by clause (1), but `$\forall y Rxx$' is not a formula, because it results from attaching the quantifier `$\forall y$' to a formula that does not contain at least one occurrence of the variable `$y$', thus contravening clause (7).  Similarly, in the case of the second example, `$Rxx$' is again a formula, and by clause (8) `$\exists x Rxx$' is a formula.  But `$\forall x\exists xRxx$' is not a formula because we've attached the quantifier `$\forall x$' to a formula `$\exists xRxx$' that \emph{already} contains a quantifier `$\exists x$' involving the same variable, which contravenes clause (7).
+Looking at the first of these, we can say that `$Rxx$' is a formula by clause (1), but `$\forall y Rxx$' is not a formula, because it results from attaching the quantifier `$\forall y$' to a formula that does not contain at least one occurrence of the variable `$y$', thus contravening clause (7).  Similarly, in the case of the second example, `$Rxx$' is again a formula, and by clause (8) `$\exists x Rxx$' is also a formula.  But `$\forall x\exists xRxx$' is not a formula because we've attached the quantifier `$\forall x$' to a formula `$\exists xRxx$' that \emph{already} contains a quantifier `$\exists x$' involving the same variable, which contravenes clause (7).
 
-These constraints have the effect of preventing the kind of \emph{variable clashes} we discussed in \S\ref{s:FOLSymSteps}. And in fact, we can now give a formal definition of the notion of \emph{scope} in terms of the notion of \emph{main logical operator}:
+These constraints have the effect of preventing the kind of \emph{variable clashes} we discussed in \S\ref{s:FOLSymSteps}. And in fact, we can now give a precise definition of the notion of the \emph{scope} of a quantifier (or other logical operator) in terms of the notion of \emph{main logical operator}:
 
 	\factoidbox{
 		The \define{main logical operator} in a formula is the operator that was introduced most recently when constructing that formula according to the syntactic rules of FOL.
@@ -1244,7 +1244,7 @@ These constraints have the effect of preventing the kind of \emph{variable clash
 Since quantifiers are a kind of logical operator, this definition covers the scope of quantifiers alongside the scope of truth functional connectives.  The scope of the various quantifiers in one of our earlier examples can be illustrated as follows:
 $$\overbrace{\forall z\overbrace{\exists y (Fy \eiff \overbrace{\forall x (Fx \eif Rxz)}^{\text{scope of $\forall x$}}
 \ )}^{\text{scope of $\exists y$}}}^{\text{scope of $\forall z$}}$$
-The problem with a formula like `$\forall x\exists xRxx$' is that we have a quantifier `$\forall x$' inside whose scope there is another quantifier `$\exists x$' involving the same variable, leading to a variable clash.  This is ruled out by our clause (7).
+Returning to the problematic example `$\forall x\exists xRxx$' from above, we can now see that the problem with it is that the quantifier `$\forall x$' has, inside its scope, another quantifier quantifier `$\exists x$' involving the same variable, leading to a variable clash.  This is ruled out by our clause (7).
 
 \subsection{Sentences of FOL}
 With these pieces in place, we're now ready to define the notion of a \emph{sentence} of FOL.  To see why we need to distinguish sentences from mere formulas of FOL, recall that logic is concerned with \emph{statements}: sentences  that can be either true or false. And many formulas are not true or false.  For example, consider the formulas $Fc$ and $Fx$, and suppose we have the following symbolization key:

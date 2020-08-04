@@ -101,7 +101,7 @@ Since \eref{not2} is obviously related to \eref{not1}, we do not want to symboli
 
 Sentence \eref{not3} also contains the word `not'. And it is obviously equivalent to \eref{not2}. As such, we can also symbolize it with `$\enot B$'.
 \factoidbox{
-A sentence can be symbolized as $\enot\meta{\phi}$ if it can be paraphrased in English as `It is not the case that \meta{\phi}'.
+A sentence can be symbolized as $\enot\meta{\varphi}$ if it can be paraphrased in English as `It is not the case that \meta{\varphi}'.
 }
 
 Here's another example:
@@ -182,7 +182,7 @@ Sentence \eref{and7} raises similar issues. The word `but' sets up a contrast be
 There are other words besides `although' and `but' that can be used to express conjunction.  For example, `Barbara is energetic, however she is not athletic' and `Barbara is energetic despite not being athletic' expresses the same conjunctive claim as sentence \eref{and6} from above, and get symbolized using the same TFL sentence. In general, the symbolization guideline for conjunction is:
 
 	\factoidbox{
-		A sentence can be symbolized as $(\meta{\phi}\eand\meta{\psi})$ if (nuance aside) it can be paraphrased in English as `Both \meta{\phi} and \meta{\psi}'.
+		A sentence can be symbolized as $(\meta{\varphi}\eand\meta{\psi})$ if (nuance aside) it can be paraphrased in English as `Both \meta{\varphi} and \meta{\psi}'.
 }
 
 You might be wondering why we always put \emph{brackets} around the conjunctions. The reason can be brought out by thinking about negation interacts with conjunction. Consider:
@@ -217,7 +217,7 @@ Sentence \eref{or1} is and `either \ldots or' statement, and gets symbolized as 
 
 Sentence \eref{or2} is only slightly more complicated.  Here `or' occurs between two names rather than two complete sentences. However, we can paraphrase sentence \eref{or2} as `Either Denison will play golf with me, or Ellery will play golf with me' where `or' now connects two complete sentences. So we can symbolize it as `$(D \eor E)$'.
 	\factoidbox{
-		A sentence can be symbolized as $(\meta{\phi}\eor\meta{\psi})$ if it can be paraphrased in English as `Either \meta{\phi} or \meta{\psi}.'
+		A sentence can be symbolized as $(\meta{\varphi}\eor\meta{\psi})$ if it can be paraphrased in English as `Either \meta{\varphi} or \meta{\psi}.'
 	}
 
 
@@ -250,8 +250,8 @@ Similarly, \eref{or4} means the same as `Barbara will not get soup and Barbara w
 
 \factoidbox{\define{DeMorgan's Laws}:
 \begin{itemize}
-\item[] $\enot(\meta{\phi} \eor \meta{\psi})$ is equivalent to $(\enot \meta{\phi} \eand \enot \meta{\psi})$
-\item[] $\enot(\meta{\phi} \eand \meta{\psi})$ is equivalent to $(\enot \meta{\phi} \eor \enot \meta{\psi})$
+\item[] $\enot(\meta{\varphi} \eor \meta{\psi})$ is equivalent to $(\enot \meta{\varphi} \eand \enot \meta{\psi})$
+\item[] $\enot(\meta{\varphi} \eand \meta{\psi})$ is equivalent to $(\enot \meta{\varphi} \eor \enot \meta{\psi})$
 \end{itemize}}
 
 \noindent These  laws are named after Augustus DeMorgan who first explicitly formulated them in the nineteenth century.  These laws will stay with us throughout our study of logic, and we will see how to prove that these equivalences hold in the next chapter.\footnote{It is noteworthy that these equivalences only hold in TFL given that `$\eor$' expresses inclusive disjunction.  The fact that the corresponding English sentences are also intuitively equivalent again shows that English `or' often expresses inclusive disjunction.}
@@ -276,10 +276,10 @@ Sentence \eref{if1} looks different from \eref{if0} since the word `if' occurs i
 
 Sentence \eref{if2} is also a conditional. Since the word `if' appears in the second half of the sentence, it might be tempting to symbolize this in the same way as sentence \eref{if1}, as `$(P \eif F)$'. But that would be a mistake. My knowledge of geography tells me that sentence \eref{if1} is unproblematically true: there is no way for Jean to be in Paris that doesn't involve Jean being in France. But sentence \eref{if2} is not so straightforward: were  Jean in Marseilles, Lyons, or Toulouse, Jean would be in France without being in Paris, thereby rendering sentence \eref{if2} false. Since geography alone dictates the truth of sentence \eref{if1}, whereas travel plans (say) are needed to know the truth of sentence \eref{if2}, they must mean different things, and \eref{if2} can't be symbolized as `$(P \eif F)$.
 
-The moral is that `only if' means something very different from plain `if'.  The `if'-clause of a conditional introduces a \define{Sufficient Condition}: \eref{if0} and \eref{if1} say that Jean's being in Paris is \emph{sufficient for} his being in France (which is unproblematically true).  `Only if', by contrast, introduces a \define{Necessary Condition}: sentence \eref{if2} claims that Jean's being in Paris \emph{is necessary for} his being in France (which is likely false, since there are other ways to be in France). In TFL, the antecedent \meta{\phi} of a conditional $(\meta{\phi} \eif \meta{\psi})$ always indicates the sufficient condition, whereas the consequent \meta{\psi} indicates the the necessary condition.  Since Jean's being in Paris is claimed as a necessary condition in \eref{if2}, this sentence is symbolized as `$(F \eif P)$'.  In general, whereas `if' introduces the antecedent of a conditional (the sufficient condition), `only if' introduces the consequent (the necessary condition).  So our symbolization guidelines for conditionals are:
+The moral is that `only if' means something very different from plain `if'.  The `if'-clause of a conditional introduces a \define{Sufficient Condition}: \eref{if0} and \eref{if1} say that Jean's being in Paris is \emph{sufficient for} his being in France (which is unproblematically true).  `Only if', by contrast, introduces a \define{Necessary Condition}: sentence \eref{if2} claims that Jean's being in Paris \emph{is necessary for} his being in France (which is likely false, since there are other ways to be in France). In TFL, the antecedent \meta{\varphi} of a conditional $(\meta{\varphi} \eif \meta{\psi})$ always indicates the sufficient condition, whereas the consequent \meta{\psi} indicates the the necessary condition.  Since Jean's being in Paris is claimed as a necessary condition in \eref{if2}, this sentence is symbolized as `$(F \eif P)$'.  In general, whereas `if' introduces the antecedent of a conditional (the sufficient condition), `only if' introduces the consequent (the necessary condition).  So our symbolization guidelines for conditionals are:
 
 	\factoidbox{
-		A sentence can be symbolized as $(\meta{\phi} \eif \meta{\psi})$ if it can be paraphrased in English as `If \meta{\phi}, then \meta{\psi}', or as `\meta{\psi} if \meta{\phi}', or as `\meta{\phi} only if \meta{\psi}'.
+		A sentence can be symbolized as $(\meta{\varphi} \eif \meta{\psi})$ if it can be paraphrased in English as `If \meta{\varphi}, then \meta{\psi}', or as `\meta{\psi} if \meta{\varphi}', or as `\meta{\varphi} only if \meta{\psi}'.
 	}
 
 The fact that \eref{if0} is symbolized as the conditional `$(P \eif F)$' means that this `if\ldots then' statement can also be paraphrased as an `only if' statement: `Jean is in Paris only if Jean is in France'.  That's intuitively correct: since his being in Paris is sufficient for his being in France, it's also true that his being in France is necessary for his being in Paris.
@@ -321,7 +321,7 @@ We could treat every biconditional this way, as a conjunction of two conditional
 
 Since `if and only if' gets used so much in logic and philosophy, it is often abbreviated with a single, snappy word, `iff'. I shall follow this practice. So `if' with only \emph{one} `f' is the English conditional. But `iff' with \emph{two} `f's is the English biconditional. Armed with this we can say:
 	\factoidbox{
-		A sentence can be symbolized as $(\meta{\phi} \eiff \meta{\psi})$ if it can be paraphrased in English as `\meta{\phi} if and only if \meta{\psi}', that is, `\meta{\phi} iff \meta{\psi}'.
+		A sentence can be symbolized as $(\meta{\varphi} \eiff \meta{\psi})$ if it can be paraphrased in English as `\meta{\varphi} if and only if \meta{\psi}', that is, `\meta{\varphi} iff \meta{\psi}'.
 	}
 
 Another way to express a biconditional relationship in English is with the words `just in case', as in:
@@ -345,14 +345,14 @@ These two sentences are clearly equivalent. Let's use the following symbolizatio
 		\item[J] You will wear a jacket.
 		\item[D] You will catch a cold.
 	\end{ekey}
-Both sentences mean that if you do not wear a jacket, then you will catch a cold. So we could symbolize them as `$(\enot J \eif D)$'.   In general, you can think of `unless' as having the meaning `if not', so sentences of the form `Unless \meta{\phi}, \meta{\psi}' or `\meta{\psi} unless \meta{\phi}' mean `If not \meta{\phi}, then \meta{\psi}' or again, `\meta{\psi} if not \meta{\phi}', and can be symbolized as $(\enot \meta{\phi} \eif \meta{\psi})$.
+Both sentences mean that if you do not wear a jacket, then you will catch a cold. So we could symbolize them as `$(\enot J \eif D)$'.   In general, you can think of `unless' as having the meaning `if not', so sentences of the form `Unless \meta{\varphi}, \meta{\psi}' or `\meta{\psi} unless \meta{\varphi}' mean `If not \meta{\varphi}, then \meta{\psi}' or again, `\meta{\psi} if not \meta{\varphi}', and can be symbolized as $(\enot \meta{\varphi} \eif \meta{\psi})$.
 
 
 As we shall see in the next chapter, in TFL `$(\enot J \eif D)$' is equivalent to the disjunction `$(J \eor D)$'.  So this is another way to symbolize \eref{unless1} or \eref{unless2}.  And that makes some sense: intuitively they do say that either you will wear a jacket, or you will catch a cold.
 
 So we can use the following guideline:
 	\factoidbox{
-		If a sentence can be paraphrased as `Unless \meta{\phi}, \meta{\psi}' or `\meta{\psi} unless \meta{\phi}', then it can be symbolized as $(\enot\meta{\phi} \eif \meta{\psi})$, or simply $(\meta{\phi}\eor\meta{\psi})$.
+		If a sentence can be paraphrased as `Unless \meta{\varphi}, \meta{\psi}' or `\meta{\psi} unless \meta{\varphi}', then it can be symbolized as $(\enot\meta{\varphi} \eif \meta{\psi})$, or simply $(\meta{\varphi}\eor\meta{\psi})$.
 	}
 
 There is a little complication. `Unless' can be symbolized as a conditional or an inclusive disjuntion. But ordinary speakers of English often use `unless' to mean something more like the biconditional, or like exclusive disjunction. Suppose I say: `I will go running unless it rains'. I probably mean something like `I will go running if and only if it does not rain' (i.e.\ the biconditional), or  `either I will go running or it will rain, but not both' (i.e.\ exclusive disjunction). However, in this book we'll always use `unless' in the strict sense in which it can be symbolized using a conditional or an inclusive disjunction.  (As it happens, our guideline here is also the one used on the LSAT.)
@@ -472,13 +472,13 @@ Brackets: &( , )\\
 
 This constitutes the \define{Lexicon} of TFL.  Now define an \define{expression of TFL} to be any string of symbols of TFL.  That is: write down any sequence of symbols from the lexicon of TFL, in any order, and you have an expression of TFL.
 
-Strings like `$(A \leftarrow B)$' or `$(p \eor C)$' or `$\enot (\phi \eand A)$' are not expressions of TFL because they contain symbols like `$\leftarrow$' (leftward arrows) `$p$' (lowercase letters) and `$\phi$' (Greek letters) that are not even in the Lexicon of TFL.  On the other hand, `$(A \eand B)$' is an expression of TFL, and so are `$(\enot)A\rightarrow)$' and `$\lnot)(\eor()\eand(\enot\enot())((B$'. However, whereas the first of these expressions also counts as a \emph{sentence} of TFL, the rest are just \emph{gibberish}. What we want are some rules to tell us precisely which TFL expressions count as sentences.
+Strings like `$(A \leftarrow B)$' or `$(p \eor C)$' or `$\enot (\varphi \eand A)$' are not expressions of TFL because they contain symbols like `$\leftarrow$' (leftward arrows) `$p$' (lowercase letters) and `$\varphi$' (Greek letters) that are not even in the Lexicon of TFL.  On the other hand, `$(A \eand B)$' is an expression of TFL, and so are `$(\enot)A\rightarrow)$' and `$\lnot)(\eor()\eand(\enot\enot())((B$'. However, whereas the first of these expressions also counts as a \emph{sentence} of TFL, the rest are just \emph{gibberish}. What we want are some rules to tell us precisely which TFL expressions count as sentences.
 
 
 Obviously, individual atomic sentences like `$A$' and `$G_{13}$' should count as sentences. We can form further sentences out of these by using the various connectives. Using negation, we can get `$\enot A$' and `$\enot G_{13}$'. Using conjunction, we can get `$(A \eand G_{13})$', `$(G_{13} \eand A)$', `$(A \eand A)$', and `$(G_{13} \eand G_{13})$'. We could also apply negation repeatedly to get sentences like `$\enot \enot A$' and `$\enot \enot \enot A$', or apply negation to one of our conjunctions to get sentences like `$\enot(A \eand G_{13})$' and `$\enot(G_{13} \eand \enot G_{13})$'. There are infinitely many possible combinations, even starting with just these two sentence letters.  And of course there are infinitely many sentence letters. So there is no point in trying to list all of the sentences of TFL one by one.
 
-Instead, we will describe the process by which sentences can be \emph{constructed}. Consider negation: given any sentence \meta{\phi} of TFL, putting a negation in front of it gives us a sentence $\enot\meta{\phi}$ .
-We can say similar things for each of the other connectives. For instance, if \meta{\phi} and \meta{\psi} are sentences of TFL, then $(\meta{\phi}\eand\meta{\psi})$ is a sentence of TFL.  (What's up with the funny Greek letters, which are \emph{not} in the lexicon of TFL?  We'll get to that in \S\ref{s:TFLMetavariables} below.)
+Instead, we will describe the process by which sentences can be \emph{constructed}. Consider negation: given any sentence \meta{\varphi} of TFL, putting a negation in front of it gives us a sentence $\enot\meta{\varphi}$ .
+We can say similar things for each of the other connectives. For instance, if \meta{\varphi} and \meta{\psi} are sentences of TFL, then $(\meta{\varphi}\eand\meta{\psi})$ is a sentence of TFL.  (What's up with the funny Greek letters, which are \emph{not} in the lexicon of TFL?  We'll get to that in \S\ref{s:TFLMetavariables} below.)
 
 
 Providing clauses like this for all of the connectives, we arrive at the following \define{Syntax}, or formal definition of what counts as a  \define{sentence of TFL}:
@@ -486,11 +486,11 @@ Providing clauses like this for all of the connectives, we arrive at the followi
 	\define{The Syntax of TFL:}
 	\begin{enumerate}
 		\item Every atomic sentence is a sentence.
-		\item If \meta{\phi} is a sentence, then $\enot\meta{\phi}$ is a sentence.
-		\item If \meta{\phi} and \meta{\psi} are sentences, then $(\meta{\phi}\eand\meta{\psi})$ is a sentence.
-		\item If \meta{\phi} and \meta{\psi} are sentences, then $(\meta{\phi}\eor\meta{\psi})$ is a sentence.
-		\item If \meta{\phi} and \meta{\psi} are sentences, then $(\meta{\phi}\eif\meta{\psi})$ is a sentence.
-		\item If \meta{\phi} and \meta{\psi} are sentences, then $(\meta{\phi}\eiff\meta{\psi})$ is a sentence.
+		\item If \meta{\varphi} is a sentence, then $\enot\meta{\varphi}$ is a sentence.
+		\item If \meta{\varphi} and \meta{\psi} are sentences, then $(\meta{\varphi}\eand\meta{\psi})$ is a sentence.
+		\item If \meta{\varphi} and \meta{\psi} are sentences, then $(\meta{\varphi}\eor\meta{\psi})$ is a sentence.
+		\item If \meta{\varphi} and \meta{\psi} are sentences, then $(\meta{\varphi}\eif\meta{\psi})$ is a sentence.
+		\item If \meta{\varphi} and \meta{\psi} are sentences, then $(\meta{\varphi}\eiff\meta{\psi})$ is a sentence.
 		\item Nothing else is a sentence.
 	\end{enumerate}
 	}
@@ -547,20 +547,20 @@ The scope of each connective is now much more visually apparent.
 
 Our recursive definition of TFL sentences included clauses like the following:
 \begin{enumerate}
-\item[3.] If \meta{\phi} and \meta{\psi} are sentences, then $(\meta{\phi}\eand\meta{\psi})$ is a sentence.
+\item[3.] If \meta{\varphi} and \meta{\psi} are sentences, then $(\meta{\varphi}\eand\meta{\psi})$ is a sentence.
 \end{enumerate}
-But notice that `$(\meta{\phi} \eand \meta{\psi})$' is \emph{not} a sentence of TFL.  In fact, it isn't even an expression of TFL!  After all, it includes Greek letters, and these are not among the symbols that constitute the the lexicon of TFL.  Atomic TFL sentences are just ordinary uppercase roman letters (possibly subscripted) like `$A$' or `$B$' or `$S_{21}$', not Greek letters.  So what's going on in our recursive clauses?
+But notice that `$(\meta{\varphi} \eand \meta{\psi})$' is \emph{not} a sentence of TFL.  In fact, it isn't even an expression of TFL!  After all, it includes Greek letters, and these are not among the symbols that constitute the the lexicon of TFL.  Atomic TFL sentences are just ordinary uppercase roman letters (possibly subscripted) like `$A$' or `$B$' or `$S_{21}$', not Greek letters.  So what's going on in our recursive clauses?
 
 The answer is that in these clauses, we are using Greek letters as \emph{variables} that ``range over'' arbitrary expressions of TFL.  Consider how, in a math class, you might explain to someone that if $m$ and $n$ are any two positive integers, it holds that $m + n \geq m$.  In this case we are using `$m$' and `$n$' as variables that range over arbitrary positive integers,  and saying that $m + n \geq m$ holds no matter what positive integers $m$  and $n$ are.  %On the other hand, if the variables were allowed to range over \emph{all} integers, positive and negative,  the claim $m + n \geq m$ would not longer hold --- now $m$ might be $2$ and $n$ might be ${-3}$, in which case $m+n \ngeq m$.
 
 In the same way, we are here using Greek letters as variables, except that we are using them as variables that range over arbitrary expressions in the language of TFL (rather than over integers, say).  The language of TFL has been the object of our study for the past several sections, and we therefore call it the \define{Object Language}.  But we have been conducting our discussion of TFL in English, so English is our \define{Metalanguage}: it is the language in which we talk about the object language.\footnote{Of course these notions aren't fixed.  If we had been discussing the syntax of Korean, say, rather than TFL, then our metalanguage would still have been English, but our object language would have been Korean.}
-For this reason, variables like `$\meta{\phi}$' and `$\meta{\psi}$' are called \define{Metavariables}: they form part of our metalanguage, English, and they range over arbitrary expressions in our object language, TFL.  But again, these metavariables are \emph{only} part of our metalanguage, and not themselves included in the object language TFL.
+For this reason, variables like `$\meta{\varphi}$' and `$\meta{\psi}$' are called \define{Metavariables}: they form part of our metalanguage, English, and they range over arbitrary expressions in our object language, TFL.  But again, these metavariables are \emph{only} part of our metalanguage, and not themselves included in the object language TFL.
 
 
 	\factoidbox{
-		Greek letters $\meta{\phi}$, \meta{\psi}, \meta{\chi} etc. are \define{metavariables} in our \define{metalanguage}, used to talk about arbitrary expressions of TFL.  Roman letters $A, B, C \ldots$ etc. are atomic sentences of our \define{object language} TFL .}
+		Greek letters $\meta{\varphi}$, \meta{\psi}, \meta{\chi} etc. are \define{metavariables} in our \define{metalanguage}, used to talk about arbitrary expressions of TFL.  Roman letters $A, B, C \ldots$ etc. are atomic sentences of our \define{object language} TFL .}
 
-So what clause 3 in our definition says is that if $\meta{\phi}$ and $\meta{\psi}$ are any arbitrary sentences of TFL, then the result of writing whatever $\meta{\phi}$ is, followed by `$\eand$', followed by whatever \meta{\psi} is, and enclosing the result in parentheses, produces a sentence of TFL.  For example, if \meta{\phi} is the TFL sentence `$\enot D$' and \meta{\psi} is the TFL sentence `$(S \rightarrow T)$', then clause 3 tells us that `$(\enot D \eand (S \rightarrow T))$' is a sentence of TFL.  But again, the string of symbols `$(\meta{\phi} \eand \meta{\psi})$' is not itself a sentence (nor even an expression) of TFL.
+So what clause 3 in our definition says is that if $\meta{\varphi}$ and $\meta{\psi}$ are any arbitrary sentences of TFL, then the result of writing whatever $\meta{\varphi}$ is, followed by `$\eand$', followed by whatever \meta{\psi} is, and enclosing the result in parentheses, produces a sentence of TFL.  For example, if \meta{\varphi} is the TFL sentence `$\enot D$' and \meta{\psi} is the TFL sentence `$(S \rightarrow T)$', then clause 3 tells us that `$(\enot D \eand (S \rightarrow T))$' is a sentence of TFL.  But again, the string of symbols `$(\meta{\varphi} \eand \meta{\psi})$' is not itself a sentence (nor even an expression) of TFL.
 
 \practiceproblems
 \problempart

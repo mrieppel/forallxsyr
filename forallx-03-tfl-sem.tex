@@ -19,17 +19,17 @@ So we can characterize the meaning of the TFL connective `$\enot$' as a mapping 
 
 \begin{center}
 \begin{tabular}{c|c}
-\meta{\phi} & \enot\meta{\phi}\\
+\meta{\varphi} & \enot\meta{\varphi}\\
 \hline
 T & F\\
 F & T
 \end{tabular}
-\end{center}What this says is that for any TFL sentence \meta{\phi}: if \meta{\phi} is true, then \enot\meta{\phi} is false, and if \meta{\phi} is false, then \enot\meta{\phi} is true.
+\end{center}What this says is that for any TFL sentence \meta{\varphi}: if \meta{\varphi} is true, then \enot\meta{\varphi} is false, and if \meta{\varphi} is false, then \enot\meta{\varphi} is true.
 
 \paragraph{Conjunction} A similar line of thought goes for conjunction.  If you take two true sentences, and put an `and' between them, the conjunction you've formed is true.  On the other hand, if even one of the two conjoined sentences is false, the entire conjunction is false.    So the {characteristic truth table} for conjunction looks like this:
 \begin{center}
 \begin{tabular}{c c |c}
-\meta{\phi} & \meta{\psi} & $(\meta{\phi}\eand\meta{\psi})$\\
+\meta{\varphi} & \meta{\psi} & $(\meta{\varphi}\eand\meta{\psi})$\\
 \hline
 T & T & T\\
 T & F & F\\
@@ -37,14 +37,14 @@ F & T & F\\
 F & F & F
 \end{tabular}
 \end{center}
-Note that conjunction is \emph{symmetrical}. The truth value for $(\meta{\phi} \eand \meta{\psi})$ is always the same as the truth value for $(\meta{\psi} \eand \meta{\phi})$.
+Note that conjunction is \emph{symmetrical}. The truth value for $(\meta{\varphi} \eand \meta{\psi})$ is always the same as the truth value for $(\meta{\psi} \eand \meta{\varphi})$.
 
 
 
-\paragraph{Disjunction} Recall that `$\eor$' represents inclusive or. So, for any sentences \meta{\phi} and \meta{\psi}, $(\meta{\phi}\eor \meta{\psi})$ is true iff at least one of \meta{\phi} and \meta{\psi} is true. This gives us the following characteristic truth table for disjunction:
+\paragraph{Disjunction} Recall that `$\eor$' represents inclusive or. So, for any sentences \meta{\varphi} and \meta{\psi}, $(\meta{\varphi}\eor \meta{\psi})$ is true iff at least one of \meta{\varphi} and \meta{\psi} is true. This gives us the following characteristic truth table for disjunction:
 \begin{center}
 \begin{tabular}{c c|c}
-\meta{\phi} & \meta{\psi} & $(\meta{\phi}\eor\meta{\psi})$ \\
+\meta{\varphi} & \meta{\psi} & $(\meta{\varphi}\eor\meta{\psi})$ \\
 \hline
 T & T & T\\
 T & F & T\\
@@ -52,12 +52,12 @@ F & T & T\\
 F & F & F
 \end{tabular}
 \end{center}
-Like conjunction, disjunction is symmetrical: `$(\meta{\phi} \eor \meta{\psi})$' always has the same truth value as `$(\meta{\psi} \eor \meta{\phi})$'.
+Like conjunction, disjunction is symmetrical: `$(\meta{\varphi} \eor \meta{\psi})$' always has the same truth value as `$(\meta{\psi} \eor \meta{\varphi})$'.
 
-As we saw in \S\ref{s:Disjunction}, the English construction `either \ldots or' is sometimes used to express \emph{exclusive} disjunction, which ``excludes'' the possibility of both disjuncts' being true.  If we liked, we could expand TFL by introducing a new connective $\oplus$ (sometimes also called XOR) with the following characteristic truth table:
+As we saw in \S\ref{s:Disjunction}, the English construction `either \ldots or' is sometimes used to express \emph{exclusive} disjunction, which ``excludes'' the possibility of both disjuncts' being true.  If we liked, we could expand TFL by introducing a new connective $\oplus$ (sometimes called XOR) with the following characteristic truth table, which differs from table for $\eor$ in the first row, the case where $\varphi$ and $\psi$ are both true:
 \begin{center}
 \begin{tabular}{c c|c}
-\meta{\phi} & \meta{\psi} & $(\meta{\phi}\oplus\meta{\psi})$ \\
+\meta{\varphi} & \meta{\psi} & $(\meta{\varphi}\oplus\meta{\psi})$ \\
 \hline
 T & T & F\\
 T & F & T\\
@@ -65,12 +65,12 @@ F & T & T\\
 F & F & F
 \end{tabular}
 \end{center}
-However, as we discussed, we don't need to  (and won't) go this route, since the effect of the exclusive $(\meta{\phi} \oplus \meta{\psi})$ can be achieved using the TFL connectives we already have, via $(\meta{\phi} \eor \meta{\psi}) \eand \enot(\meta{\phi} \eand \meta{\psi})$.
+However, as we discussed, we don't need to  (and won't) go this route, since the effect of the exclusive $(\meta{\varphi} \oplus \meta{\psi})$ can be achieved using the TFL connectives we already have, via $(\meta{\varphi} \eor \meta{\psi}) \eand \enot(\meta{\varphi} \eand \meta{\psi})$, i.e. by saying that one of $\varphi$ or $\psi$ is true, but not both.
 
-\paragraph{Conditional} Conditionals are considerably more contentious.  In fact, we might as well be up front about it: they are a mess.   We'll simply stipulate that, in TFL,  $(\meta{\phi}\eif\meta{\psi})$ is false if \meta{\phi} is true and \meta{\psi} is false, and true in \emph{all} other circumstances. This gives us the following characteristic truth table for the conditional:
+\paragraph{Conditional} Conditionals are considerably more contentious.  In fact, we might as well be up front about it: they are a mess.   We'll simply stipulate that, in TFL,  $(\meta{\varphi}\eif\meta{\psi})$ is false if \meta{\varphi} is true and \meta{\psi} is false, but is true in \emph{all other circumstances}. This gives us the following characteristic truth table for the conditional:
 \begin{center}
 \begin{tabular}{c c|c}
-\meta{\phi} & \meta{\psi} & $(\meta{\phi}\eif\meta{\psi})$\\
+\meta{\varphi} & \meta{\psi} & $(\meta{\varphi}\eif\meta{\psi})$\\
 \hline
 T & T & T\\
 T & F & F\\
@@ -78,17 +78,17 @@ F & T & T\\
 F & F & T
 \end{tabular}
 \end{center}
-Notice that the conditional is \emph{asymmetrical}: $(\meta{\phi}\eif\meta{\psi})$ and $(\meta{\psi} \eif \meta{\phi})$ need not have the same truth value.  For example, if \meta{\phi} is true and \meta{\psi} false, then $(\meta{\phi}\eif\meta{\psi})$ is false but $(\meta{\psi} \eif \meta{\phi})$ is true.
+Notice that the conditional is \emph{asymmetrical}: $(\meta{\varphi}\eif\meta{\psi})$ and $(\meta{\psi} \eif \meta{\varphi})$ need not have the same truth value.  For example, if \meta{\varphi} is true and \meta{\psi} false, then $(\meta{\varphi}\eif\meta{\psi})$ is false but $(\meta{\psi} \eif \meta{\varphi})$ is true.
 
 You can perhaps already see that this is a controversial way to symbolize English `if \ldots then' constructions.  The above truth table tells us that any TFL conditional with a false antecedent is true (and similarly, any TFL conditional with a true consequent is true).  But it's far from clear that any English conditional whose antecedent turns out to be false is therefore automatically true.  This is known as ``the paradox of material implication.'' In the case of conditionals, there in other words isn't just a worry about TFL bypassing certain \emph{subtleties} of meaning, but of missing out on the meaning of the corresponding English expression altogether.   We'll look at some of these issues in \S\ref{s:TFLConditional} below.
 
 
- \paragraph{Biconditional}  Since a biconditional is the same as the conjunction of two conditionals running in either directions, $(\meta{\phi} \eiff \meta{\psi})$ is true iff both $(\meta{\phi} \eif \meta{\psi})$ and $(\meta{\psi} \eif \meta{\phi})$  are true.  This gives us:
+ \paragraph{Biconditional}  Since a biconditional is the same as the conjunction of two conditionals running in either directions, $(\meta{\varphi} \eiff \meta{\psi})$ is true iff both $(\meta{\varphi} \eif \meta{\psi})$ and $(\meta{\psi} \eif \meta{\varphi})$  are true.  This gives us the following table:
 
 
 \begin{center}
 \begin{tabular}{c c|c}
-\meta{\phi} & \meta{\psi} & $(\meta{\phi}\eiff\meta{\psi})$\\
+\meta{\varphi} & \meta{\psi} & $(\meta{\varphi}\eiff\meta{\psi})$\\
 \hline
 T & T & T\\
 T & F & F\\
@@ -96,7 +96,7 @@ F & T & F\\
 F & F & T
 \end{tabular}
 \end{center}
-An easy way to remember this is that a biconditional is true when both sides have the \emph{same} truth value, and false when the two sides have different truth values.  The biconditional is therefore symmetrical.  It's truth table is in effect the opposite of exclusive disjunction.  As we'll  soon be able to show, this truth table is indeed the same as the one we would get for $(\meta{\phi} \eif \meta{\psi}) \eand (\meta{\psi} \eif \meta{\phi})$.
+An easy way to remember this is that a biconditional is true when both sides have the \emph{same} truth value, and false when the two sides have different truth values.  The biconditional is therefore symmetrical.  It's truth table is in effect the opposite of exclusive disjunction.  As we'll  soon be able to show, this truth table is indeed the same as the one we would get for $(\meta{\varphi} \eif \meta{\psi}) \eand (\meta{\psi} \eif \meta{\varphi})$.
 
 \section{Truth-Functionality}
 
@@ -147,11 +147,11 @@ When we introduced the truth table for `\eif', we didn't provide any justificati
 
 First, the TFL conditional has some attractive \emph{logical} features given our truth table.\footnote{I owe the this observation to Branden Fitelson.}  The following all seem correct for English `if \ldots then' statements:
 \begin{ebullet}
-\item Arguments of the form `If \meta{\phi} then \meta{\psi}; \meta{\phi}; therefore \meta{\psi}' are valid.  (This form of argument is called \emph{modus ponens}.)
-\item Arguments of the form `If \meta{\phi} then \meta{\psi}; \meta{\psi}; therefore \meta{\phi}' are not valid.  (This is called the fallacy of \emph{affirming the consequent}.)
-\item Statements of the form `If \meta{\phi}, then \meta{\phi}' are necessarily true.
+\item Arguments of the form `If \meta{\varphi} then \meta{\psi}; \meta{\varphi}; therefore \meta{\psi}' are valid.  (This form of argument is called \emph{modus ponens}.)
+\item Arguments of the form `If \meta{\varphi} then \meta{\psi}; \meta{\psi}; therefore \meta{\varphi}' are not valid.  (This is called the fallacy of \emph{affirming the consequent}.)
+\item Statements of the form `If \meta{\varphi}, then \meta{\varphi}' are necessarily true.
 \end{ebullet}
-As we will see once we define validity and other logical notions in TFL, the same holds for the corresponding TFL symbolizations: arguments of the form $(\meta{\phi} \eif \meta{\psi}), \meta{\phi} \therefore \meta{\psi}$ are valid in TFL, ones of the form $(\meta{\phi} \eif \meta{\psi}), \meta{\psi} \therefore \meta{\phi}$ are not valid in TFL (at least if \meta{\phi} and \meta{\psi} are atomic sentences), and any TFL sentence of the form $(\meta{\phi} \eif \meta{\phi})$ is a logical necessity (or ``tautology'') in TFL.  And importantly, out of the sixteen possible binary truth functions, the one we have assigned to `\eif' is the \emph{only} one that has all these logical properties!  So if we have to pick a truth-functional connective to symbolize English `if \ldots then', then `\eif' is the best one among the sixteen available.
+As we will see once we define validity and other logical notions in TFL, the same holds for the corresponding TFL symbolizations using $\eif$ in place of `if \ldots then': arguments of the form $(\meta{\varphi} \eif \meta{\psi}), \meta{\varphi} \therefore \meta{\psi}$ will be valid in TFL, ones of the form $(\meta{\varphi} \eif \meta{\psi}), \meta{\psi} \therefore \meta{\varphi}$ will not be valid (at least if \meta{\varphi} and \meta{\psi} are atomic sentences), and any sentence of the form $(\meta{\varphi} \eif \meta{\varphi})$ is a logical necessity (or ``tautology'') in TFL.  And importantly, out of the sixteen possible binary truth functions, the one we have assigned to `\eif' is the \emph{only} one that has all these logical properties!  So if we have to pick a truth-functional connective to symbolize English `if \ldots then', then `\eif' is the best choice among the sixteen available options.
 
 Second, there's an argument to suggest that the truth table we've given for `\eif' captures at least certain uses of English `if \ldots then'.\footnote{Versions of this argument are given by Dorothy Edgington (2014), `Conditionals', in the \emph{Stanford Encyclopedia of Philosophy} (\url{http://plato.stanford.edu/entries/conditionals/}) and Warren Goldfarb (2003), in his textbook \emph{Deductive Logic}.}    Suppose Lara has drawn several shapes on a piece of paper, and colored some of them grey. I have not seen them, but I claim:
 	\begin{quote}
@@ -184,7 +184,7 @@ then my claim would have been false, because it would then have had a false inst
 	\begin{ebullet}
 		\item If C is grey, then it is a circular \hfill (true antecedent, false consequent)
 	\end{ebullet}
-Notice that this distribution of truth values exactly matches that in our truth-table for `\eif'. So this suggests that the truth values of at least some English `if \ldots then' statements match those predicted by our truth table.
+Notice that this distribution of truth values exactly matches that in our truth-table for `\eif': the only false conditional is the one with a true antecedent but a false consequent. So this suggests that the truth values of at least some English `if \ldots then' statements match those predicted by our truth table.
 
 At the same time, it's clear that there are other uses of `if \ldots then' in English that aren't adequately symbolized using `\eif'.  Consider the following two sentences:
 	\begin{earg}
@@ -244,7 +244,7 @@ $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
 \end{center}
 Notice how we've recorded the truth value for the subsentence `$(H\eand I)$' on each row underneath its main operator, `\eand'.
 
-Now, our TFL sentence as a whole is a conditional, $\meta{\phi}\eif\meta{\psi}$, with `$(H \eand I)$' as \meta{\phi} and `$H$' as \meta{\psi}.  So to determine the truth-value of the whole conditional, we have to look at the truth values of `$(H \eand I)$' and `$H$' on each row.  On the second row, for example, `$(H\eand I)$' is false and `$H$' is true. Since a conditional is true when the antecedent is false, we write a `T' in the second row underneath the conditional symbol. We continue for the other three rows and get this:
+Now, our TFL sentence as a whole is a conditional, $\meta{\varphi}\eif\meta{\psi}$, with `$(H \eand I)$' as \meta{\varphi} and `$H$' as \meta{\psi}.  So to determine the truth-value of the whole conditional, we have to look at the truth values of `$(H \eand I)$' and `$H$' on each row.  On the second row, for example, `$(H\eand I)$' is false and `$H$' is true. Since a conditional is true when the antecedent is false, we write a `T' in the second row underneath the conditional symbol. We continue for the other three rows and get this:
 \begin{center}
 \begin{tabular}{c c| d e e e f}
 $H$&$I$&$(H$&\eand&$I)$&\eif&$H$\\
@@ -382,23 +382,23 @@ Show that `$((A \eor B) \eand \enot(A \eand B))$' has a truth table that matches
 
 Now that we know how to construct complete truth tables for complex sentences, we'll introduce some semantic concepts and see how to use truth tables to test whether they apply.  In \S\ref{s:Background}, we looked at the notions of \emph{necessary truth} and \emph{necessary falsity}. Both notions have surrogates in TFL. We'll start with a surrogate for necessary truth.
 	\factoidbox{
-	A sentence \meta{\phi} is a \define{TF tautology} iff it is true on every valuation.
+	A sentence \meta{\varphi} is a \define{TF tautology} iff it is true on every valuation.
 	}
-That is, a TFL sentence is a TF tautology if it is true on every row of its complete truth table, since rows represent valuations.  If you look back at the truth table for `$(H \eand I) \eif H$' from \S\ref{s:CompleteTruthTables} you'll see that it's a tautology.  Other tautologies include sentences of the form $(\meta{\phi} \eif \meta{\phi})$ and ones of the form $(\meta{\phi} \eor \enot \meta{\phi})$; the latter is called the \define{Law of Excluded Middle}.
+That is, a TFL sentence is a TF tautology if it is true on every row of its complete truth table, since rows represent valuations.  If you look back at the truth table for `$(H \eand I) \eif H$' from \S\ref{s:CompleteTruthTables} you'll see that it's a tautology.  Other tautologies include sentences of the form $(\meta{\varphi} \eif \meta{\varphi})$ and ones of the form $(\meta{\varphi} \eor \enot \meta{\varphi})$; the latter is called the \define{Law of Excluded Middle}.
 
 Notice that this is only a \emph{surrogate} for necessary truth. There are some necessary truths that we cannot adequately symbolize in TFL. For example, `$2 + 2 = 4$' and `Every city either is or is not in France' are both necessary truths, but if if we symbolize them in TFL, the best we can offer is an atomic sentence, and no atomic sentence is a tautology. Still, if we can adequately symbolize some English sentence using a TFL sentence which is a tautology, then that English sentence expresses a necessary truth.
 
 We have a similar surrogate for necessary falsity:
 	\factoidbox{
-		A sentence \meta{\phi} is a \define{TF contradiction} iff it is false on every valuation.
+		A sentence \meta{\varphi} is a \define{TF contradiction} iff it is false on every valuation.
 	}
-A sentence is a TF contradiction if it is false on every line of its complete truth table. The truth table for `$[(C\eiff C) \eif C] \eand \enot(C \eif C)$' we constructed in \S\ref{s:CompleteTruthTables} shows that this sentence is a contradiction.  Sentences of the form $(\meta{\phi} \eand \enot \meta{\phi})$ or $\enot(\meta{\phi} \eif \meta{\phi})$ are other examples of contradictions.  Notice that the negation of any tautology is a contradiction.  Lastly, we have a surrogate for contingency: a sentence \meta{\phi} is \define{TF contingent} iff it is neither a tautology nor a contradiction, i.e. if it is true on at least one valuation and false on at least one valuation.
+A sentence is a TF contradiction if it is false on every line of its complete truth table. The truth table for `$[(C\eiff C) \eif C] \eand \enot(C \eif C)$' we constructed in \S\ref{s:CompleteTruthTables} shows that this sentence is a contradiction.  Sentences of the form $(\meta{\varphi} \eand \enot \meta{\varphi})$ or $\enot(\meta{\varphi} \eif \meta{\varphi})$ are other examples of contradictions.  Notice that the negation of any tautology is a contradiction.  Lastly, we have a surrogate for contingency: a sentence \meta{\varphi} is \define{TF contingent} iff it is neither a tautology nor a contradiction, i.e. if it is true on at least one valuation and false on at least one valuation.
 
 These notions all apply to \emph{single} sentences of TFL.  Another useful notion---which we've occasionally already made use of---is that of \emph{equivalence}.  This is a property that applies to \emph{pairs} of sentences of TFL:
 	\factoidbox{
-		\meta{\phi} and \meta{\psi} are \define{TF equivalent} iff they have the same truth value on every valuation.
+		\meta{\varphi} and \meta{\psi} are \define{TF equivalent} iff they have the same truth value on every valuation.
 	}
-Notice that by this definition, any two tautologies, and any two contradictions, are equivalent.  Equivalence is more interesting when we find pairs of contingent sentences that are equivalent.  For example, we've observed that a biconditional like `$(A \eiff B)$' is equivalent to a conjunction of two conditionals, `$((A \eif B) \eand (B \eif A))$'.  Similarly, since $(\meta{\phi} \eif \meta{\psi})$ is true if  \meta{\phi} is true or if \meta{\psi} is false (and false otherwise),  TFL conditionals are equivalent to disjunctions of the form $(\enot \meta{\phi} \eor \meta{\psi})$.  \define{DeMorgan's Laws}, which we looked at in \ref{s:Disjunction}, are another example of equivalences.
+Notice that by this definition, any two tautologies, and any two contradictions, are equivalent.  Equivalence is more interesting when we find pairs of contingent sentences that are equivalent.  For example, we've observed that a biconditional like `$(A \eiff B)$' is equivalent to a conjunction of two conditionals, `$((A \eif B) \eand (B \eif A))$'.  Similarly, since $(\meta{\varphi} \eif \meta{\psi})$ is true if  \meta{\varphi} is true or if \meta{\psi} is false (and false otherwise),  TFL conditionals are equivalent to disjunctions of the form $(\enot \meta{\varphi} \eor \meta{\psi})$.  \define{DeMorgan's Laws}, which we looked at in \ref{s:Disjunction}, are another example of equivalences.
 
 Again, we can test for TF equivalence using truth tables. Consider the sentences `$\enot(P \eor Q)$' and `$\enot P \eand \enot Q$'. To find out whether they're TF equivalent, we construct \define{Joint Truth Table} that includes both sentences at once:
 \begin{center}
@@ -417,13 +417,13 @@ Looking at the columns under the main logical operators of the two sentences in 
 
 Another notion that applies to pairs of sentences is the following:
 \factoidbox{
-\meta{\phi} and \meta{\psi} are \define{TF contradictory} iff they have opposite truth values on every valuation.
+\meta{\varphi} and \meta{\psi} are \define{TF contradictory} iff they have opposite truth values on every valuation.
 }
-We can again test for this property by drawing a joint truth table for the two sentences to be compared, and checking to see that the truth values listed underneath their main connectives are different in every row of the table.  It's important not to confuse the notion of two sentences being \emph{contradictory} with the notion of a sentence's being a \emph{contradiction}: the former is a property of pairs of sentences, the latter a property of a single sentence.  But the two notions are connected (as the names suggest): if \meta{\phi} and \meta{\psi} are contradictory, then their conjunction $(\meta{\phi} \eand \meta{\psi})$ is a contradiction.
+We can again test for this property by drawing a joint truth table for the two sentences to be compared, and checking to see that the truth values listed underneath their main connectives are different in every row of the table.  It's important not to confuse the notion of two sentences being \emph{contradictory} with the notion of a sentence's being a \emph{contradiction}: the former is a property of pairs of sentences, the latter a property of a single sentence.  But the two notions are connected (as the names suggest): if \meta{\varphi} and \meta{\psi} are contradictory, then their conjunction $(\meta{\varphi} \eand \meta{\psi})$ is a contradiction.
 
 Next, here is a notion that now applies to arbitrarily large \emph{collections} of sentences:
 	\factoidbox{
-	$\meta{\phi}_1,\ldots, \meta{\phi}_n$ are \define{jointly TF consistent} iff there is at least one valuation which makes them all true.
+	$\meta{\varphi}_1,\ldots, \meta{\varphi}_n$ are \define{jointly TF consistent} iff there is at least one valuation which makes them all true.
 	}
 Collections of sentences are also said to be \define{jointly TF Inconsistent} iff they are not TF consistent, i.e. iff there is no valuation on which they are all true.  Again, it is easy to test for joint TF consistency (and inconsistency) using joint truth tables:
 
@@ -441,7 +441,7 @@ We can see from this that `$P \eand Q$', `$P \eor Q$', and `$P \eif Q$' are cons
 
 The following notion is closely related to that of joint consistency:
 	\factoidbox{
-		$\meta{\phi}_1, \ldots, \meta{\phi}_n$ \define{TF entail}  $\meta{\psi}$ iff no valuation makes all of $\meta{\phi}_1,  \ldots, \meta{\phi}_n$ true and $\meta{\psi}$ false.
+		$\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ \define{TF entail}  $\meta{\psi}$ iff no valuation makes all of $\meta{\varphi}_1,  \ldots, \meta{\varphi}_n$ true and $\meta{\psi}$ false.
 	}
 Again, we can test for TF entailment with a joint truth table. To test whether `$\enot L \eif (J \eor L)$' and `$\enot L$' TF entail `$J$' we construct the following joint truth table:
 
@@ -460,7 +460,7 @@ The only row on which both `$\enot L \eif (J \eor L)$' and `$\enot L$' are true 
 
 The notion of TF entailment is particularly important because it functions as our surrogate for \emph{validity}.  In \S\ref{s:Arguments} we said that an argument is TF valid iff it's impossible for the premises to be true and the conclusion false.  Similarly, we now say that a TFL argument is valid iff there's no valuation on which the premises are true and the conclusion false, that is to say:
 
-\factoidbox{An argument $\meta{\phi}_1, \ldots, \meta{\phi}_n \therefore \meta{\psi}$ is \define{TF Valid} iff the premises $\meta{\phi}_1, \ldots, \meta{\phi}_n$ TF entail the conclusion \meta{\psi}.}
+\factoidbox{An argument $\meta{\varphi}_1, \ldots, \meta{\varphi}_n \therefore \meta{\psi}$ is \define{TF Valid} iff the premises $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ TF entail the conclusion \meta{\psi}.}
 
 The connection to the intuitive notion of validity from \S\ref{s:Arguments} is that if there's no valuation that makes the premises of an argument true but it's conclusion false, then it's not possible for its premises to be true but its conclusion false.  So TFL gives us a way to test for the validity of English arguments! First, we symbolize them in TFL.  Then we test for TF validity using truth tables.   If the symbolized argument is TF valid, the English argument is also valid.
 
@@ -503,23 +503,23 @@ In different ways, all of these examples highlight some of the limits of working
 
 \section{The Double-Turnstile Notation}
 
-Because TF entailment is such an important concept, we'll introduce some new notation in connection with it.  Rather than saying that the sentences $\meta{\phi}_1, \ldots, \meta{\phi}_n$ TF entail $\meta{\psi}$, we will abbreviate this by writing:
-	$$\meta{\phi}_1, \ldots, \meta{\phi}_n \entails \meta{\psi}$$
+Because TF entailment is such an important concept, we'll introduce some new notation in connection with it.  Rather than saying that the sentences $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ TF entail $\meta{\psi}$, we will abbreviate this by writing:
+	$$\meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \meta{\psi}$$
 The symbol `$\entails$' is known as \emph{the double-turnstile}, since it looks like a turnstile with two horizontal beams.
 
 There is no limit on the number of TFL sentences that can be mentioned before the symbol `$\entails$'. Indeed, we can even consider the limiting case where none are mentioned:
-	$$\phantom{\meta{\phi}}\entails \meta{\psi}$$
-This says that there is no valuation which makes all the sentences mentioned on the left side of `$\entails$' true while making $\meta{\psi}$ false. Since \emph{no} sentences are mentioned on the left side of `$\entails$' in this case, this just means that there is no valuation which makes $\meta{\psi}$ false. But that just means that $\meta{\psi}$ is a tautology!  So writing \entails \meta{\psi} gives us a short way to say that \meta{\psi} is a tautology. %Equally, to say that $\meta{\phi}$ is a contradiction, we can write:
-	%$$\meta{\phi} \entails\phantom{\meta{\chi}}$$
-%For this says that no valuation makes $\meta{\phi}$ true.
+	$$\phantom{\meta{\varphi}}\entails \meta{\psi}$$
+This says that there is no valuation which makes all the sentences mentioned on the left side of `$\entails$' true while making $\meta{\psi}$ false. Since \emph{no} sentences are mentioned on the left side of `$\entails$' in this case, this just means that there is no valuation which makes $\meta{\psi}$ false. But that just means that $\meta{\psi}$ is a tautology!  So writing \entails \meta{\psi} gives us a short way to say that \meta{\psi} is a tautology. %Equally, to say that $\meta{\varphi}$ is a contradiction, we can write:
+	%$$\meta{\varphi} \entails\phantom{\meta{\chi}}$$
+%For this says that no valuation makes $\meta{\varphi}$ true.
 
 Sometimes we will want to deny that a TF entailment holds.  We will write:
-$$\meta{\phi}_1, \ldots, \meta{\phi}_n \nentails\meta{\psi}$$
-to say that $\meta{\phi}_1, \ldots, \meta{\phi}_n$ \emph{do not} TF entail $\meta{\psi}$, i.e. to say that there \emph{does} exist a valuation that makes all of $\meta{\phi}_1, \ldots, \meta{\phi}_n$ true but $\meta{\psi}$ false. Similarly $\nentails \meta{\psi}$ means that \meta{\psi} is \emph{not} a tautology, i.e. that there exists a valuation that makes $\meta{\psi}$ false.
+$$\meta{\varphi}_1, \ldots, \meta{\varphi}_n \nentails\meta{\psi}$$
+to say that $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ \emph{do not} TF entail $\meta{\psi}$, i.e. to say that there \emph{does} exist a valuation that makes all of $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ true but $\meta{\psi}$ false. Similarly $\nentails \meta{\psi}$ means that \meta{\psi} is \emph{not} a tautology, i.e. that there exists a valuation that makes $\meta{\psi}$ false.
 
-Lastly, we can abbreviate the claim that \meta{\phi} and \meta{\psi} are equivalent as follows:
-$$\meta{\phi} \lequiv \meta{\psi}$$
-This encapsulates the idea that \meta{\phi} and \meta{\psi} are equivalent iff they mutually entail each other.  That makes sense: if $\meta{\phi} \entails \meta{\psi}$ then there is no valuation that makes \meta{\phi} true but \meta{\psi} false, and if $\meta{\psi} \entails \meta{\phi}$ then there is no valuation that makes \meta{\psi} true but \meta{\phi} false.  Putting it together, this means that there's no valuation on which \meta{\phi} and \meta{\psi} have different truth values, meaning that \meta{\phi} and \meta{\psi} are equivalent.  Similarly reasoning holds the other direction, from equivalence to mutual entailment
+Lastly, we can abbreviate the claim that \meta{\varphi} and \meta{\psi} are equivalent as follows:
+$$\meta{\varphi} \lequiv \meta{\psi}$$
+This encapsulates the idea that \meta{\varphi} and \meta{\psi} are equivalent iff they mutually entail each other.  That makes sense: if $\meta{\varphi} \entails \meta{\psi}$ then there is no valuation that makes \meta{\varphi} true but \meta{\psi} false, and if $\meta{\psi} \entails \meta{\varphi}$ then there is no valuation that makes \meta{\psi} true but \meta{\varphi} false.  Putting it together, this means that there's no valuation on which \meta{\varphi} and \meta{\psi} have different truth values, meaning that \meta{\varphi} and \meta{\psi} are equivalent.  Similarly reasoning holds the other direction, from equivalence to mutual entailment
 
 
 It's important to be clear that `$\entails$' is not a symbol in the language of TFL. Rather, it is a symbol of our metalanguage (recall the difference between object language and metalanguage from \S\ref{s:TFLMetavariables}). The following is a claim in our metalanguage, not in the language TFL:
@@ -535,14 +535,14 @@ For this reason it is also important not to confuse the symbols `$\eif$' and `$\
 
 Despite this important difference, there are some close connections between conditionals in TFL and claims about entailment in the metalanguage.  Observe the following:
 \begin{ebullet}
-\item $\meta{\phi} \entails \meta{\psi}$ iff no valuation makes $\meta{\phi}$ true and $\meta{\psi}$ false.
-\item $\meta{\phi} \eif \meta{\psi}$ is a tautology iff no valuation  makes $\meta{\phi} \eif \meta{\psi}$ false. Since a conditional is only false if its antecedent is true and its consequent false, this means that $\meta{\phi} \eif \meta{\psi}$ is a tautology iff no valuation makes $\meta{\phi}$ true and $\meta{\psi}$ false.
+\item $\meta{\varphi} \entails \meta{\psi}$ iff no valuation makes $\meta{\varphi}$ true and $\meta{\psi}$ false.
+\item $\meta{\varphi} \eif \meta{\psi}$ is a tautology iff no valuation  makes $\meta{\varphi} \eif \meta{\psi}$ false. Since a conditional is only false if its antecedent is true and its consequent false, this means that $\meta{\varphi} \eif \meta{\psi}$ is a tautology iff no valuation makes $\meta{\varphi}$ true and $\meta{\psi}$ false.
 \end{ebullet}
 Combining these two observations, we see that:
-$$\meta{\phi} \entails \meta{\psi} \text{ iff } \entails \meta{\phi} \eif \meta{\psi}$$
-(recall that $\entails \meta{\phi} \eif \meta{\psi}$ abbreviates the claim that $\meta{\phi} \eif \meta{\psi}$ is a tautology). This means that if $\meta{\phi} \entails \meta{\psi}$ holds, then the corresponding conditional $\meta{\phi} \eif \meta{\psi}$ is a tautology, and must therefore be true.  However, the mere truth of the conditional $\meta{\phi} \eif \meta{\psi}$ does not suffice for it to be the case that $\meta{\phi} \entails \meta{\psi}$.  For the latter to hold, `$\meta{\phi} \eif \meta{\psi}$' doesn't just have to be \emph{true}, it has to be a \emph{tautology}.  More generally, we have:
+$$\meta{\varphi} \entails \meta{\psi} \text{ iff } \entails \meta{\varphi} \eif \meta{\psi}$$
+(recall that $\entails \meta{\varphi} \eif \meta{\psi}$ abbreviates the claim that $\meta{\varphi} \eif \meta{\psi}$ is a tautology). This means that if $\meta{\varphi} \entails \meta{\psi}$ holds, then the corresponding conditional $\meta{\varphi} \eif \meta{\psi}$ is a tautology, and must therefore be true.  However, the mere truth of the conditional $\meta{\varphi} \eif \meta{\psi}$ does not suffice for it to be the case that $\meta{\varphi} \entails \meta{\psi}$.  For the latter to hold, `$\meta{\varphi} \eif \meta{\psi}$' doesn't just have to be \emph{true}, it has to be a \emph{tautology}.  More generally, we have:
 
-$$\meta{\phi}_1, \ldots, \meta{\phi}_n, \meta{\psi} \entails \meta{\chi} \text{ iff } \meta{\phi}_1, \ldots, \meta{\phi}_n \entails \meta{\psi} \eif \meta{\chi}$$
+$$\meta{\varphi}_1, \ldots, \meta{\varphi}_n, \meta{\psi} \entails \meta{\chi} \text{ iff } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \meta{\psi} \eif \meta{\chi}$$
 
 
 
@@ -586,27 +586,27 @@ Use joint truth tables to determine if the following entailments hold:
 Answer each of the questions below and justify your answer.
 \begin{earg}
 
-\item Suppose that $\meta{\phi} \lequiv \meta{\psi}$.  Is it the case that $\entails \meta{\phi} \eiff \meta{\psi}$?
-\item Suppose that $\entails \meta{\phi} \eiff \meta{\psi}$.  Is it the case that $\meta{\phi} \lequiv \meta{\psi}$?
+\item Suppose that $\meta{\varphi} \lequiv \meta{\psi}$.  Is it the case that $\entails \meta{\varphi} \eiff \meta{\psi}$?
+\item Suppose that $\entails \meta{\varphi} \eiff \meta{\psi}$.  Is it the case that $\meta{\varphi} \lequiv \meta{\psi}$?
 
-\item Suppose that $(\meta{\phi}\eand\meta{\psi})\eif\meta{\chi}$ is neither a tautology nor a contradiction. Is it the case that $\meta{\phi}, \meta{\psi} \entails\meta{\chi}$?
-%The sentence is false on some line of a complete truth table. On that line, \meta{\phi} and \meta{\psi} are true and \meta{\chi} is false. So the argument is invalid.
-\item Suppose that $\meta{\phi}$, $\meta{\psi}$ and $\meta{\chi}$  are jointly inconsistent. What can you say about $(\meta{\phi}\eand\meta{\psi}\eand\meta{\chi})$?
-\item Suppose \meta{\phi} and \meta{\psi} are joint inconsistent.  Must \meta{\phi} and \meta{\psi} be contradictory?
-\item Suppose that \meta{\phi} is a contradiction. Is it the case that $\meta{\phi}, \meta{\psi} \entails \meta{\chi}$?
-%Since \meta{\phi} is false on every line of a complete truth table, there is no line on which \meta{\phi} and \meta{\psi} are true and \meta{\chi} is false. So the argument is valid.
-\item Suppose that \meta{\chi} is a contradiction. Is it the case that $\meta{\phi}, \meta{\psi} \entails \meta{\chi}$?
-\item Suppose that \meta{\chi} is a tautology. Is it the case that  $\meta{\phi}, \meta{\psi}\entails \meta{\chi}$?
-%Since \meta{\chi} is true on every line of a complete truth table, there is no line on which \meta{\phi} and \meta{\psi} are true and \meta{\chi} is false. So the argument is valid.
-\item Suppose that \meta{\phi} is a tautology. Is it the case that  $\meta{\phi}, \meta{\psi}\entails \meta{\chi}$?
-\item Suppose that \meta{\phi} and \meta{\psi} are equivalent. What can you say about $(\meta{\phi}\eor\meta{\psi})$?
-%Not much. $(\meta{\phi}\eor\meta{\psi})$ is a tautology if \meta{\phi} and \meta{\psi} are tautologies; it is a contradiction if they are contradictions; it is contingent if they are contingent.
-\item Suppose that \meta{\phi} and \meta{\psi} are \emph{not} equivalent. What can you say about  $(\meta{\phi}\eor\meta{\psi})$?
-%\meta{\phi} and \meta{\psi} have different truth values on at least one line of a complete truth table, and $(\meta{\phi}\eor\meta{\psi})$ will be true on that line. On other lines, it might be true or false. So $(\meta{\phi}\eor\meta{\psi})$ is either a tautology or it is contingent; it is \emph{not} a contradiction.
-\item Suppose \meta{\phi} and \meta{\psi} are equivalent. What can you say about $(\meta{\phi} \eif \meta{\psi})$?
-\item Suppose \meta{\phi} and \meta{\psi} are contradictory.  Must $(\meta{\phi} \eif \meta{\psi})$ be a contradiction?
-\item Suppose \meta{\phi} is a contradiction.  What can you say about $(\meta{\phi} \eif \meta{\psi})$?
-\item Suppose \meta{\psi} is a contradiction.  What can you say about $(\meta{\phi} \eif \meta{\psi})$?
+\item Suppose that $(\meta{\varphi}\eand\meta{\psi})\eif\meta{\chi}$ is neither a tautology nor a contradiction. Is it the case that $\meta{\varphi}, \meta{\psi} \entails\meta{\chi}$?
+%The sentence is false on some line of a complete truth table. On that line, \meta{\varphi} and \meta{\psi} are true and \meta{\chi} is false. So the argument is invalid.
+\item Suppose that $\meta{\varphi}$, $\meta{\psi}$ and $\meta{\chi}$  are jointly inconsistent. What can you say about $(\meta{\varphi}\eand\meta{\psi}\eand\meta{\chi})$?
+\item Suppose \meta{\varphi} and \meta{\psi} are joint inconsistent.  Must \meta{\varphi} and \meta{\psi} be contradictory?
+\item Suppose that \meta{\varphi} is a contradiction. Is it the case that $\meta{\varphi}, \meta{\psi} \entails \meta{\chi}$?
+%Since \meta{\varphi} is false on every line of a complete truth table, there is no line on which \meta{\varphi} and \meta{\psi} are true and \meta{\chi} is false. So the argument is valid.
+\item Suppose that \meta{\chi} is a contradiction. Is it the case that $\meta{\varphi}, \meta{\psi} \entails \meta{\chi}$?
+\item Suppose that \meta{\chi} is a tautology. Is it the case that  $\meta{\varphi}, \meta{\psi}\entails \meta{\chi}$?
+%Since \meta{\chi} is true on every line of a complete truth table, there is no line on which \meta{\varphi} and \meta{\psi} are true and \meta{\chi} is false. So the argument is valid.
+\item Suppose that \meta{\varphi} is a tautology. Is it the case that  $\meta{\varphi}, \meta{\psi}\entails \meta{\chi}$?
+\item Suppose that \meta{\varphi} and \meta{\psi} are equivalent. What can you say about $(\meta{\varphi}\eor\meta{\psi})$?
+%Not much. $(\meta{\varphi}\eor\meta{\psi})$ is a tautology if \meta{\varphi} and \meta{\psi} are tautologies; it is a contradiction if they are contradictions; it is contingent if they are contingent.
+\item Suppose that \meta{\varphi} and \meta{\psi} are \emph{not} equivalent. What can you say about  $(\meta{\varphi}\eor\meta{\psi})$?
+%\meta{\varphi} and \meta{\psi} have different truth values on at least one line of a complete truth table, and $(\meta{\varphi}\eor\meta{\psi})$ will be true on that line. On other lines, it might be true or false. So $(\meta{\varphi}\eor\meta{\psi})$ is either a tautology or it is contingent; it is \emph{not} a contradiction.
+\item Suppose \meta{\varphi} and \meta{\psi} are equivalent. What can you say about $(\meta{\varphi} \eif \meta{\psi})$?
+\item Suppose \meta{\varphi} and \meta{\psi} are contradictory.  Must $(\meta{\varphi} \eif \meta{\psi})$ be a contradiction?
+\item Suppose \meta{\varphi} is a contradiction.  What can you say about $(\meta{\varphi} \eif \meta{\psi})$?
+\item Suppose \meta{\psi} is a contradiction.  What can you say about $(\meta{\varphi} \eif \meta{\psi})$?
 
 \end{earg}
 
@@ -619,19 +619,19 @@ Answer each of the questions below and justify your answer.
 
 \begin{itemize}
 \item[] \textbf{Double Negation (DN):}
-\item[]$\enot\enot \meta{\phi} \lequiv \meta{\phi}$
+\item[]$\enot\enot \meta{\varphi} \lequiv \meta{\varphi}$
 
 
 \item[] \textbf{DeMorgan's Laws (DeM):}
 
-\item[] $\enot(\meta{\phi} \eand  \meta{\psi}) \lequiv \enot \meta{\phi} \eor \enot \meta{\psi}$
-\item[] $\enot(\meta{\phi} \eor \meta{\psi}) \lequiv \enot \meta{\phi} \eand  \enot \meta{\psi}$
+\item[] $\enot(\meta{\varphi} \eand  \meta{\psi}) \lequiv \enot \meta{\varphi} \eor \enot \meta{\psi}$
+\item[] $\enot(\meta{\varphi} \eor \meta{\psi}) \lequiv \enot \meta{\varphi} \eand  \enot \meta{\psi}$
 
 
 \item[]  \textbf{Laws of Redundancy (R):}
 
-\item[] $\meta{\phi} \eand  \meta{\phi} \lequiv \meta{\phi}$
-\item[] $\meta{\phi} \eor \meta{\phi} \lequiv \meta{\phi}$
+\item[] $\meta{\varphi} \eand  \meta{\varphi} \lequiv \meta{\varphi}$
+\item[] $\meta{\varphi} \eor \meta{\varphi} \lequiv \meta{\varphi}$
 
 
 \end{itemize}
@@ -640,14 +640,14 @@ Answer each of the questions below and justify your answer.
 
 \begin{itemize}
 \item[] \textbf{Distributive Laws (Dist):}
-\item[] $\meta{\phi} \eand  (\meta{\psi} \eor \meta{\chi}) \lequiv (\meta{\phi} \eand  \meta{\psi}) \eor (\meta{\phi} \eand  \meta{\chi})$
-\item[] $\meta{\phi} \eor (\meta{\psi} \eand  \meta{\chi}) \lequiv (\meta{\phi} \eor \meta{\psi}) \eand  (\meta{\phi} \eor \meta{\chi})$
+\item[] $\meta{\varphi} \eand  (\meta{\psi} \eor \meta{\chi}) \lequiv (\meta{\varphi} \eand  \meta{\psi}) \eor (\meta{\varphi} \eand  \meta{\chi})$
+\item[] $\meta{\varphi} \eor (\meta{\psi} \eand  \meta{\chi}) \lequiv (\meta{\varphi} \eor \meta{\psi}) \eand  (\meta{\varphi} \eor \meta{\chi})$
 
 \item[]  \textbf{Material Conditional Laws:}
 
-\item[] \textbf{Imp:} $\meta{\phi} \eif \meta{\psi} \lequiv \enot \meta{\phi} \eor \meta{\psi}$
-\item[] \textbf{NegImp:} $\enot(\meta{\phi} \eif \meta{\psi}) \lequiv \meta{\phi} \eand  \enot \meta{\psi}$
-\item[] \textbf{Cont:} $\meta{\phi} \eif \meta{\psi} \lequiv \enot \meta{\psi} \eif \enot \meta{\phi}$
+\item[] \textbf{Imp:} $\meta{\varphi} \eif \meta{\psi} \lequiv \enot \meta{\varphi} \eor \meta{\psi}$
+\item[] \textbf{NegImp:} $\enot(\meta{\varphi} \eif \meta{\psi}) \lequiv \meta{\varphi} \eand  \enot \meta{\psi}$
+\item[] \textbf{Cont:} $\meta{\varphi} \eif \meta{\psi} \lequiv \enot \meta{\psi} \eif \enot \meta{\varphi}$
 
 \end{itemize}
 
@@ -670,7 +670,7 @@ Answer each of the questions below and justify your answer.
 \problempart
 Consider the following principle:
 	\begin{ebullet}
-		\item Suppose $\meta{\phi}$ and $\meta{\psi}$ are equivalent. Then for given argument that contains $\meta{\phi}$ (either as a premise or as its conclusion), replacing $\meta{\phi}$ with $\meta{\psi}$  will not affect that argument's validity.
+		\item Suppose $\meta{\varphi}$ and $\meta{\psi}$ are equivalent. Then for given argument that contains $\meta{\varphi}$ (either as a premise or as its conclusion), replacing $\meta{\varphi}$ with $\meta{\psi}$  will not affect that argument's validity.
 	\end{ebullet}
 Is this principle correct? Explain your answer.
 
@@ -949,14 +949,14 @@ Instead of giving a reductio proof like this in English, we could instead constr
 \begin{tikzpicture}[>=stealth',node distance=1.5cm]
 
 %\draw (0,0) rectangle (6,2);
-\node[draw, rectangle] (1) {Determine whether $\meta{\phi}_1 \ldots \meta{\phi}_n \vDash \meta{\psi}$};
-\node[draw, rectangle] (2) [below =0.5cm of 1, text width=11cm]{Suppose there exists a valuation $v$ making $\meta{\phi}_1 ... \meta{\phi}_n$ true and $\meta{\psi}$ false};
+\node[draw, rectangle] (1) {Determine whether $\meta{\varphi}_1 \ldots \meta{\varphi}_n \vDash \meta{\psi}$};
+\node[draw, rectangle] (2) [below =0.5cm of 1, text width=11cm]{Suppose there exists a valuation $v$ making $\meta{\varphi}_1 ... \meta{\varphi}_n$ true and $\meta{\psi}$ false};
 
-\node[draw, rectangle] (3) [below left =0.5cm and -4.5cm of 2, text width = 4.5cm]{Possibility A: the assumption reveals a counterexample, i.e. a valuation  making $\meta{\phi}_1 ... \meta{\phi}_n$ true and $\meta{\psi}$ false.};
+\node[draw, rectangle] (3) [below left =0.5cm and -4.5cm of 2, text width = 4.5cm]{Possibility A: the assumption reveals a counterexample, i.e. a valuation  making $\meta{\varphi}_1 ... \meta{\varphi}_n$ true and $\meta{\psi}$ false.};
 \node[draw, rectangle] (4) [below right = 0.5cm and -5cm of 2, text width=4.5cm]{Possibility B: the assumption leads to a contradiction, meaning that there exists no such valuation.};
 
-\node[draw, rectangle] (5) [below = 0.5cm of 3, text width=4.5cm]{Conclusion: $\meta{\phi}_1 \ldots \meta{\phi}_n \nvDash \meta{\psi}$. Display your counterexample.};
-\node[draw, rectangle] (6) [below = 0.5cm of 4, text width=4.5cm]{Conclusion $\meta{\phi}_1 \ldots \meta{\phi}_n \vDash \meta{\psi}$.  Write out a \emph{reductio} proof in English that spells out your reasoning.};
+\node[draw, rectangle] (5) [below = 0.5cm of 3, text width=4.5cm]{Conclusion: $\meta{\varphi}_1 \ldots \meta{\varphi}_n \nvDash \meta{\psi}$. Display your counterexample.};
+\node[draw, rectangle] (6) [below = 0.5cm of 4, text width=4.5cm]{Conclusion $\meta{\varphi}_1 \ldots \meta{\varphi}_n \vDash \meta{\psi}$.  Write out a \emph{reductio} proof in English that spells out your reasoning.};
 
 
 \path[->] (1) edge (2);
@@ -1183,3 +1183,5 @@ Use the partial truth table method to determine whether these sentences are join
 \item $A \eor B$, $B\eor C$, $C\eif \enot A$ %consistent
 \item $A$, $B$, $C$, $\enot D$, $\enot E$, $F$ %consistent
 \end{earg}
+
+

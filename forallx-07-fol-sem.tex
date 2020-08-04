@@ -5,12 +5,12 @@ Recall that in TFL, we had the notion of a \emph{valuation}: an assignment of tr
 
 In this chapter we will do something very similar for FOL, except that the notion of a valuation now gets replaced by the more complex notion of an \emph{interpretation}.  We'll first have to see what an FOL interpretation is, and then learn how to compute the truth values of arbitrarily complex FOL sentences in a given interpretation.  With that in hand, we can then again define logical concepts --- like logical entailment, or validity --- for FOL.
 
-Ultimately, we'll be able to use this machinery to show that a given FOL argument is not valid, by giving an interpretation that makes its premises true and its conclusion false.  For reasons that will emerge in this chapter, we won't use interpretations to show that arguments are valid.  We will use the natural deduction proofs we learned in the last chapter to do this.
+Ultimately, we'll be able to use this machinery to show that a given FOL argument is \emph{not} valid, by giving an interpretation that makes its premises true and its conclusion false.  For reasons that will emerge in this chapter, we won't use interpretations to show that arguments \emph{are} valid.  We will use the natural deduction proofs we learned in chapter \ref{ch:NDFOL} to do this.
 
 
 \section{Predicates and their Extensions}
 
-TFL was a truth-functional language. Its connectives are all truth-functional, and consequently, TFL only cares about what truth-values sentences have. We can assign a truth value \emph{directly}, via a valuation that just stipulates that the sentence `$P$', for example, is to have the value \emph{true}. Alternatively, we can do it \emph{indirectly}, by offering a symbolization key, e.g.:
+The connectives of TFL are all truth-functional, and consequently, TFL only cares about what truth-values sentences have. We can assign a truth value to a sentence \emph{directly}, via a valuation that just stipulates that the sentence `$P$', for example, is to have the value \emph{true}. Alternatively, we can do it \emph{indirectly}, by offering a symbolization key, e.g.:
 	\begin{ekey}
 		\item[P] Big Ben is in London
 	\end{ekey}
@@ -35,7 +35,7 @@ It doesn't matter that these objects have nothing in common, they still form a p
 		\item[o] Barack Obama
 		\item[p] the number $\pi$
 	\end{ekey}
-Together, these stipulations settle the truth value of any atomic FOL sentence formed from the predicate `$H$' and the names `$d$', `$o$', and `$p$': the sentences `$Ho$' and `$Hp$' will both be true on this interpretation, because Obama and $\pi$ are in the predicate's extension, but `$Hb$' will be false, because Usain Bolt is not one of the objects `$H$' is true of.
+Together, these stipulations then settle the truth value of any atomic FOL sentence formed from the predicate `$H$' and the names `$d$', `$o$', and `$p$': the sentences `$Ho$' and `$Hp$' will both be true on this interpretation, because Obama and $\pi$ are in the predicate's extension, but `$Hb$' will be false, because Usain Bolt is not one of the objects `$H$' is true of.
 
 %\section{Many-place predicates}
 
@@ -114,23 +114,23 @@ If we were dealing with a three-place predicate, its extension would consist not
 \section{FOL Interpretations}\label{s:FOLInterpretations}
 
 
-We defined a \emph{valuation} of a sentence \meta{\phi} (or collection of sentences) of TFL to be an assignment of truth values to all the atomic sentences contained in \meta{\phi} (or the collection). In FOL, the role of a valuation will be played by an \define{Interpretation}.  FOL interpretations are more complex than TFL valuations, because they have  \emph{three} components:
+We defined a \emph{valuation} of a sentence \meta{\varphi} (or collection of sentences) of TFL to be an assignment of truth values to all the atomic sentences contained in \meta{\varphi} (or the collection). In FOL, the role of a valuation will be played by an \define{Interpretation}.  FOL interpretations are more complex than TFL valuations, because they have  \emph{three} components:
 \factoidbox{
-An \define{FOL Interpretation} of a sentence \meta{\phi}  (or of a collection of sentences \texttt{C}) consist of:
+An \define{FOL Interpretation} of a sentence \meta{\varphi}  (or of a collection of sentences \texttt{C}, e.g. an argument) consist of:
 	\begin{enumerate}
 		\item A specification of a \define{domain} containing at least one object
-		\item For each name in \meta{\phi} (or in $\texttt{C}$), an assignment of exactly one object in the domain.  This object is the name's \define{referent}.
-		\item For each predicate in \meta{\phi} (or in \texttt{C}), a specification of what objects in the domain (if any), and in what order, that predicate is  true of.  This constitutes the predicate's \define{Extension}.\footnote{So notice that a predicate can have an empty extension, in which case it it isn't true of any objects in the domain.  By contrast, we don't allow ``empty names'' that lack a referent.}
+		\item For each name in \meta{\varphi} (or in $\texttt{C}$), an assignment of exactly one object in the domain.  This object is the name's \define{referent}.
+		\item For each predicate in \meta{\varphi} (or in \texttt{C}), a specification of what objects in the domain (if any), and in what order, that predicate is  true of.  This constitutes the predicate's \define{Extension}.\footnote{So notice that a predicate can have an empty extension, in which case it it isn't true of any objects in the domain.  By contrast, we don't allow ``empty names'' that lack a referent.}
 	\end{enumerate}}
 
-Symbolization keys like those we used in chapter \ref{ch:FOLSymbolization} consequently give us one convenient way to present an interpretation.  For example, the following counts as an FOL interpretation of `$(Lw \land Tw)$':
+Symbolization keys like those we used in chapter \ref{ch:FOLSymbolization} consequently give us one convenient way to present an interpretation.  For example, the following counts as one possible FOL interpretation of `$(Lw \land Tw)$':
 	\begin{ekey}
 		\item[\text{Domain}] people
 		\item[w] Wittgenstein
 		\item[L] \blank\ is a logician
-		\item[A]\blank\ is a school teacher
+		\item[T]\blank\ is a school teacher
 	\end{ekey}
-This has all three components: (i) a specification of a domain, (ii) a specification of a referent for every name in `$(Lw \land Tw)$', and (iii) a specification of an extension for every predicate in `$(Lw \land Tw)$'.  The interpretation then determines a truth value for the sentence.  In this case, since Wittgenstein was both a logician and a school teacher, both `$L$' and `$T$' are true of the referent of the name `$w$' on this interpretation, and so `$(Lw \land Tw)$' is true.
+This has all three components: (i) a specification of a domain, (ii) a specification of a referent for every name in `$(Lw \land Tw)$', and (iii) a specification of an extension for every predicate in `$(Lw \land Tw)$'.  The interpretation then determines a truth value for the sentence.  In this case, since Wittgenstein was both a logician and a school teacher, both `$L$' and `$T$' are true of the referent of the name `$w$' on this interpretation, and so `$(Lw \land Tw)$' as a whole is true.
 
 Alternatively, we can specify interpretations by just directly listing the objects that predicates are true of,  as discussed in the previous section.  In fact, as we move on, it will often be convenient to consider fairly abstract interpretations where the domain consists of natural numbers, i.e. positive integers, rather than people, or plants, or other objects. One possible interpretation of `$\exists x(Fx \eand Gx)$', for example, would be the following:\footnote{Although this kind of domain officially consists of just numbers,  we could in principle regard it as consisting of any objects we like --- we're just calling these objects `object 1', `object 2', `object 3' etc. for simplicity.}
 	\begin{ekey}
@@ -148,9 +148,9 @@ It will  often be useful to represent directly-specified interpretations \emph{d
 2   &   $-$   &   $-$ \\ \hline
 3   &   $-$   &   $+$ \\ \hline
 \end{tabular}\end{center}
-Here we list the objects in the domain on the left, and then put $+$'s and $-$'s under each predicate to indicate which objects that predicate is true of.  If we were also considering some FOL names, we could include those in our diagram by listing each one to the left of whichever object it refers to.
+Here we list the objects in the domain on the left, and then put $+$'s and $-$'s under each predicate to indicate which objects that predicate is true of.  If we were also considering some FOL names, we could include those in our matrix diagram by listing each name to the left of whichever object it refers to.
 
-As we discussed in the last section, to directly specify the extension of a \emph{many-place} predicate, we have to give a list of \emph{tuples} of objects, rather than individual objects, to indicate in what order the predicate holds of the objects.  So for example, if we take the sentence `$\forall xRxx$' which contains the two-place predicate `$R$', one possible interpretation would be the following:
+As we discussed in the last section, to directly specify the extension of a \emph{many-place} predicate, we have to give a list of \emph{tuples} of objects, rather than of individual objects, to indicate in what order the predicate holds of the objects.  So for example, if we take the sentence `$\forall xRxx$' which contains the two-place predicate `$R$', one possible interpretation would be the following:
 	\begin{ekey}
 		\item[\text{Domain}] 1, 2, 3, 4
 		\item[R]\ntuple{1, 4}, \ntuple{4,4},  \ntuple{1, 2}, \ntuple{2, 1} \ntuple{1, 3},
@@ -225,16 +225,16 @@ Similarly, `$Rab$' is true on our interpretation just in case the referent of `$
 \paragraph{Adding Truth Functional Connectives} Just like in TFL, sentences of FOL can be built up from simpler ones using the truth-functional operators. The semantic rules governing these operators are exactly the same as they were when we considered TFL. Here they are:
 
 \factoidbox{
-$\enot \meta{\phi}$ is true in a given interpretation \textbf{iff} $\meta{\phi}$ false in that interpretation\\
+$\enot \meta{\varphi}$ is true in a given interpretation \textbf{iff} $\meta{\varphi}$ false in that interpretation\\
 
-$\meta{\phi} \eand \meta{\psi}$ is true in a given interpretation \textbf{iff} both $\meta{\phi}$ and $\meta{\psi}$ are true in that interpretation\\
+$\meta{\varphi} \eand \meta{\psi}$ is true in a given interpretation \textbf{iff} both $\meta{\varphi}$ and $\meta{\psi}$ are true in that interpretation\\
 
-$\meta{\phi} \eor \meta{\psi}$ is true in a given interpretation \textbf{iff} either $\meta{\phi}$ or $\meta{\psi}$ is true in that interpretation\\
+$\meta{\varphi} \eor \meta{\psi}$ is true in a given interpretation \textbf{iff} either $\meta{\varphi}$ or $\meta{\psi}$ is true in that interpretation\\
 
 
-$\meta{\phi} \eif \meta{\psi}$ is true in a given interpretation \textbf{iff} either $\meta{\phi}$ is false or $\meta{\psi}$ is true in that interpretation\\
+$\meta{\varphi} \eif \meta{\psi}$ is true in a given interpretation \textbf{iff} either $\meta{\varphi}$ is false or $\meta{\psi}$ is true in that interpretation\\
 
-$\meta{\phi} \eiff \meta{\psi}$ is true in a given interpretation \textbf{iff} $\meta{\phi}$ has the same truth value as $\meta{\psi}$ in that interpretation
+$\meta{\varphi} \eiff \meta{\psi}$ is true in a given interpretation \textbf{iff} $\meta{\varphi}$ has the same truth value as $\meta{\psi}$ in that interpretation
 	}
 This  is equivalent to the information conveyed by the characteristic truth tables for the connectives; it's just presented in words here rather than truth tables.   Some examples will help to illustrate the idea (make sure you understand them!). On our go-to interpretation:
 	\begin{earg}
@@ -281,17 +281,17 @@ to indicate that we're treating $x$ as referring to 2.  Similarly, instead of sa
 You can think of $(Ex^2 \rightarrow Rx^2b)$ as a \define{semantic instance} of $\forall x(Ex \rightarrow Rxb)$, much like $(Ea \rightarrow Rab)$ is a \emph{syntactic instance} of $\forall x(Ex \rightarrow Rxb)$, one we could infer by the rule of $\forall E$.  In both cases, we delete the quantifier, and then do something with the variable the quantifier was associated with: in the case of syntactic instances, we replace the variable with a name, whereas now, in the case of semantic instances, we add a superscript to the variable to indicate what object it is temporarily being treated as referring to.  It's important to remember, though, that this really is just a notational shorthand.  Whereas the syntactic instance $(Ea \rightarrow Rab)$ is a sentence of FOL, the semantic instance `$(Ex^2 \rightarrow Rx^2b)$' is not a sentence of FOL (nor even a formula), since the language of FOL doesn't include superscripts on variables.  Talk of $(Ex^2 \rightarrow Rx^2b)$ is, again, just a notational shorthand for talking about the FOL sentence `$(Ex \rightarrow Rxb)$' relative to an assignment of 2 to `$x$'.
 
 With this background in place, we can now explain the truth conditions of quantified sentences as follows:
-\factoidbox{$\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is true in a given interpretation \script{I} \textbf{iff}  $\meta{\phi}(\ldots \meta{v}^o \ldots)$ is true on \script{I} for \emph{every object} $o$ in \script{I}'s domain.\\
+\factoidbox{$\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is true in a given interpretation \script{I} \textbf{iff}  $\meta{\varphi}(\ldots \meta{v}^o \ldots)$ is true on \script{I} for \emph{every object} $o$ in \script{I}'s domain.\\
 
-$\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is true in a given interpretation \script{I} \textbf{iff}  $\meta{\phi}(\ldots \meta{v}^o \ldots)$ is true on \script{I} for \emph{at least one} object $o$ in \script{I}'s domain.
+$\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is true in a given interpretation \script{I} \textbf{iff}  $\meta{\varphi}(\ldots \meta{v}^o \ldots)$ is true on \script{I} for \emph{at least one} object $o$ in \script{I}'s domain.
 }
-The idea, again, is that we go through each object $o$ in the domain, and check whether $\meta{\phi}(\ldots \meta{v} \ldots)$ is true when \meta{v} is treated as referring to $o$; if so, the universal sentence $\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is true, if not, it is false.  Notice that it's much easier for an existential sentence to be true: for an existential $\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$, we only have to find \emph{one} object in the domain that satisfies $\meta{\phi}(\ldots \meta{v} \ldots)$.
+The idea, again, is that we go through each object $o$ in the domain, and check whether $\meta{\varphi}(\ldots \meta{v} \ldots)$ is true when \meta{v} is treated as referring to $o$; if so, the universal sentence $\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is true, if not, it is false.  Notice that it's much easier for an existential sentence to be true: for an existential $\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$, we only have to find \emph{one} object in the domain that satisfies $\meta{\varphi}(\ldots \meta{v} \ldots)$.
 
 
-This in turn means that that it's very easy for a universal sentence $\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ to be \emph{false}: we just have to find a single object relative to which $\meta{\phi}(\ldots \meta{v} \ldots)$ is false.  For an existential sentence $\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ to be false, on the other hand, we have to make sure that $\meta{\phi}(\ldots \meta{v} \ldots)$ is false for \emph{every} object in the domain. Let's state these ``falsity conditions'' for quantified sentences explicitly too:
-\factoidbox{$\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is false in a given interpretation \script{I} \textbf{iff}  $\meta{\phi}(\ldots \meta{v}^o \ldots)$ is false on \script{I} for \emph{at least one object} $o$ in \script{I}'s domain.\\
+This in turn means that that it's very easy for a universal sentence $\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ to be \emph{false}: we just have to find a single object relative to which $\meta{\varphi}(\ldots \meta{v} \ldots)$ is false.  For an existential sentence $\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ to be false, on the other hand, we have to make sure that $\meta{\varphi}(\ldots \meta{v} \ldots)$ is false for \emph{every} object in the domain. Let's state these ``falsity conditions'' for quantified sentences explicitly too:
+\factoidbox{$\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is false in a given interpretation \script{I} \textbf{iff}  $\meta{\varphi}(\ldots \meta{v}^o \ldots)$ is false on \script{I} for \emph{at least one object} $o$ in \script{I}'s domain.\\
 
-$\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is false in a given interpretation \script{I} \textbf{iff}  $\meta{\phi}(\ldots \meta{v}^o \ldots)$ is false on \script{I} for \emph{every} object $o$ in \script{I}'s domain.
+$\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is false in a given interpretation \script{I} \textbf{iff}  $\meta{\varphi}(\ldots \meta{v}^o \ldots)$ is false on \script{I} for \emph{every} object $o$ in \script{I}'s domain.
 }
 Again, we're here suppressing explicit mention of variable assignments via our notational shorthand, but you can look at the Appendix for the official version of the semantics, with variable assignments made explicit.  It will help to go through a few examples to get a better feel for how to determine the truth values of quantified sentences, so let's turn to that.
 
@@ -455,7 +455,7 @@ Consider the following interpretation:\footnote{See \S\ref{s:FOLInterpretations}
 \begin{tabular}{c|c|c|c|c|}
 \hline
 &    &   A   &   B  & N  \\ \hline
-c & 1 &   $+$   &   $-$  & $-$  \\ \hline
+a & 1 &   $+$   &   $-$  & $-$  \\ \hline
  & 2   &   $+$   &   $+$ & $-$ \\ \hline
 \end{tabular}
 \end{multicols}
@@ -585,23 +585,23 @@ c  & 3   &   $+$   &   $-$ & $+$ \\ \hline
 
 \section{Semantic Concepts}\label{s:FOLSemanticConcepts}
 
-Defining truth in FOL was a bit tricky, due to the presence of quantifiers. But now that we know what determines the truth value of an FOL sentence in an interpretation, we can use that to define various other central logical notions.   As you can see, these definitions are basically the same as those from TFL, except that we here use the notion of truth in an \emph{interpretation} rather than truth on a \emph{valuation}.  In all the definitions below, the metavariables $\meta{\phi}_1 \ldots \meta{\phi}_n$ and $\meta{\psi}$ range over arbitrary \emph{sentences} of FOL:\footnote{Our logical concepts are in other words only defined for FOL sentences.  By contrast, the official explanation of truth in FOL, given in the Appendix, covers formulas in general, not just sentences.}
+Defining truth in FOL was a bit tricky, due to the presence of quantifiers. But now that we know what determines the truth value of an FOL sentence in an interpretation, we can use that to define various other central logical notions.   As you can see, these definitions are basically the same as those from TFL, except that we here use the notion of truth in an \emph{interpretation} rather than truth on a \emph{valuation}.  In all the definitions below, the metavariables $\meta{\varphi}_1 \ldots \meta{\varphi}_n$ and $\meta{\psi}$ range over arbitrary \emph{sentences} of FOL:\footnote{Our logical concepts are in other words only defined for FOL sentences.  By contrast, the official explanation of truth in FOL, given in the Appendix, covers formulas in general, not just sentences.}
 
 \factoidbox{
-	$\meta{\phi}_1, \ldots, \meta{\phi}_n$ \define{logically entail}  $\meta{\psi}$, written $\meta{\phi}_1, \ldots, \meta{\phi}_n \vDash \meta{\psi}$,   iff no interpretation makes all of $\meta{\phi}_1,  \ldots, \meta{\phi}_n$ true but $\meta{\psi}$ false.\\
+	$\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ \define{logically entail}  $\meta{\psi}$, written $\meta{\varphi}_1, \ldots, \meta{\varphi}_n \vDash \meta{\psi}$,   iff no interpretation makes all of $\meta{\varphi}_1,  \ldots, \meta{\varphi}_n$ true but $\meta{\psi}$ false.\\
 
-\meta{\phi} is a \define{Logical Truth}, written $\vDash \meta{\phi}$, iff it is true in every interpretation.\\
+\meta{\varphi} is a \define{Logical Truth}, written $\vDash \meta{\varphi}$, iff it is true in every interpretation.\\
 
-\meta{\phi} is a \define{contradiction}  iff it is false in every interpretation.\\
+\meta{\varphi} is a \define{contradiction}  iff it is false in every interpretation.\\
 
-\meta{\phi} and \meta{\psi} are \define{logically equivalent}, written $\meta{\phi} \lequiv \meta{\psi}$ iff they have the same truth value in every interpretation.\\
+\meta{\varphi} and \meta{\psi} are \define{logically equivalent}, written $\meta{\varphi} \lequiv \meta{\psi}$ iff they have the same truth value in every interpretation.\\
 
-$\meta{\phi}_1,\ldots, \meta{\phi}_n$ are \define{jointly consistent} iff there is at least one interpretation which makes them all true.  They are \define{jointly inconsistent} iff there is no such interpretation.
+$\meta{\varphi}_1,\ldots, \meta{\varphi}_n$ are \define{jointly consistent} iff there is at least one interpretation which makes them all true.  They are \define{jointly inconsistent} iff there is no such interpretation.
 }
 
 As in TFL, perhaps the most important of these concepts is that of logical entailment, since it is closely related to the notion of a valid argument.  We will say that an FOL argument:
-$$\meta{\phi}_1, \ldots, \meta{\phi}_n \therefore \meta{\psi}$$
-is \define{valid} just in case its premises $\meta{\phi}_1, \ldots, \meta{\phi}_n$ entail its conclusion \meta{\psi}.  Since entailment is defined in terms of the concept of truth-in-an-interpretation, we can use interpretations to investigate the validity of FOL arguments.
+$$\meta{\varphi}_1, \ldots, \meta{\varphi}_n \therefore \meta{\psi}$$
+is \define{valid} just in case its premises $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ entail its conclusion \meta{\psi}.  Since entailment is defined in terms of the concept of truth-in-an-interpretation, we can use interpretations to investigate the validity of FOL arguments.
 
 In particular, we can use interpretations to show that an argument is \emph{not} valid, or that the corresponding entailment \emph{fails}.  To show that a given argument is not valid, it suffices to construct a single interpretation that simultaneously makes all of the premises true but still makes the conclusion false.  Such an interpretation is again called a \emph{counterexample} to the validity of the argument, or a \define{countermodel}.
 
@@ -1004,16 +1004,16 @@ Natural deduction proofs do not, however, allow use to demonstrate that argument
 
 So far, we've just been focusing on validity, or entailment. But we can use interpretations, as well as natural deduction proofs, in connection with other semantic concepts too.
 
-Take the concept of logical truth first.  To show that some FOL sentence \meta{\phi} is \emph{not} a logical truth, it suffices to construct an interpretation that makes it false.  And to show that it \emph{is} a logical truth, we can give a natural deduction that proves \meta{\phi} as a theorem.  This gives us a way to approach contradictions as well: since \meta{\phi} is a contradiction iff $\enot\meta{\phi}$ is a logical truth, we can show that \meta{\phi} is a contradiction by proving $\enot\meta{\phi}$ as a theorem.  And to show that \meta{\phi} is \emph{not} a contradiction, it suffices to construct an interpretation in which it is true.
+Take the concept of logical truth first.  To show that some FOL sentence \meta{\varphi} is \emph{not} a logical truth, it suffices to construct an interpretation that makes it false.  And to show that it \emph{is} a logical truth, we can give a natural deduction that proves \meta{\varphi} as a theorem.  This gives us a way to approach contradictions as well: since \meta{\varphi} is a contradiction iff $\enot\meta{\varphi}$ is a logical truth, we can show that \meta{\varphi} is a contradiction by proving $\enot\meta{\varphi}$ as a theorem.  And to show that \meta{\varphi} is \emph{not} a contradiction, it suffices to construct an interpretation in which it is true.
 
 
-Next consider logical equivalence.  To show that \meta{\phi} and \meta{\psi} are \emph{not} logically equivalent, all we need to do is construct an interpretation on which one of them is true and the other is false.  And to show that \meta{\phi} and \meta{\psi} \emph{are} equivalent, we can give a natural deduction that proves $\meta{\phi} \eiff \meta{\psi}$ as a theorem, since \meta{\phi} and \meta{\psi} are equivalent just in case $\meta{\phi} \eiff \meta{\psi}$ is a logical truth.
+Next consider logical equivalence.  To show that \meta{\varphi} and \meta{\psi} are \emph{not} logically equivalent, all we need to do is construct an interpretation on which one of them is true and the other is false.  And to show that \meta{\varphi} and \meta{\psi} \emph{are} equivalent, we can give a natural deduction that proves $\meta{\varphi} \eiff \meta{\psi}$ as a theorem, since \meta{\varphi} and \meta{\psi} are equivalent just in case $\meta{\varphi} \eiff \meta{\psi}$ is a logical truth.
 
 
 Lastly, take the concept of consistency.  To show that some sentences are jointly consistent, it suffices to give an interpretation on which they are all true.  As for inconsistency, notice that it connects to entailment in the following way:
-\factoidbox{$$\text{If } \meta{\phi}_1, \ldots, \meta{\phi}_n \entails \bot \text{, then } \meta{\phi}_1, \ldots, \meta{\phi}_n \text{ are jointly inconsistent} $$
+\factoidbox{$$\text{If } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \bot \text{, then } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \text{ are jointly inconsistent} $$
 }
-For suppose  $\meta{\phi}_1, \ldots, \meta{\phi}_n \entails \bot$.  This means there's no interpretation that makes all of $\meta{\phi}_1, \ldots, \meta{\phi}_n $ true but $\bot$ false.  However, since every interpretation makes $\bot$ false, this just means that there's no interpretation that makes all of $\meta{\phi}_1, \ldots, \meta{\phi}_n $ true.  That is, $\meta{\phi}_1, \ldots, \meta{\phi}_n $ are inconsistent.    So if we want to show that $\meta{\phi}_1, \ldots, \meta{\phi}_n $ are inconsistent, we can do that by giving a natural deduction proof showing that $\meta{\phi}_1, \ldots \meta{\phi}_n \proves \bot $.
+For suppose  $\meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \bot$.  This means there's no interpretation that makes all of $\meta{\varphi}_1, \ldots, \meta{\varphi}_n $ true but $\bot$ false.  However, since every interpretation makes $\bot$ false, this just means that there's no interpretation that makes all of $\meta{\varphi}_1, \ldots, \meta{\varphi}_n $ true.  That is, $\meta{\varphi}_1, \ldots, \meta{\varphi}_n $ are inconsistent.    So if we want to show that $\meta{\varphi}_1, \ldots, \meta{\varphi}_n $ are inconsistent, we can do that by giving a natural deduction proof showing that $\meta{\varphi}_1, \ldots \meta{\varphi}_n \proves \bot $.
 
 The following table summarizes what is needed to demonstrate that a given concept does or does not apply:
 
@@ -1059,7 +1059,7 @@ Give counermodels to show the following:
 
 \problempart
 \label{pr.Contingent}
-Show that each of the following is neither a logical truth nor a contradiction:
+Show that each of the following is neither a logical truth nor a contradiction (by constructing an interpretation for each that makes it true, and one that makes it false):
 \begin{earg}
 \item  $Da \eand Db$
 \item  $\exists x Txh$
@@ -1073,7 +1073,7 @@ Show that each of the following is neither a logical truth nor a contradiction:
 
 \problempart
 \label{pr.NotEquiv}
-Show that the following pairs of sentences are not logically equivalent.
+Show that the following pairs of sentences are not logically equivalent (by constructing an interpretation for each pair that makes one true but the other false):
 \begin{earg}
 \item $Ja$, $Ka$
 \item $\exists x Jx$, $Ja$
@@ -1229,10 +1229,10 @@ Show that the following sentences are jointly consistent (i.e. there's an interp
 
 \section{Appendix: Semantics with Variable Assignments}\label{s:semanticsappendix}
 
-In \S\ref{s:TruthQuantifiedSentences} we explained the semantics for quantifiers using the notion of a variable assignment: an assignment of an object to a variable that represents our decision to temporarily treat the variable as if it referred to that object.  However, once we introduce variable assignments to deal with quantifiers, we should really go back and re-do our semantics from the ground up with variable assignments in mind, even when we're just looking at atomic sentences.
+In \S\ref{s:TruthQuantifiedSentences} we explained the semantics for quantifiers using the notion of a variable assignment: an assignment of an object to a variable, representing our decision to temporarily treat the variable as if it referred to that object.  However, once we introduce variable assignments to deal with quantifiers, we should really go back and re-do our semantics with variable assignments from the beginning, even when we're just looking at atomic sentences.
 
 
-To see why, consider a simple example like `$\forall xFx$', and suppose our domain contains just the numbers 1 and 2.  Then in order for `$\forall xFx$' to be true, the formula `$Fx$' needs to be true on the assignment $[x:1]$ and also on $[x:2]$.  But what is required for `$Fx$' to be true on $[x:1]$, say?  The answer, of course, is that `$F$' has to be true of 1, the object we're treating `$x$' as referring to.  But the semantics we gave for atomic sentences doesn't technically tell us this!  What we said in \S\ref{s:TruthFOL} was the following:
+To see why, consider a simple example like `$\forall xFx$', and suppose our domain contains just the numbers 1 and 2.  Then in order for `$\forall xFx$' to be true, the formula `$Fx$' needs to be true on the assignment $[x:1]$ and also on $[x:2]$.  But what is required for `$Fx$' to be true on $[x:1]$, say?  The answer, of course, is that `$F$' has to be true of 1, the object we're treating `$x$' as referring to.  But the semantics we gave for atomic sentences doesn't \emph{technically} tell us this!  What we said in \S\ref{s:TruthFOL} was just the following:
 	\factoidbox{
 		When \meta{R} is an $n$-place predicate and $\meta{c}_1, \meta{c}_{2}, \ldots, \meta{c}_{n}$ are names, the sentence $\meta{R}\meta{c}_{1}\meta{c}_{2}\ldots\meta{c}_{n}$ is true in a given interpretation \textbf{iff} $\meta{R}$ is true of the objects referred to by $\meta{c}_{1}, \meta{c}_{2}, \ldots, \meta{c}_{n}$ (in that order) in that interpretation	}
 This doesn't mention variable assignments anywhere.  And furthermore, it only deals with \emph{sentences}, that is, expressions built by combining predicates with \emph{names}.  `$Fx$' isn't built like this, since it contains a variable instead of a name.  It is merely a \emph{formula}, so the above explanation simply does not apply to it.
@@ -1261,25 +1261,27 @@ And for any terms $\meta{t}_1$ and $\meta{t}_2$, the formula $\meta{t}_1 = \meta
 
 This now \emph{does} specify what's required for e.g. `$Fx$' to be true on $[x:1]$.  What's required is that `$F$' be true of the referent of `$x$' on $[x:1]$.  And the referent of `$x$' on this assignment is of course just 1, give our expanded notion of reference.  So `$F$' has to be true of 1.  With atomic formulas covered, we can go on to explain truth for all complex formulas:
 \factoidbox{
-$\enot \meta{\phi}$ is true on [] in \meta{I}  \textbf{iff} $\meta{\phi}$ false on [] in \meta{I} \\
+$\enot \meta{\varphi}$ is true on [] in \meta{I}  \textbf{iff} $\meta{\varphi}$ false on [] in \meta{I} \\
 
-$\meta{\phi} \eand \meta{\psi}$ is true on [] in \meta{I} \textbf{iff} both $\meta{\phi}$ and $\meta{\psi}$ are true on [] in \meta{I} \\
+$\meta{\varphi} \eand \meta{\psi}$ is true on [] in \meta{I} \textbf{iff} both $\meta{\varphi}$ and $\meta{\psi}$ are true on [] in \meta{I} \\
 
-$\meta{\phi} \eor \meta{\psi}$ is true on [] in \meta{I}  \textbf{iff} either $\meta{\phi}$ or $\meta{\psi}$ are true on [] in \meta{I} \\
+$\meta{\varphi} \eor \meta{\psi}$ is true on [] in \meta{I}  \textbf{iff} either $\meta{\varphi}$ or $\meta{\psi}$ are true on [] in \meta{I} \\
 
-$\meta{\phi} \eif \meta{\psi}$ is true on [] in \meta{I} \textbf{iff} either $\meta{\phi}$ is false or $\meta{\psi}$ is true on [] in \meta{I}\\
+$\meta{\varphi} \eif \meta{\psi}$ is true on [] in \meta{I} \textbf{iff} either $\meta{\varphi}$ is false or $\meta{\psi}$ is true on [] in \meta{I}\\
 
-$\meta{\phi} \eiff \meta{\psi}$ is true on [] in \meta{I} \textbf{iff} $\meta{\phi}$ and $\meta{\psi}$ have the same truth value on [] in \meta{I}\\
+$\meta{\varphi} \eiff \meta{\psi}$ is true on [] in \meta{I} \textbf{iff} $\meta{\varphi}$ and $\meta{\psi}$ have the same truth value on [] in \meta{I}\\
 
-$\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is true on [] in \meta{I}  \textbf{iff} for \emph{every object} $o$ in the domain, $\meta{\phi}(\ldots \meta{v} \ldots)$ is true on [\meta{v}:o] in \meta{I}\\
+$\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is true on [] in \meta{I}  \textbf{iff} for \emph{every object} $o$ in the domain, $\meta{\varphi}(\ldots \meta{v} \ldots)$ is true on [\meta{v}:o] in \meta{I}\\
 
-$\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is true on [] in \meta{I}  \textbf{iff} for \emph{at least one object} $o$ in the domain, $\meta{\phi}(\ldots \meta{v} \ldots)$ is true on [\meta{v}:o] in \meta{I}.
+$\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is true on [] in \meta{I}  \textbf{iff} for \emph{at least one object} $o$ in the domain, $\meta{\varphi}(\ldots \meta{v} \ldots)$ is true on [\meta{v}:o] in \meta{I}.
 }
-In the claues governing the quantifiers, [\meta{v}:o] is the assignment that's just like our arbitrary assignment [] in every respect, except that it is stipulated to assign the object $o$ to the variable \meta{v}.  The idea, again, being that we go through each object $o$ in the domain, and check whether the formula $\meta{\phi}(\ldots \meta{v} \ldots)$ is true when $o$ is assigned to the variable \meta{v}.  If so, $\forall \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ is true, if not, it is false.  On the other hand, for an existential sentence $\exists \meta{v}\meta{\phi}(\ldots \meta{v} \ldots)$ to be true, it's enough if \emph{at least one} object makes $\meta{\phi}(\ldots \meta{v} \ldots)$ true.
+In the claues governing the quantifiers, [\meta{v}:o] is the assignment that's just like our arbitrary assignment [] in every respect, except that it is stipulated to assign the object $o$ to the variable \meta{v}.  The idea, again, being that we go through each object $o$ in the domain, and check whether the formula $\meta{\varphi}(\ldots \meta{v} \ldots)$ is true when $o$ is assigned to the variable \meta{v}.  If so, $\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is true, if not, it is false.  On the other hand, for an existential sentence $\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ to be true, it's enough if \emph{at least one} object makes $\meta{\varphi}(\ldots \meta{v} \ldots)$ true.
 
 Given all of this, we can now say what is required for any \emph{sentence}, i.e. any closed formula, or formula with no free variables, to be true in an interpretation \meta{I}:
 
-\factoidbox{For any FOL sentence \meta{\phi} and any interpretation \meta{I}, \meta{\phi} is true in \meta{I} iff \meta{\phi} is true in \meta{I} on any assignment [] whatsoever.
+\factoidbox{For any FOL sentence \meta{\varphi} and any interpretation \meta{I}, \meta{\varphi} is true in \meta{I} iff \meta{\varphi} is true in \meta{I} on any assignment [] whatsoever.
 }
 With this explanation of truth for sentences in place, the definition of the various logical concepts (like entailment, logical truth, equivalence etc.) now proceeds as it did in \S\ref{s:FOLSemanticConcepts}.
+
+
 
