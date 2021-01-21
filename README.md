@@ -10,4 +10,4 @@ The main changes I've made compared to *forall x: Cambridge* are the following:
 * I've made some changes to set of natural deduction rules in both parts.
 * I've reordered the presentation of various topics and revised the practice problems.
 
-For more information, see [https://mrieppel.net/teaching.html](https://mrieppel.net/teaching.html)
+For more information, see [https://mrieppel.net/teaching](https://mrieppel.net/teaching)
