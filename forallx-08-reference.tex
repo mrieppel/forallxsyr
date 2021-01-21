@@ -1,4 +1,3 @@
-%!TEX root = forallxsyr.tex
 \chapter[Quick Reference]{Quick Reference}
 %\pagestyle{plain}
 \section*{Truth Functional Operators (Ch. \ref{ch:SemanticsOfTFL})}
@@ -134,7 +133,7 @@ F & F & T & F & F & T & T
 
 \begin{proof}
 	\open
-	\hypo[i]{a}{\meta{\varphi}}
+	\hypo[i]{a}{\meta{\varphi}} \by{Assumption}{}
 	\have[j]{b}{\meta{\psi}}
 	\close
 	\have[\ ]{ab}{\meta{\varphi}\eif\meta{\psi}}\ci{a-b}
@@ -153,11 +152,11 @@ F & F & T & F & F & T & T
 
 \begin{proof}
 	\open
-		\hypo[i]{a1}{\meta{\varphi}}
+		\hypo[i]{a1}{\meta{\varphi}} \by{Assumption}{}
 		\have[j]{b1}{\meta{\psi}}
 	\close
 	\open
-		\hypo[k]{b2}{\meta{\psi}}
+		\hypo[k]{b2}{\meta{\psi}}\by{Assumption}{}
 		\have[l]{a2}{\meta{\varphi}}
 	\close
 	\have[\ ]{ab}{\meta{\varphi}\eiff\meta{\psi}}\bi{a1-b1,b2-a2}
@@ -181,6 +180,36 @@ F & F & T & F & F & T & T
 \end{proof}
 
 
+
+\vspace{1em}\noindent\textbf{Negation Introduction}
+
+\begin{proof}
+	\open
+	\hypo[m]{a}{\meta{\varphi}} \by{Assumption}{}
+	\have[n]{nb}{\ered}
+	\close
+	\have[\ ]{na}{\enot\meta{\varphi}}\ni{a-nb}
+\end{proof}
+
+
+\vspace{1em}\noindent\textbf{Absurdity Introduction}
+
+\begin{proof}
+	\have[m]{a}{\meta{\varphi}}
+	\have[n]{na}{\enot\meta{\varphi}}
+	\have[ ]{bot}{\ered}\ri{a, na}
+\end{proof}
+
+\vspace{1em}\noindent\textbf{Indirect Proof}
+
+\begin{proof}
+	\open
+	\hypo[m]{a}{\enot \meta{\varphi}} \by{Assumption}{}
+	\have[n]{nb}{\ered}
+	\close
+	\have[\ ]{na}{\meta{\varphi}}\ip{a-nb}
+\end{proof}
+
 \vspace{1em}\noindent\textbf{Disjunction Introduction}
 
 \begin{proof}
@@ -196,44 +225,18 @@ F & F & T & F & F & T & T
 \begin{proof}
 	\have[m]{ab}{\meta{\varphi}\eor\meta{\psi}}
 \\	\open
-		\hypo[i]{a}{\meta{\varphi}}
+		\hypo[i]{a}{\meta{\varphi}} \by{Assumption}{}
 		\have[j]{c1}{\meta{\chi}}
 	\close
 	\open
-		\hypo[k]{b}{\meta{\psi}}
+		\hypo[k]{b}{\meta{\psi}} \by{Assumption}{}
 		\have[l]{c2}{\meta{\chi}}
 	\close
 	\have[\ ]{c}{\meta{\chi}} \oe{ab,a-c1, b-c2}
 \end{proof}
 
-\vspace{1em}\noindent\textbf{Negation Introduction}
-
-\begin{proof}
-	\open
-	\hypo[m]{a}{\meta{\varphi}}
-	\have[n]{nb}{\ered}
-	\close
-	\have[\ ]{na}{\enot\meta{\varphi}}\ni{a-nb}
-\end{proof}
 
 
-\vspace{1em}\noindent\textbf{Negation Elimination}
-
-\begin{proof}
-	\have[m]{a}{\meta{\varphi}}
-	\have[n]{na}{\enot\meta{\varphi}}
-	\have[ ]{bot}{\ered}\ri{a, na}
-\end{proof}
-
-\vspace{1em}\noindent\textbf{Indirect Proof}
-
-\begin{proof}
-	\open
-	\hypo[m]{a}{\enot \meta{\varphi}}
-	\have[n]{nb}{\ered}
-	\close
-	\have[\ ]{na}{\meta{\varphi}}\ip{a-nb}
-\end{proof}
 
 \end{multicols}
 
@@ -245,7 +248,7 @@ F & F & T & F & F & T & T
 
 \begin{center}
 \begin{tabular}{l  r}
-\textbf{Sequent:}                    &       \textbf{Derived Rule:} \\ \hline
+\textbf{Sequent}                    &       \textbf{Derived Rule} \\ \hline
 $\meta{\varphi} \rightarrow \meta{\psi},  \enot\meta{\psi} \proves \enot \meta{\varphi}$   &                       MT  \\
 $\meta{\varphi} \eor \meta{\psi},  \enot\meta{\psi} \proves \meta{\varphi}$ & DS\\
 $\meta{\varphi} \eor \meta{\psi},  \enot\meta{\varphi}\proves \meta{\psi}$    &      DS  \\
@@ -294,16 +297,16 @@ $\bot \proves \meta{\varphi}$ & EX \\
 
 \begin{proof}
 	\have[m]{a}{\meta{\varphi}(\ldots \meta{c} \ldots)}
-	\have[\ ]{c}{\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)} \Ei{a}
+	\have[\ ]{c}{\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)} \Ei{a}
 \end{proof}
 
 \vspace{1em}\noindent\textbf{Existential Elimination}
 
 
 \begin{proof}
-	\have[m]{a}{\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)}
+	\have[m]{a}{\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)}
 	\open
-		\hypo[i]{b}{\meta{\varphi}(\ldots \meta{c} \ldots)} \by{Flag \meta{c}}{}
+		\hypo[i]{b}{\meta{\varphi}(\ldots \meta{c} \ldots)} \by{Assumption (flag \meta{c})}{}
 		\have[j]{c}{\meta{\psi}}
 	\close
 	\have[\ ]{d}{\meta{\psi}} \Ee{a,b-c}
@@ -363,4 +366,3 @@ $\bot \proves \meta{\varphi}$ & EX \\
 %\end{proof}
 %\end{multicols}
 %
-

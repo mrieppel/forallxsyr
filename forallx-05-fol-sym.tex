@@ -1,4 +1,3 @@
-%!TEX root = forallxsyr.tex
 \part{First-order logic}\label{p:FOL}
 
 \chapter{Symbolization in FOL}\label{ch:FOLSymbolization}
@@ -36,11 +35,11 @@ In English, a \emph{singular term} is a word or phrase that refers to a \emph{sp
 
 \emph{Proper names} are a particularly important kind of singular term. These are expressions that, unlike e.g. `Philip's dog Fido', pick out individuals without describing them. The name `Emerson' is a proper name, and it alone does not tell you anything about Emerson. Of course, some names are traditionally given to boys or girls. If `Hilary' is used as a singular term, you might guess that it refers to a woman. But then again you might be wrong. Indeed, the name does not necessarily mean that the person referred to is even a person: Hilary might be a giraffe, for all you could tell just from the name.
 
-In FOL, our \define{names} are lower-case letters `$a$' through to `$s$'. We can also add subscripts if we want to use some letter more than once. So the following are all names in FOL:
-	$$a,b,c,\ldots, r, s, a_1, f_{32}, j_{390}, m_{12}$$
-These should be thought of along the lines of proper names in English. But with one difference. `Syracuse' is a proper name, but it is the name of both a city in New York State and of a city in Italy.  And there are over thirty towns in the US that have the name `Springfield'.   We live with this kind of ambiguity in English, allowing context to determine that `Syracuse' is being used to refer to a city in the US rather than to one in Italy. In FOL, we do not tolerate any such ambiguity. Each name must pick out \emph{exactly} one thing. (However, two different names may pick out the same thing, like `Mark Twain' and `Sam Clemens' refer to the same person.)
+In FOL, our \define{names} are lowercase letters `$a$' through to `$t$'. We can also add subscripts if we want to use some letter more than once. So the following are all names in FOL:
+	$$a,b,c,\ldots , s, t, a_1, f_{32}, j_{390}, m_{12}$$
+These should be thought of along the lines of proper names in English. But with one difference. `Syracuse' is a proper name, but it is the name of both a city in New York State and of a city in Italy.  And there are over thirty towns in the US that have the name `Springfield'.   We live with this kind of ambiguity in English, allowing context to determine that `Syracuse' is being used to refer to a city in the US rather than to one in Italy. In FOL, we do not tolerate any such ambiguity. Each name must refer to \emph{exactly} one thing. (However, two different names may refer to the same thing, like `Mark Twain' and `Sam Clemens' refer to the same person.)
 
-As with TFL, we'll provide symbolization keys. These indicate, temporarily, what object a name will pick out. So we might offer the following:
+As with TFL, we'll provide symbolization keys. These indicate, temporarily, what object a name will refer to. So we might offer the following:
 	\begin{ekey}
 		\item[e] Elsa
 		\item[g] Gregor
@@ -53,7 +52,7 @@ The second ingredient in FOL are \define{predicates}.   The simplest predicates 
 		\blank\ is a member of Monty Python\\
 		A piano fell on \blank
 	\end{quote}
-In general, you can think about predicates as things which combine with singular terms to make sentences. Conversely, you can start with sentences and make predicates out of them by removing terms. Consider the sentence, `Vinnie borrowed the family car from Nunzio.' By removing a singular term, we can obtain any of three different predicates:
+In general, you can think about predicates as things which combine with names and other singular terms to make sentences. Conversely, you can start with sentences and make predicates out of them by removing terms. Consider the sentence, `Vinnie borrowed the family car from Nunzio.' By removing a singular term, we can obtain three different predicates:
 	\begin{quote}
 		\blank\ borrowed the family car from Nunzio\\
 		Vinnie borrowed \blank\ from Nunzio\\
@@ -68,13 +67,13 @@ FOL predicates are capital letters $A$ through $Z$, with or without subscripts. 
 %		\item[Bxyz] \gap{y} is between \gap{x} and \gap{z}
 	\end{ekey}
 
-If we combine our two symbolization keys, we can start to symbolize some English sentences that use these names and predicates in combination. For example, consider the English sentences:
+If we combine our two symbolization keys, we can start to symbolize some English sentences that use these names and predicates in combination. For example:
 	\begin{earg}
 		\item[\ex{terms1}] Elsa is angry.
 		\item[\ex{terms2a}] Gregor and Marybeth are angry.
 		\item[\ex{terms2}] If Elsa is angry, then so are Gregor and Marybeth.
 	\end{earg}
-Sentence \eref{terms1} is just symbolized as `$Ae$'.  Sentence \eref{terms2a} is a conjunction of two simpler sentences. The simple sentences can be symbolized just by `$Ag$' and `$Am$'. Then we help ourselves to our resources from TFL, and symbolize the entire sentence by `$Ag \eand Am$'. This illustrates an important point: FOL has all of the truth-functional connectives of TFL!  Lastly, sentence \eref{terms2} is a conditional, whose antecedent is sentence \eref{terms1} and whose consequent is sentence \eref{terms2a}. So we can symbolize it as `$Ae \eif (Ag \eand Am)$'.
+Sentence \eref{terms1} is just symbolized as `$Ae$'.  Sentence \eref{terms2a} is a conjunction of two simpler sentences. The simple sentences can be symbolized as `$Ag$' and `$Am$'. Then we help ourselves to our resources from TFL, and symbolize the entire sentence as `$(Ag \eand Am)$'. This illustrates an important point: FOL has all of the truth-functional connectives of TFL!  Lastly, sentence \eref{terms2} is a conditional, whose antecedent is sentence \eref{terms1} and whose consequent is sentence \eref{terms2a}. So we can symbolize it as `$Ae \eif (Ag \eand Am)$'.
 
 
 We can also use TFL connectives to symbolize sentences that involve \define{compound predicates}, that is, predicates formed out of simpler ones.  Consider the following sentence:
@@ -87,7 +86,7 @@ It involves the compound predicate `\blank is a white car'.  But we can paraphra
 		\item[C] \blank\ is a car
 		\item[h] Herbie
 	\end{ekey}
-we can symbolize  \eref{syn1} as `$Wh \eand Ch$'.
+we can thus symbolize  \eref{syn1} as `$(Wh \eand Ch)$'.
 
 In this case, the compound predicate was formed out of an adjective and a noun.  But there are other ways to do this too:
 	\begin{earg}
@@ -97,7 +96,24 @@ In this case, the compound predicate was formed out of an adjective and a noun. 
 Sentence \eref{cp1} involves a compound predicate formed from a noun and the prepositional phrase `from Germany', and \eref{cp2} involves a compound predicate formed from a noun, a prepositional phrase, and the relative clause `that is fast'.  These can also be symbolized as conjunctions of simple predications.  Using `$G$' for `\blank is from Germany' and `$F$' for `\blank is fast', \eref{cp1} can be symbolized as `$Ch \eand Gh$' and \eref{cp2} as `$(Ch \eand Gh) \eand Fh$'.
 
 
-One does, occasionally  have to be careful when symbolizing compound predicates.  Suppose I have a violin that I've named `Lucy', and now consider the sentence `Lucy is a fake Stradivarius'.  You might think that using `$c$' for `Lucy',`$F$' for `\blank is fake' and `$S$' for `\blank is a Stradivarius', this could be symbolized as `$Fc \eand Sc$'.  But that wouldn't be right: `$Fc \eand Sc$' entails `$Sc$', but our English sentence does not entail `Lucy is a Stradivarius'!  The word `fake' is what's called a non-intersective adjective; in a case like this, we 'd have to use a single FOL predicate, say `$S$', for the  whole English predicate `\blank is a fake Stradivarius', rather than breaking it up into a conjunction of two atomic predications.
+One does, occasionally  have to be careful when symbolizing compound predicates.  Suppose I have a violin that I've named `Lucy', and now consider the sentence `Lucy is a fake Stradivarius'.  You might think that using `$c$' for `Lucy',`$F$' for `\blank is fake' and `$S$' for `\blank is a Stradivarius', we can symbolize this as `$Fc \eand Sc$'.  But that wouldn't be right: `$Fc \eand Sc$' entails `$Sc$', but our English sentence does not entail `Lucy is a Stradivarius'!  The word `fake' is what's called a \emph{non-intersective} adjective; in a case like this, we 'd have to use a single FOL predicate, say `$S$', for the  whole English predicate `\blank is a fake Stradivarius'.
+
+
+\practiceproblems
+
+\problempart Symbolize the following in FOL:
+
+
+
+\begin{earg}
+\item Ada was both a mathematician and a computer scientist.
+\item Ada was a mathematician from either England or Wales.
+\item Susan will attend the party only if neither Tom nor Ella does.
+\item Jen is a talented composer, and Fritz is also a composer, but not talented.
+\item Susan and Tom will not both attend the party if Ella does. 
+\item If Ella attends the party, Susan and Tom both will not attend. 
+
+\end{earg}
 
 
 \section{Quantifiers and Quantifier Scope}\label{s:Quantifiers}
@@ -111,7 +127,7 @@ Sentence \eref{q.a} superficially looks like it has the same kind of structure a
 
 `Everyone' is not a proper name --- it doesn't pick out any particular individual --- and so it should not be symbolized using a name like `$e$' in FOL.  The word `everyone' is rather a quantifier.  Logically, quantifiers behave very differently from names.  For example, whereas `Either Elsa is happy or Elsa is not happy' is a necessary truth, `Either everyone is happy or everyone is not happy' is not a necessary truth.  In fact, it's presumably false: some people are happy and others are not.
 
-To express claims about every individual in a set, we'll use the FOL symbol `$\forall$'.  This is called the \define{universal quantifier}.  A quantifier in FOL always has to be followed by a variable. FOL variables are italic lowercase letters `$t$' through `$z$', with or without subscripts. So we could symbolize sentence \eref{q.a} as `$\forall x Hx$'.  The variable `$x$' is serving as a kind of placeholder. The expression `$\forall x$' intuitively means that you can pick anyone and put them in as `$x$'. The subsequent `$Hx$' indicates, of that thing you picked out, that it is happy.  So `$\forall x Hx$' can be read as saying ``every individual $x$ is such that: $x$ is happy.''
+To express claims about every individual in a set, we'll use the FOL symbol `$\forall$'.  This is called the \define{universal quantifier}.  A quantifier in FOL always has to be followed by a variable. FOL variables are lowercase letters `$u$' through `$z$', with or without subscripts. So we could symbolize sentence \eref{q.a} as `$\forall x Hx$'.  The variable `$x$' is serving as a kind of placeholder. The expression `$\forall x$' intuitively means that you can pick anyone and put them in as `$x$'. The subsequent `$Hx$' indicates, of that thing you picked out, that it is happy.  So `$\forall x Hx$' can be read as saying ``every individual $x$ is such that: $x$ is happy.''
 
 There is no special reason to use `$x$' rather than some other variable here. The sentences `$\forall x Hx$', `$\forall y Hy$', `$\forall z Hz$', and `$\forall x_5 Hx_5$' use different variables, but they are all logically equivalent, and any of them could be used to symbolize \eref{q.a}.
 
@@ -169,11 +185,15 @@ We could turn \eref{bound2} into a close formula either by adding parentheses as
 
 \begin{earg}
 \item Someone is happy, and someone is not happy.
-\item Everyone is both happy and wise.
-\item Everyone is happy, and everyone is wise.
+\item Everyone is both friendly and honest.
+\item Everyone is either friendly or honest.
+\item Everyone is friendly and someone is honest.
+\item If everyone is friendly then Liz is happy.
+\item Liz is not happy, but someone is.
+\item Someone is neither honest nor friendly.
+\item Someone is honest but not friendly.
+\item If Liz is friendly but not happy, then someone is friendly but not happy.
 \item Someone is happy, but not everyone is wise.
-\item Someone is either happy or wise.
-\item Someone is neither happy nor wise.
 \end{earg}
 
 
@@ -231,40 +251,93 @@ The same patterns apply to quantified sentences that involve compound predicates
 Let's use `$T$' for `\blank is tame' and `$W$' for `\blank is wild'.  Recall from \S\ref{s:NamesPredicates} that in general, compound predicates get symbolized as conjunctions of the component predicates.  So we can symbolize \eref{quan3} as $\exists x((Tx \eand Dx) \eand Px)$, with the conjunction `$(Tx \eand Dx)$' symbolizing the compound predicate `is a tame dog'.  Similarly, \eref{quan4} gets symbolized as `$\forall x((Wx \eand Dx) \eif Cx)$', with `$(Wx \eand Dx)$' symbolizing the compound predicate `is a wild dog'.  This can be read as: every object $x$ (in the domain) is such that \emph{if} $x$ is wild and $x$ is a dog, \emph{then} $x$ is a canine.
 
 When symbolizing more complex sentences like these, it is useful to distinguish the \define{Restrictor Predicate} from the \define{Main Predicate}.  Intuitively, the restrictor predicate tells you what class of things the sentence says something about --- e.g. pet dogs, or wild dogs, or wild dogs from Africa --- and the main predicate then says what is true of some or all of them (e.g. that they're poodles, or canines).  The general pattern is that, in the case of an existential quantifier, the restrictor predicate and main predicate always get connected by a conjunction.  And in the case of a universal quantifier, the restrictor predicate and main predicate always get connected by a conditional:
-$$\text{Some }\underbrace{\text{ tame dogs }}_{\text{Restrictor}}\  \underbrace{\text{ are poodles}}_{\text{Main}}$$
-$$\exists x (\ \underbrace{(Tx \eand Dx)}_{\text{Restrictor}} \ \eand \ \underbrace{Px}_{\text{Main}} \ )$$
 
-$$\text{Every }\underbrace{\text{ wild dog }}_{\text{Restrictor}} \ \underbrace{\text{ is a canine}}_{\text{Main}}$$
-$$\forall x( \ \underbrace{(Wx \eand Dx)}_{\text{Restrictor}} \ \eif \  \underbrace{Cx}_{\text{Main}} \ )$$
-It doesn't matter how complex the restrictor and the main predicate get, the pattern is always the same.  Using $A$ for `\blank is from Africa' and $M$ for `\blank is a mammal' we get the following:
+\begin{multicols}{2}
+\begin{center}
+$\text{Some }\underbrace{\text{ tame dogs }}_{\text{Restrictor}}\  \underbrace{\text{ are poodles}}_{\text{Main}}$
+
+\vspace{1em}
+
+$\exists x (\ \underbrace{(Tx \eand Dx)}_{\text{Restrictor}} \ \eand \ \underbrace{Px}_{\text{Main}} \ )$
+\end{center}
+
+\columnbreak
+
+\begin{center}
+$\text{Every }\underbrace{\text{ wild dog }}_{\text{Restrictor}} \ \underbrace{\text{ is a canine}}_{\text{Main}}$
+
+\vspace{1em}
+
+$\forall x( \ \underbrace{(Wx \eand Dx)}_{\text{Restrictor}} \ \eif \  \underbrace{Cx}_{\text{Main}} \ )$
+\end{center}
+\end{multicols}
+
+It doesn't matter how complex the restrictor and main predicate get, the pattern is always the same.  Using $A$ for `\blank is from Africa' and $M$ for `\blank is a mammal' we get:
 
 $$\text{Every }\underbrace{\text{ wild dog from Africa }}_{\text{Restrictor}} \ \underbrace{\text{ is both a mammal and a canine}}_{\text{Main}}$$
 
 $$\forall x(\ \underbrace{(Wx \eand (Dx \eand Ax))}_{\text{Restrictor}} \ \eif  \underbrace{(Mx \eand Cx)}_{\text{Main}} \ )$$
-Again: since it's a universal sentence the restrictor predicate and main predicate get connected by a \eif.  If it had been an existential sentence with `Some', they would have been connected by a \eand.
+Again: since it's a universal sentence the restrictor predicate and main predicate get connected by a \eif.  If the quantifier had been `Some' instead of `Every', they would have been connected by a \eand.
 
-So far we've been pretty loose about picking domains.  But in practice, picking a domain can be a delicate matter, and can affect what the appropriate symbolization of a sentence is.  Take \eref{quan1} from earlier again, `Every dog is a canine.'  In a domain of animals, this gets symbolized as `$\forall x (Dx \eif Cx)$'.  But we could capture the meaning of this English sentence another way too.  Suppose we instead use a domain that consists of just dogs.  In this domain, `Every dog is a canine' can just be symbolized as `$\forall xCx$': every object $x$ in the domain (consisting of dogs) is a canine.  In other words, by restricting our \emph{domain} to dogs, we no longer need the explicit restrictor \emph{predicate} `$Dx$' in our symbolization.
+So far we've been pretty loose about picking domains.  But in practice, picking a domain can be a delicate matter, and can affect what the correct symbolization of a sentence is.  Take \eref{quan1} from earlier, `Every dog is a canine.'  In a domain of animals, this gets symbolized as `$\forall x (Dx \eif Cx)$'.  But suppose we instead use a domain that consists of just dogs.  In this domain, `Every dog is a canine' can just be symbolized as `$\forall xCx$': every object $x$ in the domain (of dogs) is a canine.  In other words, by restricting our \emph{domain} to dogs, we no longer need the explicit restrictor \emph{predicate} `$Dx$' in our symbolization.
 
 
-You could in principle always avoid complex symbolizations by just restricting your domain appropriately.  A sentence that standardly gets symbolized via the pattern $\forall x (\script{F}x \eif \script{G}x)$ could just be symbolized $\forall x \script{G}x$ by making the domain consist of whatever things the restrictor predicate $\script{F}x$ is true of.  And similarly, a sentence that standardly gets symbolized via the pattern $\exists x (\script{F}x \eand \script{G}x)$ could just be symbolized as $\exists x \script{G}x$ by picking a domain that consists of whatever things $\script{F}x$ is true of.
+You could in principle always avoid complex symbolizations by just restricting your domain appropriately.  A sentence that standardly gets symbolized as $\forall x (\script{F}x \eif \script{G}x)$ could just be symbolized $\forall x \script{G}x$ by making the domain consist of whatever things the restrictor predicate $\script{F}x$ is true of.  And similarly, a sentence that standardly gets symbolized as $\exists x (\script{F}x \eand \script{G}x)$ could just be symbolized as $\exists x \script{G}x$ by picking a domain that consists of whatever things $\script{F}x$ is true of.
 
-However, this gain in convenience comes at a cost.  If we pick a domain of dogs in our symbolization key for \eref{quan1}, then we can no longer use the same symbolization key to symbolize sentences that talk about things other than dogs.  That could be a problem.  For example, `Every dog is a canine' might appear as the first premise in an argument, whose second premise is `No pelican is a canine', and whose conclusion is `No pelican is a dog'.  Since the second premise and the conclusion talk about pelicans, we can't symbolize them using a domain of just dogs.  We'll instead have to go back to using a larger domain, like all animals, and revert to the more complex symbolization  $\forall x (Dx \eif Cx)$.
+However, this gain in convenience comes at a cost.  If we pick a domain of dogs in our symbolization key for \eref{quan1}, then we can no longer use the same symbolization key to symbolize sentences that talk about things other than dogs.  That could be a problem: `Every dog is a canine' might appear as the first premise in an argument, whose second premise is `No pelican is a canine', and whose conclusion is `No pelican is a dog'.  Since the second premise and the conclusion talk about pelicans, we can't symbolize them using a domain of just dogs.  We'll instead have to go back to using a larger domain, like all animals, and revert to the more complex symbolization  $\forall x (Dx \eif Cx)$ for \eref{quan1}.
 
-In practice, we're going to be fairly restrictive about what domains to use.  In order to standardize symbolizations, you should always pick one of two domains in your symbolization key: either a domain that consists of things in general (dogs, people, other animals, plants, stars, numbers etc.), or a domain that consists of all people.  You can use the following guidelines to determine which domain to pick:
+In practice, we're going to be fairly restrictive about what domains to use.  In order to standardize symbolizations, you should always pick one of two domains in your symbolization key: either a domain that consists of things in general (dogs, people, other animals, plants, stars, numbers etc.), or a domain that consists of people.  You can use the following guidelines to determine which domain to pick:
 
 \factoidbox{
 \begin{itemize}
-\item If a sentence or argument contains quantifiers restricted to people (like `everyone', `someone', `anyone', `no one') and no names or predicates that concern anything other than people, you may use a domain consisting of just people.
+\item If a sentence or argument only contains quantifiers restricted to people (like `everyone', `someone', `anyone', `no one'), and no standalone names of things other than people, you may (but aren't required to) use a domain consisting of just people.
 
-\item When symbolizing any other kind of sentence or argument, you should use the domain of things in general.
+\item For any other kind of sentence or argument,  use the domain of things.
 \end{itemize}}
-So in the case of something like `every dog is a canine', you should use a domain of things in general and symbolize it as $\forall x(Dx \eif Cx)$.  On the other hand, for something like `everyone is happy' or `someone is angry', you can use a domain of just people and symbolize them as $\forall xHx$ and $\exists xAx$.
+So in the case of something like `Every dog is a canine', you should use a domain of things and symbolize it as $\forall x(Dx \eif Cx)$.  For `Every logician is wise', you'd also use a domain of things and symbolize it as `$\forall x(Lx \eif Wx)$'. On the other hand, for something like `everyone is happy', you may use a domain of just people and symbolize it as $\forall xHx$.
 
-It's important to notice, though, that you don't \emph{have} to use a domain of people in the latter case. `Everyone is happy' can be symbolized in a domain of things by making the restriction to people (carried by the `one' in `everyone') explicit with an additional predicate `$P$' for `\blank is a person'. This would give us the symbolization `$\forall x(Px \eif Hx)$'.  In fact, using an extra predicate like this is what you would have to do if `everyone is happy' occurred as part of a larger sentence or argument that also involved reference to things other than people.   Similarly, if you wanted to symbolize:
+It's important to notice, though, that you don't \emph{have} to use a domain of people to symbolize `Everyone is happy.' This can be symbolized in a domain of things too, by making the restriction to people (carried by the `one' in `everyone') explicit with an additional predicate `$P$' for `\blank is a person'. This would give us the symbolization `$\forall x(Px \eif Hx)$'.  In fact, using an extra predicate like this is what you would have to do if the sentence occurred as part of a larger sentence or argument that involves reference to things other than people.   
+
+Similarly, if you wanted to symbolize:
 \begin{earg}
 	\item[\ex{quan5}] Everyone in Chicago is happy.
 \end{earg}
-in a domain of people, you would symbolize it as $\forall x(Cx \eif Hx)$, using $C$ for `\blank is in Chicago'.  But if we use a domain of things in general, the implicit restriction to people carried by `everyone' has to be made explicit by adding `$Px$', for `$x$ is a person', into the restrictor predicate, giving us:  $\forall x((Px \eand Cx) \eif Hx)$'.
+in a domain of people, you would symbolize it as $\forall x(Cx \eif Hx)$, using $C$ for `\blank is in Chicago'.  But if we use a domain of things in general, the implicit restriction to people carried by `everyone' has to be made explicit by adding `$Px$', for `$x$ is a person', into the restrictor predicate, giving us  `$\forall x((Px \eand Cx) \eif Hx)$'.
+
+One last point about picking domains: sentence \eref{quan5} contains the name `Chicago', which refers to a city, not a person, so you might think that our guidelines require a domain of things here.  In fact, though, we can use the domain of people, because we aren't symbolizing the name `Chicago' in \eref{quan5} \emph{as a name}, but rather treating it as part of the larger predicate `\blank is in Chicago', which we symbolize as `$C$'.  What the guidelines mean by a ``standalone name'' is a name that will get \emph{symbolized as a name}.  It is only if a sentence contains a standalone name (in this sense) of something other than a person that you shouldn't use a domain of people.  The reason is that every object referred to by a name \emph{in our symbolization} must be part of the domain.
+
+\practiceproblems
+
+\problempart Symbolize the following (using a domain of things): 
+
+
+\begin{earg}
+\item Some dogs are cute but not friendly.
+
+\item Some dogs are neither friendly nor cute.
+
+\item Some ancient manuscripts are priceless.
+
+\item  Every wealthy artist is happy.
+
+\item Every artist is both wealthy and happy.
+
+\item Every politician from London will get re-elected.
+
+\item All red mushrooms are deadly if eaten.
+\end{earg}
+
+\problempart  The following contain quantifiers restricted to people, and can be symbolized in either a domain of people or a domain of things.  Symbolize each first in a domain of people, and then in a domain of things:
+
+\begin{earg}
+\item Someone is wise but not happy.
+\item Everyone is both wise and happy.
+\item Everyone from Sweden is either wise or happy.
+\item Someone from Norway is wise, but not everyone in Scandinavia is wise.
+\end{earg}
+
+
+
 
 
 \section{Quantifiers and Negation}
@@ -316,7 +389,26 @@ In general, we've seen the following patterns:
 
 		An English sentence that can be paraphrased as `Not every $F$ is $G$' can be symbolized as $\enot \forall x (\script{F}x \eif \script{G}x)$ or as $\exists x (\script{F}x \eand \enot \script{G}x)$.
 	}
-These patterns also apply if we want to symbolize our earlier examples \eref{q.neg1} and \eref{q.neg2} in a domain of things rather than of people.  In a domain of things, `No one (i.e. no person) is angry' gets symbolized as $\enot \exists x(Px \eand Ax)$' (or alternatively, as $\forall x(Px \eif \enot Ax)$, i.e. ``every person is non-angry'').  And `Not everyone is angry' would become $\enot \forall x(Px \eif Ax)$ (or alternatively, $\exists x(Px \eand \enot Ax)$, i.e. ``at least one person is non-angry'').
+These patterns also apply if we want to symbolize our earlier examples \eref{q.neg1} and \eref{q.neg2} in a domain of things rather than people.  In a domain of things, `No one (i.e. no person) is angry' gets symbolized as $\enot \exists x(Px \eand Ax)$' (or alternatively, as $\forall x(Px \eif \enot Ax)$, i.e. ``every person is non-angry'').  And `Not everyone is angry' would become $\enot \forall x(Px \eif Ax)$ (or alternatively, $\exists x(Px \eand \enot Ax)$, i.e. ``at least one person is non-angry'').
+
+
+\practiceproblems
+\problempart Symbolize the following: 
+
+\begin{earg}
+
+\item No honest politician is rich.
+
+\item Some honest politicians aren't rich.
+
+\item No logician is both rich and famous.
+
+\item Not every logician is both rich and famous.
+
+\item No one from Sweden is famous.
+
+\end{earg}
+
 
 
 %
@@ -388,7 +480,7 @@ These sentences look similar, and even have the same words in the consequent (`$
 Sentence \eref{pronoun2} is more tricky.  You might think that it's a conditional, with an existential quantifier in its antecedent, and should be symbolized along the lines of `$\exists xBx \eif Rx$'.  This isn't correct, however, since the quantifier in this symbolization isn't binding the variable in `$Rx$', that is, it's an open sentence.  In the English \eref{pronoun2}, the pronoun `she' is referring back to the bassist. You might try to fix it by adding parentheses, giving us  `$\exists x(Bx \eif Rx)$'.  This is now at least a closed sentence, with the quantifier binding both variables.  Unfortunately it doesn't capture the meaning of \eref{pronoun2}.   Recall that in TFL, $(P \eif Q)$ is equivalent (by the Imp Law) to $(\enot P \eor Q)$.  Similarly, in FOL  `$\exists x(Bx \eif Rx)$' is equivalent to  `$\exists x(\enot Bx \eor Rx)$'.  This will be true as long as there is some non-bassist in the world, but that clearly doesn't suffice for \eref{pronoun2} to be true!
 
 
-Paraphrase will help us reach our goal.  \eref{pronoun2} can be paraphrased as `If some person is a bassist, then that person is a rock star'. This sentence is not about any particular person, but rather says something about every person who is a bassist.  It can be paraphrased as `For any person x, if x is a bassist, then x is a rockstar', which can be symbolized as `$\forall x (Bx \eif Rx)$'.  This is now the correct symbolization of \eref{pronoun2}.  There is a surprising but important upshot to this: sometimes, English sentences that involve the quantifier `someone' get symbolized using the universal quantifier $\forall$ in FOL!\footnote{Sentence \eref{pronoun2} involves what linguists call a ``donkey anaphora.''  You can read more about this in the Stanford Encyclopedia of Philosophy: \href{https://plato.stanford.edu/entries/anaphora/}{https://plato.stanford.edu/entries/anaphora/}.}
+Paraphrase will help us reach our goal.  \eref{pronoun2} can be paraphrased as `If some person is a bassist, then that person is a rock star'. This sentence is not about any particular person, but rather says something about every person who is a bassist.  It can be paraphrased as `For any person x, if x is a bassist, then x is a rockstar', which can be symbolized as `$\forall x (Bx \eif Rx)$'.  This is now the correct symbolization of \eref{pronoun2}.  There is a surprising but important upshot to this: sometimes, English sentences that involve the quantifier `someone' get symbolized using the universal quantifier $\forall$ in FOL!\footnote{Sentence \eref{pronoun2} involves what linguists call a ``donkey anaphor.''  You can read more about this in the Stanford Encyclopedia of Philosophy: \href{https://plato.stanford.edu/entries/anaphora/}{https://plato.stanford.edu/entries/anaphora/}.}
 
 
 
@@ -405,8 +497,18 @@ Sentence \eref{anyone1} can be paraphrased, `If there exists at least one bassis
 Sentence \eref{anyone2} again has a pronoun `she' referring back to the bassist.  It can be paraphrased as `For all people x, if x is a bassist, then x is a rock star', or just `All bassists are rock stars'. So it gets symbolized as a universally quantified sentence, `$\forall x(Bx \eif Rx)$', just like sentence \eref{pronoun2} from earlier.  What these examples illustrate is that the English quantifier `anyone' sometimes gets symbolized as an existential quantifier in FOL, and at other times as a universal quantifier.   To determine which, try paraphrasing the sentence using words \emph{besides} `any' or `anyone'.
 
 \practiceproblems
+\problempart  Symbolize the following:
+
+\begin{earg}
+\item If everyone is wealthy, economists are happy.
+\item If anyone is wealthy, economists are happy.
+\item If someone is wealthy, they are an economist.
+\item If a politician is corrupt, they are also dishonest.
+\item All violins and cellos are stringed instruments.  %Thanks to Scott Looney
+\end{earg}
+
 \problempart\label{pr.BarbaraEtc}
-Below are the syllogistic figures identified by Aristotle and his successors, along with their medieval names.  These formed the foundation of formal logic for over two millennia, until the end of the 19th century.  Formalize each figure in FOL.
+Below are the syllogistic figures identified by Aristotle and his successors, along with their medieval names.  These formed the foundation of formal logic for over two millennia, until the end of the 19th century.  Formalize each syllogistic figure in FOL.
 
 \begin{ebullet}
 	\item \textbf{Barbara.} All G are F. All H are G. So:  All H are F
@@ -427,57 +529,57 @@ Below are the syllogistic figures identified by Aristotle and his successors, al
 \end{ebullet}
 
 
-\
 
-\problempart
-\label{pr.FOLvegetarians}
-Using the following symbolization key:
-\begin{ekey}
-\item[\text{domain}] people
-\item[K] \blank\ knows the combination to the safe
-\item[S] \blank\ is a spy
-\item[V] \blank\ is a vegetarian
-%\item[Txy] \gap{x} trusts \gap{y}.
-\item[h] Hofthor
-\item[i] Ingmar
-\end{ekey}
-symbolize the following sentences in FOL:
-\begin{earg}
-\item Neither Hofthor nor Ingmar is a vegetarian.
-\item No spy knows the combination to the safe.
-\item No one knows the combination to the safe unless Ingmar does.
-\item Hofthor is a spy, but no vegetarian is a spy.
-\end{earg}
-\problempart\label{pr.FOLalligators}
-Using this symbolization key:
-\begin{ekey}
-\item[\text{domain}] all animals
-\item[A] \blank\ is an alligator.
-\item[M] \blank\ is a monkey.
-\item[R] \blank\ is a reptile.
-\item[Z] \blank\ lives at the zoo.
-\item[a] Amos
-\item[b] Bouncer
-\item[c] Cleo
-\end{ekey}
-symbolize each of the following sentences in FOL:
-\begin{earg}
-\item Amos, Bouncer, and Cleo all live at the zoo.
-\item Bouncer is a reptile, but not an alligator.
-%\item If Cleo loves Bouncer, then Bouncer is a monkey.
-%\item If both Bouncer and Cleo are alligators, then Amos loves them both.
-\item Some reptile lives at the zoo.
-\item Every alligator is a reptile.
-\item Any animal that lives at the zoo is either a monkey or an alligator.
-\item There are reptiles which are not alligators.
-%\item Cleo loves a reptile.
-%\item Bouncer loves all the monkeys that live at the zoo.
-%\item All the monkeys that Amos loves love him back.
-\item If any animal is an reptile, then Amos is.
-\item If any animal is an alligator, then it is a reptile.
-%\item Every monkey that Cleo loves is also loved by Amos.
-%\item There is a monkey that loves Bouncer, but sadly Bouncer does not reciprocate this love.
-\end{earg}
+
+%\problempart
+%\label{pr.FOLvegetarians}
+%Using the following symbolization key:
+%\begin{ekey}
+%\item[\text{domain}] people
+%\item[K] \blank\ knows the combination to the safe
+%\item[S] \blank\ is a spy
+%\item[V] \blank\ is a vegetarian
+%%\item[Txy] \gap{x} trusts \gap{y}.
+%\item[h] Hofthor
+%\item[i] Ingmar
+%\end{ekey}
+%symbolize the following sentences in FOL:
+%\begin{earg}
+%\item Neither Hofthor nor Ingmar is a vegetarian.
+%\item No spy knows the combination to the safe.
+%\item No one knows the combination to the safe unless Ingmar does.
+%\item Hofthor is a spy, but no vegetarian is a spy.
+%\end{earg}
+%\problempart\label{pr.FOLalligators}
+%Using this symbolization key:
+%\begin{ekey}
+%\item[\text{domain}] all animals
+%\item[A] \blank\ is an alligator.
+%\item[M] \blank\ is a monkey.
+%\item[R] \blank\ is a reptile.
+%\item[Z] \blank\ lives at the zoo.
+%\item[a] Amos
+%\item[b] Bouncer
+%\item[c] Cleo
+%\end{ekey}
+%symbolize each of the following sentences in FOL:
+%\begin{earg}
+%\item Amos, Bouncer, and Cleo all live at the zoo.
+%\item Bouncer is a reptile, but not an alligator.
+%%\item If Cleo loves Bouncer, then Bouncer is a monkey.
+%%\item If both Bouncer and Cleo are alligators, then Amos loves them both.
+%\item Some reptile lives at the zoo.
+%\item Every alligator is a reptile.
+%\item Any animal that lives at the zoo is either a monkey or an alligator.
+%\item There are reptiles which are not alligators.
+%%\item Cleo loves a reptile.
+%%\item Bouncer loves all the monkeys that live at the zoo.
+%%\item All the monkeys that Amos loves love him back.
+%\item If any animal is an reptile, then Amos is.
+%\item If any animal is an alligator, then it is a reptile.
+%%\item Every monkey that Cleo loves is also loved by Amos.
+%%\item There is a monkey that loves Bouncer, but sadly Bouncer does not reciprocate this love.
+%\end{earg}
 
 
 \problempart
@@ -575,7 +677,18 @@ The difference between active and passive voice illustrates something important.
 	\end{ekey}
 Now `$L$'  symbolizes an English predicate in the passive voice, meaning that the first gap now represents the patient, the person who is loved, and the second gap the agent, the person doing the loving.  Using this symbolization key, the FOL sentence `$Lki$' now means that Karl is loved by Imre, that is to say, that Imre loves Karl.  So Sentence \eref{terms3} --- which says that Karl loves Imre, i.e. that Imre is loved by Karl --- can no longer be symbolized as `$Lki$', but must be symbolized as `$Lik$'.  The overall moral is simple: \emph{differences in the order of names matter.}
 
+\practiceproblems
+\problempart symbolize the following using two-place predicates.
 
+\begin{earg}
+\item Tom chased Jerry, and Tom was also chased by Jerry.
+\item Tom chased Jerry, but Jerry didn't chase Tom.
+\item If Tai admires Meg, then Meg admires herself.
+\item Tom didn't chase Jerry unless Jerry was chased by Tom.
+%\item Socrates admires someone.
+%\item Everyone admires Socrates.
+%\item If everyone admires Socrates, then Socrates also admires himself.
+\end{earg}
 
 
 \section{Multiple Generality}
@@ -609,7 +722,7 @@ However, English sentences like \eref{elovs} that contain multiple quantifiers a
 	\end{earg}
 Since this now claims that there is some particular person $y$ who is loved by every $x$, we can symbolize it as `$\exists y\forall xLxy$'.  This would be false in our earlier love triangle situation, since there is no lucky individual $y$ who is loved by \emph{everyone} in that scenario.  A situation where `$\exists y\forall xLxy$' is true would be one where, for example, Karl loves Imre, Juan loves Imre, and Imre also loves himself.  Now Imre is the lucky individual $y$ who's loved by everyone.
 
-The two examples we've looked at ---  `$\forall x \exists yLxy$' and `$\exists y\forall xLxy$' --- differ in the order, or \emph{scope}, of the two quantifiers: in the first, the universal $\forall x$ has the larger scope (i.e. comes first, and is the main operator), whereas in the second the existential $\exists y$ has the larger scope.\footnote{Of course there are other ways to symbolize these claims too.  \eref{slovbye} could also be paraphrased as saying that there is some particular person $x$ who is loved by every $y$, and thus symbolized as $\exists x\forall y Lyx$ instead of $\exists y\forall xLxy$.  These FOL sentence look different, but they are equivalent: in both cases the existential quantifier binds the variable in the \emph{second} argument position of $L$, and the universal quantifier binds the variable in the \emph{first} argument position.  This is what's crucial to capturing the meaning of \eref{slovbye}.}  As we've seen, this difference in scope results in a difference in meaning between these two FOL sentences.  Accidentally switching the scope of quantifiers gives rise to the so-called \emph{quantifier shift fallacy}.  For example, the following argument is not valid:
+The two examples we've looked at ---  `$\forall x \exists yLxy$' and `$\exists y\forall xLxy$' --- differ in the order, or \emph{scope}, of the two quantifiers: in the first, the universal $\forall x$ has the larger scope (i.e. comes first, and is the main operator), whereas in the second the existential $\exists y$ has the larger scope.\footnote{Of course we could use different variables: \eref{slovbye} could also be paraphrased as saying that there is some person $x$ who is loved by every $y$, and thus symbolized as $\exists x\forall y Lyx$ instead of $\exists y\forall xLxy$.  These FOL sentences look different, but they are equivalent: in both cases the existential quantifier binds the variable in the \emph{second} argument position of $L$, and the universal quantifier binds the variable in the \emph{first} argument position.  This is what's crucial to capturing the meaning of \eref{slovbye}.}  As we've seen, this difference in scope results in a difference in meaning between these two FOL sentences.  Accidentally switching the scope of quantifiers gives rise to the so-called \emph{quantifier shift fallacy}.  For example, the following argument is not valid:
 	\begin{earg}
 		\item[] Everything is caused by something. \hfill ($\forall \exists$)
 		\item[$\therefore$] There is some one thing that caused everything. \hfill ($\exists \forall$)
@@ -631,6 +744,27 @@ Such fallacies, though, arise only when we swap around universal with existentia
 Sentence \eref{negquan1} is the denial of `there is someone who loves everyone'; since the latter gets symbolized as `$\exists x\forall yLxy$', sentence \eref{negquan1} gets symbolized as its negation, `$\enot \exists x \forall y Lxy$'.  Sentence \eref{negquan2} says that there is some person $x$ such that  no matter what $y$ we pick, $x$ does not love $y$.  It therefore gets symbolized as `$\exists x \forall y \enot Lxy$'.
 
 Another way to think about \eref{negquan2} is as saying: there is some  $x$ such that there does not exist any $y$ whom $x$ loves.  So we can also symbolize it as $\exists x \enot \exists y Lxy$'.  This illustrates that the Quantifier Equivalence Laws from \S\ref{s:Quantifiers}, which govern the movement of negation across quantifiers, continue to hold in multiply quantified sentences.  Similarly, if we start with `$\enot \exists x \forall y Lxy$', which was our symbolization of \eref{negquan1}, and move the negation across both quantifiers, we end up with `$\forall x \exists y \enot Lxy$'.  This says that for every $x$ there is at least one $y$ whom $x$ does not love, which is indeed another way to capture the truth conditions of \eref{negquan1}.
+
+
+\practiceproblems
+\problempart Symbolize the following (in a domain of people):
+
+\begin{earg}
+\item Socrates admires someone.
+\item Everyone admires Socrates.
+\item If everyone admires Socrates, then Socrates also admires himself.
+\item  Everyone loves someone.
+\item Someone loves everyone.
+\item Everyone is loved by someone.
+\item  Someone is loved by everyone.
+\item Everyone loves everyone.
+\item Someone loves no one
+\item No one loves everyone.
+\item No one is  loved by everyone.
+\item Someone is loved by no one.
+\end{earg}
+
+
 
 
 \section{Intermediate Steps to Symbolization}\label{s:FOLSymSteps}
@@ -695,124 +829,152 @@ $$\forall x\exists z \exists y \exists v\bigl[(Dz \eand Oxz)\eif \bigl((Dv \eand
 This is not a correct symbolization of \eref{dog5}, and indeed, virtually impossible to make sense of.  Avoid doing this.  Instead, use the strategy of breaking things down via intermediate steps, as we've done in these examples.  By following this strategy, you will arrive at a correct symbolization, with all the quantifiers in the right places.
 
 \practiceproblems
-\problempart
-Using this symbolization key:
-\begin{ekey}
-\item[\text{domain}] things
-\item[A] \blank\ is an alligator
-\item[M] \blank\ is a monkey
-\item[R] \blank\ is a reptile
-\item[Z] \blank\ lives at the zoo
-\item[L] \blank\  loves \blank
-\item[a] Amos
-\item[b] Bouncer
-\item[c] Cleo
-\end{ekey}
-symbolize each of the following sentences in FOL:
+
+\problempart Symbolize the following using two-place predicates.  (Note: problem 6 and 7 involve nouns that express relational notions, so these can be symbolized using the two-place predicates `\blank is an assassin of \blank' and `\blank is a friend of \blank'.)
+
 \begin{earg}
-%\item Amos, Bouncer, and Cleo all live at the zoo.
-%\item Bouncer is a reptile, but not an alligator.
-\item If Cleo loves Bouncer, then Bouncer is a monkey.
-\item If both Bouncer and Cleo are alligators, then Amos loves them both.
-%\item Some reptile lives at the zoo.
-%\item Every alligator is a reptile.
-%\item Any animal that lives at the zoo is either a monkey or an alligator.
-%\item There are reptiles which are not alligators.
-\item Cleo loves a reptile.
-\item Bouncer loves all the monkeys that live at the zoo.
-\item All the monkeys that Amos loves love him back.
-%\item If any animal is an reptile, then Amos is.
-%\item If any animal is an alligator, then it is a reptile.
-\item Every monkey that Cleo loves is also loved by Amos.
-\item There is a monkey that loves Bouncer, but sadly Bouncer does not reciprocate this love.
+
+\item Every doctor cured a patient.
+
+\item Every logician is admired by some philosopher.
+
+\item No  politician admires every senator.
+
+\item Some famous soprano is admired by every tenor.  
+
+\item No self-respecting lawyer admires every judge.
+
+\item All of Caesar's assassins were friends of Brutus.
+
+\item Some of Caesars advisors knew all of Caesar's assassins but suspected none of them.
+
+\item Every tenor from Italy is respected by some famous soprano.
+
+%\item There is no greatest prime number.
+
 \end{earg}
 
-\problempart
-Using this symbolization key:
-\begin{ekey}
-\item[\text{domain}] things
-\item[D] \blank\ is a dog
-\item[S] \blank\ likes samurai movies
-\item[L] \blank\ is larger than \blank
-\item[b] Bertie
-\item[e] Emerson
-\item[f] Fergis
-\end{ekey}
-symbolize the following sentences in FOL (provide your own symbolization key for each):
-\begin{earg}
-\item Bertie is a dog who likes samurai movies.
-\item Bertie, Emerson, and Fergis are all dogs.
-\item Emerson is larger than Bertie, and Fergis is larger than Emerson.
-\item All dogs like samurai movies.
-\item Only dogs like samurai movies.
-\item There is a dog that is larger than Emerson.
-\item If there is a dog larger than Fergis, then there is a dog larger than Emerson.
-\item No animal that likes samurai movies is larger than Emerson.
-\item No dog is larger than Fergis.
-\item Any animal that dislikes samurai movies is larger than Bertie.
-\item There is an animal that is between Bertie and Emerson in size.
-\item There is no dog that is between Bertie and Emerson in size.
-\item No dog is larger than itself.
-\item Every dog is larger than some dog.
-\item There is an animal that is smaller than every dog.
-\item If there is an animal that is larger than any dog, then that animal does not like samurai movies.
-\end{earg}
+%NOTE: examples 6 and 7 involve relational notions expressed by nouns: `\_ is an assassin of \_', `\_ is a friend of \_', `\_ is an advisor to \_ '.
 
-\problempart
-Using this symbolization key:
-\begin{ekey}
-\item[\text{domain}] things
-\item[R] \blank\ has run out.
-\item[T] \blank\ is on the table.
-\item[F] \blank\ is food.
-\item[P] \blank\ is a person.
-\item[L] \blank\ likes \blank\
-\item[e] Eli
-\item[f] Francesca
-\item[g] the guacamole
-\end{ekey}
-symbolize the following English sentences in FOL (be careful here --- since the domain consists of things in general, and not just people, quantifiers like `everyone' have to be symbolizes as `every person'):
-\begin{earg}
-\item All the food is on the table.
-\item If the guacamole has not run out, then it is on the table.
-\item Everyone likes the guacamole.
-\item If anyone likes the guacamole, then Eli does.
-\item Francesca only likes the dishes that have run out.
-\item Francesca likes no one, and no one likes Francesca.
-\item Eli likes anyone who likes the guacamole.
-\item Eli likes anyone who likes the people that he likes.
-\item If there is a person on the table already, then all of the food must have run out.
-\end{earg}
 
-\problempart
-\label{pr.FOLballet}
-Using this symbolization key:
-\begin{ekey}
-\item[\text{domain}] people
-\item[D] \blank\ dances ballet.
-\item[F] \blank\ is female.
-\item[M] \blank\ is male.
-\item[C] \blank\ is a child of \blank\
-\item[S]\blank\  is a sibling of \blank\
-\item[e] Elmer
-\item[j] Jane
-\item[p] Patrick
-\end{ekey}
-symbolize the following sentences in FOL:
-\begin{earg}
-\item All of Patrick's children are ballet dancers.
-\item Jane is Patrick's daughter.
-\item Patrick has a daughter.
-\item Jane is an only child.
-\item All of Patrick's sons dance ballet.
-\item Patrick has no sons.
-\item Jane is Elmer's niece.
-\item Patrick is Elmer's brother.
-\item Patrick's brothers have no children.
-\item Jane is an aunt.
-\item Everyone who dances ballet has a brother who also dances ballet.
-\item Every woman who dances ballet is the child of someone who dances ballet.
-\end{earg}
+%\problempart
+%Using this symbolization key:
+%\begin{ekey}
+%\item[\text{domain}] things
+%\item[A] \blank\ is an alligator
+%\item[M] \blank\ is a monkey
+%\item[R] \blank\ is a reptile
+%\item[Z] \blank\ lives at the zoo
+%\item[L] \blank\  loves \blank
+%\item[a] Amos
+%\item[b] Bouncer
+%\item[c] Cleo
+%\end{ekey}
+%symbolize each of the following sentences in FOL:
+%\begin{earg}
+%%\item Amos, Bouncer, and Cleo all live at the zoo.
+%%\item Bouncer is a reptile, but not an alligator.
+%\item If Cleo loves Bouncer, then Bouncer is a monkey.
+%\item If both Bouncer and Cleo are alligators, then Amos loves them both.
+%%\item Some reptile lives at the zoo.
+%%\item Every alligator is a reptile.
+%%\item Any animal that lives at the zoo is either a monkey or an alligator.
+%%\item There are reptiles which are not alligators.
+%\item Cleo loves a reptile.
+%\item Bouncer loves all the monkeys that live at the zoo.
+%\item All the monkeys that Amos loves love him back.
+%%\item If any animal is an reptile, then Amos is.
+%%\item If any animal is an alligator, then it is a reptile.
+%\item Every monkey that Cleo loves is also loved by Amos.
+%\item There is a monkey that loves Bouncer, but sadly Bouncer does not reciprocate this love.
+%\end{earg}
+%
+%\problempart
+%Using this symbolization key:
+%\begin{ekey}
+%\item[\text{domain}] things
+%\item[D] \blank\ is a dog
+%\item[S] \blank\ likes samurai movies
+%\item[L] \blank\ is larger than \blank
+%\item[b] Bertie
+%\item[e] Emerson
+%\item[f] Fergis
+%\end{ekey}
+%symbolize the following sentences in FOL (provide your own symbolization key for each):
+%\begin{earg}
+%\item Bertie is a dog who likes samurai movies.
+%\item Bertie, Emerson, and Fergis are all dogs.
+%\item Emerson is larger than Bertie, and Fergis is larger than Emerson.
+%\item All dogs like samurai movies.
+%\item Only dogs like samurai movies.
+%\item There is a dog that is larger than Emerson.
+%\item If there is a dog larger than Fergis, then there is a dog larger than Emerson.
+%\item No animal that likes samurai movies is larger than Emerson.
+%\item No dog is larger than Fergis.
+%\item Any animal that dislikes samurai movies is larger than Bertie.
+%\item There is an animal that is between Bertie and Emerson in size.
+%\item There is no dog that is between Bertie and Emerson in size.
+%\item No dog is larger than itself.
+%\item Every dog is larger than some dog.
+%\item There is an animal that is smaller than every dog.
+%\item If there is an animal that is larger than any dog, then that animal does not like samurai movies.
+%\end{earg}
+%
+%\problempart
+%Using this symbolization key:
+%\begin{ekey}
+%\item[\text{domain}] things
+%\item[R] \blank\ has run out.
+%\item[T] \blank\ is on the table.
+%\item[F] \blank\ is food.
+%\item[P] \blank\ is a person.
+%\item[L] \blank\ likes \blank\
+%\item[e] Eli
+%\item[f] Francesca
+%\item[g] the guacamole
+%\end{ekey}
+%symbolize the following English sentences in FOL (be careful here --- since the domain consists of things in general, and not just people, quantifiers like `everyone' have to be symbolizes as `every person'):
+%\begin{earg}
+%\item All the food is on the table.
+%\item If the guacamole has not run out, then it is on the table.
+%\item Everyone likes the guacamole.
+%\item If anyone likes the guacamole, then Eli does.
+%\item Francesca only likes the dishes that have run out.
+%\item Francesca likes no one, and no one likes Francesca.
+%\item Eli likes anyone who likes the guacamole.
+%\item Eli likes anyone who likes the people that he likes.
+%\item If there is a person on the table already, then all of the food must have run out.
+%\end{earg}
+%
+%\problempart
+%\label{pr.FOLballet}
+%Using this symbolization key:
+%\begin{ekey}
+%\item[\text{domain}] people
+%\item[D] \blank\ dances ballet.
+%\item[F] \blank\ is female.
+%\item[M] \blank\ is male.
+%\item[C] \blank\ is a child of \blank\
+%\item[S]\blank\  is a sibling of \blank\
+%\item[e] Elmer
+%\item[j] Jane
+%\item[p] Patrick
+%\end{ekey}
+%symbolize the following sentences in FOL:
+%\begin{earg}
+%\item All of Patrick's children are ballet dancers.
+%\item Jane is Patrick's daughter.
+%\item Patrick has a daughter.
+%\item Jane is an only child.
+%\item All of Patrick's sons dance ballet.
+%\item Patrick has no sons.
+%\item Jane is Elmer's niece.
+%\item Patrick is Elmer's brother.
+%\item Patrick's brothers have no children.
+%\item Jane is an aunt.
+%\item Everyone who dances ballet has a brother who also dances ballet.
+%\item Every woman who dances ballet is the child of someone who dances ballet.
+%\end{earg}
 
 
 \section{Adding Identity}\label{s:identity}
@@ -937,11 +1099,11 @@ This says that there exists at least one thing. This is obviously a controversia
 
 \practiceproblems
 
-\problempart Explain why:
-	\begin{ebullet}
-		\item   `$\exists x \forall y(Ay \eiff x= y)$' is a good symbolization of `there is exactly one apple'.
-		\item `$\exists x \exists y \bigl[\enot x = y \eand \forall z(Az \eiff (x= z \eor y = z))\bigr]$' is a good symbolization of `there are exactly two apples'.
-	\end{ebullet}
+%\problempart Explain why:
+%	\begin{ebullet}
+%		\item   `$\exists x \forall y(Ay \eiff x= y)$' is a good symbolization of `there is exactly one apple'.
+%		\item `$\exists x \exists y \bigl[\enot x = y \eand \forall z(Az \eiff (x= z \eor y = z))\bigr]$' is a good symbolization of `there are exactly two apples'.
+%	\end{ebullet}
 
 
 %\chapter{Definite descriptions}\label{subsec.defdesc}
@@ -1047,29 +1209,29 @@ This says that there exists at least one thing. This is obviously a controversia
 
 %\practiceproblems
 
-\problempart
-Using the following symbolization key:
-\begin{ekey}
-\item[\text{domain}] people
-\item[K] \blank\ knows the combination to the safe
-\item[S] \blank\ is a spy
-%\item[V] \blank\ is a vegetarian
-\item[T] \blank\ trusts \blank\
-\item[h] Hofthor
-\item[i] Ingmar
-\end{ekey}
-symbolize the following sentences in FOL:
-\begin{earg}
-\item Hofthor trusts a  spy.
-\item Everyone who trusts Ingmar also trusts someone else (someone other than Ingmar).
-\item Everyone who trusts some spy also trusts anyone who isn't a spy.
-\item Everyone who trusts Ingmar trusts someone who trusts a spy.
-\item Only Ingmar knows the combination to the safe.
-\item Ingmar trusts Hofthor, but no one else.
-\item Hofthor trusts everyone except Ingmar.
-%\item The person who knows the combination to the safe is a vegetarian.
-%\item The person who knows the combination to the safe is not a spy.
-\end{earg}
+%\problempart
+%Using the following symbolization key:
+%\begin{ekey}
+%\item[\text{domain}] people
+%\item[K] \blank\ knows the combination to the safe
+%\item[S] \blank\ is a spy
+%%\item[V] \blank\ is a vegetarian
+%\item[T] \blank\ trusts \blank\
+%\item[h] Hofthor
+%\item[i] Ingmar
+%\end{ekey}
+%symbolize the following sentences in FOL:
+%\begin{earg}
+%\item Hofthor trusts a  spy.
+%\item Everyone who trusts Ingmar also trusts someone else (someone other than Ingmar).
+%\item Everyone who trusts some spy also trusts anyone who isn't a spy.
+%\item Everyone who trusts Ingmar trusts someone who trusts a spy.
+%\item Only Ingmar knows the combination to the safe.
+%\item Ingmar trusts Hofthor, but no one else.
+%\item Hofthor trusts everyone except Ingmar.
+%%\item The person who knows the combination to the safe is a vegetarian.
+%%\item The person who knows the combination to the safe is not a spy.
+%\end{earg}
 
 \problempart
 \label{pr.FOLcards}
@@ -1142,11 +1304,11 @@ There are six kinds of symbols that constitute the \define{Lexicon} of FOL:
 \textbf{Predicates} & $A,B,C,\ldots,Z$\\
 with subscripts, as needed & $A_1, B_1,Z_1,A_2,A_{25},J_{375},\ldots$\\
 \\
-\textbf{Names} & $a,b,c,\ldots, s$\\
+\textbf{Names} & $a,b,c,\ldots, t$\\
 with subscripts, as needed & $a_1, b_{224}, h_7, m_{32},\ldots$\\
 \\
-\textbf{Variables} & $t, u, v, w, x,y,z$\\
-with subscripts, as needed & $t_1, y_1, z_1, x_2,\ldots$\\
+\textbf{Variables} & $u, v, w, x,y,z$\\
+with subscripts, as needed & $u_1, y_1, z_1, x_2,\ldots$\\
 \\
 \textbf{Connectives} & $\enot,\eand,\eor,\eif,\eiff$\\
 \\
@@ -1237,7 +1399,7 @@ These constraints have the effect of preventing the kind of \emph{variable clash
 		The \define{main logical operator} in a formula is the operator that was introduced most recently when constructing that formula according to the syntactic rules of FOL.
 }
 \factoidbox{
-		The \define{scope} of a logical operator in a formula is the subformula for which that operator is the main logical operator.
+		The \define{scope} of an operator in a formula is the subformula for which it is the main logical operator.
 	}
 
 
@@ -1260,7 +1422,7 @@ Of course, if we put an existential quantifier out front to obtain `$\exists xFx
 Since we want all sentences of FOL to be either true or false, we need to exclude formulas like `$Fx$' from the class of sentences.  We can do this by giving a precise definition of the notions of \emph{bound} and \emph{free} variables that we already informally discussed in \S \ref{s:Quantifiers}:
 
 	\factoidbox{
-		An occurrence of a variable \meta{v} in a formula is \define{bound} iff it falls within the scope of either $\forall \meta{v}$ or $\exists \meta{v}$. A variable which is not bound is \define{free}.\\
+A quantifier $\exists \nu$ or $\forall \nu$ \define{binds} every occurrence of the variable $\nu$ that appears in its scope.  Variables that aren't bound by any quantifier are \define{free}.\\
 
 An \define{Open Formula} is one that contains at least one free variable.
 
@@ -1303,6 +1465,25 @@ By requiring that every variable in a sentence be bound, we ensure that all sent
 
 
 \practiceproblems
+\problempart Determine whether each string below is a grammatical formula.  If it is, say what the main operator is and whether it has any free (unbound) variables:
+
+\begin{earg}
+\item $\forall x(Fx)$
+\item $\forall x(Fx \land Gx)$
+\item $\forall y(Fx \land Gx)$
+\item $\forall xFx \eand Gx \eif Hy$
+\item $(\forall x(Fx \eand Gx) \eif Hy)$
+%\item $(\forall xFx \eand Gx) \eif Hy$
+\item $\forall x((Fx \eand Gx) \eif Hy)$
+\item $\exists y \forall x((Fx \eand Gx) \eif Hy)$
+%\item $\forall x((Fx \eand Gx) \eif \exists y Hy)$
+%\item $\exists y(\forall x(Fx \eand Gx) \eif  Hy)$
+\item $\forall xRxy$
+\item $\exists y \forall xRxy$
+\item $\exists x \forall xRxx$
+\end{earg}
+
+
 \problempart
 \label{pr.freeFOL}
 Identify which variables are bound and which are free.
@@ -1326,4 +1507,3 @@ For each of the following formulas, rewrite the formula so that all variables ar
 \item $\exists x\forall y(\forall zLzx \eif \forall u(Jy \eand Lzu))$
 \item $\exists x(\forall y \forall zLzy \eif \forall u(Ju \eand Lxu))$
 \end{earg}
-

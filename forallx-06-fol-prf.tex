@@ -1,8 +1,7 @@
-%!TEX root = forallxsyr.tex
 \chapter{Natural deduction for FOL}\label{ch:NDFOL}
 
 
-Sentences in FOL can contain any of the TFL connectives. So proofs in FOL will take over all the natural deduction rules from TFL that we studied in chapter \ref{ch:NDTFL}, as well as the all derived  TFL rules introduced in \S \ref{s:TFLDerivedRules}.  We will also continue to use the same proof theoretic notions, in particular, the symbol `$\proves$'.  So:
+Since s entences in FOL can contain any of the TFL connectives, proofs in FOL will take over all the natural deduction rules from TFL that we studied in chapter \ref{ch:NDTFL}, as well as the all derived  TFL rules introduced in \S \ref{s:TFLDerivedRules}.  We will also continue to use the same proof theoretic notions, in particular, the symbol `$\proves$'.  So:
 $$\meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi}$$
 will continue to mean that $\meta{\psi}$ is \emph{provable} from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, i.e. that there exists a natural deduction proof which ends with $\meta{\psi}$ and whose premises, or more generally, whose undischarged assumptions, include at most $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.
 
@@ -10,13 +9,13 @@ will continue to mean that $\meta{\psi}$ is \emph{provable} from $\meta{\varphi}
 What we will need to add to our natural deduction system are rules to govern the new logical symbols that are specific to FOL: the quantifiers `$\forall$' and `$\exists$', and the identity predicate `$=$'.  As in the case of TFL, there will be an \emph{introduction} and an \emph{elimination} rule associated with each of these logical symbols.  Again, we will of course want to make sure that the rules we add end up producing a proof system that is both sound and complete:
 \factoidbox{\define{Soundness:} $\text{If\ } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi} \text{ then } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \meta{\psi} $}
 \factoidbox{\define{Completeness:} $\text{If\ } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \meta{\psi} \text{ then } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi} $}
-Soundness ensures that if $\meta{\psi}$ is provable from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, then $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ logically entail the conclusion \meta{\psi}.  And completeness ensures us that if $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ logically entail the conclusion \meta{\psi}, then \meta{\psi} is also provable from premises $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.  We will formally define the concept of logical entailment in Chapter \ref{ch:FOLSemantics}.
+Soundness ensures that if $\meta{\psi}$ is provable from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, then $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ logically entail the conclusion \meta{\psi}.  And completeness ensures us that if $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ logically entail the conclusion \meta{\psi}, then \meta{\psi} is also provable from premises $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.  We will formally define the concept of logical entailment  for FOL in Chapter \ref{ch:FOLSemantics}.
 
-As in the case of TFL, we won't demonstrate that our proof system is in fact sound and complete --- this would require a \emph{meta-logical} proof, a proof \emph{about} our proof system.  You'll just have to take my word for it that soundness and completeness hold for our system. The important point for our purposes is that, due to the soundness of our proof system, we can use proofs to show that arguments are valid: if we can deduce a conclusion \meta{\psi} from some premises $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, then we can be sure that the premises entail the conclusion, and that the argument $\meta{\varphi}_1, \ldots, \meta{\varphi}_n \therefore \meta{\psi}$ is therefore valid.
+As in the case of TFL, we won't demonstrate that our proof system is in fact sound and complete --- this would require a \emph{meta-logical} proof, a proof \emph{about} our proof system.  You'll just have to take my word for it that soundness and completeness hold for our system. The important point for our purposes is that, due to the soundness of our proof system, we can use proofs to show that arguments are valid: if we can give a proof of a conclusion \meta{\psi} from some premises $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, then we can be sure that the premises entail that conclusion, and that the argument $\meta{\varphi}_1, \ldots, \meta{\varphi}_n \therefore \meta{\psi}$ is therefore valid.
 
 Similarly, we will continue to write:
 $${} \proves \meta{\varphi}$$
-to mean that \meta{\varphi} is a \define{theorem} of our proof system, i.e. a sentence that is provable using no premises, or undischarged assumptions.  Given soundess, theorems of our proof system are guaranteed to be \emph{logical truths}, so we can also use natural deduction proofs to show that things are logical truths.
+to mean that \meta{\varphi} is a \define{theorem} of our proof system, i.e. a sentence that is provable using no premises, or undischarged assumptions.  Given soundess, theorems of our proof system are guaranteed to be \emph{logical truths}, so we can also use natural deduction proofs to show that something is a logical truth.
 
 
 
@@ -67,7 +66,7 @@ The first isn't because we forgot to replace the second occurrence of `$x$' with
 It's also important to emphasize that (as with every elimination rule) you can only apply the $\forall$E rule when the universal quantifier is the \emph{main logical operator}. So the following is \emph{not} a legitimate use of $\forall E$:
 \begin{proof}
 	\hypo{a}{\forall x Bx \eif Bc}
-	\have{c}{Bb \eif Bc}\by{illegitimate use of $\forall$E}{a}
+	\have{c}{Bb \eif Bc}\by{No! Illegitimate use of $\forall$E}{a}
 \end{proof}
 This is illegitimate because `$\forall x$' is not the main logical operator on line 1. If line 1 had instead been `$\forall x(Bx \eif Bc)$', then the quantifier would have been the main operator, and it would have been legitimate to infer `$Bb \eif Bc$'.
 
@@ -196,11 +195,16 @@ Here's a simple proof that combines our two new quantifier rules to show that $\
 
 
 \begin{earg}
+\item $\forall x\forall y Rxy \vdash Raa \land Rab$
+\item $\forall x(Fx \rightarrow \exists yGy) \vdash \forall x Fx \rightarrow \exists y Gy$
+\item $\forall xRax, \forall x \forall y(Rxy \rightarrow Ryx) \vdash Rba$
+\item $\forall x(Fx \land \lnot Gx), (Gc \lor Hd) \vdash (Hd \land Fd)$
 \item $\forall x(Fx \eand Gx), \forall yHy \proves \exists z(Hz \eand Gz)$
 \item $\forall xFx, \forall y (Fy \eif Gy) \proves \exists x(Gx \eand \exists yFy)$
 \item $\forall x(Fx \eif \forall yGy), Fc \proves \exists x(Fx \eand Gx)$
 \item $\forall x \forall y Rxy \proves \exists x Rxx$
 \item $\forall x(Fx \eif Gx) \proves \forall xFx \eif \exists yGy$
+\item $\forall xRxx \vdash \exists x \exists y Rxy$
 \item $\exists xFx \eif \forall y Gy \proves \forall z Fz \eif \exists zGz$
 \item $\forall x(Fx \eif Gx), \enot Gc \proves \exists x\exists y(\enot Fx \eor Gy)$
 \item $\proves \exists x(Fx \eor \enot Fx)$
@@ -343,11 +347,12 @@ The constraints on the legitimate application of $\forall$I are met, since the n
 
 \item $\forall x\forall y(Rxy \eif \enot Ryx) \proves \forall x \enot Rxx$
 
-\item $\forall x \forall y(Rxy \eif Ryx), \forall x \forall y \forall z((Rxy \eand Ryz) \eif Rxz) \proves \forall x \forall y\forall z((Rxy \eand Rxz) \eif Ryz)$
 
 \item $\enot \exists x(Fx \eand Gx) \vdash \forall x(Fx \eif \enot Gx)$
 
 \item $\forall x(Fx\rightarrow \forall yGy) \vdash \forall x\forall y(Fx\rightarrow Gy)$
+
+\item $\forall x \forall y(Rxy \eif Ryx), \forall x \forall y \forall z((Rxy \eand Ryz) \eif Rxz) \proves \forall x \forall y\forall z((Rxy \eand Rxz) \eif Ryz)$
 
 \item  $\enot \forall xFx \vdash \exists x\enot Fx$
 
@@ -406,7 +411,7 @@ This is clearly a terrible argument: it presumes that the ``someone'' who is not
 		\hypo{na}{\enot Lb} \by{Assumption (flag $b$)}{}
 		\have{con}{Lb \eand \enot Lb}\ae{f, na}
 	\close
-	\have{econ1}{Lb \eand \enot Lb}\by{Iillegitimate attempt to use $\exists$E }{nf, na-con}
+	\have{econ1}{Lb \eand \enot Lb}\by{No!  Illegitimate attempt to use $\exists$E }{nf, na-con}
 \end{proof}
 It would a bad thing if we could prove the conclusion like this, since it doesn't follow from the premises!  And the Flag-ing constraint is what prevents us from doing so:  the use of $\exists$E on the last line is not legitimate, because the Flag-ed name on line 3, namely `$b$', appears outside the subproof, on lines 1 and 5.
 
@@ -420,7 +425,7 @@ We could avoid part of the problem by existentially generalizing line 4 in the s
 		\have{con}{Lb \eand \enot Lb}\ae{f, na}
 		\have{con1}{\exists x (Lx \eand \enot Lx)}\Ei{con}
 	\close
-	\have{econ1}{\exists x (Lx \eand \enot Lx)}\by{Illegitimate attempt to use $\exists$E }{nf, na-con1}
+	\have{econ1}{\exists x (Lx \eand \enot Lx)}\by{No! Illegitimate attempt to use $\exists$E }{nf, na-con1}
 \end{proof}
 Now, the name `$b$' no longer occurs below the subproof.  But this is no better.  If it were legitimate, this proof would vindicate an argument of the following sort:
 \begin{quote}
@@ -530,27 +535,30 @@ The following three proofs are missing their citations (rule and line numbers). 
 \label{pr.someFOLproofs}
 Provide a proof of each claim.
 \begin{earg}
+
 \item $\forall x(Ax\eif Bx), \exists x Ax \proves \exists x Bx$
 \item $\exists x(Fx \eand \exists y\enot Gy) \proves \exists x(\enot Gx \eand \exists yFy)$
 \item  $\exists x(Fx\eif Ga) \proves \forall xFx\eif Ga$
 \item  $\exists x \enot Fx \proves \enot \forall xFx$
-\item  $\forall x \forall y(Gy \eif Fx) \proves \forall x(\exists yGy \eif Fx)$
+\item  $\forall x \forall y(Rxy \eif Fx) \proves \forall x(\exists yRxy \eif Fx)$ 
 \item $\exists x(Fx \eif \forall yRxy) \proves \exists x \forall y(Fx \eif Rxy)$
 \item $\forall x(Fx\eif \forall y\enot Fy) \proves \enot \exists xFx$
 \item $\exists x\exists yRxy \proves \exists y \exists xRxy$
 \item  $\exists y(\forall x(Gx\eif Gy)\eand \forall z(Gy\eif Gz)), \exists xGx \proves \forall xGx$
 \item $\forall x\forall yLxy \proves \forall x(\exists yLxy \eand \exists yLyx)$
+\item $\forall x\exists yLxy, \forall x \forall y(Lxy \eif Lyx) \proves \forall x\exists yLyx$
 \item $\exists x\forall y (Fx \eiff Fy) \proves \enot \forall xFx \eif \forall x\enot Fx$
 \item $\forall x \exists y(Fx \eif Gy), \forall x\exists y(\enot Fx \eif Gy) \proves \exists zGz$
 \item $ \exists y\forall x(Fx \eand Gy) \proves \forall x \exists y(Fx \eand Gy)$
 \item $\forall x \exists y(Fx \eand Gy) \proves \exists y\forall x(Fx \eand Gy)$
+\item $\forall x \exists y(Fx \eand Gy) \proves \exists y\forall x(Fx \eand Gy)$
+\item $\forall x(Mx \eiff Nx), \exists y(My\eand\exists x Rxy)\proves \exists x Nx$
 %\item $\proves \forall x Fx \eor \enot \forall x Fx$
 \item $\proves\forall z (Pz \eor \enot Pz)$
-\item $\forall x(Mx \eiff Nx), \exists y(My\eand\exists x Rxy)\proves \exists x Nx$
 %\item $\forall x \forall y Gxy\proves\exists x Gxx$
 \item $\proves\forall x \forall yRxy\eif \forall xRxx$
 \item $\proves\forall y \exists x (Qy \eif Qx)$
-\item $Na \eif \forall x(Mx \eiff Ma), Ma, \enot Mb\proves \enot Na$
+%\item $Na \eif \forall x(Mx \eiff Ma), Ma, \enot Mb\proves \enot Na$
 \item $\forall x \forall y (Gxy \eif Gyx) \proves \forall x\forall y (Gxy \eiff Gyx)$
 \item $\forall x(\enot Mx \eor Ljx), \forall x(Bx\eif Ljx), \forall x(Mx\eor Bx)\proves \forall xLjx$
 \end{earg}
@@ -558,7 +566,7 @@ Provide a proof of each claim.
 
 \problempart
 \label{pr.BarbaraEtc.proof1}
-In \S\ref{pr.BarbaraEtc} problem part A, we considered fifteen syllogistic figures of Aristotelian logic. Provide proofs for each of the argument forms. NB: You will find it \emph{much} easier if you symbolize (for example) `No F is G' as `$\forall x (Fx \eif \enot Gx)$' rather than `$\enot \exists x(Fx \eand Gx)$'.
+In \S\ref{pr.BarbaraEtc} problem part A, we considered fifteen syllogistic figures of Aristotelian logic. Provide proofs for each of the argument forms. Note: you will find it \emph{much} easier if you symbolize (for example) `No F is G' as `$\forall x (Fx \eif \enot Gx)$' rather than `$\enot \exists x(Fx \eand Gx)$'.
 
 \
 
@@ -591,6 +599,8 @@ The following pairs of sentences are all equivalent, showing that we can move qu
 \end{earg}
 When all the quantifiers occur at the beginning of a sentence, that sentence is said to be in \emph{prenex normal form}. These equivalences are sometimes called \emph{prenexing rules}, since they give us a means for putting any sentence into prenex normal form. For example, `$\exists x Fx \eand \forall yGy$' can be put into prenex normal form as `$\exists x\forall y(Fx \eand Gy)$, or also as `$\forall y \exists x(Fx \eand Gy)$'.
 
+\
+
 \problempart Give proofs for the following quantifier equivalence laws involving negation:
 
 \begin{earg}
@@ -599,12 +609,12 @@ When all the quantifiers occur at the beginning of a sentence, that sentence is 
 \end{earg}
 
 
-\problempart
-\label{pr.likes}
-Write a symbolization key for the following argument, symbolize it, and prove it:
-\begin{quote}
-There is someone who likes everyone who likes everyone that she likes. Therefore, there is someone who likes herself.
-\end{quote}
+%\problempart
+%\label{pr.likes}
+%Write a symbolization key for the following argument, symbolize it, and prove it:
+%\begin{quote}
+%There is someone who likes everyone who likes everyone that she likes. Therefore, there is someone who likes herself.
+%\end{quote}
 
 
 \section{Rules for identity}\label{s:identityrules}
@@ -789,11 +799,10 @@ Show that they are all provably equivalent. (\emph{Hint}: to show that three cla
 
 \
 \problempart
-Symbolize the following argument
+Symbolize the following argument, and then give a proof of it:
 	\begin{quote}
 		There is exactly one F. There is exactly one G. Nothing is both F and G. So: there are exactly two things.% that are either F or G.
 	\end{quote}
-And offer a proof of it.
 %\begin{ebullet}
 %\item  $\exists x \bigl[Fx \eand \forall y (Fy \eif x = y)\bigr], \exists x \bigl[Gx \eand \forall y ( Gy \eif x = y)\bigr], \forall x (\enot Fx \eor \enot Gx) \proves \exists x \exists y \bigl[\enot x = y \eand \forall z ((Fz \eor Gz) \eif (x = y \eor x = z))\bigr]$
 %\end{ebullet}
@@ -1000,4 +1009,3 @@ And offer a proof of it.
 %\end{center}
 %\end{sidewaystable}
 %
-

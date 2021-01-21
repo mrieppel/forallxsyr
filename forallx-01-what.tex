@@ -1,4 +1,3 @@
-%!TEX root = forallxsyr.tex
 \chapter{What is Logic?}
 
 \section{Arguments}\label{s:Arguments}
@@ -24,7 +23,7 @@ Notice that our logician's definition of an argument is very permissive. Conside
 		\item[] There is a bassoon-playing dragon in the \emph{Cathedra Romana}.
 		\item[] $\therefore$ Salvador Dali was a poker player.
 	\end{earg}
-We have a premise and a conclusion, and so we have an argument. Admittedly, it is a \emph{terrible} argument. But it is still an argument.  
+We have a premise and a conclusion, and so we have an argument. Admittedly, it's a \emph{terrible} argument, but it is still an argument.  
 
 Here's another argument, one that's not as obviously terrible:
 \begin{earg}
@@ -46,13 +45,14 @@ One thing that's worse about the second argument is that its conclusion is false
 \item[] Bugs Bunny is a mammal.
 \item[] $\therefore$ Bugs Bunny is a rabbit.
 \end{earg}
-Argument \eref{exarg3} is valid, but has a false conclusion.  And argument \eref{exarg4} has a true conclusion, as well as true premises, but it still isn't valid, because its conclusion doesn't follow from its premises.  
+Argument \eref{exarg3} is valid, but has a false conclusion.  And argument \eref{exarg4} has a true conclusion, as well as true premises, but it still isn't valid, because its conclusion doesn't follow from its premises: that all rabbits are mammals and that Bugs Bunny is a mammal doesn't yet guarantee that Bugs Bunny is a rabbit.
+
 
 Validity isn't determined by whether the premises or the conclusion are as a matter of fact true.  It rather has to do with the \emph{relationship} between the premises and the conclusion.  When we ask about validity we want to know whether, if all the premises \emph{were true}, the conclusion would also \emph{have to be true}.  Put another way:
 
 
 \factoidbox{
-An argument is \define{valid} if and only if it is \emph{impossible} for all of its premises to be true but its conclusion to be false.}
+An argument is \define{valid} if and only if it is \emph{impossible} for all of its premises to be true but its conclusion false.}
 
  
  \noindent Let's unpack some of the concepts involved in the two definitions we've encountered a little bit more.
@@ -60,7 +60,7 @@ An argument is \define{valid} if and only if it is \emph{impossible} for all of 
 
 \practiceproblems
 
-As you've seen, we always put the conclusion at the end of an argument and indicate it using the three ``therefore dots'' $\therefore$.  Informally presented arguments don't always have the conclusion at the end, however --- it can appear at the beginning, or even in the middle.  In each of the following arguments, highlight the phrase which expresses the conclusion:
+As you've seen, we always put the conclusion at the end of an argument and indicate it using the three ``therefore dots'' $\therefore$ \  Informally presented arguments don't always have the conclusion at the end, however --- it can appear at the beginning, or even in the middle.  In each of the following arguments, highlight the phrase which expresses the conclusion:
 
 \begin{earg}
 	\item It is sunny. So I should take my sunglasses.
@@ -73,7 +73,7 @@ As you've seen, we always put the conclusion at the end of an argument and indic
  
  \section{Background Concepts}\label{s:Background}
  
- First, we said that an argument is a collection of \define{statements}.  Statements are sentences that are either true or false.  Truth and falsity are called \define{truth-values}.  The truth-value of a statement is determined by what the world is like.  A statement like `Syracuse is in New York State' describes the world as being a certain way, and is true or false depending on whether the world is that way (in this case, it's true).   As the ancient philosopher (and logician!) Aristotle put it in his book \emph{Metaphysics}:
+ First, we said that an argument is a collection of \define{statements}.  Statements are sentences that are either true or false.  Truth and falsity are called \define{truth-values}.  The truth-value of a statement is determined by what the world is like.  A statement like `Syracuse is in New York State' describes the world as being a certain way.  This statement happens to be  true because the world in fact is as the statement describes it.  `Syracuse is in Alaska', by contrast, describes the world incorrectly, and is therefore false.   As the ancient philosopher (and logician!) Aristotle put it in his book \emph{Metaphysics}:
 
 \begin{quote}
 ``To say of what is that it is not, or of what is not that it is, is false, while to say of what is that it is, and of what is not that it is not, is true.'' (1011b25)
@@ -87,19 +87,19 @@ It's important to notice that not all English sentences count as statements in t
 \item Are there any liquids in your bag?
 \end{ebullet}
 
-A sentence like `please have your ID ready' isn't meant to describe the world, but to ask someone to do something.  Similarly, `Welcome to Syracuse Airport' is just a greeting, and isn't meant to offer an accurate or inaccurate description of the world.  And although the answer to the last question on this list has a truth-value, the question itself doesn't.  In general, things like greetings, requests, orders, and questions don't have truth-values, and therefore don't count as statements and cannot be premises or conclusions of arguments.  Though it's important to keep this point in mind, moving forward we'll generally use the words ``statement'' and ``sentence'' interchangeably.
+A sentence like `please have your ID ready' isn't meant to describe the world, but to ask you to do something.  Similarly, `Welcome to Syracuse Airport' is just a greeting, and isn't meant to offer an accurate or inaccurate description of the world.  And although the answer to the last question on this list has a truth-value, the question itself doesn't.  In general, things like greetings, requests, orders, and questions don't have truth-values, therefore don't count as statements, and for that reason can't be premises or conclusions of arguments.  Though it's important to keep this point in mind, moving forward we'll generally use the words ``statement'' and ``sentence'' interchangeably.
 
 
 Next, notice that because a statement's truth value depends on what the world is like, its truth-value could have been different if the world had been different.  For example, the sentence `Rieppel is a philosopher' is in fact true, but if I had taken up a different career it would have been false.  Conversely, `Rieppel is a professional juggler' is false, but if I had gone to juggling school instead of continuing with philosophy, it would have been true.   
 
-Philosophers often invoke the notion of a \define{possible world} in this connection.  The idea is that besides the actual world, there are various other possible worlds, other ways things could have been --- alternative histories, or alternative universes, if you like.  `Rieppel is a professional juggler' is false at the actual world, but it is true at other possible worlds, ones where I went to juggling school or joined the circus.  Similarly, `Rieppel is a philosopher' is as a matter of fact true, but it is false at other possible worlds where I didn't pursue philosophy.  Sentences like this, which are true at some possible worlds and false at others, are said to be \define{contingent}.
+Philosophers often invoke the notion of a \define{possible world} in this connection.  The idea is that besides the actual world, there are various other possible worlds, other ways things could have been --- alternative histories, or alternative universes, if you like.  `Rieppel is a professional juggler' is false in the actual world, but it is true in other possible worlds, ones where I went to juggling school or joined the circus.  Similarly, `Rieppel is a philosopher' is as a matter of fact true, but it is false in other possible worlds where I didn't pursue philosophy.  Sentences like this, which are true in some possible worlds and false in others, are said to be \define{contingent}.
 
-Other sentences are not contingent.  For example, `Syracuse either is or is not in New York State' isn't just true at the actual world, it's true at \emph{every} possible world, that is, it's a \define{necessary truth}.  Mathematical truths are another example: `$2+2 = 4$' is again true in every possible world, and therefore a necessary truth. At the other extreme, sentences like `Syracuse both is and is not in New York State'  and `$2+2 = 5$' are false in every possible world, or \define{necessarily false}.  
+Other sentences are not contingent.  For example, `Syracuse either is or is not in New York State' isn't just true in the actual world, it's true in \emph{every} possible world, that is, it's a \define{necessary truth}.  Mathematical truths are another example: `$2+2 = 4$' is again true in every possible world, and therefore a necessary truth. At the other extreme, sentences like `Syracuse both is and is not in New York State'  and `$2+2 = 5$' are false in every possible world, or \define{necessarily false}.  
 
-Returning to arguments, you can think of the notion of validity in terms of possible worlds too.  We said that an argument is valid just in case it's \emph{impossible} for all of its premises to be true but it's conclusion false.  Phrased in terms of possible worlds, this becomes:
+Returning to arguments, you can think of the notion of validity in terms of possible worlds too.  We said that an argument is valid just in case it's \emph{impossible} for all of its premises to be true but its conclusion false.  Phrased in terms of possible worlds, this becomes:
 \factoidbox{
 An argument is \define{valid} if and only if \emph{there is no possible world} where all of its premises are true but its conclusion is false.}
-Equivalently put: an argument is valid if its conclusion is true at \emph{every possible world} at which all of its premises are true. 
+Equivalently put: an argument is valid if its conclusion is true in \emph{every possible world} in which all of its premises are true. 
 
 This gives us an informal way to test whether an argument is valid: we imagine a world where all the premises are true, and then ask ourselves whether the conclusion would have to be true as well at that world.  If so, the argument is valid.  On the other hand, if you can imagine a world where all the premises are true but the conclusion is still false, the argument isn't valid.  So again, whether an argument is valid or not isn't determined by whether its premises and conclusion are \emph{actually} true or false.  It's about the \emph{connection} between them --- whether there's \emph{any way} for the premises to be true but the conclusion false.
 
@@ -144,10 +144,10 @@ For each of the following: is it necessarily true, necessarily false, or conting
 Consider the following sentences:
 
 	\begin{ebullet}
-		\item[G1.] There are at least four giraffes at the wild animal park.
-		\item[G2.] There are exactly seven gorillas at the wild animal park.
-		\item[G3.] There are not more than two martians at the wild animal park.
-		\item[G4.] Every giraffe at the wild animal park is a martian.
+		\item[G1.] There are at least four giraffes at the zoo.
+		\item[G2.] There are exactly seven gorillas at the zoo.
+		\item[G3.] There are not more than two martians at the zoo.
+		\item[G4.] Every giraffe at the zoo is a martian.
 	\end{ebullet}
 	
 Now, for each of the following, determine if the sentences in question are jointly consistent or jointly inconsistent:
@@ -182,23 +182,24 @@ First off, if an argument has an obviously false premise, then even if it is val
 An argument is \define{sound} if and only it (i) is valid, and (ii) has premises that are in fact true.
 }
 
-Arguments are generally intended to be not just valid, but sound.  So if you're faced with an argument, in a philosophy class or elsewhere, whose conclusion you want to resist, you have two options: you can either try to show that the argument is not valid, or you can try to show that one of its premises is false (and the argument therefore isn't sound).  What you can't do is accept it as valid, and concede that its premises are true, but still reject the conclusion as false: if it's valid, and has true premises, it's conclusion has to be true too.
+Arguments are generally intended to be not just valid, but sound.  So if you're faced with an argument, in a philosophy class or elsewhere, whose conclusion you want to resist, you have two options: you can either try to show that the argument is not valid, or you can try to show that one of its premises is false (and the argument therefore isn't sound).  What you \emph{can't} do is accept it as valid, and concede that its premises are true, but still reject the conclusion as false: if it's valid, and has true premises, its conclusion has to be true too.
 
-Although its important in practice to determine whether or not the premises of an argument are in fact true, it is (for the most part) not the job of logic to do this.  The job of logic is just to determine whether or not an argument is valid.  The task of determining whether the argument's premises are in fact true (and the argument sound) is usually best left to experts in the relevant field: biologists,  historians, philosophers, physicists, economists, or whomever.
+Although it's important in practice to determine whether or not the premises of an argument are in fact true, it is (for the most part) not the job of logic to do this.  The job of logic is just to determine whether or not an argument is valid.  The task of determining whether the argument's premises are in fact true (and the argument sound) is usually best left to experts in the relevant field: biologists,  historians, philosophers, physicists, economists, or whomever.
 
 A second way in which validity is not all there is to good argumentation comes out if you consider the following:
 	\begin{earg}
-		\item[] In January 2015, it snowed in Syracuse.
+		%\item[] In January 2015, it snowed in Syracuse.
 		\item[] In January 2016, it snowed in Syracuse.
 		\item[] In January 2017, it snowed in Syracuse.
 		\item[] In January 2018, it snowed in Syracuse.
 		\item[] In January 2019, it snowed in Syracuse.
+		\item[] In January 2020, it snowed in Syracuse.
 	\item[So:] It snows every January in Syracuse.
 \end{earg}
 
-This argument generalizes from observations about several past cases to a conclusion about all cases. The argument isn't valid, though, because even if it snowed in January in many recent years, that doesn't mean it's \emph{impossible} for it not to snow in some future year.  The argument could be made stronger by adding additional premises, about other snowy Syracuse Januaries in the past. But however many premises of this sort we add, the argument will remain invalid.
+This argument generalizes from observations about several past cases to a conclusion about all cases. The argument isn't valid in our sense, because even if it snowed in January in many recent years, that doesn't mean it's \emph{impossible} for it not to snow in some future year.  The argument could be made stronger by adding additional premises, about other snowy Syracuse Januaries in the past. But however many premises of this sort we add, the argument will remain invalid.
 
-That doesn't mean that it's a bad argument.  Arguments like this one are called \define{inductive} arguments, and they are often used legitimately and with great success in science and everyday life.  In this book, we shall set aside (entirely) the difficult question of what makes for a good inductive argument.  What logic studies is the different notion of \define{deductive} validity --- where truth of the premises \emph{guarantees} the truth of the conclusion --- and this will be the focus of our concern.
+That doesn't mean that it's a bad argument.  Arguments like this one are called \define{inductive} arguments, and they are often used legitimately and with great success in science and everyday life.  In this book, we will set aside  the difficult question of what makes for a good inductive argument.  What logic studies is the different notion of \define{deductive} validity --- where the truth of the premises has to \emph{guarantee} the truth of the conclusion --- and this will be the focus of our concern.
 
 \practiceproblems
 
@@ -301,7 +302,7 @@ But there's an important difference between valid arguments like these and one l
 		\item[] $\therefore$ $B$
 	\end{earg}
 
-\noindent This is an excellent form for an argument to have, because any argument of this form will be valid, no matter what sentences we put in place of $A$ and $B$! Or consider our Bugs Bunny argument, which has the structure represented to the right:
+\noindent This is an excellent structure for an argument to have, because any argument of this form will be valid, no matter what sentences we put in place of $A$ and $B$! Or consider our Bugs Bunny argument, which has the structure represented to the right:
 
 
 
@@ -348,7 +349,7 @@ The general point is that arguments like \eref{exarg8} and  \eref{exarg1} are va
 \item[] Reihan is a runner.
 \item[] $\therefore$ Reihan is not married.
 \end{earg}
-This isn't valid because it's trivial to imagine a world where Reihan is a runner but also married.  What made argument \eref{exarg6} valid wasn't its logical form, but the \emph{specific meanings} of the words `bachelor' and `married' that occur in its premise and its conclusion. Other arguments of the same form that involve words with different meanings may no longer be valid. Logic is all about identifying \emph{patterns} that make arguments valid.  So it only cares about \define{formally valid} arguments like \eref{exarg1} and \eref{exarg8}, not arguments like \eref{exarg5} and \eref{exarg6} that are valid for reasons other than their logical form. 
+This isn't valid because it's trivial to imagine a world where Reihan is a runner but also married.  What made argument \eref{exarg6} valid wasn't its logical form, but the \emph{specific meanings} of the words `bachelor' and `married' that occur in its premise and its conclusion. Other arguments that have the same form but involve words with different meanings (e.g. `runner') may no longer be valid. Logic is all about identifying \emph{patterns} that make arguments valid.  So it only cares about \define{formally valid} arguments like \eref{exarg1} and \eref{exarg8}, not arguments like \eref{exarg5} and \eref{exarg6} that are valid for reasons other than their logical form. 
 
 
 
@@ -398,7 +399,7 @@ In Part 2 of the book, we will turn to \emph{First-Order Logic} (or FOL).  It wi
 
 \end{multicols}
 
-\noindent This system extends Truth-Functional Logic by treating words like `all' as logical constants (represented by `$\forall$').  It also lets us represent some of the \emph{internal} structure of a simple statement like `Bugs Bunny is a rabbit', showing that it is formed by combining the name `Bugs Bunny' (represented as `$a$') with the predicate `is a rabbit' (represented by `$F$').\footnote{At this point you might be wondering how logicians decide which English words are to be treated as logical constants, and represented by special logical symbols that indicate ``logical form.''  This is a difficult philosophical question about logic that we won't have a chance to delve into here.  If you're interested, though, check out the \emph{Stanford Encyclopedia of Philosophy's} entries on \href{http://plato.stanford.edu/entries/logical-constants/}{Logical Constants} and  \href{http://plato.stanford.edu/entries/logical-consequence/}{Logical Consequence}.} With this very short preview out of the way, let's get started with logic! 
+\noindent This system extends Truth-Functional Logic by treating words like `all' as logical constants (represented by `$\forall$').\footnote{At this point you might be wondering how logicians decide which English words to treat as logical constants, and represent by special logical symbols that indicate ``logical form.''  This is a difficult philosophical question about logic that we won't have a chance to delve into here.  If you're interested, check out the \emph{Stanford Encyclopedia of Philosophy's} entries on \href{http://plato.stanford.edu/entries/logical-constants/}{Logical Constants} and  \href{http://plato.stanford.edu/entries/logical-consequence/}{Logical Consequence}.}  It also lets us represent some of the \emph{internal} structure of a simple statement like `Bugs Bunny is a rabbit', showing that it is formed by combining the name `Bugs Bunny' (represented as `$a$') with the predicate `is a rabbit' (represented by `$F$'). With this very short preview out of the way, let's get started with logic! 
 
 
 
@@ -421,6 +422,3 @@ In Part 2 of the book, we will turn to \emph{First-Order Logic} (or FOL).  It wi
 %\item false conclusion and only true premises\footnote{Notice: there are invalid arguments like this, but there can't be valid arguments of this sort!}
 %\end{itemize}
 %\end{enumerate}
- 
-
-

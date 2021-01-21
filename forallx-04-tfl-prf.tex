@@ -1,12 +1,11 @@
-%!TEX root = forallxsyr.tex
 \chapter{Natural Deduction for TFL}\label{ch:NDTFL}
 
 \section{The Idea Behind Natural Deduction}\label{s:NDVeryIdea}
 
 
-We've seen how to use truth tables to determine whether a TFL argument is valid.  Truth tables are nice because they give us a completely mechanical test for validity: we just crunch through the table and see whether there is any valuation that makes all the premises true and the conclusion false.   But truth tables do not give us much \emph{insight} into why arguments are valid.
+We've seen how to use truth tables to determine whether a TFL argument is valid.  Truth tables are nice because they give us a completely mechanical test for validity: we just crunch through the table and see whether there is any valuation that makes all the premises true and the conclusion false.   But truth tables don't give us much \emph{insight} into why arguments are valid.
 
-A rather different approach to logic is to try to \emph{deduce} the conclusion from the premises via a series of simple inferences.  Think of this as the Sherlock Holmes approach to logic.  Given some evidence (premises), Holmes methodically draws one inference after another, until he arrives at a conclusion about who committed the crime.  If all the inferences in the deduction are correct, the conclusion must follow from the premises Holmes started with.
+A rather different approach to logic is to try to \emph{deduce} the conclusion from the premises via a series of simple inferences.  Think of this as the Sherlock Holmes approach to logic: given some evidence (premises), Holmes methodically draws one inference after another, until he arrives at a conclusion about who committed the crime.  If all the inferences in the deduction are correct, the conclusion must follow from the premises Holmes started with.
 
 %Consider these two TFL arguments:
 %\begin{align*}
@@ -17,17 +16,17 @@ A rather different approach to logic is to try to \emph{deduce} the conclusion f
 
 %This suggests a rather different approach to logic.  Rather than constructing a truth table, we can assess an argument's validity by seeing whether it is possible to \emph{deduce} its conclusion from its premises via a series of simple, intuitively correct  steps of inference.  Think of it as the Sherlock Holmes approach to logic, in contrast to the more computational approach embodied by truth tables.
 
-What we will do in this chapter is to introduce a \define{natural deduction} system that formalizes this process of deducing things from premises. We'll introduce a few very basic rules of inference, which can then be combined into more complicated chains of reasoning. Indeed, with just a small pack of rules, we will be able to capture \emph{all} valid arguments.   Whereas truth tables are completely mechanical, natural deduction requires insight and ingenuity.  This makes it harder, but also more interesting.
+What we will do in this chapter is to introduce a \define{natural deduction} system that formalizes this process of deducing things from premises. We'll introduce a few very basic rules of inference, which can then be combined into more complicated chains of reasoning. Indeed, with just a small set of rules, we will be able to capture \emph{all} valid arguments.   Whereas truth tables are completely mechanical, natural deduction requires insight and ingenuity.  This makes it harder, but also more interesting and rewarding.
 
-The move to natural deduction can be motivated by more than the search for insight, however. It might also be motivated by \emph{necessity}. In TFL, truth tables give us a  completely mechanical test for validity.  Of course they can get unmanageably big as the number of atomic sentences increase, but you could in principle program a computer to crunch through them for you.   When we get to FOL, in the second part of this book, things will look very different. There is nothing like the truth table test for validity available in FOL.  The fact that there is no completely mechanical test for validity in FOL is a deep mathematical result, independently proved by Alan Turing and Alonzo Church in 1936.  So in FOL, using methods that require ingenuity and insight become indispensable, and we will have to rely on natural deduction to prove arguments valid.
+The move to natural deduction can be motivated by more than the search for insight, however. It might also be motivated by necessity. In TFL, truth tables give us a  completely mechanical test for validity.  Of course they can get unmanageably big as the number of atomic sentences increase, but you could in principle program a computer to crunch through them for you.   When we get to FOL, in the second part of this book, things will look very different. There is nothing like the truth table test for validity available in FOL.  The fact that there is no completely mechanical test for validity in FOL is a deep mathematical result, independently proved by Alan Turing and Alonzo Church in 1936.  So in FOL, using methods that require ingenuity and insight become indispensable, and we will have to rely on natural deduction to prove arguments valid.
 
-The modern development of natural deduction dates from simultaneous papers from 1934 by Gerhard Gentzen and Stanis\l{}aw Ja\'{s}kowski.   Later, in 1952, Frederic Fitch introduced the graphical ``Fitch notation'' for natural deduction proofs that we will use here.  With this background out of the way, let's look at our system of deduction!
+The modern development of natural deduction dates from simultaneous papers from 1934 by Gerhard Gentzen and Stanis\l{}aw Ja\'{s}kowski.   Later, in 1952, Frederic Fitch introduced the graphical ``Fitch notation'' for natural deduction proofs that we will use here.  %With this background out of the way, let's look at our system of deduction!
 
 
 
 \section{Setting up Natural Deduction Proofs}\label{s:BasicTFL}
 
-The \define{natural deduction} system we will develop will includes a pair of rules for every connective in the language. \define{Introduction rules}  allow us to prove a sentence that has that connective as the main logical operator, and \define{elimination rules} allow us to prove something \emph{from} a sentence that has that connective as the main logical operator.  %Natural deduction proofs are a bit like chess problems.  Just as different chess pieces come with different rules governing their movement, so the connectives come with different rules governing them.  What we'll have to learn is how to put these rules together so as to reach the conclusion we're aiming at from the premises we're given.
+The \define{natural deduction} system we will develop includes a pair of rules for every connective in the language. \define{Introduction rules}  allow us to prove a sentence that has that connective as the main logical operator, and \define{elimination rules} allow us to prove something \emph{from} a sentence that has that connective as the main logical operator.  %Natural deduction proofs are a bit like chess problems.  Just as different chess pieces come with different rules governing their movement, so the connectives come with different rules governing them.  What we'll have to learn is how to put these rules together so as to reach the conclusion we're aiming at from the premises we're given.
 
 Our natural deduction proofs will be \emph{formal proofs}.  They will consist of a sequence of lines, with the premises  listed at the top and the conclusion at the bottom.  All the lines in between have to be justified as following from earlier lines via some rule of inference. As an illustration, consider the following instance of DeMorgan's Law:
 	$$\enot (A \eor B) \therefore \enot A \eand \enot B$$
@@ -41,9 +40,9 @@ We are hoping to conclude that `$\enot A \eand \enot B$'.  So we are hoping ulti
 \begin{proof}
 	\have[n]{con}{\enot A \eand \enot B}
 \end{proof}
-for some number $n$. It doesn't matter what line number we end on, but we would obviously prefer a short proof to a long one.
+for some line number $n$. It doesn't matter what line number we end on, but we would obviously prefer a short proof to a long one.
 
-Or to take another example, suppose we wanted to prove the following valid:
+Or to take another example, suppose we wanted to prove that the following is valid:
 $$A\eor B, \enot (A\eand C), \enot (B \eand \enot D) \therefore \enot C\eor D$$
 The argument has three premises, so we start by writing them all down, numbered, and drawing a vertical line the the left and a horizontal line underneath:
 \begin{proof}
@@ -51,7 +50,7 @@ The argument has three premises, so we start by writing them all down, numbered,
 	\hypo{a2}{\enot (A\eand C)} \by{Premise}{}
 	\hypo{a3}{\enot (B \eand \enot D)} \by{Premise}{}
 \end{proof}
-We are hoping to conclude with a line that looks like this:
+We are aiming to conclude with a line that looks like this:
 \begin{proof}
 	\have[n]{con}{\enot C \eor D}
 \end{proof}
@@ -59,18 +58,18 @@ What we have to learn are rules of inference, and how to chain them together to 
 
 Before we look at the rules, however, we'll introduce some new terminology and notation having to do with proofs.  We will use the following expression:
 $$\meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi}$$
-to mean that $\meta{\psi}$ is \emph{provable} from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.  That is, that there exists a proof which ends with $\meta{\psi}$ and whose premises include at most $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$. We'll call a provability claim of this form a \define{sequent}.  By providing a natural deduction proof, we can demonstrate that a sequent holds, i.e. demonstrate that $\meta{\psi}$ is indeed provable from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.  When we want to say that it is \emph{not} the case that $\meta{\psi}$ is provable from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, we write:
+to mean that $\meta{\psi}$ is \emph{provable} from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.  That is, that there \emph{exists a proof} which ends with $\meta{\psi}$ and whose premises include at most $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$. We'll call a provability claim of this form a \define{sequent}.  By providing a natural deduction proof, we can demonstrate that a sequent holds, i.e. demonstrate that $\meta{\psi}$ is indeed provable from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.  When we want to say that $\meta{\psi}$ is \emph{not} provable from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, we write:
 $$\meta{\varphi}_1, \ldots, \meta{\varphi}_n \nproves \meta{\psi}$$
-Natural deduction does not give us a way to verify claims like these about the non-existence of a proof. More complicated reasoning would be required to show this kind of thing.
+Natural deduction does not give us a way to verify claims like these, about the \emph{non-existence} of a proof. More complicated reasoning would be required to show this kind of thing.
 
 
 The symbol `$\proves$' is called the \emph{single turnstile}.  This is \emph{not} the same as the double turnstile symbol `$\entails$' that we used to symbolize entailment in chapter \ref{ch:SemanticsOfTFL}. The single turnstile `$\proves$' says something about the \emph{existence} of a certain kind of \emph{proof} (one that begins with certain premises and ends in a certain conclusion).  The double turnstile `$\entails$' says something about the \emph{non-existence} of a certain kind of \emph{valuation} (one that makes the premises true and the conclusion false).  Valuations are completely different kinds of things from proofs, so it's important not to confuse `$\proves$' (the \emph{proof theoretic} notion of \emph{provability}) with `$\entails$' (the \emph{semantic} notion of \emph{entailment}).
 
-That said, the system of natural deduction that we will develop is specifically designed to deliver a proof whenever a semantic entailment holds.  That is, it is designed to ensure:
+That said, the system of natural deduction that we will develop is designed to deliver a proof whenever a semantic entailment holds.  That is, it is designed to ensure:
 \factoidbox{\define{Completeness:} $\text{If\ } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \meta{\psi} \text{ then } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi} $}
 meaning that if \meta{\psi} is semantically entailed by $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, then there must also exist a proof of \meta{\psi} from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.    Our natural deduction system is also designed to guarantee the other direction:
 \factoidbox{\define{Soundness:} $\text{If\ } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi} \text{ then } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \meta{\psi} $}
-meaning that whenever \meta{\psi} is provable from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, then \meta{\psi} is also semantically entailed by $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.\footnote{Note that this is a different notion of soundness from the one we discussed in \S \ref{s:GoodBadArg}}  All good proof systems should be both sound and complete, to ensure that the proof-theoretic notion of provability matches up perfectly with the semantic notion of entailment. In a more advanced logic class, you learn how to provide ``meta-logical'' proofs showing that a proof system is both sound and complete, but for now you'll just have to take my word for it that our natural deduction system will have both of these features.
+meaning that whenever \meta{\psi} is provable from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, then \meta{\psi} is also semantically entailed by $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.\footnote{Note that this is a different notion of soundness from the one we discussed in \S \ref{s:GoodBadArg}}  All good proof systems should be both sound and complete, to ensure that the proof-theoretic notion of provability matches up perfectly with the semantic notion of entailment. In a more advanced logic class, you learn how to provide ``meta-logical'' proofs showing that a proof system is both sound and complete, but here you'll just have to take my word for it that our natural deduction system will have both of these features.
 
 We also have a proof-theoretic analogue of the semantic notion of TF equivalence:
 	\factoidbox{
@@ -347,6 +346,28 @@ Our proof above violates this stipulation, since the subproof of lines 3--4 occu
 
 And to again emphasize a point from earlier: although you can, in principle, always make any temporary assumption you like, you always have to ultimately have a way of discharging that assumption and popping out of the subproof that it opens (otherwise it wouldn't be temporary any more!).    For this reason it is very important to \emph{only}  make assumptions when you have a discharge strategyin mind.  At this point, we have only one rule that allows us to make an assumption, and that is the rule of $\eif$I: if your goal is to prove a conditional $\meta{\varphi} \eif \meta{\psi}$, you should assume its antecedent \meta{\varphi} and try to prove its consequent \meta{\psi} inside the subproof opened by that assumption.  But at this point, this is the only time at which you should be making assumptions --- when aiming to prove conditionals.
 
+\practiceproblems
+\problempart
+Prove the following sequents (these require only conjunction rules and $\eif$E):
+
+\begin{earg}
+\item $A \eand (B \eand C) \proves C \eand B$
+\item $P \eand Q, (Q \eand P) \eif R \proves R$
+\item $A \eand B, B \eif (A \eif C) \proves C \eand B$
+ \item $(A\eif ((C\eand  A)\eif D)), (A\eand  C) \vdash D$
+\end{earg}
+
+\problempart
+Prove the following sequents (these now also require $\eif$I, and note that the last one asks you to prove an equivalence, meaning you have to give proofs in both directions):
+
+\begin{earg}
+\item $(A\eif (B\eand  D)), (A\eif C) \vdash (A\eif (C\eand  D))$
+\item $A \eif B, B \eif C \proves A \eif C$
+\item $A \eif B, B \eif C \proves A \eif (B \eand C)$
+\item $(A\eand  B)\eif C, A\eif B \vdash A\eif C$
+\item $A \eif B \proves (A \eand C) \eif (B \eand C)$
+\item $A \eif (B \eif C) \pequiv (A \eand B) \eif C$
+\end{earg}
 
 
 
@@ -420,33 +441,19 @@ In fact, just as $\eand$I can be applied to a single line to go from `$A$' to `$
 
 \practiceproblems
 
-\problempart
-Prove the following sequents (these require only conjunction rules and $\eif$E):
-
-\begin{earg}
-\item $A \eand (B \eand C) \proves C \eand B$
-\item $P \eand Q, (Q \eand P) \eif R \proves R$
-\item $A \eand B, B \eif (A \eif C) \proves C \eand B$
-\end{earg}
-
-\problempart
-Prove the following sequents (these now also require $\eif$I, and note that the last one asks you to prove an equivalence, which requires two deductions):
-
-\begin{earg}
-\item $A \eif B, B \eif C \proves A \eif (B \eand C)$
-\item $A \eif B, B \eif C \proves A \eif C$
-\item $A \eif B \proves (A \eand C) \eif (B \eand C)$
-\item $A \eif (B \eif C) \pequiv (A \eand B) \eif C$
-\end{earg}
 
 
 \problempart
 Prove the following theorems:
 
 \begin{earg}
-\item $\proves (P \eand Q) \eif (Q \eand P)$
-\item $\proves (P \eif Q) \eif ((Q \eif R) \eif (P \eif R))$
-\item $\proves A \eif (B \eif B)$
+\item $\vdash (A \eand  B) \eif (B \eand  A)$
+\item $\vdash (A\eif B)\eif ((B\eif C)\eif (A\eif C))$
+\item $\vdash (A \eif (B \eif C)) \eif (B \eif (A \eif C))$
+\item $\vdash A \eif (B \eif A)$ % REMOVE
+\item $\vdash (A \eand  B) \eif (B \eand  A)$
+\item $\vdash P \eif P$
+\item $\vdash Q \eif (P \eif P)$
 \end{earg}
 
 
@@ -506,24 +513,23 @@ Here's an example involving $\eiff$I:
 \have{6}{A \eiff B} \bi{2-3, 4-5}
 \end{proof}
 
-My reasoning for setting this up is that since it's my goal to prove `$A \eiff B$', I will have to create two subproofs, one for each direction of the biconditional. My first subproof (spanning lines 2--3) begins with the assumption `$A$' and ends with `$B$', and my second subproof (spanning lines 4--5) goes the other way, beginning with the assumption `$B$' and ending with `$A$'.
+My reasoning for setting this up is that since it's my goal to prove `$A \eiff B$', I will have to create two subproofs, one for each direction of the biconditional. My first subproof (lines 2--3) begins with the assumption `$A$' and ends with `$B$', and my second subproof (lines 4--5) goes the other way, beginning with the assumption `$B$' and ending with `$A$'.
 
 \practiceproblems
 
 \problempart
-Prove the following sequents:
+Prove the following:
 
 \begin{earg}
-\item $A \eiff B \proves B \eiff A$
+\item $A \eand B \vdash A \eiff B$
+\item $A \eiff B \vdash B \eiff A$
+\item $A \eiff B \vdash (A \eand C) \eiff (B \eand C)$
+\item $(A \eand B) \eiff (A \eand C) \vdash A \eif (B \eiff C)$
 \item $A\eiff B, B\eiff C \proves A\eiff C$
 \item $K \eand L \proves K \eiff L$
-\item $(A \eand B) \eiff (A \eand C) \vdash A \eif (B \eiff C)$
 \item $A \eiff B \vdash (A \eand C) \eiff (B \eand C)$
-\item $(A \eand B) \eiff (A \eand C) \proves A \eif (B \eiff C)$
 \item $(Z\eand K)\eiff(Y\eand M), D\eand(D\eif M) \proves Y\eif Z$
 \item $\proves P \eiff P$
-
-
 \end{earg}
 
 
@@ -534,18 +540,18 @@ Prove the following sequents:
 
 
 
-Our next connect is negation. In the context of natural deduction, negation is unusual because the rules governing it involve another notion, that of  \emph{contradiction}.
+Our next connective is negation. In the context of natural deduction, negation is unusual because the rules governing it involve another notion, that of  \emph{contradiction}.
 
-Consider that an effective way to argue against someone is to show that the assumptions they are making lead to a contradiction.  At that point, you have your opponent in a bind --- they have to give up at least one of their assumptions. This argumentative strategy involves the style of \emph{reductio ad absurdum} reasoning that we encountered in \S\ref{s:PartTTableEnt}.  We are going to make use of this idea in our proof system by adding a new symbol, `$\ered$'.  This should be read as something like `contradiction!'\ or `reductio!'\ or `but that's absurd!'
+Consider this: an effective way to argue against someone is to show that the assumptions they are making collectively lead to a contradiction.  At that point, you have your opponent in a bind: since their assumptions lead to a contradiction, they can't all be true! So your opponent has to give up at least one of their assumptions. This argumentative strategy involves the style of \emph{reductio ad absurdum} reasoning that we encountered in \S\ref{s:PartTTableEnt}.  We are going to make use of this idea in our proof system by adding the absurdity symbol `$\ered$'.  You can think of it as officially declaring `contradiction!'\ or `reductio!'\ or `but that's absurd!'
 
-We can introduce this symbol into a proof whenever we explicitly contradict ourselves, i.e.\ whenever we find both a sentence and its negation appearing in the proof.  This gives us our elimination rule for negation:
+We can introduce this symbol into a proof whenever we explicitly contradict ourselves, i.e.\ whenever we have both a sentence and its negation appearing in the proof:
 \factoidbox{
 \begin{proof}
 \have[m]{a}{\meta{\varphi}}
 \have[n]{na}{\enot\meta{\varphi}}
 \have[ ]{bot}{\ered}\ri{a, na}
 \end{proof}}
-It does not matter what order the sentence and its negation appear in, and they do not need to appear on adjacent lines. The rule is called $\enot$E because the negation sign is eliminated; we could have equally called this rule $\ered$I, since it introduces $\ered$ into the proof.
+This is traditionally called the rule of \enot E (e.g. by Gentzen in his original formulation of these rules) since the negation sign in $\enot \varphi$ is eliminated in favor of \ered.  But students generally find it more intuitive to think of the rule as introducing the absurdity symbol \ered \ into the proof, so we'll call this the \ered I rule.  Notice that it doesn't matter in what order the sentence and its negation appear in the proof, and they also don't need to appear on adjacent lines---as long as a sentence and its negation appear in your proof (and neither is trapped inside a closed subproof), you can declare a contradiction with \ered.
 
 
 %I have said that `$\ered$' should be read as something like `contradiction!' But this does not tell us much about the symbol. There are, roughly, three ways to approach the symbol.
@@ -557,7 +563,7 @@ It does not matter what order the sentence and its negation appear in, and they 
 %There is something philosophically attractive about the third option. But here we will officially go for the second option. `$\ered$' is to be read as abbreviating some canonical contradiction. This means that we can manipulate it in our proofs just like any other sentence.
 
 
-Next, we turn to our rule of negation introduction. This rule will be a formal implementation of the \emph{reductio ad absurdum} proof strategy: if assuming something leads you to a contradiction, then the assumption must be wrong, and you can infer its negation. The rule looks like this:
+Next, we turn to our rule of negation introduction. This rule will be a formal implementation of the \emph{reductio ad absurdum} proof strategy described earlier: if making an assumption leads you to a contradiction, then you know that assumption must be wrong, and you can infer its negation. The rule looks like this:
 \factoidbox{\begin{proof}
 		\open
 		\hypo[i]{a}{\meta{\varphi}}
@@ -566,27 +572,27 @@ Next, we turn to our rule of negation introduction. This rule will be a formal i
 		\close
 		\have[\ ]{na}{\enot\meta{\varphi}}\ni{a-nb}
 \end{proof}}
-There can be as many lines between $i$ and $j$ as you like.  As with other rules that require subproofs, you need to cite the entire subproof when applying $\enot$I.  Notice that since the subproof has to end with the contradiction symbol $\ered$, we will usually have to use $\ered$I in the course of using $\enot$I, since $\ered$I is the rule that lets us introduce $\ered$ into a proof.
-
+There can be as many lines between $i$ and $j$ as you like.  As with other rules that require subproofs, you need to cite the entire subproof when applying $\enot$I.  Notice that since the subproof has to end with the contradiction symbol $\ered$, we will usually have to use \ered I in the course of using $\enot$I.
 
 Here's an example of how this works.  Suppose we want to show:
 $$\enot A \proves \enot(A \eand B)$$
-To prove this, we assume `$A \eand B$', derive a contradiction from this assumption together with our premise, and then conclude `$\enot (A \eand B)$' by $\enot$I, as follows:
+This should strike you as intuitively valid: if $A$ isn't true, then of course any conjunction containing $A$ can't be true either.  To prove this, what we'll do is assume that `$(A \eand B$)' \emph{is} true, derive a contradiction from this assumption together with our premise, and then conclude `$\enot (A \eand B)$' by $\enot$I.  That looks like this (the Reiteration step could be skipped too):
 \begin{proof}
 	\hypo{d}{\enot A} \by{Premise}{}
 	\open
 	\hypo{nd}{A \eand B} \by{Assumption}{}
 	\have{e}{A}\ae{nd}
-	\have{ndr}{\ered}\ri{d, e}
+	\have{f}{\enot A}\by{Reit}{d}
+	\have{ndr}{\ered}\ri{e,f}
 	\close
 	\have{con}{\enot(A \eand B)}\ni{nd-ndr}
 \end{proof}
 
-The strategy of reasoning by \emph{reductio ad absurdum} can take another form too, however. The $\enot$I rule says that in order to show that some sentence \meta{\varphi} is false (i.e. that $\enot \meta{\varphi}$ holds), we can assume \meta{\varphi} and reduce that to a contradiction.  But instead of using \emph{reductio} to show that something is \emph{false}, we can also use it to show that something is \emph{true}: to prove that \meta{\varphi} is true, we suppose that it is false (i.e. that $\enot \meta{\varphi}$ holds), and reduce \emph{that} to a contradiction.
+The strategy of reasoning by \emph{reductio ad absurdum} can take another form too, however. The $\enot$I rule says that in order to show that some sentence \meta{\varphi} is false (i.e. that $\enot \meta{\varphi}$ holds), we have to show that assuming \meta{\varphi} leads to a contradiction.  But instead of using \emph{reductio} to show that something is \emph{false}, we can also use it to show that something is \emph{true}: to prove that \meta{\varphi} is true, we suppose that it is false, i.e. assume $\enot \meta{\varphi}$, and reduce \emph{that} to a contradiction.
 
 
 
-Interestingly, the rules we have assembled so far won't yet let us replicate this second style of reductio reasoning.  So we'll add it to our system of deduction as another primitive rule, which we'll call \emph{indirect proof}:
+Interestingly, the rules we have assembled so far won't yet let us replicate this second style of reductio reasoning.  So we'll add it to our proof system as another primitive rule, which we'll call \emph{indirect proof}:
 \factoidbox{\begin{proof}
 		\open
 		\hypo[i]{a}{\enot \meta{\varphi}}
@@ -595,51 +601,114 @@ Interestingly, the rules we have assembled so far won't yet let us replicate thi
 		\close
 		\have[\ ]{na}{\meta{\varphi}}\ip{a-nb}
 \end{proof}}
-This is called indirect proof because it lets us prove \meta{\varphi} ``indirectly,'' by assuming its negation and deriving a contradiction from that. It's quite similar to negation introduction, except that the location of the negation symbol gets reversed: instead of inferring a negated sentence (as with $\enot$I), we instead assume a negated sentence and then infer its un-negated counterpart.
+This is called indirect proof because it lets us prove \meta{\varphi} ``indirectly,'' by assuming its negation and deriving a contradiction from that assumption. It's quite similar to $\lnot$I, except that the location of the negation symbol gets reversed: instead of \emph{deriving} a negated sentence (as with $\enot$I), we instead \emph{assume} a negated sentence and then infer its un-negated counterpart.
 
-It bears emphasis that IP is a very powerful rule, because any proof whatsoever can in principle be done using IP as the overall strategy!  Just assume the negation of \emph{whatever conclusion} you're trying to prove, derive a contradiction from that, and then infer your conclusion by IP.\footnote{In section \ref{s:PartTTableEnt}, on partial truth tables, we essentially did this kind of proof in English: we assumed that the premises are true and  that the conclusion false (i.e. that its negation  is true), and then showed that a contradiction resulted.  We can now do the same reasoning formally, using our rule of IP.}  But be careful: proofs done in this way tend to be longer and more complicated.  So IP should only be used as a \emph{last resort}, when you're sure that there's no other way to complete the proof!
+It bears emphasis that IP is a very powerful rule, because any proof whatsoever can in principle be done using IP as the overall strategy!  Just assume the negation of \emph{whatever conclusion} you're trying to prove, derive a contradiction from that, and then infer your conclusion by IP.\footnote{In section \ref{s:PartTTableEnt}, on partial truth tables, we essentially did this kind of proof in English: we assumed that the premises are true and  that the conclusion false (i.e. that its negation  is true), and then showed that a contradiction resulted.  We can now do the same reasoning formally, using our rule of IP.}  But be careful: indirect proofs tend to be longer and more complicated than direct proofs.  So IP should only be used as a \emph{last resort}, when you're sure that there's no other way to complete the proof.
 
 Here is an example of something that can \emph{only} be proven using IP:
 $$P \eand \enot P \proves Q$$
-The corresponding entailment $P \eand \enot P \entails Q$ holds: there is no valuation that makes the premise true and the conclusion false, simply because no valuation makes the premise true.  So if our system of deduction is to be complete, we had better be able to provide a natural deduction proof of this as well.  We can do that with IP, as follows:\\
+The corresponding entailment $P \eand \enot P \entails Q$ holds: there is no valuation that makes the premise true and the conclusion false.  That's simply because no valuation makes the premise true!  So if our system of deduction is to be complete, we had better be able to provide a natural deduction proof of this as well.  We can do that with IP, as follows:\\
 
 \begin{fitch}
 \fj P\eand \enot P & Premise  \\
 \fa \fh \enot Q & Assumption \\
 \fa \fa P & $\eand$E 1 \\
 \fa \fa \enot P & $\eand$E 1\\
-\fa \fa \ered  & $\enot$E 3,4 \\
+\fa \fa \ered  & \ered I 3,4 \\
 \fa Q &  IP 2-5 \\
 \end{fitch}\\
 
-\noindent This proof illustrates the \define{Explosion Principle}: from a contradiction, like $P \eand \enot P$, anything whatsoever can be proven.  We here proved $Q$, but exactly the same sequence of steps would have equally well let us prove $A$, or $D$, or $(S \eif L)$, or anything else.    The Explosion Principle can be stated in general terms as $\ered \proves \meta{\varphi}$.
+\noindent This proof illustrates the \define{Explosion Principle}: from a contradiction, like $P \eand \enot P$, anything whatsoever can be proven!  We here proved $Q$, but exactly the same sequence of steps would have equally well let us prove $A$, or $D$, or $(S \eif L)$, or anything else.    The Explosion Principle can be stated in general terms as $\ered \proves \meta{\varphi}$.
 
-Another thing that can only be proven using IP is the \define{Law of Excluded Middle}, which says that $\proves \meta{\varphi} \eor \enot \meta{\varphi}$, i.e. that any statement of the form $\meta{\varphi} \eor \enot \meta{\varphi}$ is a theorem.  Proponents of  \emph{intuitionistic logic} reject the Law of Excluded Middle, because they reject the assumption we've been making throughout this book, that for any statement, it or its negation must be true.  So they must reject our rule IP, since it lets us prove Excluded Middle.
+Another thing that we can only prove using IP is the \define{Law of Excluded Middle}, which says that $\proves \meta{\varphi} \eor \enot \meta{\varphi}$, i.e. that any statement of the form $\meta{\varphi} \eor \enot \meta{\varphi}$ is a theorem.  Proponents of  \emph{intuitionistic logic} reject the Law of Excluded Middle, because they reject the assumption we've been making throughout this book, that for any statement, it or its negation must be true.  So they must reject our rule IP, since it lets us prove Excluded Middle.
 
-And other logicians reject the Explosion Principle.  For example, proponents of \emph{relevance logic} hold that there must always be some ``relevant connection'' between the premises and conclusion of a valid argument  --- something that wouldn't hold if Explosion arguments are valid.  And proponents of \emph{paraconsistent logic} hold the view that some contradictions are true, and that accepting a contradiction should therefore not allow you to infer anything whatsoever.  So they reject the Explosion Principle, and therefore have to use a different set of rules that doesn't prove Explosion.
+There are also logicians who reject the Explosion Principle.  For example, proponents of \emph{relevance logic} hold that there must always be some ``relevant connection'' between the premises and conclusion of a valid argument  --- something the Explosion Principle violates.  And proponents of \emph{paraconsistent logic} hold the view that some contradictions are true, and that accepting a contradiction should therefore not allow you to infer anything whatsoever.  So they reject the Explosion Principle, and therefore have to use a different set of rules that doesn't prove this principle.  
 
-Intuitionistic logic, relevance logic, and paraconsistent logic are all varieties of \define{non-classical logic}.   However, in \define{classical logic}, which is what we are here studying, both the Law of Excluded Middle and the Explosion Principle hold.  Since we can't prove these without IP, we have to add this rule into our natural deduction system so as to render it complete with respect to classical logic.  This rule, together with the various introduction and elimination rules we've covered, form the basic rules of our system of natural deduction.
+Intuitionistic logic, relevance logic, and paraconsistent logic are all varieties of \define{non-classical logic}.   However, in \define{classical logic}, which is what we are here studying, both the Law of Excluded Middle and the Explosion Principle hold.  Since we can't prove these without IP, we have to add this rule into our natural deduction system in order to render it complete with respect to classical logic.  You can learn more about negation rules and completeness in Exercise \ref{ex-neg-prf-2} below.
+
+Let's look at one more proof with IP.  \define{contraposition} is the following general equivalence law: $\meta{\varphi} \eif \meta{\psi} \lequiv \enot \meta{\psi} \eif \enot \meta{\varphi}$.  Let's prove an instance of the right-to-left direction: $\lnot B \eif \lnot A \vdash A \eif B$.  Since we're trying to prove a conditional, we'll use $\eif$I: we'll assume $A$ and try to prove $B$.  But how can we get $B$ from our premise $\lnot B \eif \lnot A$ together with our assumption $A$?  The only way to do it is by indirect proof, like this:\\
+
+\begin{fitch}
+\fj (\enot B\eif \enot A) & Premise\\
+\fa \fh A & Assumption (for $\eif$I)\\
+\fa \fa \fh \enot B & Assumption (for IP)\\
+\fa \fa \fa \enot A & $\eif$E  1,3\\
+\fa \fa \fa \bot  &  \ered I 2,4\\
+\fa \fa B & IP  3-5\\
+\fa (A\eif B) & $\eif$I  2-6\\
+\end{fitch}\\
+
+\noindent To prove $B$ via IP, I assumed $\enot B$, and showed that this, together with my assumption of $A$ and our premise 1, leads to a contradiction.  The other direction of contraposition holds too: $A \eif B \vdash \enot B \eif \enot A$.  Try proving this as well; here you'll be able to use $\lnot$I instead of IP.
 
 
-\practiceproblems
+\practiceproblems \label{ex-neg-prf-2}
+
+\problempart Prove the following:
 
 
 \begin{earg}
-\item $A \eif B, A \eif \enot B \vdash \enot A$
+\item $A\eif B, A \eif \enot B \vdash \enot A$
+\item $P \rightarrow \lnot Q \vdash Q \rightarrow \lnot P$
+\item $A \ \eand  \ \enot B \vdash \enot (A \eif B)$ %REMOVE
+\item $\enot (P\eand  Q) \vdash P\eif \enot Q$
+\item $ \vdash \enot (A\eand  \enot A)$
 \item $A \eif \enot B \vdash B \eif \enot A$
-\item $P \eif Q \pequiv \enot Q \eif \enot P$ (do both directions)
+\item $A \eif B, B \eif \enot A \vdash \enot A$
 \item $(A \eand B) \eif \enot A \vdash A \eif \enot B$
 \item $\enot A \vdash A \eif B$
-\item $P \pequiv \enot \enot P$ (do both directions)
-\item $\vdash \enot A \eif( A \eif B)$
+\item $(A \eand \enot B) \eif B \vdash A \eif B$
+\item $(A\eiff \enot B) \vdash \enot (A\eiff B)$
+\item $\enot (A\eand \enot B) \vdash A \eif B$
+\item $P \eif Q \pequiv \enot Q \eif \enot P$ \hfill [Do both directions]
+\item $\enot (P \eif Q) \pequiv (P \eand \enot Q)$ \hfill [Do both directions]
+\item $P \pequiv \enot \enot P$ \hfill [Do both directions]
+\item $\vdash \enot P \eif( P \eif Q)$
 \item $\vdash (\enot A \eif A) \eif A$
-\item $\vdash A \eor \enot A$
+\item $\vdash \enot (A \eand \enot A)$
+
+\end{earg}
+
+\problempart\label{ex-neg-prf}We've seen that if we only have \ered I (aka $\enot$E) and $\enot$I, our proof system is incomplete: we can't prove every classically valid argument to be valid. So we added IP as an additional rule.  In the following questions, we'll look more closely at what's needed to get a complete proof system.
+
+
+\begin{earg}
+\item It turns out that once we add IP into our proof system, we don't really need $\enot$I any longer, because anything we can prove using $\lnot$I can be proven using IP instead (though again, not the other way around!).  The core of $\lnot$I can be expressed as: $$A \rightarrow \bot \vdash \lnot A$$ Your challenge: prove $A \rightarrow \bot \vdash \lnot A$ using IP  instead of $\enot$I.  This shows that we never really have to use $\enot$I.\\
+
+
+
+\item Instead of adding IP into our system, a more conservative approach would have been to add the rule of \emph{double negation elimination:}
+
+\factoidbox{
+\begin{fitch}
+\ftag{$i$}{\fa \enot \enot \meta{\varphi}} & \\
+\ftag{}{\fa \meta{\varphi}} & DNE  $i$ \\
+\end{fitch}
+}
+That would have been another way to get a complete proof system, but without rendering $\enot$I idle.  The core of IP can be expressed as:
+$$\enot A \eif \bot \proves  A$$
+Your challenge: prove $\enot A \eif \bot \proves  A$ using DNE (together with our other rules) instead of IP.  This shows we could replace IP with DNE.\\
+
+\item Another alternative to adding IP into our proof system would have been to add a pair of rules, one for the Explosion Principle:
+
+\factoidbox{
+\begin{fitch}
+\ftag{$i$}{\fa \bot} & \\
+\ftag{}{\fa \meta{\varphi}} & EX $i$ \\
+\end{fitch}
+}
+and another that lets us write down any instance of the Law of Excluded Middle:
+\factoidbox{
+\begin{fitch}
+\ftag{}{\fa \meta{\varphi \eor \enot \varphi}} & LEM \\
+\end{fitch}
+}
+Your challenge: prove $\enot A \eif \bot \proves  A$ using EX and LEM (together with our other rules)  instead of IP.  This shows we could replace IP with this pair of rules.  Note: to do this problem, you'll have to know how to work with disjunction rules, so read the next section on the $\eor$E rule before attempting  it.
+
 \end{earg}
 
 
-
 \section{Disjunction Rules}
-Our last connective to deal with is disjunction.  The $\eor$I rule is pretty straightforward.  Suppose Alice is a logician. Then certainly Alice is either a logician or a chemist. After all, to say that Alice is either a logician or a chemist is to say something weaker than to say that Alice is a logician. In fact, we can weaken the claim however we like. Suppose Alice a logician. It follows that Alice is \emph{either} a logician \emph{or} a kumquat. Equally, it follows that \emph{either} Alice is a logician \emph{or} oranges are the only fruits on earth.  Equally, it follows that \emph{either} Alice is a logician \emph{or} the earth is flat. Many of these are strange inferences to draw. But there is nothing \emph{logically} wrong with them: in each case the conclusion has to be true if the premise that Alice is a logician is true.
+Our last connective to deal with is disjunction.  The $\eor$I rule is pretty straightforward.  Suppose Alice is a logician. Then certainly Alice is either a logician or a chemist. After all, to say that Alice is either a logician or a chemist is to say something weaker than to say that Alice is a logician. In fact, we can weaken the claim however we like. Suppose Alice a logician. It follows that Alice is \emph{either} a logician \emph{or} a kumquat.   Equally, it follows that \emph{either} Alice is a logician \emph{or} the earth is flat. Many of these are strange inferences to draw. But there is nothing \emph{logically} wrong with them: in each case the conclusion has to be true if the premise that Alice is a logician is true.
 
 
 Our disjunction introduction rules implement this idea of arbitrarily weakening a claim:
@@ -652,16 +721,16 @@ and
 	\have[m]{a}{\meta{\varphi}}
 	\have[\ ]{ba}{\meta{\psi}\eor\meta{\varphi}}\oi{a}
 \end{proof}}
-Notice that \meta{\psi} can be \emph{any} sentence whatsoever. So the following is a perfectly kosher proof:
+Notice that \meta{\psi} can be \emph{any} sentence. So the following is a perfectly kosher use of $\eor$I:
 \begin{proof}
 	\hypo{m}{M}
 	\have{mmm}{M \eor ([(A\eiff B) \eif (C \eand D)] \eiff [E \eand F])}\oi{m}
 \end{proof}
 
 
-The disjunction elimination rule is slightly trickier. Suppose that Alice is either a logician or a chemist. What can you conclude? Not that Alice is a logician; she might be a chemist instead. And equally, not that Alice is a chemist; for she might be a logician instead. Disjunctions, just by themselves, are hard to work with.
+The disjunction elimination rule is slightly trickier. Suppose you know that Alice is either a logician or a chemist. What can you conclude? Not that Alice is a logician; she might be a chemist instead. And equally, not that Alice is a chemist; she might be a logician instead. Disjunctive premises, just by themselves, are hard to work with!
 
-But suppose that we could somehow show both of the following: first, that Alice's being a logician entails that she has a PhD; second, that Alice's being a chemist entails that she has a PhD. Then if we know that Alice is either a logician or a chemist, we know that, whichever she happens to be, she has a PhD. Our disjunction elimination rule $\eor$E formalizes this insight:
+But suppose that we could somehow show both of the following: first, that Alice's being a logician implies that she has a PhD; second, that Alice's being a chemist also implies that she has a PhD. Then if we know that Alice is either a logician or a chemist, we know that, whichever she happens to be, she has a PhD. Our disjunction elimination rule $\eor$E formalizes this insight:
 \factoidbox{
 	\begin{proof}
 		\have[m]{ab}{\meta{\varphi}\eor\meta{\psi}}
@@ -677,13 +746,13 @@ But suppose that we could somehow show both of the following: first, that Alice'
 		\close
 		\have[ ]{c}{\meta{\chi}}\oe{ab, a-c1,b-c2}
 	\end{proof}}
-This is a bit more complicated than our previous rules, but the idea is fairly simple. Suppose we have some disjunction, $\meta{\varphi} \eor \meta{\psi}$. If we can now give two subproofs, one showing that a certain conclusion $\meta{\chi}$ follows from the assumption that $\meta{\varphi}$, and another showing that the \emph{same} conclusion $\meta{\chi}$ \emph{also} follows from the assumption that $\meta{\psi}$, then we can infer $\meta{\chi}$ itself. You can think of this as formally implementing the kind of \emph{reasoning by cases} that we discussed in \S\ref{s:PartTTableEnt}.  The disjunction $\meta{\varphi} \eor \meta{\psi}$ tells us that one of two cases obtains, either \meta{\varphi} holds or \meta{\psi} does.  If it can be shown that \meta{\chi} must hold in either case, then we can conclude that \meta{\chi} holds on the basis of the original disjunction.
+This is a bit more complicated than our previous rules, but the idea is fairly simple. Suppose we have some disjunction $\meta{\varphi} \eor \meta{\psi}$ and our goal is to prove some claim $\chi$.  If we can give two subproofs, one showing that our goal $\meta{\chi}$ follows from the assumption that $\meta{\varphi}$ holds, and another showing that the \emph{same} conclusion $\meta{\chi}$ \emph{also} follows from the assumption that $\meta{\psi}$ holds, then we can infer $\meta{\chi}$ itself by $\eor$E. This rule formally implements a proof strategy called \emph{argument by cases}: the disjunction $\meta{\varphi} \eor \meta{\psi}$ tells us that one of two cases obtains, either \meta{\varphi} holds or \meta{\psi} does; if it can now be shown that \meta{\chi} must hold in \emph{either case}, then we can conclude that \meta{\chi} holds on the basis of the original disjunction.
 
-Notice that the citation for $\eor$E is fairly complex.  We have to cite \emph{three} things: the line number of the original disjunction, and the two subproofs.  As usual, there can be as many lines as you like between $i$ and $j$, and as many lines as you like between $k$ and $l$. Moreover, the subproofs and the disjunction can come in any order, and do not have to be adjacent.
+Notice that the citation for $\eor$E is quite complex.  We have to cite \emph{three} things: the line number of the original disjunction, and the two subproofs.  As usual, there can be as many lines as you like between $i$ and $j$, and as many lines as you like between $k$ and $l$. Moreover, the subproofs and the disjunction can come in any order, and do not have to be adjacent.
 
 Some examples will help illustrate the rule. Consider this problem:
 $$(P \eand Q) \eor (P \eand R) \vdash P$$
-The premise tells us that either `$(P \eand Q)$' holds or `$(P \eand R)$' holds.  But in either case, `$P$' must holds, so `$P$' follows from our disjunctive premise.  Here's how this looks as a proof:
+The premise tells us that either `$(P \eand Q)$' holds or `$(P \eand R)$' holds.  But in either case, `$P$' must hold, so `$P$' follows from our disjunctive premise.  Here's how this looks as a proof:
 	\begin{proof}
 		\hypo{prem}{(P \eand Q) \eor (P \eand R) }\by{Premise}{}
 			\open
@@ -697,46 +766,49 @@ The premise tells us that either `$(P \eand Q)$' holds or `$(P \eand R)$' holds.
 		\have{con}{P}\oe{prem, pq-p1, pr-p2}
 	\end{proof}
 
-$\eor$E is similar to rules like $\eif$I, $\eiff$I, and $\enot$I, in that it requires temporary assumptions and subproofs.  But it differs in that, unlike the others, it's an \emph{elimination} rule.  This has an important consequence for the kind of strategy to use in relation to $\eor$E.  In the case of rules like $\eif$I and $\enot$I, we always reasoned ``from the bottom up,'' that is, we reasoned \emph{backward} from our goal. E.g. if it's our goal to prove a conditional $\meta{\varphi} \eif \meta{\psi}$,  this tells us to use $\eif$I.
+$\eor$E is similar to rules like $\eif$I, $\eiff$I, and $\enot$I, in that it requires temporary assumptions and subproofs.  But it differs in that, unlike the others, it's an \emph{elimination} rule!  This has an important consequence for the kind of strategy to use in relation to $\eor$E.  In the case of rules like $\eif$I and $\enot$I, we always reasoned ``from the bottom up,'' that is, we reasoned \emph{backward} from our goal. E.g. if our goal is to prove a conditional $\meta{\varphi} \eif \meta{\psi}$,  we know to use $\eif$I as the overall strategy, which means assuming $\meta{\varphi}$ and then proving $\meta{\psi}$.
 
-The $\eor$E rule is the exception to working backwards like this; here, we have to reason ``from the top down.'' That is to say, if you have  a disjunction $\meta{\varphi} \eor \meta{\psi}$ as a premise (or as an assumption you've made for some other purpose, or as something you can easily derive from your premises and assumptions), it's usually a good idea to prove your goal, \emph{whatever} it may be, using $\eor$E as your overall strategy.  This means you have to open up two subproofs, and prove your goal $\meta{\chi}$ first from the left-disjunct $\meta{\varphi}$ and then from the right-disjunct $\meta{\psi}$.
+The $\eor$E rule is the exception to working backwards like this. Here, we have to reason ``from the top down.'' That is, if you have  a disjunction $\meta{\varphi} \eor \meta{\psi}$ as a premise (or as an assumption, or as something you can easily derive from your premises and assumptions), it's usually a good idea to prove your goal, \emph{whatever it may be}, using $\eor$E as your overall strategy.  This means you have to open up two subproofs, and prove your goal $\meta{\chi}$ first from the left-disjunct $\meta{\varphi}$ and then from the right-disjunct $\meta{\psi}$.
 
 
-Here's a more complex example, involving one of the Distributive Laws:
+Here's a more complex example, demonstrating one of the Distributive Laws:
 	$$P \eor (Q \eand R) \vdash (P \eor Q) \eand (P \eor R)$$
 \begin{center}
 \begin{fitch}
-\fj (P\lor (Q\land R)) & Premise\\
+\fj P\lor (Q\land R) & Premise\\
 \fa \fh P & Assumption\\
 \fa \fa (P\lor Q) & $\lor$I  2\\
 \fa \fa (P\lor R) & $\lor$I  2\\
-\fa \fa ((P\lor Q)\land (P\lor R)) & $\land$I  3,4\\
+\fa \fa (P\lor Q)\land (P\lor R) & $\land$I  3,4\\
 \fa \fh (Q\land R) & Assumption\\
 \fa \fa Q & $\land$E  6\\
 \fa \fa R & $\land$E  6\\
 \fa \fa (P\lor Q) & $\lor$I  7\\
 \fa \fa (P\lor R) & $\lor$I  8\\
-\fa \fa ((P\lor Q)\land (P\lor R)) & $\land$I  9,10\\
-\fa ((P\lor Q)\land (P\lor R)) & $\lor$E  1,2-5,6-11\\
+\fa \fa (P\lor Q)\land (P\lor R) & $\land$I  9,10\\
+\fa (P\lor Q)\land (P\lor R) & $\lor$E  1,2-5,6-11\\
 \end{fitch}\end{center}
 
-To identify my overall strategy in this case, I did not look at my goal $((P\lor Q)\land (P\lor R))$, and think about what introduction rule I might use to prove it (e.g. $\eand$I).  Rather, I noticed that my premise $P \eor (Q \eand R)$ is a disjunction.  And whenever I have a disjunction as a premise like this (or as an assumption, or as something easily derivable from my premises and assumptions), I will prove my current goal, whatever it might be, using $\eor$E as the overall strategy. So in this case, that means first assuming the left disjunction $P$ of my premise, and proving my conclusion from that (lines 2--5), and then assuming the right disjunct $(Q \eand R)$ of my premise, and proving my conclusion from that (lines 6-11).
+To identify my overall strategy in this case, I did \emph{not} look at my goal $(P\lor Q)\land (P\lor R)$ and think about what introduction rule I might use to prove it (e.g. $\eand$I).  Rather, I noticed that my premise $P \eor (Q \eand R)$ is a disjunction.  And whenever I have a disjunction as a premise like this (or as an assumption, or as something easily derivable from my premises and assumptions), I will prove my current goal, whatever it might be, using $\eor$E as the overall strategy. So in this case, that means first assuming the left disjunction $P$ of my premise, and proving my conclusion from that (lines 2--5), and then assuming the right disjunct $(Q \eand R)$ of my premise, and proving my conclusion from that (lines 6-11).
 
 
 
 \practiceproblems
 
 \problempart
-Prove the following sequents:
+Prove the following:
 
 \begin{earg}
-
 \item $A \eif B \proves A \eif (C \eor B)$
+\item $(B \eor A) \eif C \vdash A \eif C$
+\item $(A \eand B) \eor (A \eand C) \vdash A$
 \item $A \eor B \proves B \eor A$
+\item  $A \eor B \vdash (A\eif B) \eif B$ 
 \item $A \eor (B \eand C) \proves (A \eor B) \eand (A \eor C)$
+\item $A \eor (B \eor C) \vdash (A \eor B) \eor C$
 \item $S\eiff T \proves S\eiff (T\eor S)$
 \item $(C\eand D)\eor E \proves E\eor D$
-\item $A \eif C \proves (A \eor C) \eif C$
+\item $A \eif  C \vdash (A \eor (B \eand C)) \eif C$ 
 \item $ A \eand (B \eor C) \vdash (A \eand B) \eor (A \eand C)$
 \item $  (A \eand B) \eor (A \eand C) \vdash  A \eand (B \eor C)$
 \item $A \eor B \proves (A \eif B) \eif B$
@@ -746,13 +818,13 @@ Prove the following sequents:
 
 
 \section{Proof strategies}\label{s:ProofStrategies}
-There is no simple recipe for proofs, and there is no substitute for practice. Here, though, are some strategies to keep in mind.
+There is no simple recipe for proofs, and there is no substitute for practice. But here are some strategies to keep in mind.
 
 \paragraph{Work backwards from your goal.}
-The ultimate goal is to obtain the conclusion. Look at the conclusion and ask what the introduction rule is for its main logical operator. This gives you an overall strategy, and tells you what should happen \emph{just before} the last line of the proof. Then you can treat this line as your new goal. Now ask what \emph{its} main operator is, thereby identifying a strategy to prove it, and so on.
+Your ultimate goal is arrive at the conclusion. Look at the conclusion and ask what the introduction rule is for its main logical operator. This gives you an overall strategy, and tells you what assumptions  (if any)  to make, and what your new goal is. Now ask what the main operator of that new goal is, thereby identifying a strategy to prove it, and so on.
 
 
-For example: If your conclusion is a conditional $\meta{\varphi}\eif\meta{\psi}$, plan to use the {\eif}I as your strategy. This requires opening a subproof in which you assume \meta{\varphi} and then aim to prove \meta{\psi}.  Or if your goal is to prove $\meta{\varphi} \eiff \meta{\psi}$, use $\eiff$I as your overall strategy (which involves giving two subproof, one in each direction of the arrow). Or if your conclusion is a negated sentence $\enot \meta{\varphi}$, plan to use $\enot$I as your strategy (which means assuming \meta{\varphi} and proving a contradiction).
+For example: if your conclusion is a conditional $\meta{\varphi}\eif\meta{\psi}$, you should plan to use the {\eif}I as your strategy. This requires opening a subproof in which you assume \meta{\varphi} and then set \meta{\psi} as your new goal.  Or if your goal is to prove $\meta{\varphi} \eiff \meta{\psi}$, use $\eiff$I as your overall strategy (which involves giving two subproof, one in each direction of the arrow). Or if your conclusion is a negated sentence $\enot \meta{\varphi}$, plan to use $\enot$I as your strategy (which means assuming \meta{\varphi} and proving a contradiction).
 
 
 \paragraph{The Exception: $\eor$E}
@@ -766,16 +838,14 @@ If you can't find any way to prove your goal $\meta{\varphi}$ directly, try an i
 \paragraph{Persist.}
 Try different things. If one approach fails, try something else.  I'll never ask you to prove something that cannot be proven.
 
-\paragraph{Don't make random assumptions.} Finally, never make an assumption unless you have a strategy in mind for discharging the assumption (i.e. for ultimately closing the subproof that the assumptions opens up).  That mans you should only make an assumption if your strategy is to use one of the following discharge rules: $\eif$I, $\eiff$I, $\enot$I, IP, or $\eor$E.\\
+\paragraph{Don't make random assumptions.} Finally, never make an assumption unless you have a strategy in mind for discharging it (i.e. for ultimately closing the subproof that the assumptions opens).  That means you should only make an assumption if your strategy is to use one of the following discharge rules: $\eif$I, $\eiff$I, $\enot$I, IP, or $\eor$E.\\
 
 
 Let's look at one more example.  Take the following English argument:
 \begin{quote}
 If Guatemala is in Canada, then it is in North America. So if Guatemala is not in North America, it also isn't in Canada.
 \end{quote}
-This is intuitively valid, so we should be able to give a proof of it.  We can symbolize the argument as: $C \eif A \therefore \enot A \eif \enot C$.	Our goal here is to prove a conditional, `$\enot A \eif \enot C$'.  So we use $\eif$I as our strategy, meaning we assume `$\enot A$' and set ourselves the new goal of proving `$\enot C$' from that assumption.  And now, since `$\enot C$' has a negation as its main operator, we use $\enot$I as our strategy, meaning we assume `$C$' and prove a contradiction from that.
-
-Notice how I reasoned ``backwards'' from the conclusion in order to discover this strategy.  Written out, the proof looks like this:
+This is intuitively valid, so we should be able to give a proof of it.  We can symbolize the argument as: $C \eif A \therefore \enot A \eif \enot C$.	Our goal here is to prove a conditional, `$\enot A \eif \enot C$'.  So we use $\eif$I as our strategy, meaning we assume `$\enot A$' and set ourselves the new goal of proving `$\enot C$' from that assumption.  And now, since `$\enot C$' has a negation as its main operator, we use $\enot$I as our strategy, meaning we assume `$C$' and prove a contradiction from that.  Notice how I reasoned ``backwards'' from the conclusion in order to discover this strategy.  Written out, the proof looks like this:
 
 
 \begin{proof}
@@ -785,7 +855,7 @@ Notice how I reasoned ``backwards'' from the conclusion in order to discover thi
 	\open
 		\hypo{3}{C} \by{Assumption (for $\enot$I)}{}
 		\have{4}{A} \ce{1,3}
-		\have{5}{\ered} \ne{2,4}
+		\have{5}{\ered} \ri{2,4}
 	\close
 	\have{6}{\enot C} \ni{3-5}
 \close
@@ -837,11 +907,12 @@ The following three proofs are missing their rule citations. Write them in. Addi
 \end{multicols}
 
 \problempart
-Prove each of the following sequents:
+Prove each of the following:
 \begin{earg}
 \item $J\eif\enot J \proves \enot J$
 \item $Q\eif(Q\eand\enot Q) \proves \enot Q$
 \item $P \eor Q, \enot P \proves Q$
+\item $\enot R \eor (P \eif Q) \vdash (R \eand P) \eif Q$
 \item $\enot F\eif G, F\eif H \proves G\eor H$
 \item $D \proves \enot \enot D$
 \item $P \eand (Q\eor R), P\eif \enot R \proves Q\eor E$
@@ -861,50 +932,35 @@ Show that the following are provably equivalent:
 \begin{earg}
 \item $\enot (P \eand Q) \pequiv \enot P \eor \enot Q$
 \item $\enot (P \eor Q) \pequiv \enot P \eand \enot Q$
-\item $P \eor Q \vdash \enot (\enot P \eand \enot Q)$
+\item $P \eor Q \pequiv \enot (\enot P \eand \enot Q)$
 \item $P \eif Q \pequiv \enot Q \eif \enot P$
 \item $P \eif Q \pequiv \enot P \eor Q$
 \item $\enot (P \eif Q) \pequiv P \eand \enot Q$
-\item $\enot P \eiff Q \pequiv \enot(P \eiff Q)$
+\item $P \eiff \enot Q \pequiv \enot(P \eiff Q)$
 \end{earg}
 
 \problempart
 Prove the following theorems:
 
 \begin{earg}
-\item $\proves \enot A \eif (A \eif B)$
-\item $\proves J \eiff [J\eor (L\eand\enot L)]$
-\item $\proves (A \eif B) \eor (B \eif A)$
+\item $\proves (P \eif Q) \eor (Q \eif P)$
 \item $\proves A \eor \enot A$ %\hfill This is the \emph{Law of Excluded Middle}
 \item $\proves ((P \eif Q) \eif P) \eif P$ %\hfill This is \emph{Peirce's Law}
+\item $\proves \enot A \eif (A \eif B)$
+\item $\proves J \eiff [J\eor (L\eand\enot L)]$
 \end{earg}
-
-\problempart
-We noted that the Law of Excluded Middle and the Explosion Principle can only be proven with IP.  Another thing that can, somewhat surprisingly, only be proven via IP is \emph{double negation elimination}:  $\enot \enot \meta{\varphi} \proves \meta{\varphi}$.  Indeed, we could have added this as the third negation rule in our proof system, instead of IP, and thereby also obtained a complete proof system:
-
-\factoidbox{
-\begin{fitch}
-\ftag{$m$}{\fa \enot \enot \meta{\varphi}} & \\
-\ftag{}{\fa \meta{\varphi}} & $m$ DNE\\
-\end{fitch}
-}
-
-\noindent Do two things.  First, give a proof of:
-$$\enot \enot A \proves A$$
-using IP, showing that it can be used in place of DNE.  Second, show that DNE can similarly be used in place of IP.  In particular, give a proof of the following using DNE, but without using IP:\footnote{Hint: to do this, you'll have to use DNE together with $\enot$I.}
-$$\enot A \eif \bot \proves  A$$
 
 
 
 \section{Derived Rules}\label{s:TFLDerivedRules}
 
-We have introduced the introduction and elimination rules for each of our five connectives.  Together with IP, this gives us a complete proof system: every valid argument can be proven using just the rules we have.  In this section, we're going to introduce some additional rules to shorten our proofs and make our proof system easier to work with.  It's important to note at the outset that these additional rules are not necessary.  They represent a \emph{conservative} extension of our proof system: anything proven using these new rules can also be proven using just our basic set of rules.
+We have provided introduction and elimination rules for each of our five connectives.  Together with IP, this gives us a complete proof system: every valid argument can be proven using just these few basic rules!  In this section, we're going to introduce some additional rules to shorten our proofs and make our proof system easier to work with.  It's important to note at the outset that these additional rules are not necessary.  They represent a \emph{conservative} extension of our proof system: anything proven using these new rules can also be proven using just our basic set of rules.
 
 To illustrate the motivation for additional rules, consider the following argument:
 	\begin{quote}
 		Alice is either a logician or a chemist. She is not a chemist.  So she is a logician.
 	\end{quote}
-This involves a very natural form of inference called \emph{Disjunctive Syllogism}.  We could symbolize the argument as $L\eor C, \enot C \therefore L$, and we then give a natural deduction proof to show that it is valid.
+This involves a very natural form of inference called \emph{Disjunctive Syllogism}.  We could symbolize the argument as $L\eor C, \enot C \therefore L$, and we then give a natural deduction proof using \eor E to show that it is valid.
 
 But now consider this: by giving a proof of `$L$' from `$L \eor C$' and `$\enot C$', we have implicitly shown that given \emph{any} sentences of the form $\meta{\varphi} \eor \meta{\psi}$ and $\enot \meta{\psi}$, it is possible to prove \meta{\varphi}.  If we substitute the metavariables $\meta{\varphi}$ and $\meta{\psi}$ for the sentences  `$L$' and `$C$' in our proof, we get a \define{proof template} for the disjunctive syllogism form of inference:\\
 
@@ -915,7 +971,7 @@ But now consider this: by giving a proof of `$L$' from `$L \eor C$' and `$\enot 
 \ftag{$n$}{\fa \enot \meta{\varphi} } & \\
 \ftag{$k_0$}{\fa \fh \meta{\varphi}} & \\
 \ftag{$k_1$}{\fa \fa \fh \enot \meta{\psi}} & \\
-\ftag{$k_2$}{\fa \fa \fa \ered  }& $\enot$E $n, k_0$ \\
+\ftag{$k_2$}{\fa \fa \fa \ered  }& \ered I $n, k_0$ \\
 \ftag{$k_3$}{\fa \fa \meta{\psi}} &  IP $k_0$--$k_3$\\
 \ftag{$k_4$}{\fa \fh \meta{\psi} } & \\
 \ftag{$k_5$}{\fa \fa \meta{\psi} \eand \meta{\psi}} &  $\eand$I $k_4, k_4$ \\
@@ -924,19 +980,19 @@ But now consider this: by giving a proof of `$L$' from `$L \eor C$' and `$\enot 
 \end{fitch}\\
 
 
-\noindent Now, if at any time, in the context of any proof whatsoever, we face the task of proving some sentence \meta{\varphi} from two sentences of the form $\meta{\varphi} \eor \meta{\psi}$ and $\enot \meta{\psi}$, we can simply ``slot in'' an instance of the above proof template.  In other words, once we've proven one instance of disjunctive syllogism, we can use that as a template to prove disjunctive syllogism again in the context of any other proof.
+\noindent Now, if at any time, in the context of any proof whatsoever, we need to prove some sentence \meta{\varphi} from two sentences of the form $\meta{\varphi} \eor \meta{\psi}$ and $\enot \meta{\psi}$, we can simply ``slot in'' an instance of the above proof template.  In other words, once we've proven one instance of disjunctive syllogism using our basic rules, we can use that as a template to prove disjunctive syllogism again in the context of any other proof.
 
-Given this, we might as well just introduce a derived rule into our proof system that lets us skip the actual proof and make the disjunctive syllogism inference \emph{directly}:
+Given this, we might as well just introduce a \define{derived rule} into our proof system that lets us skip the actual proof and make the disjunctive syllogism inference \emph{directly}:
 \factoidbox{\begin{proof}
 	\have[m]{ab}{\meta{\varphi} \eor \meta{\psi}}
 	\have[n]{nb}{\enot \meta{\varphi}}
 	\have[\ ]{con}{\meta{\psi}}\by{DS}{ab, nb}
 \end{proof}}
-DS is a \define{derived rule} in the sense that it can be shown to hold using only the \emph{primitive} rules of our system.    You can think of derived rules like promissory notes: ``I am here justifying my inference by writing `DS', but I promise that, if you demanded it, I could slot in a series of steps using only the primitive rules of our natural deduction system.''  Derived rules shorten our proofs, but add no power into our proof system --- any proof that appeals to a derived rule could be expanded into one that only appeals to primitive rules, by slotting in an instance of the proof template corresponding to the derived rule.
+DS is a \define{derived rule} in the sense that it can be shown to hold using only the \emph{primitive} rules of our system.    You can think of derived rules like promissory notes: ``I am here justifying my inference by writing `DS', but I promise that, if you asked for it, I could slot in a series of steps using only the primitive rules of our natural deduction system.''  Derived rules shorten our proofs, but add no power into our proof system: any proof that appeals to a derived rule could be expanded into one that only appeals to primitive rules.
 
-In fact, we implicitly already added a derived rule to our system in \S\ref{s:TheoremsReiterating} when we introduced Reiteration.  Reiteration is just a shortcut to let us skip the $\eand$I+$\eand$E trick that I used in steps $k_5$ and $k_6$ in the above proof template.\footnote{Indeed, in this particular case we could have avoided using the $\eand$I+$\eand$E trick, and shortened our proof template, by treating line $k+4$ as a whole subproof that begins with \meta{\psi} and ends with \meta{\psi} (see the end of \S\ref{s:TheoremsReiterating}).}  There are many further useful derived rules we can add to our proof system.  For example, consider the following argument:
+In fact, we implicitly already added a derived rule to our system in \S\ref{s:TheoremsReiterating} when we introduced Reiteration.  Reiteration is just a shortcut to let us skip the $\eand$I-plus-$\eand$E trick that I used in steps $k_5$ and $k_6$ in the above proof template.\footnote{Indeed, in this particular case we could have avoided using the $\eand$I+$\eand$E trick, and shortened our proof template, by treating line $k+4$ as a whole subproof that begins with \meta{\psi} and ends with \meta{\psi} (see the end of \S\ref{s:TheoremsReiterating}).}  There are many further useful derived rules we can add to our proof system.  For example, consider the following argument:
 	\begin{quote}
-		If Alice is a chemist, then she has a PhD. Alice does not have a PhD. So she is not a chemist.
+		If Alice is a chemist, then she has a PhD. Alice doesn't have a PhD. So she isn't a chemist.
 	\end{quote}
 This inference pattern is called \emph{modus tollens}, and we can introduce a derived rule for it:
 \factoidbox{\begin{proof}
@@ -966,11 +1022,11 @@ In  \S\ref{s:ProofStrategies} we gave a seven step proof showing that $C \eif A 
 \close
 \have{7}{\enot A \eif \enot C} \ci{2-6}
 \end{proof}
-Here is a complete list of the derived rules that you'll be able to use in natural deduction proofs from this point forward:
+Here is a complete list of the derived rules that you'll be able to use:
 
 \begin{center}
 \begin{tabular}{l  r}
-\textbf{Sequent:}                    &       \textbf{Derived Rule:} \\ \hline
+\textbf{Sequent}                    &       \textbf{Derived Rule} \\ \hline
 $\meta{\varphi} \rightarrow \meta{\psi},  \enot\meta{\psi} \proves \enot \meta{\varphi}$   &                       MT  \\
 $\meta{\varphi} \eor \meta{\psi},  \enot\meta{\psi} \proves \meta{\varphi}$ & DS\\
 $\meta{\varphi} \eor \meta{\psi},  \enot\meta{\varphi}\proves \meta{\psi}$    &      DS  \\
@@ -989,18 +1045,18 @@ $\bot \proves \meta{\varphi}$ & EX \\
 \end{tabular}
 \end{center}
 
-\noindent (where  \ \#\  in SDN can be any binary connective, and $@$ in the Com rule can be any of the three commutative connectives $\eor, \eand, \eiff$).  The way understand this list of derived rules is as follows:
+\noindent (where  \ \#\  in SDN can be any binary connective, and $@$ Com can be any of the three commutative connectives $\eor, \eand, \eiff$).  The way understand this list of derived rules is as follows:
 
 \begin{itemize}
-\item For any sequent $\meta{\varphi}_1 \ldots \meta{\varphi}_n \proves \meta{\psi}$, if it has the form of one of the sequents on the above list, and if sentences $\meta{\varphi}_1 \ldots \meta{\varphi}_n$ occur on lines $j_1 \ldots j_n$ in your proof (none of them inside a closed subproof), then you may directly infer \meta{\chi} and justify it by citing the name of the relevant derived rule followed by the numbers of lines $j_1 \ldots j_n$.
+\item For any sequent $\meta{\varphi}_1 \ldots \meta{\varphi}_n \proves \meta{\psi}$ matching one from the above list, if $\meta{\varphi}_1 \ldots \meta{\varphi}_n$ occur on some earlier lines $j_1 \ldots j_n$ in your proof (none of them inside a closed subproof), then you may directly infer \meta{\psi} and justify it by citing the name of the relevant derived rule followed by the numbers of lines $j_1 \ldots j_n$.
 \end{itemize}
-For example, if you have the sentence `$P$' on a line numbered $m$ in your proof, then you are now allowed to directly infer `$Q \eif P$' with the justification `PMI $m$' (for ``Paradox of Material Implication'').   Or if you have a sentence `$\enot K \eor \enot L$' on a line $m$ in you proof, you may directly infer `$\enot(K \eand L)$' with the justification `DeM $m$' (for ``DeMorgan's Law''), or `$K \eif \enot L$' with the justification `Imp $m$', or `$\enot L \eor \enot K$' with the justification `Com $m$'.
+For example, if you have the sentence `$P$' on line $m$ in your proof, then you are allowed to directly infer `$Q \eif P$' with the justification `PMI $m$' (for ``Paradox of Material Implication'').   Or if you have a sentence `$\enot K \eor \enot L$' on  line $m$ in you proof, you may directly infer `$\enot(K \eand L)$' with the justification `DeM $m$' (for ``DeMorgan's Law''), or `$K \eif \enot L$' with the justification `Imp $m$', or `$\enot L \eor \enot K$' with the justification `Com $m$'.  Notice that these latter three are examples of derived rules that hold in \emph{both} directions, so you could also start with `$\enot(K \eand L)$', or `$K \eif \enot L$', or $\enot L \eor \enot K$' and derive `$\enot K \eor \enot L$'.
 
-The second-to-last derived rule, EX, is the Explosion Principle: it lets you infer any sentence whatsoever from a contradiction.  So if you have the contradiction symbol $\bot$ on a line $m$ (within a subproof that hasn't been closed yet!), you may infer anything you like with the justification `EX $m$'.  The last derived rule, LEM, is the Law of Excluded Middle: it lets you write down any sentence of the form $\meta{\varphi} \eor \enot \meta{\varphi}$ at any point in your proof with the justification `LEM' (here no line number needs to be cited because you're introducing a theorem).
+The second-to-last derived rule, EX, is the Explosion Principle: it lets you infer any sentence whatsoever from a contradiction.  The last derived rule, LEM, lets you write down any instance of the Law of Excluded Middle $\meta{\varphi} \eor \enot \meta{\varphi}$ at any point in your proof with the justification `LEM'.   Here no line number needs to be cited because you're introducing a theorem.
 
 For another example of these rules in action, consider the following theorem:
 $$\proves (P \eif Q) \eor (Q \eif P)$$
-This was one of the exercises in \S\ref{s:ProofStrategies}.  Proving this using only basic rules is quite difficult, as you will have noticed if you tried that exercise.  With derived rules, we can give a much quicker and more intuitive proof of this theorem, by starting out with an instance of the Law of Excluded Middle and then pursuing an $\eor$E strategy:\\
+This was one of the exercises in \S\ref{s:ProofStrategies}.  Proving this using only basic rules is quite difficult, as you will have noticed if you tried that exercise.  With derived rules, we can give a much quicker and more intuitive proof of this theorem, by starting out with $P \eor \enot P$ as an instance of the Law of Excluded Middle, and then pursuing an $\eor$E strategy from there:\\
 
 
 \begin{fitch}
@@ -1070,19 +1126,21 @@ The following proofs are missing their citations (rule and line numbers). Add th
 \end{multicols}
 
 \problempart
-Prove the following sequents using derived rules:
+Prove the following using derived rules:
 \begin{earg}
 \item $(A \eor B) \eif C , \enot C \proves \enot A$
 \item $E\eor F$, $F\eor G$, $\enot F \proves E \eand G$
 \item $\enot (A \eif (B \eor \enot C)) \proves (B \eor C) \eif A$
+\item $(Q \rightarrow P) \rightarrow R, \lnot Q \lor \lnot S \vdash S \rightarrow \lnot (\lnot R \lor \lnot S)$
 \item $M\eor(N\eif M)  \proves  \enot M \eif \enot N$
 \item $A \eif (B \eor C) \proves (A \eif B) \eor (A \eif C)$
 \item $(M \eor N) \eand (O \eor P)$, $N \eif P$, $\enot P  \proves  M\eand O$
 \item $(B \eand C) \eor \enot (A \eif \enot D), \enot C \proves A \eand D$
 \item $(X\eand Y)\eor(X\eand Z)$, $\enot(X\eand D)$, $D\eor M  \proves  M$
 \item $\vdash (A \eif B) \eor (B \eif A)$
+
 \end{earg}
-If you want more practice, you can also re-do any of the earlier proofs in this chapter using derived rules.
+If you want more practice, you can of course also re-do any of the earlier proofs in this chapter using derived rules. \\
 
 \problempart
-Provide proof templates (like those I provided for DS and MT) that justify the addition of the De Morgan rules, and the Imp and NegImp rules, as derived rules. If you don't want to bother with metavariables, you can just prove instances of the sequents corresponding to DeM, Imp, and NegImp.  But in any case, be sure to only use primitive rules in your proofs.
+Provide proof templates (like those I provided for DS and MT) that justify the addition of the De Morgan rules, the Imp and NegImp rules, and LEM as derived rules. If you don't want to bother with metavariables, you can just prove instances of the corresponding sequents, but  in any case, be sure to only use primitive rules in your proofs.
