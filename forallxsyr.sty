@@ -1,15 +1,13 @@
 %!TEX root = forallxsyr.tex
 % The original forallx.sty was written in 2005 by PD Magnus
-% This version is 2019 with additions by Rieppel
+% This version is 2019
 \ProvidesPackage{forallxsyr}[support for forallx:Syracuse]
 \usepackage{amssymb,amsmath, hyperref, multicol,  graphicx, ifthen,rotating, color}
-\usepackage{mdframed} % << MR
-\usepackage{qtree,fitch} % << MR
+\usepackage{mdframed} % << MR added
+\usepackage{qtree,fitch} % << MR added
 \usepackage{titlesec} % << MR (control font size of section headings)
 \usepackage[cal=boondoxo]{mathalfa} % << MR (gives lowercase mathcal characters, taken from forallx calgary)
-%\usepackage{makeidx} % << MR: create an index, NOTE: rune MakeIndex in TexShop
-
-
+\usepackage{makeidx} % << MR: create an index
 
 %    ****************************************
 %    *            LOGICAL SYMBOLS           *
@@ -32,7 +30,7 @@
 \newcommand*{\openntuple}{\langle}
 \newcommand*{\closentuple}{\rangle}
 \newcommand*{\ntuple}[1]{\mbox{\ensuremath{\mathopen{\openntuple}}#1\ensuremath{\mathclose{\closentuple}}}}
-\newcommand*{\define}[1]{\textsc{\lowercase{#1}}} % << MR: add an index entry for each defined term
+\newcommand*{\define}[1]{\textsc{\lowercase{#1}\index{#1}}} % << MR: add an index entry for each defined term
 
 %    ****************************************
 %    *        TITLE AND VERSION DATA        *
@@ -163,7 +161,7 @@
 	\definecolor{darkred}{rgb}{0.5,0,0} % TB: used to color links in red
 	\definecolor{darkblue}{rgb}{0,0,0.5} % TB: used to color answers in blue
 	\newcommand\myanswer[1]{\textcolor{blue}{#1}} % TB: puts model answers in blue
-	\hypersetup{pdfinfo={Title={forallx @ syr}, Author={P.D. Magnus, Tim Button, Michael Rieppel}, Subject={An open access introductory textbook in formal logic}, Keywords={truth-functional logic, propositional logic, sentential logic, predicate logic, first-order logic, natural deduction, fitch, semantics, countermodels}}, %
+	\hypersetup{pdfinfo={Title={forallx: Cambridge}, Author={P.D. Magnus, Tim Button}, Subject={An open access introductory textbook in formal logic}, Keywords={truth-functional logic, propositional logic, predicate logic, sentential logic, first-order logic, quantified-logic, natural deduction, fitch}}, %
 		colorlinks={true}, %
 		citecolor={black},%
 		filecolor={black},%
@@ -294,7 +292,7 @@
 	\def\nd*height{#1}\def\nd*thickness{#8}\def\nd*initheight{#2}%
 	\def\nd*indent{#5}\def\nd*labelsep{#4}\def\nd*justsep{#7}}
 % set initial dimensions
-\nddim{4.5ex}{3.5ex}{1.5ex}{1em}{1.6em}{.5em}{2.5em}{.2mm}
+\nddim{4.5ex}{3.5ex}{1.5ex}{1em}{1em}{.5em}{2.5em}{.2mm} % MR: changed 5th value from 1.6em to 1em
 
 \def\nd*v{\rule[-\nd*depthdim]{\nd*thickness}{\nd*height}}
 \def\nd*t{\rule[-\nd*depthdim]{0mm}{\nd*height}\rule[-\nd*depthdim]{\nd*thickness}{\nd*initheight}}
@@ -569,7 +567,7 @@
 		\def\ds{\by{DS}}% TB: disjunctive syllogism (a derived rule in Cambridge version)
 		\def\dem{\by{DeM}}% TB: De Morgan rule (derived rule)
 		\def\cq{\by{CQ}}% TB: conversion of quantifiers (derived rule)
-		\def\ip{\by{IP}} % MR: indirect proof rule
+		\def\ip{\by{IP}} % MR: indirect proof
 		\def\fl{\by{Flag}} % MR: flagging subproof
 	}
 	\newenvironment{nd}{\begingroup\nd*init\nd*beginb\nd*clr}{\nd*cmd\nd*endb\endgroup}

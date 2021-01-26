@@ -680,7 +680,7 @@ Let's look at one more proof with IP.  \define{contraposition} is the following 
 
 \factoidbox{
 \begin{fitch}
-\ftag{$i$}{\fa \enot \enot \meta{\varphi}} & \\
+\ftag{i}{\fa \enot \enot \meta{\varphi}} & \\
 \ftag{}{\fa \meta{\varphi}} & DNE  $i$ \\
 \end{fitch}
 }
@@ -692,7 +692,7 @@ Your challenge: prove $\enot A \eif \bot \proves  A$ using DNE (together with ou
 
 \factoidbox{
 \begin{fitch}
-\ftag{$i$}{\fa \bot} & \\
+\ftag{i}{\fa \bot} & \\
 \ftag{}{\fa \meta{\varphi}} & EX $i$ \\
 \end{fitch}
 }
@@ -967,16 +967,16 @@ But now consider this: by giving a proof of `$L$' from `$L \eor C$' and `$\enot 
 
 
 \begin{fitch}
-\ftag{$m$}{\fa (\meta{\varphi}\eor \meta{\psi})} & \\
-\ftag{$n$}{\fa \enot \meta{\varphi} } & \\
-\ftag{$k_0$}{\fa \fh \meta{\varphi}} & \\
-\ftag{$k_1$}{\fa \fa \fh \enot \meta{\psi}} & \\
-\ftag{$k_2$}{\fa \fa \fa \ered  }& \ered I $n, k_0$ \\
-\ftag{$k_3$}{\fa \fa \meta{\psi}} &  IP $k_0$--$k_3$\\
-\ftag{$k_4$}{\fa \fh \meta{\psi} } & \\
-\ftag{$k_5$}{\fa \fa \meta{\psi} \eand \meta{\psi}} &  $\eand$I $k_4, k_4$ \\
-\ftag{$k_6$}{\fa \fa \meta{\psi}} &  $\eand$E $k_5$ \\
-\ftag{$k_7$}{\fa \meta{\psi} }&  $\eor$E $m, k-k_3, k_4-k_6$\\
+\ftag{m}{\fa (\meta{\varphi}\eor \meta{\psi})} & \\
+\ftag{n}{\fa \enot \meta{\varphi} } & \\
+\ftag{k_0}{\fa \fh \meta{\varphi}} & \\
+\ftag{k_1}{\fa \fa \fh \enot \meta{\psi}} & \\
+\ftag{k_2}{\fa \fa \fa \ered  }& \ered I $n, k_0$ \\
+\ftag{k_3}{\fa \fa \meta{\psi}} &  IP $k_0$--$k_3$\\
+\ftag{k_4}{\fa \fh \meta{\psi} } & \\
+\ftag{k_5}{\fa \fa \meta{\psi} \eand \meta{\psi}} &  $\eand$I $k_4, k_4$ \\
+\ftag{k_6}{\fa \fa \meta{\psi}} &  $\eand$E $k_5$ \\
+\ftag{k_7}{\fa \meta{\psi} }&  $\eor$E $m, k-k_3, k_4-k_6$\\
 \end{fitch}\\
 
 

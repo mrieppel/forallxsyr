@@ -1,0 +1,168 @@
+\indexentry{argument|hyperpage}{1}
+\indexentry{valid|hyperpage}{2}
+\indexentry{statements|hyperpage}{3}
+\indexentry{truth-values|hyperpage}{3}
+\indexentry{possible world|hyperpage}{3}
+\indexentry{contingent|hyperpage}{3}
+\indexentry{necessary truth|hyperpage}{3}
+\indexentry{necessarily false|hyperpage}{3}
+\indexentry{valid|hyperpage}{4}
+\indexentry{contingent|hyperpage}{4}
+\indexentry{necessary truth|hyperpage}{4}
+\indexentry{necessary falsehood|hyperpage}{4}
+\indexentry{contradictory|hyperpage}{4}
+\indexentry{equivalent|hyperpage}{4}
+\indexentry{jointly consistent|hyperpage}{4}
+\indexentry{jointly inconsistent|hyperpage}{4}
+\indexentry{sound|hyperpage}{5}
+\indexentry{inductive|hyperpage}{6}
+\indexentry{deductive|hyperpage}{6}
+\indexentry{formally valid|hyperpage}{8}
+\indexentry{atomic sentences|hyperpage}{11}
+\indexentry{symbolization key|hyperpage}{11}
+\indexentry{conjunction|hyperpage}{14}
+\indexentry{conjuncts|hyperpage}{14}
+\indexentry{disjunction|hyperpage}{16}
+\indexentry{disjuncts|hyperpage}{16}
+\indexentry{exclusive or|hyperpage}{16}
+\indexentry{inclusive or|hyperpage}{16}
+\indexentry{DeMorgan's Laws|hyperpage}{17}
+\indexentry{the conditional|hyperpage}{18}
+\indexentry{antecedent|hyperpage}{18}
+\indexentry{consequent|hyperpage}{18}
+\indexentry{Sufficient Condition|hyperpage}{18}
+\indexentry{Necessary Condition|hyperpage}{18}
+\indexentry{biconditional|hyperpage}{20}
+\indexentry{principle of charity:|hyperpage}{23}
+\indexentry{Lexicon|hyperpage}{23}
+\indexentry{expression of TFL|hyperpage}{23}
+\indexentry{Syntax|hyperpage}{24}
+\indexentry{sentence of TFL|hyperpage}{24}
+\indexentry{The Syntax of TFL:|hyperpage}{24}
+\indexentry{Unary Operator|hyperpage}{25}
+\indexentry{Binary Operators|hyperpage}{25}
+\indexentry{main operator|hyperpage}{25}
+\indexentry{Main Operator|hyperpage}{25}
+\indexentry{syntactic tree|hyperpage}{25}
+\indexentry{scope|hyperpage}{26}
+\indexentry{Object Language|hyperpage}{27}
+\indexentry{Metalanguage|hyperpage}{27}
+\indexentry{Metavariables|hyperpage}{27}
+\indexentry{metavariables|hyperpage}{27}
+\indexentry{metalanguage|hyperpage}{27}
+\indexentry{object language|hyperpage}{27}
+\indexentry{Syntax|hyperpage}{29}
+\indexentry{semantics|hyperpage}{29}
+\indexentry{truth-functional|hyperpage}{31}
+\indexentry{valuation|hyperpage}{34}
+\indexentry{complete truth table|hyperpage}{34}
+\indexentry{TF tautology|hyperpage}{38}
+\indexentry{Law of Excluded Middle|hyperpage}{38}
+\indexentry{TF contradiction|hyperpage}{38}
+\indexentry{TF contingent|hyperpage}{38}
+\indexentry{TF equivalent|hyperpage}{38}
+\indexentry{DeMorgan's Laws|hyperpage}{38}
+\indexentry{Joint Truth Table|hyperpage}{38}
+\indexentry{TF contradictory|hyperpage}{39}
+\indexentry{jointly TF consistent|hyperpage}{39}
+\indexentry{jointly TF Inconsistent|hyperpage}{39}
+\indexentry{TF Valid|hyperpage}{40}
+\indexentry{TF entail|hyperpage}{40}
+\indexentry{counterexample|hyperpage}{45}
+\indexentry{natural deduction|hyperpage}{53}
+\indexentry{natural deduction|hyperpage}{54}
+\indexentry{Introduction rules|hyperpage}{54}
+\indexentry{elimination rules|hyperpage}{54}
+\indexentry{sequent|hyperpage}{55}
+\indexentry{Completeness:|hyperpage}{55}
+\indexentry{Soundness:|hyperpage}{55}
+\indexentry{provably equivalent|hyperpage}{55}
+\indexentry{discharged|hyperpage}{62}
+\indexentry{Theorems|hyperpage}{64}
+\indexentry{Reiteration Rule:|hyperpage}{65}
+\indexentry{Explosion Principle|hyperpage}{70}
+\indexentry{Law of Excluded Middle|hyperpage}{70}
+\indexentry{non-classical logic|hyperpage}{70}
+\indexentry{classical logic|hyperpage}{70}
+\indexentry{contraposition|hyperpage}{70}
+\indexentry{proof template|hyperpage}{79}
+\indexentry{derived rule|hyperpage}{79}
+\indexentry{derived rule|hyperpage}{79}
+\indexentry{names|hyperpage}{86}
+\indexentry{predicates|hyperpage}{86}
+\indexentry{compound predicates|hyperpage}{87}
+\indexentry{universal quantifier|hyperpage}{88}
+\indexentry{existential quantifier|hyperpage}{89}
+\indexentry{domain|hyperpage}{89}
+\indexentry{scope|hyperpage}{89}
+\indexentry{free|hyperpage}{90}
+\indexentry{bound|hyperpage}{90}
+\indexentry{free variables|hyperpage}{90}
+\indexentry{Open Formulas|hyperpage}{90}
+\indexentry{Closed Formulas|hyperpage}{90}
+\indexentry{Restrictor Predicate|hyperpage}{92}
+\indexentry{Main Predicate|hyperpage}{92}
+\indexentry{Quantifier Equivalence Laws:|hyperpage}{95}
+\indexentry{One-place predicates|hyperpage}{99}
+\indexentry{two-place predicates|hyperpage}{99}
+\indexentry{three-place predicate|hyperpage}{99}
+\indexentry{logical constant|hyperpage}{106}
+\indexentry{Law of Excluded Middle|hyperpage}{109}
+\indexentry{Law of Identity|hyperpage}{109}
+\indexentry{Leibniz's Law|hyperpage}{109}
+\indexentry{Second-Order Logic|hyperpage}{110}
+\indexentry{Free Logics|hyperpage}{110}
+\indexentry{sentence of FOL|hyperpage}{111}
+\indexentry{Lexicon|hyperpage}{111}
+\indexentry{expression of FOL|hyperpage}{111}
+\indexentry{term|hyperpage}{112}
+\indexentry{atomic formula|hyperpage}{112}
+\indexentry{main logical operator|hyperpage}{113}
+\indexentry{scope|hyperpage}{113}
+\indexentry{binds|hyperpage}{114}
+\indexentry{free|hyperpage}{114}
+\indexentry{Open Formula|hyperpage}{114}
+\indexentry{sentence|hyperpage}{114}
+\indexentry{closed formulas|hyperpage}{114}
+\indexentry{Soundness:|hyperpage}{116}
+\indexentry{Completeness:|hyperpage}{116}
+\indexentry{theorem|hyperpage}{116}
+\indexentry{instances|hyperpage}{117}
+\indexentry{instances|hyperpage}{119}
+\indexentry{Leibniz's Law|hyperpage}{131}
+\indexentry{Law of Identity|hyperpage}{132}
+\indexentry{extension|hyperpage}{136}
+\indexentry{extensional language|hyperpage}{136}
+\indexentry{Tuples|hyperpage}{137}
+\indexentry{Interpretation|hyperpage}{137}
+\indexentry{FOL Interpretation|hyperpage}{137}
+\indexentry{domain|hyperpage}{137}
+\indexentry{referent|hyperpage}{137}
+\indexentry{Extension|hyperpage}{137}
+\indexentry{matrix diagram|hyperpage}{138}
+\indexentry{arrow diagrams|hyperpage}{139}
+\indexentry{variable assignment|hyperpage}{141}
+\indexentry{satisfy|hyperpage}{142}
+\indexentry{semantic instance|hyperpage}{142}
+\indexentry{semantic instances|hyperpage}{142}
+\indexentry{semantic demonstration|hyperpage}{145}
+\indexentry{logically entail|hyperpage}{147}
+\indexentry{Logical Truth|hyperpage}{147}
+\indexentry{contradiction|hyperpage}{147}
+\indexentry{logically equivalent|hyperpage}{147}
+\indexentry{jointly consistent|hyperpage}{147}
+\indexentry{jointly inconsistent|hyperpage}{147}
+\indexentry{valid|hyperpage}{147}
+\indexentry{countermodel|hyperpage}{147}
+\indexentry{relations|hyperpage}{151}
+\indexentry{serial|hyperpage}{151}
+\indexentry{reflexive|hyperpage}{151}
+\indexentry{symmetric|hyperpage}{151}
+\indexentry{transitive|hyperpage}{151}
+\indexentry{undecidable|hyperpage}{155}
+\indexentry{decidable|hyperpage}{155}
+\indexentry{term|hyperpage}{160}
+\indexentry{atomic formula|hyperpage}{160}
+\indexentry{formula|hyperpage}{160}
+\indexentry{sentence|hyperpage}{160}
+\indexentry{referent of \ensuremath  {\mathcal  {t}} on [] in|hyperpage}{160}

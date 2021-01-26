@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  21 JAN 2021 18:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  26 JAN 2021 12:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -896,49 +896,59 @@ File: p2e-pdftex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
 \qroofy=\count344
 \@qrscratchbox=\box127
 )
-(/Users/morieppe/Library/texmf/tex/latex/fitch.sty
-(/usr/local/texlive/2020/texmf-dist/tex/latex/mdwtools/mdwtab.sty
-Package: mdwtab 1998/04/28 1.9 Table typesetting with style
-\tab@state=\count345
-\tab@columns=\count346
-\tab@preamble=\toks34
-\tab@shortline=\toks35
-\extrarowheight=\dimen263
-\tabextrasep=\dimen264
-\arrayextrasep=\dimen265
-\smarraycolsep=\dimen266
-\smarrayextrasep=\dimen267
-\tab@width=\dimen268
-\col@sep=\dimen269
-\tab@endheight=\dimen270
-\tab@leftskip=\skip397
-\tab@rightskip=\skip398
-\fn@notes=\box128
-\fn@width=\dimen271
+(./fitch.sty
+(/usr/local/texlive/2020/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2020/03/24 v1.24 mathematical typesetting tools
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count345
+\calc@Bcount=\count346
+\calc@Adimen=\dimen263
+\calc@Bdimen=\dimen264
+\calc@Askip=\skip397
+\calc@Bskip=\skip398
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count347
+\calc@Cskip=\skip399
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/latexsym.sty
-Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
-\symlasy=\mathgroup6
-LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
-(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
 )
-\fitchlineht=\skip399
-\fitchindent=\skip400
-\fitchcomind=\skip401
-\fitchnumwd=\skip402
-\c@fitchcounter=\count347
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
+\g_MT_multlinerow_int=\count348
+\l_MT_multwidth_dim=\dimen265
+\origjot=\skip400
+\l_MT_shortvdotswithinadjustabove_dim=\dimen266
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen267
+\l_MT_above_intertext_sep=\dimen268
+\l_MT_below_intertext_sep=\dimen269
+\l_MT_above_shortintertext_sep=\dimen270
+\l_MT_below_shortintertext_sep=\dimen271
+\xmathstrut@box=\box128
+\xmathstrut@dim=\dimen272
+)
+\fitchlineht=\skip401
+\fitchindent=\skip402
+\fitchcomind=\skip403
+\fitchnumwd=\skip404
+\c@fitchcounter=\count349
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box129
-\beforetitleunit=\skip403
-\aftertitleunit=\skip404
-\ttl@plus=\dimen272
-\ttl@minus=\dimen273
-\ttl@toksa=\toks36
-\titlewidth=\dimen274
-\titlewidthlast=\dimen275
-\titlewidthfirst=\dimen276
+\beforetitleunit=\skip405
+\aftertitleunit=\skip406
+\ttl@plus=\dimen273
+\ttl@minus=\dimen274
+\ttl@toksa=\toks34
+\titlewidth=\dimen275
+\titlewidthlast=\dimen276
+\titlewidthfirst=\dimen277
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/mathalpha/mathalfa.sty)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/mathalpha/mathalpha.sty
@@ -950,10 +960,10 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks37
-\XKV@tempa@toks=\toks38
+\XKV@toks=\toks35
+\XKV@tempa@toks=\toks36
 )
-\XKV@depth=\count348
+\XKV@depth=\count350
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 297.
@@ -961,11 +971,11 @@ LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `bold'
 (Font)                  U/BOONDOX-calo/m/n --> U/BOONDOX-calo/b/n on input line
  298.
 )
-\c@eargnum=\count349
-\c@OLDeargnum=\count350
-\c@Example=\count351
-\c@ProbPart=\count352
-\c@countSeq=\count353
+\c@eargnum=\count351
+\c@OLDeargnum=\count352
+\c@Example=\count353
+\c@ProbPart=\count354
+\c@countSeq=\count355
 
 
 ******************************************************
@@ -987,22 +997,22 @@ Sidefoothsep and sidefootwidth: 7pt and 57pt
 Sidefootvsep and sidefootheight: 13.6pt and 539.9202pt
 ******************************************************
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 172.
+Package hyperref Info: Option `colorlinks' set `true' on input line 170.
 Package hyperref Info: Option `pdfdisplaydoctitle' set `false' on input line 17
-2.
-\nd*ctr=\count354
-\nd*dim=\skip405
-\nd*depthdim=\dimen277
-\nd*hsep=\dimen278
-\nd*n=\count355
+0.
+\nd*ctr=\count356
+\nd*dim=\skip407
+\nd*depthdim=\dimen278
+\nd*hsep=\dimen279
+\nd*n=\count357
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
 x
-\pgfutil@everybye=\toks39
-\pgfutil@tempdima=\dimen279
-\pgfutil@tempdimb=\dimen280
+\pgfutil@everybye=\toks37
+\pgfutil@tempdima=\dimen280
+\pgfutil@tempdimb=\dimen281
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
 sts.tex))
@@ -1022,33 +1032,33 @@ Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks40
-\pgfkeys@temptoks=\toks41
+\pgfkeys@pathtoks=\toks38
+\pgfkeys@temptoks=\toks39
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
 ode.tex
-\pgfkeys@tmptoks=\toks42
+\pgfkeys@tmptoks=\toks40
 ))
-\pgf@x=\dimen281
-\pgf@y=\dimen282
-\pgf@xa=\dimen283
-\pgf@ya=\dimen284
-\pgf@xb=\dimen285
-\pgf@yb=\dimen286
-\pgf@xc=\dimen287
-\pgf@yc=\dimen288
-\pgf@xd=\dimen289
-\pgf@yd=\dimen290
+\pgf@x=\dimen282
+\pgf@y=\dimen283
+\pgf@xa=\dimen284
+\pgf@ya=\dimen285
+\pgf@xb=\dimen286
+\pgf@yb=\dimen287
+\pgf@xc=\dimen288
+\pgf@yc=\dimen289
+\pgf@xd=\dimen290
+\pgf@yd=\dimen291
 \w@pgf@writea=\write4
 \r@pgf@reada=\read3
-\c@pgf@counta=\count356
-\c@pgf@countb=\count357
-\c@pgf@countc=\count358
-\c@pgf@countd=\count359
-\t@pgf@toka=\toks43
-\t@pgf@tokb=\toks44
-\t@pgf@tokc=\toks45
-\pgf@sys@id@count=\count360
+\c@pgf@counta=\count358
+\c@pgf@countb=\count359
+\c@pgf@countc=\count360
+\c@pgf@countd=\count361
+\t@pgf@toka=\toks41
+\t@pgf@tokb=\toks42
+\t@pgf@tokc=\toks43
+\pgf@sys@id@count=\count362
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
@@ -1066,8 +1076,8 @@ File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
 code.tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count361
-\pgfsyssoftpath@bigbuffer@items=\count362
+\pgfsyssoftpath@smallbuffer@items=\count363
+\pgfsyssoftpath@bigbuffer@items=\count364
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
 code.tex
@@ -1096,12 +1106,12 @@ Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen291
-\pgfmath@count=\count363
+\pgfmath@dimen=\dimen292
+\pgfmath@count=\count365
 \pgfmath@box=\box131
-\pgfmath@toks=\toks46
-\pgfmath@stack@operand=\toks47
-\pgfmath@stack@operation=\toks48
+\pgfmath@toks=\toks44
+\pgfmath@stack@operand=\toks45
+\pgfmath@stack@operation=\toks46
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
 tex
@@ -1122,37 +1132,37 @@ code.tex)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
 erarithmetics.code.tex)))
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count364
+\c@pgfmathroundto@lastzeros=\count366
 )) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
 de.tex
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen292
-\pgf@picmaxx=\dimen293
-\pgf@picminy=\dimen294
-\pgf@picmaxy=\dimen295
-\pgf@pathminx=\dimen296
-\pgf@pathmaxx=\dimen297
-\pgf@pathminy=\dimen298
-\pgf@pathmaxy=\dimen299
-\pgf@xx=\dimen300
-\pgf@xy=\dimen301
-\pgf@yx=\dimen302
-\pgf@yy=\dimen303
-\pgf@zx=\dimen304
-\pgf@zy=\dimen305
+\pgf@picminx=\dimen293
+\pgf@picmaxx=\dimen294
+\pgf@picminy=\dimen295
+\pgf@picmaxy=\dimen296
+\pgf@pathminx=\dimen297
+\pgf@pathmaxx=\dimen298
+\pgf@pathminy=\dimen299
+\pgf@pathmaxy=\dimen300
+\pgf@xx=\dimen301
+\pgf@xy=\dimen302
+\pgf@yx=\dimen303
+\pgf@yy=\dimen304
+\pgf@zx=\dimen305
+\pgf@zy=\dimen306
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
 ruct.code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen306
-\pgf@path@lasty=\dimen307
+\pgf@path@lastx=\dimen307
+\pgf@path@lasty=\dimen308
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
 .code.tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen308
-\pgf@shorten@start@additional=\dimen309
+\pgf@shorten@end@additional=\dimen309
+\pgf@shorten@start@additional=\dimen310
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
 de.tex
@@ -1160,19 +1170,19 @@ File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfpic=\box132
 \pgf@hbox=\box133
 \pgf@layerbox@main=\box134
-\pgf@picture@serial@count=\count365
+\pgf@picture@serial@count=\count367
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen310
+\pgflinewidth=\dimen311
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
 ations.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen311
-\pgf@pt@y=\dimen312
-\pgf@pt@temp=\dimen313
+\pgf@pt@x=\dimen312
+\pgf@pt@y=\dimen313
+\pgf@pt@temp=\dimen314
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
 e.tex
@@ -1189,14 +1199,14 @@ File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
 de.tex
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen314
+\pgfarrowsep=\dimen315
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
 e.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen315
-\pgf@sys@shading@range@num=\count366
-\pgf@shadingcount=\count367
+\pgf@max=\dimen316
+\pgf@sys@shading@range@num=\count368
+\pgf@shadingcount=\count369
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
 e.tex
@@ -1235,8 +1245,8 @@ File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -0-65.sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen316
-\pgf@nodesepend=\dimen317
+\pgf@nodesepstart=\dimen317
+\pgf@nodesepend=\dimen318
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -1-18.sty
@@ -1251,10 +1261,10 @@ Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen318
-\pgffor@skip=\dimen319
-\pgffor@stack=\toks49
-\pgffor@toks=\toks50
+\pgffor@iter=\dimen319
+\pgffor@skip=\dimen320
+\pgffor@stack=\toks47
+\pgffor@toks=\toks48
 ))
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
@@ -1263,34 +1273,34 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count368
-\pgfplotmarksize=\dimen320
+\pgf@plot@mark@count=\count370
+\pgfplotmarksize=\dimen321
 )
-\tikz@lastx=\dimen321
-\tikz@lasty=\dimen322
-\tikz@lastxsaved=\dimen323
-\tikz@lastysaved=\dimen324
-\tikz@lastmovetox=\dimen325
-\tikz@lastmovetoy=\dimen326
-\tikzleveldistance=\dimen327
-\tikzsiblingdistance=\dimen328
+\tikz@lastx=\dimen322
+\tikz@lasty=\dimen323
+\tikz@lastxsaved=\dimen324
+\tikz@lastysaved=\dimen325
+\tikz@lastmovetox=\dimen326
+\tikz@lastmovetoy=\dimen327
+\tikzleveldistance=\dimen328
+\tikzsiblingdistance=\dimen329
 \tikz@figbox=\box137
 \tikz@figbox@bg=\box138
 \tikz@tempbox=\box139
 \tikz@tempbox@bg=\box140
-\tikztreelevel=\count369
-\tikznumberofchildren=\count370
-\tikznumberofcurrentchild=\count371
-\tikz@fig@count=\count372
+\tikztreelevel=\count371
+\tikznumberofchildren=\count372
+\tikznumberofcurrentchild=\count373
+\tikz@fig@count=\count374
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count373
-\pgfmatrixcurrentcolumn=\count374
-\pgf@matrix@numberofcolumns=\count375
+\pgfmatrixcurrentrow=\count375
+\pgfmatrixcurrentcolumn=\count376
+\pgf@matrix@numberofcolumns=\count377
 )
-\tikz@expandcount=\count376
+\tikz@expandcount=\count378
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
@@ -1303,7 +1313,7 @@ File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
 code.tex
 File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\arrowsize=\dimen329
+\arrowsize=\dimen330
 ))
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarypositioning.code.tex
@@ -1399,8 +1409,8 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
-\symbold=\mathgroup7
-\symitalic=\mathgroup8
+\symbold=\mathgroup6
+\symitalic=\mathgroup7
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
@@ -1436,30 +1446,30 @@ LaTeX Warning: Label `exarg4' multiply defined.
 ) (./forallx-08-reference.aux))
 \openout1 = `forallxsyr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 7
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 8
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 \AtBeginShipoutBox=\box161
-Package hyperref Info: Link coloring ON on input line 7.
+Package hyperref Info: Link coloring ON on input line 8.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1471,14 +1481,14 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count377
+\c@section@level=\count379
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 7.
-LaTeX Info: Redefining \ref on input line 7.
-LaTeX Info: Redefining \pageref on input line 7.
-LaTeX Info: Redefining \nameref on input line 7.
+LaTeX Info: Redefining \nameref on input line 8.
+LaTeX Info: Redefining \ref on input line 8.
+LaTeX Info: Redefining \pageref on input line 8.
+LaTeX Info: Redefining \nameref on input line 8.
 (./forallxsyr.out) (./forallxsyr.out)
 \@outlinefile=\write6
 \openout6 = `forallxsyr.out'.
@@ -1486,17 +1496,17 @@ LaTeX Info: Redefining \nameref on input line 7.
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count378
-\scratchdimen=\dimen330
+\scratchcounter=\count380
+\scratchdimen=\dimen331
 \scratchbox=\box162
-\nofMPsegments=\count379
-\nofMParguments=\count380
-\everyMPshowfont=\toks51
-\MPscratchCnt=\count381
-\MPscratchDim=\dimen331
-\MPnumerator=\count382
-\makeMPintoPDFobject=\count383
-\everyMPtoPDFconversion=\toks52
+\nofMPsegments=\count381
+\nofMParguments=\count382
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count383
+\MPscratchDim=\dimen332
+\MPnumerator=\count384
+\makeMPintoPDFobject=\count385
+\everyMPtoPDFconversion=\toks50
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1549,12 +1559,6 @@ LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 45
-.
-
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
@@ -1821,414 +1825,414 @@ Underfull \hbox (badness 10000) in paragraph at lines 433--434
                    \relax 
 l.446 \problempart
                   
-Overfull \vbox (19.86508pt too high) detected at line 491
+Overfull \vbox (19.76694pt too high) detected at line 491
  []
 
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
 (mdframed)              on input line 491.
 
-Overfull \vbox (20.86508pt too high) detected at line 491
+Overfull \vbox (20.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (21.86508pt too high) detected at line 491
+Overfull \vbox (21.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (22.86508pt too high) detected at line 491
+Overfull \vbox (22.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (23.86508pt too high) detected at line 491
+Overfull \vbox (23.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (24.86508pt too high) detected at line 491
+Overfull \vbox (24.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (25.86508pt too high) detected at line 491
+Overfull \vbox (25.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (26.86508pt too high) detected at line 491
+Overfull \vbox (26.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (27.86508pt too high) detected at line 491
+Overfull \vbox (27.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (28.86508pt too high) detected at line 491
+Overfull \vbox (28.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (29.86508pt too high) detected at line 491
+Overfull \vbox (29.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (30.86508pt too high) detected at line 491
+Overfull \vbox (30.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (31.86508pt too high) detected at line 491
+Overfull \vbox (31.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (32.86508pt too high) detected at line 491
+Overfull \vbox (32.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (33.86508pt too high) detected at line 491
+Overfull \vbox (33.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (34.86508pt too high) detected at line 491
+Overfull \vbox (34.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (35.86508pt too high) detected at line 491
+Overfull \vbox (35.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (36.86508pt too high) detected at line 491
+Overfull \vbox (36.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (37.86508pt too high) detected at line 491
+Overfull \vbox (37.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (38.86508pt too high) detected at line 491
+Overfull \vbox (38.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (39.86508pt too high) detected at line 491
+Overfull \vbox (39.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (40.86508pt too high) detected at line 491
+Overfull \vbox (40.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (41.86508pt too high) detected at line 491
+Overfull \vbox (41.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (42.86508pt too high) detected at line 491
+Overfull \vbox (42.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (43.86508pt too high) detected at line 491
+Overfull \vbox (43.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (44.86508pt too high) detected at line 491
+Overfull \vbox (44.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (45.86508pt too high) detected at line 491
+Overfull \vbox (45.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (46.86508pt too high) detected at line 491
+Overfull \vbox (46.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (47.86508pt too high) detected at line 491
+Overfull \vbox (47.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (48.86508pt too high) detected at line 491
+Overfull \vbox (48.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (49.86508pt too high) detected at line 491
+Overfull \vbox (49.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (50.86508pt too high) detected at line 491
+Overfull \vbox (50.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (51.86508pt too high) detected at line 491
+Overfull \vbox (51.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (52.86508pt too high) detected at line 491
+Overfull \vbox (52.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (53.86508pt too high) detected at line 491
+Overfull \vbox (53.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (54.86508pt too high) detected at line 491
+Overfull \vbox (54.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (55.86508pt too high) detected at line 491
+Overfull \vbox (55.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (56.86508pt too high) detected at line 491
+Overfull \vbox (56.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (57.86508pt too high) detected at line 491
+Overfull \vbox (57.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (58.86508pt too high) detected at line 491
+Overfull \vbox (58.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (59.86508pt too high) detected at line 491
+Overfull \vbox (59.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (60.86508pt too high) detected at line 491
+Overfull \vbox (60.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (61.86508pt too high) detected at line 491
+Overfull \vbox (61.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (62.86508pt too high) detected at line 491
+Overfull \vbox (62.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (63.86508pt too high) detected at line 491
+Overfull \vbox (63.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (64.86508pt too high) detected at line 491
+Overfull \vbox (64.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (65.86508pt too high) detected at line 491
+Overfull \vbox (65.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (66.86508pt too high) detected at line 491
+Overfull \vbox (66.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (67.86508pt too high) detected at line 491
+Overfull \vbox (67.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (68.86508pt too high) detected at line 491
+Overfull \vbox (68.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (69.86508pt too high) detected at line 491
+Overfull \vbox (69.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (70.86508pt too high) detected at line 491
+Overfull \vbox (70.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (71.86508pt too high) detected at line 491
+Overfull \vbox (71.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (72.86508pt too high) detected at line 491
+Overfull \vbox (72.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (73.86508pt too high) detected at line 491
+Overfull \vbox (73.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (74.86508pt too high) detected at line 491
+Overfull \vbox (74.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (75.86508pt too high) detected at line 491
+Overfull \vbox (75.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (76.86508pt too high) detected at line 491
+Overfull \vbox (76.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (77.86508pt too high) detected at line 491
+Overfull \vbox (77.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (78.86508pt too high) detected at line 491
+Overfull \vbox (78.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (79.86508pt too high) detected at line 491
+Overfull \vbox (79.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (80.86508pt too high) detected at line 491
+Overfull \vbox (80.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (81.86508pt too high) detected at line 491
+Overfull \vbox (81.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (82.86508pt too high) detected at line 491
+Overfull \vbox (82.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (83.86508pt too high) detected at line 491
+Overfull \vbox (83.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (84.86508pt too high) detected at line 491
+Overfull \vbox (84.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (85.86508pt too high) detected at line 491
+Overfull \vbox (85.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (86.86508pt too high) detected at line 491
+Overfull \vbox (86.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (87.86508pt too high) detected at line 491
+Overfull \vbox (87.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (88.86508pt too high) detected at line 491
+Overfull \vbox (88.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (89.86508pt too high) detected at line 491
+Overfull \vbox (89.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (90.86508pt too high) detected at line 491
+Overfull \vbox (90.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (91.86508pt too high) detected at line 491
+Overfull \vbox (91.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (92.86508pt too high) detected at line 491
+Overfull \vbox (92.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (93.86508pt too high) detected at line 491
+Overfull \vbox (93.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (94.86508pt too high) detected at line 491
+Overfull \vbox (94.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (95.86508pt too high) detected at line 491
+Overfull \vbox (95.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (96.86508pt too high) detected at line 491
+Overfull \vbox (96.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (97.86508pt too high) detected at line 491
+Overfull \vbox (97.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (98.86508pt too high) detected at line 491
+Overfull \vbox (98.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (99.86508pt too high) detected at line 491
+Overfull \vbox (99.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (100.86508pt too high) detected at line 491
+Overfull \vbox (100.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (101.86508pt too high) detected at line 491
+Overfull \vbox (101.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (102.86508pt too high) detected at line 491
+Overfull \vbox (102.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (103.86508pt too high) detected at line 491
+Overfull \vbox (103.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (104.86508pt too high) detected at line 491
+Overfull \vbox (104.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (105.86508pt too high) detected at line 491
+Overfull \vbox (105.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (106.86508pt too high) detected at line 491
+Overfull \vbox (106.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (107.86508pt too high) detected at line 491
+Overfull \vbox (107.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (108.86508pt too high) detected at line 491
+Overfull \vbox (108.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (109.86508pt too high) detected at line 491
+Overfull \vbox (109.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (110.86508pt too high) detected at line 491
+Overfull \vbox (110.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (111.86508pt too high) detected at line 491
+Overfull \vbox (111.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (112.86508pt too high) detected at line 491
+Overfull \vbox (112.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (113.86508pt too high) detected at line 491
+Overfull \vbox (113.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (114.86508pt too high) detected at line 491
+Overfull \vbox (114.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (115.86508pt too high) detected at line 491
+Overfull \vbox (115.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (116.86508pt too high) detected at line 491
+Overfull \vbox (116.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (117.86508pt too high) detected at line 491
+Overfull \vbox (117.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (118.86508pt too high) detected at line 491
+Overfull \vbox (118.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (119.86508pt too high) detected at line 491
+Overfull \vbox (119.76694pt too high) detected at line 491
  []
 
 
-Overfull \vbox (120.86508pt too high) detected at line 491
+Overfull \vbox (120.76694pt too high) detected at line 491
  []
 
 
@@ -2515,414 +2519,414 @@ ame{ProbPart.1}) has been already used, duplicate ignored
                    \relax 
 l.333 \problempart
                    Give proofs for the following: [124]
-Overfull \vbox (67.7339pt too high) detected at line 398
+Overfull \vbox (67.63576pt too high) detected at line 398
  []
 
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
 (mdframed)              on input line 398.
 
-Overfull \vbox (68.7339pt too high) detected at line 398
+Overfull \vbox (68.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (69.7339pt too high) detected at line 398
+Overfull \vbox (69.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (70.7339pt too high) detected at line 398
+Overfull \vbox (70.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (71.7339pt too high) detected at line 398
+Overfull \vbox (71.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (72.7339pt too high) detected at line 398
+Overfull \vbox (72.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (73.7339pt too high) detected at line 398
+Overfull \vbox (73.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (74.7339pt too high) detected at line 398
+Overfull \vbox (74.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (75.7339pt too high) detected at line 398
+Overfull \vbox (75.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (76.7339pt too high) detected at line 398
+Overfull \vbox (76.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (77.7339pt too high) detected at line 398
+Overfull \vbox (77.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (78.7339pt too high) detected at line 398
+Overfull \vbox (78.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (79.7339pt too high) detected at line 398
+Overfull \vbox (79.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (80.7339pt too high) detected at line 398
+Overfull \vbox (80.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (81.7339pt too high) detected at line 398
+Overfull \vbox (81.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (82.7339pt too high) detected at line 398
+Overfull \vbox (82.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (83.7339pt too high) detected at line 398
+Overfull \vbox (83.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (84.7339pt too high) detected at line 398
+Overfull \vbox (84.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (85.7339pt too high) detected at line 398
+Overfull \vbox (85.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (86.7339pt too high) detected at line 398
+Overfull \vbox (86.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (87.7339pt too high) detected at line 398
+Overfull \vbox (87.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (88.7339pt too high) detected at line 398
+Overfull \vbox (88.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (89.7339pt too high) detected at line 398
+Overfull \vbox (89.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (90.7339pt too high) detected at line 398
+Overfull \vbox (90.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (91.7339pt too high) detected at line 398
+Overfull \vbox (91.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (92.7339pt too high) detected at line 398
+Overfull \vbox (92.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (93.7339pt too high) detected at line 398
+Overfull \vbox (93.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (94.7339pt too high) detected at line 398
+Overfull \vbox (94.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (95.7339pt too high) detected at line 398
+Overfull \vbox (95.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (96.7339pt too high) detected at line 398
+Overfull \vbox (96.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (97.7339pt too high) detected at line 398
+Overfull \vbox (97.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (98.7339pt too high) detected at line 398
+Overfull \vbox (98.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (99.7339pt too high) detected at line 398
+Overfull \vbox (99.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (100.7339pt too high) detected at line 398
+Overfull \vbox (100.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (101.7339pt too high) detected at line 398
+Overfull \vbox (101.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (102.7339pt too high) detected at line 398
+Overfull \vbox (102.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (103.7339pt too high) detected at line 398
+Overfull \vbox (103.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (104.7339pt too high) detected at line 398
+Overfull \vbox (104.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (105.7339pt too high) detected at line 398
+Overfull \vbox (105.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (106.7339pt too high) detected at line 398
+Overfull \vbox (106.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (107.7339pt too high) detected at line 398
+Overfull \vbox (107.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (108.7339pt too high) detected at line 398
+Overfull \vbox (108.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (109.7339pt too high) detected at line 398
+Overfull \vbox (109.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (110.7339pt too high) detected at line 398
+Overfull \vbox (110.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (111.7339pt too high) detected at line 398
+Overfull \vbox (111.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (112.7339pt too high) detected at line 398
+Overfull \vbox (112.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (113.7339pt too high) detected at line 398
+Overfull \vbox (113.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (114.7339pt too high) detected at line 398
+Overfull \vbox (114.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (115.7339pt too high) detected at line 398
+Overfull \vbox (115.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (116.7339pt too high) detected at line 398
+Overfull \vbox (116.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (117.7339pt too high) detected at line 398
+Overfull \vbox (117.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (118.7339pt too high) detected at line 398
+Overfull \vbox (118.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (119.7339pt too high) detected at line 398
+Overfull \vbox (119.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (120.7339pt too high) detected at line 398
+Overfull \vbox (120.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (121.7339pt too high) detected at line 398
+Overfull \vbox (121.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (122.7339pt too high) detected at line 398
+Overfull \vbox (122.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (123.7339pt too high) detected at line 398
+Overfull \vbox (123.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (124.7339pt too high) detected at line 398
+Overfull \vbox (124.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (125.7339pt too high) detected at line 398
+Overfull \vbox (125.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (126.7339pt too high) detected at line 398
+Overfull \vbox (126.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (127.7339pt too high) detected at line 398
+Overfull \vbox (127.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (128.7339pt too high) detected at line 398
+Overfull \vbox (128.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (129.7339pt too high) detected at line 398
+Overfull \vbox (129.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (130.7339pt too high) detected at line 398
+Overfull \vbox (130.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (131.7339pt too high) detected at line 398
+Overfull \vbox (131.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (132.7339pt too high) detected at line 398
+Overfull \vbox (132.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (133.7339pt too high) detected at line 398
+Overfull \vbox (133.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (134.7339pt too high) detected at line 398
+Overfull \vbox (134.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (135.7339pt too high) detected at line 398
+Overfull \vbox (135.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (136.7339pt too high) detected at line 398
+Overfull \vbox (136.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (137.7339pt too high) detected at line 398
+Overfull \vbox (137.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (138.7339pt too high) detected at line 398
+Overfull \vbox (138.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (139.7339pt too high) detected at line 398
+Overfull \vbox (139.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (140.7339pt too high) detected at line 398
+Overfull \vbox (140.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (141.7339pt too high) detected at line 398
+Overfull \vbox (141.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (142.7339pt too high) detected at line 398
+Overfull \vbox (142.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (143.7339pt too high) detected at line 398
+Overfull \vbox (143.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (144.7339pt too high) detected at line 398
+Overfull \vbox (144.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (145.7339pt too high) detected at line 398
+Overfull \vbox (145.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (146.7339pt too high) detected at line 398
+Overfull \vbox (146.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (147.7339pt too high) detected at line 398
+Overfull \vbox (147.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (148.7339pt too high) detected at line 398
+Overfull \vbox (148.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (149.7339pt too high) detected at line 398
+Overfull \vbox (149.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (150.7339pt too high) detected at line 398
+Overfull \vbox (150.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (151.7339pt too high) detected at line 398
+Overfull \vbox (151.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (152.7339pt too high) detected at line 398
+Overfull \vbox (152.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (153.7339pt too high) detected at line 398
+Overfull \vbox (153.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (154.7339pt too high) detected at line 398
+Overfull \vbox (154.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (155.7339pt too high) detected at line 398
+Overfull \vbox (155.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (156.7339pt too high) detected at line 398
+Overfull \vbox (156.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (157.7339pt too high) detected at line 398
+Overfull \vbox (157.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (158.7339pt too high) detected at line 398
+Overfull \vbox (158.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (159.7339pt too high) detected at line 398
+Overfull \vbox (159.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (160.7339pt too high) detected at line 398
+Overfull \vbox (160.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (161.7339pt too high) detected at line 398
+Overfull \vbox (161.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (162.7339pt too high) detected at line 398
+Overfull \vbox (162.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (163.7339pt too high) detected at line 398
+Overfull \vbox (163.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (164.7339pt too high) detected at line 398
+Overfull \vbox (164.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (165.7339pt too high) detected at line 398
+Overfull \vbox (165.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (166.7339pt too high) detected at line 398
+Overfull \vbox (166.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (167.7339pt too high) detected at line 398
+Overfull \vbox (167.63576pt too high) detected at line 398
  []
 
 
-Overfull \vbox (168.7339pt too high) detected at line 398
+Overfull \vbox (168.63576pt too high) detected at line 398
  []
 
 
@@ -2939,10 +2943,10 @@ ame{ProbPart.1}) has been already used, duplicate ignored
                    \relax 
 l.466 \problempart
                   
-Overfull \vbox (3.63707pt too high) has occurred while \output is active []
+Overfull \vbox (3.5471pt too high) has occurred while \output is active []
 
 
-Overfull \vbox (3.63707pt too high) has occurred while \output is active []
+Overfull \vbox (3.5471pt too high) has occurred while \output is active []
 
 
 [128]pdfTeX warning (ext4): destination with the same identifier (name{ProbPart
@@ -3185,7 +3189,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1401--1401
 
 
 ] [163]
-Overfull \hbox (12.42784pt too wide) in paragraph at lines 306--314
+Overfull \hbox (8.4987pt too wide) in paragraph at lines 306--314
 $[]$ 
  []
 
@@ -3194,30 +3198,30 @@ No file forallxsyr.ind.
 \tf@toc=\write7
 \openout7 = `forallxsyr.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 48.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 48.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 49.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 49.
 (./forallxsyr.aux (./forallx-00-frontmatter.aux) (./forallx-01-what.aux)
 (./forallx-02-tfl-sym.aux) (./forallx-03-tfl-sem.aux) (./forallx-04-tfl-prf.aux
 ) (./forallx-05-fol-sym.aux) (./forallx-06-fol-prf.aux)
 (./forallx-07-fol-sem.aux) (./forallx-08-reference.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 48.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 49.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
 Package rerunfilecheck Info: File `forallxsyr.out' has not changed.
 (rerunfilecheck)             Checksum: B62D640AE47CF1FBC256DF46AE68F0CF;4685.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
  ) 
 Here is how much of TeX's memory you used:
- 27464 strings out of 480608
- 504816 string characters out of 5903631
- 854057 words of memory out of 5000000
- 41785 multiletter control sequences out of 15000+600000
- 615534 words of font info for 213 fonts, out of 8000000 for 9000
+ 27741 strings out of 480608
+ 511000 string characters out of 5903631
+ 863277 words of memory out of 5000000
+ 42069 multiletter control sequences out of 15000+600000
+ 614580 words of font info for 204 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,22n,75p,1345b,857s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,22n,75p,1345b,865s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -3226,19 +3230,18 @@ ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
 e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive
 /2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2
 020/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/loca
-l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
-local/texlive/2020/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texli
-ve/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/te
-xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/f
-onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/b
-oondox/zxxrw8a.pfb>
-Output written on forallxsyr.pdf (170 pages, 2794474 bytes).
+/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-d
+ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/
+type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/
+times/utmri8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/boondo
+x/zxxrw8a.pfb>
+Output written on forallxsyr.pdf (170 pages, 2787975 bytes).
 PDF statistics:
- 2389 PDF objects out of 2487 (max. 8388607)
- 2178 compressed objects within 22 object streams
+ 2385 PDF objects out of 2487 (max. 8388607)
+ 2175 compressed objects within 22 object streams
  942 named destinations out of 1000 (max. 500000)
  570 words of extra memory for PDF output out of 10000 (max. 10000000)
 
