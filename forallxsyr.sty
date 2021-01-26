@@ -3,11 +3,13 @@
 % This version is 2019
 \ProvidesPackage{forallxsyr}[support for forallx:Syracuse]
 \usepackage{amssymb,amsmath, hyperref, multicol,  graphicx, ifthen,rotating, color}
-\usepackage{mdframed} % << MR added
-\usepackage{qtree,fitch} % << MR added
+\usepackage{mdframed} % << MR
+\usepackage{qtree} % << MR
 \usepackage{titlesec} % << MR (control font size of section headings)
 \usepackage[cal=boondoxo]{mathalfa} % << MR (gives lowercase mathcal characters, taken from forallx calgary)
 \usepackage{makeidx} % << MR: create an index
+
+
 
 %    ****************************************
 %    *            LOGICAL SYMBOLS           *
@@ -654,3 +656,13 @@
 		grey_shape/.style={thick, fill=black!20, draw, minimum width=30pt, minimum height=30pt}, % TB: renders a light grey shape with a black outline
 		white_shape/.style={thick, fill=black!0, draw, minimum width=30pt, minimum height=30pt} % TB: renders a white shape with a black outline
 	}
+
+%    ****************************************
+%    *            FORALLXSYR-BASIC.STY      *
+%    ****************************************
+% TB had a separate "basic" sty file, MR incorporated it here
+
+	\usepackage{mathptmx}
+	\usepackage[mathscr]{euscript}
+	\newcommand*{\script}[1]{\ensuremath{\mathscr{#1}}}
+	\renewcommand*{\meta}[1]{\ensuremath{\mathcal{#1}}} % TB: used for all metavariables
