@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  26 JAN 2021 13:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  2 FEB 2021 10:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3067,13 +3067,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
-[145]
+
 Overfull \hbox (10.95003pt too wide) in paragraph at lines 445--465
 []$[]$ 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.2}) 
-has been already used, duplicate ignored
+[145]pdfTeX warning (ext4): destination with the same identifier (name{ProbPart
+.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.562 \problempart
@@ -3238,7 +3238,7 @@ ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/boondo
 x/zxxrw8a.pfb>
-Output written on forallxsyr.pdf (170 pages, 2787975 bytes).
+Output written on forallxsyr.pdf (170 pages, 2788050 bytes).
 PDF statistics:
  2385 PDF objects out of 2487 (max. 8388607)
  2175 compressed objects within 22 object streams

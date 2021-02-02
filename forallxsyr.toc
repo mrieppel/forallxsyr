@@ -91,7 +91,7 @@
 \contentsline {section}{\numberline {7.5}Truth in an Interpretation: Examples}{143}{section.7.5}%
 \contentsline {paragraph}{Example 1}{143}{section.7.5}%
 \contentsline {paragraph}{Example 2}{144}{section.7.5}%
-\contentsline {paragraph}{Example 3}{145}{section.7.5}%
+\contentsline {paragraph}{Example 3}{144}{section.7.5}%
 \contentsline {paragraph}{Example 4}{145}{section.7.5}%
 \contentsline {section}{\numberline {7.6}Semantic Concepts}{147}{section.7.6}%
 \contentsline {section}{\numberline {7.7}Countermodels with One-Place Predicates}{148}{section.7.7}%
