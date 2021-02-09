@@ -96,7 +96,7 @@
 \contentsline {section}{\numberline {7.6}Semantic Concepts}{147}{section.7.6}%
 \contentsline {section}{\numberline {7.7}Countermodels with One-Place Predicates}{148}{section.7.7}%
 \contentsline {paragraph}{Example 1}{148}{section.7.7}%
-\contentsline {paragraph}{Example 2}{149}{Item.625}%
+\contentsline {paragraph}{Example 2}{149}{section.7.7}%
 \contentsline {section}{\numberline {7.8}Countermodels with Many-Place Predicates}{151}{section.7.8}%
 \contentsline {paragraph}{Example 1}{151}{section.7.8}%
 \contentsline {paragraph}{Example 2}{152}{section.7.8}%

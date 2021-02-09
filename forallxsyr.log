@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  2 FEB 2021 10:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  9 FEB 2021 18:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1440,9 +1440,6 @@ LaTeX Warning: Label `exarg1' multiply defined.
 
 ) (./forallx-03-tfl-sem.aux) (./forallx-04-tfl-prf.aux)
 (./forallx-05-fol-sym.aux) (./forallx-06-fol-prf.aux) (./forallx-07-fol-sem.aux
-
-LaTeX Warning: Label `exarg4' multiply defined.
-
 ) (./forallx-08-reference.aux))
 \openout1 = `forallxsyr.aux'.
 
@@ -3215,9 +3212,9 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 27732 strings out of 480608
- 510797 string characters out of 5903631
- 863077 words of memory out of 5000000
+ 27731 strings out of 480608
+ 510789 string characters out of 5903631
+ 863067 words of memory out of 5000000
  42063 multiletter control sequences out of 15000+600000
  614580 words of font info for 204 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3238,10 +3235,10 @@ ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/boondo
 x/zxxrw8a.pfb>
-Output written on forallxsyr.pdf (170 pages, 2788059 bytes).
+Output written on forallxsyr.pdf (170 pages, 2788021 bytes).
 PDF statistics:
- 2385 PDF objects out of 2487 (max. 8388607)
- 2175 compressed objects within 22 object streams
- 942 named destinations out of 1000 (max. 500000)
+ 2384 PDF objects out of 2487 (max. 8388607)
+ 2174 compressed objects within 22 object streams
+ 941 named destinations out of 1000 (max. 500000)
  570 words of extra memory for PDF output out of 10000 (max. 10000000)
 
