@@ -67,13 +67,13 @@
 \contentsline {section}{\numberline {5.7}Multiple Generality}{101}{section.5.7}%
 \contentsline {section}{\numberline {5.8}Intermediate Steps to Symbolization}{103}{section.5.8}%
 \contentsline {section}{\numberline {5.9}Adding Identity}{106}{section.5.9}%
-\contentsline {subsection}{There are at least\ldots }{107}{Item.465}%
-\contentsline {subsection}{There are at most\ldots }{107}{Item.468}%
-\contentsline {subsection}{There are exactly\ldots }{108}{Item.470}%
-\contentsline {subsection}{Logical Truths Involving Identity}{109}{Item.475}%
+\contentsline {subsection}{There are at least\ldots }{107}{Item.467}%
+\contentsline {subsection}{There are at most\ldots }{107}{Item.470}%
+\contentsline {subsection}{There are exactly\ldots }{108}{Item.472}%
+\contentsline {subsection}{Logical Truths Involving Identity}{109}{Item.477}%
 \contentsline {section}{\numberline {5.10}The Syntax of FOL}{111}{section.5.10}%
 \contentsline {subsection}{Formulas of FOL}{111}{section.5.10}%
-\contentsline {subsection}{Sentences of FOL}{114}{Item.501}%
+\contentsline {subsection}{Sentences of FOL}{114}{Item.503}%
 \contentsline {chapter}{\chapternumberline {6}Natural deduction for FOL}{116}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Universal elimination}{117}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Existential introduction}{119}{section.6.2}%

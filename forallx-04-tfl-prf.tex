@@ -69,7 +69,7 @@ That said, the system of natural deduction that we will develop is designed to d
 \factoidbox{\define{Completeness:} $\text{If\ } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \meta{\psi} \text{ then } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi} $}
 meaning that if \meta{\psi} is semantically entailed by $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, then there must also exist a proof of \meta{\psi} from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.    Our natural deduction system is also designed to guarantee the other direction:
 \factoidbox{\define{Soundness:} $\text{If\ } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi} \text{ then } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \meta{\psi} $}
-meaning that whenever \meta{\psi} is provable from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, then \meta{\psi} is also semantically entailed by $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.\footnote{Note that this is a different notion of soundness from the one we discussed in \S \ref{s:GoodBadArg}}  All good proof systems should be both sound and complete, to ensure that the proof-theoretic notion of provability matches up perfectly with the semantic notion of entailment. In a more advanced logic class, you learn how to provide ``meta-logical'' proofs showing that a proof system is both sound and complete, but here you'll just have to take my word for it that our natural deduction system will have both of these features.
+meaning that whenever \meta{\psi} is provable from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, then \meta{\psi} is also semantically entailed by $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.\footnote{Note that this is a different notion of soundness from the one we discussed in \S \ref{s:GoodBadArg}.}  All good proof systems should be both sound and complete, to ensure that the proof-theoretic notion of provability matches up perfectly with the semantic notion of entailment. In a more advanced logic class, you learn how to provide ``meta-logical'' proofs showing that a proof system is both sound and complete, but here you'll just have to take my word for it that our natural deduction system will have both of these features.
 
 We also have a proof-theoretic analogue of the semantic notion of TF equivalence:
 	\factoidbox{
@@ -542,16 +542,16 @@ Prove the following:
 
 Our next connective is negation. In the context of natural deduction, negation is unusual because the rules governing it involve another notion, that of  \emph{contradiction}.
 
-Consider this: an effective way to argue against someone is to show that the assumptions they are making collectively lead to a contradiction.  At that point, you have your opponent in a bind: since their assumptions lead to a contradiction, they can't all be true! So your opponent has to give up at least one of their assumptions. This argumentative strategy involves the style of \emph{reductio ad absurdum} reasoning that we encountered in \S\ref{s:PartTTableEnt}.  We are going to make use of this idea in our proof system by adding the absurdity symbol `$\ered$'.  You can think of it as officially declaring `contradiction!'\ or `reductio!'\ or `but that's absurd!'
+Consider this: an effective way to argue against someone is to show that the assumptions they are making collectively lead to a contradiction.  At that point, you have your opponent in a bind: since your opponent's assumptions lead to a contradiction, they can't all be true! So they have to give up at least one of those assumptions. This argumentative strategy exemplifies the \emph{reductio ad absurdum} reasoning that we encountered in \S\ref{s:PartTTableEnt}.  We are going to make use of this idea in our proof system by adding the absurdity symbol `$\ered$'.  You can think of it as officially declaring `contradiction!'\ or `reductio!'\ or `but that's absurd!'
 
-We can introduce this symbol into a proof whenever we explicitly contradict ourselves, i.e.\ whenever we have both a sentence and its negation appearing in the proof:
+We can declare a contradiction with \ered \ whenever we  have both a sentence and its negation appearing in our proof.  This gives us our negation elimination rule:
 \factoidbox{
 \begin{proof}
 \have[m]{a}{\meta{\varphi}}
 \have[n]{na}{\enot\meta{\varphi}}
-\have[ ]{bot}{\ered}\ri{a, na}
+\have[ ]{bot}{\ered}\ne{a, na}
 \end{proof}}
-This is traditionally called the rule of \enot E (e.g. by Gentzen in his original formulation of these rules) since the negation sign in $\enot \varphi$ is eliminated in favor of \ered.  But students generally find it more intuitive to think of the rule as introducing the absurdity symbol \ered \ into the proof, so we'll call this the \ered I rule.  Notice that it doesn't matter in what order the sentence and its negation appear in the proof, and they also don't need to appear on adjacent lines---as long as a sentence and its negation appear in your proof (and neither is trapped inside a closed subproof), you can declare a contradiction with \ered.
+It doesn't matter in what order the sentence and its negation appear in, and they don't need to appear on adjacent lines---as long as a sentence and its negation appear in your proof (and neither is trapped inside a closed subproof), you can declare a contradiction with \ered.  This rule is called $\lnot$E because a negation sign is eliminated in favor of $\bot$.  We could have equally well called this the \ered I rule, since it introduces \ered \ into the proof, but we'll continue to call it \enot E, following Gentzen, who first formulated these rules.
 
 
 %I have said that `$\ered$' should be read as something like `contradiction!' But this does not tell us much about the symbol. There are, roughly, three ways to approach the symbol.
@@ -572,7 +572,7 @@ Next, we turn to our rule of negation introduction. This rule will be a formal i
 		\close
 		\have[\ ]{na}{\enot\meta{\varphi}}\ni{a-nb}
 \end{proof}}
-There can be as many lines between $i$ and $j$ as you like.  As with other rules that require subproofs, you need to cite the entire subproof when applying $\enot$I.  Notice that since the subproof has to end with the contradiction symbol $\ered$, we will usually have to use \ered I in the course of using $\enot$I.
+There can be as many lines between $i$ and $j$ as you like.  As with other rules that require subproofs, you need to cite the entire subproof when applying $\enot$I.  Notice that since the subproof has to end with the contradiction symbol $\ered$, we will usually have to use \enot E in the course of using $\enot$I.
 
 Here's an example of how this works.  Suppose we want to show:
 $$\enot A \proves \enot(A \eand B)$$
@@ -583,7 +583,7 @@ This should strike you as intuitively valid: if $A$ isn't true, then of course a
 	\hypo{nd}{A \eand B} \by{Assumption}{}
 	\have{e}{A}\ae{nd}
 	\have{f}{\enot A}\by{Reit}{d}
-	\have{ndr}{\ered}\ri{e,f}
+	\have{ndr}{\ered}\ne{e,f}
 	\close
 	\have{con}{\enot(A \eand B)}\ni{nd-ndr}
 \end{proof}
@@ -614,11 +614,11 @@ The corresponding entailment $P \eand \enot P \entails Q$ holds: there is no val
 \fa \fh \enot Q & Assumption \\
 \fa \fa P & $\eand$E 1 \\
 \fa \fa \enot P & $\eand$E 1\\
-\fa \fa \ered  & \ered I 3,4 \\
+\fa \fa \ered  & \enot E 3,4 \\
 \fa Q &  IP 2-5 \\
 \end{fitch}\\
 
-\noindent This proof illustrates the \define{Explosion Principle}: from a contradiction, like $P \eand \enot P$, anything whatsoever can be proven!  We here proved $Q$, but exactly the same sequence of steps would have equally well let us prove $A$, or $D$, or $(S \eif L)$, or anything else.    The Explosion Principle can be stated in general terms as $\ered \proves \meta{\varphi}$.
+\noindent This proof illustrates the \define{Explosion Principle}: from a contradiction, like $P \eand \enot P$, anything whatsoever follows!  We here proved $Q$, but exactly the same sequence of steps would have equally well let us prove $A$, or $D$, or $(S \eif L)$, or anything else.    The Explosion Principle can be stated in general terms as $\ered \proves \meta{\varphi}$.
 
 Another thing that we can only prove using IP is the \define{Law of Excluded Middle}, which says that $\proves \meta{\varphi} \eor \enot \meta{\varphi}$, i.e. that any statement of the form $\meta{\varphi} \eor \enot \meta{\varphi}$ is a theorem.  Proponents of  \emph{intuitionistic logic} reject the Law of Excluded Middle, because they reject the assumption we've been making throughout this book, that for any statement, it or its negation must be true.  So they must reject our rule IP, since it lets us prove Excluded Middle.
 
@@ -633,7 +633,7 @@ Let's look at one more proof with IP.  \define{contraposition} is the following 
 \fa \fh A & Assumption (for $\eif$I)\\
 \fa \fa \fh \enot B & Assumption (for IP)\\
 \fa \fa \fa \enot A & $\eif$E  1,3\\
-\fa \fa \fa \bot  &  \ered I 2,4\\
+\fa \fa \fa \bot  &  \enot E 2,4\\
 \fa \fa B & IP  3-5\\
 \fa (A\eif B) & $\eif$I  2-6\\
 \end{fitch}\\
@@ -668,11 +668,11 @@ Let's look at one more proof with IP.  \define{contraposition} is the following 
 
 \end{earg}
 
-\problempart\label{ex-neg-prf}We've seen that if we only have \ered I (aka $\enot$E) and $\enot$I, our proof system is incomplete: we can't prove every classically valid argument to be valid. So we added IP as an additional rule.  In the following questions, we'll look more closely at what's needed to get a complete proof system.
+\problempart\label{ex-neg-prf}We've seen that if we only have \enot E and \enot I, our proof system is incomplete: we can't prove every valid argument to be valid. So we added IP as an additional rule.  In the following questions, we'll look more closely at what's needed to get a complete proof system.
 
 
 \begin{earg}
-\item It turns out that once we add IP into our proof system, we don't really need $\enot$I any longer, because anything we can prove using $\lnot$I can be proven using IP instead (though again, not the other way around!).  The core of $\lnot$I can be expressed as: $$A \rightarrow \bot \vdash \lnot A$$ Your challenge: prove $A \rightarrow \bot \vdash \lnot A$ using IP  instead of $\enot$I.  This shows that we never really have to use $\enot$I.\\
+\item It turns out that once we add IP into our proof system, we don't really need $\enot$I anymore, because anything we can prove using $\lnot$I can be proven using IP instead (though again, not the other way around!).  The core of $\lnot$I can be expressed as: $$A \rightarrow \bot \vdash \lnot A$$ Your challenge: prove $A \rightarrow \bot \vdash \lnot A$ using IP  instead of $\enot$I.  This shows that we never really have to use $\enot$I.\\
 
 
 
@@ -855,7 +855,7 @@ This is intuitively valid, so we should be able to give a proof of it.  We can s
 	\open
 		\hypo{3}{C} \by{Assumption (for $\enot$I)}{}
 		\have{4}{A} \ce{1,3}
-		\have{5}{\ered} \ri{2,4}
+		\have{5}{\ered} \ne{2,4}
 	\close
 	\have{6}{\enot C} \ni{3-5}
 \close
@@ -899,7 +899,7 @@ The following three proofs are missing their rule citations. Write them in. Addi
 \close
 \open
 	\hypo{l}{L}
-	\have{red}{\ered}%\ri{l, nl}
+	\have{red}{\ered}%\ne{l, nl}
 	\have{j3}{J}%\re{red}
 \close
 \have{conc}{J}%\oe{jol, j-j2, l-j3}
@@ -971,7 +971,7 @@ But now consider this: by giving a proof of `$L$' from `$L \eor C$' and `$\enot 
 \ftag{n}{\fa \enot \meta{\varphi} } & \\
 \ftag{k_0}{\fa \fh \meta{\varphi}} & \\
 \ftag{k_1}{\fa \fa \fh \enot \meta{\psi}} & \\
-\ftag{k_2}{\fa \fa \fa \ered  }& \ered I $n, k_0$ \\
+\ftag{k_2}{\fa \fa \fa \ered  }& \enot E $n, k_0$ \\
 \ftag{k_3}{\fa \fa \meta{\psi}} &  IP $k_0$--$k_3$\\
 \ftag{k_4}{\fa \fh \meta{\psi} } & \\
 \ftag{k_5}{\fa \fa \meta{\psi} \eand \meta{\psi}} &  $\eand$I $k_4, k_4$ \\
@@ -1007,7 +1007,7 @@ Again, this adds no power to our system because it is simply a shortcut for a se
 		\open
 		\hypo[k_0]{a}{\meta{\varphi}}
 		\have[k_1]{c}{\meta{\psi}}\ce{ab, a}
-		\have[k_2]{d}{\ered}\ri{c, nb}
+		\have[k_2]{d}{\ered}\ne{c, nb}
 		\close
 	\have[k_3]{e}{\enot\meta{\varphi}}\ni{a-d}
 \end{proof}
@@ -1052,7 +1052,7 @@ $\bot \proves \meta{\varphi}$ & EX \\
 \end{itemize}
 For example, if you have the sentence `$P$' on line $m$ in your proof, then you are allowed to directly infer `$Q \eif P$' with the justification `PMI $m$' (for ``Paradox of Material Implication'').   Or if you have a sentence `$\enot K \eor \enot L$' on  line $m$ in you proof, you may directly infer `$\enot(K \eand L)$' with the justification `DeM $m$' (for ``DeMorgan's Law''), or `$K \eif \enot L$' with the justification `Imp $m$', or `$\enot L \eor \enot K$' with the justification `Com $m$'.  Notice that these latter three are examples of derived rules that hold in \emph{both} directions, so you could also start with `$\enot(K \eand L)$', or `$K \eif \enot L$', or $\enot L \eor \enot K$' and derive `$\enot K \eor \enot L$'.
 
-The second-to-last derived rule, EX, is the Explosion Principle: it lets you infer any sentence whatsoever from a contradiction.  The last derived rule, LEM, lets you write down any instance of the Law of Excluded Middle $\meta{\varphi} \eor \enot \meta{\varphi}$ at any point in your proof with the justification `LEM'.   Here no line number needs to be cited because you're introducing a theorem.
+The second-to-last derived rule, EX, is the Explosion Principle: it lets you infer any sentence whatsoever from a contradiction.  The last one, LEM, lets you write down any instance of the Law of Excluded Middle $\meta{\varphi} \eor \enot \meta{\varphi}$ at any point in your proof with the justification `LEM'.   Here no line number needs to be cited because you're introducing a theorem.
 
 For another example of these rules in action, consider the following theorem:
 $$\proves (P \eif Q) \eor (Q \eif P)$$

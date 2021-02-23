@@ -280,7 +280,7 @@ The Flag step on line $m$ is just a way of officially signaling that the name \m
 Again, the idea is that although we only proved the one instance, `$Fa$', we are allowed to infer the universal sentence `$\forall xFx$' because that instance was arbitrary --- we could have just as easily proven any other instance we pleased.
 
 
-The Flag-ing constraint listed at the bottom of the rule --- that the Flag-ed name may not occur outside the subproof --- is crucial, because it is what insures that the name we've picked is truly arbitrary.\footnote{This constraint is actually a little more restrictive than strictly necessary.  It would be alright if the Flag-ed constant occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption}. But the constraint as we've here formulated it has the advantage of being concise and easier to remember.}  To see the constraint in action, consider this terrible argument:
+The Flag-ing constraint listed at the bottom of the rule --- that the Flag-ed name may not occur outside the subproof --- is crucial, because it is what insures that the name we've picked is truly arbitrary.\footnote{This constraint is actually a little more restrictive than strictly necessary.  It would be alright if the Flag-ed name occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption}. But the constraint as we've here formulated it has the advantage of being concise and easier to remember.}  To see the constraint in action, consider this terrible argument:
 	\begin{quote}
 		Everyone loves Beyonce.  Therefore everyone loves themselves.
 	\end{quote}
@@ -384,7 +384,7 @@ We can capture this reasoning pattern in a proof as follows:
 \end{proof}\noindent
 Breaking this down: we started by writing down our premises. At line 3, we then made an additional assumption: `$Fo$'. The idea here is that premise 1 tell us that \emph{something} is an $F$.  So on line 3 we introduce some arbitrary name `$o$' for that thing, Flag it as arbitrary to the right, and write down the corresponding instance of the existential premise 1.    The name we picked is arbitrary, since we've assumed nothing about the object named by `$o$' other than that the predicate `$F$' is true of it.  On the basis of the assumption $Fo$, we can then establish `$\exists xGx$'.  Since nothing depended on which specific object `$o$' names, our reasoning pattern is perfectly general: we could equally well have proven `$\exists xGx$'  by using any other name on line 3. We can therefore discharge the assumption `$Fo$' on line 3, and simply infer `$\exists x Gx$' on its own.
 
-Putting this together, we obtain the existential elimination rule ($\exists$E):\footnote{As in the case of $\forall$I, our formulation of the flagging constraint at the bottom is more restrictive than strictly necessary.  It would be alright if the flag-ed constant $\meta{c}$ occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption}.}
+Putting this together, we obtain the existential elimination rule ($\exists$E):\footnote{As in the case of $\forall$I, our formulation of the flagging constraint at the bottom is more restrictive than strictly necessary.  It would be alright if the flag-ed name $\meta{c}$ occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption}.}
 \factoidbox{
 \begin{proof}
 	\have[m]{a}{\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  9 FEB 2021 18:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  23 FEB 2021 10:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2276,7 +2276,7 @@ the same identifier (name{ProbPart.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.671 \problempart
-                  \label{ex-neg-prf}We've seen that if we only have \ered I ...
+                  \label{ex-neg-prf}We've seen that if we only have \enot E ...
 
 Underfull \hbox (badness 10000) in paragraph at lines 675--676
 
@@ -2460,17 +2460,17 @@ l.833 \problempart
 dentifier (name{ProbPart.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1236 \problempart
+l.1240 \problempart
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{ProbPart.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1268 \problempart
                     Using the following symbolization key: [110] [111]
-Package mdframed Info: Not enough space on this page on input line 1328.
+Package mdframed Info: Not enough space on this page on input line 1334.
  [112]
 [113]
-Underfull \hbox (badness 10000) in paragraph at lines 1429--1429
+Underfull \hbox (badness 10000) in paragraph at lines 1428--1428
 
  []
 
@@ -2478,18 +2478,18 @@ pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.1})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1468 \problempart
+l.1467 \problempart
                     Determine whether each string below is a grammatical for...
 [114]pdfTeX warning (ext4): destination with the same identifier (name{ProbPart
 .2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1487 \problempart
+l.1486 \problempart
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{ProbPart.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1499 \problempart
+l.1498 \problempart
                    ) [115]
 \openout2 = `forallx-06-fol-prf.aux'.
 
@@ -3212,8 +3212,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 27731 strings out of 480608
- 510789 string characters out of 5903631
+ 27733 strings out of 480608
+ 510805 string characters out of 5903631
  863067 words of memory out of 5000000
  42063 multiletter control sequences out of 15000+600000
  614580 words of font info for 204 fonts, out of 8000000 for 9000
@@ -3235,10 +3235,10 @@ ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/boondo
 x/zxxrw8a.pfb>
-Output written on forallxsyr.pdf (170 pages, 2788021 bytes).
+Output written on forallxsyr.pdf (170 pages, 2788179 bytes).
 PDF statistics:
- 2384 PDF objects out of 2487 (max. 8388607)
- 2174 compressed objects within 22 object streams
- 941 named destinations out of 1000 (max. 500000)
+ 2388 PDF objects out of 2487 (max. 8388607)
+ 2178 compressed objects within 22 object streams
+ 943 named destinations out of 1000 (max. 500000)
  570 words of extra memory for PDF output out of 10000 (max. 10000000)
 

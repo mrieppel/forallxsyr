@@ -286,25 +286,25 @@ You could in principle always avoid complex symbolizations by just restricting y
 
 However, this gain in convenience comes at a cost.  If we pick a domain of dogs in our symbolization key for \eref{quan1}, then we can no longer use the same symbolization key to symbolize sentences that talk about things other than dogs.  That could be a problem: `Every dog is a canine' might appear as the first premise in an argument, whose second premise is `No pelican is a canine', and whose conclusion is `No pelican is a dog'.  Since the second premise and the conclusion talk about pelicans, we can't symbolize them using a domain of just dogs.  We'll instead have to go back to using a larger domain, like all animals, and revert to the more complex symbolization  $\forall x (Dx \eif Cx)$ for \eref{quan1}.
 
-In practice, we're going to be fairly restrictive about what domains to use.  In order to standardize symbolizations, you should always pick one of two domains in your symbolization key: either a domain that consists of things in general (dogs, people, other animals, plants, stars, numbers etc.), or a domain that consists of people.  You can use the following guidelines to determine which domain to pick:
+In practice, we're going to be fairly restrictive about what domains to use.  In order to standardize symbolizations, you should always pick one of two domains in your symbolization key: either a domain that consists of people, or a domain that consists of things in general (dogs, people, other animals, plants, stars, numbers etc.).  You can use the following guidelines to determine which domain to pick:
 
 \factoidbox{
 \begin{itemize}
-\item If a sentence or argument only contains quantifiers restricted to people (like `everyone', `someone', `anyone', `no one'), and no standalone names of things other than people, you may (but aren't required to) use a domain consisting of just people.
+\item If a sentence or argument contains quantifiers implicitly restricted to people (like `everyone', `someone', `no one'), and no quantifiers, predicates, or standalone names that concern things other than people, you may (but aren't required to) use a domain of just people.
 
 \item For any other kind of sentence or argument,  use the domain of things.
 \end{itemize}}
-So in the case of something like `Every dog is a canine', you should use a domain of things and symbolize it as $\forall x(Dx \eif Cx)$.  For `Every logician is wise', you'd also use a domain of things and symbolize it as `$\forall x(Lx \eif Wx)$'. On the other hand, for something like `everyone is happy', you may use a domain of just people and symbolize it as $\forall xHx$.
+So in the case of  `Every dog is a canine', you should use a domain of things and symbolize it as $\forall x(Dx \eif Cx)$.  On the other hand, for something like `everyone is happy', you may use a domain of just people and symbolize it as $\forall xHx$. %For `Every logician is wise', you'd also use a domain of things and symbolize it as `$\forall x(Lx \eif Wx)$'. 
 
-It's important to notice, though, that you don't \emph{have} to use a domain of people to symbolize `Everyone is happy.' This can be symbolized in a domain of things too, by making the restriction to people (carried by the `one' in `everyone') explicit with an additional predicate `$P$' for `\blank is a person'. This would give us the symbolization `$\forall x(Px \eif Hx)$'.  In fact, using an extra predicate like this is what you would have to do if the sentence occurred as part of a larger sentence or argument that involves reference to things other than people.   
+It's important to notice, though, that you don't \emph{have} to use a domain of people to symbolize `Everyone is happy.' This can be symbolized in a domain of things too, by making the implicit restriction to people (carried by the `one' in `everyone') explicit with an additional predicate `$P$' for `\blank is a person'. This would give us the symbolization `$\forall x(Px \eif Hx)$'.  In fact, using an extra predicate like this is what you would have to do if this sentence occurred as part of a larger sentence or argument that involves reference to things other than people, and thus requires a domain of things for its symbolization.   
 
 Similarly, if you wanted to symbolize:
 \begin{earg}
 	\item[\ex{quan5}] Everyone in Chicago is happy.
 \end{earg}
-in a domain of people, you would symbolize it as $\forall x(Cx \eif Hx)$, using $C$ for `\blank is in Chicago'.  But if we use a domain of things in general, the implicit restriction to people carried by `everyone' has to be made explicit by adding `$Px$', for `$x$ is a person', into the restrictor predicate, giving us  `$\forall x((Px \eand Cx) \eif Hx)$'.
+in a domain of people, you would symbolize it as $\forall x(Cx \eif Hx)$, using $C$ for `\blank is in Chicago'.  But if we use a domain of things in general, the implicit restriction to people carried by `everyone' has to be made explicit by adding `$Px$', for `$x$ is a person', giving us  `$\forall x((Px \eand Cx) \eif Hx)$'.  After all, in a domain of things, $\forall x(Cx \eif Hx)$ says that absolutely every \emph{thing} in Chicago is happy, including every pigeon and tree, for example, whereas that isn't required to make \eref{quan5} true, so we would have to symbolize it as $\forall x((Px \eand Cx) \eif Hx)$.
 
-One last point about picking domains: sentence \eref{quan5} contains the name `Chicago', which refers to a city, not a person, so you might think that our guidelines require a domain of things here.  In fact, though, we can use the domain of people, because we aren't symbolizing the name `Chicago' in \eref{quan5} \emph{as a name}, but rather treating it as part of the larger predicate `\blank is in Chicago', which we symbolize as `$C$'.  What the guidelines mean by a ``standalone name'' is a name that will get \emph{symbolized as a name}.  It is only if a sentence contains a standalone name (in this sense) of something other than a person that you shouldn't use a domain of people.  The reason is that every object referred to by a name \emph{in our symbolization} must be part of the domain.
+One last point: sentence \eref{quan5} contains the name `Chicago', which refers to a city, so you might think that our guidelines \emph{require} a domain of things here.  In fact, though, we can use the domain of people, because we aren't symbolizing the name `Chicago' in \eref{quan5} \emph{as a name}, but rather treating it as part of the larger predicate `\blank is in Chicago', which we symbolize as `$C$'.  What the guidelines mean by a ``standalone name'' is a name that will get \emph{symbolized as a name}.  It is only if a sentence contains a standalone name (in this sense) of something other than a person that you shouldn't use a domain of people any more.  The reason is that every object referred to by a name \emph{in our symbolization} must be part of the domain.
 
 \practiceproblems
 
@@ -834,9 +834,13 @@ This is not a correct symbolization of \eref{dog5}, and indeed, virtually imposs
 
 \begin{earg}
 
+\item Every doctor cured someone.
+
 \item Every doctor cured a patient.
 
 \item Every logician is admired by some philosopher.
+
+\item No politician admires everyone.
 
 \item No  politician admires every senator.
 
@@ -1238,14 +1242,11 @@ This says that there exists at least one thing. This is obviously a controversia
 Using the following symbolization key:
 \begin{ekey}
 \item[\text{domain}] things
-\item[A] \blank\ is a card
-\item[B] \blank\  is black
-\item[C] \blank\  is a club
+\item[A] \blank\ is a card \hspace{2em} $J:$ \blank\  is a jack
+\item[B] \blank\  is black \hspace{2em} $O:$ \blank\  is one-eyed
+\item[C] \blank\  is a club \hspace{2em} $W:$ \blank\  is wild
 \item[D] \blank\  is a deuce
-\item[J] \blank\  is a jack
 %\item[M] \blank\  is a man with an axe.
-\item[O] \blank\  is one-eyed
-\item[W] \blank\  is wild
 \end{ekey}
 symbolize each sentence in FOL:
 \begin{earg}
@@ -1263,7 +1264,6 @@ symbolize each sentence in FOL:
 %\item The deuce of clubs is not the man with the axe.
 \end{earg}
 
-\
 
 \problempart Using the following symbolization key:
 \begin{ekey}
@@ -1298,7 +1298,6 @@ symbolize the following sentences in FOL:
 We've been learning to symbolize English sentences in the language of FOL, but it's time to be more precise about the grammar, or syntax of FOL.  As in the case of TFL (see \S\ref{s:TFLSyntax}), we will in this section precisely define the notion of a  \define{sentence of FOL}.
 
 There are six kinds of symbols that constitute the \define{Lexicon} of FOL:
-
 \begin{center}
 \begin{tabular}{l l}
 \textbf{Predicates} & $A,B,C,\ldots,Z$\\
@@ -1317,10 +1316,10 @@ with subscripts, as needed & $u_1, y_1, z_1, x_2,\ldots$\\
 \textbf{Quantifiers} & $\forall, \exists$\\
 \end{tabular}
 \end{center}
-We define an \define{expression of FOL} as any string of symbols of FOL. Take any of the symbols in the lexicon of FOL and write them down, in any order, and you have an expression.  But not all expressions are well-formed \emph{sentences} of FOL, so we'll need rules to tell us which expressions count as sentences.
+We define an \define{expression of FOL} as any string of symbols from the lexicon. Take any of the symbols in the lexicon of FOL and write them down, in any order, and you have an expression.  But not all expressions are well-formed \emph{sentences} of FOL, so we'll need rules to tell us which expressions count as sentences.
 
 
-In the case of TFL, in \S\ref{s:TFLSyntax}, we went straight from the statement of the lexicon to the definition of a sentence of TFL. In FOL, we will have to go via a more indirect route.  We will first define the notion of being a  \emph{formula} of FOL, and then single out the sentences from this larger class of formulas.
+In the case of TFL, in \S\ref{s:TFLSyntax}, we went straight from the statement of the lexicon to the definition of a sentence of TFL. In FOL, we will have to go via a more indirect route.  We will first define the notion of being a  \emph{formula} of FOL, and then single out the \emph{sentences} from this larger class of formulas.
 
 \subsection{Formulas of FOL}
 
@@ -1340,11 +1339,11 @@ If we let `$F$' be a one-place predicate,`$G$' a three-place predicate, and `$S$
 		$x = a$\\
 		$Fx$\\
 		$Fa$\\
-		$Gxay_{2}$\\
+		$Gxy_{2}$\\
 		$Gaaa$\\
 		$Sx_1 x_2 a b y x_6$\\
 	\end{center}
-Given the notion of an \emph{atomic formula}, we can now recursively define the broader class of FOL \emph{formulas} as follows:
+Given the notion of an \emph{atomic formula}, we can now recursively define the broader class of FOL \define{formulas} as follows:
 	\factoidbox{
 	\begin{enumerate}
 		\item Every atomic formula is a formula.
