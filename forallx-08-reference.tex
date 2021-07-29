@@ -325,17 +325,12 @@ $\bot \proves \meta{\varphi}$ & EX \\
 
 \begin{proof}
 	\have[m]{e}{\meta{a}=\meta{b}}
-	\have[n]{a}{\meta{\varphi}(\ldots \meta{a} \ldots \meta{a}\ldots)}
-	\have[\ ]{ea1}{\meta{\varphi}(\ldots \meta{b} \ldots \meta{a}\ldots)} \by{=E}{e,a}
+	\have[n]{a}{\meta{\varphi}(\ldots \meta{a} \ldots)}
+	\have[\ ]{ea1}{\meta{\varphi}(\ldots \meta{b} \ldots)} \by{=E}{e,a}
 \end{proof}
 
 
 
-\begin{proof}
-	\have[m]{e}{\meta{a}=\meta{b}}
-	\have[n]{a}{\meta{\varphi}(\ldots \meta{b} \ldots \meta{b}\ldots)}
-	\have[\ ]{ea2}{\meta{\varphi}(\ldots \meta{a} \ldots \meta{b}\ldots)} \by{=E}{e,a}
-\end{proof}
 
 \columnbreak
 
@@ -366,3 +361,5 @@ $\bot \proves \meta{\varphi}$ & EX \\
 %\end{proof}
 %\end{multicols}
 %
+
+

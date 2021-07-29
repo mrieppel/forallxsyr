@@ -234,9 +234,9 @@ Sentence \eref{quan1} gets symbolized using a universal quantifier.  You might b
 To see the route towards the correct symbolization, notice that \eref{quan1} can be paraphrased as ``for any object $x$ in the domain, \emph{if} $x$ is a dog, then $x$ is a canine.''   So \eref{quan1} gets symbolized using a universal quantifier together with a conditional, as `$\forall x(Dx \eif Cx)$'.  As general guidelines, we have the following:
 
 	\factoidbox{
-		An English sentence that can be paraphrased as `Some $F$ is $G$' can be symbolized as $\exists x (\script{F}x \eand \script{G}x)$.
+		An English sentence that can be paraphrased as `Some $\script{F}$ is $\script{G}$' can be symbolized as $\exists x (\script{F}x \eand \script{G}x)$.
 
-		An English sentence that can be paraphrased as `Every $F$ is $G$' can be symbolized as $\forall x (\script{F}x \eif \script{G}x)$.
+		An English sentence that can be paraphrased as `Every $\script{F}$ is $\script{G}$' can be symbolized as $\forall x (\script{F}x \eif \script{G}x)$.
 
 	}
 
@@ -385,11 +385,28 @@ We'll learn how to use natural deduction to prove these equivalences later.  But
 In general, we've seen the following patterns:
 
 	\factoidbox{
-		An English sentence that can be paraphrased as `No $F$ is $G$' can be symbolized as $\enot \exists x (\script{F}x \eand \script{G}x)$, or as $\forall x (\script{F}x \eif \enot \script{G}x)$
+		An English sentence that can be paraphrased as `No $\script{F}$ is $\script{G}$' can be symbolized as $\enot \exists x (\script{F}x \eand \script{G}x)$, or as $\forall x (\script{F}x \eif \enot \script{G}x)$
 
-		An English sentence that can be paraphrased as `Not every $F$ is $G$' can be symbolized as $\enot \forall x (\script{F}x \eif \script{G}x)$ or as $\exists x (\script{F}x \eand \enot \script{G}x)$.
+		An English sentence that can be paraphrased as `Not every $\script{F}$ is $\script{G}$' can be symbolized as $\enot \forall x (\script{F}x \eif \script{G}x)$ or as $\exists x (\script{F}x \eand \enot \script{G}x)$.
 	}
-These patterns also apply if we want to symbolize our earlier examples \eref{q.neg1} and \eref{q.neg2} in a domain of things rather than people.  In a domain of things, `No one (i.e. no person) is angry' gets symbolized as $\enot \exists x(Px \eand Ax)$' (or alternatively, as $\forall x(Px \eif \enot Ax)$, i.e. ``every person is non-angry'').  And `Not everyone is angry' would become $\enot \forall x(Px \eif Ax)$ (or alternatively, $\exists x(Px \eand \enot Ax)$, i.e. ``at least one person is non-angry'').
+These patterns also apply if we want to symbolize our earlier examples \eref{q.neg1} and \eref{q.neg2} in a domain of things rather than people.  In a domain of things, `No one (i.e. no person) is angry' gets symbolized as $\enot \exists x(Px \eand Ax)$' (or alternatively, as $\forall x(Px \eif \enot Ax)$, i.e. ``every person is non-angry'').  And `Not everyone is angry' would become $\enot \forall x(Px \eif Ax)$ (or alternatively, $\exists x(Px \eand \enot Ax)$, i.e. ``at least one person is non-angry'').   Here is a summary of the common symbolization patterns we've seen:
+
+\factoidbox{
+\begin{tabular}{l | l }
+English Sentence  Pattern & FOL Symbolization \\
+\hline
+& \\
+Some $\script{F}$ is $\script{G}$ & $\exists x(\script{F}x \eand \script{G}x)$  \\
+&\\
+Every $\script{F}$ is $\script{G}$ & $\forall x(\script{F}x \eif \script{G}x)$\\
+&\\
+No $\script{F}$ is $\script{G}$ & $\enot \exists x(\script{F}x \ \eand  \ \script{G}x)$  \\
+(Every $\script{F}$ is not-$\script{G}$)& $\forall x(\script{F}x \eif \enot \script{G}x)$\\
+&  \\
+Not every $\script{F}$ is $\script{G}$ & $\enot \forall x(\script{F}x \eif \script{G}x)$ \\
+(Some $\script{F}$ is not-$\script{G}$)& $\exists x(\script{F}x \ \eand  \ \enot \script{G}x)$\\
+&\\
+\end{tabular}}
 
 
 \practiceproblems
@@ -1069,7 +1086,7 @@ $$\exists x\bigl[Ax \eand \forall y(Ay \eif x= y)\bigr]$$
 Similarly, sentence \eref{exactly2} may be paraphrased as, `There are \emph{at least} two apples, and there are \emph{at most} two apples', and thus symbolized as the conjunction of \eref{atleast2} and \eref{atmost2}.
 More efficiently, though, we can paraphrase it as `There are at least two different apples, and every apple is one of those two apples'. Then we offer:
 $$\exists x\exists y\bigl[Ax \eand Ay \eand x \neq y \eand \forall z(Az \eif ( x= z \eor y = z))\bigr]$$
-Continuing with this patter, we could symbolize the claim that there are exactly three apples as follows:
+Continuing with this patter, we could symbolize the claim that there are exactly three apples:
 $$\exists x \exists y \exists z\bigl[Ax \eand Ay \eand Az \eand x \neq y \eand x \neq z \eand y \neq z \eand \forall v(Av \eif (x = v \eor y = v \eor z = v))\bigr]$$
 and so on, for any number $n$ of apples.
 
@@ -1089,7 +1106,7 @@ Another, related motivation is that there seem to be certain basic logical truth
 $$\forall x\ x= x$$
 This is sometimes called the \define{Law of Identity}, and it will be a theorem in the system of natural deduction for FOL that we will develop later.
 
-Another logical truth involving identity sometimes goes by the name of \define{Leibniz's Law}.\footnote{This law is named after Gottfried Willhelm Leibniz (1646--1716).  Leibniz actually endorsed a stronger claim, which says not only that $x$ and $y$ must share all their properties if they are identical, but also (and more controversially!) that if $x$ and $y$ share all their properties, then they are identical.  This second claim is called the ``Identity of Indiscernibles.''  Can you think of a potential example of objects $x$ and $y$ that share all their properties but are still distinct?}  It says that if $x$ and $y$ are one and the same thing, then $x$ and $y$ must share all their properties. So if we use `$D$' for `\blank is a dog', the following would be an instance of Leibniz's Law:
+Another logical truth involving identity sometimes goes by the name of \define{Leibniz's Law}.\footnote{This law is named after Gottfried Willhelm Leibniz (1646--1716).  Leibniz actually endorsed a stronger claim, which says not only that $x$ and $y$ must share all their properties if they are identical, but also (and more controversially!) that if $x$ and $y$ share all their properties, then they are identical.  Can you think of a potential example of objects $x$ and $y$ that share all their properties but are still distinct?}  It says that if $x$ and $y$ are one and the same thing, then $x$ and $y$ must share all their properties. So if we use `$D$' for `\blank is a dog', the following would be an instance of Leibniz's Law:
 $$\forall x \forall y\bigl[x = y \eif (Dx \eiff Dy)\bigr]$$
 This says that if $x$ and $y$ are identical, then $x$ is a dog iff $y$ is.  Similarly, if we use `$O$' for `\blank\ owns \blank', then another instance of Leibniz's Law says that if $x$ and $y$ are identical, then $x$ owns a dog iff $y$ does:
 $$\forall x \forall y\bigl[x = y \eif (\exists z(Dz \eand Oxz) \eiff \exists z(Dx \eand Oyz))\bigr])$$
@@ -1099,7 +1116,7 @@ A logic that contains quantifiers like `$\forall P$' is said to be a \define{Sec
 
 One last logical truth involving identity is the following:
 $$\exists x \ x=x$$
-This says that there exists at least one thing. This is obviously a controversial case: you might think the claim there exists something (rather than nothing) shouldn't just be a truth of logic.  But it is a logical truth in FOL, since FOL requires that quantifier domains have at least one member (see the stipulation in \S \ref{s:Quantifiers} above), and it will be a theorem in our system of natural deduction.  Systems of logic that avoid having this as a logical truth, and allow for empty domains as well as non-referring names, are called \define{Free Logics}.
+This says that there exists at least one thing. This is obviously a controversial case: you might think the claim that there exists something (rather than nothing) shouldn't just be a truth of logic.  But it is a logical truth in FOL, since FOL requires that quantifier domains have at least one member (see the stipulation in \S \ref{s:Quantifiers} above), and it will be a theorem in our system of natural deduction.  Systems of logic that avoid having this as a logical truth, and allow for empty domains as well as non-referring names, are called \define{Free Logics}.
 
 \practiceproblems
 
@@ -1395,7 +1412,7 @@ Looking at the first of these, we can say that `$Rxx$' is a formula by clause (1
 These constraints have the effect of preventing the kind of \emph{variable clashes} we discussed in \S\ref{s:FOLSymSteps}. And in fact, we can now give a precise definition of the notion of the \emph{scope} of a quantifier (or other logical operator) in terms of the notion of \emph{main logical operator}:
 
 	\factoidbox{
-		The \define{main logical operator} in a formula is the operator that was introduced most recently when constructing that formula according to the syntactic rules of FOL.
+		The \define{main logical operator} in a formula is the operator that was introduced last in the process of constructing that formula according to the syntactic rules of FOL.
 }
 \factoidbox{
 		The \define{scope} of an operator in a formula is the subformula for which it is the main logical operator.
@@ -1506,3 +1523,4 @@ For each of the following formulas, rewrite the formula so that all variables ar
 \item $\exists x\forall y(\forall zLzx \eif \forall u(Jy \eand Lzu))$
 \item $\exists x(\forall y \forall zLzy \eif \forall u(Ju \eand Lxu))$
 \end{earg}
+

@@ -65,43 +65,43 @@
 \contentsline {section}{\numberline {5.5}The Utility of Paraphrase}{96}{section.5.5}%
 \contentsline {section}{\numberline {5.6}Many-Place Predicates}{99}{section.5.6}%
 \contentsline {section}{\numberline {5.7}Multiple Generality}{101}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Intermediate Steps to Symbolization}{103}{section.5.8}%
+\contentsline {section}{\numberline {5.8}Intermediate Steps to Symbolization}{104}{section.5.8}%
 \contentsline {section}{\numberline {5.9}Adding Identity}{106}{section.5.9}%
-\contentsline {subsection}{There are at least\ldots }{107}{Item.467}%
-\contentsline {subsection}{There are at most\ldots }{107}{Item.470}%
-\contentsline {subsection}{There are exactly\ldots }{108}{Item.472}%
-\contentsline {subsection}{Logical Truths Involving Identity}{109}{Item.477}%
+\contentsline {subsection}{There are at least\ldots }{107}{Item.469}%
+\contentsline {subsection}{There are at most\ldots }{108}{Item.472}%
+\contentsline {subsection}{There are exactly\ldots }{108}{Item.474}%
+\contentsline {subsection}{Logical Truths Involving Identity}{109}{Item.479}%
 \contentsline {section}{\numberline {5.10}The Syntax of FOL}{111}{section.5.10}%
-\contentsline {subsection}{Formulas of FOL}{111}{section.5.10}%
-\contentsline {subsection}{Sentences of FOL}{114}{Item.503}%
-\contentsline {chapter}{\chapternumberline {6}Natural deduction for FOL}{116}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Universal elimination}{117}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Existential introduction}{119}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Universal introduction}{122}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Existential elimination}{125}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Rules for identity}{131}{section.6.5}%
-\contentsline {chapter}{\chapternumberline {7}The Semantics of FOL}{135}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Predicates and their Extensions}{135}{section.7.1}%
-\contentsline {paragraph}{Many-Place Predicates}{136}{section.7.1}%
-\contentsline {section}{\numberline {7.2}FOL Interpretations}{137}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Truth in FOL}{139}{section.7.3}%
-\contentsline {paragraph}{Truth-Rule for Atomic Sentences}{140}{section.7.3}%
-\contentsline {paragraph}{Truth-Rules for TFL Connectives}{140}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Truth-Rules for Quantified Sentences}{141}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Truth in an Interpretation: Examples}{143}{section.7.5}%
-\contentsline {paragraph}{Example 1}{143}{section.7.5}%
-\contentsline {paragraph}{Example 2}{144}{section.7.5}%
-\contentsline {paragraph}{Example 3}{144}{section.7.5}%
-\contentsline {paragraph}{Example 4}{145}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Semantic Concepts}{147}{section.7.6}%
-\contentsline {section}{\numberline {7.7}Countermodels with One-Place Predicates}{148}{section.7.7}%
-\contentsline {paragraph}{Example 1}{148}{section.7.7}%
-\contentsline {paragraph}{Example 2}{149}{section.7.7}%
-\contentsline {section}{\numberline {7.8}Countermodels with Many-Place Predicates}{151}{section.7.8}%
-\contentsline {paragraph}{Example 1}{151}{section.7.8}%
-\contentsline {paragraph}{Example 2}{152}{section.7.8}%
-\contentsline {section}{\numberline {7.9}Validity and Decidability}{154}{section.7.9}%
-\contentsline {section}{\numberline {7.10}Working with Other Semantic Concepts}{156}{section.7.10}%
-\contentsline {section}{\numberline {7.11}Semantics for Identity}{158}{section.7.11}%
-\contentsline {section}{\numberline {7.12}Appendix: Semantics with Variable Assignments}{159}{section.7.12}%
-\contentsline {chapter}{\chapternumberline {8}Quick Reference}{162}{chapter.8}%
+\contentsline {subsection}{Formulas of FOL}{112}{section.5.10}%
+\contentsline {subsection}{Sentences of FOL}{114}{Item.505}%
+\contentsline {chapter}{\chapternumberline {6}Natural deduction for FOL}{117}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Universal elimination}{118}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Existential introduction}{120}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Universal introduction}{123}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Existential elimination}{126}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Rules for identity}{132}{section.6.5}%
+\contentsline {chapter}{\chapternumberline {7}The Semantics of FOL}{136}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Predicates and their Extensions}{136}{section.7.1}%
+\contentsline {paragraph}{Many-Place Predicates}{137}{section.7.1}%
+\contentsline {section}{\numberline {7.2}FOL Interpretations}{138}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Truth in FOL}{140}{section.7.3}%
+\contentsline {paragraph}{Truth-Rule for Atomic Sentences}{141}{section.7.3}%
+\contentsline {paragraph}{Truth-Rules for TFL Connectives}{141}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Truth-Rules for Quantified Sentences}{142}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Truth in an Interpretation: Examples}{144}{section.7.5}%
+\contentsline {paragraph}{Example 1}{144}{section.7.5}%
+\contentsline {paragraph}{Example 2}{145}{section.7.5}%
+\contentsline {paragraph}{Example 3}{145}{section.7.5}%
+\contentsline {paragraph}{Example 4}{146}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Semantic Concepts}{148}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Countermodels with One-Place Predicates}{149}{section.7.7}%
+\contentsline {paragraph}{Example 1}{149}{section.7.7}%
+\contentsline {paragraph}{Example 2}{150}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Countermodels with Many-Place Predicates}{152}{section.7.8}%
+\contentsline {paragraph}{Example 1}{152}{section.7.8}%
+\contentsline {paragraph}{Example 2}{153}{section.7.8}%
+\contentsline {section}{\numberline {7.9}Validity and Decidability}{155}{section.7.9}%
+\contentsline {section}{\numberline {7.10}Working with Other Semantic Concepts}{157}{section.7.10}%
+\contentsline {section}{\numberline {7.11}Semantics for Identity}{159}{section.7.11}%
+\contentsline {section}{\numberline {7.12}Appendix: Semantics with Variable Assignments}{160}{section.7.12}%
+\contentsline {chapter}{\chapternumberline {8}Quick Reference}{163}{chapter.8}%

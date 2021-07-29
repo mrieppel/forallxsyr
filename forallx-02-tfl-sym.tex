@@ -607,22 +607,22 @@ Next, consider a more complex example: `$\enot (P \eand \enot (\enot Q \eor R))$
 
 Notice that negation differs from our other operators.  It attaches to a \emph{single} sentence to form a new sentence, and is therefore called a \define{Unary Operator}.  By contrast, the other operators all operate on \emph{pairs} of sentences to form new sentences, and are therefore called \define{Binary Operators}.
 
-Our syntactic rules tell us that any sentence formed by applying a binary operator to a pair of sentences must be enclosed by parentheses.  For example, when putting `$S$' and `$R$' together using a conjunction, the resulting sentence `$(S \eand R)$' must have brackets around it.  So `$S \eand R$' is not technically a sentence of TFL, but a mere expression.  This is \emph{not} the case for negation, however!  Putting a negation in front of a sentence never requires adding parentheses.  So `$\enot \enot D$' and `$\enot (S \eand R)$' are well-formed sentences, but `$(\enot (\enot (D)))$' or `$(\enot (S \eand R))$' are not sentences.  (We'll return to the rationale behind these bracketing rules in \S \ref{s:TFLBracketing} below.)
+Our syntactic rules tell us that any sentence formed by applying a binary operator to a pair of sentences must be enclosed by parentheses.  For example, when putting `$S$' and `$R$' together using a conjunction, the resulting sentence `$(S \eand R)$' must have parentheses around it.  So `$S \eand R$' is not technically a sentence of TFL, but a mere expression.  This is \emph{not} the case for negation, however!  Putting a negation in front of a sentence never requires adding parentheses.  So `$\enot \enot D$' and `$\enot (S \eand R)$' are well-formed sentences, but `$(\enot (\enot (D)))$' or `$(\enot (S \eand R))$' are not sentences.  (We'll return to the rationale behind these bracketing rules in \S \ref{s:TFLBracketing} below.)
 
 \subsection{Some Syntactic Notions}\label{s:TFLSyntacticNotions}
 
 
 
-Ultimately, every TFL sentence is constructed nicely out of atomic sentences on the basis of our syntactic rules. When we are dealing with any complex (i.e. non-atomic) sentence, we can see that there must be some connective that was introduced \emph{most recently} when constructing that sentence. We call that the \define{main operator} of the sentence:
+Ultimately, every TFL sentence is constructed step-by-step out of atomic sentences using our syntactic rules. When we are dealing with any complex (i.e. non-atomic) sentence, we can see that there must be some connective that was introduced \emph{last} when constructing that sentence. We call that the \define{main operator} of the sentence:
 
-\factoidbox{The \define{Main Operator} of a complex TFL sentence is the one that was introduced \emph{most recently} in the process of constructing that sentence.
+\factoidbox{The \define{Main Operator} of a complex TFL sentence is the one that was introduced \emph{last} in the process of constructing that sentence.
 }
 
-In the case of `$\enot\enot D$', the main operator is the very first `$\enot$' sign. In the case of `$((\enot E \eor F) \eif \enot G)$', the main operator is `$\eif$' because the last step in constructing this sentence is to connect `$(\enot E \eor F)$' and `$\enot G$' using `$\eif$' (and putting brackets around the result).  One can visually represent the process in which a sentence is constructed from its parts via  a \define{syntactic tree} for the sentence.  For example, the syntactic tree for `$((\enot E \eor F) \eif \enot G)$' looks like this:\\
+In the case of `$\enot\enot D$', the main operator is the very first `$\enot$' sign. In the case of `$((\enot E \eor F) \eif \enot G)$', the main operator is `$\eif$' because the last step in constructing this sentence is to connect `$(\enot E \eor F)$' and `$\enot G$' using `$\eif$' (and putting brackets around the result).  One can visually represent the process in which a sentence is constructed from its parts via  a \define{syntactic tree}.  For example, the syntactic tree for `$((\enot E \eor F) \eif \enot G)$' looks like this:\\
 
 \Tree [.{$((\enot E \eor F) \eif \enot G)$} [.{$(\enot E \eor F)$}  [.{$\enot E$} {$\enot$} {$E$} ] {$\eor$} {$F$} ] {$\eif$} [.{$\enot G$} {$\enot$} {$G$} ] ]  \\
 
-\noindent This shows that `$((\enot E \eor F) \eif \enot G)$' was constructed by connecting `$(\enot E \eor F)$' and `$\enot G$' using `$\eif$', and `$(\enot E \eor F)$' was in turn constructed by connecting `$\enot E$' and `$F$' using `$\eor$', and `$\enot E$' was constructed by putting `$\enot$' in front of `$E$', and so on. If we represent the construction process in terms of a tree structure like this, then the main operator of a sentence is whichever operator occurs on a branch of its own at the \emph{first level} below the sentence as a whole (which again, in this case, is `$\eif$').
+\noindent This shows that `$((\enot E \eor F) \eif \enot G)$' was constructed by connecting `$(\enot E \eor F)$' and `$\enot G$' using `$\eif$'. And `$(\enot E \eor F)$' was in turn constructed by connecting `$\enot E$' and `$F$' using `$\eor$', and `$\enot E$' was constructed by putting `$\enot$' in front of `$E$', and so on. If we represent the construction process in terms of a tree structure like this, then the main operator of a sentence is whichever operator occurs on a branch of its own at the \emph{first level} below the sentence as a whole (which again, in this case, is `$\eif$').
 
 
 The syntactic structure of sentences in TFL also allows us to give a formal definition of the \emph{scope} of a negation (mentioned in \S\ref{s:ConnectiveConjunction}). The scope of a `$\enot$' in a given sentence is whatever subsentence of that sentence has `$\enot$' as its main logical operator. For example, consider the complex TFL sentence:
@@ -733,3 +733,7 @@ going iff neither Pam nor Quincy are going.
 
 
 \end{earg}
+
+
+
+

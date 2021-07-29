@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  23 FEB 2021 10:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  29 JUL 2021 14:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2296,7 +2296,7 @@ bPart.1}) has been already used, duplicate ignored
                    \relax 
 l.798 \problempart
                    [75]
-Underfull \hbox (badness 10000) in paragraph at lines 841--842
+Underfull \hbox (badness 10000) in paragraph at lines 842--843
 
  []
 
@@ -2304,39 +2304,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 841--842
 1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.868 \problempart
+l.869 \problempart
                   pdfTeX warning (ext4): destination with the same identifier (
 name{ProbPart.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.909 \problempart
+l.910 \problempart
                    [77]pdfTeX warning (ext4): destination with the same identif
 ier (name{ProbPart.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.930 \problempart
+l.931 \problempart
                   pdfTeX warning (ext4): destination with the same identifier (
 name{ProbPart.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.942 \problempart
+l.944 \problempart
                   
-Underfull \hbox (badness 10000) in paragraph at lines 965--966
+Underfull \hbox (badness 10000) in paragraph at lines 967--968
+
+ []
+
+[78]
+Underfull \hbox (badness 10000) in paragraph at lines 971--983
+
+ []
+
+[79] [80]
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1062
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 969--981
-
- []
-
-[78] [79] [80]
-Underfull \hbox (badness 10000) in paragraph at lines 1058--1060
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1062--1072
+Underfull \hbox (badness 10000) in paragraph at lines 1064--1074
 
  []
 
@@ -2344,14 +2344,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 1062--1072
 1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1080 \problempart
+l.1082 \problempart
                     [82]pdfTeX warning (ext4): destination with the same identi
 fier (name{ProbPart.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1128 \problempart
+l.1130 \problempart
                    
-Underfull \hbox (badness 10000) in paragraph at lines 1143--1144
+Underfull \hbox (badness 10000) in paragraph at lines 1145--1146
 
  []
 
@@ -2359,7 +2359,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.3})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1145 \problempart
+l.1147 \problempart
                    ) [83]
 \openout2 = `forallx-05-fol-sym.aux'.
 
@@ -2409,43 +2409,43 @@ l.330 \problempart
 Part.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.396 \problempart
-                   Symbolize the following: [96]pdfTeX warning (ext4): destinat
-ion with the same identifier (name{ProbPart.1}) has been already used, duplicat
-e ignored
+l.413 \problempart
+                   Symbolize the following: [96] [97]pdfTeX warning (ext4): des
+tination with the same identifier (name{ProbPart.1}) has been already used, dup
+licate ignored
 <to be read again> 
                    \relax 
-l.500 \problempart
-                    Symbolize the following: [97]pdfTeX warning (ext4): destina
-tion with the same identifier (name{ProbPart.2}) has been already used, duplica
-te ignored
+l.517 \problempart
+                    Symbolize the following:pdfTeX warning (ext4): destination 
+with the same identifier (name{ProbPart.2}) has been already used, duplicate ig
+nored
 <to be read again> 
                    \relax 
-l.510 \problempart
+l.527 \problempart
                   \label{pr.BarbaraEtc}pdfTeX warning (ext4): destination with 
 the same identifier (name{ProbPart.3}) has been already used, duplicate ignored
 
 <to be read again> 
                    \relax 
-l.585 \problempart
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{ProbPart.4}) has been already used, duplicate ignored
+l.602 \problempart
+                   [98]pdfTeX warning (ext4): destination with the same identif
+ier (name{ProbPart.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.600 \problempart
-                   [98] [99]pdfTeX warning (ext4): destination with the same id
-entifier (name{ProbPart.1}) has been already used, duplicate ignored
+l.617 \problempart
+                   [99] [100]pdfTeX warning (ext4): destination with the same i
+dentifier (name{ProbPart.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.681 \problempart
-                   symbolize the following using two-place predicates. [100]
-[101] [102]pdfTeX warning (ext4): destination with the same identifier (name{Pr
-obPart.1}) has been already used, duplicate ignored
+l.698 \problempart
+                   symbolize the following using two-place predicates. [101]
+[102]pdfTeX warning (ext4): destination with the same identifier (name{ProbPart
+.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.750 \problempart
+l.767 \problempart
                    Symbolize the following (in a domain of people): [103]
-Underfull \hbox (badness 4954) in paragraph at lines 791--793
+Underfull \hbox (badness 4954) in paragraph at lines 808--810
 \OT1/ptm/m/n/10.95 In work-ing out how to sym-bol-ize this sen-tence, we wrote 
 down things like
  []
@@ -2454,52 +2454,49 @@ down things like
 .1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.833 \problempart
+l.850 \problempart
                    Symbolize the following using two-place predicates.  (Not...
 [105] [106] [107] [108] [109]pdfTeX warning (ext4): destination with the same i
 dentifier (name{ProbPart.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1240 \problempart
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{ProbPart.2}) has been already used, duplicate ignored
+l.1257 \problempart
+                    [110]pdfTeX warning (ext4): destination with the same ident
+ifier (name{ProbPart.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1268 \problempart
-                    Using the following symbolization key: [110] [111]
-Package mdframed Info: Not enough space on this page on input line 1334.
- [112]
-[113]
-Underfull \hbox (badness 10000) in paragraph at lines 1428--1428
+l.1285 \problempart
+                    Using the following symbolization key: [111] [112] [113]
+Underfull \hbox (badness 10000) in paragraph at lines 1445--1445
 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.1}) 
+[114]pdfTeX warning (ext4): destination with the same identifier (name{ProbPart
+.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1484 \problempart
+                    Determine whether each string below is a grammatical for...
+pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1467 \problempart
-                    Determine whether each string below is a grammatical for...
-[114]pdfTeX warning (ext4): destination with the same identifier (name{ProbPart
-.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1486 \problempart
+l.1503 \problempart
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{ProbPart.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1498 \problempart
-                   ) [115]
+l.1515 \problempart
+                    [115]) [116]
 \openout2 = `forallx-06-fol-prf.aux'.
 
- (./forallx-06-fol-prf.tex [116
+ (./forallx-06-fol-prf.tex [117
 
 
 
-] [117] [118] [119]
-[120]pdfTeX warning (ext4): destination with the same identifier (name{ProbPart
-.1}) has been already used, duplicate ignored
+] [118] [119]
+[120] [121]pdfTeX warning (ext4): destination with the same identifier (name{Pr
+obPart.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.171 \problempart
@@ -2510,435 +2507,18 @@ has been already used, duplicate ignored
                    \relax 
 l.194 \problempart
                    Given natural deduction proofs for the following (for the...
-[121] [122] [123]pdfTeX warning (ext4): destination with the same identifier (n
+[122] [123] [124]pdfTeX warning (ext4): destination with the same identifier (n
 ame{ProbPart.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.333 \problempart
-                   Give proofs for the following: [124]
-Overfull \vbox (67.63576pt too high) detected at line 398
- []
-
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 398.
-
-Overfull \vbox (68.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (69.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (70.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (71.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (72.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (73.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (74.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (75.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (76.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (77.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (78.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (79.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (80.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (81.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (82.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (83.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (84.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (85.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (86.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (87.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (88.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (89.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (90.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (91.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (92.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (93.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (94.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (95.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (96.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (97.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (98.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (99.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (100.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (101.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (102.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (103.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (104.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (105.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (106.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (107.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (108.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (109.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (110.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (111.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (112.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (113.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (114.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (115.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (116.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (117.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (118.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (119.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (120.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (121.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (122.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (123.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (124.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (125.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (126.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (127.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (128.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (129.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (130.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (131.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (132.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (133.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (134.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (135.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (136.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (137.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (138.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (139.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (140.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (141.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (142.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (143.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (144.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (145.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (146.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (147.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (148.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (149.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (150.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (151.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (152.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (153.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (154.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (155.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (156.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (157.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (158.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (159.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (160.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (161.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (162.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (163.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (164.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (165.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (166.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (167.63576pt too high) detected at line 398
- []
-
-
-Overfull \vbox (168.63576pt too high) detected at line 398
- []
-
-
-Package mdframed Warning: correct box splittet fails
- It seems you are using a non splittable contents
-(mdframed)                 on input line 398.
-
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 398.
-[125] [126] [127]pdfTeX warning (ext4): destination with the same identifier (n
-ame{ProbPart.1}) has been already used, duplicate ignored
+                   Give proofs for the following: [125] [126]
+Package mdframed Info: Not enough space on this page on input line 400.
+ [127] [128]pdfTeX warning (ext4): destination with the same identifier (name{P
+robPart.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.466 \problempart
+l.468 \problempart
                   
 Overfull \vbox (3.5471pt too high) has occurred while \output is active []
 
@@ -2946,61 +2526,61 @@ Overfull \vbox (3.5471pt too high) has occurred while \output is active []
 Overfull \vbox (3.5471pt too high) has occurred while \output is active []
 
 
-[128]pdfTeX warning (ext4): destination with the same identifier (name{ProbPart
+[129]pdfTeX warning (ext4): destination with the same identifier (name{ProbPart
 .2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.486 \problempart
+l.488 \problempart
                   pdfTeX warning (ext4): destination with the same identifier (
 name{ProbPart.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.534 \problempart
-                   [129]pdfTeX warning (ext4): destination with the same identi
+l.536 \problempart
+                   [130]pdfTeX warning (ext4): destination with the same identi
 fier (name{ProbPart.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.567 \problempart
+l.569 \problempart
                   pdfTeX warning (ext4): destination with the same identifier (
 name{ProbPart.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.573 \problempart
-                   [130] [131] [132]pdfTeX warning (ext4): destination with the
+l.575 \problempart
+                   [131] [132] [133]pdfTeX warning (ext4): destination with the
  same identifier (name{ProbPart.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.740 \problempart
+l.737 \problempart
                    Here are some important logical properties that a two-pla...
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.761 \problempart
-                   [133]pdfTeX warning (ext4): destination with the same identi
-fier (name{ProbPart.3}) has been already used, duplicate ignored
+l.758 \problempart
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{ProbPart.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.777 \problempart
+l.774 \problempart
                   pdfTeX warning (ext4): destination with the same identifier (
 name{ProbPart.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.790 \problempart
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{ProbPart.5}) has been already used, duplicate ignored
+l.787 \problempart
+                   [134]pdfTeX warning (ext4): destination with the same identi
+fier (name{ProbPart.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.801 \problempart
-                  ) [134]
+l.798 \problempart
+                  ) [135]
 \openout2 = `forallx-07-fol-sem.aux'.
 
- (./forallx-07-fol-sem.tex [135
+ (./forallx-07-fol-sem.tex [136
 
 
 
-] [136] [137] [138]
-[139]
+] [137] [138] [139]
+[140]
 Underfull \hbox (badness 10000) in paragraph at lines 238--238
 
  []
@@ -3020,13 +2600,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 238--238
 
  []
 
-[140] [141]
+[141] [142]
 Underfull \hbox (badness 10000) in paragraph at lines 289--289
 
  []
 
 Package mdframed Info: Not enough space on this page on input line 289.
-[142]
+[143]
 Package mdframed Info: Not enough space on this page on input line 289.
 
 Underfull \hbox (badness 10000) in paragraph at lines 297--297
@@ -3043,7 +2623,7 @@ Overfull \hbox (10.95003pt too wide) in paragraph at lines 309--331
 []$[]$ 
  []
 
-[143]
+[144]
 Underfull \hbox (badness 10000) in paragraph at lines 367--368
 
  []
@@ -3053,7 +2633,7 @@ Overfull \hbox (10.95003pt too wide) in paragraph at lines 369--391
 []$[]$ 
  []
 
-[144]pdfTeX warning (ext4): destination with the same identifier (name{ProbPart
+[145]pdfTeX warning (ext4): destination with the same identifier (name{ProbPart
 .1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -3069,7 +2649,7 @@ Overfull \hbox (10.95003pt too wide) in paragraph at lines 445--465
 []$[]$ 
  []
 
-[145]pdfTeX warning (ext4): destination with the same identifier (name{ProbPart
+[146]pdfTeX warning (ext4): destination with the same identifier (name{ProbPart
 .2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -3090,7 +2670,7 @@ Overfull \hbox (10.95003pt too wide) in paragraph at lines 628--661
 []$[]$ 
  []
 
-[146]
+[147]
 Underfull \hbox (badness 10000) in paragraph at lines 694--694
 
  []
@@ -3110,19 +2690,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 694--694
 
  []
 
-[147] [148] [149] [150]pdfTeX warning (ext4): destination with the same identif
+[148] [149] [150] [151]pdfTeX warning (ext4): destination with the same identif
 ier (name{ProbPart.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.840 \problempart
                    Construct countermodels to demonstrate the following:
-[151] [152]pdfTeX warning (ext4): destination with the same identifier (name{Pr
+[152] [153]pdfTeX warning (ext4): destination with the same identifier (name{Pr
 obPart.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1013 \problempart
                     Construct countermodels to demonstrate the following:
-[153] [154] [155] [156]pdfTeX warning (ext4): destination with the same identif
+[154] [155] [156] [157]pdfTeX warning (ext4): destination with the same identif
 ier (name{ProbPart.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -3132,7 +2712,7 @@ l.1193 \problempart
 <to be read again> 
                    \relax 
 l.1210 \problempart
-                    [157] [158]pdfTeX warning (ext4): destination with the same
+                    [158] [159]pdfTeX warning (ext4): destination with the same
  identifier (name{ProbPart.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
@@ -3143,12 +2723,12 @@ y used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1331 \problempart
-                    [159]
+                    [160]
 Underfull \hbox (badness 10000) in paragraph at lines 1384--1384
 
  []
 
-[160]
+[161]
 Underfull \hbox (badness 10000) in paragraph at lines 1401--1401
 
  []
@@ -3178,19 +2758,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 1401--1401
 
  []
 
-) [161]
+) [162]
 \openout2 = `forallx-08-reference.aux'.
 
- (./forallx-08-reference.tex [162
+ (./forallx-08-reference.tex [163
 
 
 
-] [163]
+] [164]
 Overfull \hbox (8.4987pt too wide) in paragraph at lines 306--314
 $[]$ 
  []
 
-) [164]
+) [165]
 No file forallxsyr.ind.
 \tf@toc=\write7
 \openout7 = `forallxsyr.toc'.
@@ -3212,10 +2792,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
  ) 
 Here is how much of TeX's memory you used:
- 27733 strings out of 480608
- 510805 string characters out of 5903631
- 863067 words of memory out of 5000000
- 42063 multiletter control sequences out of 15000+600000
+ 27736 strings out of 480608
+ 510830 string characters out of 5903631
+ 863070 words of memory out of 5000000
+ 42062 multiletter control sequences out of 15000+600000
  614580 words of font info for 204 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,22n,75p,1345b,865s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3235,10 +2815,10 @@ ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/boondo
 x/zxxrw8a.pfb>
-Output written on forallxsyr.pdf (170 pages, 2788179 bytes).
+Output written on forallxsyr.pdf (171 pages, 2791230 bytes).
 PDF statistics:
- 2388 PDF objects out of 2487 (max. 8388607)
- 2178 compressed objects within 22 object streams
- 943 named destinations out of 1000 (max. 500000)
+ 2395 PDF objects out of 2487 (max. 8388607)
+ 2184 compressed objects within 22 object streams
+ 947 named destinations out of 1000 (max. 500000)
  570 words of extra memory for PDF output out of 10000 (max. 10000000)
 

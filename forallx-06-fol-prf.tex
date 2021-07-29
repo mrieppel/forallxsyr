@@ -1,7 +1,7 @@
 \chapter{Natural deduction for FOL}\label{ch:NDFOL}
 
 
-Since s entences in FOL can contain any of the TFL connectives, proofs in FOL will take over all the natural deduction rules from TFL that we studied in chapter \ref{ch:NDTFL}, as well as the all derived  TFL rules introduced in \S \ref{s:TFLDerivedRules}.  We will also continue to use the same proof theoretic notions, in particular, the symbol `$\proves$'.  So:
+Since sentences in FOL can contain any of the TFL connectives, proofs in FOL will take over all the natural deduction rules from TFL that we studied in chapter \ref{ch:NDTFL}, as well as the all derived  TFL rules introduced in \S \ref{s:TFLDerivedRules}.  We will also continue to use the same proof theoretic notions, in particular, the symbol `$\proves$'.  So:
 $$\meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi}$$
 will continue to mean that $\meta{\psi}$ is \emph{provable} from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, i.e. that there exists a natural deduction proof which ends with $\meta{\psi}$ and whose premises, or more generally, whose undischarged assumptions, include at most $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.
 
@@ -337,6 +337,8 @@ The constraints on the legitimate application of $\forall$I are met, since the n
 
 \item $\forall x\forall y(Gy\rightarrow Fx) \vdash \forall x(\forall yGy\rightarrow Fx)$
 
+\item $\forall x(Fx \eif Gx) \vdash \forall xFx \eif \forall x Gx$
+
 \item $\forall x (Fx \eand Gx) \proves \forall x(Fx \eand Ga)$
 
 \item $\forall xFx\lor \forall xGx \vdash \forall x(Fx\lor Gx)$
@@ -619,36 +621,60 @@ When all the quantifiers occur at the beginning of a sentence, that sentence is 
 
 \section{Rules for identity}\label{s:identityrules}
 
-In \S\ref{s:identity}, I mentioned that in saying of some objects $a$ and $b$ that they are \emph{identical}, we don't merely mean that they are very similar to each other, or indistinguishable in the way that e.g. two cans of soda or two pennies might be. Rather, they have to be one and the same object. It follows that no matter how much you tell me about what  $a$ and $b$ are like, qualitatively, this won't suffice to conclude that $a=b$.  Indeed, no sentences which do not \emph{already} involve an identity claim could justify an inference to `$a=b$'
+In \S\ref{s:identity}, we noted that if we say objects $a$ and $b$ are \emph{identical}, we don't merely mean that they are very similar to each other, or indistinguishable in the way that e.g. two cans of soda or two pennies might be. Rather, they have to be one and the same object. It follows that no matter how much you tell me about what  $a$ and $b$ are like, qualitatively, this won't suffice to conclude that $a=b$.  Indeed, no sentences which do not \emph{already} involve an identity claim could justify an inference to `$a=b$'
 
 
-However, we can be sure that every object is identical to \emph{itself}. No premises are required to conclude that much. So this will be the identity introduction rule:
+However, we can be sure that every object is identical \emph{to itself}. No premises are required to conclude that much. This forms the basis of our identity introduction rule:
 \factoidbox{
 \begin{proof}
 	\have[\ \,\,\,]{x}{\meta{c}=\meta{c}} \by{=I}{}
 \end{proof}}
-Notice that this rule does not require referring to any prior lines of the proof. For any name \meta{c}, you can just write $\meta{c}=\meta{c}$ at any point, with only the {=}I rule as justification.
+Notice that this rule does not require you to cite any earlier lines of the proof. For any name \meta{c}, you can just write $\meta{c}=\meta{c}$ at any point, with only the {=}I rule as justification.  Using this rule we can prove the \define{Law of Identity}, discussed in \S\ref{s:LogicalTruthsID}, which says that everything is identical to itself, i.e. that $\forall x \ x = x$, as follows:
 
+\begin{proof}
+\open
+	\hypo{1}{a} \fl{}
+	\have{2}{a=a} \by{=I}{}
+\close
+\have{3}{\forall x \ x=x} \Ai{1-2}
+\end{proof}
+This shows that identity is \emph{reflexive}, i.e. it is a relation that everything bears to itself.  The relation of being at-least-as-tall-as would be another example of a reflexive relation, since everyone is at least as tall as themselves. 
 
-Our elimination rule is more fun. If you have established `$a=b$', then anything that is true of the object named by `$a$' must also be true of the object named by `$b$', since they are one and the same. This means that given any sentence with `$a$' in it, you can replace some or all of the occurrences of `$a$' with `$b$'. For example, from `$Raa$' and `$a = b$', you are justified in inferring `$Rab$', `$Rba$' or `$Rbb$'. More generally:
+Our elimination rule is more fun. If you have established `$a=b$', then anything that is true of the object named by `$a$' must also be true of the object named by `$b$', since they are one and the same object. This means that given any sentence with `$a$' in it, you can replace some or all of the occurrences of `$a$' with `$b$'. For example, from `$Raa$' and `$a = b$', you are justified in inferring `$Rab$', or `$Rba$', or `$Rbb$'. More generally:
 \factoidbox{\begin{proof}
 	\have[m]{e}{\meta{a}=\meta{b}}
-	\have[n]{a}{\meta{\varphi}(\ldots \meta{a} \ldots \meta{a}\ldots)}
-	\have[\ ]{ea1}{\meta{\varphi}(\ldots \meta{b} \ldots \meta{a}\ldots)} \by{=E}{e,a}
+	\have[n]{a}{\meta{\varphi}(\ldots \meta{a} \ldots )}
+	\have[\ ]{ea1}{\meta{\varphi}(\ldots \meta{b} \ldots)} \by{=E}{e,a}
 \end{proof}}
-The notation here should be understood as follows: $\meta{\varphi}(\ldots \meta{a} \ldots \meta{a}\ldots)$ is a sentence containing the name $\meta{a}$, and $\meta{\varphi}(\ldots \meta{b} \ldots \meta{a}\ldots)$ is a sentence obtained by replacing one or more occurrences of the name $\meta{a}$ with the name $\meta{b}$. Lines $m$ and $n$ can occur in either order, and do not need to be adjacent, but we always cite the statement of identity first.
+This says that if $\meta{\varphi}(\ldots \meta{a} \ldots)$ is a sentence containing the name $\meta{a}$ you may infer any sentence $\meta{\varphi}(\ldots \meta{b} \ldots)$ obtained by replacing one or more occurrences of the name $\meta{a}$ with the name $\meta{b}$. Lines $m$ and $n$ can occur in either order, but you should cite the identity statement first.  
 
-Symmetrically, we allow:
-\factoidbox{\begin{proof}
-	\have[m]{e}{\meta{a}=\meta{b}}
-	\have[n]{a}{\meta{\varphi}(\ldots \meta{b} \ldots \meta{b}\ldots)}
-	\have[\ ]{ea2}{\meta{\varphi}(\ldots \meta{a} \ldots \meta{b}\ldots)} \by{=E}{e,a}
-\end{proof}}
-That is, if we have established $\meta{a} = \meta{b}$, and we have a sentence that contains the name \meta{b}, then we are allowed to infer any sentence that results from the first by replacing one or more occurrence of \meta{b} with \meta{a}.
+Notice that technically this says that given an identity $\alpha = \beta$, you can replace occurrences of the name $\alpha$, appearing to the \emph{left} of $=$, with the name $\beta$, occurring on the \emph{right}.  So given $a=b$, you can go from $Rab$ to $Rbb$ (replacing $a$ with $b$), but you technically can't go from $Rab$ to $Raa$ (replacing $b$ with $a$).  However, using our rule of $=E$ together with $=I$, we can  show that $a=b$ implies $b=a$, and from $b=a$ together with $Rab$ we now \emph{can} infer $Raa$.  Here is a proof showing that in general, whenever $x=y$ then $y=x$, i.e. that identity is \emph{symmetric}:
 
-This rule is closely related to \define{Leibniz's Law}, which we briefly discussed in \S\ref{s:LogicalTruthsID}. Leibniz's Law says that if $x$ and $y$ are identical, then $x$ has any given property  iff $y$ does too. The following, for example, is an instance of Leibniz's Law:
+\begin{proof}
+\open
+	\hypo{1}{a} \fl{}
+	\open
+		\hypo{2}{b} \fl{}
+		\open
+			\hypo{3}{a=b}  \by{Assumption (for $\eif$I)}{}
+			\have{4}{a=a} \by{=I}{}
+			\have{5}{b=a} \by{=E}{3,4}
+		\close
+		\have{6}{a=b \eif b=a} \ci{3-5}
+	\close
+	\have{7}{\forall y(a = y \eif y = a)} \Ai{2-6}
+\close
+\have{8}{\forall x\forall y(x = y \eif y = x)} \Ai{1-7}
+
+
+\end{proof}
+Here we obtain line 5 by replacing one instance of `$a$' in line 4 with an instance of `$b$', which is justified given `$a= b$'.  Although $=E$ technically only allows replacing the occurrences of the name to the left of $=$ with the one to the right, in practice we'll allow ourselves to be sloppy an also use $=E$ in the other direction.
+
+
+
+The rule of $=E$ is closely related to \define{Leibniz's Law}, which we briefly discussed in \S\ref{s:LogicalTruthsID}. Leibniz's Law says that if $x$ and $y$ are identical, then $x$ has any given property  iff $y$ does too. For example, if `$D$' represents the property of being a dog, Leibniz's Law tell us that if $x=y$, then $x$ is a dog iff $y$ is also a dog:
 $$\forall x \forall y (x = y \eif (Dx \eiff Dy))$$
-For example, if `$D$' represents the property of being a dog, Leibniz's Law tell us that if $x=y$, then $x$ is a dog iff $y$ is also a dog.  We can prove this using $=$E as follows:
+We can prove this using $=$E (in its ``sloppy,'' i.e. derived, form) as follows:
 
 \begin{proof}
 \open
@@ -674,37 +700,8 @@ For example, if `$D$' represents the property of being a dog, Leibniz's Law tell
 	\have{11}{\forall x\forall y(x = y \eif (Dx \eiff Dy))} \Ai{1-10}
 
 \end{proof}
+The move from 4 to 5 is fine given the strict version of $=E$, since it involves replacing $a$, which occurs on the left in the identity on 3, with $b$, which occurs to the right; but the step from 6 to 7 technically isn't kosher, since it involves replacing $b$ with $a$.  However, we know that from $a=b$ on line 3 we can prove $b=a$, and the move from 6 to 7 \emph{is} kosher given $b=a$, so we can be sloppy and just use $=E$ in that direction too, as we did here.
 
-The =I rule is also related to a logical law discussed in \S\ref{s:LogicalTruthsID}, the \define{Law of Identity}, which says that everything is identical to itself, i.e. that $\forall x \ x = x$.  We can prove this as a theorem using our =I rule:
-
-\begin{proof}
-\open
-	\hypo{1}{a} \fl{}
-	\have{2}{a=a} \by{=I}{}
-\close
-\have{3}{\forall x \ x=x} \Ai{1-2}
-\end{proof}
-
-This shows that identity is \emph{reflexive}, i.e. it is a relation that everything bears to itself.  The relation of being at-least-as-tall-as would be another example of a reflexive relation, since everyone is at least as tall as themselves.  Using our rules, we can prove other properties of the identity relation as well.  For example, we can prove that it is \emph{symmetric}:
-
-\begin{proof}
-\open
-	\hypo{1}{a} \fl{}
-	\open
-		\hypo{2}{b} \fl{}
-		\open
-			\hypo{3}{a=b}  \by{Assumption (for $\eif$I)}{}
-			\have{4}{a=a} \by{=I}{}
-			\have{5}{b=a} \by{=E}{3,4}
-		\close
-		\have{6}{a=b \eif b=a} \ci{3-5}
-	\close
-	\have{7}{\forall y(a = y \eif y = a)} \Ai{2-6}
-\close
-\have{8}{\forall x\forall y(x = y \eif y = x)} \Ai{1-7}
-
-
-\end{proof}
 
 
 %\begin{proof}
@@ -718,7 +715,7 @@ This shows that identity is \emph{reflexive}, i.e. it is a relation that everyth
 %	\have{xyyx}{\forall x \forall y (x = y \eif y = x)}\Ai{ayya}
 %\end{proof}
 
-\noindent Here we obtain line 5 by replacing one instance of `$a$' in line 4 with an instance of `$b$', which is justified given `$a= b$'.
+
 
 %Second, we shall prove that identity is \emph{transitive}:
 %\begin{proof}
@@ -747,11 +744,11 @@ This shows that identity is \emph{reflexive}, i.e. it is a relation that everyth
 \item[] R is \textbf{euclidean} iff $\forall x \forall y \forall z((Rxy \land Rxz) \rightarrow Ryz)$
 \end{itemize}
 
-\noindent Above we showed that identity is both reflexive and symmetric.  Show that identity also has the other three properties: it is transitive, euclidean, and serial.  That is, prove each of the following theorems:
+\noindent Above we showed that identity is both reflexive and symmetric.  Show that identity also has the other three properties: it is euclidean, tansitive, and serial.  That is, prove each of the following theorems:
 
 \begin{earg}
-\item $\proves \forall x \forall y \forall z((x=y \land y = z) \rightarrow x = z)$
 \item $\proves \forall x \forall y \forall z((x=y \land x=z) \rightarrow y = z)$
+\item $\proves \forall x \forall y \forall z((x=y \land y = z) \rightarrow x = z)$
 \item $\proves \forall x \exists y \ x = y$
 \end{earg}
 
@@ -1009,3 +1006,4 @@ Symbolize the following argument, and then give a proof of it:
 %\end{center}
 %\end{sidewaystable}
 %
+

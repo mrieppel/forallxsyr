@@ -804,13 +804,14 @@ Prove the following:
 \item $(A \eand B) \eor (A \eand C) \vdash A$
 \item $A \eor B \proves B \eor A$
 \item  $A \eor B \vdash (A\eif B) \eif B$ 
-\item $A \eor (B \eand C) \proves (A \eor B) \eand (A \eor C)$
+\item $A \eor (B \eand C) \pequiv (A \eor B) \eand (A \eor C)$
+\item $ A \eand (B \eor C) \pequiv (A \eand B) \eor (A \eand C)$
 \item $A \eor (B \eor C) \vdash (A \eor B) \eor C$
 \item $S\eiff T \proves S\eiff (T\eor S)$
+\item $(A \eor B) \eor C, \ C \eiff B \proves C \eor A$
 \item $(C\eand D)\eor E \proves E\eor D$
 \item $A \eif  C \vdash (A \eor (B \eand C)) \eif C$ 
-\item $ A \eand (B \eor C) \vdash (A \eand B) \eor (A \eand C)$
-\item $  (A \eand B) \eor (A \eand C) \vdash  A \eand (B \eor C)$
+\item $D \eif A, C \eif (B \eand A) \proves (D \eor C) \eif (B \eor A)$
 \item $A \eor B \proves (A \eif B) \eif B$
 \item $(Z\eand K) \eor (K\eand M), K \eif D \proves D$
 \end{earg}
@@ -937,6 +938,7 @@ Show that the following are provably equivalent:
 \item $P \eif Q \pequiv \enot P \eor Q$
 \item $\enot (P \eif Q) \pequiv P \eand \enot Q$
 \item $P \eiff \enot Q \pequiv \enot(P \eiff Q)$
+\item $P \eor Q \pequiv P \eor (\enot P \eand Q)$
 \end{earg}
 
 \problempart
@@ -1144,3 +1146,7 @@ If you want more practice, you can of course also re-do any of the earlier proof
 
 \problempart
 Provide proof templates (like those I provided for DS and MT) that justify the addition of the De Morgan rules, the Imp and NegImp rules, and LEM as derived rules. If you don't want to bother with metavariables, you can just prove instances of the corresponding sequents, but  in any case, be sure to only use primitive rules in your proofs.
+
+
+
+

@@ -105,17 +105,17 @@
 \indexentry{Quantifier Equivalence Laws:|hyperpage}{95}
 \indexentry{One-place predicates|hyperpage}{99}
 \indexentry{two-place predicates|hyperpage}{99}
-\indexentry{three-place predicate|hyperpage}{99}
+\indexentry{three-place predicate|hyperpage}{100}
 \indexentry{logical constant|hyperpage}{106}
 \indexentry{Law of Excluded Middle|hyperpage}{109}
 \indexentry{Law of Identity|hyperpage}{109}
-\indexentry{Leibniz's Law|hyperpage}{109}
+\indexentry{Leibniz's Law|hyperpage}{110}
 \indexentry{Second-Order Logic|hyperpage}{110}
 \indexentry{Free Logics|hyperpage}{110}
 \indexentry{sentence of FOL|hyperpage}{111}
 \indexentry{Lexicon|hyperpage}{111}
-\indexentry{expression of FOL|hyperpage}{111}
-\indexentry{term|hyperpage}{111}
+\indexentry{expression of FOL|hyperpage}{112}
+\indexentry{term|hyperpage}{112}
 \indexentry{atomic formula|hyperpage}{112}
 \indexentry{formulas|hyperpage}{112}
 \indexentry{main logical operator|hyperpage}{113}
@@ -123,47 +123,47 @@
 \indexentry{binds|hyperpage}{114}
 \indexentry{free|hyperpage}{114}
 \indexentry{Open Formula|hyperpage}{114}
-\indexentry{sentence|hyperpage}{114}
-\indexentry{closed formulas|hyperpage}{114}
-\indexentry{Soundness:|hyperpage}{116}
-\indexentry{Completeness:|hyperpage}{116}
-\indexentry{theorem|hyperpage}{116}
-\indexentry{instances|hyperpage}{117}
-\indexentry{instances|hyperpage}{119}
-\indexentry{Leibniz's Law|hyperpage}{131}
+\indexentry{sentence|hyperpage}{115}
+\indexentry{closed formulas|hyperpage}{115}
+\indexentry{Soundness:|hyperpage}{117}
+\indexentry{Completeness:|hyperpage}{117}
+\indexentry{theorem|hyperpage}{117}
+\indexentry{instances|hyperpage}{118}
+\indexentry{instances|hyperpage}{120}
 \indexentry{Law of Identity|hyperpage}{132}
-\indexentry{extension|hyperpage}{136}
-\indexentry{extensional language|hyperpage}{136}
-\indexentry{Tuples|hyperpage}{137}
-\indexentry{Interpretation|hyperpage}{137}
-\indexentry{FOL Interpretation|hyperpage}{137}
-\indexentry{domain|hyperpage}{137}
-\indexentry{referent|hyperpage}{137}
-\indexentry{Extension|hyperpage}{137}
-\indexentry{matrix diagram|hyperpage}{138}
-\indexentry{arrow diagrams|hyperpage}{139}
-\indexentry{variable assignment|hyperpage}{141}
-\indexentry{satisfy|hyperpage}{142}
-\indexentry{semantic instance|hyperpage}{142}
-\indexentry{semantic instances|hyperpage}{142}
-\indexentry{semantic demonstration|hyperpage}{145}
-\indexentry{logically entail|hyperpage}{147}
-\indexentry{Logical Truth|hyperpage}{147}
-\indexentry{contradiction|hyperpage}{147}
-\indexentry{logically equivalent|hyperpage}{147}
-\indexentry{jointly consistent|hyperpage}{147}
-\indexentry{jointly inconsistent|hyperpage}{147}
-\indexentry{valid|hyperpage}{147}
-\indexentry{countermodel|hyperpage}{147}
-\indexentry{relations|hyperpage}{151}
-\indexentry{serial|hyperpage}{151}
-\indexentry{reflexive|hyperpage}{151}
-\indexentry{symmetric|hyperpage}{151}
-\indexentry{transitive|hyperpage}{151}
-\indexentry{undecidable|hyperpage}{155}
-\indexentry{decidable|hyperpage}{155}
-\indexentry{term|hyperpage}{160}
-\indexentry{atomic formula|hyperpage}{160}
-\indexentry{formula|hyperpage}{160}
-\indexentry{sentence|hyperpage}{160}
-\indexentry{referent of \ensuremath  {\mathcal  {t}} on [] in|hyperpage}{160}
+\indexentry{Leibniz's Law|hyperpage}{133}
+\indexentry{extension|hyperpage}{137}
+\indexentry{extensional language|hyperpage}{137}
+\indexentry{Tuples|hyperpage}{138}
+\indexentry{Interpretation|hyperpage}{138}
+\indexentry{FOL Interpretation|hyperpage}{138}
+\indexentry{domain|hyperpage}{138}
+\indexentry{referent|hyperpage}{138}
+\indexentry{Extension|hyperpage}{138}
+\indexentry{matrix diagram|hyperpage}{139}
+\indexentry{arrow diagrams|hyperpage}{140}
+\indexentry{variable assignment|hyperpage}{142}
+\indexentry{satisfy|hyperpage}{143}
+\indexentry{semantic instance|hyperpage}{143}
+\indexentry{semantic instances|hyperpage}{143}
+\indexentry{semantic demonstration|hyperpage}{146}
+\indexentry{logically entail|hyperpage}{148}
+\indexentry{Logical Truth|hyperpage}{148}
+\indexentry{contradiction|hyperpage}{148}
+\indexentry{logically equivalent|hyperpage}{148}
+\indexentry{jointly consistent|hyperpage}{148}
+\indexentry{jointly inconsistent|hyperpage}{148}
+\indexentry{valid|hyperpage}{148}
+\indexentry{countermodel|hyperpage}{148}
+\indexentry{relations|hyperpage}{152}
+\indexentry{serial|hyperpage}{152}
+\indexentry{reflexive|hyperpage}{152}
+\indexentry{symmetric|hyperpage}{152}
+\indexentry{transitive|hyperpage}{152}
+\indexentry{undecidable|hyperpage}{156}
+\indexentry{decidable|hyperpage}{156}
+\indexentry{term|hyperpage}{161}
+\indexentry{atomic formula|hyperpage}{161}
+\indexentry{formula|hyperpage}{161}
+\indexentry{sentence|hyperpage}{161}
+\indexentry{referent of \ensuremath  {\mathcal  {t}} on [] in|hyperpage}{161}

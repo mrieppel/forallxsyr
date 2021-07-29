@@ -285,15 +285,15 @@ It's important to remember, though, that this really is just a notational shorth
 With this background in place, we can now state the truth-rules for quantified sentencess:
 \factoidbox{$\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is true in an interpretation \script{I} \textbf{iff}  $\meta{\varphi}(\ldots \meta{v}^o \ldots)$ is true in \script{I} for \emph{every object} $o$ in \script{I}'s domain (i.e. if \emph{all} of its semantic instances in \script{I} are true).\\
 
-$\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is true in an interpretation \script{I} \textbf{iff}  $\meta{\varphi}(\ldots \meta{v}^o \ldots)$ is true in \script{I} for \emph{at least one} object $o$ in \script{I}'s domain (i.e. if \emph{at least one} of its semantic instances in \script{I} are true).
+$\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is true in an interpretation \script{I} \textbf{iff}  $\meta{\varphi}(\ldots \meta{v}^o \ldots)$ is true in \script{I} for \emph{at least one} object $o$ in \script{I}'s domain (i.e. if \emph{at least one} of its semantic instances in \script{I} is true).
 }
 The idea, again, is that we go through each object $o$ in the domain, and check whether $\meta{\varphi}(\ldots \meta{v} \ldots)$ is true if \meta{v} is treated as referring to $o$; if so, the universal sentence $\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is true, if not, it's false.  Notice that it's much easier for an existential sentence to be true: for $\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ to be true, it suffices if \emph{one} object in the domain satisfies $\meta{\varphi}(\ldots \meta{v} \ldots)$.
 
 
 This in turn means that that it's very easy for a universal sentence $\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ to be \emph{false}: we just have to find a single object that makes $\meta{\varphi}(\ldots \meta{v} \ldots)$ false.  For an existential sentence $\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ to be false, on the other hand, we have to make sure that $\meta{\varphi}(\ldots \meta{v} \ldots)$ is false for \emph{every} object in the domain. Let's state these ``falsity conditions'' too:
-\factoidbox{$\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is false in a given interpretation \script{I} \textbf{iff}  $\meta{\varphi}(\ldots \meta{v}^o \ldots)$ is false in \script{I} for \emph{at least one object} $o$ in \script{I}'s domain.\\
+\factoidbox{$\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is false in an interpretation \script{I} \textbf{iff}  $\meta{\varphi}(\ldots \meta{v}^o \ldots)$ is false in \script{I} for \emph{at least one object} $o$ in \script{I}'s domain.\\
 
-$\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is false in a given interpretation \script{I} \textbf{iff}  $\meta{\varphi}(\ldots \meta{v}^o \ldots)$ is false in \script{I} for \emph{every} object $o$ in \script{I}'s domain.
+$\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ is false in an interpretation \script{I} \textbf{iff}  $\meta{\varphi}(\ldots \meta{v}^o \ldots)$ is false in \script{I} for \emph{every} object $o$ in \script{I}'s domain.
 }
 Again, we're here suppressing explicit mention of variable assignments via our notational shorthand, but you can look at the Appendix for the official version of the semantics, with variable assignments made explicit.  Let's now go through a few examples to get a better feel for how to determine the truth values of quantified sentences.
 
@@ -422,8 +422,8 @@ To explain why `$\forall y(Hy \eiff Gx^1)$'  is true, we need to apply the truth
 \begin{etriangle}
 \item $Fx^1 \eif \forall y(Hy \eiff Gx^1)$ is true.  And this is because:
 \begin{etriangle}
-\item $Fx^1$ is true, and
-\item $\forall y(Hy \eiff Gx^1)$ is also true. This in turn is because:
+\item the antecedent $Fx^1$ is true, and
+\item the consequent $\forall y(Hy \eiff Gx^1)$ is also true. This in turn is because:
 \begin{etriangle}
 \item $(Hy^1 \eiff Gx^1)$ is true (since $Hy^1$ and $Gx^1$ are both false) and
 \item $(Hy^2 \eiff Gx^1)$ is true (since $Hy^2$ and $Gx^1$ are both false) and
@@ -1406,3 +1406,9 @@ Given all of this, we can now say what is required for any \emph{sentence}, i.e.
 \factoidbox{For any FOL sentence \meta{\varphi} and any interpretation \script{I}, \meta{\varphi} is true in \script{I} iff \meta{\varphi} is true in \script{I} on \emph{any assignment [] whatsoever}.
 }
 With this explanation of truth for sentences in place, the definition of the various logical concepts (like entailment, logical truth, equivalence etc.) now proceeds as it did in \S\ref{s:FOLSemanticConcepts}.
+
+
+
+
+
+
