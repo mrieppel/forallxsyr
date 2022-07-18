@@ -467,13 +467,14 @@ An explanation of this sort is called a \define{semantic demonstration} of the t
 
 \begin{earg}
 \item $\exists x(Fx \eand Gx)$
-\item $\forall x(Hx \eif Gx)$
+\item $\forall x(Gx \eif Hx)$
 \item $\forall x(Fx \eif \enot Hx)$
 \item $\forall x(Fx \eiff Gx)$
 \item $\forall xGx \eif \exists y Hy$
 \item $\forall xFx \eand \enot \exists xGx$
+\item $\exists x(Fx \eif \lnot Gx) \land \forall x(Gx \lor Hx)$
 \item $\exists x(Gx \land \forall y(Gy \eif Hx))$
-\item $\forall x(Gx \eif \exists y(Fx \eand \enot Gy))$ % NOTE: make this one false in future
+\item $\forall x(Gx \eif \exists y(Fx \eand \enot Gy))$
 \end{earg}
 
 
@@ -669,6 +670,8 @@ An explanation of this sort is called a \define{semantic demonstration} of the t
 \item $\forall x(Rxx \rightarrow Fx)$
 \item $\forall x(\exists yRxy \eif Fx)$
 \item $\forall x\exists y Rxy$
+\item $\forall x\exists y Ryx$ 
+\item $\forall x(\exists yRxy \eif Fx)$
 \item $\forall x\exists yRxy \eif \exists xFx$
 \item $\exists x(\forall y Rxy \eand \exists yRyx)$
 
@@ -1406,9 +1409,3 @@ Given all of this, we can now say what is required for any \emph{sentence}, i.e.
 \factoidbox{For any FOL sentence \meta{\varphi} and any interpretation \script{I}, \meta{\varphi} is true in \script{I} iff \meta{\varphi} is true in \script{I} on \emph{any assignment [] whatsoever}.
 }
 With this explanation of truth for sentences in place, the definition of the various logical concepts (like entailment, logical truth, equivalence etc.) now proceeds as it did in \S\ref{s:FOLSemanticConcepts}.
-
-
-
-
-
-

@@ -274,7 +274,7 @@ Similarly, \eref{or4} means the same as `Barbara will not get soup and Barbara w
 \end{earg}
 
 \problempart
-We symbolized \emph{exclusive or}, or \emph{xor}, using `$\eor$', `$\eand$', and `$\enot$'. How could you symbolize an \emph{xor} using only two connectives? Hint: think about how you might use DeMorgan's Laws to eliminate one of the connectives in your symbolization.
+We symbolized \emph{exclusive or}, or \emph{xor}, using `$\eor$', `$\eand$', and `$\enot$'. How could you symbolize an \emph{xor} using only \emph{two} connectives? Hint: think about how you might use DeMorgan's Laws to eliminate one of the connectives in your symbolization.
 
 \section{Conditional}
 Consider these sentences:
@@ -295,7 +295,7 @@ Sentence \eref{if1} looks different from \eref{if0} since the word `if' occurs i
 
 Sentence \eref{if2} is also a conditional. Since the word `if' appears in the second half of the sentence, it might be tempting to symbolize this in the same way as sentence \eref{if1}, as `$(P \eif F)$'. But that would be a mistake. My knowledge of geography tells me that sentence \eref{if1} is unproblematically true: there is no way for Jean to be in Paris that doesn't involve Jean being in France. But sentence \eref{if2} is not so straightforward: were  Jean in Marseilles, Lyon, or Toulouse, Jean would be in France without being in Paris, thereby rendering sentence \eref{if2} false. Since geography alone dictates the truth of sentence \eref{if1}, whereas travel plans (say) are needed to know the truth of sentence \eref{if2}, they must mean different things, and \eref{if2} can't be symbolized as `$(P \eif F)$.
 
-The moral is that `only if' means something very different from plain `if'.  The `if'-clause of a conditional introduces a \define{Sufficient Condition}: \eref{if0} and \eref{if1} say that Jean's being in Paris is \emph{sufficient for} his being in France (which is unproblematically true).  `Only if', by contrast, introduces a \define{Necessary Condition}: sentence \eref{if2} claims that Jean's being in Paris \emph{is necessary for} his being in France (which is likely false, since there are other ways to be in France). In TFL, the antecedent \meta{\varphi} of a conditional $(\meta{\varphi} \eif \meta{\psi})$ always indicates the sufficient condition, whereas the consequent \meta{\psi} indicates the the necessary condition.  Since Jean's being in Paris is claimed as a necessary condition in \eref{if2}, this sentence is symbolized as `$(F \eif P)$'.  In general, whereas `if' introduces the antecedent of a conditional (the sufficient condition), `only if' introduces the consequent (the necessary condition).  So our symbolization guidelines for conditionals are:
+The moral is that `only if' means something very different from plain `if'.  The `if'-clause of a conditional introduces a \define{Sufficient Condition}: \eref{if0} and \eref{if1} say that Jean's being in Paris is \emph{sufficient for} his being in France (which is of course true).  `Only if', by contrast, introduces a \define{Necessary Condition}: sentence \eref{if2} claims that Jean's being in Paris \emph{is necessary for} his being in France (which is likely false, since there are other ways for him to be in France). In TFL, the antecedent \meta{\varphi} of a conditional $(\meta{\varphi} \eif \meta{\psi})$ always indicates the sufficient condition, whereas the consequent \meta{\psi} indicates the the necessary condition.  Since Jean's being in Paris is claimed as a necessary condition in \eref{if2}, this sentence is symbolized as `$(F \eif P)$'.  In general, whereas `if' introduces the antecedent of a conditional (the sufficient condition), `only if' introduces the consequent (the necessary condition).  So our symbolization guidelines for conditionals are:
 
 	\factoidbox{
 		A sentence can be symbolized as $(\meta{\varphi} \eif \meta{\psi})$ if it can be paraphrased in English as `If \meta{\varphi}, then \meta{\psi}', or as `\meta{\psi} if \meta{\varphi}', or as `\meta{\varphi} only if \meta{\psi}'.
@@ -351,6 +351,17 @@ One final point: it is important to bear in mind that the connective `\eif' just
 \item If either Alice or Bob is a spy, then the code has been broken.
 \item If neither Alice nor Bob is a spy, then the code remains unbroken.
 \end{earg}
+
+\problempart Say whether the following are true or false:
+
+\begin{earg}
+\item My being in Syracuse is sufficient for my being in the United States.
+\item Meg's attending class is sufficient for her to do well on exams.
+\item The toaster's being plugged in is necessary for it to toast bread.
+\item Fluffy's being a cat is necessary for Fluffy's being a mammal.
+\item Being a square is sufficient for something to be a quadrilateral.
+\end{earg}
+
 
 
 \section{Biconditional}
@@ -733,7 +744,3 @@ going iff neither Pam nor Quincy are going.
 
 
 \end{earg}
-
-
-
-

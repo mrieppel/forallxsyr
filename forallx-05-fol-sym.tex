@@ -198,19 +198,21 @@ We could turn \eref{bound2} into a close formula either by adding parentheses as
 
 
 
-\problempart Which of the following are open formulas, and which are closed formulas?  What variables does each quantifier bind? (Remember: letters $a$-$s$ are names in FOL, $t$-$z$ are variables.)
+\problempart Which of the following are open formulas, and which are closed formulas?  What variables does each quantifier bind?
 
 \begin{earg}
 \item $Wb$
-\item $\exists x Wx$
+\item $Wz$
+\item $\exists z Wz$
 \item $\forall yWx$
-\item $\exists xHx \eand  Wx$
-\item $\exists x(Hx \eand  Wx)$
-\item $\exists x Hx \eand  Wb$
-\item $\forall x(Hx \eif Wy)$
-\item $\forall x(Hx \eif Wy)$
-\item $\forall x(Hx \eand \exists y(Wy \eand Hx))$
-\item $\forall xHx \eand \exists y(Wy \eand Hx)$
+\item $\forall xHx \eand  Wx$
+\item $\forall x(Hx \eand  Wx)$
+\item $\forall x(Hx \eand  Wy)$
+\item $\exists z Hz \lor  Wb$
+\item $\exists  z(Hz \lor Wy)$
+\item $\forall x(Hx \lor \exists y(Wy \eand Hx))$
+\item $\forall xHx \lor \exists y(Wy \eand Hx)$
+\item $\forall x(\exists y(Hy \land Fx) \rightarrow \forall z(Wz \eand Hx))$
 \end{earg}
 
 
@@ -854,6 +856,8 @@ This is not a correct symbolization of \eref{dog5}, and indeed, virtually imposs
 \item Every doctor cured someone.
 
 \item Every doctor cured a patient.
+
+\item Every student is admired by someone.
 
 \item Every logician is admired by some philosopher.
 
@@ -1523,4 +1527,3 @@ For each of the following formulas, rewrite the formula so that all variables ar
 \item $\exists x\forall y(\forall zLzx \eif \forall u(Jy \eand Lzu))$
 \item $\exists x(\forall y \forall zLzy \eif \forall u(Ju \eand Lxu))$
 \end{earg}
-

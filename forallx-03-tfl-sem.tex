@@ -105,12 +105,12 @@ The fact that we can give characteristic truth tables like these for our TFL con
 	}
 Indeed, this is what gives TFL its name: \emph{truth-functional logic}.
 
-Many languages have connectives that are not truth-functional. In English, for example, we can form a new sentence from any simpler sentence by prefixing it with the unary connective `It is necessarily the case that\ldots'. The truth value of this new sentence is not fixed solely by the truth value of the original sentence. For consider two true sentences:
+Many languages have connectives that are not truth-functional. In English, for example, we can form a new sentence from any simpler sentence by prefixing it with the unary connective `It is necessarily the case that\ldots'. The truth value of this new sentence is not determined solely by the truth value of the original sentence. For consider two true sentences:
 	\begin{earg}
 		\item $2 + 2 = 4$
 		\item Shostakovich wrote fifteen string quartets
 	\end{earg}
-Whereas it is necessarily the case that $2 + 2 = 4$, it is not \emph{necessarily} the case that Shostakovich wrote fifteen string quartets. If he had died earlier or later, he might have written fewer or more quartets than he in fact did. So the English unary connective `It is necessarily the case that\ldots' is not \emph{truth-functional}.  TFL cannot represent non-truth-functional connectives like these; it can only represent truth-functional connectives like e.g. `It is not the case that \ldots' or `\ldots and \ldots'.
+Whereas the sentence `It is necessarily the case that $2 + 2 = 4$' is true, the sentence `It is necessarily the case that Shostakovich wrote fifteen string quartets' is not true. If he had died earlier or later, he might have written fewer or more quartets than he in fact did. So the truth value of a sentence formed using the connective `It is necessarily the case that\ldots' is not determined by the truth value of the sentence we attach the connective to.  So this connective is \emph{not truth-functional}.  TFL cannot represent connectives like these; it can only represent truth-functional connectives like e.g. `It is not the case that \ldots' or `\ldots and \ldots'.
 
 
 Since TFL's connectives are all truth-functional, we have to ignore everything except the truth-functional aspects of English when symbolizing English sentences or arguments into TFL.  A lot is inevitably lost in the process.  There are subtleties to our ordinary claims that far outstrip their mere truth values: sarcasm, poetry, snide implicature, emphasis.  These are all important parts of everyday discourse, but none of it is retained in TFL.
@@ -683,8 +683,9 @@ Construct joint truth tables to determine whether the following hold:
 \begin{earg}
 \item $(P \eor \enot Q) \land (P \eor \enot Q) \lequiv (P \lor \lnot Q)$
 \item $(P \eor \enot Q) \land (P \eor \enot Q) \lequiv (P \lor (\lnot Q \land \lnot Q))$
+\item $(P \leftrightarrow \lnot Q) \land \lnot R \lequiv \lnot((P \leftrightarrow \lnot Q) \rightarrow R)$ 
 \item $\lnot A \land \lnot \lnot (B \land \lnot C) \lequiv \enot(A \eor \enot (B \eand  \enot C))$ 
-\item $\enot C \eor (B \eand  \enot A) \lequiv (\lnot C \lor B) \land (\lnot C \lor \lnot A)$
+%\item $\enot C \eor (B \eand  \enot A) \lequiv (\lnot C \lor B) \land (\lnot C \lor \lnot A)$
 \item $\enot B \eor \enot (A \eif \enot C) \lequiv B \rightarrow \lnot (A \rightarrow \lnot C)$
 \item $(A \eor C) \eif \enot B \lequiv \lnot \lnot B \rightarrow \lnot (A \lor C)$
 
@@ -1252,5 +1253,3 @@ Use the partial truth table method to determine whether these sentences are join
 \item $A \eor B$, $B\eor C$, $C\eif \enot A$ %consistent
 \item $A$, $B$, $C$, $\enot D$, $\enot E$, $F$ %consistent
 \end{earg}
-
-

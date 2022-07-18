@@ -5,7 +5,7 @@
 
 This book provides an introduction to logic.  But what is logic? This is a surprisingly difficult question, still debated by philosophers. But generally speaking, logic is about distinguishing \emph{valid} from \emph{invalid} arguments.
 
-In everyday language, the word `argument' is often used to describe an activity that people engage in.   On twitter, or youtube, or the news, people often have heated debates, and you've probably had arguments like this with your family or friends.  Logicians tend to be a pretty sedate crowd, and they mean something very different by `argument'.  In logic, an argument is just a collection of statements.  More specifically:
+In everyday language, the word `argument' is often used to describe an activity that people engage in.   On twitter, or youtube, or the news, people often have heated debates, and you've probably had arguments like this with your family and friends.  Logicians tend to be a pretty sedate crowd, and they mean something very different by `argument'.  In logic, an argument is just a collection of statements.  More specifically:
 
 \factoidbox{An \define{argument} is a collection of one or more \emph{statements}, exactly one of which is the argument's \emph{conclusion} and the rest of which are its \emph{premises}.}
 
@@ -131,44 +131,77 @@ Notice that these concepts apply to different things. Whereas the first three co
 \label{pr.EnglishTautology}
 For each of the following: is it necessarily true, necessarily false, or contingent?
 \begin{earg}
-\item Caesar crossed the Rubicon.
-\item Someone once crossed the Rubicon.
-\item No one has ever crossed the Rubicon.
-\item If Caesar crossed the Rubicon, then someone has.
-\item Even though Caesar crossed the Rubicon, no one has ever crossed the Rubicon.
-\item If anyone has ever crossed the Rubicon, it was Caesar.
+\item Caesar conquered Gaul.
+\item Someone once conquered Gaul.
+\item If Caesar conquered Gaul, then someone has conquered Gaul.
+\item Ceasar either conquered Gaul or he did not.
+\item Caesar conquered Gaul even though he did not.
 \end{earg}
 
-\problempart
-\label{pr.MartianGiraffes}
-Consider the following sentences:
+\problempart Say whether the following arguments are valid or invalid.
 
-	\begin{ebullet}
-		\item[G1.] There are at least four giraffes at the zoo.
-		\item[G2.] There are exactly seven gorillas at the zoo.
-		\item[G3.] There are not more than two martians at the zoo.
-		\item[G4.] Every giraffe at the zoo is a martian.
-	\end{ebullet}
-	
-Now, for each of the following, determine if the sentences in question are jointly consistent or jointly inconsistent:
+\begin{enumerate}
+\item All bananas are round. \\ Some round things are yellow. \\ $\therefore$ All bananas are yellow.
+
+\item Rieppel is a philosophy professor and ten meters tall. \\ $\therefore$ Rieppel is ten meters tall.
+
+\item Rieppel is either a philosophy professor or ten meters tall. \\ $\therefore$ Rieppel is ten meters tall.
+
+\item Rieppel is either a philosophy professor or ten meters tall.  \\ Rieppel is not a philosophy professor. \\ $\therefore$ Rieppel is ten meters tall.
+
+\item Syracuse is in Brazil. \\ $\therefore$ It's either raining or not raining in San Francisco today. 
+\end{enumerate}
+
+\problempart Consider the following three statements:
 
 \begin{earg}
-\item G2, G3, and G4
-\item G1, G3, and G4
-\item G1, G2, and G4
-\item G1, G2, and G3
+\item[(a)] There are exactly two apples in the bag.
+\item[(b)] There are more than three apples in the bag.
+\item[(c)] There are fewer than four apples in the bag.
+%\item[(d)] The number of apples in the bag is both even and odd.
 \end{earg}
 
+Now answer these questions:
 
-\problempart
-Could there be:
-	\begin{earg}
-		\item Jointly consistent sentences, one of which is necessarily false?
-		\item Jointly consistent sentences, one of which is a necessary truth?
-		\item Jointly inconsistent sentences, one of which is a necessary truth?
-	\end{earg}
-In each case: if so, give an example; if not, explain why not.
+\begin{earg}
+\item Are (a) and (b) consistent?  Are they contradictory? 
+\item Are (a) and (c) consistent?  Are they equivalent?
+\item Are (b) and (c) consistent?  Are they contradictory? 
+\item Are any contingent statement and any necessary truth consistent?  
+\item Are two necessary falsehoods consistent?  Are they equivalent?
+\item Are any two contingent statements consistent?
+\end{earg}
 
+%\problempart
+%\label{pr.MartianGiraffes}
+%Consider the following sentences:
+%
+%	\begin{ebullet}
+%		\item[G1.] There are at least four giraffes at the zoo.
+%		\item[G2.] There are exactly seven gorillas at the zoo.
+%		\item[G3.] There are not more than two martians at the zoo.
+%		\item[G4.] Every giraffe at the zoo is a martian.
+%	\end{ebullet}
+%	
+%Now, for each of the following, determine if the sentences in question are jointly consistent or jointly inconsistent:
+%
+%\begin{earg}
+%\item G2, G3, and G4
+%\item G1, G3, and G4
+%\item G1, G2, and G4
+%\item G1, G2, and G3
+%\end{earg}
+
+
+%\problempart
+%Could there be:
+%	\begin{earg}
+%		\item Jointly consistent sentences, one of which is necessarily false?
+%		\item Jointly consistent sentences, one of which is a necessary truth?
+%		\item Jointly inconsistent sentences, one of which is a necessary truth?
+%	\end{earg}
+%In each case: if so, give an example; if not, explain why not.
+%
 
 
 
@@ -179,7 +212,7 @@ Being valid is certainly one thing that makes for a good argument, intuitively s
 First off, if an argument has an obviously false premise, then even if it is valid, it remains of limited interest because it doesn't establish its conclusion.  By contrast, if an argument is valid and all of its premises are true, then we know that its conclusion has to be true too.  Arguments like this are said to be \emph{sound}:
 
 \factoidbox{
-An argument is \define{sound} if and only it (i) is valid, and (ii) has premises that are in fact true.
+An argument is \define{sound} if and only if it (i) is valid, and (ii) has premises that are in fact true.
 }
 
 Arguments are generally intended to be not just valid, but sound.  So if you're faced with an argument, in a philosophy class or elsewhere, whose conclusion you want to resist, you have two options: you can either try to show that the argument is not valid, or you can try to show that one of its premises is false (and the argument therefore isn't sound).  What you \emph{can't} do is accept it as valid, and concede that its premises are true, but still reject the conclusion as false: if it's valid, and has true premises, its conclusion has to be true too.
@@ -203,70 +236,90 @@ That doesn't mean that it's a bad argument.  Arguments like this one are called 
 
 \practiceproblems
 
-Here are some exercises to test your understanding of deductive validity and related concepts we've discussed.  For these questions, you don't need to worry about the distinction between validity and ``validity in virtue of logical form'' to be discussed in \S\ref{s:FormalValidity}  below.  You should just use the definition of validity we gave in \S\ref{s:Arguments} and \S \ref{s:Background} above.\\
+For these questions, you don't need to worry about the distinction between validity and ``validity in virtue of logical form'' to be discussed in \S\ref{s:FormalValidity}  below.  You can just use the definition of validity we gave in \S\ref{s:Arguments} and \S \ref{s:Background} above.\\
 
 
-\problempart  Which of the following arguments are valid? Which are invalid?
+\problempart say whether the following are true or false.
 
-\begin{enumerate}
-\item \begin{earg}
-\item[] Socrates is a man.
-\item []All men are carrots.
-\item[$\therefore$]Socrates is a carrot.
+\begin{earg}
+\item All valid arguments have only true premises.
+\item All arguments with true premises and a true conclusion are sound.
+\item Every argument with false premises is invalid.
+\item Some arguments with true premises are unsound.
+\item Some invalid arguments have true conclusions.
+\item If an argument has true premises and a false conclusion, it's invalid.
+\item If the conclusion of an argument is a necessary truth, the argument is valid.
+\item Every unsound argument is invalid.
+\item If an argument has true premises, it's valid.
+\item If the conclusion of an argument is a necessary falsehood, the argument is valid.
+\item If an argument has a necessary falsehood as a premise, the argument is valid.
+\item An invalid argument can be made valid by the addition of a new premise.
+\item A valid argument can be made invalid by the addition of a new premise.
+\item Some sound arguments have a false conclusion.
 \end{earg}
 
-\item \begin{earg}
-\item[] Abe Lincoln was either born in Illinois or he was once president.
-\item[] Abe Lincoln was never president.
-\item[$\therefore$] Abe Lincoln was born in Illinois.
-\end{earg}
+%
+%\problempart  Which of the following arguments are valid? Which are invalid?
+%
+%\begin{enumerate}
+%\item \begin{earg}
+%\item[] Socrates is a man.
+%\item []All men are carrots.
+%\item[$\therefore$]Socrates is a carrot.
+%\end{earg}
+%
+%\item \begin{earg}
+%\item[] Abe Lincoln was either born in Illinois or he was once president.
+%\item[] Abe Lincoln was never president.
+%\item[$\therefore$] Abe Lincoln was born in Illinois.
+%\end{earg}
+%
+%\item \begin{earg}
+%\item[] If I pull the trigger, Abe Lincoln will die.
+%\item[] I do not pull the trigger.
+%\item[$\therefore$] Abe Lincoln will not die.
+%\end{earg}
+%
+%\item \begin{earg}
+%\item[] Abe Lincoln was either from France or from Luxemborg.
+%\item[] Abe Lincoln was not from Luxemborg.
+%\item[$\therefore$] Abe Lincoln was from France.
+%\end{earg}
+%
+%\item \begin{earg}
+%\item[] If the world were to end today, then I would not need to get up tomorrow morning.
+%\item[] I will need to get up tomorrow morning.
+%\item[$\therefore$] The world will not end today.
+%\end{earg}
+%
+%\item \begin{earg}
+%\item[] Joe is now 19 years old.
+%\item[] Joe is now 87 years old.
+%\item[$\therefore$] Bob is now 20 years old.
+%\end{earg}
+%
+%\end{enumerate}
 
-\item \begin{earg}
-\item[] If I pull the trigger, Abe Lincoln will die.
-\item[] I do not pull the trigger.
-\item[$\therefore$] Abe Lincoln will not die.
-\end{earg}
-
-\item \begin{earg}
-\item[] Abe Lincoln was either from France or from Luxemborg.
-\item[] Abe Lincoln was not from Luxemborg.
-\item[$\therefore$] Abe Lincoln was from France.
-\end{earg}
-
-\item \begin{earg}
-\item[] If the world were to end today, then I would not need to get up tomorrow morning.
-\item[] I will need to get up tomorrow morning.
-\item[$\therefore$] The world will not end today.
-\end{earg}
-
-\item \begin{earg}
-\item[] Joe is now 19 years old.
-\item[] Joe is now 87 years old.
-\item[$\therefore$] Bob is now 20 years old.
-\end{earg}
-
-\end{enumerate}
-
-\problempart
-Could there be:
-	\begin{earg}
-		\item A valid argument that has one false premise and one true premise?
-		\item A valid argument that has only false premises but a true conclusion?
-		\item A valid argument with only false premises and a false conclusion?
-		\item A valid argument with only true premise but a false conclusion?
-		\item An invalid argument with only true premises and a true conclusion?
-		\item An invalid argument with only false premises but a true conclusion?
-		\item A sound argument with a false conclusion?
-		\item A sound argument with at least one false premise?
-		\item An invalid argument that can be made valid by the addition of a new premise?
-		\item A valid argument that can be made invalid by the addition of a new premise?
-		\item A valid argument, the conclusion of which is necessarily false?
-		\item An invalid argument, the conclusion of which is necessarily true?
-		\item A valid argument whose premises are jointly inconsistent?
-		\item A valid argument with only one premise?
-	\end{earg}
-In each case: if so, give an example; if not, explain why not. 
-
+%\problempart
+%Could there be:
+%	\begin{earg}
+%		\item A valid argument that has one false premise and one true premise?
+%		\item A valid argument that has only false premises but a true conclusion?
+%		\item A valid argument with only false premises and a false conclusion?
+%		\item A valid argument with only true premise but a false conclusion?
+%		\item An invalid argument with only true premises and a true conclusion?
+%		\item An invalid argument with only false premises but a true conclusion?
+%		\item A sound argument with a false conclusion?
+%		\item A sound argument with at least one false premise?
+%		\item An invalid argument that can be made valid by the addition of a new premise?
+%		\item A valid argument that can be made invalid by the addition of a new premise?
+%		\item A valid argument, the conclusion of which is necessarily false?
+%		\item An invalid argument, the conclusion of which is necessarily true?
+%		\item A valid argument whose premises are jointly inconsistent?
+%		\item A valid argument with only one premise?
+%	\end{earg}
+%In each case: if so, give an example; if not, explain why not. 
+%
 
 
 
@@ -287,22 +340,26 @@ In both cases it is impossible for the premise to be true and the conclusion fal
 
 But there's an important difference between valid arguments like these and one like the following:
 
+\begin{multicols}{2}
 	\begin{earg}
 		\item[\ex{exarg8}] Jenny is either happy or sad.
 		\item[] Jenny is not happy.
 		\item[] $\therefore$ Jenny is sad.
 	\end{earg}
 
-\noindent This argument is also valid, but there's more.  It has a special structure, or logical form, that we might represent as follows:
-
+\columnbreak
 
 	\begin{earg}
 		\item[] $A$ or $B$
 		\item[] not-$A$
 		\item[] $\therefore$ $B$
 	\end{earg}
+	
+\end{multicols}
 
-\noindent This is an excellent structure for an argument to have, because any argument of this form will be valid, no matter what sentences we put in place of $A$ and $B$! Or consider our Bugs Bunny argument, which has the structure represented to the right:
+
+
+\noindent This argument is also valid, but there's more.  It has a special structure, or logical form, as represented to the right.  This is an excellent structure for an argument to have, because any argument of this form will be valid, no matter what sentences we put in place of $A$ and $B$! Or consider our Bugs Bunny argument, which has the structure represented to the right:
 
 
 
@@ -345,16 +402,25 @@ The general point is that arguments like \eref{exarg8} and  \eref{exarg1} are va
 \end{earg}
 \end{multicols}
 \noindent Here the premise ascribes a certain property (being a bachelor) to an individual, and the conclusion then denies another property (being married) of that individual. However, there are other arguments that share this same structure but aren't valid:
+\begin{multicols}{2}
 \begin{earg}
 \item[] Reihan is a runner.
 \item[] $\therefore$ Reihan is not married.
 \end{earg}
+
+\columnbreak
+
+\begin{earg}
+\item[] $a$ is $F$
+\item[] $\therefore$ $a$ is not-$G$.
+\end{earg}
+\end{multicols}
 This isn't valid because it's trivial to imagine a world where Reihan is a runner but also married.  What made argument \eref{exarg6} valid wasn't its logical form, but the \emph{specific meanings} of the words `bachelor' and `married' that occur in its premise and its conclusion. Other arguments that have the same form but involve words with different meanings (e.g. `runner') may no longer be valid. Logic is all about identifying \emph{patterns} that make arguments valid.  So it only cares about \define{formally valid} arguments like \eref{exarg1} and \eref{exarg8}, not arguments like \eref{exarg5} and \eref{exarg6} that are valid for reasons other than their logical form. 
 
 
 
 
-Due to logic's concern with form, we will approach the task of distinguishing valid from invalid arguments in an indirect way. We will first introduce a formal language in which we can symbolize English arguments.  Doing this lets us represent the logical forms of those arguments.  We will then give a precise definition of validity for arguments cast in this formal notation.  And this will in turn give us our indirect means of distinguishing valid from invalid arguments in English: if an English argument can be symbolized as a valid argument in our formal notation, then that English argument is formally valid.
+Due to logic's concern with form, we will approach the task of distinguishing valid from invalid arguments in an indirect way. We will first introduce a formal language in which we can symbolize English arguments.  Doing this lets us represent the logical forms of those arguments.  We will then give a precise definition of validity for arguments cast in this formal notation.  And this will in turn give us our indirect means of distinguishing valid from invalid arguments in English: if an English argument can be symbolized as a valid argument in our formal notation, then that English argument is formally valid.  %(The converse doesn't hold though: if the symbolization of an argument in our formal notation isn't valid that doesn't always mean the English argument is itself not formally valid.  It could just be that our formal notation isn't sophisticated enough to capture the English argument's logical structure.  We'll see examples of this as we go on.)
 
 In fact, we will study two systems of logic, involving two different formal languages. These systems will differ in what words they treat as \emph{logical constants}, that is,  which words they treat as indicative of logically significant structure, or form.  The first system we will study is \emph{Truth-Functional Logic} (or TFL).  It will let us represent the structure of arguments like \eref{exarg8} via the symbolization to the right:
 
@@ -376,7 +442,7 @@ In fact, we will study two systems of logic, involving two different formal lang
 
 \end{multicols}
 
-\noindent This language treats words like `either \ldots or' and `not' as logical constants (represented by `$\eor$' and `$\enot$' respectively), and will use upper-case letters to represent complete statements (like `$A$' for `Jenny is happy', and `B' for `Jenny is sad').  TFL is the topic of Part 1 of this book.
+\noindent This language treats expressions like `either \ldots or' and `not' as logical constants (represented by `$\eor$' and `$\enot$' respectively), and uses upper-case letters to represent complete statements (like `$A$' for `Jenny is happy', and `B' for `Jenny is sad').  TFL is the topic of Part 1 of this book.
 
 In Part 2 of the book, we will turn to \emph{First-Order Logic} (or FOL).  It will let us represent the structure of things like the Bugs Bunny argument via the symbolization to the right:
 
@@ -422,8 +488,3 @@ In Part 2 of the book, we will turn to \emph{First-Order Logic} (or FOL).  It wi
 %\item false conclusion and only true premises\footnote{Notice: there are invalid arguments like this, but there can't be valid arguments of this sort!}
 %\end{itemize}
 %\end{enumerate}
- 
-
-
-
-
