@@ -58,7 +58,7 @@ In general, you can think about predicates as things which combine with names an
 		Vinnie borrowed \blank\ from Nunzio\\
 		Vinnie borrowed the family car from \blank
 	\end{quote}
-FOL predicates are capital letters $A$ through $Z$, with or without subscripts. We might write a symbolization key for predicates  like this:
+FOL predicates are capital letters $A$ through $Z$, with or without subscripts. We might write a symbolization key for some simple predicates  like this:
 	\begin{ekey}
 		\item[A] \blank\ is angry
 		\item[H] \blank\ is happy
@@ -88,7 +88,7 @@ It involves the compound predicate `\blank is a white car'.  But we can paraphra
 	\end{ekey}
 we can thus symbolize  \eref{syn1} as `$(Wh \eand Ch)$'.
 
-In this case, the compound predicate was formed out of an adjective and a noun.  But there are other ways to do this too:
+In this case, the compound predicate was formed out of an adjective and a noun.  But there are other ways to form compound predicates too:
 	\begin{earg}
 		\item[\ex{cp1}] Herbie is a car from Germany.
 		\item[\ex{cp2}] Herbie is a car from Germany that is fast.
@@ -131,8 +131,7 @@ To express claims about every individual in a set, we'll use the FOL symbol `$\f
 
 There is no special reason to use `$x$' rather than some other variable here. The sentences `$\forall x Hx$', `$\forall y Hy$', `$\forall z Hz$', and `$\forall x_5 Hx_5$' use different variables, but they are all logically equivalent, and any of them could be used to symbolize \eref{q.a}.
 
-To symbolize sentence \eref{q.e}, we introduce another new symbol: the \define{existential quantifier}, `$\exists$'. Like the universal quantifier, the existential quantifier requires a variable. Sentence \eref{q.e} can be symbolized by `$\exists x Ax$'. You can read `$\exists x Ax$' as saying ``there is some individual x such that: x is angry'. Again, the variable is just a kind of placeholder; we could just as well have symbolized sentence \eref{q.e} as `$\exists z Az$', `$\exists w_{256} Aw_{256}$', or whatever.
-
+To symbolize sentence \eref{q.e}, we introduce another new symbol: the \define{existential quantifier}, `$\exists$'. Like the universal quantifier, the existential quantifier requires a variable. Sentence \eref{q.e} can be symbolized by `$\exists x Ax$'. You can read `$\exists x Ax$' as saying ``there is some individual x such that: x is angry'. Again, the variable is just a kind of placeholder; we could just as well have symbolized sentence \eref{q.e} as `$\exists z Az$' or `$\exists w Aw$'.
 
 In FOL, quantifiers always range over a \define{domain} of objects.  So really, `$\forall xHx$' says that every object $x$ \emph{in the domain} is such that $x$ is happy, and `$\exists xAx$' says that some object $x$ \emph{in the domain} is such that $x$ is angry.  So whenever we symbolize something with a quantifier, we should also specify a domain of objects in our symbolization key.  English quantifiers like `everyone' and `someone' are used to talk about people, so in this case we can specify our domain as consisting of people.  We'll look more closely at picking domains later on.
 
@@ -155,7 +154,7 @@ These sentences clearly mean different things, and must therefore receive differ
 	\end{ekey}
 sentence \eref{scope1} can be symbolized as `$\exists xLx \eand \exists xAx$'.
 
- Notice that we could equally well have symbolized it as `$\exists x Lx \eand \exists yAy$' or `$\exists zLz \eand \exists v Av$'.  As we observed earlier, sentences like `$\exists x Ax$' and `$\exists y Ay$' that differ only in which variable gets used are equivalent to each other, so  `$\exists xLx \eand \exists xAx$' is therefore equivalent to`$\exists x Lx \eand \exists yAy$'.  In particular, using the same variable in both conjuncts, as in `$\exists xLx \eand \exists xAx$', does \emph{not} mean that the person who is a logician is the same as the one who is an architect; and using different variables, as in `$\exists x Lx \eand \exists yAy$',  does \emph{not} mean it's a different person.  Both of these FOL sentences just say that there is someone who is a logician, and that there is someone (maybe the same, maybe different) who is an architect.
+ Notice that we could equally well have symbolized it as `$\exists x Lx \eand \exists yAy$' or `$\exists zLz \eand \exists v Av$'.  As we observed earlier, sentences like `$\exists x Ax$' and `$\exists y Ay$' that differ only in which variable gets used are equivalent to each other, so  `$\exists xLx \eand \exists xAx$' is therefore equivalent to`$\exists x Lx \eand \exists yAy$'.  Using the same variable in both conjuncts, as in `$\exists xLx \eand \exists xAx$', does \emph{not} mean that the person who is a logician is the same as the one who is an architect; and using different variables, as in `$\exists x Lx \eand \exists yAy$',  does \emph{not} mean it's a different person.  Both of these FOL sentences just say that there is someone who is a logician, and that there is someone (maybe the same, maybe different) who is an architect.
 
 
 
@@ -177,8 +176,7 @@ In \eref{bound1}, the quantifier `$\forall x$' is the main operator, and it has 
 
 When symbolizing English statements, you should not have any free variables in your symbolization, i.e. your symbolizations should always be closed formulas. The closed formula \eref{bound1} could be used to symbolize the English statement `Everyone is either happy or wise'.  The open formula \eref{bound2}, on the other hand, says something like: either everyone is happy, or $x$ is wise.  But who is $x$?  Since `$x$' isn't a name, it doesn't refer to any particular thing, and we can't determine whether it's true that $x$ is wise.   English statements always have truth values, whereas open formulas like \eref{bound2} do not, so open formulas shouldn't be used to symbolize English statements.
 
-We could turn \eref{bound2} into a close formula either by adding parentheses as in \eref{bound1}, or by adding another quantifier to bind the variable in `$Wx$', as in `$\forall x Hx \eor \forall xWx$'.  The latter is  a closed formula that could be used to symbolize the English statement `Either everyone is happy or everyone is wise'.  The moral is that parentheses are important! They indicate the scope of quantifiers (just like they indicate the scope of negation), and therefore indicate what variables a quantifier binds.
-
+We could turn \eref{bound2} into a close formula either by adding parentheses as in \eref{bound1}, or by adding another quantifier to bind the variable in `$Wx$', as in `$\forall x Hx \eor \forall xWx$'.  The latter is  a closed formula, but means something quite different than \eref{bound1}: it can be read as saying that either everyone is happy, or everyone is wise.  The moral is that parentheses are important! They indicate the scope of quantifiers, and thereby what variables quantifiers binds, which has a significant impact on meaning.
 \practiceproblems
 
 \problempart Using a domain of people, $H$ for `\blank is happy', and $W$ for `\blank is wise', symbolize the following statements:
@@ -391,7 +389,7 @@ In general, we've seen the following patterns:
 
 		An English sentence that can be paraphrased as `Not every $\script{F}$ is $\script{G}$' can be symbolized as $\enot \forall x (\script{F}x \eif \script{G}x)$ or as $\exists x (\script{F}x \eand \enot \script{G}x)$.
 	}
-These patterns also apply if we want to symbolize our earlier examples \eref{q.neg1} and \eref{q.neg2} in a domain of things rather than people.  In a domain of things, `No one (i.e. no person) is angry' gets symbolized as $\enot \exists x(Px \eand Ax)$' (or alternatively, as $\forall x(Px \eif \enot Ax)$, i.e. ``every person is non-angry'').  And `Not everyone is angry' would become $\enot \forall x(Px \eif Ax)$ (or alternatively, $\exists x(Px \eand \enot Ax)$, i.e. ``at least one person is non-angry'').   Here is a summary of the common symbolization patterns we've seen:
+These patterns also apply if we want to symbolize our earlier examples \eref{q.neg1} and \eref{q.neg2} in a domain of things rather than people.  In a domain of things, `No one (i.e. no person) is angry' gets symbolized as $\enot \exists x(Px \eand Ax)$' (or alternatively, as $\forall x(Px \eif \enot Ax)$, i.e. ``every person is non-angry'').  And `Not everyone is angry' would become $\enot \forall x(Px \eif Ax)$ (or alternatively, $\exists x(Px \eand \enot Ax)$, i.e. ``at least one person is non-angry'').   Here is a summary of the common symbolization patterns we've seen in the past few sections:
 
 \factoidbox{
 \begin{tabular}{l | l }
@@ -481,7 +479,7 @@ Not every $\script{F}$ is $\script{G}$ & $\enot \forall x(\script{F}x \eif \scri
 
 As we've seen, it is important to get the structure of the sentences you want to symbolize right. Sometimes you will be able to move from English directly to a sentence of FOL. Other times, it helps to paraphrase the sentence one or more times. Each successive paraphrase should move from the original sentence closer to something that you can finally symbolize directly in FOL.
 
-For the next several examples, we will use this symbolization key:
+For the next few examples, we will use this symbolization key:
 	\begin{ekey}
 		\item[\text{domain}] people
 		\item[B] \blank\ is a bassist
@@ -496,24 +494,24 @@ Now consider these sentences:
 These sentences look similar, and even have the same words in the consequent (`$\ldots$ she is a rock star'), but they mean very different things and will requires different symbolizations. Sentence \eref{pronoun1} can be paraphrased as, `If Kim Deal is a bassist, then \emph{Kim Deal} is a rockstar'. This can obviously be symbolized as the conditional `$Bk \eif Rk$'.
 
 
-Sentence \eref{pronoun2} is more tricky.  You might think that it's a conditional, with an existential quantifier in its antecedent, and should be symbolized along the lines of `$\exists xBx \eif Rx$'.  This isn't correct, however, since the quantifier in this symbolization isn't binding the variable in `$Rx$', that is, it's an open sentence.  In the English \eref{pronoun2}, the pronoun `she' is referring back to the bassist. You might try to fix it by adding parentheses, giving us  `$\exists x(Bx \eif Rx)$'.  This is now at least a closed sentence, with the quantifier binding both variables.  Unfortunately it doesn't capture the meaning of \eref{pronoun2}.   Recall that in TFL, $(P \eif Q)$ is equivalent (by the Imp Law) to $(\enot P \eor Q)$.  Similarly, in FOL  `$\exists x(Bx \eif Rx)$' is equivalent to  `$\exists x(\enot Bx \eor Rx)$'.  This will be true as long as there is some non-bassist in the world, but that clearly doesn't suffice for \eref{pronoun2} to be true!
+Sentence \eref{pronoun2} is more tricky.  You might think that it's a conditional, with an existential quantifier in its antecedent, and should be symbolized along the lines of `$\exists xBx \eif Rx$'.  This isn't correct, however, since the quantifier in this symbolization isn't binding the variable in `$Rx$', that is, it's an open sentence.  In the English \eref{pronoun2}, the pronoun `she' is referring back to the bassist. You might try to fix it by adding parentheses, giving us  `$\exists x(Bx \eif Rx)$'.  This is now at least a closed sentence, with the quantifier binding both variables.  Unfortunately it doesn't capture the meaning of \eref{pronoun2}.   Recall that in TFL, $(P \eif Q)$ is equivalent (by the Imp Law) to $(\enot P \eor Q)$.  Similarly, in FOL  `$\exists x(Bx \eif Rx)$' is equivalent to  `$\exists x(\enot Bx \eor Rx)$'.  This will be true as long as there is at least one non-bassist in the world! But that clearly doesn't suffice for \eref{pronoun2} to be true, so this can't be the correct symbolization either.
 
 
-Paraphrase will help us reach our goal.  \eref{pronoun2} can be paraphrased as `If some person is a bassist, then that person is a rock star'. This sentence is not about any particular person, but rather says something about every person who is a bassist.  It can be paraphrased as `For any person x, if x is a bassist, then x is a rockstar', which can be symbolized as `$\forall x (Bx \eif Rx)$'.  This is now the correct symbolization of \eref{pronoun2}.  There is a surprising but important upshot to this: sometimes, English sentences that involve the quantifier `someone' get symbolized using the universal quantifier $\forall$ in FOL!\footnote{Sentence \eref{pronoun2} involves what linguists call a ``donkey anaphor.''  You can read more about this in the Stanford Encyclopedia of Philosophy: \href{https://plato.stanford.edu/entries/anaphora/}{https://plato.stanford.edu/entries/anaphora/}.}
+Paraphrase will help us reach our goal.  \eref{pronoun2} can be rephrased as `If someone is a bassist, then that person is a rock star'. This sentence is not about any particular person, it rather says something about \emph{every} person who is a bassist.  It can be paraphrased as `For any person x, if x is a bassist, then x is a rockstar', which can be symbolized as `$\forall x (Bx \eif Rx)$'.  This is now the correct symbolization of \eref{pronoun2}.  There is a surprising but important upshot to this: sometimes, English sentences that involve the quantifier `someone' get symbolized using the universal quantifier $\forall$ in FOL!\footnote{Sentence \eref{pronoun2} involves what linguists call a ``donkey anaphor.''  You can read more about this in the Stanford Encyclopedia of Philosophy: \href{https://plato.stanford.edu/entries/anaphora/}{https://plato.stanford.edu/entries/anaphora/}.}
 
 
 
 
 Next, consider these sentences:
 	\begin{earg}
-		\item[\ex{anyone1}] If anyone is a bassist, then Kim Deal is a rock star.
+		\item[\ex{anyone1}] If anyone is a bassist, then Kim Deal will be happy.
 		\item[\ex{anyone2}] If anyone is a bassist, then she is a rock star.
 	\end{earg}
 The same words appear as the antecedent in sentences \eref{anyone1} and \eref{anyone2}  (`If anyone is a bassist$\ldots$'). But again, they mean very different things, and will have to be symbolized differently.  Paraphrase will help us.
 
-Sentence \eref{anyone1} can be paraphrased, `If there exists at least one bassist, then Kim Deal is a rock star'. This is a conditional whose antecedent is an existentially quantified sentence.  We can symbolize the entire sentence with a conditional as the main logical operator: `$\exists x Bx \eif Rk$'.  (Notice that this is not an open sentence, because $k$ is a name, not a variable.)
+Sentence \eref{anyone1} can be paraphrased, `If there is least one bassist, then Kim Deal will be happy'. This is a conditional whose antecedent is an existentially quantified sentence.  Using `$H$' for `\blank is happy', we can symbolize this as a sentence with a conditional as the main operator: `$\exists x Bx \eif Hk$'.  (Notice that this is not an open sentence: although the quantifier only has scope over the antecedent, the $k$ in the consequent is a name, not a variable.)
 
-Sentence \eref{anyone2} again has a pronoun `she' referring back to the bassist.  It can be paraphrased as `For all people x, if x is a bassist, then x is a rock star', or just `All bassists are rock stars'. So it gets symbolized as a universally quantified sentence, `$\forall x(Bx \eif Rx)$', just like sentence \eref{pronoun2} from earlier.  What these examples illustrate is that the English quantifier `anyone' sometimes gets symbolized as an existential quantifier in FOL, and at other times as a universal quantifier.   To determine which, try paraphrasing the sentence using words \emph{besides} `any' or `anyone'.
+Sentence \eref{anyone2} again has a pronoun `she' referring back to the bassist.  It can be paraphrased as `For every person x, if x is a bassist, then x is a rock star', or just `All bassists are rock stars'. So it gets symbolized as a universally quantified sentence, `$\forall x(Bx \eif Rx)$', just like sentence \eref{pronoun2} from earlier.  What these examples illustrate is that the English quantifier `anyone' sometimes gets symbolized as an existential quantifier and at other times as a universal quantifier.   To determine which, try paraphrasing the sentence using words \emph{besides} `any' or `anyone'.
 
 \practiceproblems
 \problempart  Symbolize the following:
@@ -733,7 +731,7 @@ As already mentioned, the real power of FOL lies in its ability to treat sentenc
 	\begin{earg}
 		\item[\ex{elovs}] Everyone loves someone.
 	\end{earg}
-On its most natural interpretation, this sentence says that for every person $x$, there is some person $y$ whom $x$ loves. It can therefore be symbolized as `$\forall x \exists yLxy$'.  This would be true, for example, in a love triangle situation where Karl loves Imre, Imre loves Juan, and Juan loves Karl (and no one loves anyone else): no matter which person  $x$ we consider, we can find some person $y$ whom $x$ loves.
+On its most natural interpretation, this sentence says that for every person $x$, there is some person $y$ whom $x$ loves. It can therefore be symbolized as `$\forall x \exists yLxy$'.  This would be true, for example, in a love triangle situation where Karl loves Imre, Imre loves Juan, and Juan loves Karl (and no one loves anyone else): no matter which person  $x$ we consider, we can find some person $y$ such that $x$ loves $y$.
 
 However, English sentences like \eref{elovs} that contain multiple quantifiers are \emph{ambiguous}.  There is another interpretation of \eref{elovs} on which it says that every $x$ loves some one particular person $y$, a claim that can also be expressed via the following English sentence:
 	\begin{earg}
@@ -769,9 +767,9 @@ Another way to think about \eref{negquan2} is as saying: there is some  $x$ such
 \problempart Symbolize the following (in a domain of people):
 
 \begin{earg}
-\item Socrates admires someone.
-\item Everyone admires Socrates.
-\item If everyone admires Socrates, then Socrates also admires himself.
+\item Plato admires someone.
+\item Everyone admires Plato.
+\item If everyone admires Plato, then Plato also admires himself.
 \item  Everyone loves someone.
 \item Someone loves everyone.
 \item Everyone is loved by someone.
@@ -784,68 +782,110 @@ Another way to think about \eref{negquan2} is as saying: there is some  $x$ such
 \end{earg}
 
 
-
-
 \section{Intermediate Steps to Symbolization}\label{s:FOLSymSteps}
-As we are starting to see, symbolization in FOL can become tricky. When symbolizing a complex sentence, it is best to proceed by way of several intermediate steps. Let's look at some examples. Consider the following sentences:
+
+Symbolization in FOL gets tricky as the English sentences we want to symbolize become more complex. In such cases, it's best to break a symbolization down into intermediate steps.  Take the following increasingly complicated examples:
+
 \begin{earg}
-\item[\ex{dog2}] Geraldo owns a dog.
-\item[\ex{dog3}] Someone owns a dog.
-\item[\ex{dog4}] All of Geraldo's friends are dog owners.
-\item[\ex{dog5}] Every dog owner is a friend of a dog owner.
+\item[\ex{log1}] Every logician admires Marcus.
+\item[\ex{log2}] Carnap admires some philosopher.
+\item[\ex{log3}] Every logician admires some philosopher.
+\item[\ex{log4}] Every logician who is admired by someone admires at least one philosopher.
+%\item[\ex{log5}] Every dog owner is a friend of a dog owner.
 %\item[\ex{dog6}] Every dog owner's friend owns some friend's dog.
 \end{earg}
-We'll use the following symbolization key:
+
+\noindent Let's use the following symbolization key:
+
 \begin{ekey}
-\item[\text{domain}] things
-\item[D] \blank\ is a dog
-\item[F] \blank\ is a friend of \blank
-\item[O] \blank\ owns \blank
-\item[g] Geraldo
+\item[\text{Domain}] people
+\item[L] \blank\ is a logician
+\item[P] \blank\ is a philosopher
+\item[A] \blank\ admires \blank
+\item[c] Carnap
+\item[m] Marcus 
 \end{ekey}
 
-Sentence \eref{dog2} can be paraphrased as, `There is a dog that Geraldo owns'. This can be symbolized by `$\exists x(Dx \eand Ogx)$'.
+Starting with \eref{log1}, we see that we're dealing with a complex quantifier `every logician' rather than the simple `everyone', so it'll be helpful the divide the sentence into a restrictor predicate a main predicate, as we did in \S\ref{s:QuantifierPhrases}.  The restrictor predicate is `logician', and the main predicate is `admires Marcus', and these will have to be joined by an $\eif$ since the quantifier is universal.  So as an intermediate step we get: $$\forall x(x \text{ is a logician} \eif x \text{ admires Marcus})$$ The antecedent just becomes `$Lx$'.  The consequent gets symbolized as `$Axm$', with the variable $x$ in the admiring-slot and the name $m$ in the admired-slot.  So we get:$$\forall x(Lx \eif Axm)$$ as our final symbolization.
 
-Sentence \eref{dog3} can be paraphrased as, `There is some y such that y owns a dog'.   We can begin by just focusing on the initial quantifier, which gives us `$\exists y(y\text{ owns a dog})$'. Now the fragment `$y$ owns a dog' is exactly like sentence \eref{dog2}, except it contains a variable instead of a name.  So we could symbolize this fragment as $\exists x(x \text{ is a dog} \eand y \text{ owns } x)$. Putting it all together we get the following:
-$$\exists y \exists x(Dx \eand Oyx)$$
-In working out how to symbolize this sentence, we wrote down things like `$\exists y(y\text{ owns a dog})$' and $\exists x(x \text{ is a dog} \eand y \text{ owns } x)$. To be very clear: these are \emph{neither} FOL sentence \emph{nor} English sentences.  They use bits of FOL (`$\exists$', `$y$') and bits of English (`owns a dog'). These really are just \emph{intermediate steps} on the way to symbolizing the English sentence, a bit of ``scratch work'' we do on the side as we work through the problem.
+Sentence \eref{log2} involves a `some' quantifier, but it occurs at the end of the sentence, in the direct-objet position of `admires'.  To symbolize it, it will help to first paraphrase it so that the quantifier shows up at the beginning: `some philosopher is admired by Carnap'.  Since this is an existential sentence, the restrictor and the main predicate will get connected with an \eand, so our first intermediate step is:$$\exists x(x \text{ is a philosopher} \land x \text{ is admired by Carnap})$$The restrictor gets symbolized as `$Px$' and the main predicate as `$Acx$', giving us:$$\exists x(Px \land Acx)$$
 
-Sentence \eref{dog4} can be paraphrased as, `Everyone who is a friend of Geraldo is a dog owner'.  Since being a dog owner is the same as owning a dog, we can in turn paraphrase this as `Everyone who is a friend of Geraldo owns a dog'. So we can write:
-$$\forall x \bigl[Fxg \eif x \text{ owns a dog}\bigr]$$
-as our first intermediate step.  Now the consequent of the conditional, `$x$ is a dog owner', is structurally just like sentence \eref{dog2}. Using our symbolization of \eref{dog2} as a guide, we get:
-$$\forall x \bigl[Fxg \eif \exists y(Dy \eand Oxy)\bigr]$$
-
-Notice that it was essential that we used a variable other than `$x$' for the existential quantifier in the consequent.  If we had instead written:
-$$\forall x \bigl[Fxg \eif \exists x(Dx \eand Oxx)\bigr]$$
-we would have had a \emph{clash of variables}. The first variable `$x$' after the predicate `$O$' represents the agent, the person doing the owning, who is a friend of Geraldo.  Accordingly, this variable should get bound by the initial quantifier `$\forall x$' that  also binds the `$x$' in the antecedent `$Fxg$'.  But if we now use `$\exists x$' in the consequent, then it should bind every `$x$' in its scope, including the first one in `$Oxx$'. To avoid this clash of variables, we have to use a different variable for the quantifier in the consequent, as in `$\forall x \bigl[Fxg \eif \exists y(Dy \eand Oxy)\bigr]$'.   The broad moral is that a single variable cannot serve two masters simultaneously.
+Next, sentence \eref{log3} has a structure similar to \eref{log1}, except that the main predicate is now `admires some philosopher' rather than simply `admires Marcus':$$\forall x(Lx \eif x \text{ admires some philosopher})$$ Notice that `$x$ admires some philosopher' is just like \eref{log2} except with `$x$' in place of `Carnap'.  Since we symbolized \eref{log2} as $\exists x(Px \land Acx)$, we can symbolize `$x$ admires some philosopher' as $\exists y(Py \eand Axy)$.  Here we have to use a different variable, `$y$', with this existential quantifier, since we'realready using `$x$' for the main universal quantifier in the sentence.  Putting it all together we get:$$\forall x(Lx \eif \exists y(Py \eand Axy))$$
 
 
-Moving to sentence \eref{dog5}, it can be paraphrased as `For any $x$, if $x$ is a dog owner, then $x$ is a friend of some dog owner'. As our first intermediate step, we might have:
-$$\forall x\bigl[\mbox{$x$ is a dog owner}\eif\exists y(\mbox{$y$ is a dog owner}\eand Fxy)\bigr]$$
-Again, being a dog owner is the same as owning some dog, and we know how to symbolize that.  To avoid a variable clash, we'll have to use an existential quantifier that won't threaten to bind either the `$x$' or the `$y$' we already have in our intermediate step.  So let's use `$\exists z$' in both cases, giving us:
-$$\forall x\bigl[\exists z(Dz \eand Oxz)\eif\exists y\bigl(\exists z(Dz \eand Oyz)\eand Fxy\bigr)\bigr]$$
-Here `$\exists z(Dz \eand Oxz)$' just says that $x$ owns a dog, and  `$\exists z(Dz \eand Oyz)$' that $y$ owns a dog.
+Finally, we get to \eref{log4}, the most complicated of our four examples.  This is a universal sentence and can be split into restrictor and main predicate as follows:$$\forall x(x \text{ is a logician who is admired by someone} \eif x \text{ admires at least one philosopher})$$Let's consider each part in turn.  The restrictor can be paraphrased as: $x$ is a logician and $x$ is admired by someone.  To say that $x$ is admired by someone is to say that someone admires $x$, which can be symbolized as `$\exists yAyx$' in our domain of people.  This gives us:$$\forall x((Lx \eand \exists yAyx) \eif x \text{ admires at least one philosopher})$$as the next intermediate step.  Next comes the main predicate: `$x$ admires at least one philosopher'.  Here `at least one' is an existential quantifier, so let's rephrase this in a way that puts this quantifier into the subject position: `at least one philosopher is admired by $x$'.  We can symbolize the latter as $\exists y(Py \eand Axy)$, giving us: $$\forall x((Lx \eand \exists yAyx) \eif \exists y(Py \eand Axy))$$as our final symbolization.
 
+We here decided to use the same variable, `$y$', for the existential quantifiers in the antecedent \emph{and} the consequent of the conditional. This is ok, because there is no scope overlap between the two. We can graphically represent the scope of the various quantifiers thus:
+$$\overbrace{\forall x\bigl(\ (Lx \ \eand \overbrace{\exists yAyx}^{\text{scope of 1st `}\exists y\text{'}}) \eif \overbrace{\exists y(Py \eand Axy)}^{\text{scope of 2nd `}\exists y\text{'}} \ \bigr)}^{\text{scope of `}\forall x\text{'}}$$
+Since the scopes of the two `$\exists y$' quantifiers don't overlap, there is no clash of variables.   That said, to be absolutely safe, it's good to just pick a different variable for each quantifier in your symbolization.  So the following, where we use `$\exists z$' in the consequent, would be an equally good, and ``safer,'' symbolization of \eref{log4}:$$\forall x((Lx \eand \exists yAyx) \eif \exists z(Pz \eand Axz))$$
 
-We here decided to use the same variable, `$z$', in both the antecedent \emph{and} the consequent of the conditional. This is ok, because there is no scope overlap between the two. We might graphically represent the scope of the various quantifiers thus:
-$$\overbrace{\forall x\bigl[\overbrace{\exists z(Dz \eand Oxz)}^{\text{scope of 1st `}\exists z\text{'}}\eif \overbrace{\exists y(\overbrace{\exists z(Dz \eand Oyz)}^{\text{scope of 2nd `}\exists z\text{'}}\eand Fyx)\bigr]}^{\text{scope of `}\exists y\text{'}}}^{\text{scope of `}\forall x\text{'}}$$
-Since the scopes of the two `$\exists z$' quantifiers don't overlap, there is no clash of variables.   That said, if you want to be absolutely safe, you can always just pick a different variable for each quantifier in your symbolization.  So the following, where we use `$\exists v$' in the consequent, would be perfectly good symbolization of \eref{dog5} as well:
-$$\forall x\bigl[\exists z(Dz \eand Oxz)\eif\exists y\bigl(\exists v(Dv \eand Oyv)\eand Fxy\bigr)\bigr]$$
-
-%Sentence \eref{dog6} is the trickiest yet. First we paraphrase it as `For any x, if x is a friend of a dog owner, then x owns a dog which is also owned by a friend of x'. As a first intermediate step we get:
-%$$\forall x\bigl[x\text{ is a friend of a dog owner}\eif x\text{ owns a dog which is owned by a friend of }x\bigr]$$
-%Breaking this down a bit more we get:
-%$$\forall x\bigl[\exists y(Fxy \eand y\text{ is a dog owner})\eif \exists y(Dy \eand Oxy \eand y\text{ is owned by a friend of }x)\bigr]$$
-%I here use `$\exists y$' in both the antecedent and consequent, which is again fine because their scopes do not overlap.  To complete the symbolization, we now just have to symbolize `$y$ is a dog owner' and `$y$ is owned by a friend of $x$', giving us:
-%$$\forall x\bigl[\exists y(Fxy \eand \exists z(Dz \eand Oyz)) \eif \exists y(Dy \eand Oxy \eand \exists z(Fzx \eand Ozy))\bigr]$$
-%And we are done!
-%
-%Again, we could have used different variables for each of the quantifiers, for example:
-%$$\forall x\bigl[\exists y(Fxy \eand \exists z(Dz \eand Oyz)) \eif \exists v(Dv \eand Oxv \eand \exists u(Fux \eand Ouv))\bigr]$$
 Students who are first learning FOL symbolization sometimes want to put all the quantifiers out front, at the beginning of the sentence, perhaps like so:
-$$\forall x\exists z \exists y \exists v\bigl[(Dz \eand Oxz)\eif \bigl((Dv \eand Oyv)\eand Fxy\bigr)\bigr]$$
+$$\forall x\exists y \exists z((Lx \eand Ayx) \eif (Pz \eand Axz))$$
+This is not a correct symbolization of \eref{log4}, however, and indeed virtually impossible to make sense of.  Avoid doing this.  Instead, use the strategy of breaking things down via intermediate steps, as we've done in these examples.  By following doing this you will arrive at a correct symbolization with all the quantifiers in the right places.
 
-This is not a correct symbolization of \eref{dog5}, and indeed, virtually impossible to make sense of.  Avoid doing this.  Instead, use the strategy of breaking things down via intermediate steps, as we've done in these examples.  By following this strategy, you will arrive at a correct symbolization, with all the quantifiers in the right places.
+
+
+
+%\section{Intermediate Steps to Symbolization}\label{s:FOLSymSteps}
+%As we are starting to see, symbolization in FOL can become tricky. When symbolizing a complex sentence, it is best to proceed by way of several intermediate steps. Let's look at some examples. Consider the following sentences:
+%\begin{earg}
+%\item[\ex{dog2}] Geraldo owns a dog.
+%\item[\ex{dog3}] Someone owns a dog.
+%\item[\ex{dog4}] All of Geraldo's friends are dog owners.
+%\item[\ex{dog5}] Every dog owner is a friend of a dog owner.
+%%\item[\ex{dog6}] Every dog owner's friend owns some friend's dog.
+%\end{earg}
+%We'll use the following symbolization key:
+%\begin{ekey}
+%\item[\text{domain}] things
+%\item[D] \blank\ is a dog
+%\item[F] \blank\ is a friend of \blank
+%\item[O] \blank\ owns \blank
+%\item[g] Geraldo
+%\end{ekey}
+%
+%Sentence \eref{dog2} can be paraphrased as, `There is a dog that Geraldo owns'. This can be symbolized by `$\exists x(Dx \eand Ogx)$'.
+%
+%Sentence \eref{dog3} can be paraphrased as, `There is some y such that y owns a dog'.   We can begin by just focusing on the initial quantifier, which gives us `$\exists y(y\text{ owns a dog})$'. Now the fragment `$y$ owns a dog' is exactly like sentence \eref{dog2}, except it contains a variable instead of a name.  So we could symbolize this fragment as $\exists x(x \text{ is a dog} \eand y \text{ owns } x)$. Putting it all together we get the following:
+%$$\exists y \exists x(Dx \eand Oyx)$$
+%In working out how to symbolize this sentence, we wrote down things like `$\exists y(y\text{ owns a dog})$' and $\exists x(x \text{ is a dog} \eand y \text{ owns } x)$. To be very clear: these are \emph{neither} FOL sentence \emph{nor} English sentences.  They use bits of FOL (`$\exists$', `$y$') and bits of English (`owns a dog'). These really are just \emph{intermediate steps} on the way to symbolizing the English sentence, a bit of ``scratch work'' we do on the side as we work through the problem.
+%
+%Sentence \eref{dog4} can be paraphrased as, `Everyone who is a friend of Geraldo is a dog owner'.  Since being a dog owner is the same as owning a dog, we can in turn paraphrase this as `Everyone who is a friend of Geraldo owns a dog'. So we can write:
+%$$\forall x \bigl[Fxg \eif x \text{ owns a dog}\bigr]$$
+%as our first intermediate step.  Now the consequent of the conditional, `$x$ is a dog owner', is structurally just like sentence \eref{dog2}. Using our symbolization of \eref{dog2} as a guide, we get:
+%$$\forall x \bigl[Fxg \eif \exists y(Dy \eand Oxy)\bigr]$$
+%
+%Notice that it was essential that we used a variable other than `$x$' for the existential quantifier in the consequent.  If we had instead written:
+%$$\forall x \bigl[Fxg \eif \exists x(Dx \eand Oxx)\bigr]$$
+%we would have had a \emph{clash of variables}. The first variable `$x$' after the predicate `$O$' represents the agent, the person doing the owning, who is a friend of Geraldo.  Accordingly, this variable should get bound by the initial quantifier `$\forall x$' that  also binds the `$x$' in the antecedent `$Fxg$'.  But if we now use `$\exists x$' in the consequent, then it should bind every `$x$' in its scope, including the first one in `$Oxx$'. To avoid this clash of variables, we have to use a different variable for the quantifier in the consequent, as in `$\forall x \bigl[Fxg \eif \exists y(Dy \eand Oxy)\bigr]$'.   The broad moral is that a single variable cannot serve two masters simultaneously.
+%
+%
+%Moving to sentence \eref{dog5}, it can be paraphrased as `For any $x$, if $x$ is a dog owner, then $x$ is a friend of some dog owner'. As our first intermediate step, we might have:
+%$$\forall x\bigl[\mbox{$x$ is a dog owner}\eif\exists y(\mbox{$y$ is a dog owner}\eand Fxy)\bigr]$$
+%Again, being a dog owner is the same as owning some dog, and we know how to symbolize that.  To avoid a variable clash, we'll have to use an existential quantifier that won't threaten to bind either the `$x$' or the `$y$' we already have in our intermediate step.  So let's use `$\exists z$' in both cases, giving us:
+%$$\forall x\bigl[\exists z(Dz \eand Oxz)\eif\exists y\bigl(\exists z(Dz \eand Oyz)\eand Fxy\bigr)\bigr]$$
+%Here `$\exists z(Dz \eand Oxz)$' just says that $x$ owns a dog, and  `$\exists z(Dz \eand Oyz)$' that $y$ owns a dog.
+%
+%
+%We here decided to use the same variable, `$z$', in both the antecedent \emph{and} the consequent of the conditional. This is ok, because there is no scope overlap between the two. We might graphically represent the scope of the various quantifiers thus:
+%$$\overbrace{\forall x\bigl[\overbrace{\exists z(Dz \eand Oxz)}^{\text{scope of 1st `}\exists z\text{'}}\eif \overbrace{\exists y(\overbrace{\exists z(Dz \eand Oyz)}^{\text{scope of 2nd `}\exists z\text{'}}\eand Fyx)\bigr]}^{\text{scope of `}\exists y\text{'}}}^{\text{scope of `}\forall x\text{'}}$$
+%Since the scopes of the two `$\exists z$' quantifiers don't overlap, there is no clash of variables.   That said, if you want to be absolutely safe, you can always just pick a different variable for each quantifier in your symbolization.  So the following, where we use `$\exists v$' in the consequent, would be perfectly good symbolization of \eref{dog5} as well:
+%$$\forall x\bigl[\exists z(Dz \eand Oxz)\eif\exists y\bigl(\exists v(Dv \eand Oyv)\eand Fxy\bigr)\bigr]$$
+%
+%%Sentence \eref{dog6} is the trickiest yet. First we paraphrase it as `For any x, if x is a friend of a dog owner, then x owns a dog which is also owned by a friend of x'. As a first intermediate step we get:
+%%$$\forall x\bigl[x\text{ is a friend of a dog owner}\eif x\text{ owns a dog which is owned by a friend of }x\bigr]$$
+%%Breaking this down a bit more we get:
+%%$$\forall x\bigl[\exists y(Fxy \eand y\text{ is a dog owner})\eif \exists y(Dy \eand Oxy \eand y\text{ is owned by a friend of }x)\bigr]$$
+%%I here use `$\exists y$' in both the antecedent and consequent, which is again fine because their scopes do not overlap.  To complete the symbolization, we now just have to symbolize `$y$ is a dog owner' and `$y$ is owned by a friend of $x$', giving us:
+%%$$\forall x\bigl[\exists y(Fxy \eand \exists z(Dz \eand Oyz)) \eif \exists y(Dy \eand Oxy \eand \exists z(Fzx \eand Ozy))\bigr]$$
+%%And we are done!
+%%
+%%Again, we could have used different variables for each of the quantifiers, for example:
+%%$$\forall x\bigl[\exists y(Fxy \eand \exists z(Dz \eand Oyz)) \eif \exists v(Dv \eand Oxv \eand \exists u(Fux \eand Ouv))\bigr]$$
+%Students who are first learning FOL symbolization sometimes want to put all the quantifiers out front, at the beginning of the sentence, perhaps like so:
+%$$\forall x\exists z \exists y \exists v\bigl[(Dz \eand Oxz)\eif \bigl((Dv \eand Oyv)\eand Fxy\bigr)\bigr]$$
+%
+%This is not a correct symbolization of \eref{dog5}, and indeed, virtually impossible to make sense of.  Avoid doing this.  Instead, use the strategy of breaking things down via intermediate steps, as we've done in these examples.  By following this strategy, you will arrive at a correct symbolization, with all the quantifiers in the right places.
 
 \practiceproblems
 
@@ -1113,7 +1153,7 @@ This is sometimes called the \define{Law of Identity}, and it will be a theorem 
 Another logical truth involving identity sometimes goes by the name of \define{Leibniz's Law}.\footnote{This law is named after Gottfried Willhelm Leibniz (1646--1716).  Leibniz actually endorsed a stronger claim, which says not only that $x$ and $y$ must share all their properties if they are identical, but also (and more controversially!) that if $x$ and $y$ share all their properties, then they are identical.  Can you think of a potential example of objects $x$ and $y$ that share all their properties but are still distinct?}  It says that if $x$ and $y$ are one and the same thing, then $x$ and $y$ must share all their properties. So if we use `$D$' for `\blank is a dog', the following would be an instance of Leibniz's Law:
 $$\forall x \forall y\bigl[x = y \eif (Dx \eiff Dy)\bigr]$$
 This says that if $x$ and $y$ are identical, then $x$ is a dog iff $y$ is.  Similarly, if we use `$O$' for `\blank\ owns \blank', then another instance of Leibniz's Law says that if $x$ and $y$ are identical, then $x$ owns a dog iff $y$ does:
-$$\forall x \forall y\bigl[x = y \eif (\exists z(Dz \eand Oxz) \eiff \exists z(Dx \eand Oyz))\bigr])$$
+$$\forall x \forall y\bigl[x = y \eif (\exists z(Dz \eand Oxz) \eiff \exists z(Dx \eand Oyz))\bigr]$$
 But Leibniz's Law itself cannot be captured in FOL.  Since it makes a claim about \emph{all properties}, we'd need to have quantifiers that bind variables in \emph{predicate} position to really express Leibniz's Law in full generality, writing something like:
 $$\forall x \forall y\bigl[x = y \eif \forall P(Px \eiff Py)\bigr]$$
 A logic that contains quantifiers like `$\forall P$' is said to be a \define{Second-Order Logic}.  As its name indicates, FOL is a \emph{first-order} logic.  It can express  \emph{instances} of Leibniz's Law, concerning particular properties like owning a dog, but it cannot express it in full generality.
@@ -1228,7 +1268,7 @@ This says that there exists at least one thing. This is obviously a controversia
 %But now suppose that the very tall man is actually drinking \emph{water} from a martini glass; whereas the very short man is drinking a pint of (neat) gin. By Russell's analysis, Malika has said something false. But don't we want to say that Malika has said something \emph{true}?
 %
 %Again, one might wonder how clear our intuitions are on this case. We can all agree that Malika intended to pick out a particular man, and say something true of him (that he was tall). On Russell's analysis, she actually picked out a different man (the short one), and consequently said something false of him. But  maybe advocates of Russell's analysis only need to explain \emph{why} Malika's intentions were frustrated, and so why she said something false. This is easy enough to do:  Malika said something false because she had false beliefs about the men's drinks; if Malika's beliefs about the drinks had been true,  then she would have said something true.\footnote{For more, see Saul Kripke, `Speaker Reference and Semantic Reference', 1977.}
-%%, in French et al (eds.), \emph{Contemporary Perspectives in the Philosophy of Language}, Minneapolis: University of Minnesota Press, pp.\ 6-27.}
+%%, in French et al (eds.), \emph{Contemporary Perspectives in the Philosophy of Language}, Minneapolis: University of Minnesota Press, pp.\ 6-27.
 %
 %To say much more here would lead us into deep philosophical waters. That would be no bad thing, but for now it would distract us from the immediate purpose of learning formal logic. So, for now, we shall stick with Russell's analysis of definite descriptions, when it comes to putting things into FOL. It is certainly the best that we can offer, without significantly revising our logic. And it is quite defensible as an analysis.
 

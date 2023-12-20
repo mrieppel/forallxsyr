@@ -255,7 +255,7 @@ The general pattern at work here is the following: to prove a conditional $\meta
 
 Here's another illustration of $\eif$I in action. Suppose we want to prove:
 	$$P \eif Q, Q \eif R \vdash P \eif R$$
-We start by listing both of our premises. Then, since we are aiming to prove a conditional, namely, `$P \eif R$', we assume the antecedent to that conditional as an additional assumption, which opens a new subproof:
+We start by listing both of our premises at the top and our goal at the bottom. Since our goal is to prove a conditional, `$P \eif R$', we assume its antecedent and aim to prove its consequent on that assumption, which opens a new subproof:
 \begin{proof}
 	\hypo{pq}{P \eif Q}  \by{Premise}{}
 	\hypo{qr}{Q \eif R}  \by{Premise}{}
@@ -264,8 +264,9 @@ We start by listing both of our premises. Then, since we are aiming to prove a c
 		\have[\ ]{}{\vdots}
 		\have[\ ]{}{R}
 	\close
+	\have[\ ]{}{P \eif R}
 \end{proof}
-Our goal now is to prove $R$ from this temporary assumption, inside of our subproof.  Given `$P$' , we can use {\eif}E on the first premise. This will yield `$Q$'. And we can then use {\eif}E on the second premise to get `$R$'. So, by assuming `$P$' we were able to prove `$R$'!  We can now apply the {\eif}I rule, thereby discharging `$P$' and popping out of the subproof::\label{HSproof}
+Our goal in this subproof is now to prove $R$ from this temporary assumption $P$.  Given `$P$' , we can use {\eif}E on the first premise. This will yield `$Q$'. And we can then use {\eif}E on the second premise to get `$R$'. So, by assuming `$P$' we were able to prove `$R$'!  We can now apply the {\eif}I rule, thereby discharging `$P$' and popping out of the subproof:\label{HSproof}
 \begin{proof}
 	\hypo{pq}{P \eif Q}  \by{Premise}{}
 	\hypo{qr}{Q \eif R}  \by{Premise}{}
@@ -407,7 +408,7 @@ As another example, take the tautology `$A \eif (B \eif A)$'.  This is provable 
 In order to avoid having to use the trick of using $\eand$I and $\eand$E in this way to repeat earlier lines at later stages in a proof, we'll allow ourselves to use the following shortcut rule:
 \factoidbox{\define{Reiteration Rule:} at any point in a proof, we may write down a sentence occurring on any line that (i) appears before that point in the proof, and (ii) isn't inside a closed subproof.
 }
-This lets us shorten the above proof to:\\
+Notice that Reiteration is never essential: we could always use $\eand$I together with $\eand$E instead.  Shortcuts like this are called Derived Rules, and we'll introduce more of them later in \S \ref{s:TFLDerivedRules}.  Using Reiteration our earlier proof can be shortened to: \\
 
 \begin{proof}
 \open
@@ -527,6 +528,7 @@ Prove the following:
 \item $A \eiff B \vdash (A \eand C) \eiff (B \eand C)$
 \item $(A \eand B) \eiff (A \eand C) \vdash A \eif (B \eiff C)$
 \item $A\eiff B, B\eiff C \proves A\eiff C$
+\item $P \leftrightarrow (Q \land R), \ R \rightarrow P  \ \vdash \ P \leftrightarrow R$
 \item $K \eand L \proves K \eiff L$
 \item $A \eiff B \vdash (A \eand C) \eiff (B \eand C)$
 \item $(Z\eand K)\eiff(Y\eand M), D\eand(D\eif M) \proves Y\eif Z$
@@ -537,22 +539,31 @@ Prove the following:
 
 
 
-\section{Negation Rules}
+\section{Negation Rules}\label{s:TFLNegationRules}
 
 
 
-Our next connective is negation. In the context of natural deduction, negation is unusual because the rules governing it involve another notion, that of  \emph{contradiction}.
+Our next connective is negation. In the context of natural deduction, negation is unusual because the rules governing it involve another notion, that of  \emph{contradiction}.  Consider this: an effective way to argue against someone is to show that the assumptions they are making collectively lead to a contradiction.  At that point, you have your opponent in a bind: since your opponent's assumptions lead to a contradiction, they can't all be true! So they have to give up at least one of those assumptions. This argumentative strategy exemplifies the \emph{reductio ad absurdum} reasoning that we encountered in \S\ref{s:PartTTableEnt}.  
 
-Consider this: an effective way to argue against someone is to show that the assumptions they are making collectively lead to a contradiction.  At that point, you have your opponent in a bind: since your opponent's assumptions lead to a contradiction, they can't all be true! So they have to give up at least one of those assumptions. This argumentative strategy exemplifies the \emph{reductio ad absurdum} reasoning that we encountered in \S\ref{s:PartTTableEnt}.  We are going to make use of this idea in our proof system by adding the absurdity symbol `$\ered$'.  You can think of it as officially declaring `contradiction!'\ or `reductio!'\ or `but that's absurd!'
+Our negation introduction rule provides a formal implementation of this \emph{reductio ad absurdum} proof strategy: if an assumption leads you to a contradiction (an ``absurdity''), then you know that assumption must be wrong, and you can infer its negation.  We'll use the symbol `$\ered$' to indicate that a contradiction has been reached.  You can think of it as officially declaring `contradiction!'\ or `reductio!'\ or `that's absurd!'  The rule looks like this:
+\factoidbox{\begin{proof}
+		\open
+		\hypo[i]{a}{\meta{\varphi}}
+		\have[\ ]{}{\vdots}
+		\have[j]{nb}{\ered}
+		\close
+		\have[\ ]{na}{\enot\meta{\varphi}}\ni{a-nb}
+\end{proof}}
+There can be as many lines between $i$ and $j$ as you like.  As with other rules that require subproofs, you need to cite the entire subproof $i$--$j$ when applying $\enot$I.  
 
-We can declare a contradiction with \ered \ whenever we  have both a sentence and its negation appearing in our proof.  This gives us our negation elimination rule:
+How doe we get the contradiction symbol $\ered$ at the end of our subproof? We can declare a contradiction with \ered \ whenever we  have both a sentence and its negation appearing in our proof.  This gives us our negation elimination rule:
 \factoidbox{
 \begin{proof}
-\have[m]{a}{\meta{\varphi}}
-\have[n]{na}{\enot\meta{\varphi}}
+\have[m]{a}{\enot\meta{\varphi}}
+\have[n]{na}{\meta{\varphi}}
 \have[ ]{bot}{\ered}\ne{a, na}
 \end{proof}}
-It doesn't matter in what order the sentence and its negation appear in, and they don't need to appear on adjacent lines---as long as a sentence and its negation appear in your proof (and neither is trapped inside a closed subproof), you can declare a contradiction with \ered.  This rule is called $\lnot$E because a negation sign is eliminated in favor of $\bot$.  We could have equally well called this the \ered I rule, since it introduces \ered \ into the proof, but we'll continue to call it \enot E, following Gentzen, who first formulated these rules.
+It doesn't matter in what order the sentence and its negation appear, and they don't need to appear on adjacent lines---as long as a sentence and its negation appear in your proof (and neither is trapped inside a closed subproof), you can declare a contradiction with \ered.  This rule is called $\lnot$E because a negation sign is eliminated in favor of $\bot$.  We could have equally well called this the \ered I rule, since it introduces \ered \ into the proof (but we'll continue to call it \enot E, following Gentzen, who first formulated these rules).
 
 
 %I have said that `$\ered$' should be read as something like `contradiction!' But this does not tell us much about the symbol. There are, roughly, three ways to approach the symbol.
@@ -564,16 +575,6 @@ It doesn't matter in what order the sentence and its negation appear in, and the
 %There is something philosophically attractive about the third option. But here we will officially go for the second option. `$\ered$' is to be read as abbreviating some canonical contradiction. This means that we can manipulate it in our proofs just like any other sentence.
 
 
-Next, we turn to our rule of negation introduction. This rule will be a formal implementation of the \emph{reductio ad absurdum} proof strategy described earlier: if making an assumption leads you to a contradiction, then you know that assumption must be wrong, and you can infer its negation. The rule looks like this:
-\factoidbox{\begin{proof}
-		\open
-		\hypo[i]{a}{\meta{\varphi}}
-		\have[\ ]{}{\vdots}
-		\have[j]{nb}{\ered}
-		\close
-		\have[\ ]{na}{\enot\meta{\varphi}}\ni{a-nb}
-\end{proof}}
-There can be as many lines between $i$ and $j$ as you like.  As with other rules that require subproofs, you need to cite the entire subproof when applying $\enot$I.  Notice that since the subproof has to end with the contradiction symbol $\ered$, we will usually have to use \enot E in the course of using $\enot$I.
 
 Here's an example of how this works.  Suppose we want to show:
 $$\enot A \proves \enot(A \eand B)$$
@@ -602,9 +603,9 @@ Interestingly, the rules we have assembled so far won't yet let us replicate thi
 		\close
 		\have[\ ]{na}{\meta{\varphi}}\ip{a-nb}
 \end{proof}}
-This is called indirect proof because it lets us prove \meta{\varphi} ``indirectly,'' by assuming its negation and deriving a contradiction from that assumption. It's quite similar to $\lnot$I, except that the location of the negation symbol gets reversed: instead of \emph{deriving} a negated sentence (as with $\enot$I), we instead \emph{assume} a negated sentence and then infer its un-negated counterpart.
+This is called indirect proof because it lets us prove \meta{\varphi} ``indirectly,'' by assuming its negation and deriving a contradiction from that assumption. It's quite similar to $\lnot$I, except that the location of the negation symbol is reversed: instead of \emph{deriving} a negated sentence (as with $\enot$I), we instead \emph{assume} a negated sentence and then infer its un-negated counterpart.\footnote{Why don't we call IP ``negation elimination''?  Elimination rules always tell us what can be inferred if we \emph{already} have a sentence with the relevant connective in our proof.  In the case of IP, $\lnot \varphi$ isn't something we already have (it's rather an assumption we make to apply IP), so IP doesn't eliminate $\lnot$ in the relevant sense.}
 
-It bears emphasis that IP is a very powerful rule, because any proof whatsoever can in principle be done using IP as the overall strategy!  Just assume the negation of \emph{whatever conclusion} you're trying to prove, derive a contradiction from that, and then infer your conclusion by IP.\footnote{In section \ref{s:PartTTableEnt}, on partial truth tables, we essentially did this kind of proof in English: we assumed that the premises are true and  that the conclusion false (i.e. that its negation  is true), and then showed that a contradiction resulted.  We can now do the same reasoning formally, using our rule of IP.}  But be careful: indirect proofs tend to be longer and more complicated than direct proofs.  So IP should only be used as a \emph{last resort}, when you're sure that there's no other way to complete the proof.
+It bears emphasis that IP is a very powerful rule: any proof whatsoever can in principle be done using IP as the overall strategy!  Just assume the negation of \emph{whatever conclusion} you're trying to prove, derive a contradiction from that, and then infer your conclusion by IP.\footnote{In section \ref{s:PartTTableEnt}, on partial truth tables, we essentially did this kind of proof in English: we assumed that the premises are true and  that the conclusion false (i.e. that its negation  is true), and then showed that a contradiction resulted.  We can now do the same reasoning formally, using our rule of IP.}  But be careful: indirect proofs tend to be longer and more complicated than direct proofs.  So IP should only be used as a \emph{last resort}, when you're sure that there's no other way to complete the proof.
 
 Here is an example of something that can \emph{only} be proven using IP:
 $$P \eand \enot P \proves Q$$
@@ -864,7 +865,7 @@ This is intuitively valid, so we should be able to give a proof of it.  We can s
 \have{7}{\enot A \eif \enot C} \ci{2-6}
 \end{proof}
 
-
+Notice that this is another instance of our \define{Contraposition} law: $\meta{\varphi} \eif \meta{\psi} \lequiv \enot \meta{\psi} \eif \enot \meta{\varphi}$.  We proved an instance of the right-to-left direction of this in \S\ref{s:TFLNegationRules} using IP, and here we're proving an instance of the other direction using $\enot$I.
 
 \practiceproblems
 \problempart
@@ -993,7 +994,7 @@ Given this, we might as well just introduce a \define{derived rule} into our pro
 \end{proof}}
 DS is a \define{derived rule} in the sense that it can be shown to hold using only the \emph{primitive} rules of our system.    You can think of derived rules like promissory notes: ``I am here justifying my inference by writing `DS', but I promise that, if you asked for it, I could slot in a series of steps using only the primitive rules of our natural deduction system.''  Derived rules shorten our proofs, but add no power into our proof system: any proof that appeals to a derived rule could be expanded into one that only appeals to primitive rules.
 
-In fact, we implicitly already added a derived rule to our system in \S\ref{s:TheoremsReiterating} when we introduced Reiteration.  Reiteration is just a shortcut to let us skip the $\eand$I-plus-$\eand$E trick that I used in steps $k_5$ and $k_6$ in the above proof template.\footnote{Indeed, in this particular case we could have avoided using the $\eand$I+$\eand$E trick, and shortened our proof template, by treating line $k+4$ as a whole subproof that begins with \meta{\psi} and ends with \meta{\psi} (see the end of \S\ref{s:TheoremsReiterating}).}  There are many further useful derived rules we can add to our proof system.  For example, consider the following argument:
+In fact, we already added a derived rule to our system in \S\ref{s:TheoremsReiterating} when we introduced Reiteration.  Reiteration is just a shortcut to let us skip the $\eand$I-plus-$\eand$E trick that I used in steps $k_5$ and $k_6$ in the above proof template.\footnote{Indeed, in this particular case we could have avoided using the $\eand$I+$\eand$E trick, and shortened our proof template, by treating line $k+4$ as a whole subproof that begins with \meta{\psi} and ends with \meta{\psi} (see the end of \S\ref{s:TheoremsReiterating}).}  There are many further useful derived rules we can add to our proof system.  For example, consider the following argument:
 	\begin{quote}
 		If Alice is a chemist, then she has a PhD. Alice doesn't have a PhD. So she isn't a chemist.
 	\end{quote}
@@ -1048,7 +1049,7 @@ $\bot \proves \meta{\varphi}$ & EX \\
 \end{tabular}
 \end{center}
 
-\noindent (where  \ \#\  in SDN can be any binary connective, and $@$ Com can be any of the three commutative connectives $\eor, \eand, \eiff$).  The way understand this list of derived rules is as follows:
+\noindent (where  \ \#\  in SDN can be any binary connective, and $@$ in Com can be any of the three commutative connectives $\eor, \eand, \eiff$).  The way understand this list of derived rules is as follows:
 
 \begin{itemize}
 \item For any sequent $\meta{\varphi}_1 \ldots \meta{\varphi}_n \proves \meta{\psi}$ matching one from the above list, if $\meta{\varphi}_1 \ldots \meta{\varphi}_n$ occur on some earlier lines $j_1 \ldots j_n$ in your proof (none of them inside a closed subproof), then you may directly infer \meta{\psi} and justify it by citing the name of the relevant derived rule followed by the numbers of lines $j_1 \ldots j_n$.

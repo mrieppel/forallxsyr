@@ -4,13 +4,13 @@
 
 
 \begin{center}
-\begin{tabular}{c c|c|c|c|c|c}
-\meta{\varphi} & \meta{\psi} & $\enot \meta{\varphi}$ & $\meta{\varphi}\eand\meta{\psi}$ & $\meta{\varphi}\eor\meta{\psi}$ & $\meta{\varphi}\eif\meta{\psi}$ & $\meta{\varphi}\eiff\meta{\psi}$\\
+\begin{tabular}{c@{ }@{ }c | c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{ } | c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{ } | c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{ } | c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{ }}
+$\enot$ & \meta{\varphi} & ( & \meta{\varphi} & $\eand $ & \meta{\psi} & ) & ( & \meta{\varphi} & $\eor$ & \meta{\psi} & ) & ( & \meta{\varphi} & $\eif$ & \meta{\psi} & ) & ( & \meta{\varphi} & $\eiff$ & \meta{\psi} & )\\
 \hline
-T & T & F & T & T & T & T\\
-T & F & F & F & T & F & F\\
-F & T & T & F & T & T & F\\
-F & F & T & F & F & T & T
+$\textbf{F}$ & $\text{T}$ &  & $\text{T}$ & $\textbf{T}$ & $\text{T}$ &  &  & $\text{T}$ & $\textbf{T}$ & $\text{T}$ &  &  & $\text{T}$ & $\textbf{T}$ & $\text{T}$ &  &  & $\text{T}$ & $\textbf{T}$ & $\text{T}$ & \\
+$\textbf{F}$ & $\text{T}$ &  & $\text{T}$ & $\textbf{F}$ & $\text{F}$ &  &  & $\text{T}$ & $\textbf{T}$ & $\text{F}$ &  &  & $\text{T}$ & $\textbf{F}$ & $\text{F}$ &  &  & $\text{T}$ & $\textbf{F}$ & $\text{F}$ & \\
+$\textbf{T}$ & $\text{F}$ &  & $\text{F}$ & $\textbf{F}$ & $\text{T}$ &  &  & $\text{F}$ & $\textbf{T}$ & $\text{T}$ &  &  & $\text{F}$ & $\textbf{T}$ & $\text{T}$ &  &  & $\text{F}$ & $\textbf{F}$ & $\text{T}$ & \\
+$\textbf{T}$ & $\text{F}$ &  & $\text{F}$ & $\textbf{F}$ & $\text{F}$ &  &  & $\text{F}$ & $\textbf{F}$ & $\text{F}$ &  &  & $\text{F}$ & $\textbf{T}$ & $\text{F}$ &  &  & $\text{F}$ & $\textbf{T}$ & $\text{F}$ & \\
 \end{tabular}
 \end{center}
 
@@ -235,7 +235,12 @@ F & F & T & F & F & T & T
 	\have[\ ]{c}{\meta{\chi}} \oe{ab,a-c1, b-c2}
 \end{proof}
 
+\vspace{1em}\noindent\textbf{Reiteration}
 
+\begin{proof}
+	\have[m]{a}{\meta{\varphi}}
+	\have[\ ]{ab}{\meta{\varphi}} \by{Reit}{a}
+\end{proof}
 
 
 \end{multicols}
@@ -265,6 +270,9 @@ $\meta{\varphi} @ \meta{\psi}  \proves  \meta{\psi} @ \meta{\varphi}$ &         
 $\bot \proves \meta{\varphi}$ & EX \\
  $\proves \meta{\varphi}\eor \enot \meta{\varphi}$ &                                                    LEM \\
 \end{tabular}
+\vspace{1em}
+
+(where  \ \#\  can be any binary connective and $@$ can be any of  $\eor, \eand, \eiff$)
 \end{center}
 
 
