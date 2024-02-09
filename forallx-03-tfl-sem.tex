@@ -144,13 +144,13 @@ This is why we talk of \emph{symbolizing} English sentences. Some logic textbook
 When we introduced the truth table for `\eif', we didn't provide any justification for it.  In fact, we noticed that it seems problematic as a symbolization of English `if \ldots then'.  But there are some things to be said in favor of the truth table we provided.
 
 
-First, the TFL conditional has some attractive \emph{logical} features given our truth table.\footnote{I owe the this observation to Branden Fitelson.}  The following all seem correct for English `if \ldots then' statements:
+First, the TFL conditional has some attractive \emph{logical} features given our truth table. The following all seem correct for English `if \ldots then' statements:
 \begin{ebullet}
 \item Arguments of the form `If \meta{\varphi} then \meta{\psi}; \meta{\varphi}; therefore \meta{\psi}' are valid.  (This form of argument is called \emph{modus ponens}.)
 \item Arguments of the form `If \meta{\varphi} then \meta{\psi}; \meta{\psi}; therefore \meta{\varphi}' are not valid.  (This is called the fallacy of \emph{affirming the consequent}.)
 \item Statements of the form `If \meta{\varphi}, then \meta{\varphi}' are necessarily true.
 \end{ebullet}
-As we will see once we define validity and other logical notions in TFL, the same holds for the corresponding TFL symbolizations using $\eif$ in place of `if \ldots then': arguments of the form $(\meta{\varphi} \eif \meta{\psi}), \meta{\varphi} \therefore \meta{\psi}$ will be valid in TFL, ones of the form $(\meta{\varphi} \eif \meta{\psi}), \meta{\psi} \therefore \meta{\varphi}$ will not be valid (at least if \meta{\varphi} and \meta{\psi} are atomic sentences), and any sentence of the form $(\meta{\varphi} \eif \meta{\varphi})$ is a logical necessity (or ``tautology'') in TFL.  And importantly, out of the sixteen possible binary truth functions, the one we have assigned to `\eif' is the \emph{only} one that has all these logical properties!  So if we have to pick a truth-functional connective to symbolize English `if \ldots then', then `\eif' is the best choice among the sixteen available options.
+As we will see once we define validity and other logical notions in TFL, the same holds for the corresponding TFL symbolizations using $\eif$ in place of `if \ldots then': arguments of the form $(\meta{\varphi} \eif \meta{\psi}), \meta{\varphi} \therefore \meta{\psi}$ will be valid in TFL, ones of the form $(\meta{\varphi} \eif \meta{\psi}), \meta{\psi} \therefore \meta{\varphi}$ will not be valid (at least if \meta{\varphi} and \meta{\psi} are atomic sentences), and any sentence of the form $(\meta{\varphi} \eif \meta{\varphi})$ is a logical necessity (or ``tautology'') in TFL.  And importantly, out of the sixteen possible binary truth functions, the one we have assigned to `\eif' is the \emph{only} one that has all these logical properties!  So if we have to pick a truth-functional connective to symbolize English `if \ldots then', then `\eif' is the best choice among the sixteen available options.\footnote{I owe the this observation to Branden Fitelson.} 
 
 Second, there's an argument to suggest that the truth table we've given for `\eif' captures at least certain uses of English `if \ldots then'.\footnote{Versions of this argument are given by Dorothy Edgington (2014), `Conditionals', in the \emph{Stanford Encyclopedia of Philosophy} (\url{http://plato.stanford.edu/entries/conditionals/}) and Warren Goldfarb (2003), in his textbook \emph{Deductive Logic}.}    Suppose Lara has drawn several shapes on a piece of paper, and colored some of them grey. I have not seen them, but I claim:
 	\begin{quote}
@@ -503,7 +503,7 @@ $J$&$L$&\enot&$L$&\eif&$(J$&\eor&$L)$&\enot&$L$&$J$\\
  F & F & T & F & \TTbf{F} & F & F & F & \TTbf{T} & F & \TTbf{F}
 \end{tabular}
 \end{center}
-The only row on which both `$\enot L \eif (J \eor L)$' and `$\enot L$' are true is the second row.  But that is a row on which `$J$' is also true!  So there is no valuation that makes  both `$\enot L \eif (J \eor L)$' and `$\enot L$' true and `$J$' false, meaning that `$\enot L \eif (J \eor L)$' and `$\enot L$' entail `$J$', i.e. that the argument from premises 
+The only row on which both `$\enot L \eif (J \eor L)$' and `$\enot L$' are true is the second row.  But that is a row on which `$J$' is also true!  So there is no valuation that makes  both `$\enot L \eif (J \eor L)$' and `$\enot L$' true and `$J$' false, meaning that `$\enot L \eif (J \eor L)$' and `$\enot L$' entail `$J$', i.e. that the argument from those premises to the conclusion `$J$' is valid.
 
 %The notion of TF entailment is particularly important because it functions as our surrogate for \emph{validity}.  In \S\ref{s:Arguments} we said that an argument is TF valid iff it's impossible for the premises to be true and the conclusion false.  Similarly, we now say that a TFL argument is valid iff there's no valuation on which the premises are true and the conclusion false, that is to say:
 %
@@ -528,7 +528,7 @@ to say that $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ \emph{do not} TF entail
 
 Lastly, we can abbreviate the claim that \meta{\varphi} and \meta{\psi} are equivalent as follows:
 $$\meta{\varphi} \lequiv \meta{\psi}$$
-This encapsulates the idea that \meta{\varphi} and \meta{\psi} are equivalent iff each entails the other.  That makes sense: if $\meta{\varphi} \entails \meta{\psi}$ then there is no valuation that makes \meta{\varphi} true but \meta{\psi} false, and if $\meta{\psi} \entails \meta{\varphi}$ then there is no valuation that makes \meta{\psi} true but \meta{\varphi} false.  Putting it together, this means that there's no valuation on which \meta{\varphi} and \meta{\psi} have different truth values, meaning that \meta{\varphi} and \meta{\psi} are equivalent.  Similarly reasoning holds the other direction, from equivalence to mutual entailment
+This encapsulates the idea that \meta{\varphi} and \meta{\psi} are equivalent iff each entails the other.  That makes sense: if $\meta{\varphi} \entails \meta{\psi}$ then there is no valuation that makes \meta{\varphi} true but \meta{\psi} false, and if $\meta{\psi} \entails \meta{\varphi}$ then there is no valuation that makes \meta{\psi} true but \meta{\varphi} false.  Putting it together, this means that there's no valuation on which \meta{\varphi} and \meta{\psi} have different truth values, meaning that \meta{\varphi} and \meta{\psi} are equivalent.  Similarly reasoning holds the other direction, from equivalence to mutual entailment.
 
 
 It's important to be clear that `$\entails$' is not a symbol in the language of TFL. Rather, it is a symbol of our \emph{metalanguage} (recall the difference between object language and metalanguage from \S\ref{s:TFLMetavariables}). The following is a claim in our metalanguage, not in the language TFL:
@@ -587,9 +587,9 @@ Construct joint truth tables to determine whether the following hold:
 \begin{earg}
 	\item $(A \eiff B) \lequiv ((A \eif B) \eand (B \eif A))$
 	\item $(A \eif B) \lequiv (B \eif A)$
-	\item $(A \eif B) \lequiv \enot A \eor B$
+	\item $(A \eif B) \lequiv (\enot A \eor B)$
 	\item $((A \eand B) \eand C) \lequiv (A \eand (B \eand C))$ (That is: is $\eand$ is associative?)
-	\item $((A \eor B) \eor C) \lequiv (A \eor (B \eor C))$ (That is: is $\eor$ is associative).
+	\item $((A \eor B) \eor C) \lequiv (A \eor (B \eor C))$ (That is: is $\eor$ is associative?)
 	\item $((A \eif B) \eif C) \lequiv (A \eif (B \eif C))$ (That is: is $\eif$ associative?)
 	\item $((A \eiff B) \eiff C) \lequiv (A \eiff (B \eiff C))$ (That is: is $\eiff$ is associative?)
 \end{earg}
@@ -703,24 +703,15 @@ Consider the following principle, and explain whether it is correct or not:
 \subsection{The Limits of Our Tests}\label{s:TFTestLimits}
 
 This is an important milestone: a test for the validity of arguments! But we shouldn't get carried away.  It is important to understand the \emph{limits} of our achievement. We can illustrate these limits with a few examples.  First, consider the argument:
-	\begin{earg}
+ 	\begin{earg}
 	\setcounter{eargnum}{0}
 		\item Daisy has four legs. $\therefore$ Daisy has more than two legs.
 	\end{earg}
-To symbolize this argument in TFL, we would have to use two different atomic sentences --- perhaps `$F$'  and `$T$' --- for the premise and the conclusion respectively. Obviously `$F$' does not TF entail `$T$', and the argument $F \therefore T$ is therefore not TF valid.  And yet the English argument is valid, i.e. it's impossible for the premise to be true and the conclusion false!
-
-This case perhaps isn't so bad. As we discussed in \S\ref{s:FormalValidity}, logic only aims to identify arguments that are \emph{formally} valid, that is, valid in virtue of their logical structure. And the above argument isn't formally valid.  But now consider this argument:
- 	\begin{earg}
-	\setcounter{eargnum}{1}
-		\item Some parallelograms are squares.  All squares are equilateral.  $\therefore$ Some parallelograms are equilateral.
-	\end{earg}
-To symbolize this in TFL, we'd again have to use different atomic sentences for the premises and conclusion, something like:
-$$P, S \therefore E$$
-Again this argument is not TF valid.  And yet the English argument is valid, and indeed formally valid this time! So here TFL really does fail us.  To capture the structure in virtue of which this argument is valid, we need a stronger system of logic, namely FOL, which we'll look at in the second part of this book.
+To symbolize this argument in TFL, we'd have to use two different atomic sentences for the premise and conclusion, maybe `F' an `T'. Obviously, `F' does not TF entail `T', and the argument $F \therefore T$ is therefore not TF valid.  And yet the English argument is surely valid!
 
 Similar shortcomings beset our other truth table tests. Consider the sentence:
 	\begin{earg}
-	\setcounter{eargnum}{2}
+	\setcounter{eargnum}{1}
 		\item\label{n:JanBald} Jan is neither bald nor not-bald.
 	\end{earg}
 We could symbolize this in TFL as `$\enot (J \eor \enot J)$', or (given DeMorgan's Laws) as `$\enot J \eand \enot \enot J$'. If we constructed a truth-table for this, we'd see that it's a TF contradiction. But the English sentence \eref{n:JanBald} does not seem like a contradiction: maybe Jan is on the borderline between being bald and not-bald, and \eref{n:JanBald} is in fact true!  So from the fact that an English sentence receives a contradictory symbolization in TFL, we can't always conclude that the English sentence is necessarily false.
@@ -728,12 +719,12 @@ We could symbolize this in TFL as `$\enot (J \eor \enot J)$', or (given DeMorgan
 
 Lastly, consider the following sentence:
 	\begin{earg}
-	\setcounter{eargnum}{3}
+	\setcounter{eargnum}{2}
 		\item\label{n:GodParadox}	It's not the case that, if God exists, then God answers malevolent prayers.
 	\end{earg}
 Symbolising this in TFL, we would offer something like `$\enot (G \eif M)$'. Now, `$\enot (G \eif M)$' is TF equivalent to `$G \eand \enot M$' and therefore TF entails `$G$' (check this with a truth table). So if we symbolize the English sentence \eref{n:GodParadox} in TFL, it seems to entail that God exists. But that's strange: surely even the atheist can accept \eref{n:GodParadox}, and not thereby commit herself to the existence of God!
 
-In different ways, all of these examples highlight some of the limits of working with a language like TFL that can \emph{only} handle truth-functional connectives. These limits give rise to some interesting questions in the field of \emph{philosophical logic}.  Our first two arguments raise questions about the distinction between validity and formal validity, and how these are related to our surrogate notion in TFL.  The case of Jan's baldness raises the question of what logic we should use when dealing with \emph{vague} language. And the case of the atheist raises the question of how to deal with the \emph{paradoxes of material implication}, which arise from differences between English `if \ldots then' constructions and the TFL conditional `$\eif$' (see \S\ref{s:TFLConditional}). Part of the purpose of this course is to equip you with the tools needed to explore these questions in philosophical logic. But we have to walk before we can run.  We have to become proficient in using TFL before we can adequately discuss its limits, and consider alternatives.
+In different ways, all of these examples highlight some of the limits of working with a language like TFL that can \emph{only} handle truth-functional connectives. These limits give rise to some interesting questions in the field of \emph{philosophical logic}.  Our first argument shows that TFL is not powerful enough to capture all valid arguments of English.  As well see in \S\ref{s:identity}, the more powerful system of FOL will let us more adequately symbolize `Daisy has four legs' and capture the validity of arguments like this.  The case of Jan's baldness raises the question of what logic we should use when dealing with \emph{vague} language. And the case of the atheist raises the question of how to deal with the \emph{paradoxes of material implication}, which arise from differences between English `if \ldots then' constructions and the TFL conditional `$\eif$' (see \S\ref{s:TFLConditional}). Part of the purpose of this book is to equip you with the tools needed to explore questions like these in philosophical logic. But we have to walk before we can run.  We have to become proficient in using TFL before we can adequately discuss its limits, and consider alternatives.
 
 
 
