@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.14)  9 FEB 2024 12:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.14)  7 JAN 2025 10:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1518,7 +1518,7 @@ e
 
 
 (./forallx-00-frontmatter.tex
-<cover-image.jpg, id=284, 755.2215pt x 377.2494pt>
+<cover-image.jpg, id=288, 755.2215pt x 377.2494pt>
 File: cover-image.jpg Graphic file (type jpg)
 <use cover-image.jpg>
 Package pdftex.def Info: cover-image.jpg  used on input line 6.
@@ -1813,7 +1813,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.2})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1239 \problempart
+l.1240 \problempart
                    ) [53]
 \openout2 = `forallx-04-tfl-prf.aux'.
 
@@ -2294,24 +2294,24 @@ pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.1})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.522 \problempart
+l.521 \problempart
                    [68] [69]
-Underfull \hbox (badness 10000) in paragraph at lines 611--613
+Underfull \hbox (badness 10000) in paragraph at lines 610--612
 
  []
 
 [70]
-Underfull \hbox (badness 10000) in paragraph at lines 614--622
+Underfull \hbox (badness 10000) in paragraph at lines 613--621
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 631--632
+Underfull \hbox (badness 10000) in paragraph at lines 630--631
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 633--642
+Underfull \hbox (badness 10000) in paragraph at lines 632--641
 
  []
 
@@ -2320,35 +2320,35 @@ pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.1})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.648 \problempart
+l.647 \problempart
                    Prove the following:
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.673 \problempart
+l.671 \problempart
                   \label{ex-neg-prf}We've seen that if we only have \enot E ...
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--678
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
 
  []
 
 [72]
-Underfull \hbox (badness 10000) in paragraph at lines 690--692
+Underfull \hbox (badness 10000) in paragraph at lines 688--690
 
  []
 
-Package mdframed Info: Not enough space on this page on input line 720.
+Package mdframed Info: Not enough space on this page on input line 718.
 [73]
-Package mdframed Info: Not enough space on this page on input line 720.
+Package mdframed Info: Not enough space on this page on input line 718.
  [74] [75]
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.1}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.800 \problempart
+l.798 \problempart
                    [76]
-Underfull \hbox (badness 10000) in paragraph at lines 844--845
+Underfull \hbox (badness 10000) in paragraph at lines 839--840
 
  []
 
@@ -2357,42 +2357,42 @@ pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.1})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.871 \problempart
-                  
+l.866 \problempart
+                   [78]
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.912 \problempart
-                   [78]
+l.907 \problempart
+                  
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.3}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.933 \problempart
+l.928 \problempart
                   
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.4}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.946 \problempart
-                  
-Underfull \hbox (badness 10000) in paragraph at lines 969--970
+l.941 \problempart
+                   [79]
+Underfull \hbox (badness 10000) in paragraph at lines 964--965
 
  []
 
-[79]
-Underfull \hbox (badness 10000) in paragraph at lines 973--985
+
+Underfull \hbox (badness 10000) in paragraph at lines 968--980
 
  []
 
 [80] [81]
-Underfull \hbox (badness 10000) in paragraph at lines 1062--1064
+Underfull \hbox (badness 10000) in paragraph at lines 1057--1059
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1066--1076
+Underfull \hbox (badness 10000) in paragraph at lines 1061--1071
 
  []
 
@@ -2401,15 +2401,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.1})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1084 \problempart
+l.1079 \problempart
                     [83]
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1132 \problempart
+l.1127 \problempart
                    
-Underfull \hbox (badness 10000) in paragraph at lines 1147--1148
+Underfull \hbox (badness 10000) in paragraph at lines 1142--1143
 
  []
 
@@ -2418,7 +2418,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.3})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1149 \problempart
+l.1144 \problempart
                    ) [84]
 \openout2 = `forallx-05-fol-sym.aux'.
 
@@ -2586,9 +2586,426 @@ has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.333 \problempart
-                   Give proofs for the following: [126] [127]
-Package mdframed Info: Not enough space on this page on input line 400.
- [128] [129]
+                   Give proofs for the following: [126]
+Overfull \vbox (75.17918pt too high) detected at line 399
+ []
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 399.
+
+Overfull \vbox (76.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (77.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (78.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (79.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (80.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (81.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (82.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (83.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (84.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (85.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (86.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (87.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (88.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (89.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (90.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (91.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (92.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (93.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (94.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (95.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (96.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (97.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (98.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (99.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (100.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (101.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (102.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (103.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (104.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (105.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (106.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (107.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (108.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (109.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (110.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (111.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (112.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (113.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (114.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (115.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (116.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (117.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (118.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (119.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (120.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (121.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (122.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (123.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (124.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (125.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (126.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (127.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (128.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (129.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (130.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (131.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (132.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (133.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (134.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (135.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (136.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (137.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (138.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (139.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (140.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (141.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (142.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (143.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (144.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (145.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (146.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (147.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (148.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (149.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (150.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (151.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (152.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (153.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (154.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (155.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (156.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (157.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (158.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (159.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (160.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (161.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (162.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (163.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (164.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (165.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (166.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (167.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (168.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (169.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (170.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (171.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (172.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (173.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (174.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (175.17918pt too high) detected at line 399
+ []
+
+
+Overfull \vbox (176.17918pt too high) detected at line 399
+ []
+
+
+Package mdframed Warning: correct box splittet fails
+ It seems you are using a non splittable contents
+(mdframed)                 on input line 399.
+
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 399.
+[127] [128] [129]
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.1}) 
 has been already used, duplicate ignored
 <to be read again> 
@@ -2882,13 +3299,13 @@ No file forallxsyr.ind.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `forallxsyr.out' has not changed.
-(rerunfilecheck)             Checksum: EEEA8CDFAD8D1B8C42C641310EEF9C64;11698.
+(rerunfilecheck)             Checksum: 6E3C4FD0024BA36589DAA13AC1CF9A44;11935.
  ) 
 Here is how much of TeX's memory you used:
- 31227 strings out of 476025
- 580240 string characters out of 5790016
+ 31228 strings out of 476025
+ 580256 string characters out of 5790016
  1887388 words of memory out of 5000000
- 50101 multiletter control sequences out of 15000+600000
+ 50102 multiletter control sequences out of 15000+600000
  594529 words of font info for 212 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,22n,103p,1352b,873s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2907,10 +3324,10 @@ ve/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/f
 onts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type
 1/public/boondox/zxxrw8a.pfb>
-Output written on forallxsyr.pdf (172 pages, 2806059 bytes).
+Output written on forallxsyr.pdf (172 pages, 2806931 bytes).
 PDF statistics:
- 2436 PDF objects out of 2487 (max. 8388607)
- 2208 compressed objects within 23 object streams
+ 2440 PDF objects out of 2487 (max. 8388607)
+ 2212 compressed objects within 23 object streams
  960 named destinations out of 1000 (max. 500000)
- 570 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 578 words of extra memory for PDF output out of 10000 (max. 10000000)
 

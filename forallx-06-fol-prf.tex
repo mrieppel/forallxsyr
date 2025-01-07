@@ -154,7 +154,7 @@ It's important to notice that in moving from line 2 to line 3 here, it was essen
 \end{proof}
 The expression on line 3 involves a \emph{variable clash} (see \S\ref{s:FOLSymSteps}) between the newly introduced quantifier `$\exists y$' and the quantifier `$\forall y$' that occurs in its scope.  It therefore does not even count as a \emph{formula}, let alone a \emph{sentence} of FOL by the definition we gave in \S\ref{s:FOLSyntax}.  For the same reason, we could not have inferred `$\exists x\exists x(Fx \eand \forall y Rxy)$' --- this again involves a variable clash, and therefore isn't an FOL formula.
 
-Here's a simple proof that combines our two new quantifier rules to show that $\forall xFx \therefore \forall y(Fy \eif Gy)$ is valid:
+Here's a simple proof that combines our two new quantifier rules to show that $\forall xFx,  \forall y(Fy \eif Gy) \therefore \exists z(Gz \land Fz)$ is valid:
 \begin{proof}
 	\hypo{1}{\forall x Fx} \by{Premise}{}
 	\hypo{2}{\forall y(Fy \eif Gy)} \by{Premise}{}
@@ -164,7 +164,7 @@ Here's a simple proof that combines our two new quantifier rules to show that $\
 	\have{6}{Ga \eand Fa}\ai{5, 3}
 	\have{7}{\exists z (Gz \eand Fz)}\Ei{6}
 \end{proof}
-\noindent Notice that from line 1 I could have inferred some other instance by $\forall$E instead, like `$Fb$, and similarly, from line 2 I could have inferred any other instance, like `$Fc \eif Gc$'. But if I had used different names in the two instances like this, I could then not have applied $\eif$E to them.  So although $\forall E$ lets you infer any instance, in the context of a proof you'll usually have to infer some specific instance.
+\noindent Notice that from line 1 I could have inferred some other instance by $\forall$E instead, like `$Fb$', and similarly, from line 2 I could have inferred any other instance, like `$Fc \eif Gc$'. But if I had used different names in the two instances like this, I could then not have applied $\eif$E to them.  So although $\forall E$ lets you infer any instance, in the context of a proof you'll usually have to infer some specific instance.
 
 \practiceproblems
 
@@ -206,7 +206,7 @@ Here's a simple proof that combines our two new quantifier rules to show that $\
 \item $\forall x(Fx \eif Gx) \proves \forall xFx \eif \exists yGy$
 \item $\forall xRxx \vdash \exists x \exists y Rxy$
 \item $\exists xFx \eif \forall y Gy \proves \forall z Fz \eif \exists zGz$
-\item $\forall x(Fx \eif Gx), \enot Gc \proves \exists x\exists y(\enot Fx \eor Gy)$
+\item $\forall x(Fx \eif Gx), \enot Gc \proves \exists x\exists y(\enot Fx \eor Hy)$
 \item $\proves \exists x(Fx \eor \enot Fx)$
 \end{earg}
 
@@ -280,7 +280,7 @@ The Flag step on line $m$ is just a way of officially signaling that the name \m
 Again, the idea is that although we only proved the one instance, `$Fa$', we are allowed to infer the universal sentence `$\forall xFx$' because that instance was arbitrary --- we could have just as easily proven any other instance we pleased.
 
 
-The Flag-ing constraint listed at the bottom of the rule --- that the Flag-ed name may not occur outside the subproof --- is crucial, because it is what insures that the name we've picked is truly arbitrary.\footnote{This constraint is actually a little more restrictive than strictly necessary.  It would be alright if the Flag-ed name occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption}. But the constraint as we've here formulated it has the advantage of being concise and easier to remember.}  To see the constraint in action, consider this terrible argument:
+The Flag-ing constraint listed at the bottom of the rule --- that the Flag-ed name may not occur outside the subproof --- is crucial, because it is what insures that the name we've picked is truly arbitrary.\footnote{This constraint is actually more restrictive than strictly necessary.  It would be alright if the Flag-ed name occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption} (or in the universal sentence to be proven). But the constraint as we've here formulated it has the advantage of being concise and easier to remember.}  To see the constraint in action, consider this terrible argument:
 	\begin{quote}
 		Everyone loves Beyonce.  Therefore everyone loves themselves.
 	\end{quote}
@@ -386,8 +386,7 @@ We can capture this reasoning pattern in a proof as follows:
 \end{proof}\noindent
 Breaking this down: we started by writing down our premises. At line 3, we then made an additional assumption: `$Fo$'. The idea here is that premise 1 tell us that \emph{something} is an $F$.  So on line 3 we introduce some arbitrary name `$o$' for that thing, Flag it as arbitrary to the right, and write down the corresponding instance of the existential premise 1.    The name we picked is arbitrary, since we've assumed nothing about the object named by `$o$' other than that the predicate `$F$' is true of it.  On the basis of the assumption $Fo$, we can then establish `$\exists xGx$'.  Since nothing depended on which specific object `$o$' names, our reasoning pattern is perfectly general: we could equally well have proven `$\exists xGx$'  by using any other name on line 3. We can therefore discharge the assumption `$Fo$' on line 3, and simply infer `$\exists x Gx$' on its own.
 
-Putting this together, we obtain the existential elimination rule ($\exists$E):\footnote{As in the case of $\forall$I, our formulation of the flagging constraint at the bottom is more restrictive than strictly necessary.  It would be alright if the flag-ed name $\meta{c}$ occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption}.}
-\factoidbox{
+Putting this together, we obtain the existential elimination rule ($\exists$E):\factoidbox{
 \begin{proof}
 	\have[m]{a}{\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)}
 	\open
@@ -398,9 +397,10 @@ Putting this together, we obtain the existential elimination rule ($\exists$E):\
 	\have[\ ]{d}{\meta{\psi}} \Ee{a,b-c}
 \end{proof}
 The Flag-ed name \meta{c} may not occur outside the subproof (including in the original existential $\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)$ and the inferred sentence \meta{\psi}!)}
-So in general, to prove some sentence \meta{\psi} from an existential sentence $\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)$, what we do is flag some arbitrary name \meta{c}, assume an instance of the existential sentence using this name \meta{c}, and then prove our goal \meta{\psi} from that instance.  Finally, we discharge our assumption and infer \meta{\psi} on its own via $\exists$E.
+So in general, to prove some sentence \meta{\psi} from an existential sentence $\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)$, what we do is flag some arbitrary name \meta{c}, assume the \meta{c}-instance of the existential sentence, and then prove our goal \meta{\psi} from that instance.  Finally, we discharge our assumption and infer \meta{\psi} on its own via $\exists$E.
 
-As with universal introduction, the Flag-ing constraint on the name \meta{c} that's listed at the bottom is very important. To see why, consider the obviously bad argument:
+As with universal introduction, the Flag-ing constraint on the name \meta{c} that's listed at the bottom is very important.\footnote{And again, our formulation of the flagging constraint is more restrictive than strictly necessary.  It would be alright if the flag-ed name $\meta{c}$ occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption}, or in the original existential sentence, or the goal formula to be proven.}
+To see why, consider the obviously bad argument:
 	\begin{quote}
 		Borges is a librarian. Someone is not a librarian. So Borges is both a librarian and not a librarian. 	\end{quote}
 We might symbolize this as follows:
@@ -553,7 +553,7 @@ Provide a proof of each claim.
 \item $\forall x \exists y(Fx \eif Gy), \forall x\exists y(\enot Fx \eif Gy) \proves \exists zGz$
 \item $ \exists y\forall x(Fx \eand Gy) \proves \forall x \exists y(Fx \eand Gy)$
 \item $\forall x \exists y(Fx \eand Gy) \proves \exists y\forall x(Fx \eand Gy)$
-\item $\forall x \exists y(Fx \eand Gy) \proves \exists y\forall x(Fx \eand Gy)$
+\item $\forall y\exists x(Fx \eif Gy) \proves \exists x(Fx \rightarrow \forall y Gy)$
 \item $\forall x(Mx \eiff Nx), \exists y(My\eand\exists x Rxy)\proves \exists x Nx$
 %\item $\proves \forall x Fx \eor \enot \forall x Fx$
 \item $\proves\forall z (Pz \eor \enot Pz)$
@@ -590,7 +590,7 @@ Aristotle and his successors identified other syllogistic forms which depended u
 
 
 \problempart
-The following pairs of sentences are all equivalent, showing that we can move quantifiers ``across'' logical operators under certain circumstances.  Give proofs to that they are equivalent:
+The following pairs of sentences are all equivalent, showing that we can move quantifiers ``across'' logical operators under certain circumstances.  Give proofs to that they are equivalent (in these $Ga$ is really just a placeholder, it could be any sentence $\varphi$):
 \begin{earg}
 \item $\forall x (Fx \eand Ga) \pequiv  \forall x Fx \eand Ga$
 \item $\exists x (Fx \eor Ga) \pequiv \exists x Fx \eor Ga$

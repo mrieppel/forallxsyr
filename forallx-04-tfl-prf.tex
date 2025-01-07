@@ -345,7 +345,7 @@ The problem is that the subproof that began with the assumption `$C$' occurs wit
 Our proof above violates this stipulation, since the subproof of lines 3--4 occurs within the subproof spanning lines 2--5, which has already been closed by the point we get to line 7.
 
 
-And to again emphasize a point from earlier: although you can, in principle, always make any temporary assumption you like, you always have to ultimately have a way of discharging that assumption and popping out of the subproof that it opens (otherwise it wouldn't be temporary any more!).    For this reason it is very important to \emph{only}  make assumptions when you have a discharge strategyin mind.  At this point, we have only one rule that allows us to make an assumption, and that is the rule of $\eif$I: if your goal is to prove a conditional $\meta{\varphi} \eif \meta{\psi}$, you should assume its antecedent \meta{\varphi} and try to prove its consequent \meta{\psi} inside the subproof opened by that assumption.  But at this point, this is the only time at which you should be making assumptions --- when aiming to prove conditionals.
+And to again emphasize a point from earlier: although you can, in principle, always make any temporary assumption you like, you always have to ultimately have a way of discharging that assumption and popping out of the subproof that it opens (otherwise it wouldn't be temporary any more!).    For this reason it is very important to \emph{only}  make assumptions when you have a discharge strategy in mind.  At this point, we have only one rule that allows us to make an assumption, and that is the rule of $\eif$I: if your goal is to prove a conditional $\meta{\varphi} \eif \meta{\psi}$, you should assume its antecedent \meta{\varphi} and try to prove its consequent \meta{\psi} inside the subproof opened by that assumption.  But at this point, this is the \emph{only} time at which you should be making assumptions --- when aiming to prove conditionals.
 
 \practiceproblems
 \problempart
@@ -386,7 +386,7 @@ For example, since $(A \eand B) \eif A$ is a tautology, we should be able to pro
 \hypo{1}{A \eand B}  \by{Assumption}{}
 \have{2}{A} \ae{1}
 \close
-\have{3}{(A \eand B) \eif A)} \ci{1-2}
+\have{3}{(A \eand B) \eif A} \ci{1-2}
 \end{proof}
 \noindent Notice that, unlike in any of the other proofs we've looked at, the leftmost vertical line, which appears next to our conclusion, has no premise listed at its top.  This graphically indicates that `$(A\eand B)\eif A$' is a theorem in our proof system, i.e. something that is provable without any premises.
 
@@ -453,7 +453,7 @@ Prove the following theorems:
 \item $\vdash (A\eif B)\eif ((B\eif C)\eif (A\eif C))$
 \item $\vdash (A \eif (B \eif C)) \eif (B \eif (A \eif C))$
 \item $\vdash A \eif (B \eif A)$ % REMOVE
-\item $\vdash (A \eand  B) \eif (B \eand  A)$
+\item $\vdash (A \eand  B) \eif (B \eif  A)$
 \item $\vdash P \eif P$
 \item $\vdash Q \eif (P \eif P)$
 \end{earg}
@@ -467,7 +467,7 @@ Prove the following theorems:
 
 
 \section{Biconditional Rules}
-The rules for the biconditional will be like double-barrelled versions of the rules for the conditional.  In order to prove `$F \eiff G$', for instance, you must be able to prove `$G$' on the assumption `$F$' \emph{and} prove `$F$' on the assumption `$G$'. The biconditional introduction rule {\eiff}I therefore requires two subproofs. Schematically, the rule works like this:
+The rules for the biconditional are like bidirectional versions of the rules for the conditional.  In order to prove `$F \eiff G$', for instance, you must be able to prove `$G$' on the assumption `$F$' \emph{and} prove `$F$' on the assumption `$G$'. The biconditional introduction rule {\eiff}I therefore requires two subproofs. Schematically, the rule works like this:
 \factoidbox{
 \begin{proof}
 	\open
@@ -484,7 +484,7 @@ The rules for the biconditional will be like double-barrelled versions of the ru
 \end{proof}}
 There can be as many lines as you like between $i$ and $j$, and as many lines as you like between $k$ and $l$. Moreover, the subproofs can come in any order, and the second subproof does not need to come immediately after the first.
 
-The biconditional elimination rule {\eiff}E is a bit like $\eif$E in both directions. If you have the left-hand subsentence of the biconditional, you can obtain the right-hand subsentence, and if you have the right-hand subsentence, you can obtain the left-hand subsentence:
+The biconditional elimination rule {\eiff}E is like $\eif$E in both directions. If you have the left-hand subsentence of the biconditional, you can obtain the right-hand subsentence, and if you have the right-hand subsentence, you can obtain the left-hand subsentence:
 \factoidbox{
 \begin{proof}
 	\have[m]{ab}{\meta{\varphi}\eiff\meta{\psi}}
@@ -514,7 +514,6 @@ Here's an example involving $\eiff$I:
 \close
 \have{6}{A \eiff B} \bi{2-3, 4-5}
 \end{proof}
-
 My reasoning for setting this up is that since it's my goal to prove `$A \eiff B$', I will have to create two subproofs, one for each direction of the biconditional. My first subproof (lines 2--3) begins with the assumption `$A$' and ends with `$B$', and my second subproof (lines 4--5) goes the other way, beginning with the assumption `$B$' and ending with `$A$'.
 
 \practiceproblems
@@ -556,7 +555,7 @@ Our negation introduction rule provides a formal implementation of this \emph{re
 \end{proof}}
 There can be as many lines between $i$ and $j$ as you like.  As with other rules that require subproofs, you need to cite the entire subproof $i$--$j$ when applying $\enot$I.  
 
-How doe we get the contradiction symbol $\ered$ at the end of our subproof? We can declare a contradiction with \ered \ whenever we  have both a sentence and its negation appearing in our proof.  This gives us our negation elimination rule:
+How do we get the contradiction symbol $\ered$ at the end of our subproof? We can declare a contradiction with \ered \ whenever we  have both a sentence and its negation appearing in our proof.  This gives us our negation elimination rule:
 \factoidbox{
 \begin{proof}
 \have[m]{a}{\enot\meta{\varphi}}
@@ -665,7 +664,6 @@ Let's look at one more proof with IP.  \define{contraposition} is the following 
 \item $\enot (P \eif Q) \pequiv (P \eand \enot Q)$ \hfill [Do both directions]
 \item $P \pequiv \enot \enot P$ \hfill [Do both directions]
 \item $\vdash \enot P \eif( P \eif Q)$
-\item $\vdash (\enot A \eif A) \eif A$
 \item $\vdash \enot (A \eand \enot A)$
 
 \end{earg}
@@ -791,7 +789,7 @@ Here's a more complex example, demonstrating one of the Distributive Laws:
 \fa (P\lor Q)\land (P\lor R) & $\lor$E  1,2-5,6-11\\
 \end{fitch}\end{center}
 
-To identify my overall strategy in this case, I did \emph{not} look at my goal $(P\lor Q)\land (P\lor R)$ and think about what introduction rule I might use to prove it (e.g. $\eand$I).  Rather, I noticed that my premise $P \eor (Q \eand R)$ is a disjunction.  And whenever I have a disjunction as a premise like this (or as an assumption, or as something easily derivable from my premises and assumptions), I will prove my current goal, whatever it might be, using $\eor$E as the overall strategy. So in this case, that means first assuming the left disjunction $P$ of my premise, and proving my conclusion from that (lines 2--5), and then assuming the right disjunct $(Q \eand R)$ of my premise, and proving my conclusion from that (lines 6-11).
+To identify my overall strategy in this case, I did \emph{not} look at my goal $(P\lor Q)\land (P\lor R)$ and think about what introduction rule I might use to prove it (e.g. $\eand$I).  Rather, I noticed that my premise $P \eor (Q \eand R)$ is a disjunction.  And whenever I have a disjunction as a premise like this (or as an assumption, or as something easily derivable from my premises and assumptions), I will prove my current goal, whatever it might be, using $\eor$E as the overall strategy. So in this case, that means first assuming the left disjunct $P$ of my premise, and proving my conclusion from that (lines 2--5), and then assuming the right disjunct $(Q \eand R)$ of my premise, and proving my conclusion from that (lines 6-11).
 
 
 
@@ -814,7 +812,7 @@ Prove the following:
 \item $(C\eand D)\eor E \proves E\eor D$
 \item $A \eif  C \vdash (A \eor (B \eand C)) \eif C$ 
 \item $D \eif A, C \eif (B \eand A) \proves (D \eor C) \eif (B \eor A)$
-\item $A \eor B \proves (A \eif B) \eif B$
+\item $Z \lor M, M \eif K \vdash  Z \lor K $
 \item $(Z\eand K) \eor (K\eand M), K \eif D \proves D$
 \end{earg}
 
@@ -823,20 +821,17 @@ Prove the following:
 \section{Proof strategies}\label{s:ProofStrategies}
 There is no simple recipe for proofs, and there is no substitute for practice. But here are some strategies to keep in mind.
 
-\paragraph{Work backwards from your goal.}
-Your ultimate goal is arrive at the conclusion. Look at the conclusion and ask what the introduction rule is for its main logical operator. This gives you an overall strategy, and tells you what assumptions  (if any)  to make, and what your new goal is. Now ask what the main operator of that new goal is, thereby identifying a strategy to prove it, and so on.
+\paragraph{Work backwards from your goal:} look at your \emph{goal} and try to prove it using the introduction rule for its main operator (e.g. $\eif$I, or $\eiff$I, or $\enot$I).  This will tell you what assumptions to make, and what your new goal is. Now ask what the main operator of that new goal is, thereby identifying a strategy to prove it, and so on.
 
 
-For example: if your conclusion is a conditional $\meta{\varphi}\eif\meta{\psi}$, you should plan to use the {\eif}I as your strategy. This requires opening a subproof in which you assume \meta{\varphi} and then set \meta{\psi} as your new goal.  Or if your goal is to prove $\meta{\varphi} \eiff \meta{\psi}$, use $\eiff$I as your overall strategy (which involves giving two subproof, one in each direction of the arrow). Or if your conclusion is a negated sentence $\enot \meta{\varphi}$, plan to use $\enot$I as your strategy (which means assuming \meta{\varphi} and proving a contradiction).
+For example: if your conclusion is a conditional $\meta{\varphi}\eif\meta{\psi}$, you should plan to use the {\eif}I as your strategy. This requires opening a subproof in which you assume \meta{\varphi} and then set \meta{\psi} as your new goal.  Or if your conclusion is a negated sentence $\enot \meta{\varphi}$, plan to use $\enot$I as your strategy (which means assuming \meta{\varphi} and proving a contradiction).
 
 
-\paragraph{The Exception: $\eor$E}
-The one important exception to the strategy of working backwards involves the $\eor$E rule: if you see a disjunction $\meta{\varphi} \eor \meta{\psi}$ among your premises or assumptions (or as something that you can easily derive from them), it's almost always a good idea to prove your current goal (whatever it may be) by setting up an $\eor$E proof.  That means opening up two subproofs, one that begins with an assumption of \meta{\varphi} and another that begins with \meta{\psi}.  Inside each of them, you now have to prove whatever your current goal is.
+\paragraph{The Exception, $\eor$E:} the one important exception to the strategy of working backwards involves the $\eor$E rule: if you see a disjunction $\meta{\varphi} \eor \meta{\psi}$ among your premises or assumptions (or as something that you can easily derive from them), it's almost always a good idea to prove your current goal (whatever it may be) by setting up an $\eor$E proof.  That means opening up two subproofs, one that begins with an assumption of \meta{\varphi} and another that begins with \meta{\psi}.  Inside each of them, you now have to prove whatever your current goal is.
 
+\paragraph{Work top down:} if neither of the above applies (e.g. your current goal has no main operator, and you don't have a disjunction among your premises or assumption on which to do $\lor$E), see if you can work from the top down by applying a different elimination rule (e.g. $\land$E, $\rightarrow$E, $\leftrightarrow$E).
 
-
-\paragraph{Try an indirect proof.}
-If you can't find any way to prove your goal $\meta{\varphi}$ directly, try an indirect proof: assume $\enot \meta{\varphi}$ and try to derive a contradiction.  If you succeed, you can infer your goal \meta{\varphi} by IP.  This strategy should only be used as a last resort, however!  Indirect proofs are often longer and more complicated than direct proofs.
+\paragraph{Last resort, Indirect Proof:} if you can't see any way to prove your goal $\meta{\varphi}$ directly, try an indirect proof by assuming $\enot \meta{\varphi}$ and deriving  a contradiction. This strategy should only be  a last resort, since Indirect proofs are often longer and more complicated than direct proofs.
 
 \paragraph{Persist.}
 Try different things. If one approach fails, try something else.  I'll never ask you to prove something that cannot be proven.

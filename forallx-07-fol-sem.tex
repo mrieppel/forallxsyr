@@ -16,7 +16,7 @@ The connectives of TFL are all truth-functional, and consequently, TFL only care
 This stipulates that the TFL sentence `$P$' is to have the same truth value as the English sentence `Big Ben is in London' (which, as it happens, is true).  But no further aspect of the meaning of the English sentence carries over to TFL.
 
 
-FOL is similarly impoverished as regards meaning. It goes beyond mere truth values, because it  allows us to split atomic sentences into their parts, consisting of terms and predicates.  A term is a word that refers to a particular object, and a predicate is a word that is \emph{true of} objects.  But FOL doesn't care about any other aspect of predicate's meaning besides what objects it's true of, or any other aspect of a term's meaning besides what it refers to.  For example, when we provide a symbolization key for some FOL predicate, such as:
+FOL is similarly impoverished as regards meaning. It goes beyond mere truth values, because it  allows us to split atomic sentences into their parts, consisting of terms and predicates.  A term is a word that refers to a particular object, and a predicate is a word that is \emph{true of} objects.  But FOL doesn't care about any other aspect of a predicate's meaning besides what objects it's true of, or any other aspect of a term's meaning besides what it refers to.  For example, when we provide a symbolization key for some FOL predicate, such as:
 	\begin{ekey}
 		\item[S] \blank\ is a US state.
 	\end{ekey}
@@ -207,7 +207,7 @@ Our explanation will be completely general, but to make things comprehensible, i
 		\item[E] \blank is even
 		\item[R] \blank \ is less than \blank
 	\end{ekey}
-I've here specified the extensions of `$E$' and `$R$' indirectly, using English predicates, because I can't list all the numbers, or pairs of numbers, these are true of.  But the extension of `$E$' contains even numbers $2, 4, 6, 8 \ldots$, and the extension of `$R$' contains the pair \ntuple{2, 3}, as well as \ntuple{2, 4} and \ntuple{2,5} and \ntuple{3, 5}, and indeed every pair \ntuple{x,y} where $x$ is less than $y$.
+I've here specified the extensions of `$E$' and `$R$' indirectly, using English predicates, because I can't list all the numbers, or pairs of numbers, these are true of.  But the extension of `$E$' contains even numbers $2, 4, 6, 8 \ldots$, and the extension of `$R$' contains the pair \ntuple{2, 3}, as well as \ntuple{2, 4} and \ntuple{2,5} and \ntuple{3, 5}, and indeed every pair \ntuple{$x,y$} where $x$ is less than $y$.
 
 \paragraph{Truth-Rule for Atomic Sentences} Determining the truth value of an atomic sentence on a given interpretation is fairly straightforward.  The atomic sentence `$Ea$', for example, is true just in case `$E$' is true of the referent of `$a$'.  Given our go-to interpretation, this sentence is true since `$a$' refers to 2, and 2 is indeed an even number.  By contrast, `$Eb$' would be false on our interpretation, because 3, which is the referent of `$b$', is not in the extension of `$E$', since it is not an even number.
 
@@ -849,7 +849,7 @@ So from the fact that the symbolization of an English argument in FOL is not val
 \item $(\forall x Fx \eand \forall x Gx) \eif \forall x Hx \nvDash \forall x((Fx \eand Gx) \eif Hx)$ % Needs 2
 \item $\exists x\forall y(Fx \eif Gy) \nvDash \exists y\forall x(Fx \eif Gy)$
 \item $\forall x \exists y(Fy \eif Gx) \nvDash \forall x(\exists yFy \eif Gx)$ % Needs 2
-\item $\forall x(\exists yFy \eif Gx) \nvDash \forall x \exists y(Fy \eif Gx)$
+\item $\exists x(\forall yFy \eif Gx) \nvDash \exists x \forall y(Fy \eif Gx)$
 \end{earg}
 
 
@@ -1085,7 +1085,7 @@ No, it does not: the argument is invalid, and a countermodel exists, but it requ
 	\item[\text{Domain}] all positive integers
 	\item[R] \blank \ is less than \blank \ (or: all pairs of integers \ntuple{m,n} where $m < n$)
 \end{ekey}
-We can't specify this interpreation ``directly'' by listing all the objects in the domain and all the pairs in the extension of `$R$', since there are too many of them.  But we can specify the extension of `$R$' indirectly, via the English predicate. This interpretation does what we want:
+We can't specify this interpreation ``directly'' by listing all the objects in the domain and all the pairs in the extension of `$R$', since there are infinitely many of them.  But we can specify the extension of `$R$' via the English predicate. This interpretation does what we want:
 \begin{ebullet}
 \item `$\forall x\exists yRxy$' is true, since for every positive integer $x$ we can find a $y$ such that $x<y$
 \item `$\forall x \forall y \forall z((Rxy \eand Ryz) \eif Rxz)$' is true, since if $x < y$ and $y < z$, it follows that $x < z$.
