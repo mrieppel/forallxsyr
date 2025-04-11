@@ -118,14 +118,19 @@
 \indexentry{expression of FOL|hyperpage}{113}
 \indexentry{term|hyperpage}{113}
 \indexentry{atomic formula|hyperpage}{113}
-\indexentry{formulas|hyperpage}{114}
-\indexentry{main logical operator|hyperpage}{115}
-\indexentry{scope|hyperpage}{115}
-\indexentry{binds|hyperpage}{116}
-\indexentry{free|hyperpage}{116}
-\indexentry{Open Formula|hyperpage}{116}
+\indexentry{FOL formulas|hyperpage}{114}
+\indexentry{main logical operator|hyperpage}{114}
+\indexentry{scope|hyperpage}{114}
+\indexentry{bound|hyperpage}{115}
+\indexentry{free|hyperpage}{115}
+\indexentry{bound|hyperpage}{115}
+\indexentry{free|hyperpage}{115}
+\indexentry{sentences|hyperpage}{115}
 \indexentry{sentence|hyperpage}{116}
 \indexentry{closed formulas|hyperpage}{116}
+\indexentry{Open Formula|hyperpage}{116}
+\indexentry{vacuous quantification|hyperpage}{116}
+\indexentry{binds|hyperpage}{116}
 \indexentry{Soundness:|hyperpage}{118}
 \indexentry{Completeness:|hyperpage}{118}
 \indexentry{theorem|hyperpage}{118}

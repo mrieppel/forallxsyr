@@ -6,7 +6,7 @@ $$\meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi}$$
 will continue to mean that $\meta{\psi}$ is \emph{provable} from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, i.e. that there exists a natural deduction proof which ends with $\meta{\psi}$ and whose premises, or more generally, whose undischarged assumptions, include at most $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.
 
 
-What we will need to add to our natural deduction system are rules to govern the new logical symbols that are specific to FOL: the quantifiers `$\forall$' and `$\exists$', and the identity predicate `$=$'.  As in the case of TFL, there will be an \emph{introduction} and an \emph{elimination} rule associated with each of these logical symbols.  Again, we will of course want to make sure that the rules we add end up producing a proof system that is both sound and complete:
+What we will need to add to our natural deduction system are rules to govern the new logical symbols that are specific to FOL: the quantifiers `$\forall$' and `$\exists$', and the identity predicate `$=$'.  As in the case of TFL, there will be an \emph{introduction} and an \emph{elimination} rule associated with each of these logical symbols.  We will of course want to make sure that the rules we add end up producing a proof system that is both sound and complete:
 \factoidbox{\define{Soundness:} $\text{If\ } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi} \text{ then } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \meta{\psi} $}
 \factoidbox{\define{Completeness:} $\text{If\ } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \entails \meta{\psi} \text{ then } \meta{\varphi}_1, \ldots, \meta{\varphi}_n \proves \meta{\psi} $}
 Soundness ensures that if $\meta{\psi}$ is provable from $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$, then $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ logically entail the conclusion \meta{\psi}.  And completeness ensures us that if $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$ logically entail the conclusion \meta{\psi}, then \meta{\psi} is also provable from premises $\meta{\varphi}_1, \ldots, \meta{\varphi}_n$.  We will formally define the concept of logical entailment  for FOL in Chapter \ref{ch:FOLSemantics}.
@@ -22,22 +22,25 @@ to mean that \meta{\varphi} is a \define{theorem} of our proof system, i.e. a se
 \section{Universal elimination}\label{s:UniversalElim}
 
 
-The elimination rule for the universal quantifier has a very simple idea behind it: from the claim that everything is F, you can infer that any particular thing is F. You name it; it's F.  So from $\forall xFx$ we can infer $Fa$ and $Fb$ and $Fc$, and so on.  Similarly with two-place predicates:
+The elimination rule for the universal quantifier has a very simple idea behind it: from the claim that everything is F, you can infer that any particular thing is F. You name it; it's F.  So from `$\forall xFx$' we can infer `$Fa$' and `$Fb$' and `$Fc$', and so on.  Similarly with two-place predicates:
 \begin{proof}
 	\hypo{a}{\forall xRxd}
 	\have{c}{Rad} \Ae{a}
 \end{proof}
-We obtained line 2 by dropping the universal quantifier `$\forall x$' and replacing every occurrence of the variable `$x$' that this quantifier bound with `$a$. Equally, the following is fine:
+We obtained line 2 by deleting the universal quantifier `$\forall x$' to get `$Rxd$' and replacing the free occurrence of `$x$' in the latter with `$a$'. Equally, the following is fine:
 \begin{proof}
 	\hypo{a}{\forall xRxd}
 	\have{c}{Rdd} \Ae{a}
 \end{proof}
-Here we obtained line 2 by dropping the universal quantifier and replacing every occurrence of `$x$' with `$d$'. We could have done the same with any other name we wanted: `$b$', `$c$', `$e$', you name it.  The idea is simple: if, as per line 1, \emph{everything} bears relation $R$ to $d$, then $a$ does, and so does $d$ itself, and so does $b$ or $c$, or any other thing.
+Here we obtained line 2 by deleting the universal quantifier to get `$Rxd$' and replacing the free occurrence of `$x$' with `$d$'. We could have done the same with any other name we wanted: `$b$', `$c$', `$e$' etc.  The idea is simple: if, as per line 1, \emph{everything} bears relation $R$ to $d$, then $a$ does, and so does $d$ itself, and so does $b$ or $c$, or any other thing.
 
 Both `$Rad$' and `$Rdd$' are said to be \emph{instances} of the quantified sentence `$\forall xRxd$', as are `$Rbd$', `$Rcd$', `$Red$' and so on.  In general, this notion is defined as follows:
 
-\factoidbox{Given a universally quantified FOL sentence $\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ its \define{instances} are all those FOL sentences $\meta{\varphi}(\ldots \meta{c} \ldots)$ that are obtained by dropping the quantifier $\forall \meta{v}$  and replacing \emph{every} occurrence of the variable \meta{v} bound by that quantifier with some name \meta{c}.
+\factoidbox{Given a universally quantified FOL sentence $\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ its \define{instances} are all those FOL sentences $\meta{\varphi}(\ldots \meta{c} \ldots)$ that are obtained by deleting the quantifier $\forall \meta{v}$  and replacing \emph{every} free occurrence of the matching variable \meta{v} in \meta{\varphi}(\ldots \meta{v} \ldots) with some name \meta{c}.
 }
+
+
+
 The universal elimination rule $\forall$E then just says that from a universal sentence you may infer any of its instances:
 
 \factoidbox{
@@ -45,16 +48,16 @@ The universal elimination rule $\forall$E then just says that from a universal s
 	\have[m]{a}{\forall \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)}
 	\have[\ ]{c}{\meta{\varphi}(\ldots \meta{c} \ldots)} \Ae{a}
 \end{proof}}
-Here, as well as in the definition of the notion of an instance, we are using the notation $\meta{\varphi}(\ldots \meta{v} \ldots)$ to represent any FOL formula \meta{\varphi} that contains at least one occurrence of the variable \meta{v}, and $\meta{\varphi}(\ldots \meta{c} \ldots)$ to represent the result of replacing every occurrence of the variable \meta{v} in that formula with some name \meta{c}.
+Here, as well as in the definition of the notion of an instance, we are using the notation $\meta{\varphi}(\ldots \meta{v} \ldots)$ to represent any FOL formula \meta{\varphi} that contains zero or more free occurrences of the variable \meta{v}, and $\meta{\varphi}(\ldots \meta{c} \ldots)$ to represent the result of replacing every free occurrence of the variable \meta{v} in that formula with some name \meta{c}.\footnote{We allow for the case where $\meta{\varphi}(\ldots \meta{v} \ldots)$ contains no free occurrences of $\meta{v}$ to cover cases of vacuous quantification.  For example, from `$\forall x\exists xFx$' we can infer `$\exists xFx$'  by $\forall$E.  See \ref{s:FOLSyntax} for discussion of vacuous quantification and definitions of free and bound variables.}
 
-Notice that $\meta{\varphi}(\ldots \meta{v} \ldots)$ may of course itself contain connectives and even other quantifiers.  So if we begin with the complex universally quantified sentence:
+To take a more complex example, if we begin with the universally quantified sentence:
 $$\forall x(Rax \eand \exists yRxy)$$
-the following would be instance of it, and could be inferred via $\forall$E:
+we first delete the universal quantifier to get `$(Rax \eand \exists yRxy)$', and then replace the free occurrences of `$x$' in this formula with a name.  So the following both count as instances of `$\forall x(Rax \eand \exists yRxy)$', and can therefore be inferred from it by $\forall$E:
 \begin{center}
 $Raa \eand \exists yRay$\\
 $Rab \eand \exists yRby$
 \end{center}
-The first results from replacing the variable `$x$' with the name `$a$', and the second from replacing `$x$' with `$b$'. By contrast, the following are \emph{not} instances:
+We get the first by replacing the variable `$x$' with the name `$a$', and the second by replacing `$x$' with `$b$'. By contrast, the following are \emph{not} instances:
 \begin{center}
 $Rab \eand \exists yRxy$\\
 $Rac \eand \exists yRdy$
@@ -63,7 +66,7 @@ The first isn't because we forgot to replace the second occurrence of `$x$' with
 
 
 
-It's also important to emphasize that (as with every elimination rule) you can only apply the $\forall$E rule when the universal quantifier is the \emph{main logical operator}. So the following is \emph{not} a legitimate use of $\forall E$:
+It's also important to emphasize that (as with every elimination rule) you can only apply the $\forall$E rule when the universal quantifier is the \emph{main logical operator}. So the following is \emph{not} a legitimate use of $\forall $E:
 \begin{proof}
 	\hypo{a}{\forall x Bx \eif Bc}
 	\have{c}{Bb \eif Bc}\by{No! Illegitimate use of $\forall$E}{a}
@@ -72,7 +75,7 @@ This is illegitimate because `$\forall x$' is not the main logical operator on l
 
 Another way to put it is that this use of $\forall$E is illegitimate because `$Bb \eif Bc$' is not an \emph{instance} of `$\forall x Bx \eif Bc$'.  This is because the notion of an instance only applies to sentences that have a quantifier as their main operator.  It just doesn't make sense to talk about the ``instances'' of `$\forall x Bx \eif Bc$', because this sentence has a conditional as its main operator, and conditionals do not have instances.  By contrast, `$\forall x(Bx \eif Bc)$' does have a quantifier as its main operator, and `$Bb \eif Bc$' is one of its instances, so we can infer it via $\forall$E.
 
-Using this rule, we can, for example, show that the following argument that we looked at way back in \S\ref{s:Arguments} is valid:
+Using this rule, we can now show that the following argument that we looked at way back in \S\ref{s:Arguments} is valid:
 \begin{earg}
 \item[]All rabbits are mammals.
 \item[] Bugs Bunny is a rabbit.
@@ -110,7 +113,7 @@ Here we have replaced both occurrences of the name `$a$' with the variable `$x$'
 
 Another way to put this is to note that `$Lnn$' is an \emph{instance} of each of the quantified sentences `$\exists xLxx$',  `$\exists xLnx$', `$\exists xLxn$'.  The notion of an instances as applied to existential sentences is the same as it is for universal ones:
 
-\factoidbox{Given any existentially quantified FOL sentence $\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ its \define{instances} are all those FOL sentences $\meta{\varphi}(\ldots \meta{c} \ldots)$ that are obtained by dropping the quantifier $\exists \meta{v}$  and replacing \emph{every} occurrence of the variable \meta{v} bound by that quantifier with some name \meta{c}.
+\factoidbox{Given any existentially quantified FOL sentence $\exists \meta{v}\meta{\varphi}(\ldots \meta{v} \ldots)$ its \define{instances} are all those FOL sentences $\meta{\varphi}(\ldots \meta{c} \ldots)$ that are obtained by deleting the quantifier $\exists \meta{v}$  and replacing \emph{every} free occurrence of the variable \meta{v} in $\meta{\varphi}(\ldots \meta{v} \ldots)$ with some name \meta{c}.
 }
 
 The existential introduction rule $\exists$I then just says that from a sentence  containing one or more occurrences of a name \meta{c}, we may infer \emph{any} existential sentence of which that original sentence is an instance:
@@ -130,13 +133,13 @@ $\exists x(Fx \eand \forall yRay)$\\
 $\exists x(Fa \eand \forall yRxy)$\\
 $\exists x(Fx \eand \forall yRxy)$\\
 \end{center}
-because `$Fa \eand \forall yRay$' is an instance of any of these. So again, we can existentially generalize on just one occurrence of `$a$', or on both.
+because `$Fa \eand \forall yRay$' is an instance of any of these: in each case, we delete the quantifier `$\exists x$', obtaining a formula with free occurrences of `$x$', and then replace those occurrences with the name `$a$' to get `$Fa \eand \forall yRay$'. The takeaway, again, is that with $\exists$I we an generalize on just one occurrence of `$a$', or on both.
 
 On the other hand `$\exists x(Fx \eand \forall yRxy)$' could \emph{not}, for example, be inferred from:
 $$Fa \eand \forall yRby$$
 because this is not one of its instances.  What's gone wrong here is that we tried to generalize on two different names, `$a$' and `$b$', at once, which isn't allowed.
 
-What we could have done  instead is to generalize on each of the two names separately, via successive uses of $\exists$I:
+What we could have done  instead is to generalize on each of the two names separately, via two successive uses of $\exists$I:
 
 \begin{proof}
 	\hypo{a}{Fa \eand \forall yRby} \by{Premise}{}
@@ -152,7 +155,9 @@ It's important to notice that in moving from line 2 to line 3 here, it was essen
 	\have{d}{\exists x(Fx \eand \forall y Rby)} \Ei{a}
 	\have{e}{\exists y\exists x(Fx \eand \forall y Ryy)}\by{illegitimate use of $\exists$I}{d}
 \end{proof}
-The expression on line 3 involves a \emph{variable clash} (see \S\ref{s:FOLSymSteps}) between the newly introduced quantifier `$\exists y$' and the quantifier `$\forall y$' that occurs in its scope.  It therefore does not even count as a \emph{formula}, let alone a \emph{sentence} of FOL by the definition we gave in \S\ref{s:FOLSyntax}.  For the same reason, we could not have inferred `$\exists x\exists x(Fx \eand \forall y Rxy)$' --- this again involves a variable clash, and therefore isn't an FOL formula.
+The formula on line 3 involves \emph{unwanted capture}: we replaced the name `$b$' in 2 with the variable `$y$' and added a matching existential quantifier `$\exists y$' to the front, but the newly added variable `$y$' is bound (or captured) by the quantifier `$\forall y$' that already occurred in the formula, rather than by our newly added quantifier `$\exists y$'.\footnote{In fact, `$\exists y\exists x(Fx \eand \forall y Ryy)$' is a case of \emph{vacuous quantification}, since `$\exists y$' binds no variables, see \ref{s:FOLSyntax}.  This isn't to say that vacuously quantified sentences can never be inferred by $\exists$I: from `$Fa$' we can infer `$\exists xFa$' by $\exists$I because the former is, technically, an instance of the latter.} 
+Put another way: this attempted use of $\exists$I is illegitimate because 2 is not an instance of 3.  If we delete the quantifier `$\exists y$' from 3 we are left with `$\exists x(Fx \eand \forall y Ryy)$' and this contains no free occurrences of `$y$' which we could replace with the name `$b$' to get `$\exists x(Fx \eand \forall y Rby)$'. An easy way to avoid unwanted capture is to always use a \emph{new} variable, one that does not already occur in the formula to which $\exists$I is being applied, as in the earlier example where we used `$\exists z$' instead of `$\exists y$'.
+
 
 Here's a simple proof that combines our two new quantifier rules to show that $\forall xFx,  \forall y(Fy \eif Gy) \therefore \exists z(Gz \land Fz)$ is valid:
 \begin{proof}
@@ -280,7 +285,7 @@ The Flag step on line $m$ is just a way of officially signaling that the name \m
 Again, the idea is that although we only proved the one instance, `$Fa$', we are allowed to infer the universal sentence `$\forall xFx$' because that instance was arbitrary --- we could have just as easily proven any other instance we pleased.
 
 
-The Flag-ing constraint listed at the bottom of the rule --- that the Flag-ed name may not occur outside the subproof --- is crucial, because it is what insures that the name we've picked is truly arbitrary.\footnote{This constraint is actually more restrictive than strictly necessary.  It would be alright if the Flag-ed name occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption} (or in the universal sentence to be proven). But the constraint as we've here formulated it has the advantage of being concise and easier to remember.}  To see the constraint in action, consider this terrible argument:
+The Flag-ing constraint listed at the bottom of the rule --- that the Flag-ed name may not occur outside the subproof --- is crucial, because it is what insures that the name we've picked is truly arbitrary.\footnote{This constraint is actually more restrictive than necessary.  It would be alright if the Flag-ed name occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption} (or in the universal sentence to be proven). But the constraint as we've formulated it has the advantage of being concise and easier to remember.}  To see the constraint in action, consider this terrible argument:
 	\begin{quote}
 		Everyone loves Beyonce.  Therefore everyone loves themselves.
 	\end{quote}
@@ -399,7 +404,7 @@ Putting this together, we obtain the existential elimination rule ($\exists$E):\
 The Flag-ed name \meta{c} may not occur outside the subproof (including in the original existential $\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)$ and the inferred sentence \meta{\psi}!)}
 So in general, to prove some sentence \meta{\psi} from an existential sentence $\exists \meta{x}\meta{\varphi}(\ldots \meta{x} \ldots)$, what we do is flag some arbitrary name \meta{c}, assume the \meta{c}-instance of the existential sentence, and then prove our goal \meta{\psi} from that instance.  Finally, we discharge our assumption and infer \meta{\psi} on its own via $\exists$E.
 
-As with universal introduction, the Flag-ing constraint on the name \meta{c} that's listed at the bottom is very important.\footnote{And again, our formulation of the flagging constraint is more restrictive than strictly necessary.  It would be alright if the flag-ed name $\meta{c}$ occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption}, or in the original existential sentence, or the goal formula to be proven.}
+As with universal introduction, the Flag-ing constraint on the name \meta{c} that's listed at the bottom is very important.\footnote{And again, our formulation of the flagging constraint is more restrictive than necessary.  It would be alright if the flag-ed name $\meta{c}$ occurred outside the subproof, as long as it doesn't occur in any earlier \emph{premise or undischarged assumption} (or in the original existential sentence, or in the goal formula to be proven).}
 To see why, consider the obviously bad argument:
 	\begin{quote}
 		Borges is a librarian. Someone is not a librarian. So Borges is both a librarian and not a librarian. 	\end{quote}

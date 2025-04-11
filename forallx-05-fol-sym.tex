@@ -96,7 +96,7 @@ In this case, the compound predicate was formed out of an adjective and a noun. 
 Sentence \eref{cp1} involves a compound predicate formed from a noun and the prepositional phrase `from Germany', and \eref{cp2} involves a compound predicate formed from a noun, a prepositional phrase, and the relative clause `that is fast'.  These can also be symbolized as conjunctions of simple predications.  Using `$G$' for `\blank is from Germany' and `$F$' for `\blank is fast', \eref{cp1} can be symbolized as `$Ch \eand Gh$' and \eref{cp2} as `$(Ch \eand Gh) \eand Fh$'.
 
 
-One does, occasionally  have to be careful when symbolizing compound predicates.  Suppose I have a violin that I've named `Lucy', and now consider the sentence `Lucy is a fake Stradivarius'.  You might think that using `$c$' for `Lucy',`$F$' for `\blank is fake' and `$S$' for `\blank is a Stradivarius', we can symbolize this as `$Fc \eand Sc$'.  But that wouldn't be right: `$Fc \eand Sc$' entails `$Sc$', but our English sentence does not entail `Lucy is a Stradivarius'!  The word `fake' is what's called a \emph{non-intersective} adjective; in a case like this, we 'd have to use a single FOL predicate, say `$S$', for the  whole English predicate `\blank is a fake Stradivarius'.
+One does occasionally  have to be careful when symbolizing compound predicates.  Suppose I have a violin that I've named `Lucy', and now consider the sentence `Lucy is a fake Stradivarius'.  You might think that using `$c$' for `Lucy',`$F$' for `\blank is fake' and `$S$' for `\blank is a Stradivarius', we can symbolize this as `$Fc \eand Sc$'.  But that wouldn't be right: `$Fc \eand Sc$' entails `$Sc$', but our English sentence does not entail `Lucy is a Stradivarius'!  The word `fake' is what's called a \emph{non-intersective} adjective; in a case like this, we 'd have to use a single FOL predicate, say `$S$', for the  whole English predicate `\blank is a fake Stradivarius'.
 
 
 \practiceproblems
@@ -160,11 +160,11 @@ sentence \eref{scope1} can be symbolized as `$\exists xLx \eand \exists xAx$'.
 
 Sentence \eref{scope2}, on the other hand, says that there exists some \emph{one} individual who is \emph{both} a logician and an architect.  It gets symbolized as `$\exists x(Lx \eand Ax)$'.   You can read this as: there is some object $x$ in the domain of people such that $x$ is a logician and $x$ is also an architect.  The difference between `$\exists x(Lx \eand Ax)$'  and the earlier `$\exists xLx \eand \exists xAx$' has to do with the \define{scope} of the quantifiers.
 
-The way scope works with quantifiers is very similar to it works with negation, which we discussed in \S\ref{s:TFLSyntacticNotions}.   In the sentence `$\enot P \eand \enot Q$', the first $\enot$ has scope over just the first conjunct, and the second $\enot$ has scope over just the second conjunct.   It is the conjunction $\eand$ that is the main logical operator.  Similarly, in `$\exists xLx \eand \exists xAx$', the first quantifier has scope over just the first conjunct, and the second quantifier over just the second conjunct, with the conjunction $\eand$ functioning as the main logical operator.
+The way scope works with quantifiers is very similar to it works with negation, which we discussed in \S\ref{s:TFLSyntacticNotions}.   In the sentence `$\enot P \eand \enot Q$', the first `$\enot$' has scope over just the first conjunct, and the second `$\enot$' has scope over just the second conjunct.   It is the conjunction symbol `$\eand$' that is the main logical operator.  Similarly, in `$\exists xLx \eand \exists xAx$', the first quantifier has scope over just the first conjunct, and the second quantifier over just the second conjunct, with the conjunction `$\eand$; functioning as the main logical operator.
 
-On the other hand, in `$\exists x(Lx \eand Vx)$' the quantifier is the main logical operator, and has scope over the entire sentence, with the conjunction $\eand$ occurring inside the scope of the quantifier.  This is similar to how in `$\enot (P \eand Q)$', the negation is the main logical operator, with the conjunction occurring inside its scope.  We'll give a more precise definition of the notion of scope in relation to quantifiers in \S\ref{s:FOLSyntax}, but the analogy with negation should give you a working handle for now.
+On the other hand, in `$\exists x(Lx \eand Vx)$' the quantifier is the main logical operator, and has scope over the entire sentence, with the conjunction `$\eand$' occurring inside the scope of the quantifier.  This is similar to how in `$\enot (P \eand Q)$', the negation is the main logical operator, with the conjunction occurring inside its scope.  We'll give a more precise definition of the notion of scope in relation to quantifiers in \S\ref{s:FOLSyntax}, but the analogy with negation should give you a working handle for now.
 
-Closely connected to the notion of scope are the notions of \define{free} and \define{bound} variables.  A quantifier is said to \emph{bind} the variables that occur in its scope.  So in `$\exists x(Lx \eand Vx)$', the quantifier `$\exists x$' binds the variable in `$Lx$' and also the one in `$Vx$', since they both occur inside its scope.  On the other hand, in `$\exists xLx \eand \exists xAx$', the first quantifier binds the variable in `$Lx$', since it occurs in its scope, but does not bind the variable in `$Ax$'  --- that variable is bound by the second quantifier, in whose scope it occurs.
+Closely connected to the notion of scope are the notions of \define{free} and \define{bound} variables.  A quantifier \emph{binds} the matching variables that occur in its scope.  So in `$\exists x(Lx \eand Vx)$', the quantifier `$\exists x$' binds the variable in `$Lx$' and also the one in `$Vx$', since they both occur inside its scope.  On the other hand, in `$\exists xLx \eand \exists xAx$', the first quantifier binds the variable in `$Lx$', since it occurs in its scope, but does not bind the variable in `$Ax$'  --- that variable is bound by the second quantifier, in whose scope it occurs.
 
 Or compare the following two FOL sentence:
 
@@ -355,7 +355,7 @@ So far we've only looked at English quantifier phrases involving `every' and `so
 	\begin{earg}
 		\item[\ex{q.neg1}] No one is angry.
 	\end{earg}
-This could be paraphrased as `It is not the case that someone is angry'.  We can therefore symbolize it using negation together with an existential quantifier: $\enot \exists x Ax$.  Interestingly, though, this is not the only option.  If you think about it, \eref{q.neg1} could also be paraphrased as `Everyone is not-angry'. So we can also symbolize our sentence  using negation and a universal quantifier: $\forall x \enot Ax$ (``every individual $x$ is such that $x$ is not angry''). Indeed, as we will see, it holds in general that $\forall \meta{v} \enot\meta{\varphi}$ is logically equivalent to $\enot\exists \meta{v}\meta{\varphi}$. (Notice that I have here returned to the practice of using `$\meta{\varphi}$' as a metavariable, now over FOL sentences; and \meta{v} as a metavariable over FOL variables.)   So whenever you have a negation in front of an existential quantifier in FOL, you can move the negation over the quantifier, and flip the quantifier into a universal to obtain an equivalent sentence.
+This could be paraphrased as `It is not the case that someone is angry'.  We can therefore symbolize it using negation together with an existential quantifier: $\enot \exists x Ax$.  Interestingly, though, this is not the only option.  If you think about it, \eref{q.neg1} could also be paraphrased as `Everyone is not-angry'. So we can also symbolize our sentence  using negation and a universal quantifier: $\forall x \enot Ax$ (``every individual $x$ is such that $x$ is not angry''). Indeed, as we will see, it holds in general that $\forall \meta{v} \enot\meta{\varphi}$ is logically equivalent to $\enot\exists \meta{v}\meta{\varphi}$. (Notice that I have here returned to the practice of using `$\meta{\varphi}$' as a metavariable, now over FOL sentences.  And \meta{v} is a metavariable over FOL variables.)   So whenever you have a negation in front of an existential quantifier in FOL, you can move the negation over the quantifier, and flip the quantifier into a universal to obtain an equivalent sentence.
 
 A similar pattern emerges if we consider the following.
 	\begin{earg}
@@ -819,7 +819,7 @@ We here decided to use the same variable, `$y$', for the existential quantifiers
 $$\overbrace{\forall x\bigl(\ (Lx \ \eand \overbrace{\exists yAyx}^{\text{scope of 1st `}\exists y\text{'}}) \eif \overbrace{\exists y(Py \eand Axy)}^{\text{scope of 2nd `}\exists y\text{'}} \ \bigr)}^{\text{scope of `}\forall x\text{'}}$$
 Since the scopes of the two `$\exists y$' quantifiers don't overlap, there is no clash of variables.   That said, to be absolutely safe, it's good to just pick a different variable for each quantifier in your symbolization.  So the following, where we use `$\exists z$' in the consequent, would be an equally good, and ``safer,'' symbolization of \eref{log4}:$$\forall x((Lx \eand \exists yAyx) \eif \exists z(Pz \eand Axz))$$
 
-Students who are first learning FOL symbolization sometimes want to put all the quantifiers out front, at the beginning of the sentence, perhaps like so:
+Students who are first learning FOL symbolization sometimes want to put all the quantifiers out front, at the beginning of the sentence, perhaps like this:
 $$\forall x\exists y \exists z((Lx \eand Ayx) \eif (Pz \eand Axz))$$
 This is not a correct symbolization of \eref{log4}, however, and indeed virtually impossible to make sense of.  Avoid doing this.  Instead, use the strategy of breaking things down via intermediate steps, as we've done in these examples.  By following doing this you will arrive at a correct symbolization with all the quantifiers in the right places.
 
@@ -1401,10 +1401,9 @@ If we let `$F$' be a one-place predicate,`$G$' a three-place predicate, and `$S$
 		$Fx$\\
 		$Fa$\\
 		$Gxy_{2}$\\
-		$Gaaa$\\
 		$Sx_1 x_2 a b y x_6$\\
 	\end{center}
-Given the notion of an \emph{atomic formula}, we can now recursively define the broader class of FOL \define{formulas} as follows:
+Given the notion of an \emph{atomic formula}, we can now recursively define the broader class of \define{FOL formulas} as follows:
 	\factoidbox{
 	\begin{enumerate}
 		\item Every atomic formula is a formula.
@@ -1413,8 +1412,8 @@ Given the notion of an \emph{atomic formula}, we can now recursively define the 
 		\item If \meta{\varphi} and \meta{\psi} are formulas, then $(\meta{\varphi}\eor\meta{\psi})$ is a formula.
 		\item If \meta{\varphi} and \meta{\psi} are formulas, then $(\meta{\varphi}\eif\meta{\psi})$ is a formula.
 		\item If \meta{\varphi} and \meta{\psi} are formulas, then $(\meta{\varphi}\eiff\meta{\psi})$ is a formula.
-		\item If \meta{\varphi} is a formula that contains at least one occurrence of the variable \meta{v} and does \emph{not} contain either $\forall \meta{v}$ or $\exists \meta{v}$, then $\forall\meta{v}\meta{\varphi}$ is a formula.
-		\item If \meta{\varphi} is a formula that contains at least one occurrence of the variable \meta{v} and does \emph{not} contain either $\forall \meta{v}$ or $\exists \meta{v}$, then $\exists\meta{v}\meta{\varphi}$ is a formula.
+		\item If \meta{\varphi} is a formula and $\meta{v}$ is a variable, then $\forall\meta{v}\meta{\varphi}$ is a formula.
+		\item If \meta{\varphi} is a formula and $\meta{v}$ is a variable, then $\exists \meta{v}\meta{\varphi}$ is a formula.
 		\item Nothing else is a formula.
 	\end {enumerate}
 	}
@@ -1445,16 +1444,17 @@ $\forall z\exists y (Fy \eiff \forall x (Fx \eif Rxz))$	& By clause 7\\
 %		$\forall z\exists y (Fy \eiff \forall x (Fx \eif Rxz))$
 %	\end{center}
 
-By contrast, the following are \emph{not} formulas:
-	\begin{center}
-		$\forall y Rxx$\\
-		$\forall x \exists x Rxx$\\
+%By contrast, the following are \emph{not} formulas:
+%	\begin{center}
+%		$\forall y Rxx$\\
+%		$\forall x \exists x Rxx$\\
+%
+%	\end{center}
+%Looking at the first of these, we can say that `$Rxx$' is a formula by clause (1), but `$\forall y Rxx$' is not a formula, because it results from attaching the quantifier `$\forall y$' to a formula that does not contain at least one occurrence of the variable `$y$', thus contravening clause (7).  Similarly, in the case of the second example, `$Rxx$' is again a formula, and by clause (8) `$\exists x Rxx$' is also a formula.  But `$\forall x\exists xRxx$' is not a formula because we've attached the quantifier `$\forall x$' to a formula `$\exists xRxx$' that \emph{already} contains a quantifier `$\exists x$' involving the same variable, which contravenes clause (7).
+%
+%These constraints have the effect of preventing the kind of \emph{variable clashes} we discussed in \S\ref{s:FOLSymSteps}. And in fact, we can now give a precise definition of the notion of the \emph{scope} of a quantifier (or other logical operator) in terms of the notion of \emph{main logical operator}:
 
-	\end{center}
-Looking at the first of these, we can say that `$Rxx$' is a formula by clause (1), but `$\forall y Rxx$' is not a formula, because it results from attaching the quantifier `$\forall y$' to a formula that does not contain at least one occurrence of the variable `$y$', thus contravening clause (7).  Similarly, in the case of the second example, `$Rxx$' is again a formula, and by clause (8) `$\exists x Rxx$' is also a formula.  But `$\forall x\exists xRxx$' is not a formula because we've attached the quantifier `$\forall x$' to a formula `$\exists xRxx$' that \emph{already} contains a quantifier `$\exists x$' involving the same variable, which contravenes clause (7).
-
-These constraints have the effect of preventing the kind of \emph{variable clashes} we discussed in \S\ref{s:FOLSymSteps}. And in fact, we can now give a precise definition of the notion of the \emph{scope} of a quantifier (or other logical operator) in terms of the notion of \emph{main logical operator}:
-
+Given the above syntactic rules, we can now define what the main operator of an FOL formula is and, with it, the notion of the scope of an operator:
 	\factoidbox{
 		The \define{main logical operator} in a formula is the operator that was introduced last in the process of constructing that formula according to the syntactic rules of FOL.
 }
@@ -1463,13 +1463,17 @@ These constraints have the effect of preventing the kind of \emph{variable clash
 	}
 
 
-Since quantifiers are a kind of logical operator, this definition covers the scope of quantifiers alongside the scope of truth functional connectives.  The scope of the various quantifiers in one of our earlier examples can be illustrated as follows:
+Since quantifiers are a kind of logical operator, this definition covers the scope of quantifiers alongside the scope of truth functional connectives.  The scope of the various quantifiers in the example formula constructed above can be illustrated as follows:
 $$\overbrace{\forall z\overbrace{\exists y (Fy \eiff \overbrace{\forall x (Fx \eif Rxz)}^{\text{scope of $\forall x$}}
 \ )}^{\text{scope of $\exists y$}}}^{\text{scope of $\forall z$}}$$
-Returning to the problematic example `$\forall x\exists xRxx$' from above, we can now see that the problem with it is that the quantifier `$\forall x$' has, inside its scope, another quantifier quantifier `$\exists x$' involving the same variable, leading to a variable clash.  This is ruled out by our clause (7).
 
-\subsection{Sentences of FOL}
-With these pieces in place, we're now ready to define the notion of a \emph{sentence} of FOL.  To see why we need to distinguish sentences from mere formulas of FOL, recall that logic is concerned with \emph{statements}: sentences  that can be either true or false. And many formulas are not true or false.  For example, consider the formulas $Fc$ and $Fx$, and suppose we have the following symbolization key:
+\noindent You may have noticed that our syntactic rules let us put a quantifier in front of \emph{any} formula, which lets us construct peculiar formulas like `$\forall x Fc$' or `$\forall x\exists xFx$'.  We'll discuss these below, after we've introduced some more terminology.
+%Returning to the problematic example `$\forall x\exists xRxx$' from above, we can now see that the problem with it is that the quantifier `$\forall x$' has, inside its scope, another quantifier quantifier `$\exists x$' involving the same variable, leading to a variable clash.  This is ruled out by our clause (7).
+
+
+
+\subsection{Sentences of FOL}\label{s:FOLSentences}
+With our definition of formulas in place, we're now ready to define the notion of a \emph{sentence} of FOL.  To see why we need to distinguish sentences from mere formulas of FOL, recall that logic is concerned with \emph{statements}: sentences  that can be either true or false. And many formulas are not true or false.  For example, consider the formulas $Fc$ and $Fx$, and suppose we have the following symbolization key:
 	\begin{ekey}
 		\item[\text{domain}] people
 		\item[F] \blank \ is a philosopher
@@ -1479,25 +1483,46 @@ The formula `$Fc$' can be assigned a truth value: we just ask ourselves whether 
 
 Of course, if we put an existential quantifier out front to obtain `$\exists xFx$', we now have something that's capable of being true or false, since this now says that at least one person is a philosopher.  The point is that we need to \emph{bind} the variable in `$Fx$' with a quantifier to obtain something true or false.
 
-Since we want all sentences of FOL to be either true or false, we need to exclude formulas like `$Fx$' from the class of sentences.  We can do this by giving a precise definition of the notions of \emph{bound} and \emph{free} variables that we already informally discussed in \S \ref{s:Quantifiers}:
+Since we want all sentences of FOL to be either true or false, we need to exclude formulas like `$Fx$' from the class of sentences.  We can do this by giving a precise definition of the notions of \define{bound} and \define{free} variables that we already informally discussed in \S \ref{s:Quantifiers}:
 
 	\factoidbox{
-A quantifier $\exists \nu$ or $\forall \nu$ \define{binds} every occurrence of the variable $\nu$ that appears in its scope.  Variables that aren't bound by any quantifier are \define{free}.\\
+	An occurrence of a variable \meta{v} is \define{bound} iff it falls within the scope of a matching quantifier $\forall \meta{v}$ or $\exists \meta{v}$.	
+	
+	A \define{free} variable is a variable that is not bound.
 
-An \define{Open Formula} is one that contains at least one free variable.
+%A quantifier $\exists \nu$ or $\forall \nu$ \define{binds} every occurrence of the variable $\nu$ that appears in its scope.  Variables that aren't bound by any quantifier are \define{free}.\\
 
 		}
 For example, consider the following formula, which has a conditional as its main operator:
 	$$(\forall x(Ex \eor Dy) \eif \exists z(Ex \eif Lzx))$$
-The universal quantifier `$\forall x$' has scope over the antecedent `$\forall x (Ex \eor Dy)$', so the first `$x$' in the formula is  bound. However, the `$y$' is free. The scope of the existential quantifier `$\exists z$' is the consequent `$\exists z(Ex \eif Lzx)$', so `$z$' is bound.  But the `$x$'s in this subformula are free in the formula as a whole, since they occur outside the scope of the universal quantifier `$\forall x$'.  Since the formula as a whole contains free variables, it is an \emph{open formula}.
+The universal quantifier `$\forall x$' has scope over the antecedent `$\forall x (Ex \eor Dy)$', so the `$x$' in `$Ex$' is bound, but the `$y$' in `$Dy$' is free. The scope of the existential quantifier `$\exists z$' is the consequent `$\exists z(Ex \eif Lzx)$', so `$z$' is bound.  But the two occurrences of `$x$' in the consequent are free: since they occur outside the scope of the universal quantifier `$\forall x$', they aren't in the scope of any matching quantifier.  
 
-We could transform it into a \emph{closed formula}, one containing no free variables, by giving `$\forall x$' scope over the entire formula, and adding a quantifier to bind the `$y$' variable, as in for example:
-$$\forall x((Ex \eor \exists yDy) \eif \exists z(Ex \eif Lzx))$$
-This is now a \emph{sentence} of FOL.  In general, we give the following definitions:
+We can now single out the \define{sentences} of FOL from among the formulas as follows:
+
 	\factoidbox{
-		A \define{sentence} of FOL is any formula of FOL that contains no free variables.  Sentences are also called \define{closed formulas}.
+	A \define{sentence} of FOL is a formula that contains no free variables.  Sentences are also called \define{closed formulas}.
+	
+	An \define{Open Formula} of FOL is a formula that contains at least one free variable.
+
+		
 	}
-By requiring that every variable in a sentence be bound, we ensure that all sentences of FOL are capable of being true or false.
+
+Our example `$(\forall x(Ex \eor Dy) \eif \exists z(Ex \eif Lzx))$' from above is thus an \emph{open formula} since it contains free occurrences of the variables `$y$' and  `$x$'.  We could transform it into a \emph{closed formula}, containing no free variables, by giving `$\forall x$' scope over the entire formula, thereby binding every occurrence of `$x$', and adding a quantifier to bind `$y$', as in for example:
+$$\forall x((Ex \eor \exists yDy) \eif \exists z(Ex \eif Lzx))$$
+This is now a \emph{sentence} of FOL.   By requiring that every variable in a sentence be bound, we ensure that all sentences of FOL are capable of being true or false.
+
+As noted earlier, our syntactic rules also let us construct strange formulas like `$\forall x Fc$' and `$\forall x\exists xFx$'.   These are unusual because the formulas the quantifier `$\forall x$' attaches to are in both cases already closed formulas: neither `$Fc$' nor `$\exists x Fx$' contains any free variables.  These are instances of what is called \define{vacuous quantification}, cases where a quantifier (`$\forall x$'  in this case) binds no variables.  In general we can say:
+\factoidbox{A quantifier $\forall \meta{v}$ or $\exists \meta{v}$ \define{binds} every occurrence of the matching variable $\meta{v}$ that (i) is in its scope, and (ii) is not within  the scope of any ``closer'' quantifier $\forall \meta{v}$ or $\exists \meta{v}$ itself occurring in the scope of the original quantifier.
+
+%In a formula or subformula of the form $\forall \meta{v}\varphi$ (or $\exists \meta{v} \varphi$), the quantifier $\forall \meta{v}$ (or $\exists \meta{v}$)  \define{binds} every occurrence of the  variable $\meta{v}$ that is free in $\varphi$.
+
+}
+To illustrate: in the sentence `$\forall x(Fx \eif \exists xGx)$', the universal quantifier `$\forall x$' only binds the `$x$' in `$Fx$', since that is the only occurrence of `$x$' within its scope that isn't within the scope of a closer quantifier. It does not bind the variable in `$Gx$', because that variable occurs within the scope of the closer existential quantifier `$\exists x$'.  It is ``closer'' in the sense that `$\exists x$' itself occurs within the scope of the universal `$\forall x$'. `$\exists x$' is therefore what binds the variable in `$Gx$'.  And again, in a cases of vacuous quantification like  `$\forall x Fc$' and `$\forall x\exists xFx$', the quantifier `$\forall x$' binds no variables.  These sentences are equivalent to plain `$Fc$' and `$\exists xFx$', with the vacuous quantifier `$\forall x$' deleted.\footnote{We could perhaps say that in `$\forall x Fc$' the quantifier binds the `$x$' that accompanies the quantifier itself, since it occurs within its scope.  But I prefer to think of occurrences of variables, in the sense at issue in our definitions, as occurrences in the argument positions of predicates.  So `$\forall x Fc$' contains no occurrences of `$x$', in the relevant sense, for the quantifier to bind, and `$\forall x\exists xFx$' contains only one occurrence, bound by `$\exists x$'.}
+
+
+
+
+
 
 
 %\section{Bracketing conventions}

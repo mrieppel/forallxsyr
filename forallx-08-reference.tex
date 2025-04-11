@@ -263,13 +263,14 @@ $\meta{\varphi} \rightarrow\meta{\psi} \pequiv \enot\meta{\varphi}\eor \meta{\ps
 $\enot (\meta{\varphi} \rightarrow \meta{\psi}) \pequiv \meta{\varphi} \eand \enot \meta{\psi}$  &               NegImp  \\
 $\enot (\meta{\varphi} \eand \meta{\psi})  \pequiv \enot\meta{\varphi}\eor \enot \meta{\psi}$  &                DeM  \\
 $\enot (\meta{\varphi} \eor \meta{\psi}) \pequiv \enot\meta{\varphi}\ \eand \ \enot \meta{\psi}$   &               DeM  \\
-$\meta{\varphi} \pequiv \enot \enot \meta{\varphi}$     &                              DN  \\
-$(\meta{\varphi}  \ \#\  \meta{\psi}) \pequiv (\enot \enot \meta{\varphi}  \ \#\   \enot \enot \meta{\psi}) \pequiv (\enot \enot \meta{\varphi}  \ \#\  \meta{\psi}) \pequiv (\meta{\varphi}  \ \#\  \enot \enot  \meta{\psi})$ & SDN\\
-$\enot (\meta{\varphi}  \ \#\  \meta{\psi}) \pequiv \enot (\enot \enot \meta{\varphi}  \ \#\   \enot \enot \meta{\psi}) \pequiv \enot (\enot \enot \meta{\varphi}  \ \#\  \meta{\psi}) \pequiv \enot (\meta{\varphi}  \ \#\  \enot \enot  \meta{\psi})$ & SDN\\
 $\meta{\varphi} @ \meta{\psi}  \proves  \meta{\psi} @ \meta{\varphi}$ &                          Com \\
 $\bot \proves \meta{\varphi}$ & EX \\
  $\proves \meta{\varphi}\eor \enot \meta{\varphi}$ &                                                    LEM \\
+ $\meta{\varphi} \pequiv \enot \enot \meta{\varphi}$     &                              DN  \\
+$(\meta{\varphi}  \ \#\  \meta{\psi}) \pequiv (\enot \enot \meta{\varphi}  \ \#\   \enot \enot \meta{\psi}) \pequiv (\enot \enot \meta{\varphi}  \ \#\  \meta{\psi}) \pequiv (\meta{\varphi}  \ \#\  \enot \enot  \meta{\psi})$ & SDN\\
+$\enot (\meta{\varphi}  \ \#\  \meta{\psi}) \pequiv \enot (\enot \enot \meta{\varphi}  \ \#\   \enot \enot \meta{\psi}) \pequiv \enot (\enot \enot \meta{\varphi}  \ \#\  \meta{\psi}) \pequiv \enot (\meta{\varphi}  \ \#\  \enot \enot  \meta{\psi})$ & SDN\\
 \end{tabular}
+
 \vspace{1em}
 
 (where  \ \#\  can be any binary connective and $@$ can be any of  $\eor, \eand, \eiff$)
@@ -351,21 +352,3 @@ $\bot \proves \meta{\varphi}$ & EX \\
 
 \end{multicols}
 
-%\section{Derived rules for FOL}
-%\begin{multicols}{2}
-%\begin{proof}
-%	\have[m]{ab}{\forall \meta{x}\enot \meta{\varphi}}
-%	\have[\ ]{ac}{\enot \exists \meta{x} \meta{\varphi}}\cq{ab}
-%
-%	\have[m]{ab}{\enot \exists \meta{x}  \meta{\varphi}}
-%\\	\have[\ ]{ac}{\forall \meta{x}\enot\meta{\varphi}}\cq{ab}
-%\end{proof}
-%\begin{proof}
-%	\have[m]{ab}{\exists \meta{x}\enot\meta{\varphi}}
-%	\have[\ ]{ac}{\enot \forall \meta{x} \meta{\varphi}}\cq{ab}
-%
-%	\have[m]{ab}{\enot \forall \meta{x}  \meta{\varphi}}
-%\\	\have[\ ]{ac}{\exists \meta{x}\enot \meta{\varphi}}\cq{ab}
-%\end{proof}
-%\end{multicols}
-%

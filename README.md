@@ -8,6 +8,6 @@ The main changes I've made compared to *forall x: Cambridge* are the following:
 * I've changed the first chapter by e.g. elucidating the modal notion of validity using possible worlds, and distinguishing it from the notion of formal validity more.
 * I've added more on the semantics of truth-functional and especially first-order logic, particularly as concerns the construction of countermodels.  
 * I've made some changes to the natural deduction rules in both parts.
-* I've reordered the presentation of various topics and revised the practice problems.
+* I've modified the syntax for the first-order language, reordered the presentation of various topics, and revised the practice problems.
 
-For more information, see [https://mrieppel.net/teaching](https://mrieppel.net/teaching)
+For more see [https://mrieppel.net/teaching](https://mrieppel.net/teaching)

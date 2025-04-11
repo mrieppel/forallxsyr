@@ -352,7 +352,7 @@ And to again emphasize a point from earlier: although you can, in principle, alw
 Prove the following sequents (these require only conjunction rules and $\eif$E):
 
 \begin{earg}
-\item $A \eand (B \eand C) \proves C \eand B$
+\item $A \eand (B \eand C) \proves (A \land B) \eand C$
 \item $P \eand  Q, \ R, \ (Q \eand  R) \eif S \vdash S$
 \item $P \eand Q, (Q \eand P) \eif R \proves R$
 \item $A \eand B, B \eif (A \eif C) \proves C \eand B$
@@ -527,6 +527,7 @@ Prove the following:
 \item $A \eiff B \vdash (A \eand C) \eiff (B \eand C)$
 \item $(A \eand B) \eiff (A \eand C) \vdash A \eif (B \eiff C)$
 \item $A\eiff B, B\eiff C \proves A\eiff C$
+\item $P \rightarrow R,  \ R\rightarrow (S \land P) \vdash P \leftrightarrow R$
 \item $P \leftrightarrow (Q \land R), \ R \rightarrow P  \ \vdash \ P \leftrightarrow R$
 \item $K \eand L \proves K \eiff L$
 \item $A \eiff B \vdash (A \eand C) \eiff (B \eand C)$
@@ -665,7 +666,7 @@ Let's look at one more proof with IP.  \define{contraposition} is the following 
 \item $P \pequiv \enot \enot P$ \hfill [Do both directions]
 \item $\vdash \enot P \eif( P \eif Q)$
 \item $\vdash \enot (A \eand \enot A)$
-
+\item $\vdash (\lnot A \rightarrow A) \rightarrow A$
 \end{earg}
 
 \problempart\label{ex-neg-prf}We've seen that if we only have \enot E and \enot I, our proof system is incomplete: we can't prove every valid argument to be valid. So we added IP as an additional rule.  In the following questions, we'll look more closely at what's needed to get a complete proof system.
@@ -811,9 +812,10 @@ Prove the following:
 \item $(A \eor B) \eor C, \ C \eiff B \proves C \eor A$
 \item $(C\eand D)\eor E \proves E\eor D$
 \item $A \eif  C \vdash (A \eor (B \eand C)) \eif C$ 
-\item $D \eif A, C \eif (B \eand A) \proves (D \eor C) \eif (B \eor A)$
-\item $Z \lor M, M \eif K \vdash  Z \lor K $
-\item $(Z\eand K) \eor (K\eand M), K \eif D \proves D$
+\item $J \eif I, \ L \rightarrow (L \rightarrow K)  \proves (L \eor J) \eif (I \eor K)$
+\item $D \eif A, \ C \eif (B \eand A) \proves (D \eor C) \eif (B \eor A)$
+\item $Z \lor M, \ M \eif K \vdash  Z \lor K $
+\item $(Z\eand K) \eor (K\eand M),  \ K \eif D \proves D$
 \end{earg}
 
 
@@ -827,7 +829,8 @@ There is no simple recipe for proofs, and there is no substitute for practice. B
 For example: if your conclusion is a conditional $\meta{\varphi}\eif\meta{\psi}$, you should plan to use the {\eif}I as your strategy. This requires opening a subproof in which you assume \meta{\varphi} and then set \meta{\psi} as your new goal.  Or if your conclusion is a negated sentence $\enot \meta{\varphi}$, plan to use $\enot$I as your strategy (which means assuming \meta{\varphi} and proving a contradiction).
 
 
-\paragraph{The Exception, $\eor$E:} the one important exception to the strategy of working backwards involves the $\eor$E rule: if you see a disjunction $\meta{\varphi} \eor \meta{\psi}$ among your premises or assumptions (or as something that you can easily derive from them), it's almost always a good idea to prove your current goal (whatever it may be) by setting up an $\eor$E proof.  That means opening up two subproofs, one that begins with an assumption of \meta{\varphi} and another that begins with \meta{\psi}.  Inside each of them, you now have to prove whatever your current goal is.
+\paragraph{The Exception, $\eor$E:} the one important exception to the strategy of working backwards involves the $\eor$E rule.  If you have a disjunction $\meta{\varphi} \eor \meta{\psi}$ among your premises or assumptions (or as something that you can easily derive from them), it's almost always a good idea to prove your current goal (whatever it may be) by setting up an $\eor$E proof.  That means opening up two  subproofs, one where you show that your goal follows from the assumption of $\meta{\varphi}$, and another where you show your goal also follows from the assumption of $\meta{\psi}$.
+
 
 \paragraph{Work top down:} if neither of the above applies (e.g. your current goal has no main operator, and you don't have a disjunction among your premises or assumption on which to do $\lor$E), see if you can work from the top down by applying a different elimination rule (e.g. $\land$E, $\rightarrow$E, $\leftrightarrow$E).
 
@@ -1035,12 +1038,12 @@ $\meta{\varphi} \rightarrow\meta{\psi} \pequiv \enot\meta{\varphi}\eor \meta{\ps
 $\enot (\meta{\varphi} \rightarrow \meta{\psi}) \pequiv \meta{\varphi} \eand \enot \meta{\psi}$  &               NegImp  \\
 $\enot (\meta{\varphi} \eand \meta{\psi})  \pequiv \enot\meta{\varphi}\eor \enot \meta{\psi}$  &                DeM  \\
 $\enot (\meta{\varphi} \eor \meta{\psi}) \pequiv \enot\meta{\varphi}\ \eand \ \enot \meta{\psi}$   &               DeM  \\
-$\meta{\varphi} \pequiv \enot \enot \meta{\varphi}$     &                              DN  \\
-$(\meta{\varphi}  \ \#\  \meta{\psi}) \pequiv (\enot \enot \meta{\varphi}  \ \#\   \enot \enot \meta{\psi}) \pequiv (\enot \enot \meta{\varphi}  \ \#\  \meta{\psi}) \pequiv (\meta{\varphi}  \ \#\  \enot \enot  \meta{\psi})$ & SDN\\
-$\enot (\meta{\varphi}  \ \#\  \meta{\psi}) \pequiv \enot (\enot \enot \meta{\varphi}  \ \#\   \enot \enot \meta{\psi}) \pequiv \enot (\enot \enot \meta{\varphi}  \ \#\  \meta{\psi}) \pequiv \enot (\meta{\varphi}  \ \#\  \enot \enot  \meta{\psi})$ & SDN\\
 $\meta{\varphi} @ \meta{\psi}  \proves  \meta{\psi} @ \meta{\varphi}$ &                          Com \\
 $\bot \proves \meta{\varphi}$ & EX \\
  $\proves \meta{\varphi}\eor \enot \meta{\varphi}$ &                                                    LEM \\
+ $\meta{\varphi} \pequiv \enot \enot \meta{\varphi}$     &                              DN  \\
+$(\meta{\varphi}  \ \#\  \meta{\psi}) \pequiv (\enot \enot \meta{\varphi}  \ \#\   \enot \enot \meta{\psi}) \pequiv (\enot \enot \meta{\varphi}  \ \#\  \meta{\psi}) \pequiv (\meta{\varphi}  \ \#\  \enot \enot  \meta{\psi})$ & SDN\\
+$\enot (\meta{\varphi}  \ \#\  \meta{\psi}) \pequiv \enot (\enot \enot \meta{\varphi}  \ \#\   \enot \enot \meta{\psi}) \pequiv \enot (\enot \enot \meta{\varphi}  \ \#\  \meta{\psi}) \pequiv \enot (\meta{\varphi}  \ \#\  \enot \enot  \meta{\psi})$ & SDN\\
 \end{tabular}
 \end{center}
 
