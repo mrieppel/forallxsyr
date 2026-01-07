@@ -62,8 +62,8 @@
 \contentsline {section}{\numberline {5.1}Names and Predicates}{87}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Quantifiers and Quantifier Scope}{89}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Common Quantifier Phrases and Domains}{92}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Quantifiers and Negation}{95}{section.5.4}%
-\contentsline {section}{\numberline {5.5}The Utility of Paraphrase}{97}{section.5.5}%
+\contentsline {section}{\numberline {5.4}Quantifiers and Negation}{96}{section.5.4}%
+\contentsline {section}{\numberline {5.5}The Utility of Paraphrase}{98}{section.5.5}%
 \contentsline {section}{\numberline {5.6}Many-Place Predicates}{100}{section.5.6}%
 \contentsline {section}{\numberline {5.7}Multiple Generality}{102}{section.5.7}%
 \contentsline {section}{\numberline {5.8}Intermediate Steps to Symbolization}{105}{section.5.8}%
@@ -72,7 +72,7 @@
 \contentsline {subsection}{There are at most\ldots }{109}{Item.481}%
 \contentsline {subsection}{There are exactly\ldots }{110}{Item.483}%
 \contentsline {subsection}{Logical Truths Involving Identity}{111}{Item.488}%
-\contentsline {section}{\numberline {5.10}The Syntax of FOL}{112}{section.5.10}%
+\contentsline {section}{\numberline {5.10}The Syntax of FOL}{113}{section.5.10}%
 \contentsline {subsection}{Formulas of FOL}{113}{section.5.10}%
 \contentsline {subsection}{Sentences of FOL}{115}{Item.514}%
 \contentsline {chapter}{\chapternumberline {6}Natural deduction for FOL}{118}{chapter.6}%

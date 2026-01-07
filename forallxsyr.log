@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.14)  11 APR 2025 14:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.14)  7 JAN 2026 15:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2519,22 +2519,24 @@ has been already used, duplicate ignored
                    \relax 
 l.892 \problempart
                    Symbolize the following using two-place predicates.  (Not...
-[107] [108] [109] [110]
+[107] [108] [109] [110] [111]
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.1}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1301 \problempart
-                    [111]
+                   
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.1329 \problempart
-                    Using the following symbolization key: [112] [113] [114]
-[115]
-Package mdframed Info: Not enough space on this page on input line 1508.
+                    Using the following symbolization key: [112] [113]
+Package mdframed Info: Not enough space on this page on input line 1463.
+ [114]
+Package mdframed Info: Not enough space on this page on input line 1463.
 
+[115]
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.1}) 
 has been already used, duplicate ignored
 <to be read again> 
@@ -3203,64 +3205,64 @@ pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.1})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1016 \problempart
+l.1017 \problempart
                     Construct countermodels to demonstrate the following:
 [155] [156] [157] [158]
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.1}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1196 \problempart
+l.1197 \problempart
                    
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1213 \problempart
+l.1214 \problempart
                     [159] [160]
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.1}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1298 \problempart
+l.1299 \problempart
                     Consider again the following interpretation:
 pdfTeX warning (ext4): destination with the same identifier (name{ProbPart.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1334 \problempart
+l.1335 \problempart
                     [161]
-Underfull \hbox (badness 10000) in paragraph at lines 1387--1387
+Underfull \hbox (badness 10000) in paragraph at lines 1388--1388
 
  []
 
 [162]
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1404
+Underfull \hbox (badness 10000) in paragraph at lines 1405--1405
 
  []
 
@@ -3298,8 +3300,8 @@ Package rerunfilecheck Info: File `forallxsyr.out' has not changed.
 (rerunfilecheck)             Checksum: 6E3C4FD0024BA36589DAA13AC1CF9A44;11935.
  ) 
 Here is how much of TeX's memory you used:
- 31236 strings out of 476025
- 580344 string characters out of 5790016
+ 31237 strings out of 476025
+ 580352 string characters out of 5790016
  1887388 words of memory out of 5000000
  50103 multiletter control sequences out of 15000+600000
  594529 words of font info for 212 fonts, out of 8000000 for 9000
@@ -3320,10 +3322,10 @@ ve/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/f
 onts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type
 1/public/boondox/zxxrw8a.pfb>
-Output written on forallxsyr.pdf (172 pages, 2810797 bytes).
+Output written on forallxsyr.pdf (172 pages, 2810970 bytes).
 PDF statistics:
- 2453 PDF objects out of 2487 (max. 8388607)
- 2225 compressed objects within 23 object streams
- 967 named destinations out of 1000 (max. 500000)
+ 2455 PDF objects out of 2487 (max. 8388607)
+ 2227 compressed objects within 23 object streams
+ 968 named destinations out of 1000 (max. 500000)
  578 words of extra memory for PDF output out of 10000 (max. 10000000)
 

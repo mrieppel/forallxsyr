@@ -1,5 +1,5 @@
 forallx@syr
-==============
+===========
 
 This is my edition of the open source *forall x* logic textbook, which I use in my introductory logic class at Syracuse University.  It is based on Tim Button's [*forall x: Cambridge*](http://www.homepages.ucl.ac.uk/~uctytbu/forallxcam.pdf), which is in turn based on P.D. Magnus' original [*forall x*](https://www.fecundity.com/logic/).  The present text is licensed under a [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
